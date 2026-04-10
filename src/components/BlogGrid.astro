@@ -1,0 +1,79 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+	posts: CollectionEntry<'blog'>[];
+	title?: string;
+	subtitle?: string;
+	showViewAllLink?: boolean;
+}
+
+const {
+	posts,
+	title = 'Artigos recentes',
+	subtitle = 'Textos e comparativos para ajudar na hora de escolher fogão.',
+	showViewAllLink = true,
+} = Astro.props;
+
+const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' });
+---
+
+<section class="bg-white py-20 lg:py-28">
+	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+		<div class="mx-auto max-w-2xl text-center">
+			<p class="text-sm font-semibold uppercase tracking-widest text-accent">Artigos</p>
+			<h2 class="font-display mt-2 text-3xl font-bold text-brand-900 sm:text-4xl">{title}</h2>
+			<p class="mt-3 text-brand-900/65">{subtitle}</p>
+		</div>
+		<div class="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+			{posts.map((post) => (
+				<article class="group flex flex-col overflow-hidden rounded-2xl bg-neutral-50 ring-1 ring-black/5 transition hover:shadow-lg">
+					<a href={`/blog/${post.id}/`} class="relative block aspect-[16/10] overflow-hidden bg-neutral-200">
+						{post.data.heroImage ? (
+							<img
+								src={post.data.heroImage}
+								alt=""
+								class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+								loading="lazy"
+								width="640"
+								height="400"
+							/>
+						) : (
+							<div class="flex h-full w-full items-center justify-center bg-gradient-to-br from-brand-900 to-accent text-white/40">
+								<span class="font-display text-sm font-semibold">Sem imagem de capa</span>
+							</div>
+						)}
+					</a>
+					<div class="flex flex-1 flex-col p-6">
+						<p class="text-xs font-medium uppercase tracking-wide text-brand-900/45">
+							{post.data.category} · {fmt.format(post.data.pubDate)}
+						</p>
+						<h3 class="font-display mt-2 text-lg font-semibold leading-snug text-brand-900">
+							<a href={`/blog/${post.id}/`} class="hover:text-accent">
+								{post.data.title}
+							</a>
+						</h3>
+						<p class="mt-2 line-clamp-2 flex-1 text-sm text-brand-900/65">{post.data.description}</p>
+						<a
+							href={`/blog/${post.id}/`}
+							class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent hover:text-accent-hover"
+						>
+							Ler artigo
+							<span aria-hidden="true">→</span>
+						</a>
+					</div>
+				</article>
+			))}
+		</div>
+		{showViewAllLink && (
+			<div class="mt-12 text-center">
+				<a
+					href="/blog"
+					class="inline-flex rounded-full border border-brand-900/15 px-6 py-3 text-sm font-semibold text-brand-900 transition hover:border-brand-900/30 hover:bg-neutral-50"
+				>
+					Ver todos os posts
+				</a>
+			</div>
+		)}
+	</div>
+</section>

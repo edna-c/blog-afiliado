@@ -1,0 +1,65 @@
+---
+const rows = [
+	{
+		title: 'Análises detalhadas',
+		desc: 'Uso no dia a dia, custo-benefício, suporte e durabilidade — sem texto genérico de propaganda.',
+		icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
+	},
+	{
+		title: 'Comparativos lado a lado',
+		desc: 'Tabelas objetivas para você ver diferenças de preço e recurso em poucos minutos.',
+		icon: 'M4 6h16M4 10h16M4 14h16M4 18h16',
+	},
+	{
+		title: 'Guias de compra',
+		desc: 'Medidas, compatibilidade com sua cozinha e o que priorizar — para não errar na escolha.',
+		icon: 'M12 6v6m0 0v6m0-6h6m-6 0H6',
+	},
+	{
+		title: 'Ofertas e alertas',
+		desc: 'Quando o preço mudar, você fica sabendo. Indicação de compra sempre com contexto, sem exagero.',
+		icon: 'M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9',
+	},
+];
+---
+
+<section class="border-b border-white/10 bg-ink py-20 lg:py-28">
+	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+		<div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+			<div class="max-w-2xl">
+				<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">O que você encontra aqui</p>
+				<h2 class="font-display mt-3 text-4xl font-extrabold text-white sm:text-5xl">Informação para decidir com calma.</h2>
+			</div>
+			<p class="max-w-md text-sm font-medium text-white/45 lg:text-right">
+				Indicamos quando um modelo faz sentido — e quando é melhor procurar outra opção.
+			</p>
+		</div>
+		<div class="mt-14 space-y-3">
+			{rows.map((row, i) => (
+				<div class="group flex flex-col gap-6 border border-white/10 bg-brand-900/50 p-6 transition hover:border-pop/40 hover:bg-brand-900 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+					<div class="flex gap-6">
+						<span class="font-display hidden w-8 shrink-0 pt-1 text-sm font-bold text-pop/60 sm:block">{String(i + 1).padStart(2, '0')}</span>
+						<div class="flex h-16 w-16 shrink-0 items-center justify-center bg-pop text-ink">
+							<svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={row.icon} />
+							</svg>
+						</div>
+						<div>
+							<h3 class="font-display text-xl font-extrabold text-white">{row.title}</h3>
+							<p class="mt-2 max-w-2xl text-base font-medium text-white/55">{row.desc}</p>
+						</div>
+					</div>
+					<a
+						href="/blog"
+						class="inline-flex h-14 w-14 shrink-0 items-center justify-center border border-white/15 bg-ink text-white transition group-hover:border-pop group-hover:text-pop"
+						aria-label={`Ver mais sobre ${row.title}`}
+					>
+						<svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+						</svg>
+					</a>
+				</div>
+			))}
+		</div>
+	</div>
+</section>

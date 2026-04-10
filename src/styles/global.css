@@ -1,0 +1,35 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme {
+	--font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+	--font-display: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+	--color-ink: #070708;
+	--color-ink-muted: #12141a;
+	--color-brand-950: #0a0a0c;
+	--color-brand-900: #0f1117;
+	--color-brand-800: #1a1d26;
+	--color-accent: #dfff1f;
+	--color-accent-hover: #ecff52;
+	--color-pop: #dfff1f;
+}
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+	body {
+		@apply bg-ink text-white antialiased font-sans;
+	}
+}
+
+@layer utilities {
+	.text-gradient-pop {
+		@apply bg-gradient-to-r from-white via-white to-[#dfff1f] bg-clip-text text-transparent;
+	}
+	.ring-pop {
+		box-shadow:
+			0 0 0 1px rgba(223, 255, 31, 0.35),
+			0 0 40px -12px rgba(223, 255, 31, 0.45);
+	}
+}

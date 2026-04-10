@@ -1,0 +1,59 @@
+---
+const steps = [
+	{
+		n: '01',
+		title: 'Definimos o problema',
+		text: 'Orçamento, espaço na cozinha e uso no dia a dia — definidos com clareza.',
+	},
+	{
+		n: '02',
+		title: 'Pesquisa caprichada',
+		text: 'Ficha técnica, reputação da marca e o que quem já comprou costuma contar.',
+	},
+	{
+		n: '03',
+		title: 'Conclusão e link',
+		text: 'Resumo com prós e contras e aviso claro quando o link é patrocinado.',
+	},
+];
+---
+
+<section class="relative overflow-hidden border-b border-white/10 bg-brand-950 py-24 lg:py-32">
+	<div class="pointer-events-none absolute left-0 top-1/2 h-[120%] w-px -translate-y-1/2 bg-gradient-to-b from-transparent via-pop/40 to-transparent" aria-hidden="true" />
+	<div class="mx-auto grid max-w-7xl gap-16 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-20 lg:px-8">
+		<div>
+			<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Como fazemos</p>
+			<h2 class="font-display mt-4 text-4xl font-extrabold leading-tight text-white sm:text-5xl">
+				3 passos.
+				<br />
+				<span class="text-white/40">Sem rodeios.</span>
+			</h2>
+			<div class="mt-14 space-y-4">
+				{steps.map((step) => (
+					<div class="flex gap-5 border border-white/10 bg-ink/80 p-6 backdrop-blur-sm transition hover:border-pop/40">
+						<span class="font-display flex h-16 w-16 shrink-0 items-center justify-center bg-pop text-xl font-black text-ink">
+							{step.n}
+						</span>
+						<div>
+							<h3 class="font-display text-lg font-extrabold text-white">{step.title}</h3>
+							<p class="mt-2 text-sm font-medium leading-relaxed text-white/55">{step.text}</p>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+		<div class="relative">
+			<div class="absolute -inset-4 bg-pop/10 blur-3xl" aria-hidden="true" />
+			<div class="relative aspect-[4/5] overflow-hidden ring-2 ring-pop/30">
+				<img
+					src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=1000&q=80"
+					alt="Fogão cooktop na bancada, preparo na cozinha"
+					class="h-full w-full object-cover grayscale contrast-125"
+					loading="lazy"
+					width="1000"
+					height="1250"
+				/>
+			</div>
+		</div>
+	</div>
+</section>

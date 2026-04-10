@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import LogoStrip from '../components/LogoStrip.astro';
+import HomeTopProducts from '../components/HomeTopProducts.astro';
+import HomeComparisonTable from '../components/HomeComparisonTable.astro';
+import HomeGuideSection from '../components/HomeGuideSection.astro';
+import BlogGrid from '../components/BlogGrid.astro';
+import HomeSeeAlso from '../components/HomeSeeAlso.astro';
+
+const allPosts = await getCollection('blog');
+const posts = allPosts
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 3);
+
+const metaDescription =
+	'Melhores fogões 5 bocas em 2026: lista dos melhores modelos, tabela comparativa e links para comprar. Foco em melhor fogão 5 bocas 2026, custo-benefício e reviews por marca.';
+---
+
+<BaseLayout
+	title="Melhores fogões 5 bocas em 2026 — Affiliate Pro"
+	description={metaDescription}
+>
+	<Hero />
+	<HomeTopProducts />
+	<HomeComparisonTable />
+	<HomeGuideSection />
+	<LogoStrip />
+	<BlogGrid
+		posts={posts}
+		title="Atualizações do blog"
+		subtitle="Textos para complementar a decisão — reviews e comparativos em linguagem direta."
+		showViewAllLink={true}
+	/>
+	<HomeSeeAlso />
+</BaseLayout>

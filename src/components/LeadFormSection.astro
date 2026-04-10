@@ -1,0 +1,63 @@
+<section id="contato" class="scroll-mt-24 relative py-20 lg:py-28">
+	<div
+		class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center"
+		aria-hidden="true"
+	/>
+	<div class="absolute inset-0 bg-brand-950/85" aria-hidden="true" />
+	<div class="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+		<div class="rounded-3xl bg-white p-8 shadow-2xl ring-1 ring-black/5 sm:p-10">
+			<h2 class="font-display text-center text-2xl font-bold text-brand-900 sm:text-3xl">Solicite uma análise ou parceria</h2>
+			<p class="mt-3 text-center text-sm text-brand-900/65">
+				Resposta em até 2 dias úteis. Os campos são de exemplo — no site publicado, conecte ao seu e-mail ou ferramenta de formulário.
+			</p>
+			<form class="mt-8 space-y-4" action="#" method="post">
+				<div class="grid gap-4 sm:grid-cols-2">
+					<label class="block text-sm font-medium text-brand-900/80">
+						Nome
+						<input
+							type="text"
+							name="name"
+							class="mt-1.5 w-full rounded-xl border border-black/10 bg-neutral-50 px-4 py-3 text-brand-900 outline-none ring-accent focus:ring-2"
+							placeholder="Seu nome"
+							autocomplete="name"
+						/>
+					</label>
+					<label class="block text-sm font-medium text-brand-900/80">
+						E-mail
+						<input
+							type="email"
+							name="email"
+							class="mt-1.5 w-full rounded-xl border border-black/10 bg-neutral-50 px-4 py-3 text-brand-900 outline-none ring-accent focus:ring-2"
+							placeholder="voce@email.com"
+							autocomplete="email"
+						/>
+					</label>
+				</div>
+				<label class="block text-sm font-medium text-brand-900/80">
+					Assunto
+					<input
+						type="text"
+						name="subject"
+						class="mt-1.5 w-full rounded-xl border border-black/10 bg-neutral-50 px-4 py-3 text-brand-900 outline-none ring-accent focus:ring-2"
+						placeholder="Ex.: parceria para análise de produto"
+					/>
+				</label>
+				<label class="block text-sm font-medium text-brand-900/80">
+					Mensagem
+					<textarea
+						name="message"
+						rows={4}
+						class="mt-1.5 w-full resize-y rounded-xl border border-black/10 bg-neutral-50 px-4 py-3 text-brand-900 outline-none ring-accent focus:ring-2"
+						placeholder="Conte rapidamente o que você precisa."
+					/>
+				</label>
+				<button
+					type="submit"
+					class="w-full rounded-full bg-brand-900 py-3.5 text-sm font-semibold text-white transition hover:bg-brand-800"
+				>
+					Enviar mensagem
+				</button>
+			</form>
+		</div>
+	</div>
+</section>

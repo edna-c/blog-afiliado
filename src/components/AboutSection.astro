@@ -1,0 +1,55 @@
+<section id="sobre" class="scroll-mt-24 border-b border-white/10 bg-brand-900 py-24 lg:py-32">
+	<div class="mx-auto grid max-w-7xl gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-20 lg:px-8">
+		<div class="relative">
+			<div class="absolute -left-4 top-8 hidden h-24 w-24 border-l-2 border-t-2 border-pop/50 sm:block" aria-hidden="true" />
+			<div class="aspect-[4/5] overflow-hidden bg-brand-800 ring-1 ring-pop/20">
+				<img
+					src="https://images.unsplash.com/photo-1584622650111-993a426fbf45?auto=format&fit=crop&w=900&q=80"
+					alt="Cozinha moderna com fogão e forno embutidos"
+					class="h-full w-full object-cover grayscale contrast-110"
+					loading="lazy"
+					width="900"
+					height="1125"
+				/>
+			</div>
+			<div class="absolute -bottom-8 -right-2 hidden w-2/5 overflow-hidden border-4 border-ink shadow-2xl ring-1 ring-pop/30 sm:block">
+				<img
+					src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=500&q=80"
+					alt="Bancada de cozinha com cooktop"
+					class="aspect-square w-full object-cover"
+					loading="lazy"
+					width="500"
+					height="500"
+				/>
+			</div>
+		</div>
+		<div>
+			<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Sobre</p>
+			<h2 class="font-display mt-4 text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl">
+				Texto de afiliado com método e transparência.
+			</h2>
+			<p class="mt-8 text-lg font-medium leading-relaxed text-white/55">
+				Cruzamos ficha técnica, preço e relatos de quem usa. A ideia é você comprar sabendo o que está levando para casa.
+			</p>
+			<ul class="mt-10 space-y-5">
+				{[
+					'Critérios de comparação explicados em cada texto',
+					'Preço e disponibilidade revisados com frequência',
+					'Aviso visível quando o link é patrocinado (afiliado)',
+				].map((item) => (
+					<li class="flex gap-4 text-white/85">
+						<span class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center bg-pop text-xs font-black text-ink">✓</span>
+						<span class="font-medium">{item}</span>
+					</li>
+				))}
+			</ul>
+			<a
+				href="/blog"
+				class="mt-12 inline-flex items-center gap-2 border-2 border-pop bg-transparent px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-pop transition hover:bg-pop hover:text-ink"
+			>
+				Ver artigos no blog
+				<span aria-hidden="true">→</span>
+			</a>
+		</div>
+	</div>
+</section>

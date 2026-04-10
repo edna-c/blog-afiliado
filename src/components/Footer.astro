@@ -1,0 +1,38 @@
+---
+const year = new Date().getFullYear();
+const links = [
+	{ href: '/sobre', label: 'Sobre' },
+	{ href: '/blog', label: 'Blog' },
+	{ href: '/contato', label: 'Contato' },
+	{ href: '/politica-de-afiliados', label: 'Política de Afiliados' },
+];
+---
+
+<footer class="border-t border-white/10 bg-ink-muted/50">
+	<div class="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-12 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+		<div>
+			<p class="font-display text-sm font-extrabold tracking-tight text-white">
+				AFFILIATE<span class="ml-1 text-pop">PRO</span>
+			</p>
+			<p class="mt-2 max-w-sm text-sm text-white/50">
+				Análises e comparativos de fogões para você decidir com mais segurança.
+			</p>
+			<p class="mt-4 text-xs text-white/40">
+				<a href="/contato" class="text-white/55 underline-offset-2 transition hover:text-pop hover:underline">
+					Quer alerta quando o preço mudar?
+				</a>{' '}
+				Deixe um recado.
+			</p>
+		</div>
+		<nav class="flex flex-wrap gap-x-8 gap-y-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/55" aria-label="Rodapé">
+			{links.map((item) => (
+				<a href={item.href} class="transition hover:text-pop">
+					{item.label}
+				</a>
+			))}
+		</nav>
+	</div>
+	<div class="border-t border-white/5 py-6 text-center text-xs text-white/40">
+		© {year} Affiliate Pro. Todos os direitos reservados.
+	</div>
+</footer>

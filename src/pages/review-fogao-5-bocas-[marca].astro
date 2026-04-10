@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+	return [
+		{
+			params: { marca: 'brastemp' },
+			props: {
+				title: 'Review: fogão 5 bocas Brastemp (BFS5NCR) — vale a pena?',
+				description:
+					'Review objetiva do fogão 5 bocas Brastemp: pontos fortes, armadilhas comuns e link para conferir preço atualizado.',
+				model: 'Brastemp BFS5NCR',
+				summary:
+					'Linha popular e fácil de achar: costuma equilibrar preço, forno útil e o básico bem resolvido. Confira no anúncio a versão exata — acabamento e acessórios mudam de um modelo para outro.',
+				offerUrl: 'https://example.com/afiliado/brastemp-bfs5ncr',
+			},
+		},
+		{
+			params: { marca: 'consul' },
+			props: {
+				title: 'Review: fogão 5 bocas Consul (CFS5NAB) — análise direta',
+				description:
+					'Review do fogão 5 bocas Consul focada em entrada sólida: para quem é, limitações e link para ver oferta.',
+				model: 'Consul CFS5NAB',
+				summary:
+					'Perfil “primeiro fogão bom”: costuma agradar quem quer menos firula e mais função. Se você cozinha muito pesado, compare forno e distância entre bocas com um modelo de linha acima antes de decidir.',
+				offerUrl: 'https://example.com/afiliado/consul-cfs5nab',
+			},
+		},
+		{
+			params: { marca: 'electrolux' },
+			props: {
+				title: 'Review: fogão 5 bocas Electrolux (76USQ) — recursos e pegadinhas',
+				description:
+					'Review do fogão 5 bocas Electrolux: acabamento, forno e para quem compensa o investimento — com link patrocinado.',
+				model: 'Electrolux 76USQ',
+				summary:
+					'Foco em acabamento e no dia a dia: faz sentido quando o visual importa e você usa forno de verdade. Confira na ficha do anúncio se vêm as funções que você quer.',
+				offerUrl: 'https://example.com/afiliado/electrolux-76usq',
+			},
+		},
+	];
+}
+
+interface Props {
+	title: string;
+	description: string;
+	model: string;
+	summary: string;
+	offerUrl: string;
+}
+
+const { title, description, model, summary, offerUrl } = Astro.props;
+const marca = Astro.params.marca;
+const marcaLabel = marca ? marca.charAt(0).toUpperCase() + marca.slice(1) : '';
+---
+
+<BaseLayout title={title} description={description}>
+	<article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+		<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Review · {marcaLabel}</p>
+		<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+			Fogão 5 bocas {marcaLabel}: análise para compra
+		</h1>
+		<p class="mt-2 text-sm text-white/45">
+			Modelo referência: <span class="text-white/70">{model}</span>
+		</p>
+		<p class="mt-6 text-lg text-white/55">
+			{summary}
+		</p>
+		<h2 class="font-display mt-12 text-xl font-bold text-white">Para quem esse fogão faz sentido</h2>
+		<ul class="mt-4 list-inside list-disc space-y-2 text-base text-white/65">
+			<li>Quer decidir rápido com critérios de segurança e forno, não só estética.</li>
+			<li>Prefere comparar preço agora e validar detalhes na página da loja.</li>
+			<li>
+				Ainda está na dúvida entre economia e recursos: veja{' '}
+				<a href="/fogao-5-bocas-custo-beneficio" class="font-semibold text-pop underline-offset-2 hover:underline">
+					custo-benefício
+				</a>{' '}
+				e o passo a passo em{' '}
+				<a href="/como-escolher-fogao-5-bocas" class="font-semibold text-pop underline-offset-2 hover:underline">
+					como escolher
+				</a>
+				.
+			</li>
+		</ul>
+		<div class="mt-12 flex flex-wrap gap-4">
+			<a
+				href={offerUrl}
+				class="inline-flex min-h-[48px] items-center justify-center bg-pop px-8 text-xs font-bold uppercase tracking-wider text-ink transition hover:bg-accent-hover"
+				rel="nofollow sponsored noopener"
+			>
+				Ver melhor preço
+			</a>
+			<a
+				href="/"
+				class="inline-flex min-h-[48px] items-center justify-center border border-white/20 px-8 text-xs font-bold uppercase tracking-wider text-white transition hover:border-pop hover:text-pop"
+			>
+				Voltar à lista na página inicial
+			</a>
+		</div>
+		<p class="mt-10 text-sm text-white/45">
+			Transparência: link de loja patrocinado. No guia{' '}
+			<a href="/melhor-fogao-5-bocas" class="text-pop underline-offset-2 hover:underline">melhor fogão 5 bocas</a> você lê o texto
+			completo com mais calma.
+		</p>
+	</article>
+</BaseLayout>
