@@ -55,26 +55,13 @@ const structuredDataJson = JSON.stringify(structuredData);
 			</h1>
 			<p class="mt-4 text-lg text-white/55">{post.data.description}</p>
 		</header>
-		{
-			post.data.heroImage && (
-				<figure class="mt-10 overflow-hidden rounded-2xl ring-1 ring-white/10">
-					<img
-						src={post.data.heroImage}
-						alt={`Ilustração relacionada ao artigo: ${post.data.title}`}
-						width={1200}
-						height={675}
-						loading="eager"
-						fetchpriority="high"
-						decoding="async"
-						class="h-auto w-full object-cover"
-					/>
-				</figure>
-			)
-		}
+		<figure class="mt-10 overflow-hidden rounded-2xl ring-1 ring-white/10">
+			<div class="aspect-[16/9] w-full bg-white/10" aria-hidden="true" />
+		</figure>
 		<div
 			class:list={[
 				'prose prose-invert prose-lg max-w-none prose-headings:font-display prose-a:text-pop prose-a:no-underline hover:prose-a:underline',
-				post.data.heroImage ? 'mt-10' : 'mt-12',
+				'mt-10',
 			]}
 		>
 			<Content />

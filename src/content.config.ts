@@ -10,7 +10,6 @@ const blog = defineCollection({
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
 		category: z.string(),
-		heroImage: z.string().optional(),
 		faq: z
 			.array(
 				z.object({

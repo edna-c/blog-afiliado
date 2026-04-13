@@ -29,20 +29,7 @@ const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short', y
 			{posts.map((post) => (
 				<article class="group flex flex-col overflow-hidden rounded-2xl bg-neutral-50 ring-1 ring-black/5 transition hover:shadow-lg">
 					<a href={`/blog/${post.id}/`} class="relative block aspect-[16/10] overflow-hidden bg-neutral-200">
-						{post.data.heroImage ? (
-							<img
-								src={post.data.heroImage}
-								alt=""
-								class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-								loading="lazy"
-								width="640"
-								height="400"
-							/>
-						) : (
-							<div class="flex h-full w-full items-center justify-center bg-gradient-to-br from-brand-900 to-accent text-white/40">
-								<span class="font-display text-sm font-semibold">Sem imagem de capa</span>
-							</div>
-						)}
+						<div class="h-full w-full bg-neutral-300/90" aria-hidden="true" />
 					</a>
 					<div class="flex flex-1 flex-col p-6">
 						<p class="text-xs font-medium uppercase tracking-wide text-brand-900/45">

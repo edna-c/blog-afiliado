@@ -3,7 +3,6 @@ title: 'Análise: fogão com mesa de vidro — vale a pena?'
 description: 'Prós (limpeza visual), contras (risco de trinca, manutenção) e para quem não recomendamos.'
 pubDate: 2026-02-22
 category: 'Review'
-heroImage: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=1200&q=80'
 ---
 
 ## Experiência real de uso

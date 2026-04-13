@@ -3,7 +3,6 @@ title: 'Melhor fogão 5 bocas em 2026: como escolher o modelo certo para sua coz
 description: 'Critérios práticos para achar o melhor fogão 5 bocas (custo-benefício, segurança e consumo). Comparativo 5×4 bocas, fogão × cooktop e aviso claro quando o link é patrocinado.'
 pubDate: 2026-04-07
 category: 'Guia'
-heroImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&h=675&q=80'
 faq:
   - question: 'Fogão 5 bocas vale a pena?'
     answer: 'Vale se você usa várias panelas ao mesmo tempo ou família maior. Se cozinha pouco e a bancada é curta, um 4 bocas bem escolhido pode ser suficiente — veja o comparativo no artigo.'

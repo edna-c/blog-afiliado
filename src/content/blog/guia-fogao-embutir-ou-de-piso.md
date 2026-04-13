@@ -3,7 +3,6 @@ title: 'Fogão de embutir ou de piso: como decidir em 10 minutos'
 description: 'Dicas simples de obra, ventilação, largura do móvel e quando o fogão de piso ainda é a opção mais simples.'
 pubDate: 2026-03-10
 category: 'Guia'
-heroImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80'
 ---
 
 ## Embutir exige planejamento
