@@ -1,13 +1,13 @@
-<section id="contato" class="scroll-mt-24 relative py-20 lg:py-28">
+<section id="contato" class="scroll-mt-24 relative py-20 lg:py-28" aria-labelledby="contato-form-heading">
 	<div class="absolute inset-0 bg-neutral-800" aria-hidden="true" />
 	<div class="absolute inset-0 bg-brand-950/85" aria-hidden="true" />
 	<div class="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
 		<div class="rounded-3xl bg-white p-8 shadow-2xl ring-1 ring-black/5 sm:p-10">
 			<h2 class="font-display text-center text-2xl font-bold text-brand-900 sm:text-3xl">Solicite uma análise ou parceria</h2>
-			<p class="mt-3 text-center text-sm text-brand-900/65">
+			<p class="mt-3 text-center text-sm text-brand-900/90">
 				Resposta em até 2 dias úteis. Os campos são de exemplo — no site publicado, conecte ao seu e-mail ou ferramenta de formulário.
 			</p>
-			<form class="mt-8 space-y-4" action="#" method="post">
+			<form class="mt-8 space-y-4" action="#" method="post" aria-labelledby="contato-form-heading">
 				<div class="grid gap-4 sm:grid-cols-2">
 					<label class="block text-sm font-medium text-brand-900/80">
 						Nome
@@ -51,6 +51,7 @@
 				<button
 					type="submit"
 					class="w-full rounded-full bg-brand-900 py-3.5 text-sm font-semibold text-white transition hover:bg-brand-800"
+					aria-label="Enviar formulário de contato com análise ou parceria"
 				>
 					Enviar mensagem
 				</button>

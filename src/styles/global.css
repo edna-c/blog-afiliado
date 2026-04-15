@@ -21,6 +21,85 @@
 	body {
 		@apply bg-ink text-white antialiased font-sans;
 	}
+
+	/* Foco visível para teclado (não altera aparência do clique com mouse) */
+	:focus:not(:focus-visible) {
+		outline: none;
+	}
+	:focus-visible {
+		outline: 2px solid var(--color-pop);
+		outline-offset: 2px;
+	}
+
+	.skip-link {
+		position: absolute;
+		left: -9999px;
+		top: 0.75rem;
+		z-index: 100;
+		padding: 0.65rem 1rem;
+		background: var(--color-pop);
+		color: var(--color-ink);
+		font-weight: 700;
+		font-size: 0.875rem;
+		text-decoration: none;
+		border-radius: 0.125rem;
+	}
+	.skip-link:focus {
+		left: 0.75rem;
+		outline: 2px solid var(--color-pop);
+		outline-offset: 2px;
+	}
+
+	/*
+	 * Em telas pequenas o menu não aparece no layout, mas permanece no DOM para leitores de tela
+	 * e teclado: cada link recebe posição fixa ao receber :focus-visible.
+	 */
+	@media (max-width: 767px) {
+		.header-site-nav {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			padding: 0;
+			margin: -1px;
+			overflow: hidden;
+			clip: rect(0, 0, 0, 0);
+			white-space: nowrap;
+			border-width: 0;
+		}
+
+		.header-site-nav a:focus-visible {
+			position: fixed;
+			left: 0.75rem;
+			top: 4.75rem;
+			z-index: 100;
+			clip: auto;
+			width: auto;
+			height: auto;
+			padding: 0.5rem 0.85rem;
+			margin: 0;
+			overflow: visible;
+			white-space: nowrap;
+			background: var(--color-ink);
+			color: #fff;
+			border: 2px solid var(--color-pop);
+			outline: none;
+		}
+	}
+
+	@media (min-width: 768px) {
+		.header-site-nav {
+			position: static;
+			display: flex;
+			width: auto;
+			height: auto;
+			padding: 0;
+			margin: 0;
+			overflow: visible;
+			clip: auto;
+			white-space: normal;
+			border-width: 0;
+		}
+	}
 }
 
 @layer utilities {

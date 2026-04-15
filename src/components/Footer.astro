@@ -1,10 +1,10 @@
 ---
 const year = new Date().getFullYear();
 const links = [
-	{ href: '/sobre', label: 'Sobre' },
-	{ href: '/blog', label: 'Blog' },
-	{ href: '/contato', label: 'Contato' },
-	{ href: '/politica-de-afiliados', label: 'Política de Afiliados' },
+	{ href: '/sobre', label: 'Sobre', ariaLabel: 'Sobre o site Affiliate Pro' },
+	{ href: '/blog', label: 'Blog', ariaLabel: 'Blog com artigos e comparativos de fogões' },
+	{ href: '/contato', label: 'Contato', ariaLabel: 'Página de contato' },
+	{ href: '/politica-de-afiliados', label: 'Política de Afiliados', ariaLabel: 'Política de links de afiliados' },
 ];
 ---
 
@@ -14,25 +14,32 @@ const links = [
 			<p class="font-display text-sm font-extrabold tracking-tight text-white">
 				AFFILIATE<span class="ml-1 text-pop">PRO</span>
 			</p>
-			<p class="mt-2 max-w-sm text-sm text-white/50">
+			<p class="mt-2 max-w-sm text-sm text-white/90">
 				Análises e comparativos de fogões para você decidir com mais segurança.
 			</p>
-			<p class="mt-4 text-xs text-white/40">
-				<a href="/contato" class="text-white/55 underline-offset-2 transition hover:text-pop hover:underline">
+			<p class="mt-2 max-w-sm text-xs leading-relaxed text-white/80">
+				Compare os melhores fogões antes de comprar e escolha com segurança.
+			</p>
+			<p class="mt-4 text-xs text-white/80">
+				<a
+					href="/contato"
+					class="text-white/90 underline-offset-2 transition hover:text-pop hover:underline"
+					aria-label="Pedir alerta de preço ou enviar recado pela página de contato"
+				>
 					Quer alerta quando o preço mudar?
 				</a>{' '}
 				Deixe um recado.
 			</p>
 		</div>
-		<nav class="flex flex-wrap gap-x-8 gap-y-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/55" aria-label="Rodapé">
+		<nav class="flex flex-wrap gap-x-8 gap-y-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/80" aria-label="Rodapé">
 			{links.map((item) => (
-				<a href={item.href} class="transition hover:text-pop">
+				<a href={item.href} class="transition hover:text-pop" aria-label={item.ariaLabel}>
 					{item.label}
 				</a>
 			))}
 		</nav>
 	</div>
-	<div class="border-t border-white/5 py-6 text-center text-xs text-white/40">
+	<div class="border-t border-white/5 py-6 text-center text-xs text-white/80">
 		© {year} Affiliate Pro. Todos os direitos reservados.
 	</div>
 </footer>

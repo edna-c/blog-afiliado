@@ -1,12 +1,18 @@
-<section id="newsletter" class="scroll-mt-24 bg-brand-900 py-14">
+<section id="newsletter" class="scroll-mt-24 bg-brand-900 py-14" aria-labelledby="newsletter-heading">
 	<div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 px-4 sm:flex-row sm:px-6 lg:px-8">
 		<div class="max-w-xl text-center sm:text-left">
-			<h2 class="font-display text-2xl font-bold text-white sm:text-3xl">Receba comparativos por e-mail</h2>
-			<p class="mt-2 text-sm text-white/65">
+			<h2 id="newsletter-heading" class="font-display text-2xl font-bold text-white sm:text-3xl">Receba comparativos por e-mail</h2>
+			<p id="newsletter-desc" class="mt-2 text-sm text-white/90">
 				Sem spam; você cancela quando quiser. (No site ao vivo, o dono do site liga este formulário ao serviço de e-mail dele.)
 			</p>
 		</div>
-		<form class="flex w-full max-w-md flex-col gap-3 sm:flex-row sm:items-center" action="#" method="post">
+		<form
+			class="flex w-full max-w-md flex-col gap-3 sm:flex-row sm:items-center"
+			action="#"
+			method="post"
+			aria-labelledby="newsletter-heading"
+			aria-describedby="newsletter-desc"
+		>
 			<label class="sr-only" for="newsletter-email">E-mail</label>
 			<input
 				id="newsletter-email"
@@ -14,13 +20,14 @@
 				name="email"
 				required
 				placeholder="seu@email.com"
-				class="w-full rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm text-white placeholder:text-white/45 outline-none ring-2 ring-transparent focus:border-white/40 focus:ring-white/20"
+				class="w-full rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm text-white placeholder:text-white/70 outline-none ring-2 ring-transparent focus:border-white/40 focus:ring-white/20"
 			/>
 			<button
 				type="submit"
 				class="shrink-0 rounded-full bg-white px-6 py-3 text-sm font-semibold text-brand-900 transition hover:bg-white/90"
+				aria-label="Confirmar inscrição para receber comparativos por e-mail"
 			>
-				Inscrever
+				Receber comparativos por e-mail
 			</button>
 		</form>
 	</div>

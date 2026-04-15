@@ -24,7 +24,7 @@ const products: Product[] = [
 	},
 	{
 		name: 'Consul CFS5NAB',
-		tagline: 'Entrada sólida',
+		tagline: 'Mais vendido',
 		highlight:
 			'Ótima escolha para quem quer economizar sem abrir mão do básico bem feito. 👉 Simples, funcional e resolve bem o dia a dia.',
 		benefits: ['Sem complicação na rotina', 'Boa para cozinha média', 'Preço honesto pelo que entrega'],
@@ -35,7 +35,7 @@ const products: Product[] = [
 	},
 	{
 		name: 'Electrolux 76USQ',
-		tagline: 'Mais recursos',
+		tagline: 'Melhor para famílias',
 		highlight:
 			'Linha com mais recursos e acabamento caprichado — bom para quem cozinha bastante e quer forno e mesa com “cara” de cozinha arrumada. 👉 Indicado para quem usa o fogão pesado no dia a dia.',
 		benefits: ['Acabamento que valoriza a cozinha', 'Forno com funções a mais (varia por modelo)', 'Pra quem cozinha pesado e quer folga'],
@@ -47,15 +47,27 @@ const products: Product[] = [
 ];
 ---
 
-<section id="top-produtos" class="scroll-mt-24 border-b border-white/10 bg-brand-900/40 py-16 lg:py-20">
+<section
+	id="top-produtos"
+	class="scroll-mt-24 border-b border-white/10 bg-brand-900/40 py-16 lg:py-20"
+	aria-labelledby="top-produtos-heading"
+>
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 		<div class="max-w-3xl">
 			<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Escolha rápida</p>
-			<h2 class="font-display mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+			<h2 id="top-produtos-heading" class="font-display mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
 				Lista dos melhores modelos — comparativo direto
 			</h2>
-			<p class="mt-3 text-sm text-white/55">
-				Alguns links podem gerar ganhos para o site, sem custo para você. Preço muda o tempo todo — confira sempre na hora de comprar.
+			<p class="mt-3 text-sm text-white/90">
+				Alguns links podem gerar ganhos para o site, sem custo para você. Preço muda o tempo todo — confira sempre na hora de comprar. Os critérios por trás desta lista estão no{' '}
+				<a href="/melhor-fogao-5-bocas" class="font-semibold text-pop underline-offset-2 hover:underline">
+					guia melhor fogão 5 bocas
+				</a>
+				; se preferir um roteiro, use o{' '}
+				<a href="/como-escolher-fogao-5-bocas" class="font-semibold text-pop underline-offset-2 hover:underline">
+					guia de compra passo a passo
+				</a>
+				.
 			</p>
 		</div>
 		<div class="mt-12 grid gap-6 lg:grid-cols-3">
@@ -64,17 +76,17 @@ const products: Product[] = [
 					<article class="flex flex-col border border-white/10 bg-ink/80 p-6 ring-1 ring-white/5 transition hover:border-pop/35 hover:ring-pop/20">
 						<p class="text-[10px] font-bold uppercase tracking-[0.25em] text-pop">{p.tagline}</p>
 						<h3 class="font-display mt-3 text-xl font-bold text-white">{p.name}</h3>
-						<p class="mt-2 text-sm text-white/60">
+						<p class="mt-2 text-sm text-white/90">
 							{p.highlight}{' '}
 							<a
 								href={`/review-fogao-5-bocas-${p.reviewSlug}`}
 								class="font-semibold text-pop underline-offset-2 hover:underline"
 							>
-								Ver avaliação completa
+								Ver avaliação completa — {p.name}
 							</a>
 							.
 						</p>
-						<ul class="mt-4 list-inside list-disc space-y-1.5 text-sm text-white/70">
+						<ul class="mt-4 list-inside list-disc space-y-1.5 text-sm text-white/80">
 							{p.benefits.map((b) => (
 								<li>{b}</li>
 							))}
@@ -85,16 +97,24 @@ const products: Product[] = [
 								class="inline-flex min-h-[48px] flex-1 items-center justify-center bg-pop px-5 text-center text-xs font-bold uppercase tracking-wider text-ink transition hover:bg-accent-hover"
 								target={p.name === 'Brastemp BFS5NCR' ? '_blank' : undefined}
 								rel="nofollow sponsored noopener"
+								aria-label={
+									p.name === 'Brastemp BFS5NCR'
+										? `Ver preço e oferta do fogão ${p.name} no Mercado Livre (abre em nova aba)`
+										: `Ver preço e compra do fogão ${p.name} na loja parceira (link patrocinado)`
+								}
 							>
-								🔥 Ver preço no Mercado Livre
+								{p.name === 'Brastemp BFS5NCR'
+									? `🔥 Ver oferta no Mercado Livre — ${p.name}`
+									: `🔥 Ver preço e compra — ${p.name}`}
 							</a>
 							<a
 								href={p.shopeeUrl}
 								class="inline-flex min-h-[48px] flex-1 items-center justify-center border border-white/20 px-5 text-center text-xs font-bold uppercase tracking-wider text-white transition hover:border-pop hover:text-pop"
 								target={p.name === 'Brastemp BFS5NCR' ? '_blank' : undefined}
 								rel="nofollow sponsored noopener"
+								aria-label={`Ver oferta do fogão ${p.name} na Shopee (abre em nova aba)`}
 							>
-								🛒 Ver mais barato na Shopee
+								🛒 Ver oferta na Shopee — {p.name}
 							</a>
 						</div>
 					</article>

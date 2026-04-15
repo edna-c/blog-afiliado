@@ -26,8 +26,9 @@ const {
 		<title>{title}</title>
 	</head>
 	<body class="flex min-h-screen flex-col bg-ink text-white">
+		<a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
 		<Header />
-		<main class="flex-1">
+		<main id="conteudo-principal" class="flex-1" tabindex="-1">
 			<slot />
 		</main>
 		<Footer />
