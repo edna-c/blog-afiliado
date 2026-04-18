@@ -50,10 +50,10 @@ const structuredDataJson = JSON.stringify(structuredData);
 			<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">
 				{post.data.category} · {fmt.format(post.data.pubDate)}
 			</p>
-			<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
+			<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl lg:text-5xl">
 				{post.data.title}
 			</h1>
-			<p class="mt-4 text-lg text-white/90">{post.data.description}</p>
+			<p class="mt-4 text-lg text-on-ink-body">{post.data.description}</p>
 		</header>
 		<figure class="mt-10 overflow-hidden rounded-2xl ring-1 ring-white/10">
 			<div class="aspect-[16/9] w-full bg-white/10" aria-hidden="true" />
@@ -69,14 +69,14 @@ const structuredDataJson = JSON.stringify(structuredData);
 		{
 			faq?.length ? (
 				<section class="mt-14 border-t border-white/10 pt-12" aria-labelledby="faq-heading">
-					<h2 id="faq-heading" class="font-display text-2xl font-bold tracking-tight text-white">
+					<h2 id="faq-heading" class="font-display text-2xl font-bold tracking-tight text-on-ink-body">
 						Perguntas frequentes
 					</h2>
 					<dl class="mt-8 space-y-8">
 						{faq.map((item) => (
 							<div>
-								<dt class="font-semibold text-white">{item.question}</dt>
-								<dd class="mt-2 text-base text-white/90">{item.answer}</dd>
+								<dt class="font-semibold text-on-ink-body">{item.question}</dt>
+								<dd class="mt-2 text-base text-on-ink-body">{item.answer}</dd>
 							</div>
 						))}
 					</dl>
@@ -84,7 +84,7 @@ const structuredDataJson = JSON.stringify(structuredData);
 			) : null
 		}
 		<script type="application/ld+json" set:html={structuredDataJson} />
-		<p class="mt-12 border-t border-white/10 pt-8 text-sm text-white/80">
+		<p class="mt-12 border-t border-white/10 pt-8 text-sm text-on-ink-muted">
 			<a href="/blog" class="text-pop transition hover:text-accent-hover" aria-label="Voltar à listagem do blog">
 				← Voltar ao blog
 			</a>

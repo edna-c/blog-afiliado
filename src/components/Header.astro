@@ -1,34 +1,51 @@
 ---
-const nav = [
-	{ href: '/', label: 'Início', ariaLabel: 'Página inicial com lista de fogões 5 bocas' },
-	{ href: '/sobre', label: 'Sobre', ariaLabel: 'Sobre o site Affiliate Pro' },
-	{ href: '/blog', label: 'Blog', ariaLabel: 'Blog com artigos e guias' },
-	{ href: '/contato', label: 'Contato', ariaLabel: 'Página de contato' },
-];
+import { isNavActive } from '../utils/isNavActive';
+import HeaderPrimaryNavLinks from './HeaderPrimaryNavLinks.astro';
+
+const pathname = Astro.url.pathname;
 ---
 
 <header class="sticky top-0 z-50 border-b border-white/10 bg-ink/85 backdrop-blur-xl">
 	<div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
 		<a href="/" class="group font-display text-lg font-extrabold tracking-tight sm:text-xl" aria-label="Affiliate Pro — página inicial">
-			<span class="text-white">AFFILIATE</span>
+			<span class="text-on-ink-body">AFFILIATE</span>
 			<span class="ml-1 text-pop transition group-hover:text-accent-hover">PRO</span>
 		</a>
 		<nav
-			class="header-site-nav items-center gap-8 text-xs font-semibold uppercase tracking-[0.2em] text-white/80"
+			class="hidden items-center gap-8 text-xs font-semibold uppercase tracking-[0.2em] text-on-ink-muted md:flex"
 			aria-label="Principal"
 		>
-			{nav.map((item) => (
-				<a href={item.href} class="transition hover:text-pop" aria-label={item.ariaLabel}>
-					{item.label}
-				</a>
-			))}
+			<HeaderPrimaryNavLinks pathname={pathname} />
 		</nav>
-		<a
-			href="/contato"
-			class="ring-pop rounded-none bg-pop px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-ink transition hover:bg-accent-hover"
-			aria-label="Abrir página de contato para enviar mensagem"
-		>
-			Enviar mensagem
-		</a>
+		<div class="flex shrink-0 items-center gap-3">
+			<details class="relative z-50 md:hidden">
+				<summary
+					class="flex cursor-pointer list-none items-center justify-center gap-2 rounded border border-white/15 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-on-ink-muted transition hover:border-pop hover:text-on-ink-body [&::-webkit-details-marker]:hidden"
+				>
+					<span>Menu</span>
+					<span class="text-pop" aria-hidden="true">▾</span>
+				</summary>
+				<div
+					class="absolute right-0 top-full mt-2 min-w-[13rem] rounded-md border border-white/10 bg-ink p-2 shadow-xl ring-1 ring-white/10"
+				>
+					<nav class="flex flex-col gap-0.5" aria-label="Principal">
+						<HeaderPrimaryNavLinks
+							pathname={pathname}
+							linkBaseClass="block rounded px-3 py-2.5 text-sm font-semibold uppercase tracking-[0.15em] text-on-ink-muted hover:bg-white/5 hover:text-pop"
+						/>
+					</nav>
+				</div>
+			</details>
+			<a
+				href="/contato"
+				class:list={[
+					'ring-pop rounded-none px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-ink transition hover:bg-accent-hover',
+					isNavActive(pathname, '/contato') ? 'bg-accent-hover ring-2 ring-pop' : 'bg-pop',
+				]}
+				aria-label="Abrir página de contato para enviar mensagem"
+			>
+				Enviar mensagem
+			</a>
+		</div>
 	</div>
 </header>

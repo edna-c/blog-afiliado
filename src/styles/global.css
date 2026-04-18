@@ -9,6 +9,12 @@
 	--color-brand-950: #0a0a0c;
 	--color-brand-900: #0f1117;
 	--color-brand-800: #1a1d26;
+	/* Texto secundário sobre fundos escuros (≥4.5:1 em relação ao ink) */
+	--color-on-ink-muted: #d4d4d8;
+	--color-on-ink-body: #f4f4f5;
+	/* Destaque em fundo claro: lima direta falha contraste; uso escuro da mesma família */
+	--color-accent-on-light: #2a3310;
+	--color-accent-on-light-hover: #1a1f0a;
 	--color-accent: #dfff1f;
 	--color-accent-hover: #ecff52;
 	--color-pop: #dfff1f;
@@ -19,7 +25,7 @@
 		scroll-behavior: smooth;
 	}
 	body {
-		@apply bg-ink text-white antialiased font-sans;
+		@apply bg-ink text-on-ink-body antialiased font-sans;
 	}
 
 	/* Foco visível para teclado (não altera aparência do clique com mouse) */
@@ -50,56 +56,6 @@
 		outline-offset: 2px;
 	}
 
-	/*
-	 * Em telas pequenas o menu não aparece no layout, mas permanece no DOM para leitores de tela
-	 * e teclado: cada link recebe posição fixa ao receber :focus-visible.
-	 */
-	@media (max-width: 767px) {
-		.header-site-nav {
-			position: absolute;
-			width: 1px;
-			height: 1px;
-			padding: 0;
-			margin: -1px;
-			overflow: hidden;
-			clip: rect(0, 0, 0, 0);
-			white-space: nowrap;
-			border-width: 0;
-		}
-
-		.header-site-nav a:focus-visible {
-			position: fixed;
-			left: 0.75rem;
-			top: 4.75rem;
-			z-index: 100;
-			clip: auto;
-			width: auto;
-			height: auto;
-			padding: 0.5rem 0.85rem;
-			margin: 0;
-			overflow: visible;
-			white-space: nowrap;
-			background: var(--color-ink);
-			color: #fff;
-			border: 2px solid var(--color-pop);
-			outline: none;
-		}
-	}
-
-	@media (min-width: 768px) {
-		.header-site-nav {
-			position: static;
-			display: flex;
-			width: auto;
-			height: auto;
-			padding: 0;
-			margin: 0;
-			overflow: visible;
-			clip: auto;
-			white-space: normal;
-			border-width: 0;
-		}
-	}
 }
 
 @layer utilities {

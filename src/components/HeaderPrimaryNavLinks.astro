@@ -1,0 +1,33 @@
+---
+import { isNavActive } from '../utils/isNavActive';
+import { primaryNav } from '../data/navigation';
+
+interface Props {
+	pathname: string;
+	linkBaseClass?: string;
+}
+
+const { pathname, linkBaseClass = '' } = Astro.props;
+---
+
+{
+	primaryNav.map((item) => {
+		const active = isNavActive(pathname, item.href);
+		return (
+			<a
+				href={item.href}
+				class:list={[
+					linkBaseClass,
+					'transition',
+					active
+						? 'text-pop underline decoration-pop decoration-2 underline-offset-[0.28em]'
+						: 'hover:text-pop',
+				]}
+				aria-label={item.ariaLabel}
+				aria-current={active ? 'page' : undefined}
+			>
+				{item.label}
+			</a>
+		);
+	})
+}
