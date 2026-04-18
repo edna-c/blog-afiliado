@@ -1,6 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, render } from 'astro:content';
+import { Picture } from 'astro:assets';
+import blogHeroImage from '../../assets/blog/blog-hero-electrolux-cozinha.png';
+
+const blogHeroAlt =
+	'Cozinha moderna com fogão Electrolux de quatro bocas preto com porta de vidro, integrado entre armários escuros e bancada de granito.';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -55,8 +60,22 @@ const structuredDataJson = JSON.stringify(structuredData);
 			</h1>
 			<p class="mt-4 text-lg text-on-ink-body">{post.data.description}</p>
 		</header>
-		<figure class="mt-10 overflow-hidden rounded-2xl ring-1 ring-white/10">
-			<div class="aspect-[16/9] w-full bg-white/10" aria-hidden="true" />
+		<figure
+			class="mt-10 overflow-hidden rounded-[12px] shadow-[0_10px_30px_rgba(0,0,0,0.4)] ring-1 ring-white/10"
+		>
+			<div class="aspect-[16/9] w-full bg-white/5">
+				<Picture
+					src={blogHeroImage}
+					alt={blogHeroAlt}
+					formats={['avif', 'webp']}
+					widths={[640, 768, 960, 1152]}
+					sizes="(max-width: 768px) 100vw, 768px"
+					quality={80}
+					priority
+					class="h-full w-full object-cover"
+					pictureAttributes={{ class: 'block h-full w-full' }}
+				/>
+			</div>
 		</figure>
 		<div
 			class:list={[
