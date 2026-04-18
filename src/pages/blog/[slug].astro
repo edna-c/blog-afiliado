@@ -5,7 +5,7 @@ import { Picture } from 'astro:assets';
 import blogHeroImage from '../../assets/blog/blog-hero-electrolux-cozinha.png';
 
 const blogHeroAlt =
-	'Cozinha moderna com fogão Electrolux de quatro bocas preto com porta de vidro, integrado entre armários escuros e bancada de granito.';
+	'Cozinha moderna com fogão Electrolux de cinco bocas preto com porta de vidro, integrado entre armários escuros e bancada de granito.';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -63,18 +63,20 @@ const structuredDataJson = JSON.stringify(structuredData);
 		<figure
 			class="mt-10 overflow-hidden rounded-[12px] shadow-[0_10px_30px_rgba(0,0,0,0.4)] ring-1 ring-white/10"
 		>
-			<div class="aspect-[16/9] w-full bg-white/5">
-				<Picture
-					src={blogHeroImage}
-					alt={blogHeroAlt}
-					formats={['avif', 'webp']}
-					widths={[640, 768, 960, 1152]}
-					sizes="(max-width: 768px) 100vw, 768px"
-					quality={80}
-					priority
-					class="h-full w-full object-cover"
-					pictureAttributes={{ class: 'block h-full w-full' }}
-				/>
+			<div class="relative aspect-[16/9] w-full bg-white/5">
+				<span class="absolute inset-0 block overflow-hidden">
+					<Picture
+						src={blogHeroImage}
+						alt={blogHeroAlt}
+						formats={['avif', 'webp']}
+						widths={[640, 768, 960, 1152]}
+						sizes="(max-width: 768px) 100vw, 768px"
+						quality={80}
+						priority
+						class="h-full w-full object-cover"
+						pictureAttributes={{ class: 'absolute inset-0 block h-full w-full [&>img]:h-full [&>img]:w-full [&>img]:object-cover' }}
+					/>
+				</span>
 			</div>
 		</figure>
 		<div

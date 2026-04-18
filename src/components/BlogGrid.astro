@@ -4,7 +4,7 @@ import { Picture } from 'astro:assets';
 import blogHeroImage from '../assets/blog/blog-hero-electrolux-cozinha.png';
 
 const blogHeroAlt =
-	'Cozinha moderna com fogão Electrolux de quatro bocas preto com porta de vidro, integrado entre armários escuros e bancada de granito.';
+	'Cozinha moderna com fogão Electrolux de cinco bocas preto com porta de vidro, integrado entre armários escuros e bancada de granito.';
 
 const thumbShadow = 'shadow-[0_10px_30px_rgba(0,0,0,0.4)]';
 
@@ -44,16 +44,18 @@ const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short', y
 						aria-label={`Abrir artigo no blog: ${post.data.title}`}
 					>
 						{index === 0 ? (
-							<Picture
-								src={blogHeroImage}
-								alt=""
-								formats={['avif', 'webp']}
-								widths={[400, 560, 720, 960]}
-								sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-								quality={78}
-								class="h-full w-full object-cover"
-								pictureAttributes={{ class: 'block h-full w-full' }}
-							/>
+							<span class="absolute inset-0 block overflow-hidden">
+								<Picture
+									src={blogHeroImage}
+									alt=""
+									formats={['avif', 'webp']}
+									widths={[400, 560, 720, 960]}
+									sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+									quality={78}
+									class="h-full w-full object-cover"
+									pictureAttributes={{ class: 'absolute inset-0 block h-full w-full [&>img]:h-full [&>img]:w-full [&>img]:object-cover' }}
+								/>
+							</span>
 						) : (
 							<div class="h-full w-full bg-neutral-300/90" aria-hidden="true" />
 						)}
