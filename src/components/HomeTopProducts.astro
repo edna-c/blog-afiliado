@@ -8,6 +8,8 @@ export interface Product {
 	reviewSlug: string;
 	offerUrl: string;
 	shopeeUrl: string;
+	image?: string;
+	imageAlt?: string;
 }
 
 const products: Product[] = [
@@ -21,6 +23,8 @@ const products: Product[] = [
 		reviewSlug: 'brastemp',
 		offerUrl: 'https://example.com/afiliado/brastemp-bfs5ncr',
 		shopeeUrl: 'https://s.shopee.com.br/2qQVdcWHwK',
+		image: '/images/fogao-brastemp-bfs5ncr.webp',
+		imageAlt: 'Fogão a gás Brastemp BFS5NCR cinco bocas em inox',
 	},
 	{
 		name: 'Consul CFS5NAB',
@@ -32,9 +36,11 @@ const products: Product[] = [
 		reviewSlug: 'consul',
 		offerUrl: 'https://example.com/afiliado/consul-cfs5nab',
 		shopeeUrl: 'https://example.com/afiliado/shopee/consul-cfs5nab',
+		image: '/images/fogao-consul-cfs5nab.webp',
+		imageAlt: 'Fogão a gás Consul CFS5NAB cinco bocas em inox com tampa de vidro',
 	},
 	{
-		name: 'Electrolux 76USQ',
+		name: 'Electrolux 76EXV',
 		tagline: 'Melhor para famílias',
 		highlight:
 			'Linha com mais recursos e acabamento caprichado — bom para quem cozinha bastante e quer forno e mesa com “cara” de cozinha arrumada. 👉 Indicado para quem usa o fogão pesado no dia a dia.',
@@ -43,6 +49,8 @@ const products: Product[] = [
 		reviewSlug: 'electrolux',
 		offerUrl: 'https://example.com/afiliado/electrolux-76usq',
 		shopeeUrl: 'https://example.com/afiliado/shopee/electrolux-76usq',
+		image: '/images/fogao-electrolux-76usq.webp',
+		imageAlt: 'Fogão a gás Electrolux 76EXV cinco bocas em inox com mesa de vidro e forno com porta em vidro',
 	},
 ];
 ---
@@ -74,18 +82,52 @@ const products: Product[] = [
 			{
 				products.map((p) => (
 					<article class="flex flex-col border border-white/10 bg-ink/80 p-6 ring-1 ring-white/5 transition hover:border-pop/35 hover:ring-pop/20">
-						<p class="text-[10px] font-bold uppercase tracking-[0.25em] text-pop">{p.tagline}</p>
-						<h3 class="font-display mt-3 text-xl font-bold text-on-ink-body">{p.name}</h3>
-						<p class="mt-2 text-sm text-on-ink-body">
-							{p.highlight}{' '}
-							<a
-								href={`/review-fogao-5-bocas-${p.reviewSlug}`}
-								class="font-semibold text-pop underline-offset-2 hover:underline"
-							>
-								Ver avaliação completa — {p.name}
-							</a>
-							.
-						</p>
+						{p.image ? (
+							<>
+								<div class="flex h-[12.5rem] shrink-0 flex-col lg:h-[14rem]">
+									<p class="shrink-0 text-[10px] font-bold uppercase tracking-[0.25em] text-pop">{p.tagline}</p>
+									<p class="mt-3 min-h-0 flex-1 basis-0 overflow-y-auto text-sm leading-relaxed text-on-ink-body">
+										{p.highlight}{' '}
+										<a
+											href={`/review-fogao-5-bocas-${p.reviewSlug}`}
+											class="font-semibold text-pop underline-offset-2 hover:underline"
+										>
+											Ver avaliação completa — {p.name}
+										</a>
+										.
+									</p>
+								</div>
+								<div
+									class="-mt-1 mb-3 box-border flex h-[200px] w-full shrink-0 items-start justify-center rounded-xl bg-white p-3 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_5px_14px_-4px_rgba(15,23,42,0.055)] ring-1 ring-zinc-900/10"
+								>
+									<img
+										class="max-h-full max-w-full object-contain"
+										src={p.image}
+										alt={p.imageAlt ?? ''}
+										width="300"
+										height="300"
+										loading="lazy"
+										style="object-fit:contain;"
+									/>
+								</div>
+								<h3 class="font-display mt-3 text-xl font-bold text-on-ink-body">{p.name}</h3>
+							</>
+						) : (
+							<>
+								<p class="text-[10px] font-bold uppercase tracking-[0.25em] text-pop">{p.tagline}</p>
+								<h3 class="font-display mt-3 text-xl font-bold text-on-ink-body">{p.name}</h3>
+								<p class="mt-2 text-sm text-on-ink-body">
+									{p.highlight}{' '}
+									<a
+										href={`/review-fogao-5-bocas-${p.reviewSlug}`}
+										class="font-semibold text-pop underline-offset-2 hover:underline"
+									>
+										Ver avaliação completa — {p.name}
+									</a>
+									.
+								</p>
+							</>
+						)}
 						<ul class="mt-4 list-inside list-disc space-y-1.5 text-sm text-on-ink-muted">
 							{p.benefits.map((b) => (
 								<li>{b}</li>
