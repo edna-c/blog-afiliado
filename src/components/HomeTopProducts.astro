@@ -11,6 +11,9 @@ export interface Product {
 	reviewSlug: string;
 	mercadoLivreUrl: string;
 	shopeeUrl: string;
+	/** Rótulos opcionais dos CTAs de loja (só onde o copy for específico). */
+	mlCtaText?: string;
+	shopeeCtaText?: string;
 	image?: string;
 	imageAlt?: string;
 }
@@ -47,8 +50,11 @@ const products: Product[] = [
 		],
 		socialProof: '✔ Mais de 1.000 avaliações',
 		reviewSlug: 'consul',
-		mercadoLivreUrl: 'https://example.com/afiliado/mercado-livre/consul-cfs5nab',
-		shopeeUrl: 'https://example.com/afiliado/shopee/consul-cfs5nab',
+		mercadoLivreUrl:
+			'https://www.mercadolivre.com.br/fogo-de-piso-5-bocas-consul-cfs5nar-acendimento-automatico-cor-inox/p/MLB15295566?matt_tool=38524122',
+		shopeeUrl: 'https://s.shopee.com.br/1gExh55W8A?lp=aff',
+		mlCtaText: 'VER PREÇO NO MERCADO LIVRE',
+		shopeeCtaText: 'VER OFERTA NA SHOPEE',
 		image: '/images/fogao-consul-cfs5nab.webp',
 		imageAlt: 'Fogão a gás Consul CFS5NAB cinco bocas em inox com tampa de vidro',
 	},
@@ -167,7 +173,7 @@ const badgeToneClass: Record<ProductBadgeTone, string> = {
 										aria-label={`Ver preço do fogão ${p.name} no Mercado Livre — abre em nova aba (link patrocinado)`}
 									>
 										<span aria-hidden="true">👉</span>
-										Ver preço no Mercado Livre
+										{p.mlCtaText ?? 'Ver preço no Mercado Livre'}
 									</a>
 									<a
 										href={p.shopeeUrl}
@@ -177,7 +183,7 @@ const badgeToneClass: Record<ProductBadgeTone, string> = {
 										aria-label={`Ver oferta do fogão ${p.name} na Shopee — abre em nova aba (link patrocinado)`}
 									>
 										<span aria-hidden="true">👉</span>
-										Ver oferta na Shopee
+										{p.shopeeCtaText ?? 'Ver oferta na Shopee'}
 									</a>
 								</div>
 								<a
