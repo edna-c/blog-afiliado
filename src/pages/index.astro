@@ -8,6 +8,7 @@ import HomeComparisonTable from '../components/HomeComparisonTable.astro';
 import HomeGuideSection from '../components/HomeGuideSection.astro';
 import BlogGrid from '../components/BlogGrid.astro';
 import HomeSeeAlso from '../components/HomeSeeAlso.astro';
+import HomeFaqSection from '../components/HomeFaqSection.astro';
 
 const allPosts = await getCollection('blog');
 const posts = allPosts
@@ -19,7 +20,7 @@ const metaDescription =
 ---
 
 <BaseLayout
-	title="Melhores fogões 5 bocas em 2026 — Affiliate Pro"
+	title="Melhores fogões 5 bocas 2026: ranking atualizado"
 	description={metaDescription}
 >
 	<Hero />
@@ -34,4 +35,5 @@ const metaDescription =
 		showViewAllLink={true}
 	/>
 	<HomeSeeAlso />
+	<HomeFaqSection />
 </BaseLayout>

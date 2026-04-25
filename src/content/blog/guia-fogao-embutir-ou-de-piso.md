@@ -9,9 +9,13 @@ category: 'Guia'
 
 Medidas do nicho, profundidade do tampo e tomada dedicada. Se a cozinha já está pronta sem nicho, **de piso** costuma ser menos dor de cabeça.
 
+Se você ainda não decidiu o tamanho ideal antes da obra, [veja também nosso comparativo entre fogões 4 e 5 bocas](/comparativo-fogao-4-vs-5-bocas).
+
 ## Ventilação
 
 Gás precisa de circulação adequada. Em dúvida, consulte um profissional e o manual do fabricante.
+
+Depois de definir o tipo de instalação, [veja os modelos mais vendidos aqui](/#top-produtos) para comparar preço e disponibilidade.
 
 ## Links de afiliado
 

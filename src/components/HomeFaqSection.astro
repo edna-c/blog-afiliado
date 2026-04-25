@@ -1,0 +1,76 @@
+---
+const faqItems = [
+	{
+		question: 'Qual o melhor fogão 5 bocas em 2026?',
+		answer:
+			'Depende do seu perfil de uso e orçamento. Para rotina intensa, modelos com boa distância entre bocas e forno confiável costumam entregar melhor resultado no dia a dia.',
+	},
+	{
+		question: 'Qual marca é melhor: Brastemp, Consul ou Electrolux?',
+		answer:
+			'As três têm opções fortes. Brastemp costuma equilibrar acabamento e desempenho, Consul tende a ser mais competitiva em preço, e Electrolux geralmente se destaca em recursos.',
+	},
+	{
+		question: 'Fogão 5 bocas vale a pena?',
+		answer:
+			'Vale quando você usa várias panelas ao mesmo tempo ou cozinha para mais pessoas. Se o uso for leve e a cozinha compacta, um 4 bocas pode atender bem.',
+	},
+	{
+		question: 'Qual o melhor custo-benefício?',
+		answer:
+			'O melhor custo-benefício é o modelo que combina segurança, forno funcional e preço justo. Não olhe só o menor preço: avalie também peças, assistência e notas dos compradores.',
+	},
+	{
+		question: 'Fogão com mesa de vidro é bom?',
+		answer:
+			'É uma ótima escolha para quem prioriza visual e limpeza prática. Só exige cuidado com impacto e choque térmico para manter o tampo em bom estado por mais tempo.',
+	},
+	{
+		question: 'Onde ver preços atualizados dos modelos mais vendidos?',
+		answer:
+			'Na lista principal desta página você encontra os fogões mais buscados com botões para Mercado Livre e Shopee, além de análise completa para decidir com mais segurança.',
+	},
+];
+
+const faqSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: faqItems.map((item) => ({
+		'@type': 'Question',
+		name: item.question,
+		acceptedAnswer: {
+			'@type': 'Answer',
+			text: item.answer,
+		},
+	})),
+};
+---
+
+<section class="border-t border-white/10 bg-brand-900/35 py-16 lg:py-20" aria-labelledby="faq-home-heading">
+	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+		<div class="max-w-3xl">
+			<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Perguntas frequentes</p>
+			<h2 id="faq-home-heading" class="font-display mt-3 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">
+				FAQ rápido para decidir sem enrolação
+			</h2>
+			<p class="mt-3 text-sm text-on-ink-body">
+				Respostas curtas para as dúvidas mais comuns antes de clicar nos links de compra.
+			</p>
+		</div>
+
+		<div class="mt-10 grid gap-4">
+			{
+				faqItems.map((item) => (
+					<details class="group rounded-xl border border-white/10 bg-ink/70 p-5 transition open:border-pop/35">
+						<summary class="cursor-pointer list-none pr-8 text-sm font-bold text-on-ink-body marker:content-none sm:text-base">
+							{item.question}
+						</summary>
+						<p class="mt-3 text-sm leading-relaxed text-on-ink-muted sm:text-[0.95rem]">{item.answer}</p>
+					</details>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

@@ -65,6 +65,8 @@ Quando o desconto é grande demais, compare **garantia**, **peças** e **reclama
 
 Para decisão de layout (piso vs embutido), leia também o guia [fogão de embutir ou de piso](/blog/guia-fogao-embutir-ou-de-piso/).
 
+Se quiser uma visão rápida de mercado antes de comparar ficha técnica, [veja os modelos mais vendidos aqui](/#top-produtos).
+
 ## Fogão 5 bocas ou 4 bocas: decisão em 60 segundos
 
 | Critério | 5 bocas | 4 bocas |
@@ -104,6 +106,7 @@ Se você está em dúvida entre tecnologias, trate como decisão de **infraestru
 
 - Comparativo de linha: [melhores fogões 4 bocas em 2026](/blog/comparativo-fogao-4-bocas-2026/)
 - Review de estilo (mesa de vidro): [review fogão com mesa de vidro](/blog/review-fogao-com-mesa-de-vidro/)
+- Decisão de tamanho em página prática: [comparativo entre fogões 4 e 5 bocas](/comparativo-fogao-4-vs-5-bocas)
 
 ## Links de afiliado (transparência)
 

@@ -9,9 +9,13 @@ category: 'Review'
 
 Vidro temperado facilita o dia a dia **se** você evita choque térmico brusco e não arrasta panelas pesadas.
 
+Para alinhar visual com praticidade antes de comprar, [confira o guia completo de fogão embutir ou de piso](/blog/guia-fogao-embutir-ou-de-piso/).
+
 ## Quando evitar
 
 Ambientes com crianças muito pequenas batendo em panelas, ou quem troca de fogão com frequência e quer evitar consertos.
+
+Se a sua dúvida principal for capacidade, [veja também nosso comparativo entre fogões 4 e 5 bocas](/comparativo-fogao-4-vs-5-bocas).
 
 ## Link de compra (afiliado)
 

@@ -1,12 +1,15 @@
 ---
+export type ProductBadgeTone = 'emerald' | 'amber' | 'pop';
+
 export interface Product {
 	name: string;
-	tagline: string;
-	highlight: string;
+	badge: string;
+	badgeTone: ProductBadgeTone;
+	basePrice: string;
 	benefits: string[];
-	proofLine: string;
+	socialProof: string;
 	reviewSlug: string;
-	offerUrl: string;
+	mercadoLivreUrl: string;
 	shopeeUrl: string;
 	image?: string;
 	imageAlt?: string;
@@ -15,44 +18,65 @@ export interface Product {
 const products: Product[] = [
 	{
 		name: 'Brastemp BFS5NCR',
-		tagline: 'Melhor custo-benefício',
-		highlight:
-			'Perfeito para quem quer um fogão confiável no dia a dia, com bom espaço no forno e chama forte. 👉 Ideal para famílias ou quem cozinha com frequência.',
-		benefits: ['Segurança em cada boca', 'Forno que cabe o que você usa no dia a dia', 'Fácil de achar peça quando precisa'],
-		proofLine: '✔ Um dos mais escolhidos para uso diário em 2026',
+		badge: '🏆 Melhor custo-benefício',
+		badgeTone: 'emerald',
+		basePrice: 'R$ 1.899',
+		benefits: [
+			'Boa potência para uso diário',
+			'Forno espaçoso para o rotineiro',
+			'Fácil limpeza e manutenção básica',
+			'Ótimo custo-benefício',
+		],
+		socialProof: '⭐ 4,7/5 baseado em avaliações',
 		reviewSlug: 'brastemp',
-		offerUrl: 'https://example.com/afiliado/brastemp-bfs5ncr',
+		mercadoLivreUrl: 'https://www.mercadolivre.com.br/fogao-5-bocas-brastemp-bfs5ncr/up/MLBU1757362978?matt_tool=38524122',
 		shopeeUrl: 'https://s.shopee.com.br/2qQVdcWHwK',
 		image: '/images/fogao-brastemp-bfs5ncr.webp',
 		imageAlt: 'Fogão a gás Brastemp BFS5NCR cinco bocas em inox',
 	},
 	{
 		name: 'Consul CFS5NAB',
-		tagline: 'Mais vendido',
-		highlight:
-			'Ótima escolha para quem quer economizar sem abrir mão do básico bem feito. 👉 Simples, funcional e resolve bem o dia a dia.',
-		benefits: ['Sem complicação na rotina', 'Boa para cozinha média', 'Preço honesto pelo que entrega'],
-		proofLine: '✔ Caminho firme para quem quer gastar menos sem susto',
+		badge: '🔥 Mais vendido',
+		badgeTone: 'amber',
+		basePrice: 'R$ 1.749',
+		benefits: [
+			'Simples e confiável no dia a dia',
+			'Boa para cozinha média',
+			'Preço honesto pelo que entrega',
+			'Fácil de usar sem firula',
+		],
+		socialProof: '✔ Mais de 1.000 avaliações',
 		reviewSlug: 'consul',
-		offerUrl: 'https://example.com/afiliado/consul-cfs5nab',
+		mercadoLivreUrl: 'https://example.com/afiliado/mercado-livre/consul-cfs5nab',
 		shopeeUrl: 'https://example.com/afiliado/shopee/consul-cfs5nab',
 		image: '/images/fogao-consul-cfs5nab.webp',
 		imageAlt: 'Fogão a gás Consul CFS5NAB cinco bocas em inox com tampa de vidro',
 	},
 	{
 		name: 'Electrolux 76EXV',
-		tagline: 'Melhor para famílias',
-		highlight:
-			'Linha com mais recursos e acabamento caprichado — bom para quem cozinha bastante e quer forno e mesa com “cara” de cozinha arrumada. 👉 Indicado para quem usa o fogão pesado no dia a dia.',
-		benefits: ['Acabamento que valoriza a cozinha', 'Forno com funções a mais (varia por modelo)', 'Pra quem cozinha pesado e quer folga'],
-		proofLine: '✔ Entre os que analisamos, é o que mais soma recursos e acabamento',
+		badge: '⭐ Melhor geral',
+		badgeTone: 'pop',
+		basePrice: 'R$ 2.399',
+		benefits: [
+			'Acabamento que valoriza a cozinha',
+			'Forno com mais recursos (varia por modelo)',
+			'Ideal para quem cozinha pesado',
+			'Mesa em vidro com visual premium',
+		],
+		socialProof: '⭐ 4,6/5 baseado em avaliações',
 		reviewSlug: 'electrolux',
-		offerUrl: 'https://example.com/afiliado/electrolux-76usq',
+		mercadoLivreUrl: 'https://example.com/afiliado/mercado-livre/electrolux-76usq',
 		shopeeUrl: 'https://example.com/afiliado/shopee/electrolux-76usq',
 		image: '/images/fogao-electrolux-76usq.webp',
 		imageAlt: 'Fogão a gás Electrolux 76EXV cinco bocas em inox com mesa de vidro e forno com porta em vidro',
 	},
 ];
+
+const badgeToneClass: Record<ProductBadgeTone, string> = {
+	emerald: 'bg-emerald-500 text-white shadow-[0_1px_0_rgba(0,0,0,0.15)]',
+	amber: 'bg-amber-400 text-amber-950 shadow-[0_1px_0_rgba(0,0,0,0.12)]',
+	pop: 'bg-pop text-ink shadow-[0_1px_0_rgba(0,0,0,0.08)]',
+};
 ---
 
 <section
@@ -77,87 +101,99 @@ const products: Product[] = [
 				</a>
 				.
 			</p>
+			<p class="mt-3 text-sm font-semibold text-on-ink-body">
+				Agora veja os modelos mais vendidos e compare as ofertas sem sair da página.
+			</p>
 		</div>
-		<div class="mt-12 grid gap-6 lg:grid-cols-3">
+		<div class="mt-12 grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-3 lg:items-stretch">
 			{
 				products.map((p) => (
-					<article class="flex flex-col border border-white/10 bg-ink/80 p-6 ring-1 ring-white/5 transition hover:border-pop/35 hover:ring-pop/20">
+					<article
+						class="flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-ink/80 shadow-[0_12px_40px_-24px_rgba(0,0,0,0.65)] ring-1 ring-white/5 transition hover:border-pop/35 hover:ring-pop/20"
+					>
+						<div
+							class:list={[
+								'flex shrink-0 items-center justify-center px-4 py-3 text-center text-sm font-extrabold leading-tight tracking-tight sm:text-[0.95rem]',
+								badgeToneClass[p.badgeTone],
+							]}
+						>
+							{p.badge}
+						</div>
+
 						{p.image ? (
-							<>
-								<div class="flex h-[12.5rem] shrink-0 flex-col lg:h-[14rem]">
-									<p class="shrink-0 text-[10px] font-bold uppercase tracking-[0.25em] text-pop">{p.tagline}</p>
-									<p class="mt-3 min-h-0 flex-1 basis-0 overflow-y-auto text-sm leading-relaxed text-on-ink-body">
-										{p.highlight}{' '}
-										<a
-											href={`/review-fogao-5-bocas-${p.reviewSlug}`}
-											class="font-semibold text-pop underline-offset-2 hover:underline"
-										>
-											Ver avaliação completa — {p.name}
-										</a>
-										.
-									</p>
-								</div>
-								<div
-									class="-mt-1 mb-3 box-border flex h-[200px] w-full shrink-0 items-start justify-center rounded-xl bg-white p-3 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_5px_14px_-4px_rgba(15,23,42,0.055)] ring-1 ring-zinc-900/10"
-								>
+							<div class="flex shrink-0 justify-center bg-zinc-100/95 px-4 py-5 sm:px-6">
+								<div class="relative aspect-square w-full max-w-[min(100%,20rem)] overflow-hidden rounded-xl bg-white shadow-[0_1px_2px_rgba(15,23,42,0.06),0_8px_24px_-8px_rgba(15,23,42,0.12)] ring-1 ring-zinc-900/10">
 									<img
-										class="max-h-full max-w-full object-contain"
+										class="absolute inset-0 h-full w-full object-contain object-center p-3"
 										src={p.image}
 										alt={p.imageAlt ?? ''}
-										width="300"
-										height="300"
+										width={800}
+										height={800}
 										loading="lazy"
-										style="object-fit:contain;"
+										decoding="async"
 									/>
 								</div>
-								<h3 class="font-display mt-3 text-xl font-bold text-on-ink-body">{p.name}</h3>
-							</>
-						) : (
-							<>
-								<p class="text-[10px] font-bold uppercase tracking-[0.25em] text-pop">{p.tagline}</p>
-								<h3 class="font-display mt-3 text-xl font-bold text-on-ink-body">{p.name}</h3>
-								<p class="mt-2 text-sm text-on-ink-body">
-									{p.highlight}{' '}
+							</div>
+						) : null}
+
+						<div class="flex min-h-0 flex-1 flex-col px-5 pb-5 pt-4 sm:px-6 sm:pb-6">
+							<h3 class="font-display text-xl font-bold leading-snug tracking-tight text-on-ink-body sm:text-[1.35rem]">
+								{p.name}
+							</h3>
+							<p class="mt-2 text-sm font-extrabold tracking-wide text-emerald-300">
+								A partir de {p.basePrice}
+							</p>
+
+							<ul class="mt-4 space-y-2 text-sm leading-snug text-on-ink-muted">
+								{p.benefits.map((b) => (
+									<li class="flex gap-2.5">
+										<span class="mt-0.5 shrink-0 text-pop" aria-hidden="true">
+											•
+										</span>
+										<span>{b}</span>
+									</li>
+								))}
+							</ul>
+
+							<p class="mt-4 text-sm font-semibold text-on-ink-body">{p.socialProof}</p>
+
+							<div class="mt-auto flex flex-col gap-3 pt-6">
+								<div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
 									<a
-										href={`/review-fogao-5-bocas-${p.reviewSlug}`}
-										class="font-semibold text-pop underline-offset-2 hover:underline"
+										href={p.mercadoLivreUrl}
+										class="inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-lg bg-pop px-4 text-center text-[0.75rem] font-extrabold uppercase tracking-wide text-ink shadow-sm transition hover:bg-accent-hover sm:text-[0.72rem]"
+										target="_blank"
+										rel="nofollow sponsored noopener noreferrer"
+										aria-label={`Ver preço do fogão ${p.name} no Mercado Livre — abre em nova aba (link patrocinado)`}
 									>
-										Ver avaliação completa — {p.name}
+										<span aria-hidden="true">👉</span>
+										Ver preço no Mercado Livre
 									</a>
-									.
-								</p>
-							</>
-						)}
-						<ul class="mt-4 list-inside list-disc space-y-1.5 text-sm text-on-ink-muted">
-							{p.benefits.map((b) => (
-								<li>{b}</li>
-							))}
-						</ul>
-						<div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-							<a
-								href={p.name === 'Brastemp BFS5NCR' ? 'https://meli.la/1SRkvTs' : p.offerUrl}
-								class="inline-flex min-h-[48px] flex-1 items-center justify-center bg-pop px-5 text-center text-xs font-bold uppercase tracking-wider text-ink transition hover:bg-accent-hover"
-								target="_blank"
-								rel="nofollow sponsored noopener noreferrer"
-								aria-label={
-									p.name === 'Brastemp BFS5NCR'
-										? `Ver preço e oferta do fogão ${p.name} no Mercado Livre — abre o site da loja em nova aba (link patrocinado)`
-										: `Ver preço e compra do fogão ${p.name} na loja parceira — abre em nova aba (link patrocinado)`
-								}
-							>
-								{p.name === 'Brastemp BFS5NCR'
-									? `🔥 Ver oferta no Mercado Livre — ${p.name}`
-									: `🔥 Ver preço e compra — ${p.name}`}
-							</a>
-							<a
-								href={p.shopeeUrl}
-								class="inline-flex min-h-[48px] flex-1 items-center justify-center border border-white/20 px-5 text-center text-xs font-bold uppercase tracking-wider text-on-ink-body transition hover:border-pop hover:text-pop"
-								target="_blank"
-								rel="nofollow sponsored noopener noreferrer"
-								aria-label={`Ver oferta do fogão ${p.name} na Shopee — abre o site da Shopee em nova aba (link patrocinado)`}
-							>
-								🛒 Ver oferta na Shopee — {p.name}
-							</a>
+									<a
+										href={p.shopeeUrl}
+										class="inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-lg border border-white/25 bg-transparent px-4 text-center text-[0.75rem] font-bold uppercase tracking-wide text-on-ink-body transition hover:border-pop hover:text-pop sm:text-[0.72rem]"
+										target="_blank"
+										rel="nofollow sponsored noopener noreferrer"
+										aria-label={`Ver oferta do fogão ${p.name} na Shopee — abre em nova aba (link patrocinado)`}
+									>
+										<span aria-hidden="true">👉</span>
+										Ver oferta na Shopee
+									</a>
+								</div>
+								<a
+									href={`/review-fogao-5-bocas-${p.reviewSlug}`}
+									class="inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-lg border border-white/25 bg-transparent px-4 text-center text-[0.8125rem] font-bold uppercase tracking-wide text-on-ink-body transition hover:border-pop hover:text-pop"
+									aria-label={`Ver análise completa do fogão ${p.name}`}
+								>
+									<span aria-hidden="true">👉</span>
+									Ver análise completa
+								</a>
+								<ul class="space-y-1 border-t border-white/10 pt-3 text-[11px] leading-relaxed text-on-ink-muted sm:text-xs">
+									<li>✔ Preços atualizados hoje</li>
+									<li>✔ Frete pode variar por região</li>
+									<li>✔ Estoque pode ser limitado</li>
+								</ul>
+							</div>
 						</div>
 					</article>
 				))
