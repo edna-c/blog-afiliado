@@ -10,7 +10,7 @@ export interface Product {
 	socialProof: string;
 	reviewSlug: string;
 	mercadoLivreUrl: string;
-	shopeeUrl: string;
+	shopeeUrl?: string;
 	/** Rótulos opcionais dos CTAs de loja (só onde o copy for específico). */
 	mlCtaText?: string;
 	shopeeCtaText?: string;
@@ -23,7 +23,7 @@ const products: Product[] = [
 		name: 'Brastemp BFS5NCR',
 		badge: '🏆 Melhor custo-benefício',
 		badgeTone: 'emerald',
-		basePrice: 'R$ 1.899',
+		basePrice: 'R$ 1.672',
 		benefits: [
 			'Boa potência para uso diário',
 			'Forno espaçoso para o rotineiro',
@@ -41,7 +41,7 @@ const products: Product[] = [
 		name: 'Consul CFS5NAB',
 		badge: '🔥 Mais vendido',
 		badgeTone: 'amber',
-		basePrice: 'R$ 1.749',
+		basePrice: 'R$ 1.580',
 		benefits: [
 			'Simples e confiável no dia a dia',
 			'Boa para cozinha média',
@@ -59,10 +59,10 @@ const products: Product[] = [
 		imageAlt: 'Fogão a gás Consul CFS5NAB cinco bocas em inox com tampa de vidro',
 	},
 	{
-		name: 'Electrolux 76EXV',
+		name: 'Electrolux FE5IC',
 		badge: '⭐ Melhor geral',
 		badgeTone: 'pop',
-		basePrice: 'R$ 2.399',
+		basePrice: 'R$ 1.899',
 		benefits: [
 			'Acabamento que valoriza a cozinha',
 			'Forno com mais recursos (varia por modelo)',
@@ -72,13 +72,10 @@ const products: Product[] = [
 		socialProof: '⭐ 4,6/5 baseado em avaliações',
 		reviewSlug: 'electrolux',
 		mercadoLivreUrl:
-			'https://www.mercadolivre.com.br/fogo-de-piso-5-bocas-consul-cfs5nar-acendimento-automatico-cor-inox/p/MLB15295566?matt_tool=38524122',
-		shopeeUrl:
-			'https://shopee.com.br/search?keyword=fog%C3%A3o%20Electrolux%205%20bocas%2076EXV',
+			'https://www.mercadolivre.com.br/fogao-5-bocas-electrolux-cinza-mesa-inox-perfectcook-fe5ig/up/MLBU3507665715?pdp_filters=official_store%3A1215',
 		mlCtaText: 'VER PREÇO NO MERCADO LIVRE',
-		shopeeCtaText: 'VER OFERTA NA SHOPEE',
 		image: '/images/fogao-electrolux-76usq.webp',
-		imageAlt: 'Fogão a gás Electrolux 76EXV cinco bocas em inox com mesa de vidro e forno com porta em vidro',
+		imageAlt: 'Fogão a gás Electrolux FE5IC cinco bocas em inox com mesa de vidro e forno com porta em vidro',
 	},
 ];
 
@@ -171,7 +168,10 @@ const badgeToneClass: Record<ProductBadgeTone, string> = {
 								<div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
 									<a
 										href={p.mercadoLivreUrl}
-										class="inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-lg bg-pop px-4 text-center text-[0.75rem] font-extrabold uppercase tracking-wide text-ink shadow-sm transition hover:bg-accent-hover sm:text-[0.72rem]"
+										class:list={[
+											'inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-lg bg-pop px-4 text-center text-[0.75rem] font-extrabold uppercase tracking-wide text-ink shadow-sm transition hover:bg-accent-hover sm:text-[0.72rem]',
+											!p.shopeeUrl && 'sm:col-span-2',
+										]}
 										target="_blank"
 										rel="nofollow sponsored noopener noreferrer"
 										aria-label={`Ver preço do fogão ${p.name} no Mercado Livre — abre em nova aba (link patrocinado)`}
@@ -179,16 +179,18 @@ const badgeToneClass: Record<ProductBadgeTone, string> = {
 										<span aria-hidden="true">👉</span>
 										{p.mlCtaText ?? 'Ver preço no Mercado Livre'}
 									</a>
-									<a
-										href={p.shopeeUrl}
-										class="inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-lg border border-white/25 bg-transparent px-4 text-center text-[0.75rem] font-bold uppercase tracking-wide text-on-ink-body transition hover:border-pop hover:text-pop sm:text-[0.72rem]"
-										target="_blank"
-										rel="nofollow sponsored noopener noreferrer"
-										aria-label={`Ver oferta do fogão ${p.name} na Shopee — abre em nova aba (link patrocinado)`}
-									>
-										<span aria-hidden="true">👉</span>
-										{p.shopeeCtaText ?? 'Ver oferta na Shopee'}
-									</a>
+									{p.shopeeUrl ? (
+										<a
+											href={p.shopeeUrl}
+											class="inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-lg border border-white/25 bg-transparent px-4 text-center text-[0.75rem] font-bold uppercase tracking-wide text-on-ink-body transition hover:border-pop hover:text-pop sm:text-[0.72rem]"
+											target="_blank"
+											rel="nofollow sponsored noopener noreferrer"
+											aria-label={`Ver oferta do fogão ${p.name} na Shopee — abre em nova aba (link patrocinado)`}
+										>
+											<span aria-hidden="true">👉</span>
+											{p.shopeeCtaText ?? 'Ver oferta na Shopee'}
+										</a>
+									) : null}
 								</div>
 								<a
 									href={`/review-fogao-5-bocas-${p.reviewSlug}`}
