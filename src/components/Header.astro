@@ -39,8 +39,8 @@ const pathname = Astro.url.pathname;
 			<a
 				href="/contato"
 				class:list={[
-					'ring-pop rounded-none px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-ink transition hover:bg-accent-hover',
-					isNavActive(pathname, '/contato') ? 'bg-accent-hover ring-2 ring-pop' : 'bg-pop',
+					'rounded-none px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-cta-hover ring-1 ring-white/15',
+					isNavActive(pathname, '/contato') ? 'bg-cta-hover ring-2 ring-white/40' : 'bg-cta',
 				]}
 				aria-label="Abrir página de contato para enviar mensagem"
 			>

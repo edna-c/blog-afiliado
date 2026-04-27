@@ -9,9 +9,13 @@
 	--color-brand-950: #0a0a0c;
 	--color-brand-900: #0f1117;
 	--color-brand-800: #1a1d26;
-	/* Texto secundário sobre fundos escuros (≥4.5:1 em relação ao ink) */
-	--color-on-ink-muted: #d4d4d8;
-	--color-on-ink-body: #f4f4f5;
+	/* Texto sobre fundos escuros — contraste alinhado a WCAG / PageSpeed */
+	--color-on-ink-body: #ffffff;
+	--color-on-ink-muted: #e5e7eb;
+	--color-on-ink-list: #d1d5db;
+	/* CTA sólido (alto contraste em fundo escuro) */
+	--color-cta: #22c55e;
+	--color-cta-hover: #16a34a;
 	/* Destaque em fundo claro: lima direta falha contraste; uso escuro da mesma família */
 	--color-accent-on-light: #2a3310;
 	--color-accent-on-light-hover: #1a1f0a;

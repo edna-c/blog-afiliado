@@ -147,14 +147,14 @@ const badgeToneClass: Record<ProductBadgeTone, string> = {
 							<h3 class="font-display text-xl font-bold leading-snug tracking-tight text-on-ink-body sm:text-[1.35rem]">
 								{p.name}
 							</h3>
-							<p class="mt-2 text-sm font-extrabold tracking-wide text-emerald-300">
+							<p class="mt-2 text-sm font-extrabold tracking-wide text-cta">
 								A partir de {p.basePrice}
 							</p>
 
-							<ul class="mt-4 space-y-2 text-sm leading-snug text-on-ink-muted">
+							<ul class="mt-4 space-y-2 text-sm leading-snug text-on-ink-list">
 								{p.benefits.map((b) => (
 									<li class="flex gap-2.5">
-										<span class="mt-0.5 shrink-0 text-pop" aria-hidden="true">
+										<span class="mt-0.5 shrink-0 text-on-ink-list" aria-hidden="true">
 											•
 										</span>
 										<span>{b}</span>
@@ -169,7 +169,7 @@ const badgeToneClass: Record<ProductBadgeTone, string> = {
 									<a
 										href={p.mercadoLivreUrl}
 										class:list={[
-											'inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-lg bg-pop px-4 text-center text-[0.75rem] font-extrabold uppercase tracking-wide text-ink shadow-sm transition hover:bg-accent-hover sm:text-[0.72rem]',
+											'inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-lg bg-cta px-4 text-center text-[0.75rem] font-extrabold uppercase tracking-wide text-white shadow-sm transition hover:bg-cta-hover sm:text-[0.72rem]',
 											!p.shopeeUrl && 'sm:col-span-2',
 										]}
 										target="_blank"
