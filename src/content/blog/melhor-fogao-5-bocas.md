@@ -1,6 +1,6 @@
 ---
 title: 'Melhor fogão 5 bocas em 2026: como escolher o modelo certo para sua cozinha'
-description: 'Critérios práticos para achar o melhor fogão 5 bocas (custo-benefício, segurança e consumo). Comparativo 5×4 bocas, fogão × cooktop e aviso claro quando o link é patrocinado.'
+description: 'Critérios práticos para achar o melhor fogão 5 bocas (custo-benefício, segurança e consumo). Comparativo 5x4 bocas e fogão x cooktop para uma compra mais segura.'
 pubDate: 2026-04-07
 category: 'Guia'
 faq:
@@ -108,10 +108,10 @@ Se você está em dúvida entre tecnologias, trate como decisão de **infraestru
 - Review de estilo (mesa de vidro): [review fogão com mesa de vidro](/blog/review-fogao-com-mesa-de-vidro/)
 - Decisão de tamanho em página prática: [comparativo entre fogões 4 e 5 bocas](/comparativo-fogao-4-vs-5-bocas)
 
-## Links de afiliado (transparência)
+## Onde comprar com segurança
 
-**Publicidade:** alguns links podem gerar ganhos para o site, **sem custo para você**, se houver compra. Preços e estoque mudam — confira sempre na loja antes de pagar.
+Preços e estoque mudam com frequência. Antes de fechar a compra, confira as condições atualizadas na loja.
 
-- [Ver ofertas de fogão 5 bocas — substitua pelo seu link de afiliado](https://example.com/afiliado/fogao-5-bocas)
+- [Ver ofertas de fogão 5 bocas](https://example.com/afiliado/fogao-5-bocas)
 
-Prefira manter este aviso **perto do primeiro link**, como fazemos aqui — ajuda o leitor e alinha com o que os programas de afiliado costumam pedir.
+Sempre compare preço, prazo de entrega e avaliações recentes antes de escolher o modelo.

@@ -17,8 +17,8 @@ Gás precisa de circulação adequada. Em dúvida, consulte um profissional e o 
 
 Depois de definir o tipo de instalação, [veja os modelos mais vendidos aqui](/#top-produtos) para comparar preço e disponibilidade.
 
-## Links de afiliado
+## Onde conferir preços
 
-**Transparência:** alguns links podem gerar ganhos para o site, sem custo para você, se houver compra.
+Use o link abaixo para validar preço e disponibilidade no momento da compra.
 
 - [Link de exemplo — fogão cooktop ou kit para embutir na bancada](https://example.com/afiliado/embutir)

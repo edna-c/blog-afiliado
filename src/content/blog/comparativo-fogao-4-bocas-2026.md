@@ -1,6 +1,6 @@
 ---
 title: 'Melhores Fogões 4 Bocas em 2026: três modelos muito procurados e bem avaliados'
-description: 'Três dos melhores fogões 4 bocas em 2026, com links para ver preço na hora, critérios de escolha e aviso quando o link é patrocinado.'
+description: 'Três dos melhores fogões 4 bocas em 2026, com links para ver preço na hora e critérios práticos de escolha.'
 pubDate: 2026-03-18
 category: 'Comparativo'
 ---
@@ -79,9 +79,9 @@ A gente não fica inventando especificação milimétrica que muda de lote para 
 
 Ou seja: a escolha aqui apoia em **o que muita gente compra e comenta** mais **critérios objetivos**, não em “o melhor do universo”.
 
-## Links de afiliado
+## Onde conferir preços
 
-Os links acima podem gerar **ganhos para o site**, **sem custo para você**. É assim que mantemos o comparativo no ar e atualizado.
+Os links acima ajudam você a conferir preço, frete e parcelamento na hora da compra.
 
 Clicar agora vale a pena porque **preço e disponibilidade mudam o tempo todo** — você vê a condição real da loja, frete e parcelamento no momento em que decidir.
 

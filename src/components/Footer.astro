@@ -4,21 +4,19 @@ import { isNavActive } from '../utils/isNavActive';
 const year = new Date().getFullYear();
 const pathname = Astro.url.pathname;
 const links = [
-	{ href: '/sobre', label: 'Sobre', ariaLabel: 'Sobre o site Affiliate Pro' },
+	{ href: '/sobre', label: 'Sobre', ariaLabel: 'Sobre o site Casa Prática Eletro' },
 	{ href: '/blog', label: 'Blog', ariaLabel: 'Blog com artigos e comparativos de fogões' },
 	{ href: '/contato', label: 'Contato', ariaLabel: 'Página de contato' },
-	{ href: '/politica-de-afiliados', label: 'Política de Afiliados', ariaLabel: 'Política de links de afiliados' },
+	{ href: '/politica-de-afiliados', label: 'Política do Site', ariaLabel: 'Política do site e recomendações' },
 ];
 ---
 
 <footer class="border-t border-white/10 bg-ink-muted/50">
 	<div class="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-12 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
 		<div>
-			<p class="font-display text-sm font-extrabold tracking-tight text-on-ink-body">
-				AFFILIATE<span class="ml-1 text-pop">PRO</span>
-			</p>
+			<p class="font-display text-sm font-extrabold tracking-tight text-on-ink-body">Casa Prática Eletro</p>
 			<p class="mt-2 max-w-sm text-sm text-on-ink-body">
-				Análises e comparativos de fogões para você decidir com mais segurança.
+				Guia completo para escolher os melhores eletrodomésticos para sua casa.
 			</p>
 			<p class="mt-2 max-w-sm text-xs leading-relaxed text-on-ink-muted">
 				Compare os melhores fogões antes de comprar e escolha com segurança.
@@ -54,6 +52,6 @@ const links = [
 		</nav>
 	</div>
 	<div class="border-t border-white/5 py-6 text-center text-xs text-on-ink-muted">
-		© {year} Affiliate Pro. Todos os direitos reservados.
+		© {year} Casa Prática Eletro. Todos os direitos reservados.
 	</div>
 </footer>

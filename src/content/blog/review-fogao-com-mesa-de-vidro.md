@@ -17,8 +17,8 @@ Ambientes com crianças muito pequenas batendo em panelas, ou quem troca de fog�
 
 Se a sua dúvida principal for capacidade, [veja também nosso comparativo entre fogões 4 e 5 bocas](/comparativo-fogao-4-vs-5-bocas).
 
-## Link de compra (afiliado)
+## Link de compra
 
-Divulgação: o link abaixo pode gerar ganhos para o site, sem custo para você, se houver compra.
+Use o link abaixo para conferir preço e disponibilidade atualizados.
 
 - [Seu link de produto aqui](https://example.com/afiliado/fogao-vidro)
