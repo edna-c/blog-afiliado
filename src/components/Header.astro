@@ -3,24 +3,29 @@ import { isNavActive } from '../utils/isNavActive';
 import HeaderPrimaryNavLinks from './HeaderPrimaryNavLinks.astro';
 
 const pathname = Astro.url.pathname;
+
+const ctaBase =
+	'rounded-none px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-cta-hover ring-1 ring-white/15';
 ---
 
 <header class="sticky top-0 z-50 border-b border-white/10 bg-ink/85 backdrop-blur-xl">
-	<div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-		<a href="/" class="group font-display text-lg font-extrabold tracking-tight sm:text-xl" aria-label="Casa Prática Eletro — página inicial">
-			<span class="block text-on-ink-body">Casa Prática Eletro</span>
-			<span class="mt-1 block text-[11px] font-semibold normal-case tracking-normal text-on-ink-muted">
-				Guia completo para escolher os melhores eletrodomésticos para sua casa
-			</span>
-		</a>
-		<nav
-			class="hidden items-center gap-8 text-xs font-semibold uppercase tracking-[0.2em] text-on-ink-muted md:flex"
-			aria-label="Principal"
+	<div
+		class="mx-auto flex max-w-7xl flex-col flex-wrap gap-2.5 px-4 py-4 sm:px-6 md:flex-row md:flex-nowrap md:items-center md:justify-between md:gap-4 lg:px-8"
+	>
+		<div
+			class="flex min-w-0 w-full flex-wrap items-center justify-between gap-x-3 gap-y-2 md:contents md:w-auto md:gap-0"
 		>
-			<HeaderPrimaryNavLinks pathname={pathname} />
-		</nav>
-		<div class="flex shrink-0 items-center gap-3">
-			<details class="relative z-50 md:hidden">
+			<a
+				href="/"
+				class="group min-w-0 max-w-[min(100%,calc(100%-7rem))] font-display text-lg font-extrabold tracking-tight sm:text-xl md:max-w-none md:shrink-0"
+				aria-label="Casa Prática Eletro — página inicial"
+			>
+				<span class="block text-on-ink-body">Casa Prática Eletro</span>
+				<span class="mt-1 block text-[11px] font-semibold normal-case tracking-normal text-on-ink-muted">
+					Guia completo para escolher os melhores eletrodomésticos para sua casa
+				</span>
+			</a>
+			<details class="relative z-50 shrink-0 md:hidden">
 				<summary
 					class="flex cursor-pointer list-none items-center justify-center gap-2 rounded border border-white/15 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-on-ink-muted transition hover:border-pop hover:text-on-ink-body [&::-webkit-details-marker]:hidden"
 				>
@@ -28,7 +33,7 @@ const pathname = Astro.url.pathname;
 					<span class="text-pop" aria-hidden="true">▾</span>
 				</summary>
 				<div
-					class="absolute right-0 top-full mt-2 min-w-[13rem] rounded-md border border-white/10 bg-ink p-2 shadow-xl ring-1 ring-white/10"
+					class="absolute right-0 top-full z-50 mt-2 min-w-[13rem] rounded-md border border-white/10 bg-ink p-2 shadow-xl ring-1 ring-white/10"
 				>
 					<nav class="flex flex-col gap-0.5" aria-label="Principal">
 						<HeaderPrimaryNavLinks
@@ -38,16 +43,23 @@ const pathname = Astro.url.pathname;
 					</nav>
 				</div>
 			</details>
-			<a
-				href="/contato"
-				class:list={[
-					'rounded-none px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-cta-hover ring-1 ring-white/15',
-					isNavActive(pathname, '/contato') ? 'bg-cta-hover ring-2 ring-white/40' : 'bg-cta',
-				]}
-				aria-label="Abrir página de contato para enviar mensagem"
+			<nav
+				class="hidden items-center gap-8 text-xs font-semibold uppercase tracking-[0.2em] text-on-ink-muted md:flex"
+				aria-label="Principal"
 			>
-				Enviar mensagem
-			</a>
+				<HeaderPrimaryNavLinks pathname={pathname} />
+			</nav>
 		</div>
+		<a
+			href="/contato"
+			class:list={[
+				ctaBase,
+				'mt-1 flex min-h-[44px] w-full items-center justify-center text-center md:mt-0 md:inline-flex md:w-auto md:shrink-0',
+				isNavActive(pathname, '/contato') ? 'bg-cta-hover ring-2 ring-white/40' : 'bg-cta',
+			]}
+			aria-label="Abrir página de contato para enviar mensagem"
+		>
+			Enviar mensagem
+		</a>
 	</div>
 </header>
