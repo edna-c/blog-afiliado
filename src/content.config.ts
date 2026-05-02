@@ -10,6 +10,8 @@ const blog = defineCollection({
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
 		category: z.string(),
+		/** URL em /public (ex: /images/foto.webp) para miniatura no grid do blog */
+		coverImage: z.string().optional(),
 		faq: z
 			.array(
 				z.object({

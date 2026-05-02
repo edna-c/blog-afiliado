@@ -3,6 +3,7 @@ title: 'Fogão de embutir ou de piso: como decidir em 10 minutos'
 description: 'Dicas simples de obra, ventilação, largura do móvel e quando o fogão de piso ainda é a opção mais simples.'
 pubDate: 2026-03-10
 category: 'Guia'
+coverImage: '/images/fogao-electrolux-76usq.webp'
 ---
 
 ## Embutir exige planejamento

@@ -3,6 +3,7 @@ title: 'Análise: fogão com mesa de vidro — vale a pena?'
 description: 'Prós (limpeza visual), contras (risco de trinca, manutenção) e para quem não recomendamos.'
 pubDate: 2026-02-22
 category: 'Review'
+coverImage: '/images/fogao-electrolux-76usq.webp'
 ---
 
 ## Experiência real de uso

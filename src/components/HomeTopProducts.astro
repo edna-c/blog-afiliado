@@ -16,6 +16,8 @@ export interface Product {
 	shopeeCtaText?: string;
 	image?: string;
 	imageAlt?: string;
+	/** Destaque principal (melhor custo-benefício): card e CTA reforçados */
+	featured?: boolean;
 }
 
 const products: Product[] = [
@@ -36,6 +38,7 @@ const products: Product[] = [
 		shopeeUrl: 'https://s.shopee.com.br/2qQVdcWHwK',
 		image: '/images/fogao-brastemp-bfs5ncr.webp',
 		imageAlt: 'Fogão a gás Brastemp BFS5NCR cinco bocas em inox',
+		featured: true,
 	},
 	{
 		name: 'Consul CFS5NAB',
@@ -88,7 +91,7 @@ const badgeToneClass: Record<ProductBadgeTone, string> = {
 
 <section
 	id="top-produtos"
-	class="scroll-mt-24 border-b border-white/10 bg-brand-900/40 py-16 lg:py-20"
+	class="scroll-mt-24 border-b border-white/10 bg-brand-900/40 py-16 sm:py-20 lg:py-24"
 	aria-labelledby="top-produtos-heading"
 >
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -110,19 +113,28 @@ const badgeToneClass: Record<ProductBadgeTone, string> = {
 				.
 			</p>
 			<p class="mt-3 text-sm font-semibold text-on-ink-body">
-				Agora veja os modelos mais vendidos e compare as ofertas sem sair da página.
+				Agora veja os modelos mais vendidos, <strong class="font-semibold text-on-ink-body">ofertas atualizadas hoje</strong> — estoque pode
+				variar; use os botões para <strong class="font-semibold text-on-ink-body">ver disponibilidade</strong> na loja.
 			</p>
 		</div>
-		<div class="mt-12 grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-3 lg:items-stretch">
+		<div class="mt-14 grid grid-cols-1 gap-7 sm:gap-8 lg:grid-cols-3 lg:items-stretch lg:gap-8">
 			{
 				products.map((p) => (
 					<article
-						class="flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-ink/80 shadow-[0_12px_40px_-24px_rgba(0,0,0,0.65)] ring-1 ring-white/5 transition hover:border-pop/35 hover:ring-pop/20"
+						class:list={[
+							'flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-ink/80 shadow-[0_12px_40px_-24px_rgba(0,0,0,0.65)] ring-1 ring-white/5 duration-300 ease-out',
+							p.featured
+								? 'relative z-[1] border-emerald-400/45 shadow-[0_24px_56px_-18px_rgba(0,0,0,0.75),0_0_0_1px_rgba(52,211,153,0.35)] ring-2 ring-emerald-400/55 lg:scale-[1.03]'
+								: 'transition hover:-translate-y-[5px] hover:border-white/15 hover:shadow-[0_20px_48px_-22px_rgba(0,0,0,0.55)] hover:ring-white/10',
+						]}
 					>
 						<div
 							class:list={[
-								'flex shrink-0 items-center justify-center px-4 py-3 text-center text-sm font-extrabold leading-tight tracking-tight sm:text-[0.95rem]',
-								badgeToneClass[p.badgeTone],
+								'flex shrink-0 items-center justify-center px-4 text-center font-extrabold leading-tight tracking-tight',
+								p.featured ? 'py-4 text-base sm:text-lg' : 'py-3 text-sm sm:text-[0.95rem]',
+								p.featured
+									? 'bg-emerald-600 text-white ring-2 ring-inset ring-white/20 shadow-[0_2px_8px_rgba(0,0,0,0.2)]'
+									: badgeToneClass[p.badgeTone],
 							]}
 						>
 							{p.badge}
@@ -132,7 +144,7 @@ const badgeToneClass: Record<ProductBadgeTone, string> = {
 							<div class="flex shrink-0 justify-center bg-zinc-100/95 px-4 py-5 sm:px-6">
 								<div class="relative aspect-square w-full max-w-[min(100%,20rem)] overflow-hidden rounded-xl bg-white shadow-[0_1px_2px_rgba(15,23,42,0.06),0_8px_24px_-8px_rgba(15,23,42,0.12)] ring-1 ring-zinc-900/10">
 									<img
-										class="absolute inset-0 h-full w-full object-contain object-center p-3"
+										class="absolute inset-0 h-full w-full object-cover object-center"
 										src={p.image}
 										alt={p.imageAlt ?? ''}
 										width={800}
@@ -170,22 +182,34 @@ const badgeToneClass: Record<ProductBadgeTone, string> = {
 									<a
 										href={p.mercadoLivreUrl}
 										class:list={[
-											'inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-lg bg-cta px-4 text-center text-[0.75rem] font-extrabold uppercase tracking-wide text-white shadow-sm transition hover:bg-cta-hover sm:text-[0.72rem]',
+											'inline-flex min-h-[52px] w-full items-center justify-center gap-1.5 rounded-lg border-2 border-transparent px-5 py-3.5 text-center text-[0.75rem] font-extrabold uppercase tracking-wide text-white transition duration-300 ease-out sm:text-[0.72rem]',
+											p.featured
+												? 'border-emerald-400/30 bg-emerald-600 shadow-[0_4px_18px_-2px_rgba(5,150,105,0.55)] ring-1 ring-emerald-300/40 hover:scale-[1.02] hover:bg-emerald-700 hover:brightness-110'
+												: 'bg-cta shadow-sm ring-1 ring-white/15 hover:bg-cta-hover',
 											!p.shopeeUrl && 'sm:col-span-2',
 										]}
 										target="_blank"
-										rel="nofollow sponsored noopener noreferrer"
-										aria-label={`Ver preço do fogão ${p.name} no Mercado Livre — abre em nova aba (link patrocinado)`}
+										rel="noopener noreferrer nofollow sponsored"
+										aria-label={`Ver preço e disponibilidade do fogão ${p.name} no Mercado Livre — abre em nova aba`}
 									>
-										<span aria-hidden="true">👉</span>
-										{p.mlCtaText ?? 'Ver preço no Mercado Livre'}
+										{p.featured ? (
+											<span class="inline-flex items-center gap-1.5">
+												<span aria-hidden="true">🔥</span>
+												<span>VER MELHOR PREÇO</span>
+											</span>
+										) : (
+											<span class="inline-flex items-center gap-1.5">
+												<span aria-hidden="true">👉</span>
+												<span>{p.mlCtaText ?? 'Ver preço no Mercado Livre'}</span>
+											</span>
+										)}
 									</a>
 									{p.shopeeUrl ? (
 										<a
 											href={p.shopeeUrl}
-											class="inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-lg border border-white/25 bg-transparent px-4 text-center text-[0.75rem] font-bold uppercase tracking-wide text-on-ink-body transition hover:border-pop hover:text-pop sm:text-[0.72rem]"
+											class="inline-flex min-h-[52px] w-full items-center justify-center gap-1.5 rounded-lg border-2 border-white/25 bg-transparent px-5 py-3.5 text-center text-[0.75rem] font-bold uppercase tracking-wide text-on-ink-body transition duration-300 ease-out hover:border-pop hover:text-pop sm:text-[0.72rem]"
 											target="_blank"
-											rel="nofollow sponsored noopener noreferrer"
+											rel="noopener noreferrer nofollow sponsored"
 											aria-label={`Ver oferta do fogão ${p.name} na Shopee — abre em nova aba (link patrocinado)`}
 										>
 											<span aria-hidden="true">👉</span>
@@ -195,16 +219,16 @@ const badgeToneClass: Record<ProductBadgeTone, string> = {
 								</div>
 								<a
 									href={`/review-fogao-5-bocas-${p.reviewSlug}`}
-									class="inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-lg border border-white/25 bg-transparent px-4 text-center text-[0.8125rem] font-bold uppercase tracking-wide text-on-ink-body transition hover:border-pop hover:text-pop"
+									class="inline-flex min-h-[52px] w-full items-center justify-center gap-1.5 rounded-lg border-2 border-white/25 bg-transparent px-5 py-3.5 text-center text-[0.8125rem] font-bold uppercase tracking-wide text-on-ink-body transition duration-300 ease-out hover:border-pop hover:text-pop"
 									aria-label={`Ver análise completa do fogão ${p.name}`}
 								>
 									<span aria-hidden="true">👉</span>
 									Ver análise completa
 								</a>
 								<ul class="space-y-1 border-t border-white/10 pt-3 text-[11px] leading-relaxed text-on-ink-muted sm:text-xs">
-									<li>✔ Preços atualizados hoje</li>
+									<li>✔ Ofertas atualizadas hoje</li>
 									<li>✔ Frete pode variar por região</li>
-									<li>✔ Estoque pode ser limitado</li>
+									<li>✔ Estoque pode variar — ver disponibilidade na loja</li>
 								</ul>
 							</div>
 						</div>

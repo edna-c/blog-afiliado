@@ -1,6 +1,11 @@
 ---
+/**
+ * Hero — imagem (card 4:5; foto com object-cover preenche o quadro)
+ * Grid desktop: texto 7/12 (~58%), figura 5/12 (~42%).
+ * Fonte recomendada: ≥1000px no menor lado para nitidez na coluna do hero.
+ */
 import { Picture } from 'astro:assets';
-import heroImage from '../assets/blog/blog-hero-electrolux-cozinha.png';
+import heroImage from '../assets/blog/hero-cozinha-fogao.png';
 ---
 
 <section class="relative isolate overflow-hidden border-b border-white/10 bg-ink" aria-labelledby="hero-heading">
@@ -8,7 +13,7 @@ import heroImage from '../assets/blog/blog-hero-electrolux-cozinha.png';
 	<div class="absolute inset-0 bg-gradient-to-b from-ink via-ink/95 to-brand-900" aria-hidden="true" />
 	<div class="absolute -right-20 top-20 h-96 w-96 rounded-full bg-pop/10 blur-[100px]" aria-hidden="true" />
 	<div
-		class="relative mx-auto grid max-w-7xl grid-cols-12 gap-x-6 gap-y-5 px-4 py-14 sm:px-6 sm:gap-y-6 lg:min-h-[min(72vh,680px)] lg:gap-x-10 lg:gap-y-6 lg:px-8 lg:py-20"
+		class="relative mx-auto grid max-w-7xl grid-cols-12 gap-x-6 gap-y-6 px-4 py-16 sm:px-6 sm:gap-y-7 lg:min-h-[min(72vh,680px)] lg:items-start lg:gap-x-10 lg:gap-y-7 lg:px-8 lg:py-24"
 	>
 		<div class="col-span-12 flex flex-wrap items-center gap-3 lg:col-span-7 lg:row-start-1">
 			<span
@@ -19,7 +24,7 @@ import heroImage from '../assets/blog/blog-hero-electrolux-cozinha.png';
 			<span class="text-xs font-medium uppercase tracking-[0.18em] text-on-ink-muted">Decisão de compra · Fogões 5 bocas</span>
 		</div>
 
-		<div class="col-span-12 mt-1 max-w-4xl space-y-3 lg:col-span-7 lg:row-start-2 lg:mt-0">
+		<div class="col-span-12 mt-1 max-w-4xl space-y-3 lg:col-span-7 lg:row-start-2 lg:mt-0 lg:max-w-none lg:pr-2">
 			<h1
 				id="hero-heading"
 				class="font-display text-2xl font-bold leading-snug tracking-tight text-balance text-on-ink-body md:text-3xl"
@@ -33,31 +38,18 @@ import heroImage from '../assets/blog/blog-hero-electrolux-cozinha.png';
 					<li class="text-amber-300">🔥 Mais vendido: Consul CFS5NAB</li>
 				</ul>
 			</div>
-			<h2 class="text-lg font-semibold leading-snug text-balance text-on-ink-body md:text-xl">Qual o melhor fogão 5 bocas? Veja os mais vendidos</h2>
+			<h2 class="text-lg font-semibold leading-snug text-balance text-on-ink-body md:text-xl">
+				Qual o melhor fogão 5 bocas? Veja o fogão 5 bocas mais vendido e compare custo-benefício
+			</h2>
 		</div>
 
-		<figure
-			class="col-span-12 mx-auto mt-1 w-full max-w-[280px] sm:max-w-xs lg:col-span-5 lg:col-start-8 lg:row-span-2 lg:row-start-2 lg:mx-0 lg:mt-0 lg:max-w-none lg:self-center lg:pt-1"
-		>
-			<Picture
-				src={heroImage}
-				alt="Cozinha moderna com fogão Electrolux de cinco bocas preto com porta de vidro, integrado entre armários escuros e bancada de granito."
-				formats={['avif', 'webp']}
-				widths={[320, 480, 640, 800, 1000]}
-				sizes="(min-width: 1024px) min(42vw, 560px), min(100vw, 320px)"
-				quality={78}
-				priority
-				class="aspect-square w-full rounded-xl border border-white/10 object-cover shadow-lg ring-1 ring-black/20"
-				pictureAttributes={{ class: 'block w-full' }}
-			/>
-		</figure>
-
 		<div
-			class="col-span-12 max-w-2xl space-y-5 text-base font-normal leading-[1.65] text-on-ink-body sm:text-lg sm:leading-[1.65] lg:col-span-7 lg:row-start-3 lg:mt-0"
+			class="col-span-12 max-w-2xl space-y-5 text-base font-normal leading-[1.65] text-on-ink-body sm:text-lg sm:leading-[1.65] lg:col-span-7 lg:row-start-3 lg:mt-0 lg:max-w-none lg:pr-2"
 		>
 			<p>Aqui você encontra o que realmente importa para escolher o melhor produto, sem complicação.</p>
 			<p>
-				Fogões 5 bocas comparados com foco em uso real e custo-benefício. Menos dúvida, menos dor de cabeça. Em dúvida entre tamanhos?
+				Se você busca o <strong class="font-semibold text-on-ink-body">melhor fogão 5 bocas</strong> para a sua rotina, reunimos comparações
+				com foco em uso real e <strong class="font-semibold text-on-ink-body">fogão 5 bocas custo-benefício</strong>. Em dúvida entre tamanhos?
 				Comece pelo{' '}
 				<a
 					href="/comparativo-fogao-4-vs-5-bocas"
@@ -69,7 +61,7 @@ import heroImage from '../assets/blog/blog-hero-electrolux-cozinha.png';
 			</p>
 			<p>
 				<span class="select-none" aria-hidden="true">👉 </span>
-				Abaixo: preços atualizados e opções para fazer a melhor escolha — e economizar antes que o valor mude.
+				<strong class="font-semibold text-on-ink-body">Ofertas atualizadas hoje</strong> — confira preços e <strong class="font-semibold text-on-ink-body">ver disponibilidade</strong> antes que o estoque mude.
 			</p>
 			<p>
 				<span class="select-none" aria-hidden="true">💡 </span>
@@ -94,25 +86,52 @@ import heroImage from '../assets/blog/blog-hero-electrolux-cozinha.png';
 			</p>
 		</div>
 
-		<div class="col-span-12 flex flex-wrap items-center gap-4 lg:col-span-7 lg:row-start-4">
+		<figure
+			class="col-span-12 mx-auto mt-2 w-full max-w-none sm:mt-3 lg:col-span-5 lg:col-start-8 lg:row-span-2 lg:row-start-2 lg:mx-0 lg:mt-0 lg:w-full lg:max-w-none lg:self-start lg:justify-self-stretch lg:pt-0"
+		>
+			<div
+				class="relative mx-auto aspect-[4/5] w-full overflow-hidden rounded-xl border border-white/15 bg-brand-900/30 shadow-[0_32px_64px_-18px_rgba(0,0,0,0.65),0_12px_40px_-20px_rgba(0,0,0,0.45)] ring-1 ring-white/15 lg:mx-0"
+			>
+				<span class="absolute inset-0 block w-full overflow-hidden rounded-xl">
+					<Picture
+						src={heroImage}
+						alt="Cozinha moderna em tons neutros com fogão a gás de piso preto de cinco bocas, armários cinza e bancada branca."
+						formats={['avif', 'webp']}
+						widths={[360, 480, 640, 800, 960, 1200]}
+						sizes="(min-width: 1024px) min(50vw, 640px), 100vw"
+						quality={82}
+						priority
+						class="absolute inset-0 h-full w-full object-cover object-center"
+						pictureAttributes={{
+							class:
+								'absolute inset-0 block h-full w-full [&>img]:h-full [&>img]:w-full [&>img]:scale-105 [&>img]:object-cover [&>img]:object-center',
+						}}
+					/>
+				</span>
+			</div>
+		</figure>
+
+		<div
+			class="col-span-12 flex w-full max-w-2xl flex-col gap-4 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-stretch sm:gap-4 lg:col-span-7 lg:row-start-4 lg:max-w-none lg:pr-2"
+		>
 			<a
 				href="#top-produtos"
-				class="inline-flex min-h-[52px] min-w-[180px] items-center justify-center rounded-sm bg-cta px-8 text-sm font-bold uppercase tracking-wide text-white ring-1 ring-white/15 transition hover:bg-cta-hover"
-				aria-label="Ver preços atualizados dos modelos recomendados na lista desta página"
+				class="inline-flex min-h-[56px] w-full min-w-0 flex-1 items-center justify-center rounded-lg border-2 border-white/25 bg-cta px-7 py-4 text-sm font-extrabold uppercase tracking-wide text-white shadow-[0_6px_20px_-4px_rgba(34,197,94,0.55)] ring-2 ring-white/25 transition duration-300 ease-out hover:scale-105 hover:bg-cta-hover hover:shadow-[0_10px_28px_-4px_rgba(34,197,94,0.65)] active:scale-[0.98] sm:w-auto sm:min-w-[220px] sm:flex-initial"
+				aria-label="Ver melhor preço agora na lista de fogões recomendados"
 			>
-				<span aria-hidden="true">🔥 </span>Ver preços atualizados dos modelos recomendados
+				🔥 VER MELHOR PREÇO AGORA
 			</a>
 			<a
 				href="#compare-heading"
-				class="inline-flex min-h-[52px] items-center justify-center rounded-sm border-2 border-zinc-100 bg-zinc-900 px-8 text-sm font-bold uppercase tracking-wide text-on-ink-body shadow-sm transition hover:border-zinc-50 hover:bg-zinc-800 hover:text-on-ink-body"
+				class="inline-flex min-h-[56px] w-full items-center justify-center rounded-lg border-2 border-zinc-100 bg-zinc-900 px-7 py-4 text-sm font-bold uppercase tracking-wide text-on-ink-body shadow-sm ring-1 ring-white/10 transition duration-300 ease-out hover:scale-105 hover:border-zinc-50 hover:bg-zinc-800 hover:text-on-ink-body sm:w-auto"
 				aria-label="Comparar modelos de fogão 5 bocas na tabela desta página"
 			>
 				<span aria-hidden="true">📊 </span>Comparar modelos de fogão
 			</a>
 		</div>
 
-		<p class="col-span-12 max-w-2xl text-sm leading-normal text-on-ink-muted lg:col-span-7 lg:row-start-5">
-			Os preços podem variar, então vale conferir no momento da compra.
+		<p class="col-span-12 max-w-2xl text-center text-xs leading-relaxed text-on-ink-muted sm:text-left lg:col-span-7 lg:row-start-5 lg:max-w-none lg:pr-2">
+			Ofertas atualizadas hoje • Estoque pode variar
 		</p>
 	</div>
 </section>
