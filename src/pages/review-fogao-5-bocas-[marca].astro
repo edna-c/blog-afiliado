@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { produtos } from '../data/products';
 
 export async function getStaticPaths() {
 	return [
@@ -12,7 +13,7 @@ export async function getStaticPaths() {
 				model: 'Brastemp BFS5NCR',
 				summary:
 					'Linha popular e fácil de achar: costuma equilibrar preço, forno útil e o básico bem resolvido. Confira no anúncio a versão exata — acabamento e acessórios mudam de um modelo para outro.',
-				offerUrl: 'https://example.com/afiliado/brastemp-bfs5ncr',
+				offerUrl: produtos.brastempBFS5NCR.ml,
 			},
 		},
 		{
@@ -24,19 +25,19 @@ export async function getStaticPaths() {
 				model: 'Consul CFS5NAB',
 				summary:
 					'Perfil “primeiro fogão bom”: costuma agradar quem quer menos firula e mais função. Se você cozinha muito pesado, compare forno e distância entre bocas com um modelo de linha acima antes de decidir.',
-				offerUrl: 'https://example.com/afiliado/consul-cfs5nab',
+				offerUrl: produtos.consulCFS5NAB.ml,
 			},
 		},
 		{
 			params: { marca: 'electrolux' },
 			props: {
-				title: 'Review: fogão 5 bocas Electrolux (76USQ) — recursos e pegadinhas | Casa Prática Eletro',
+				title: 'Review: fogão 5 bocas Electrolux (76EXV) — recursos e pegadinhas | Casa Prática Eletro',
 				description:
 					'Review do fogão 5 bocas Electrolux: acabamento, forno e para quem compensa o investimento.',
-				model: 'Electrolux 76USQ',
+				model: 'Electrolux 76EXV',
 				summary:
 					'Foco em acabamento e no dia a dia: faz sentido quando o visual importa e você usa forno de verdade. Confira na ficha do anúncio se vêm as funções que você quer.',
-				offerUrl: 'https://example.com/afiliado/electrolux-76usq',
+				offerUrl: produtos.electrolux76exv.ml,
 			},
 		},
 	];

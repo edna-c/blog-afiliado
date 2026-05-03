@@ -1,4 +1,6 @@
 ---
+import { produtos } from '../data/products';
+
 export type ProductBadgeTone = 'emerald' | 'amber' | 'pop';
 
 export interface Product {
@@ -34,8 +36,8 @@ const products: Product[] = [
 		],
 		socialProof: '⭐ 4,7/5 baseado em avaliações',
 		reviewSlug: 'brastemp',
-		mercadoLivreUrl: 'https://www.mercadolivre.com.br/fogao-5-bocas-brastemp-bfs5ncr/up/MLBU1757362978?matt_tool=38524122',
-		shopeeUrl: 'https://s.shopee.com.br/2qQVdcWHwK',
+		mercadoLivreUrl: produtos.brastempBFS5NCR.ml,
+		shopeeUrl: produtos.brastempBFS5NCR.shopee,
 		image: '/images/fogao-brastemp-bfs5ncr.webp',
 		imageAlt: 'Fogão a gás Brastemp BFS5NCR cinco bocas em inox',
 		featured: true,
@@ -53,16 +55,15 @@ const products: Product[] = [
 		],
 		socialProof: '✔ Mais de 1.000 avaliações',
 		reviewSlug: 'consul',
-		mercadoLivreUrl:
-			'https://www.mercadolivre.com.br/fogo-de-piso-5-bocas-consul-cfs5nar-acendimento-automatico-cor-inox/p/MLB15295566?matt_tool=38524122',
-		shopeeUrl: 'https://s.shopee.com.br/1gExh55W8A?lp=aff',
+		mercadoLivreUrl: produtos.consulCFS5NAB.ml,
+		shopeeUrl: produtos.consulCFS5NAB.shopee,
 		mlCtaText: 'VER PREÇO NO MERCADO LIVRE',
 		shopeeCtaText: 'VER OFERTA NA SHOPEE',
 		image: '/images/fogao-consul-cfs5nab.webp',
 		imageAlt: 'Fogão a gás Consul CFS5NAB cinco bocas em inox com tampa de vidro',
 	},
 	{
-		name: 'Electrolux FE5IC',
+		name: 'Electrolux 76EXV',
 		badge: '⭐ Melhor geral',
 		badgeTone: 'pop',
 		basePrice: 'R$ 1.899',
@@ -74,11 +75,10 @@ const products: Product[] = [
 		],
 		socialProof: '⭐ 4,6/5 baseado em avaliações',
 		reviewSlug: 'electrolux',
-		mercadoLivreUrl:
-			'https://www.mercadolivre.com.br/fogao-5-bocas-electrolux-cinza-mesa-inox-perfectcook-fe5ig/up/MLBU3507665715?pdp_filters=official_store%3A1215',
+		mercadoLivreUrl: produtos.electrolux76exv.ml,
 		mlCtaText: 'VER PREÇO NO MERCADO LIVRE',
 		image: '/images/fogao-electrolux-76usq.webp',
-		imageAlt: 'Fogão a gás Electrolux FE5IC cinco bocas em inox com mesa de vidro e forno com porta em vidro',
+		imageAlt: 'Fogão a gás Electrolux 76EXV cinco bocas em inox com mesa de vidro e forno com porta em vidro',
 	},
 ];
 
@@ -117,14 +117,14 @@ const badgeToneClass: Record<ProductBadgeTone, string> = {
 				variar; use os botões para <strong class="font-semibold text-on-ink-body">ver disponibilidade</strong> na loja.
 			</p>
 		</div>
-		<div class="mt-14 grid grid-cols-1 gap-7 sm:gap-8 lg:grid-cols-3 lg:items-stretch lg:gap-8">
+		<div class="mt-14 grid grid-cols-1 items-stretch gap-6 md:grid-cols-3 md:gap-6">
 			{
 				products.map((p) => (
 					<article
 						class:list={[
 							'flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-ink/80 shadow-[0_12px_40px_-24px_rgba(0,0,0,0.65)] ring-1 ring-white/5 duration-300 ease-out',
 							p.featured
-								? 'relative z-[1] border-emerald-400/45 shadow-[0_24px_56px_-18px_rgba(0,0,0,0.75),0_0_0_1px_rgba(52,211,153,0.35)] ring-2 ring-emerald-400/55 lg:scale-[1.03]'
+								? 'relative z-[1] border-emerald-400/45 shadow-[0_24px_56px_-18px_rgba(0,0,0,0.75),0_0_0_1px_rgba(52,211,153,0.35)] ring-2 ring-emerald-400/55'
 								: 'transition hover:-translate-y-[5px] hover:border-white/15 hover:shadow-[0_20px_48px_-22px_rgba(0,0,0,0.55)] hover:ring-white/10',
 						]}
 					>
