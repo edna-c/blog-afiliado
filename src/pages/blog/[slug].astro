@@ -6,9 +6,12 @@ import EditorialTrustRibbon from '../../components/EditorialTrustRibbon.astro';
 import { getCollection, render } from 'astro:content';
 import { Picture } from 'astro:assets';
 import blogHeroImage from '../../assets/blog/blog-hero-electrolux-cozinha.png';
+import melhoresFogoesHeroImage from '../../assets/images/heroes/melhores-fogoes-5-bocas-hero.webp';
 
 const blogHeroAlt =
 	'Cozinha moderna com fogão Electrolux de cinco bocas preto com porta de vidro, integrado entre armários escuros e bancada de granito.';
+const melhoresFogoesHeroAlt =
+	'Melhores fogões 5 bocas em destaque em cozinha planejada moderna, com foco em comparação de modelos e custo-benefício.';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -20,6 +23,9 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+const isMelhoresFogoesPage = post.id === 'melhor-fogao-5-bocas';
+const heroImage = isMelhoresFogoesPage ? melhoresFogoesHeroImage : blogHeroImage;
+const heroAlt = isMelhoresFogoesPage ? melhoresFogoesHeroAlt : blogHeroAlt;
 
 const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
 
@@ -133,8 +139,8 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 			<div class="relative aspect-[16/9] w-full bg-white/5">
 				<span class="absolute inset-0 block overflow-hidden">
 					<Picture
-						src={blogHeroImage}
-						alt={blogHeroAlt}
+						src={heroImage}
+						alt={heroAlt}
 						formats={['avif', 'webp']}
 						widths={[640, 768, 960, 1152]}
 						sizes="(max-width: 768px) 100vw, 768px"
