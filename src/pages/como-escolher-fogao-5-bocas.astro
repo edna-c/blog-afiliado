@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import RelatedArticles from '../components/RelatedArticles.astro';
+import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
 ---
 
 <BaseLayout
@@ -9,11 +11,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 	<article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
 		<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Guia prático</p>
 		<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">Como escolher fogão 5 bocas</h1>
-		<p class="mt-4 text-lg text-on-ink-body">
+		<p class="mt-4 text-lg leading-relaxed text-on-ink-body">
 			Use este guia quando já estiver decidido por <strong class="text-on-ink-body">melhores fogões 5 bocas</strong>, mas ainda travado
 			em medida, tipo de instalação ou versão do forno.
 		</p>
-		<div class="mt-10 space-y-8 text-base text-on-ink-body">
+		<div class="mt-8">
+			<EditorialTrustRibbon />
+		</div>
+		<div class="mt-10 space-y-8 text-base leading-relaxed text-on-ink-body">
 			<section aria-labelledby="step1">
 				<h2 id="step1" class="font-display text-xl font-bold text-on-ink-body">1. Desenhe a cozinha em números</h2>
 				<p class="mt-3">
@@ -54,16 +59,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 				</p>
 			</section>
 		</div>
-		<div class="mt-12">
+		<div class="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
 			<a
 				href="https://example.com/afiliado/fogao-5-bocas"
-				class="inline-flex min-h-[48px] items-center justify-center bg-cta px-8 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-cta-hover"
+				class="inline-flex min-h-[52px] flex-1 items-center justify-center bg-cta px-8 text-xs font-bold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-w-[200px]"
 				target="_blank"
 				rel="nofollow sponsored noopener noreferrer"
 				aria-label="Ver preço atualizado de fogões 5 bocas na loja parceira — abre em nova aba (link patrocinado)"
 			>
 				Ver preço atualizado
 			</a>
+			<a href="/melhor-fogao-5-bocas" class="btn-secondary-premium flex-1 px-8 sm:min-w-[200px]">Abrir guia mestre 5 bocas</a>
 		</div>
+		<RelatedArticles class="mt-14" currentPath="/como-escolher-fogao-5-bocas" />
 	</article>
 </BaseLayout>

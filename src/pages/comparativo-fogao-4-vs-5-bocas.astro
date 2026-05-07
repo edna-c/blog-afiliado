@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import RelatedArticles from '../components/RelatedArticles.astro';
+import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
 ---
 
 <BaseLayout
@@ -11,34 +13,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">
 			Melhores fogões 5 bocas ou 4 bocas: qual comprar em 2026?
 		</h1>
-		<p class="mt-4 text-lg text-on-ink-body">
+		<p class="mt-4 text-lg leading-relaxed text-on-ink-body">
 			Se você busca <strong class="text-on-ink-body">melhores fogões 5 bocas</strong>, mas ainda hesita no 4, use esta regra: conte
 			quantas panelas ficam ligadas ao mesmo tempo em dias normais — não no Natal.
 		</p>
-		<div class="mt-10 overflow-x-auto rounded-xl ring-1 ring-white/10">
-			<table class="w-full min-w-[520px] border-collapse text-left text-sm">
+		<div class="mt-8">
+			<EditorialTrustRibbon />
+		</div>
+		<div class="table-premium-shell mt-10">
+			<table class="table-premium min-w-[520px]">
 				<thead>
-					<tr class="border-b border-white/10 bg-brand-900/80">
-						<th class="px-4 py-3 font-display text-xs font-bold uppercase tracking-wider text-on-ink-body">Critério</th>
-						<th class="px-4 py-3 font-display text-xs font-bold uppercase tracking-wider text-on-ink-body">4 bocas</th>
-						<th class="px-4 py-3 font-display text-xs font-bold uppercase tracking-wider text-on-ink-body">5 bocas</th>
+					<tr>
+						<th scope="col">Critério</th>
+						<th scope="col">4 bocas</th>
+						<th scope="col">5 bocas</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr class="border-b border-white/5 bg-ink">
-						<th scope="row" class="px-4 py-3 font-semibold text-on-ink-body">Uso simultâneo</th>
-						<td class="px-4 py-3 text-on-ink-body">Suficiente na maioria</td>
-						<td class="px-4 py-3 text-pop">Melhor para quem “lotam” o fogão</td>
+					<tr class="bg-ink">
+						<th scope="row" class="font-semibold text-on-ink-body">Uso simultâneo</th>
+						<td class="text-on-ink-body">Suficiente na maioria</td>
+						<td class="font-medium text-pop">Melhor para quem “lotam” o fogão</td>
 					</tr>
-					<tr class="border-b border-white/5 bg-brand-900/25">
-						<th scope="row" class="px-4 py-3 font-semibold text-on-ink-body">Espaço</th>
-						<td class="px-4 py-3 text-on-ink-body">Encaixa em cozinhas menores</td>
-						<td class="px-4 py-3 text-on-ink-body">Exige bancada/corredor confortáveis</td>
+					<tr class="bg-brand-900/25">
+						<th scope="row" class="font-semibold text-on-ink-body">Espaço</th>
+						<td class="text-on-ink-body">Encaixa em cozinhas menores</td>
+						<td class="text-on-ink-body">Exige bancada/corredor confortáveis</td>
 					</tr>
 					<tr class="bg-ink">
-						<th scope="row" class="px-4 py-3 font-semibold text-on-ink-body">Orçamento</th>
-						<td class="px-4 py-3 text-on-ink-body">Normalmente menor</td>
-						<td class="px-4 py-3 text-on-ink-body">Mais bocas ≠ sempre mais caro; compare modelo a modelo</td>
+						<th scope="row" class="font-semibold text-on-ink-body">Orçamento</th>
+						<td class="text-on-ink-body">Normalmente menor</td>
+						<td class="text-on-ink-body">Mais bocas ≠ sempre mais caro; compare modelo a modelo</td>
 					</tr>
 				</tbody>
 			</table>
@@ -74,11 +79,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			</a>
 			<a
 				href="/como-escolher-fogao-5-bocas"
-				class="inline-flex min-h-[48px] items-center justify-center border border-white/20 px-8 text-xs font-bold uppercase tracking-wider text-on-ink-body transition hover:border-pop hover:text-pop"
+				class="btn-secondary-premium px-8"
 				aria-label="Abrir guia passo a passo: como escolher fogão 5 bocas"
 			>
 				Ver guia de compra — 5 bocas
 			</a>
 		</div>
+		<RelatedArticles class="mt-14" currentPath="/comparativo-fogao-4-vs-5-bocas" />
 	</article>
 </BaseLayout>

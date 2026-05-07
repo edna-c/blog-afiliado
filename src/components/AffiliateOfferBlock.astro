@@ -1,0 +1,94 @@
+---
+interface Props {
+	heading: string;
+	description?: string;
+	productName: string;
+	mercadoLivreUrl: string;
+	shopeeUrl?: string;
+	variant?: 'featured' | 'default';
+	id?: string;
+}
+
+const {
+	heading,
+	description,
+	productName,
+	mercadoLivreUrl,
+	shopeeUrl,
+	variant = 'default',
+	id,
+} = Astro.props;
+
+const isFeatured = variant === 'featured';
+---
+
+<section
+	id={id}
+	class:list={[
+		'scroll-mt-24 rounded-2xl border p-5 sm:p-7',
+		isFeatured
+			? 'border-emerald-400/40 bg-brand-900/60 shadow-[0_16px_48px_-20px_rgba(0,0,0,0.65)] ring-2 ring-emerald-400/35'
+			: 'border-white/10 bg-brand-900/40 ring-1 ring-white/10',
+	]}
+	aria-labelledby={id ? `${id}-heading` : undefined}
+>
+	<div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+		<div class="min-w-0">
+			<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Ofertas parceiras</p>
+			<h2
+				id={id ? `${id}-heading` : undefined}
+				class="font-display mt-2 text-xl font-extrabold tracking-tight text-on-ink-body sm:text-2xl"
+			>
+				{heading}
+			</h2>
+			{
+				description ? (
+					<p class="mt-2 max-w-2xl text-sm leading-relaxed text-on-ink-muted">{description}</p>
+				) : null
+			}
+		</div>
+	</div>
+	<div class="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+		<a
+			href={mercadoLivreUrl}
+			class:list={[
+				'inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-lg border-2 border-transparent px-5 py-3.5 text-center text-[0.72rem] font-extrabold uppercase tracking-wide text-white transition duration-300 sm:text-[0.75rem]',
+				isFeatured
+					? 'bg-emerald-600 shadow-[0_4px_18px_-2px_rgba(5,150,105,0.55)] ring-1 ring-emerald-300/40 hover:bg-emerald-700 hover:brightness-110'
+					: 'bg-cta ring-1 ring-white/15 hover:bg-cta-hover',
+				!shopeeUrl && 'sm:col-span-2',
+			]}
+			target="_blank"
+			rel="noopener noreferrer nofollow sponsored"
+			aria-label={`Ver preço e disponibilidade do ${productName} no Mercado Livre — abre em nova aba (link patrocinado)`}
+		>
+			<span aria-hidden="true">{isFeatured ? '🔥' : '👉'}</span>
+			<span>{isFeatured ? 'Ver melhor preço no Mercado Livre' : 'Ver preço no Mercado Livre'}</span>
+		</a>
+		{
+			shopeeUrl ? (
+				<a
+					href={shopeeUrl}
+					class="btn-secondary-premium w-full px-5 py-3.5 text-[0.72rem] sm:text-[0.75rem]"
+					target="_blank"
+					rel="noopener noreferrer nofollow sponsored"
+					aria-label={`Ver oferta do ${productName} na Shopee — abre em nova aba (link patrocinado)`}
+				>
+					<span aria-hidden="true">👉</span>
+					<span>Ver oferta na Shopee</span>
+				</a>
+			) : null
+		}
+	</div>
+	<ul class="mt-4 space-y-1 border-t border-white/10 pt-4 text-[11px] leading-relaxed text-on-ink-muted sm:text-xs">
+		<li>Preço e estoque mudam com frequência — confira no momento da compra.</li>
+		<li>Alguns links geram comissão para o site, sem custo extra para você.</li>
+		<li>
+			Transparência: leia também a{' '}
+			<a href="/politica-de-afiliados" class="font-semibold text-pop underline-offset-2 hover:underline">
+				política de afiliados
+			</a>
+			.
+		</li>
+	</ul>
+</section>

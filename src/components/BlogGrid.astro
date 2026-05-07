@@ -6,6 +6,8 @@ interface Props {
 	title?: string;
 	subtitle?: string;
 	showViewAllLink?: boolean;
+	/** `dark` alinha à home premium; `light` mantém o bloco claro (ex.: legado). */
+	variant?: 'light' | 'dark';
 }
 
 const {
@@ -13,82 +15,178 @@ const {
 	title = 'Artigos recentes',
 	subtitle = 'Textos e comparativos para ajudar na hora de escolher fogão.',
 	showViewAllLink = true,
+	variant = 'light',
 } = Astro.props;
 
 const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' });
+
+const isDark = variant === 'dark';
 ---
 
-<section class="bg-white py-20 lg:py-28" aria-labelledby="blog-grid-heading">
-	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-		<div class="mx-auto max-w-2xl text-center">
-			<p class="text-sm font-semibold uppercase tracking-widest text-accent-on-light">Artigos</p>
-			<h2 id="blog-grid-heading" class="font-display mt-2 text-3xl font-bold text-brand-900 sm:text-4xl">{title}</h2>
-			<p class="mt-4 text-neutral-700">{subtitle}</p>
+<section
+	id="atualizacoes-blog"
+	class:list={[
+		isDark
+			? 'relative scroll-mt-24 border-y border-white/10 bg-gradient-to-b from-brand-950 via-ink to-[#06060a] py-20 sm:py-24 lg:py-28'
+			: 'bg-white py-20 lg:py-28',
+	]}
+	aria-labelledby="blog-grid-heading"
+>
+	{
+		isDark ? (
+			<div
+				class="pointer-events-none absolute inset-0 opacity-[0.07]"
+				aria-hidden="true"
+				style="background-image: radial-gradient(circle at 20% 20%, rgba(223,255,31,0.35), transparent 45%), radial-gradient(circle at 80% 0%, rgba(255,255,255,0.12), transparent 40%);"
+			/>
+		) : null
+	}
+	<div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+		<div class:list={['mx-auto max-w-3xl text-center lg:max-w-4xl', isDark && 'lg:mx-auto']}>
+			<p
+				class:list={[
+					'text-xs font-bold uppercase tracking-[0.35em] sm:text-sm',
+					isDark ? 'text-pop' : 'text-accent-on-light',
+				]}
+			>
+				{isDark ? 'Leitura complementar' : 'Artigos'}
+			</p>
+			<h2
+				id="blog-grid-heading"
+				class:list={[
+					'font-display mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-[2.35rem] lg:leading-tight',
+					isDark ? 'text-on-ink-body' : 'text-brand-900',
+				]}
+			>
+				{title}
+			</h2>
+			<p class:list={['mt-4 text-base leading-relaxed sm:text-lg', isDark ? 'text-on-ink-muted' : 'text-neutral-700']}>
+				{subtitle}
+			</p>
 		</div>
-		<div class="mt-16 grid gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-3 lg:gap-10">
-			{posts.map((post) => {
-				const cover = post.data.coverImage;
-				return (
-					<article
-						class="group flex flex-col overflow-hidden rounded-2xl bg-neutral-50 ring-1 ring-black/5 transition-shadow duration-300 ease-out hover:shadow-[0_24px_48px_-14px_rgba(0,0,0,0.14)]"
-					>
-						<a
-							href={`/blog/${post.id}/`}
-							class="relative block aspect-[16/10] overflow-hidden rounded-[12px] ring-1 ring-black/[0.06]"
-							aria-label={`Abrir artigo no blog: ${post.data.title}`}
+		<div class="mt-14 grid gap-6 sm:grid-cols-2 sm:gap-6 lg:mt-16 lg:grid-cols-3 lg:gap-8">
+			{
+				posts.map((post, index) => {
+					const cover = post.data.coverImage;
+					return (
+						<article
+							class:list={[
+								'group flex min-h-0 flex-col overflow-hidden rounded-2xl transition duration-300 ease-out will-change-transform',
+								isDark
+									? 'border border-white/10 bg-brand-900/35 shadow-[0_16px_48px_-28px_rgba(0,0,0,0.65)] ring-1 ring-white/5 hover:-translate-y-1 hover:border-pop/30 hover:shadow-[0_22px_56px_-24px_rgba(0,0,0,0.75),0_0_0_1px_rgba(223,255,31,0.12)]'
+									: 'bg-neutral-50 ring-1 ring-black/5 hover:shadow-[0_24px_48px_-14px_rgba(0,0,0,0.14)]',
+							]}
 						>
-							<span class="absolute inset-0 block origin-center transition-transform duration-300 ease-out will-change-transform group-hover:scale-[1.03]">
-								{cover ? (
-									<img
-										src={cover}
-										alt=""
-										class="h-full w-full object-cover object-center"
-										width={960}
-										height={600}
-										loading="lazy"
-										decoding="async"
-									/>
-								) : (
-									<div
-										class="h-full w-full bg-gradient-to-br from-stone-100 via-neutral-100 to-stone-200"
-										aria-hidden="true"
-									/>
-								)}
-							</span>
-						</a>
-						<div class="flex flex-1 flex-col p-6 sm:p-7">
-							<p class="text-xs font-medium uppercase tracking-wide text-neutral-600">
-								{post.data.category} · {fmt.format(post.data.pubDate)}
-							</p>
-							<h3 class="font-display mt-3 text-lg font-semibold leading-snug text-brand-900">
-								<a href={`/blog/${post.id}/`} class="hover:text-accent-on-light-hover">
-									{post.data.title}
-								</a>
-							</h3>
-							<p class="mt-3 line-clamp-2 flex-1 text-sm leading-relaxed text-neutral-700">{post.data.description}</p>
 							<a
 								href={`/blog/${post.id}/`}
-								class="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-accent-on-light underline decoration-pop/70 decoration-2 underline-offset-4 transition hover:text-accent-on-light-hover hover:decoration-pop"
-								aria-label={`Ver artigo completo no blog: ${post.data.title}`}
+								class:list={[
+									'relative block aspect-[16/10] overflow-hidden',
+									isDark ? 'ring-1 ring-white/10' : 'rounded-[12px] ring-1 ring-black/[0.06]',
+								]}
+								aria-label={`Abrir artigo no blog: ${post.data.title}`}
 							>
-								Ver artigo completo
-								<span aria-hidden="true">→</span>
+								<span class="absolute inset-0 block origin-center transition-transform duration-500 ease-out will-change-transform group-hover:scale-[1.04]">
+									{cover ? (
+										<img
+											src={cover}
+											alt=""
+											class="h-full w-full object-cover object-center"
+											width={960}
+											height={600}
+											loading={index === 0 ? 'eager' : 'lazy'}
+											decoding="async"
+											fetchpriority={index === 0 ? 'high' : undefined}
+											sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+										/>
+									) : (
+										<div
+											class:list={[
+												'h-full w-full',
+												isDark
+													? 'bg-gradient-to-br from-brand-800/80 via-brand-900 to-ink'
+													: 'bg-gradient-to-br from-stone-100 via-neutral-100 to-stone-200',
+											]}
+											aria-hidden="true"
+										/>
+									)}
+								</span>
+								<span
+									class:list={[
+										'pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100',
+										isDark ? 'bg-gradient-to-t from-ink/80 via-transparent to-transparent' : 'bg-black/[0.03]',
+									]}
+									aria-hidden="true"
+								/>
 							</a>
-						</div>
-					</article>
-				);
-			})}
+							<div class="flex min-h-0 flex-1 flex-col p-6 sm:p-7">
+								<p
+									class:list={[
+										'text-xs font-semibold uppercase tracking-wide',
+										isDark ? 'text-on-ink-muted' : 'text-neutral-600',
+									]}
+								>
+									{post.data.category} · {fmt.format(post.data.pubDate)}
+								</p>
+								<h3
+									class:list={[
+										'font-display mt-3 text-lg font-bold leading-snug sm:text-xl',
+										isDark ? 'text-on-ink-body' : 'text-brand-900',
+									]}
+								>
+									<a
+										href={`/blog/${post.id}/`}
+										class:list={[
+											'transition',
+											isDark ? 'hover:text-pop' : 'hover:text-accent-on-light-hover',
+										]}
+									>
+										{post.data.title}
+									</a>
+								</h3>
+								<p
+									class:list={[
+										'mt-3 line-clamp-3 flex-1 text-sm leading-relaxed sm:line-clamp-2 sm:text-base',
+										isDark ? 'text-on-ink-muted' : 'text-neutral-700',
+									]}
+								>
+									{post.data.description}
+								</p>
+								<a
+									href={`/blog/${post.id}/`}
+									class:list={[
+										'mt-6 inline-flex min-h-[44px] items-center gap-2 text-sm font-bold transition',
+										isDark
+											? 'text-pop underline decoration-pop/50 decoration-2 underline-offset-[6px] hover:text-accent-hover hover:decoration-pop'
+											: 'font-semibold text-accent-on-light underline decoration-pop/70 decoration-2 underline-offset-4 hover:text-accent-on-light-hover hover:decoration-pop',
+									]}
+									aria-label={`Ler artigo completo: ${post.data.title}`}
+								>
+									Ler artigo completo
+									<span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">
+										→
+									</span>
+								</a>
+							</div>
+						</article>
+					);
+				})
+			}
 		</div>
-		{showViewAllLink && (
-			<div class="mt-14 text-center">
-				<a
-					href="/blog"
-					class="inline-flex rounded-full border border-brand-900/15 px-6 py-3 text-sm font-semibold text-brand-900 transition hover:border-brand-900/30 hover:bg-neutral-50"
-					aria-label="Ver todos os artigos e guias no blog"
-				>
-					Ver todos os artigos no blog
-				</a>
-			</div>
-		)}
+		{
+			showViewAllLink ? (
+				<div class="mt-14 flex justify-center sm:mt-16">
+					<a
+						href="/blog"
+						class:list={[
+							'inline-flex min-h-[48px] items-center justify-center px-7 text-sm font-bold transition',
+							isDark ? 'btn-secondary-premium is-pill' : 'rounded-full border border-brand-900/15 font-semibold text-brand-900 hover:border-brand-900/30 hover:bg-neutral-50',
+						]}
+						aria-label="Ver todos os artigos e guias no blog"
+					>
+						Ver todos os artigos no blog
+					</a>
+				</div>
+			) : null
+		}
 	</div>
 </section>

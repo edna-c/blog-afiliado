@@ -1,0 +1,619 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AffiliateOfferBlock from '../components/AffiliateOfferBlock.astro';
+import RelatedArticles from '../components/RelatedArticles.astro';
+import { produtos } from '../data/products';
+
+const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
+const canonicalPath = '/brastemp-bfs5ncr-vale-a-pena/';
+const canonical = new URL(canonicalPath.replace(/^\//, ''), site).href;
+const ogImageUrl = new URL('images/fogao-brastemp-bfs5ncr.webp', site).href;
+
+const seoTitle = 'Brastemp BFS5NCR vale a pena? Review completo 2026 | Casa Prática Eletro';
+const metaDescription =
+	'Veja se o Brastemp BFS5NCR realmente vale a pena em 2026. Análise completa sobre forno, potência, limpeza, custo-benefício e uso diário.';
+
+const publishedTime = '2026-05-01T10:00:00-03:00';
+const modifiedTime = '2026-05-06T10:00:00-03:00';
+
+const orgId = `${site.href}#organization`;
+const websiteId = `${site.href}#website`;
+const webpageId = `${canonical}#webpage`;
+const articleId = `${canonical}#article`;
+const breadcrumbId = `${canonical}#breadcrumb`;
+const faqId = `${canonical}#faq`;
+
+const faqItems = [
+	{
+		question: 'Brastemp BFS5NCR é bom?',
+		answer:
+			'Sim. Ele é considerado um dos modelos mais equilibrados entre os fogões 5 bocas premium de piso, com bom conjunto de chamas, forno espaçoso e acabamento que valoriza a cozinha.',
+	},
+	{
+		question: 'O forno é realmente grande?',
+		answer:
+			'Sim. Os 96 litros acomodam assadeiras grandes e ajudam bastante famílias maiores ou quem usa forno com frequência.',
+	},
+	{
+		question: 'O BFS5NCR consome muito gás?',
+		answer:
+			'O consumo é compatível com a potência do conjunto de bocas e com o que se espera de um fogão 5 bocas dessa categoria; verifique na etiqueta do modelo o selo de eficiência energética vigente.',
+	},
+	{
+		question: 'Vale mais a pena que um Consul?',
+		answer:
+			'Depende do perfil. Para quem prioriza acabamento, forno generoso e sensação mais premium no dia a dia, o Brastemp costuma compensar. Se o foco é gastar o mínimo possível, linhas de entrada da Consul podem sair mais baratas.',
+	},
+	{
+		question: 'É fácil de limpar?',
+		answer:
+			'Sim. A mesa de vidro, os botões removíveis e o vidro interno do forno removível ajudam bastante na manutenção diária.',
+	},
+	{
+		question: 'Vale para cozinha planejada?',
+		answer:
+			'Sim. O visual moderno (inox com mesa em vidro) combina bem com cozinhas planejadas e ambientes contemporâneos.',
+	},
+] as const;
+
+const scoreRows = [
+	{ label: 'Potência das chamas', score: '9/10' },
+	{ label: 'Forno', score: '9/10' },
+	{ label: 'Facilidade de limpeza', score: '8,7/10' },
+	{ label: 'Acabamento', score: '9,2/10' },
+	{ label: 'Custo-benefício', score: '8,8/10' },
+	{ label: 'Uso diário', score: '9/10' },
+] as const;
+
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'Organization',
+			'@id': orgId,
+			name: 'Casa Prática Eletro',
+			url: site.href,
+			logo: {
+				'@type': 'ImageObject',
+				url: new URL('favicon.svg', site).href,
+			},
+		},
+		{
+			'@type': 'WebSite',
+			'@id': websiteId,
+			name: 'Casa Prática Eletro',
+			url: site.href,
+			publisher: { '@id': orgId },
+		},
+		{
+			'@type': 'WebPage',
+			'@id': webpageId,
+			url: canonical,
+			name: seoTitle,
+			description: metaDescription,
+			isPartOf: { '@id': websiteId },
+			mainEntity: { '@id': articleId },
+			breadcrumb: { '@id': breadcrumbId },
+			primaryImageOfPage: {
+				'@type': 'ImageObject',
+				url: ogImageUrl,
+			},
+		},
+		{
+			'@type': 'BreadcrumbList',
+			'@id': breadcrumbId,
+			itemListElement: [
+				{
+					'@type': 'ListItem',
+					position: 1,
+					name: 'Início',
+					item: site.href,
+				},
+				{
+					'@type': 'ListItem',
+					position: 2,
+					name: 'Review Brastemp BFS5NCR',
+					item: canonical,
+				},
+			],
+		},
+		{
+			'@type': 'Article',
+			'@id': articleId,
+			headline: 'Brastemp BFS5NCR vale a pena? Review completo do fogão 5 bocas em 2026',
+			description: metaDescription,
+			image: [ogImageUrl],
+			author: { '@id': orgId },
+			publisher: { '@id': orgId },
+			datePublished: publishedTime,
+			dateModified: modifiedTime,
+			mainEntityOfPage: { '@id': webpageId },
+			articleSection: 'Reviews',
+			inLanguage: 'pt-BR',
+		},
+		{
+			'@type': 'FAQPage',
+			'@id': faqId,
+			mainEntity: faqItems.map((item) => ({
+				'@type': 'Question',
+				name: item.question,
+				acceptedAnswer: {
+					'@type': 'Answer',
+					text: item.answer,
+				},
+			})),
+		},
+	],
+};
+---
+
+<BaseLayout
+	title={seoTitle}
+	description={metaDescription}
+	canonical={canonical}
+	openGraph={{
+		title: seoTitle,
+		description: metaDescription,
+		url: canonical,
+		image: ogImageUrl,
+		imageAlt: 'Fogão de piso Brastemp BFS5NCR cinco bocas em inox com mesa de vidro temperado',
+		type: 'article',
+		publishedTime,
+		modifiedTime,
+	}}
+>
+	<script type="application/ld+json" slot="head" set:html={JSON.stringify(structuredData)} />
+	<article class="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+		<Breadcrumbs
+			class="mb-8"
+			items={[
+				{ name: 'Início', href: '/' },
+				{ name: 'Review Brastemp BFS5NCR' },
+			]}
+		/>
+
+		<header class="border-b border-white/10 pb-10">
+			<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Atualizado 2026 · Review · Fogão 5 bocas</p>
+			<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
+				Brastemp BFS5NCR vale a pena? Review completo do fogão 5 bocas em 2026
+			</h1>
+			<p class="mt-5 text-lg leading-relaxed text-on-ink-body">
+				Se você está reformando a cozinha ou busca um <strong class="text-on-ink-body">fogão 5 bocas</strong> mais robusto, o
+				Brastemp BFS5NCR costuma aparecer entre os mais recomendados — com acabamento premium, forno espaçoso e cara de cozinha
+				atual. Nesta análise, a gente cruza <strong class="text-on-ink-body">potência</strong>,{' '}
+				<strong class="text-on-ink-body">forno</strong>, <strong class="text-on-ink-body">limpeza</strong> e{' '}
+				<strong class="text-on-ink-body">custo-benefício</strong> para ver se ele realmente compensa em 2026 — e onde faz
+				mais sentido olhar alternativas no{' '}
+				<a href="/melhor-fogao-5-bocas" class="font-semibold text-pop underline-offset-2 hover:underline">guia de melhor fogão 5 bocas</a>.
+			</p>
+		</header>
+
+		<section class="mt-10" aria-labelledby="decisao-rapida-heading">
+			<h2 id="decisao-rapida-heading" class="font-display text-xl font-bold tracking-tight text-on-ink-body sm:text-2xl">
+				Decisão rápida
+			</h2>
+			<div class="mt-6 grid gap-4 sm:grid-cols-2">
+				<div
+					class="rounded-2xl border border-emerald-400/35 bg-emerald-950/25 p-5 ring-1 ring-emerald-400/20 sm:p-6"
+					aria-labelledby="vale-para-heading"
+				>
+					<h3 id="vale-para-heading" class="text-sm font-bold uppercase tracking-wider text-emerald-300">
+						Vale a pena para quem
+					</h3>
+					<ul class="mt-4 list-inside list-disc space-y-2.5 text-sm leading-relaxed text-on-ink-body sm:text-base">
+						<li>cozinha com frequência;</li>
+						<li>quer um fogão bonito para cozinha moderna;</li>
+						<li>precisa de forno grande;</li>
+						<li>usa panelas grandes no dia a dia;</li>
+						<li>procura equilíbrio entre acabamento e desempenho.</li>
+					</ul>
+				</div>
+				<div
+					class="rounded-2xl border border-amber-400/25 bg-brand-900/50 p-5 ring-1 ring-white/10 sm:p-6"
+					aria-labelledby="pode-nao-heading"
+				>
+					<h3 id="pode-nao-heading" class="text-sm font-bold uppercase tracking-wider text-amber-200/90">
+						Pode não valer tanto se
+					</h3>
+					<ul class="mt-4 list-inside list-disc space-y-2.5 text-sm leading-relaxed text-on-ink-body sm:text-base">
+						<li>sua cozinha for muito compacta;</li>
+						<li>você morar sozinho;</li>
+						<li>usar pouco o forno;</li>
+						<li>estiver buscando o menor preço possível.</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section class="mt-10 rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10 sm:p-6" aria-labelledby="eeat-heading">
+			<h2 id="eeat-heading" class="sr-only">Transparência editorial</h2>
+			<p class="text-sm font-semibold leading-relaxed text-on-ink-body">
+				<span class="text-pop">Como analisamos:</span> cruzamos ficha técnica do modelo, pontos que costumam aparecer em uso real
+				(limpeza, estabilidade de panela, forno) e comparação com o que costuma fazer sentido em cada faixa de preço. Nada de
+				promessa milagrosa: quando não for para você, a gente diz. Conheça o propósito do site na página{' '}
+				<a href="/sobre" class="font-semibold text-pop underline-offset-2 hover:underline">sobre a Casa Prática Eletro</a>
+				{' '}e leia a{' '}
+				<a href="/politica-de-afiliados" class="font-semibold text-pop underline-offset-2 hover:underline">política de afiliados</a>.
+			</p>
+		</section>
+
+		<figure
+			class="mt-10 overflow-hidden rounded-2xl shadow-[0_12px_40px_-18px_rgba(0,0,0,0.55)] ring-1 ring-white/10"
+		>
+			<div class="relative aspect-[4/3] w-full bg-zinc-900/80 sm:aspect-[16/10]">
+				<img
+					src="/images/fogao-brastemp-bfs5ncr.webp"
+					alt="Fogão de piso Brastemp BFS5NCR cinco bocas em inox com mesa de vidro temperado preto e acabamento contemporâneo"
+					class="h-full w-full object-cover object-center"
+					width={800}
+					height={800}
+					fetchpriority="high"
+					decoding="async"
+				/>
+			</div>
+			<figcaption class="border-t border-white/10 bg-brand-900/60 px-4 py-3 text-center text-xs text-on-ink-muted sm:text-sm">
+				Visual em inox com mesa de vidro: combinação comum em cozinhas planejadas — com atenção redobrada a impactos no vidro.
+			</figcaption>
+		</figure>
+
+		<section class="mt-12" aria-labelledby="resumo-notas-heading">
+			<h2 id="resumo-notas-heading" class="font-display text-xl font-bold tracking-tight text-on-ink-body sm:text-2xl">
+				Resumo rápido — notas do modelo
+			</h2>
+			<p class="mt-3 text-sm text-on-ink-muted sm:text-base">
+				Notas editoriais (0–10) para leitura rápida; não substituem medição em laboratório nem a experiência exata do seu tipo de receita.
+			</p>
+			<div class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
+				{
+					scoreRows.map((row) => (
+						<div class="rounded-xl border border-white/10 bg-brand-900/45 px-3 py-4 text-center ring-1 ring-white/5 sm:px-4 sm:py-5">
+							<p class="text-[11px] font-semibold uppercase leading-snug tracking-wide text-on-ink-muted sm:text-xs">
+								{row.label}
+							</p>
+							<p class="font-display mt-2 text-2xl font-extrabold tabular-nums text-pop sm:text-3xl">{row.score}</p>
+						</div>
+					))
+				}
+			</div>
+			<div class="table-premium-shell mt-8">
+				<table class="table-premium min-w-[320px]">
+					<caption class="sr-only">Resumo das notas por critério</caption>
+					<thead>
+						<tr>
+							<th scope="col">Critério</th>
+							<th scope="col">Nota</th>
+						</tr>
+					</thead>
+					<tbody>
+						{
+							scoreRows.map((row, i) => (
+								<tr class:list={[i % 2 === 0 ? 'bg-ink' : 'bg-brand-900/25']}>
+									<th scope="row" class="font-semibold text-on-ink-body">
+										{row.label}
+									</th>
+									<td class="tabular-nums text-pop">{row.score}</td>
+								</tr>
+							))
+						}
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<div class="mt-12">
+			<AffiliateOfferBlock
+				id="ofertas"
+				variant="featured"
+				productName="Brastemp BFS5NCR"
+				heading="Conferir preço atualizado do Brastemp BFS5NCR"
+				description="O valor muda em promoções — em algumas épocas do ano a diferença pode ser grande. Use os botões abaixo para ver disponibilidade e frete na sua região."
+				mercadoLivreUrl={produtos.brastempBFS5NCR.ml}
+				shopeeUrl={produtos.brastempBFS5NCR.shopee}
+			/>
+		</div>
+
+		<div class="mt-14 space-y-10 text-base leading-relaxed text-on-ink-body">
+			<section aria-labelledby="ficha-heading">
+				<h2 id="ficha-heading" class="font-display text-xl font-bold tracking-tight text-on-ink-body sm:text-2xl">
+					Ficha técnica: o que o Brastemp BFS5NCR entrega?
+				</h2>
+				<div class="table-premium-shell mt-6">
+					<table class="table-premium min-w-[360px]">
+						<caption class="sr-only">Principais características do fogão Brastemp BFS5NCR</caption>
+						<thead>
+							<tr>
+								<th scope="col">Característica</th>
+								<th scope="col">Detalhes</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">Tipo</th>
+								<td>Fogão de piso</td>
+							</tr>
+							<tr class="bg-brand-900/25">
+								<th scope="row" class="font-semibold text-on-ink-body">Quantidade de bocas</th>
+								<td>5 (1 Turbo Chama central)</td>
+							</tr>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">Acabamento</th>
+								<td>Inox com mesa de vidro temperado</td>
+							</tr>
+							<tr class="bg-brand-900/25">
+								<th scope="row" class="font-semibold text-on-ink-body">Capacidade do forno</th>
+								<td>96 litros</td>
+							</tr>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">Acendimento</th>
+								<td>Automático total</td>
+							</tr>
+							<tr class="bg-brand-900/25">
+								<th scope="row" class="font-semibold text-on-ink-body">Tipo de gás</th>
+								<td>GLP (conversível para GN)</td>
+							</tr>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">Diferencial</th>
+								<td>Botões removíveis e aro protetor</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<section aria-labelledby="design-heading">
+				<h2 id="design-heading" class="font-display text-xl font-bold tracking-tight text-on-ink-body sm:text-2xl">
+					Design e acabamento: visual moderno para cozinha planejada
+				</h2>
+				<p class="mt-4">
+					O contraste do inox escovado com a mesa de vidro temperado preto deixa o fogão com aparência sofisticada, próxima do
+					visual de cooktops modernos. Para quem busca um <strong class="text-on-ink-body">fogão 5 bocas Brastemp inox</strong> com
+					presença forte na cozinha, o conjunto chama atenção.
+				</p>
+				<h3 class="mt-8 font-display text-lg font-bold text-on-ink-body">Mesa de vidro facilita a limpeza</h3>
+				<p class="mt-3">
+					Além do visual, a mesa lisa tende a simplificar a manutenção após frituras e respingos — diferente de alguns inox que
+					marcam com facilidade.
+				</p>
+				<h3 class="mt-8 font-display text-lg font-bold text-on-ink-body">Trempes robustas passam mais segurança</h3>
+				<p class="mt-3">
+					As grades costumam entregar boa estabilidade para panelas maiores, ponto que pesa para famílias que cozinham diariamente
+					ou usam panelas pesadas.
+				</p>
+			</section>
+
+			<section aria-labelledby="uso-heading">
+				<h2 id="uso-heading" class="font-display text-xl font-bold tracking-tight text-on-ink-body sm:text-2xl">
+					Experiência de uso: potência e desempenho no dia a dia
+				</h2>
+				<h3 class="mt-6 font-display text-lg font-bold text-on-ink-body">A Turbo Chama realmente faz diferença?</h3>
+				<p class="mt-3">
+					Sim. A <strong class="text-on-ink-body">boca Turbo Chama central</strong> ajuda em panelas grandes, massas, carnes e
+					receitas que pedem aquecimento rápido. As outras bocas costumam ficar equilibradas para o uso simultâneo — útil quando
+					você monta várias panelas ao mesmo tempo. Se o seu foco é desempenho “de verdade” no cotidiano, vale comparar também o
+					que cada marca entrega no mesmo preço no{' '}
+					<a href="/fogao-5-bocas-custo-beneficio" class="font-semibold text-pop underline-offset-2 hover:underline">
+						guia de fogão 5 bocas custo-benefício
+					</a>.
+				</p>
+			</section>
+
+			<section aria-labelledby="forno-heading">
+				<h2 id="forno-heading" class="font-display text-xl font-bold tracking-tight text-on-ink-body sm:text-2xl">
+					O forno de 96 litros vale a pena?
+				</h2>
+				<p class="mt-4">
+					Aqui o BFS5NCR costuma se destacar. O forno espaçoso acomoda assadeiras grandes e atende bem quem usa forno com
+					frequência — especialmente famílias maiores.
+				</p>
+				<h3 class="mt-8 font-display text-lg font-bold text-on-ink-body">Pontos positivos do forno</h3>
+				<ul class="mt-4 list-inside list-disc space-y-2">
+					<li>bom espaço interno;</li>
+					<li>duas prateleiras;</li>
+					<li>boa distribuição de calor (na prática cotidiana);</li>
+					<li>iluminação interna;</li>
+					<li>revestimento que facilita limpeza.</li>
+				</ul>
+				<p class="mt-4">
+					Na prática, a sensação costuma ser de robustez acima de modelos bem básicos — especialmente se forno grande é prioridade
+					na sua decisão. Se você ainda avalia tamanho de cozinha versus número de bocas, leia também o{' '}
+					<a href="/comparativo-fogao-4-vs-5-bocas" class="font-semibold text-pop underline-offset-2 hover:underline">
+						comparativo fogão 4 vs 5 bocas
+					</a>.
+				</p>
+			</section>
+
+			<section aria-labelledby="limpeza-heading">
+				<h2 id="limpeza-heading" class="font-display text-xl font-bold tracking-tight text-on-ink-body sm:text-2xl">
+					Limpeza e manutenção no dia a dia
+				</h2>
+				<p class="mt-4">
+					Um dos motivos do modelo receber bons comentários sobre uso real é a praticidade na limpeza. Em geral, o que mais ajuda:
+				</p>
+				<ol class="mt-4 list-inside list-decimal space-y-2">
+					<li>botões removíveis;</li>
+					<li>vidro interno do forno removível;</li>
+					<li>mesa lisa mais simples de limpar;</li>
+					<li>pés altos que facilitam a faxina embaixo do aparelho.</li>
+				</ol>
+			</section>
+
+			<section aria-labelledby="concorrentes-heading">
+				<h2 id="concorrentes-heading" class="font-display text-xl font-bold tracking-tight text-on-ink-body sm:text-2xl">
+					Onde o BFS5NCR perde para concorrentes
+				</h2>
+				<p class="mt-4">
+					Mesmo sendo um dos fogões 5 bocas mais equilibrados da categoria, não é “única opção” para todo mundo.
+				</p>
+				<h3 class="mt-6 font-display text-lg font-bold text-on-ink-body">Pontos que merecem atenção</h3>
+				<ul class="mt-4 list-inside list-disc space-y-2">
+					<li>preço normalmente acima de modelos básicos da Consul e Atlas;</li>
+					<li>tamanho pode apertar em cozinhas pequenas;</li>
+					<li>mesa de vidro exige mais cuidado contra impactos;</li>
+					<li>quem cozinha pouco pode não aproveitar um forno de quase 100 litros.</li>
+				</ul>
+				<p class="mt-4">
+					Para comparar leituras por marca, veja também as páginas{' '}
+					<a href="/review-fogao-5-bocas-consul" class="font-semibold text-pop underline-offset-2 hover:underline">
+						review fogão 5 bocas Consul
+					</a>
+					{' '}e{' '}
+					<a href="/review-fogao-5-bocas-electrolux" class="font-semibold text-pop underline-offset-2 hover:underline">
+						review fogão 5 bocas Electrolux
+					</a>
+					.
+				</p>
+			</section>
+
+			<section aria-labelledby="pros-contras-heading">
+				<h2 id="pros-contras-heading" class="font-display text-xl font-bold tracking-tight text-on-ink-body sm:text-2xl">
+					Prós e contras
+				</h2>
+				<div class="mt-6 grid gap-4 sm:grid-cols-2">
+					<div class="rounded-2xl border border-white/10 bg-brand-900/40 p-5 ring-1 ring-white/10 sm:p-6">
+						<h3 class="flex items-center gap-2 font-display text-lg font-bold text-on-ink-body">
+							<span class="text-emerald-400" aria-hidden="true">✓</span>
+							<span>Vantagens</span>
+						</h3>
+						<ul class="mt-4 list-inside list-disc space-y-2 text-on-ink-body">
+							<li>acabamento premium;</li>
+							<li>forno grande;</li>
+							<li>boa potência de chama;</li>
+							<li>limpeza prática;</li>
+							<li>design moderno;</li>
+							<li>boa estabilidade das panelas;</li>
+							<li>ótima experiência para uso diário.</li>
+						</ul>
+					</div>
+					<div class="rounded-2xl border border-white/10 bg-brand-900/40 p-5 ring-1 ring-white/10 sm:p-6">
+						<h3 class="flex items-center gap-2 font-display text-lg font-bold text-on-ink-body">
+							<span class="text-amber-300" aria-hidden="true">!</span>
+							<span>Desvantagens</span>
+						</h3>
+						<ul class="mt-4 list-inside list-disc space-y-2 text-on-ink-body">
+							<li>preço acima de modelos simples;</li>
+							<li>ocupa espaço;</li>
+							<li>mesa de vidro exige mais cuidado;</li>
+							<li>pode ser exagerado para quem cozinha pouco.</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section aria-labelledby="publico-heading">
+				<h2 id="publico-heading" class="font-display text-xl font-bold tracking-tight text-on-ink-body sm:text-2xl">
+					Para quem o Brastemp BFS5NCR vale a pena?
+				</h2>
+				<p class="mt-4">O BFS5NCR costuma fazer mais sentido para:</p>
+				<ul class="mt-4 list-inside list-disc space-y-2">
+					<li>famílias;</li>
+					<li>cozinhas planejadas;</li>
+					<li>pessoas que cozinham frequentemente;</li>
+					<li>quem usa forno com frequência;</li>
+					<li>quem quer um fogão Brastemp moderno e durável.</li>
+				</ul>
+				<p class="mt-4">
+					O equilíbrio entre <strong class="text-on-ink-body">visual</strong>, <strong class="text-on-ink-body">potência</strong>,
+					<strong class="text-on-ink-body"> conforto de uso</strong> e <strong class="text-on-ink-body">praticidade</strong> é o que
+					mais define o apelo do modelo.
+				</p>
+			</section>
+
+			<section aria-labelledby="nao-escolha-heading">
+				<h2 id="nao-escolha-heading" class="font-display text-xl font-bold tracking-tight text-on-ink-body sm:text-2xl">
+					Quando talvez não seja a melhor escolha
+				</h2>
+				<p class="mt-4">
+					Se a prioridade absoluta é economizar o máximo possível, existem linhas mais simples (por exemplo Consul e Atlas) que
+					podem sair por menos — com trade-offs de acabamento e “pegada” premium. Em cozinhas pequenas, um{' '}
+					<strong class="text-on-ink-body">fogão 4 bocas</strong> pode encaixar melhor; o comparativo acima ajuda a decidir com
+					calma.
+				</p>
+			</section>
+
+			<section aria-labelledby="comparativo-heading">
+				<h2 id="comparativo-heading" class="font-display text-xl font-bold tracking-tight text-on-ink-body sm:text-2xl">
+					Comparação rápida: Brastemp vs concorrentes
+				</h2>
+				<h3 class="mt-6 font-display text-lg font-bold text-on-ink-body">Brastemp BFS5NCR vs Consul 5 bocas</h3>
+				<p class="mt-3">
+					A Consul costuma ganhar em preço mais acessível na entrada. Já o BFS5NCR tende a entregar acabamento superior, visual
+					mais premium, forno mais generoso e sensação mais refinada no uso — especialmente para quem cozinha muito.
+				</p>
+				<h3 class="mt-8 font-display text-lg font-bold text-on-ink-body">Brastemp BFS5NCR vs Electrolux</h3>
+				<p class="mt-3">
+					A Electrolux frequentemente investe em recursos extras e design. O Brastemp costuma se destacar pela sensação de
+					robustez e estabilidade no dia a dia — perfis diferentes, e os dois merecem comparação lado a lado no anúncio (acessórios
+					variam).
+				</p>
+			</section>
+
+			<section class="rounded-2xl border border-white/10 bg-brand-900/35 p-6 ring-1 ring-white/10" aria-labelledby="veredito-heading">
+				<h2 id="veredito-heading" class="font-display text-xl font-bold tracking-tight text-on-ink-body sm:text-2xl">
+					Veredito final
+				</h2>
+				<p class="mt-4">
+					O Brastemp BFS5NCR continua entre as escolhas mais equilibradas em fogões 5 bocas premium de piso em 2026: boa potência,
+					forno espaçoso e acabamento que valoriza a cozinha. Para quem cozinha com frequência e quer um fogão bonito, forte e sem
+					complicação no cotidiano, segue sendo uma escolha segura.
+				</p>
+				<p class="mt-4">
+					Quem busca só o menor preço possível provavelmente vai achar opções mais econômicas em linhas básicas. No geral, o modelo
+					se destaca pelo equilíbrio entre desempenho, acabamento e experiência de uso.
+				</p>
+				<div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+					<a
+						href={produtos.brastempBFS5NCR.ml}
+						class="inline-flex min-h-[52px] flex-1 items-center justify-center gap-2 rounded-lg bg-cta px-6 text-center text-xs font-extrabold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-w-[200px]"
+						target="_blank"
+						rel="noopener noreferrer nofollow sponsored"
+						aria-label="Ver preço atualizado do Brastemp BFS5NCR no Mercado Livre — abre em nova aba (link patrocinado)"
+					>
+						Ver preço no Mercado Livre
+					</a>
+					<a
+						href={produtos.brastempBFS5NCR.shopee}
+						class="btn-secondary-premium flex-1 sm:min-w-[200px]"
+						target="_blank"
+						rel="noopener noreferrer nofollow sponsored"
+						aria-label="Ver oferta do Brastemp BFS5NCR na Shopee — abre em nova aba (link patrocinado)"
+					>
+						Ver oferta na Shopee
+					</a>
+				</div>
+			</section>
+		</div>
+
+		<section class="mt-16 border-t border-white/10 pt-14" aria-labelledby="faq-heading">
+			<h2 id="faq-heading" class="font-display text-2xl font-bold tracking-tight text-on-ink-body">Perguntas frequentes</h2>
+			<dl class="mt-8 space-y-10">
+				{
+					faqItems.map((item) => (
+						<div>
+							<dt class="font-display text-lg font-bold text-on-ink-body">{item.question}</dt>
+							<dd class="mt-3 text-base leading-relaxed text-on-ink-muted">{item.answer}</dd>
+						</div>
+					))
+				}
+			</dl>
+		</section>
+
+		<RelatedArticles
+			class="mt-14"
+			currentPath="/brastemp-bfs5ncr-vale-a-pena"
+			excludePaths={['/brastemp-bfs5ncr-vale-a-pena/']}
+		/>
+
+		<footer class="mt-14 border-t border-white/10 pt-10">
+			<p class="text-sm text-on-ink-muted">
+				<a href="/" class="font-semibold text-pop underline-offset-2 hover:underline" aria-label="Voltar à página inicial">
+					← Voltar ao início
+				</a>
+				{' · '}
+				<a href="/blog" class="font-semibold text-pop underline-offset-2 hover:underline" aria-label="Abrir listagem do blog">
+					Ver blog
+				</a>
+			</p>
+		</footer>
+	</article>
+</BaseLayout>

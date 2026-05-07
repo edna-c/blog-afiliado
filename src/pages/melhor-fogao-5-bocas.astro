@@ -1,19 +1,198 @@
-<header class="mb-10 md:mb-14">
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RelatedArticles from '../components/RelatedArticles.astro';
+import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
+import { Picture } from 'astro:assets';
+import melhoresFogoesHero from '../assets/images/heroes/melhores-fogoes-5-bocas-hero.webp';
 
-  <p class="text-xs uppercase tracking-wider text-green-400 font-semibold">
-    Atualizado 2026 • Guia de compra
-  </p>
+const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
+const canonical = new URL('/melhor-fogao-5-bocas', site).href;
+const title = 'Melhor fogão 5 bocas em 2026: guia completo e comparativo | Casa Prática Eletro';
+const description =
+	'Guia atualizado para escolher o melhor fogão 5 bocas em 2026: critérios de compra, comparativo 4 vs 5 bocas, custo-benefício e links para reviews por marca.';
+---
 
-  <h1 class="mt-3 text-2xl md:text-4xl font-bold leading-tight">
-    Top 7 melhores fogões 5 bocas em 2026
-  </h1>
+<BaseLayout
+	title={title}
+	description={description}
+	canonical={canonical}
+	openGraph={{
+		title,
+		description,
+		url: canonical,
+		type: 'article',
+		image: new URL('images/fogao-brastemp-bfs5ncr.webp', site).href,
+		imageAlt: 'Fogão de piso cinco bocas em inox — referência visual do guia',
+		publishedTime: '2026-01-10T10:00:00-03:00',
+		modifiedTime: '2026-05-06T10:00:00-03:00',
+	}}
+>
+	<script
+		type="application/ld+json"
+		slot="head"
+		set:html={JSON.stringify({
+			'@context': 'https://schema.org',
+			'@graph': [
+				{
+					'@type': 'BreadcrumbList',
+					itemListElement: [
+						{ '@type': 'ListItem', position: 1, name: 'Início', item: site.href },
+						{ '@type': 'ListItem', position: 2, name: 'Melhor fogão 5 bocas', item: canonical },
+					],
+				},
+				{
+					'@type': 'Article',
+					headline: 'Melhor fogão 5 bocas em 2026: guia completo e comparativo',
+					description,
+					inLanguage: 'pt-BR',
+					mainEntityOfPage: canonical,
+				},
+			],
+		})}
+	/>
+	<article class="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14 lg:py-16">
+		<header class="border-b border-white/10 pb-10">
+			<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Atualizado 2026 · Guia de compra</p>
+			<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl lg:text-[2.4rem] lg:leading-tight">
+				Top 7 melhores fogões 5 bocas em 2026
+			</h1>
+			<p class="mt-4 text-lg font-semibold leading-relaxed text-on-ink-body sm:text-xl">
+				Guia completo com comparativo e custo-benefício real — sem promessa vazia.
+			</p>
+			<p class="mt-3 text-sm leading-relaxed text-on-ink-muted sm:text-base">
+				Análise direta para quem quer decidir com critério: medidas, gás, forno, segurança e o que validar no anúncio antes de
+				pagar.
+			</p>
+		</header>
 
-  <h2 class="mt-4 text-lg md:text-xl font-semibold text-gray-200">
-    Guia completo com comparativo e custo-benefício real
-  </h2>
+		<figure class="mt-8 overflow-hidden rounded-2xl ring-1 ring-white/10">
+			<div class="relative aspect-[16/10] w-full bg-brand-900/40 sm:aspect-[16/9]">
+				<Picture
+					src={melhoresFogoesHero}
+					alt="Linha de fogões 5 bocas em cozinha planejada, destacando modelos para comparação de custo-benefício em 2026"
+					formats={['avif', 'webp']}
+					widths={[640, 768, 960, 1152]}
+					sizes="(max-width: 640px) 100vw, (max-width: 1024px) 768px, 960px"
+					width={melhoresFogoesHero.width}
+					height={melhoresFogoesHero.height}
+					quality={80}
+					loading="eager"
+					decoding="async"
+					priority
+					class="h-full w-full object-cover object-center"
+					pictureAttributes={{ class: 'absolute inset-0 block h-full w-full [&>img]:h-full [&>img]:w-full [&>img]:object-cover [&>img]:object-center' }}
+				/>
+			</div>
+		</figure>
 
-  <p class="mt-2 text-sm text-gray-400">
-    Análise direta, sem enrolação — só o que realmente importa na compra.
-  </p>
+		<div class="mt-8">
+			<EditorialTrustRibbon />
+		</div>
 
-</header>
+		<section class="mt-10 rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10 sm:p-7" aria-labelledby="tldr-heading">
+			<h2 id="tldr-heading" class="font-display text-lg font-bold text-on-ink-body sm:text-xl">
+				Decisão em 20 segundos
+			</h2>
+			<ul class="mt-4 list-inside list-disc space-y-2 text-sm leading-relaxed text-on-ink-body sm:text-base">
+				<li>Conte quantas panelas ficam ligadas ao mesmo tempo em dias normais — isso define 4 vs 5 bocas melhor que “achismo”.</li>
+				<li>Mediu a cozinha? Sem profundidade e porta de forno livres, o melhor modelo vira troca e estresse.</li>
+				<li>Preço importa, mas válvula, chama estável e forno utilizável costumam ser onde “barato demais” cobra a conta.</li>
+			</ul>
+			<p class="mt-5 text-sm text-on-ink-muted">
+				Quer o passo a passo completo? Abra o{' '}
+				<a href="/como-escolher-fogao-5-bocas" class="font-semibold text-pop underline-offset-2 hover:underline">
+					guia como escolher fogão 5 bocas
+				</a>
+				.
+			</p>
+		</section>
+
+		<div class="mt-12 space-y-12 text-base leading-relaxed text-on-ink-body">
+			<section aria-labelledby="criterios-heading">
+				<h2 id="criterios-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Critérios que mais pesam em 2026
+				</h2>
+				<p class="mt-4">
+					O “melhor fogão 5 bocas” muda conforme <strong class="text-on-ink-body">espaço</strong>,{' '}
+					<strong class="text-on-ink-body">tipo de gás</strong>, <strong class="text-on-ink-body">rotina de forno</strong> e o quanto
+					você liga várias bocas ao mesmo tempo. Por isso, nossa curadoria começa pelo uso real — não só pelo visual do anúncio.
+				</p>
+				<ul class="mt-6 list-inside list-disc space-y-2">
+					<li><strong class="text-on-ink-body">Distância entre bocas</strong> e estabilidade da grade para panela grande.</li>
+					<li><strong class="text-on-ink-body">Forno</strong> (tamanho, praticidade de limpeza, sensação de temperatura uniforme).</li>
+					<li><strong class="text-on-ink-body">Limpeza</strong> no dia a dia — especialmente mesa de vidro vs inox.</li>
+					<li><strong class="text-on-ink-body">Instalação e ventilação</strong> (GLP/GN, mangueira, nível, regras do condomínio).</li>
+				</ul>
+			</section>
+
+			<section aria-labelledby="marcas-heading">
+				<h2 id="marcas-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Reviews por marca (leitura rápida + loja)
+				</h2>
+				<p class="mt-4">
+					Se você já está mirando um modelo, use as reviews curtas para confirmar perfil — e a{' '}
+					<a href="/brastemp-bfs5ncr-vale-a-pena" class="font-semibold text-pop underline-offset-2 hover:underline">
+						análise longa do Brastemp BFS5NCR
+					</a>{' '}
+					quando quiser FAQ, ficha e comparativo de concorrentes.
+				</p>
+				<ul class="mt-6 list-inside list-disc space-y-2">
+					<li>
+						<a href="/review-fogao-5-bocas-brastemp" class="font-semibold text-pop underline-offset-2 hover:underline">
+							Brastemp BFS5NCR
+						</a>{' '}
+						— custo-benefício e forno generoso.
+					</li>
+					<li>
+						<a href="/review-fogao-5-bocas-consul" class="font-semibold text-pop underline-offset-2 hover:underline">
+							Consul CFS5NAB
+						</a>{' '}
+						— entrada sólida quando o orçamento aperta.
+					</li>
+					<li>
+						<a href="/review-fogao-5-bocas-electrolux" class="font-semibold text-pop underline-offset-2 hover:underline">
+							Electrolux FE5IG
+						</a>{' '}
+						— acabamento e recursos para cozinha mais premium.
+					</li>
+				</ul>
+			</section>
+
+			<section aria-labelledby="comparativos-heading">
+				<h2 id="comparativos-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Comparativos que fecham a decisão
+				</h2>
+				<p class="mt-4">
+					Feche o tamanho certo com o{' '}
+					<a href="/comparativo-fogao-4-vs-5-bocas" class="font-semibold text-pop underline-offset-2 hover:underline">
+						comparativo fogão 4 vs 5 bocas
+					</a>
+					. Depois, refine por dinheiro no{' '}
+					<a href="/fogao-5-bocas-custo-beneficio" class="font-semibold text-pop underline-offset-2 hover:underline">
+						guia de custo-benefício
+					</a>
+					.
+				</p>
+			</section>
+		</div>
+
+		<div class="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+			<a
+				href="/#top-produtos"
+				class="inline-flex min-h-[52px] flex-1 items-center justify-center bg-cta px-6 text-xs font-bold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-w-[200px]"
+				aria-label="Ver lista de fogões 5 bocas com preços na página inicial"
+			>
+				Ver ofertas na lista principal
+			</a>
+			<a
+				href="/blog"
+				class="btn-secondary-premium flex-1 sm:min-w-[200px]"
+				aria-label="Abrir o blog com artigos complementares"
+			>
+				Ler artigos no blog
+			</a>
+		</div>
+
+		<RelatedArticles currentPath="/melhor-fogao-5-bocas" class="mt-14" />
+	</article>
+</BaseLayout>

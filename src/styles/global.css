@@ -62,6 +62,47 @@
 
 }
 
+@layer components {
+	/** CTA secundário — contraste e hover consistentes no tema escuro */
+	.btn-secondary-premium {
+		@apply inline-flex min-h-[48px] min-w-[44px] items-center justify-center gap-2 rounded-lg border border-white/28 bg-white/[0.05] px-6 text-xs font-bold uppercase tracking-wider text-on-ink-body shadow-[0_1px_0_rgba(255,255,255,0.06)] transition duration-200 ease-out hover:border-pop/75 hover:bg-white/[0.09] hover:text-pop hover:shadow-[0_0_0_1px_rgba(223,255,31,0.14),0_10px_28px_-14px_rgba(0,0,0,0.5)] active:translate-y-px sm:px-8;
+	}
+
+	.btn-secondary-premium.is-pill {
+		@apply rounded-full px-8;
+	}
+
+	/** Wrapper + tabela — leitura rápida em mobile (scroll suave) */
+	.table-premium-shell {
+		@apply overflow-x-auto rounded-2xl border border-white/10 bg-brand-900/25 shadow-[0_14px_44px_-26px_rgba(0,0,0,0.55)] ring-1 ring-white/10 [-webkit-overflow-scrolling:touch];
+	}
+
+	.table-premium {
+		@apply w-full border-collapse text-left text-sm;
+	}
+
+	.table-premium thead tr {
+		@apply border-b border-white/15 bg-brand-900/95;
+	}
+
+	.table-premium th {
+		@apply px-4 py-4 font-display text-xs font-bold uppercase tracking-wider text-on-ink-body sm:px-5;
+	}
+
+	.table-premium tbody tr {
+		@apply border-b border-white/[0.07] transition-colors hover:bg-white/[0.035];
+	}
+
+	.table-premium tbody tr:last-child {
+		@apply border-b-0;
+	}
+
+	.table-premium td,
+	.table-premium tbody th[scope='row'] {
+		@apply px-4 py-3.5 align-top text-on-ink-body sm:px-5 sm:py-4;
+	}
+}
+
 @layer utilities {
 	.text-gradient-pop {
 		@apply bg-gradient-to-r from-white via-white to-[#dfff1f] bg-clip-text text-transparent;

@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import RelatedArticles from '../../components/RelatedArticles.astro';
+import EditorialTrustRibbon from '../../components/EditorialTrustRibbon.astro';
 import { getCollection, render } from 'astro:content';
 import { Picture } from 'astro:assets';
 import blogHeroImage from '../../assets/blog/blog-hero-electrolux-cozinha.png';
@@ -20,24 +23,63 @@ const { Content } = await render(post);
 
 const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
 
-const siteUrl = Astro.site ?? new URL('https://example.com');
-const canonical = new URL(`/blog/${post.id}/`, siteUrl).href;
+const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
+const canonical = new URL(Astro.url.pathname, site).href;
 const faq = post.data.faq;
+
+const ogImage = post.data.coverImage
+	? new URL(String(post.data.coverImage).replace(/^\//, ''), site).href
+	: new URL('images/fogao-brastemp-bfs5ncr.webp', site).href;
+
+const orgId = `${site.href}#organization`;
+const articleId = `${canonical}#article`;
+const webpageId = `${canonical}#webpage`;
+const breadcrumbId = `${canonical}#breadcrumb`;
+const faqId = `${canonical}#faq`;
 
 const graph: Record<string, unknown>[] = [
 	{
+		'@type': 'Organization',
+		'@id': orgId,
+		name: 'Casa Prática Eletro',
+		url: site.href,
+	},
+	{
+		'@type': 'BreadcrumbList',
+		'@id': breadcrumbId,
+		itemListElement: [
+			{ '@type': 'ListItem', position: 1, name: 'Início', item: site.href },
+			{ '@type': 'ListItem', position: 2, name: 'Blog', item: new URL('/blog/', site).href },
+			{ '@type': 'ListItem', position: 3, name: post.data.title, item: canonical },
+		],
+	},
+	{
+		'@type': 'WebPage',
+		'@id': webpageId,
+		url: canonical,
+		name: `${post.data.title} | Casa Prática Eletro`,
+		description: post.data.description,
+		mainEntity: { '@id': articleId },
+	},
+	{
 		'@type': 'Article',
-		'@id': `${canonical}#article`,
+		'@id': articleId,
 		headline: post.data.title,
 		description: post.data.description,
+		image: [ogImage],
+		author: { '@id': orgId },
+		publisher: { '@id': orgId },
 		datePublished: post.data.pubDate.toISOString(),
-		mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+		dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
+		mainEntityOfPage: { '@id': webpageId },
+		articleSection: post.data.category,
+		inLanguage: 'pt-BR',
 	},
 ];
 if (faq?.length) {
 	graph.push({
 		'@type': 'FAQPage',
-		'@id': `${canonical}#faq`,
+		'@id': faqId,
 		mainEntity: faq.map((item) => ({
 			'@type': 'Question',
 			name: item.question,
@@ -46,11 +88,33 @@ if (faq?.length) {
 	});
 }
 const structuredData = { '@context': 'https://schema.org', '@graph': graph };
-const structuredDataJson = JSON.stringify(structuredData);
 ---
 
-<BaseLayout title={`${post.data.title} | Casa Prática Eletro`} description={post.data.description}>
-	<article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+<BaseLayout
+	title={`${post.data.title} | Casa Prática Eletro`}
+	description={post.data.description}
+	canonical={canonical}
+	openGraph={{
+		title: `${post.data.title} | Casa Prática Eletro`,
+		description: post.data.description,
+		url: canonical,
+		image: ogImage,
+		imageAlt: post.data.title,
+		type: 'article',
+		publishedTime: post.data.pubDate.toISOString(),
+		modifiedTime: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
+	}}
+>
+	<script type="application/ld+json" slot="head" set:html={JSON.stringify(structuredData)} />
+	<article class="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
+		<Breadcrumbs
+			class="mb-8"
+			items={[
+				{ name: 'Início', href: '/' },
+				{ name: 'Blog', href: '/blog' },
+				{ name: post.data.title },
+			]}
+		/>
 		<header>
 			<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">
 				{post.data.category} · {fmt.format(post.data.pubDate)}
@@ -58,10 +122,13 @@ const structuredDataJson = JSON.stringify(structuredData);
 			<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl lg:text-5xl">
 				{post.data.title}
 			</h1>
-			<p class="mt-4 text-lg text-on-ink-body">{post.data.description}</p>
+			<p class="mt-4 text-lg leading-relaxed text-on-ink-body">{post.data.description}</p>
 		</header>
+		<div class="mt-8">
+			<EditorialTrustRibbon />
+		</div>
 		<figure
-			class="mt-10 overflow-hidden rounded-[12px] shadow-[0_10px_30px_rgba(0,0,0,0.4)] ring-1 ring-white/10"
+			class="mt-10 overflow-hidden rounded-2xl shadow-[0_14px_40px_rgba(0,0,0,0.45)] ring-1 ring-white/10"
 		>
 			<div class="relative aspect-[16/9] w-full bg-white/5">
 				<span class="absolute inset-0 block overflow-hidden">
@@ -82,11 +149,19 @@ const structuredDataJson = JSON.stringify(structuredData);
 		<div
 			class:list={[
 				'prose prose-invert prose-lg max-w-none prose-headings:font-display prose-a:text-pop prose-a:no-underline hover:prose-a:underline',
-				'mt-10',
+				'prose-p:leading-relaxed prose-li:marker:text-pop/80',
+				'mt-10 sm:mt-12',
 			]}
 		>
 			<Content />
 		</div>
+		<p class="mt-10 rounded-xl border border-white/10 bg-brand-900/30 px-4 py-3 text-sm leading-relaxed text-on-ink-muted sm:px-5">
+			<strong class="text-on-ink-body">Próximo passo comercial (sem pressão):</strong> depois de ler, volte à{' '}
+			<a href="/#top-produtos" class="font-semibold text-pop underline-offset-2 hover:underline">lista principal com ofertas</a>
+			{' '}ou ao{' '}
+			<a href="/melhor-fogao-5-bocas" class="font-semibold text-pop underline-offset-2 hover:underline">guia mestre de fogão 5 bocas</a>
+			para cruzar critérios com preço do dia.
+		</p>
 		{
 			faq?.length ? (
 				<section class="mt-14 border-t border-white/10 pt-12" aria-labelledby="faq-heading">
@@ -97,14 +172,18 @@ const structuredDataJson = JSON.stringify(structuredData);
 						{faq.map((item) => (
 							<div>
 								<dt class="font-semibold text-on-ink-body">{item.question}</dt>
-								<dd class="mt-2 text-base text-on-ink-body">{item.answer}</dd>
+								<dd class="mt-2 text-base leading-relaxed text-on-ink-muted">{item.answer}</dd>
 							</div>
 						))}
 					</dl>
 				</section>
 			) : null
 		}
-		<script type="application/ld+json" set:html={structuredDataJson} />
+		<RelatedArticles
+			class="mt-14"
+			currentPath={Astro.url.pathname}
+			excludePaths={[`/blog/${post.id}`, `/blog/${post.id}/`]}
+		/>
 		<p class="mt-12 border-t border-white/10 pt-8 text-sm text-on-ink-muted">
 			<a href="/blog" class="text-pop transition hover:text-accent-hover" aria-label="Voltar à listagem do blog">
 				← Voltar ao blog

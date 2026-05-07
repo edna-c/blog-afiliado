@@ -1,0 +1,40 @@
+---
+interface Props {
+	class?: string;
+}
+
+const { class: className } = Astro.props;
+
+const chips = [
+	{ label: 'Curadoria editorial', title: 'Seleção com foco em uso real e custo-benefício' },
+	{ label: 'Metodologia explícita', title: 'Texto indica limitações e o que conferir na loja' },
+	{ label: 'Atualizado 2026', title: 'Conteúdo revisado para contexto de compra atual' },
+] as const;
+---
+
+<div
+	class:list={[
+		'flex flex-wrap items-center gap-2 border border-white/10 bg-white/[0.03] px-3 py-3 sm:gap-2.5 sm:px-4 sm:py-3.5',
+		'rounded-xl ring-1 ring-white/5',
+		className,
+	]}
+	role="note"
+	aria-label="Sinais de transparência editorial"
+>
+	{
+		chips.map((c) => (
+			<span
+				class="inline-flex max-w-full items-center rounded-full border border-white/10 bg-brand-900/40 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-on-ink-muted sm:text-[11px]"
+				title={c.title}
+			>
+				{c.label}
+			</span>
+		))
+	}
+	<a
+		href="/sobre"
+		class="inline-flex min-h-[44px] w-full items-center justify-center text-[10px] font-bold uppercase tracking-wider text-pop underline-offset-2 transition hover:text-accent-hover hover:underline sm:ml-auto sm:w-auto sm:justify-end sm:text-[11px]"
+	>
+		Sobre o site
+	</a>
+</div>

@@ -1,6 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import RelatedArticles from '../components/RelatedArticles.astro';
+import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
 import { produtos } from '../data/products';
+
+const productImages: Record<string, string> = {
+	brastemp: '/images/fogao-brastemp-bfs5ncr.webp',
+	consul: '/images/fogao-consul-cfs5nab.webp',
+	electrolux: '/images/fogao-electrolux-76usq.webp',
+};
 
 export async function getStaticPaths() {
 	return [
@@ -14,6 +22,8 @@ export async function getStaticPaths() {
 				summary:
 					'Linha popular e fácil de achar: costuma equilibrar preço, forno útil e o básico bem resolvido. Confira no anúncio a versão exata — acabamento e acessórios mudam de um modelo para outro.',
 				offerUrl: produtos.brastempBFS5NCR.ml,
+				longReviewHref: '/brastemp-bfs5ncr-vale-a-pena',
+				longReviewLabel: 'Abrir análise completa (texto longo + FAQ + ficha)',
 			},
 		},
 		{
@@ -49,15 +59,62 @@ interface Props {
 	model: string;
 	summary: string;
 	offerUrl: string;
+	longReviewHref?: string;
+	longReviewLabel?: string;
 }
 
-const { title, description, model, summary, offerUrl } = Astro.props;
+const { title, description, model, summary, offerUrl, longReviewHref, longReviewLabel } = Astro.props;
 const marca = Astro.params.marca;
 const marcaLabel = marca ? marca.charAt(0).toUpperCase() + marca.slice(1) : '';
+
+const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
+const canonical = new URL(Astro.url.pathname, site).href;
+const imagePath = productImages[marca ?? ''] ?? productImages.brastemp;
+const productImage = new URL(imagePath.replace(/^\//, ''), site).href;
+
+const brandName = model.split(/\s+/)[0] ?? marcaLabel;
+
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'BreadcrumbList',
+			itemListElement: [
+				{ '@type': 'ListItem', position: 1, name: 'Início', item: site.href },
+				{ '@type': 'ListItem', position: 2, name: `Review ${marcaLabel}`, item: canonical },
+			],
+		},
+		{
+			'@type': 'Product',
+			name: model,
+			description,
+			image: [productImage],
+			brand: { '@type': 'Brand', name: brandName },
+			offers: {
+				'@type': 'Offer',
+				url: offerUrl,
+				priceCurrency: 'BRL',
+			},
+		},
+	],
+};
 ---
 
-<BaseLayout title={title} description={description}>
-	<article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+<BaseLayout
+	title={title}
+	description={description}
+	canonical={canonical}
+	openGraph={{
+		title,
+		description,
+		url: canonical,
+		image: productImage,
+		imageAlt: `Fogão a gás ${model}`,
+		type: 'article',
+	}}
+>
+	<script type="application/ld+json" slot="head" set:html={JSON.stringify(structuredData)} />
+	<article class="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14 lg:py-16">
 		<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Review · {marcaLabel}</p>
 		<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">
 			Fogão 5 bocas {marcaLabel}: análise para compra
@@ -65,11 +122,29 @@ const marcaLabel = marca ? marca.charAt(0).toUpperCase() + marca.slice(1) : '';
 		<p class="mt-2 text-sm text-on-ink-muted">
 			Modelo referência: <span class="text-on-ink-body">{model}</span>
 		</p>
-		<p class="mt-6 text-lg text-on-ink-body">
+		<p class="mt-6 text-lg leading-relaxed text-on-ink-body">
 			{summary}
 		</p>
+		<div class="mt-8">
+			<EditorialTrustRibbon />
+		</div>
+		{
+			longReviewHref ? (
+				<p class="mt-6 text-base leading-relaxed text-on-ink-muted">
+					Quer a versão longa com tabelas, FAQ e critérios de compra?{' '}
+					<a
+						href={longReviewHref}
+						class="font-semibold text-pop underline-offset-2 hover:underline"
+						aria-label={longReviewLabel ?? 'Abrir análise completa do modelo'}
+					>
+						{longReviewLabel ?? 'Ver análise completa'}
+					</a>
+					.
+				</p>
+			) : null
+		}
 		<h2 class="font-display mt-12 text-xl font-bold text-on-ink-body">Para quem esse fogão faz sentido</h2>
-		<ul class="mt-4 list-inside list-disc space-y-2 text-base text-on-ink-body">
+		<ul class="mt-4 list-inside list-disc space-y-2 text-base leading-relaxed text-on-ink-body">
 			<li>Quer decidir rápido com critérios de segurança e forno, não só estética.</li>
 			<li>Prefere comparar preço agora e validar detalhes na página da loja.</li>
 			<li>
@@ -92,10 +167,10 @@ const marcaLabel = marca ? marca.charAt(0).toUpperCase() + marca.slice(1) : '';
 				.
 			</li>
 		</ul>
-		<div class="mt-12 flex flex-wrap gap-4">
+		<div class="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
 			<a
 				href={offerUrl}
-				class="inline-flex min-h-[48px] items-center justify-center bg-cta px-8 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-cta-hover"
+				class="inline-flex min-h-[52px] flex-1 items-center justify-center bg-cta px-6 text-xs font-bold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-w-[200px]"
 				target="_blank"
 				rel="nofollow sponsored noopener noreferrer"
 				aria-label={`Ver preço atualizado do fogão ${model} na loja — abre em nova aba (link patrocinado)`}
@@ -104,13 +179,13 @@ const marcaLabel = marca ? marca.charAt(0).toUpperCase() + marca.slice(1) : '';
 			</a>
 			<a
 				href="/"
-				class="inline-flex min-h-[48px] items-center justify-center border border-white/20 px-8 text-xs font-bold uppercase tracking-wider text-on-ink-body transition hover:border-pop hover:text-pop"
+				class="btn-secondary-premium flex-1 sm:min-w-[200px]"
 				aria-label="Voltar à página inicial com lista de fogões 5 bocas recomendados"
 			>
 				Voltar à lista na página inicial
 			</a>
 		</div>
-		<p class="mt-10 text-sm text-on-ink-muted">
+		<p class="mt-10 text-sm leading-relaxed text-on-ink-muted">
 			Transparência: indicação de loja parceira. No guia{' '}
 			<a
 				href="/melhor-fogao-5-bocas"
@@ -119,8 +194,8 @@ const marcaLabel = marca ? marca.charAt(0).toUpperCase() + marca.slice(1) : '';
 			>
 				melhor fogão 5 bocas
 			</a>{' '}
-			você lê o texto
-			completo com mais calma.
+			você lê o texto completo com mais calma.
 		</p>
+		<RelatedArticles class="mt-14" currentPath={Astro.url.pathname} />
 	</article>
 </BaseLayout>

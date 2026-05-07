@@ -17,5 +17,11 @@ const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.
 			Análises e comparativos em texto. Para editar posts e links de compra, use os arquivos Markdown dos artigos no projeto.
 		</p>
 	</header>
-	<BlogGrid posts={posts} title="Todos os artigos" subtitle="Clique em um card para ler o artigo completo." showViewAllLink={false} />
+	<BlogGrid
+		variant="dark"
+		posts={posts}
+		title="Todos os artigos"
+		subtitle="Clique em um card para ler o artigo completo — conteúdo pensado para fechar lacunas que a ficha do produto não mostra."
+		showViewAllLink={false}
+	/>
 </BaseLayout>

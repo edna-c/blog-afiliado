@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import RelatedArticles from '../components/RelatedArticles.astro';
+import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
 ---
 
 <BaseLayout
@@ -11,11 +13,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">
 			Melhores fogões 5 bocas em 2026: custo-benefício real
 		</h1>
-		<p class="mt-4 text-lg text-on-ink-body">
+		<p class="mt-4 text-lg leading-relaxed text-on-ink-body">
 			<strong class="text-on-ink-body">Melhor fogão 5 bocas 2026</strong> em custo-benefício não é só o mais barato que aparece por aí — é o
 			que entrega segurança, forno utilizável e manutenção razoável pelo preço.
 		</p>
-		<div class="mt-10 space-y-6 text-base text-on-ink-body">
+		<div class="mt-8">
+			<EditorialTrustRibbon />
+		</div>
+		<div class="mt-10 space-y-6 text-base leading-relaxed text-on-ink-body">
 			<h2 class="font-display text-xl font-bold text-on-ink-body">Onde economizar sem arrependimento</h2>
 			<p>Acabamento “premium” se você prioriza função; número de funções de forno que você nunca usa.</p>
 			<h2 class="font-display text-xl font-bold text-on-ink-body">Onde não vale economizar na compra</h2>
@@ -46,11 +51,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			</a>
 			<a
 				href="/review-fogao-5-bocas-brastemp"
-				class="inline-flex min-h-[48px] items-center justify-center border border-white/20 px-8 text-xs font-bold uppercase tracking-wider text-on-ink-body transition hover:border-pop hover:text-pop"
+				class="btn-secondary-premium px-8"
 				aria-label="Ler avaliação completa do fogão 5 bocas Brastemp"
 			>
 				Ver avaliação completa (Brastemp)
 			</a>
 		</div>
+		<RelatedArticles class="mt-14" currentPath="/fogao-5-bocas-custo-beneficio" />
 	</article>
 </BaseLayout>

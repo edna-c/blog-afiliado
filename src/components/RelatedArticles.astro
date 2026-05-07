@@ -1,0 +1,82 @@
+---
+import { getRelatedPages, type RelatedPageLink } from '../data/relatedPages';
+
+interface Props {
+	currentPath: string;
+	title?: string;
+	subtitle?: string;
+	limit?: number;
+	/** URLs adicionais a retirar do pool (ex.: variação com/sem barra final). */
+	excludePaths?: string[];
+	class?: string;
+}
+
+const {
+	currentPath,
+	title = 'Artigos relacionados',
+	subtitle = 'Continue no mesmo tema — menos cliques, mais contexto para decidir com segurança.',
+	limit = 4,
+	excludePaths = [],
+	class: className,
+} = Astro.props;
+
+const items: RelatedPageLink[] = getRelatedPages(currentPath, limit, excludePaths);
+
+const kindClass: Record<RelatedPageLink['kind'], string> = {
+	Guia: 'border-emerald-400/25 text-emerald-200/90',
+	Review: 'border-sky-400/20 text-sky-100/90',
+	Comparativo: 'border-amber-400/25 text-amber-100/90',
+	Análise: 'border-pop/35 text-pop',
+	Blog: 'border-white/15 text-on-ink-muted',
+};
+---
+
+{
+	items.length ? (
+		<section
+			class:list={['scroll-mt-24 border-t border-white/10 pt-12 sm:pt-14', className]}
+			aria-labelledby="related-articles-heading"
+		>
+			<div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
+				<div class="min-w-0">
+					<h2
+						id="related-articles-heading"
+						class="font-display text-xl font-extrabold tracking-tight text-on-ink-body sm:text-2xl"
+					>
+						{title}
+					</h2>
+					<p class="mt-2 max-w-2xl text-sm leading-relaxed text-on-ink-muted sm:text-base">{subtitle}</p>
+				</div>
+			</div>
+			<ul class="mt-8 grid list-none gap-4 sm:grid-cols-2 sm:gap-5">
+				{items.map((item) => (
+					<li>
+						<a
+							href={item.href}
+							class="group relative flex h-full min-h-[7.5rem] flex-col rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/5 transition duration-300 ease-out after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:opacity-0 after:shadow-[0_0_0_1px_rgba(223,255,31,0.12)] after:transition-opacity group-hover:-translate-y-0.5 group-hover:border-pop/35 group-hover:bg-brand-900/55 group-hover:ring-white/10 group-hover:after:opacity-100 sm:min-h-[8rem] sm:p-6"
+						>
+							<span
+								class:list={[
+									'inline-flex w-fit max-w-full rounded-full border px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider',
+									kindClass[item.kind],
+								]}
+							>
+								{item.kind}
+							</span>
+							<span class="font-display mt-3 text-base font-bold leading-snug text-on-ink-body transition group-hover:text-pop sm:text-lg">
+								{item.title}
+							</span>
+							<span class="mt-2 line-clamp-2 flex-1 text-sm leading-relaxed text-on-ink-muted">{item.description}</span>
+							<span class="mt-4 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-pop">
+								Abrir
+								<span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">
+									→
+								</span>
+							</span>
+						</a>
+					</li>
+				))}
+			</ul>
+		</section>
+	) : null
+}
