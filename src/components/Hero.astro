@@ -5,7 +5,7 @@
  * Fonte recomendada: ≥1000px no menor lado para nitidez na coluna do hero.
  */
 import { Picture } from 'astro:assets';
-import heroImage from '../assets/blog/hero-cozinha-fogao.png';
+import heroImage from '../assets/images/heroes/melhores-fogoes-5-bocas-hero.webp';
 ---
 
 <section class="relative isolate overflow-hidden border-b border-white/10 bg-ink" aria-labelledby="hero-heading">
@@ -90,9 +90,9 @@ import heroImage from '../assets/blog/hero-cozinha-fogao.png';
 			class="col-span-12 mx-auto mt-2 w-full max-w-none sm:mt-3 lg:col-span-5 lg:col-start-8 lg:row-span-2 lg:row-start-2 lg:mx-0 lg:mt-0 lg:w-full lg:max-w-none lg:self-start lg:justify-self-stretch lg:pt-0"
 		>
 			<div
-				class="relative mx-auto aspect-[4/5] w-full overflow-hidden rounded-xl border border-white/15 bg-brand-900/30 shadow-[0_32px_64px_-18px_rgba(0,0,0,0.65),0_12px_40px_-20px_rgba(0,0,0,0.45)] ring-1 ring-white/15 lg:mx-0"
+				class="relative mx-auto aspect-[4/5] w-full overflow-hidden rounded-xl border border-white/25 bg-brand-900/30 p-1 shadow-[0_32px_64px_-18px_rgba(0,0,0,0.65),0_12px_40px_-20px_rgba(0,0,0,0.45)] ring-1 ring-white/20 lg:mx-0"
 			>
-				<span class="absolute inset-0 block w-full overflow-hidden rounded-xl">
+				<span class="absolute inset-1 block w-full overflow-hidden rounded-[0.7rem]">
 					<Picture
 						src={heroImage}
 						alt="Cozinha moderna em tons neutros com fogão a gás de piso preto de cinco bocas, armários cinza e bancada branca."
@@ -101,10 +101,10 @@ import heroImage from '../assets/blog/hero-cozinha-fogao.png';
 						sizes="(min-width: 1024px) min(50vw, 640px), 100vw"
 						quality={82}
 						priority
-						class="absolute inset-0 h-full w-full object-cover object-center"
+						class="absolute inset-0 h-full w-full object-cover object-[60%_32%] md:object-[62%_38%] lg:object-[66%_44%]"
 						pictureAttributes={{
 							class:
-								'absolute inset-0 block h-full w-full [&>img]:h-full [&>img]:w-full [&>img]:scale-105 [&>img]:object-cover [&>img]:object-center',
+								'absolute inset-0 block h-full w-full [&>img]:h-full [&>img]:w-full [&>img]:scale-100 md:[&>img]:scale-[1.02] lg:[&>img]:scale-[1.03] [&>img]:object-cover [&>img]:object-[60%_32%] md:[&>img]:object-[62%_38%] lg:[&>img]:object-[66%_44%]',
 						}}
 					/>
 				</span>
