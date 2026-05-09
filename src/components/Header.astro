@@ -27,6 +27,9 @@ const ctaBase =
 			</a>
 			<details class="relative z-50 shrink-0 md:hidden">
 				<summary
+					aria-label="Abrir menu de navegação"
+					aria-haspopup="menu"
+					aria-controls="mobile-primary-nav"
 					class="flex cursor-pointer list-none items-center justify-center gap-2 rounded border border-white/15 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-on-ink-muted transition hover:border-pop hover:text-on-ink-body [&::-webkit-details-marker]:hidden"
 				>
 					<span>Menu</span>
@@ -35,7 +38,7 @@ const ctaBase =
 				<div
 					class="absolute right-0 top-full z-50 mt-2 min-w-[13rem] rounded-md border border-white/10 bg-ink p-2 shadow-xl ring-1 ring-white/10"
 				>
-					<nav class="flex flex-col gap-0.5" aria-label="Principal">
+					<nav id="mobile-primary-nav" class="flex flex-col gap-0.5" aria-label="Principal">
 						<HeaderPrimaryNavLinks
 							pathname={pathname}
 							linkBaseClass="block rounded px-3 py-2.5 text-sm font-semibold uppercase tracking-[0.15em] text-on-ink-muted hover:bg-white/5 hover:text-pop"
