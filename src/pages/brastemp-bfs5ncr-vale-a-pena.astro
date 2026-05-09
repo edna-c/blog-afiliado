@@ -3,12 +3,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import AffiliateOfferBlock from '../components/AffiliateOfferBlock.astro';
 import RelatedArticles from '../components/RelatedArticles.astro';
+import ProductMedia from '../components/ProductMedia.astro';
 import { produtos } from '../data/products';
+import { PRODUCT_IMAGE_REVIEW } from '../data/productImages';
 
 const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
 const canonicalPath = '/brastemp-bfs5ncr-vale-a-pena/';
 const canonical = new URL(canonicalPath.replace(/^\//, ''), site).href;
-const ogImageUrl = new URL('images/fogao-brastemp-bfs5ncr.webp', site).href;
+const ogImageUrl = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).href;
 
 const seoTitle = 'Brastemp BFS5NCR vale a pena? Review completo 2026 | Casa Prática Eletro';
 const metaDescription =
@@ -238,20 +240,15 @@ const structuredData = {
 			</p>
 		</section>
 
-		<figure
-			class="mt-10 overflow-hidden rounded-2xl shadow-[0_12px_40px_-18px_rgba(0,0,0,0.55)] ring-1 ring-white/10"
-		>
-			<div class="relative aspect-[4/3] w-full bg-zinc-900/80 sm:aspect-[16/10]">
-				<img
-					src="/images/fogao-brastemp-bfs5ncr.webp"
-					alt="Fogão de piso Brastemp BFS5NCR cinco bocas em inox com mesa de vidro temperado preto e acabamento contemporâneo"
-					class="h-full w-full object-cover object-center"
-					width={800}
-					height={800}
-					fetchpriority="high"
-					decoding="async"
-				/>
-			</div>
+		<figure class="mt-10 overflow-hidden rounded-2xl ring-1 ring-white/[0.08]">
+			<ProductMedia
+				src={PRODUCT_IMAGE_REVIEW.brastemp}
+				alt="Fogão de piso Brastemp BFS5NCR cinco bocas em inox com mesa de vidro temperado preto e acabamento contemporâneo"
+				aspect="wide"
+				flush
+				fit="cover"
+				fetchpriority="high"
+			/>
 			<figcaption class="border-t border-white/10 bg-brand-900/60 px-4 py-3 text-center text-xs text-on-ink-muted sm:text-sm">
 				Visual em inox com mesa de vidro: combinação comum em cozinhas planejadas — com atenção redobrada a impactos no vidro.
 			</figcaption>

@@ -138,7 +138,7 @@ Fluxo padrão para criar páginas de review novas (ex.: novos modelos de fogão)
 ## 7. Imagens
 
 - **Tipos de imagem**
-  - Imagens de produto: manter em `public/images/...` quando forem usadas em OG/JSON-LD por string.
+  - Imagens de produto: `public/images/reviews|blog/...` (nomes `*-review-premium.webp` / `*-blog-premium.webp`); mapa em `src/data/productImages.ts`.
   - Hero / imagens de conteúdo: preferir `src/assets/...` com `Picture` (benefício de otimização Astro).
 - **Requisitos mínimos**
   - Resolução boa para preview social (padrão 1200×630 ou similar).

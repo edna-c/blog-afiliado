@@ -46,7 +46,7 @@ casa-pratica-eletro/
 **Convenção de imagens**
 
 - `src/assets/...` — otimização via `astro:assets` (`Picture`, imports tipados).
-- `public/images/...` — URLs fixas para capas de blog, OG e imagens referenciadas em JSON-LD ou strings.
+- `public/images/reviews|blog/...` — URLs fixas para produto (reviews/OG) e capas do blog (`*-blog-premium.webp`); ver `src/data/productImages.ts`.
 
 ---
 

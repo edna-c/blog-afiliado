@@ -1,6 +1,6 @@
 """
 Padroniza a foto do fogão Consul para o mesmo canvas 1024×1024 da referência
-(fogao-brastemp-bfs5ncr.webp): escala baseada na caixa de conteúdo do Brastemp,
+(brastemp-bfs5ncr-review-premium.webp): escala baseada na caixa de conteúdo do Brastemp,
 +5% de zoom uniforme, centralização no canvas e leve ajuste vertical para cima.
 """
 from __future__ import annotations
@@ -10,12 +10,12 @@ from pathlib import Path
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
-REF_PATH = ROOT / "public" / "images" / "fogao-brastemp-bfs5ncr.webp"
+REF_PATH = ROOT / "public" / "images" / "reviews" / "brastemp-bfs5ncr-review-premium.webp"
 CONSUL_SRC = Path(
     r"C:\Users\EdnaLocal\.cursor\projects\c-Users-EdnaLocal-Desktop-Projetos-blog-afiliado\assets"
     r"\c__Users_EdnaLocal_AppData_Roaming_Cursor_User_workspaceStorage_b332aae3c9bef0f757dbb63c8fcd48ae_images_consul-8df86065-06b2-4e2e-99cb-638fe2945c59.png"
 )
-OUT_PATH = ROOT / "public" / "images" / "fogao-consul-cfs5nab.webp"
+OUT_PATH = ROOT / "public" / "images" / "reviews" / "consul-cfs5nab-review-premium.webp"
 
 # ~5% maior que o encaixe na caixa de conteúdo da referência; proporção uniforme (sem distorção).
 SCALE_FACTOR = 1.05

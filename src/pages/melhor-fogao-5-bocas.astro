@@ -4,6 +4,7 @@ import RelatedArticles from '../components/RelatedArticles.astro';
 import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
 import { Picture } from 'astro:assets';
 import melhoresFogoesHero from '../assets/images/heroes/melhores-fogoes-5-bocas-hero.webp';
+import { PRODUCT_IMAGE_REVIEW } from '../data/productImages';
 
 const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
 const canonical = new URL('/melhor-fogao-5-bocas', site).href;
@@ -21,7 +22,7 @@ const description =
 		description,
 		url: canonical,
 		type: 'article',
-		image: new URL('images/fogao-brastemp-bfs5ncr.webp', site).href,
+		image: new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).href,
 		imageAlt: 'Fogão de piso cinco bocas em inox — referência visual do guia',
 		publishedTime: '2026-01-10T10:00:00-03:00',
 		modifiedTime: '2026-05-06T10:00:00-03:00',

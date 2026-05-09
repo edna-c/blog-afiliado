@@ -1,0 +1,91 @@
+---
+/**
+ * Moldura premium única para fotos de produto (reviews, análises longas, etc.).
+ * Cards da home mantêm markup próprio por variantes (escala Consul, filtro Electrolux).
+ */
+interface Props {
+	src: string;
+	alt: string;
+	/** `square` alinha aos cards da home; `wide` para figuras editoriais. */
+	aspect?: 'square' | 'wide';
+	class?: string;
+	/** Sem padding externo — encaixa em `<figure>` já com cantos arredondados. */
+	flush?: boolean;
+	/** `contain` em vitrine; `cover` em hero editorial largo. */
+	fit?: 'contain' | 'cover';
+	/** Escala fina em `contain` (ex.: 1.065 Consul). */
+	visualScale?: number;
+	/** Ajuste leve de contraste/nitidez (Electrolux). */
+	photoEnhance?: boolean;
+	fetchpriority?: 'high' | 'low' | 'auto';
+}
+
+const {
+	src,
+	alt,
+	aspect = 'square',
+	class: className,
+	flush,
+	fit = 'contain',
+	visualScale,
+	photoEnhance,
+	fetchpriority,
+} = Astro.props;
+
+const frameAspect =
+	aspect === 'wide'
+		? 'aspect-[4/3] w-full sm:aspect-[16/10]'
+		: 'aspect-square w-full max-w-[min(100%,21.5rem)]';
+
+const imgStyle =
+	visualScale && visualScale !== 1
+		? { transform: `scale(${visualScale})`, transformOrigin: 'center center' as const }
+		: undefined;
+
+const innerInset = flush ? 'inset-0' : 'inset-3 sm:inset-[0.8125rem]';
+const roundedFrame = flush ? '' : 'rounded-[0.875rem]';
+---
+
+{
+	flush ? (
+		<div class:list={['product-media-frame relative overflow-hidden bg-[#151515]', roundedFrame, frameAspect, className]}>
+			<div class:list={['absolute flex items-center justify-center', innerInset]}>
+				<img
+					class:list={[
+						fit === 'cover' ? 'h-full w-full object-cover object-center' : 'max-h-full max-w-full object-contain object-center',
+						photoEnhance && 'brightness-[1.03] contrast-[1.06] saturate-[1.02]',
+					]}
+					style={imgStyle}
+					src={src}
+					alt={alt}
+					width={800}
+					height={800}
+					loading={fetchpriority === 'high' ? 'eager' : 'lazy'}
+					decoding="async"
+					fetchpriority={fetchpriority}
+				/>
+			</div>
+		</div>
+	) : (
+		<div class:list={['product-media-area', className]}>
+			<div class:list={['product-media-frame relative overflow-hidden rounded-[0.875rem] bg-[#151515]', frameAspect]}>
+				<div class:list={['absolute flex items-center justify-center', innerInset]}>
+					<img
+						class:list={[
+							fit === 'cover' ? 'h-full w-full object-cover object-center' : 'max-h-full max-w-full object-contain object-center',
+							photoEnhance && 'brightness-[1.03] contrast-[1.06] saturate-[1.02]',
+						]}
+						style={imgStyle}
+						src={src}
+						alt={alt}
+						width={800}
+						height={800}
+						loading={fetchpriority === 'high' ? 'eager' : 'lazy'}
+						decoding="async"
+						fetchpriority={fetchpriority}
+					/>
+				</div>
+			</div>
+		</div>
+	)
+}

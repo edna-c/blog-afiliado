@@ -3,7 +3,6 @@ title: 'Melhores Fogões 4 Bocas em 2026: três modelos muito procurados e bem a
 description: 'Três dos melhores fogões 4 bocas em 2026, com links para ver preço na hora e critérios práticos de escolha.'
 pubDate: 2026-03-18
 category: 'Comparativo'
-coverImage: '/images/fogao-consul-cfs5nab.webp'
 ---
 
 Você está aqui porque quer **comprar**, não porque quer ler um manual chato. A gente te ajuda a comparar **melhores fogões 4 bocas** com nome, benefício e link — e no fim você sabe qual faz mais sentido para o seu bolso e rotina.

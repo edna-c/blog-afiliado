@@ -65,7 +65,7 @@ Convencionadas assim:
 #### Artigos do blog — `src/pages/blog/[slug].astro`
 
 - Título no layout: **`${post.data.title} | Casa Prática Eletro`**
-- Imagem OG: `post.data.coverImage` resolvida para URL absoluta, ou fallback `images/fogao-brastemp-bfs5ncr.webp`
+- Imagem OG: `post.data.coverImage` resolvida para URL absoluta, ou fallback `images/reviews/brastemp-bfs5ncr-review-premium.webp`
 - **`@graph` Schema.org:** `Organization`, `BreadcrumbList` (Início → Blog → artigo), `WebPage`, `Article` (com `image`, autor/editora = organização, datas ISO, `articleSection` = categoria, `inLanguage: pt-BR`)
 - Se o frontmatter tiver **`faq`**: inclui nó **`FAQPage`** ligado ao mesmo grafo
 

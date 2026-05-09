@@ -1,5 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { Picture } from 'astro:assets';
+import { getBlogThumbnailAsset } from '../data/blogThumbnailAssets';
 
 interface Props {
 	posts: CollectionEntry<'blog'>[];
@@ -67,26 +69,46 @@ const isDark = variant === 'dark';
 		<div class="mt-14 grid gap-6 sm:grid-cols-2 sm:gap-6 lg:mt-16 lg:grid-cols-3 lg:gap-8">
 			{
 				posts.map((post, index) => {
+					const thumbAsset = getBlogThumbnailAsset(post.id);
 					const cover = post.data.coverImage;
 					return (
 						<article
 							class:list={[
 								'group flex min-h-0 flex-col overflow-hidden rounded-2xl transition duration-300 ease-out will-change-transform',
 								isDark
-									? 'border border-white/10 bg-brand-900/35 shadow-[0_16px_48px_-28px_rgba(0,0,0,0.65)] ring-1 ring-white/5 hover:-translate-y-1 hover:border-pop/30 hover:shadow-[0_22px_56px_-24px_rgba(0,0,0,0.75),0_0_0_1px_rgba(223,255,31,0.12)]'
+									? 'border border-white/10 bg-brand-900/35 shadow-[0_16px_48px_-28px_rgba(0,0,0,0.65)] ring-1 ring-white/5 hover:-translate-y-0.5 hover:border-pop/25 hover:shadow-[0_18px_48px_-26px_rgba(0,0,0,0.68),0_0_0_1px_rgba(223,255,31,0.1)]'
 									: 'bg-neutral-50 ring-1 ring-black/5 hover:shadow-[0_24px_48px_-14px_rgba(0,0,0,0.14)]',
 							]}
 						>
 							<a
 								href={`/blog/${post.id}/`}
 								class:list={[
-									'relative block aspect-[16/10] overflow-hidden',
-									isDark ? 'ring-1 ring-white/10' : 'rounded-[12px] ring-1 ring-black/[0.06]',
+									'relative block aspect-[16/10] w-full overflow-hidden',
+									isDark ? 'rounded-xl bg-[#151515] product-media-thumb' : 'rounded-[12px] ring-1 ring-black/[0.06]',
 								]}
 								aria-label={`Abrir artigo no blog: ${post.data.title}`}
 							>
-								<span class="absolute inset-0 block origin-center transition-transform duration-500 ease-out will-change-transform group-hover:scale-[1.04]">
-									{cover ? (
+								<span class="absolute inset-0 block origin-center transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform group-hover:scale-[1.02]">
+									{thumbAsset ? (
+										<Picture
+											src={thumbAsset}
+											alt=""
+											width={thumbAsset.width}
+											height={thumbAsset.height}
+											widths={[480, 640, 800, 960]}
+											sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+											formats={['avif', 'webp']}
+											quality={82}
+											loading={index === 0 ? 'eager' : 'lazy'}
+											decoding="async"
+											fetchpriority={index === 0 ? 'high' : undefined}
+											class="h-full w-full object-cover object-center"
+											pictureAttributes={{
+												class:
+													'absolute inset-0 block h-full w-full [&>img]:h-full [&>img]:w-full [&>img]:object-cover [&>img]:object-center',
+											}}
+										/>
+									) : cover ? (
 										<img
 											src={cover}
 											alt=""

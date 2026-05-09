@@ -2,13 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import RelatedArticles from '../components/RelatedArticles.astro';
 import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
+import ProductMedia from '../components/ProductMedia.astro';
 import { produtos } from '../data/products';
-
-const productImages: Record<string, string> = {
-	brastemp: '/images/fogao-brastemp-bfs5ncr.webp',
-	consul: '/images/fogao-consul-cfs5nab.webp',
-	electrolux: '/images/fogao-electrolux-76usq.webp',
-};
+import { PRODUCT_IMAGE_REVIEW, type ProductReviewSlug } from '../data/productImages';
 
 export async function getStaticPaths() {
 	return [
@@ -69,7 +65,8 @@ const marcaLabel = marca ? marca.charAt(0).toUpperCase() + marca.slice(1) : '';
 
 const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
 const canonical = new URL(Astro.url.pathname, site).href;
-const imagePath = productImages[marca ?? ''] ?? productImages.brastemp;
+const reviewSlug = (marca === 'brastemp' || marca === 'consul' || marca === 'electrolux' ? marca : 'brastemp') as ProductReviewSlug;
+const imagePath = PRODUCT_IMAGE_REVIEW[reviewSlug];
 const productImage = new URL(imagePath.replace(/^\//, ''), site).href;
 
 const brandName = model.split(/\s+/)[0] ?? marcaLabel;
@@ -127,6 +124,15 @@ const structuredData = {
 		</p>
 		<div class="mt-8">
 			<EditorialTrustRibbon />
+		</div>
+		<div class="mt-10">
+			<ProductMedia
+				src={imagePath}
+				alt={`Fogão a gás ${model}`}
+				aspect="square"
+				visualScale={reviewSlug === 'consul' ? 1.065 : undefined}
+				photoEnhance={reviewSlug === 'electrolux'}
+			/>
 		</div>
 		{
 			longReviewHref ? (

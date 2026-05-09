@@ -4,8 +4,10 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import RelatedArticles from '../../components/RelatedArticles.astro';
 import EditorialTrustRibbon from '../../components/EditorialTrustRibbon.astro';
 import { getCollection, render } from 'astro:content';
-import { Picture } from 'astro:assets';
-import blogHeroImage from '../../assets/blog/blog-hero-electrolux-cozinha.png';
+import { PRODUCT_IMAGE_REVIEW } from '../../data/productImages';
+import { getBlogThumbnailAsset } from '../../data/blogThumbnailAssets';
+import { getImage, Picture } from 'astro:assets';
+import blogHeroImage from '../../assets/images/blog/electrolux-cozinha-hero-premium.png';
 import melhoresFogoesHeroImage from '../../assets/images/heroes/melhores-fogoes-5-bocas-hero.webp';
 
 const blogHeroAlt =
@@ -33,9 +35,16 @@ const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
 const canonical = new URL(Astro.url.pathname, site).href;
 const faq = post.data.faq;
 
-const ogImage = post.data.coverImage
-	? new URL(String(post.data.coverImage).replace(/^\//, ''), site).href
-	: new URL('images/fogao-brastemp-bfs5ncr.webp', site).href;
+const thumbMeta = getBlogThumbnailAsset(post.id);
+let ogImage: string;
+if (thumbMeta) {
+	const og = await getImage({ src: thumbMeta, width: 1200, format: 'webp' });
+	ogImage = og.src.startsWith('http') ? og.src : new URL(og.src.replace(/^\//, ''), site).href;
+} else if (post.data.coverImage) {
+	ogImage = new URL(String(post.data.coverImage).replace(/^\//, ''), site).href;
+} else {
+	ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).href;
+}
 
 const orgId = `${site.href}#organization`;
 const articleId = `${canonical}#article`;

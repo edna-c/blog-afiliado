@@ -1,6 +1,6 @@
 """
 Padroniza a foto do fogão Electrolux para o mesmo canvas 1024×1024 da referência
-(fogao-brastemp-bfs5ncr.webp), com os mesmos parâmetros do Consul (cards alinhados).
+(brastemp-bfs5ncr-review-premium.webp), com os mesmos parâmetros do Consul (cards alinhados).
 """
 from __future__ import annotations
 
@@ -9,10 +9,10 @@ from pathlib import Path
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
-REF_PATH = ROOT / "public" / "images" / "fogao-brastemp-bfs5ncr.webp"
+REF_PATH = ROOT / "public" / "images" / "reviews" / "brastemp-bfs5ncr-review-premium.webp"
 # Fonte versionada no repositório (copiar o PNG do produto para este caminho).
 REPO_SRC = ROOT / "public" / "images" / "source-fogao-electrolux-76usq.png"
-OUT_PATH = ROOT / "public" / "images" / "fogao-electrolux-76usq.webp"
+OUT_PATH = ROOT / "public" / "images" / "reviews" / "electrolux-fe5ig-review-premium.webp"
 
 SCALE_FACTOR = 1.05
 NUDGE_UP_PX = 18
