@@ -10,11 +10,14 @@ import { PRODUCT_IMAGE_REVIEW } from '../../data/productImages';
 import { getBlogThumbnailAsset } from '../../data/blogThumbnailAssets';
 import { getImage, Picture } from 'astro:assets';
 import blogHeroImage from '../../assets/images/blog/electrolux-cozinha-hero-premium.png';
+import reviewMesaVidroHeroImage from '../../assets/images/blog/reviews/review-fogao-com-mesa-de-vidro-blog-premium.webp';
 import melhoresFogoesHeroImage from '../../assets/images/heroes/melhores-fogoes-5-bocas-hero.webp';
 import { findEntry, type EditorialEntry } from '../../data/editorialContent';
 
 const blogHeroAlt =
 	'Cozinha moderna com fogão Electrolux de cinco bocas preto com porta de vidro, integrado entre armários escuros e bancada de granito.';
+const reviewMesaVidroHeroAlt =
+	'Cozinha moderna com fogão de mesa de vidro integrado à bancada e armários, ambiente iluminado para leitura sobre vidro temperado.';
 const melhoresFogoesHeroAlt =
 	'Melhores fogões 5 bocas em destaque em cozinha planejada moderna, com foco em comparação de modelos e custo-benefício.';
 
@@ -29,8 +32,17 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await render(post);
 const isMelhoresFogoesPage = post.id === 'melhor-fogao-5-bocas';
-const heroImage = isMelhoresFogoesPage ? melhoresFogoesHeroImage : blogHeroImage;
-const heroAlt = isMelhoresFogoesPage ? melhoresFogoesHeroAlt : blogHeroAlt;
+const isReviewMesaVidroPage = post.id === 'review-fogao-com-mesa-de-vidro';
+const heroImage = isMelhoresFogoesPage
+	? melhoresFogoesHeroImage
+	: isReviewMesaVidroPage
+		? reviewMesaVidroHeroImage
+		: blogHeroImage;
+const heroAlt = isMelhoresFogoesPage
+	? melhoresFogoesHeroAlt
+	: isReviewMesaVidroPage
+		? reviewMesaVidroHeroAlt
+		: blogHeroAlt;
 
 /**
  * Pareamento editorial por slug — escolhe naturalmente:
