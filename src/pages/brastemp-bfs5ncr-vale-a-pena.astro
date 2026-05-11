@@ -2,7 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import AffiliateOfferBlock from '../components/AffiliateOfferBlock.astro';
-import RelatedArticles from '../components/RelatedArticles.astro';
+import RelatedContent from '../components/RelatedContent.astro';
+import EditorialLinks from '../components/EditorialLinks.astro';
+import SmartRecommendations from '../components/SmartRecommendations.astro';
 import ProductMedia from '../components/ProductMedia.astro';
 import { produtos } from '../data/products';
 import { PRODUCT_IMAGE_REVIEW } from '../data/productImages';
@@ -433,6 +435,15 @@ const structuredData = {
 					<li>mesa lisa mais simples de limpar;</li>
 					<li>pés altos que facilitam a faxina embaixo do aparelho.</li>
 				</ol>
+
+				<EditorialLinks
+					class="mt-8"
+					eyebrow="Leituras editoriais"
+					heading="Cozinha moderna, decoração e manutenção"
+					currentPath="/brastemp-bfs5ncr-vale-a-pena"
+					kind="Blog"
+					limit={3}
+				/>
 			</section>
 
 			<section aria-labelledby="concorrentes-heading">
@@ -595,10 +606,22 @@ const structuredData = {
 			</dl>
 		</section>
 
-		<RelatedArticles
+		<RelatedContent
 			class="mt-14"
 			currentPath="/brastemp-bfs5ncr-vale-a-pena"
 			excludePaths={['/brastemp-bfs5ncr-vale-a-pena/']}
+			eyebrow="Veja também"
+			title="Leituras relacionadas"
+			subtitle="Reviews por marca, comparativos e leituras editoriais — caminho natural depois de fechar a análise completa."
+			columns={3}
+			limit={6}
+		/>
+
+		<SmartRecommendations
+			class="mt-12"
+			currentPath="/brastemp-bfs5ncr-vale-a-pena"
+			excludePaths={['/brastemp-bfs5ncr-vale-a-pena/']}
+			heading="Próximos passos editoriais"
 		/>
 
 		<footer class="mt-14 border-t border-white/10 pt-10">

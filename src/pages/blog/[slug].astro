@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import RelatedArticles from '../../components/RelatedArticles.astro';
+import RelatedContent from '../../components/RelatedContent.astro';
+import EditorialLinks from '../../components/EditorialLinks.astro';
+import SmartRecommendations from '../../components/SmartRecommendations.astro';
 import EditorialTrustRibbon from '../../components/EditorialTrustRibbon.astro';
 import { getCollection, render } from 'astro:content';
 import { PRODUCT_IMAGE_REVIEW } from '../../data/productImages';
@@ -9,6 +11,7 @@ import { getBlogThumbnailAsset } from '../../data/blogThumbnailAssets';
 import { getImage, Picture } from 'astro:assets';
 import blogHeroImage from '../../assets/images/blog/electrolux-cozinha-hero-premium.png';
 import melhoresFogoesHeroImage from '../../assets/images/heroes/melhores-fogoes-5-bocas-hero.webp';
+import { findEntry, type EditorialEntry } from '../../data/editorialContent';
 
 const blogHeroAlt =
 	'Cozinha moderna com fogão Electrolux de cinco bocas preto com porta de vidro, integrado entre armários escuros e bancada de granito.';
@@ -28,6 +31,36 @@ const { Content } = await render(post);
 const isMelhoresFogoesPage = post.id === 'melhor-fogao-5-bocas';
 const heroImage = isMelhoresFogoesPage ? melhoresFogoesHeroImage : blogHeroImage;
 const heroAlt = isMelhoresFogoesPage ? melhoresFogoesHeroAlt : blogHeroAlt;
+
+/**
+ * Pareamento editorial por slug — escolhe naturalmente:
+ *  - artigo cozinha-moderna (mesa de vidro) → review de modelo inox premium
+ *  - artigo decoração (embutir/piso)        → análise Brastemp + review Electrolux
+ *  - artigo organização/comparativo 4 bocas → guia 5 bocas + comparativo direto
+ *  - artigo guia 5 bocas                    → análise Brastemp + comparativo
+ */
+const editorialPairings: Record<string, string[]> = {
+	'review-fogao-com-mesa-de-vidro': [
+		'/brastemp-bfs5ncr-vale-a-pena',
+		'/review-fogao-5-bocas-electrolux',
+	],
+	'guia-fogao-embutir-ou-de-piso': [
+		'/brastemp-bfs5ncr-vale-a-pena',
+		'/comparativo-fogao-4-vs-5-bocas',
+	],
+	'comparativo-fogao-4-bocas-2026': [
+		'/melhor-fogao-5-bocas',
+		'/comparativo-fogao-4-vs-5-bocas',
+	],
+	'melhor-fogao-5-bocas': [
+		'/brastemp-bfs5ncr-vale-a-pena',
+		'/comparativo-fogao-4-vs-5-bocas',
+	],
+};
+
+const inlinePairingItems: EditorialEntry[] = (editorialPairings[post.id] ?? [])
+	.map((href) => findEntry((e) => e.href === href))
+	.filter(Boolean) as EditorialEntry[];
 
 const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
 
@@ -170,6 +203,25 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 		>
 			<Content />
 		</div>
+
+		{
+			inlinePairingItems.length ? (
+				<EditorialLinks
+					class="mt-10"
+					eyebrow="Pareamento editorial"
+					heading={post.data.category === 'Review' || post.data.category === 'Comparativo'
+						? 'Antes de comprar, leia também'
+						: 'Para fechar a decisão'}
+					items={inlinePairingItems.map((entry) => ({
+						href: entry.href,
+						label: entry.anchorText,
+						description: entry.teaser ?? entry.description,
+						tag: entry.editorialLabel ?? entry.kind,
+					}))}
+				/>
+			) : null
+		}
+
 		<p class="mt-10 rounded-xl border border-white/10 bg-brand-900/30 px-4 py-3 text-sm leading-relaxed text-on-ink-muted sm:px-5">
 			<strong class="text-on-ink-body">Próximo passo comercial (sem pressão):</strong> depois de ler, volte à{' '}
 			<a href="/#top-produtos" class="font-semibold text-pop underline-offset-2 hover:underline">lista principal com ofertas</a>
@@ -194,10 +246,20 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 				</section>
 			) : null
 		}
-		<RelatedArticles
+		<RelatedContent
 			class="mt-14"
 			currentPath={Astro.url.pathname}
 			excludePaths={[`/blog/${post.id}`, `/blog/${post.id}/`]}
+			eyebrow="Veja também"
+			title="Leituras relacionadas"
+			subtitle="Continue do mesmo cluster — guias, comparativos e artigos editoriais conectados ao tema deste post."
+		/>
+
+		<SmartRecommendations
+			class="mt-12"
+			currentPath={Astro.url.pathname}
+			excludePaths={[`/blog/${post.id}`, `/blog/${post.id}/`]}
+			heading="Próximos passos editoriais"
 		/>
 		<p class="mt-12 border-t border-white/10 pt-8 text-sm text-on-ink-muted">
 			<a href="/blog" class="text-pop transition hover:text-accent-hover" aria-label="Voltar à listagem do blog">

@@ -1,0 +1,186 @@
+---
+/**
+ * EditorialLinks — bloco compacto e discreto, com tipografia editorial.
+ *
+ * Caráter: parece nota de redação ("Continue lendo:", "Leituras relacionadas")
+ * com 2 a 4 indicações. Pensado para usar dentro de seções longas (review,
+ * comparativo, blog) sem aparência de "card de afiliado".
+ *
+ * Aceita itens curados (mais previsível) OU resolve por tópico/kind via
+ * editorialContent.ts.
+ */
+import {
+	getRelated,
+	getByTopic,
+	getByKind,
+	canonPath,
+	type EditorialEntry,
+	type EditorialKind,
+	type EditorialTopic,
+} from '../data/editorialContent';
+
+export interface EditorialLinksItem {
+	href: string;
+	label: string;
+	description?: string;
+	tag?: string;
+}
+
+interface Props {
+	/** Itens fixos (precedência sobre filtros automáticos). */
+	items?: EditorialLinksItem[];
+	/** Path atual — usado quando os itens são gerados por filtro. */
+	currentPath?: string;
+	/** Tópico-âncora para filtro automático. */
+	topic?: EditorialTopic;
+	/** Filtra por tipo (Review, Comparativo, Blog, Guia, Análise). */
+	kind?: EditorialKind | EditorialKind[];
+	/** Quantos itens mostrar (default 3). */
+	limit?: number;
+	/** Caminhos a excluir do pool. */
+	excludePaths?: string[];
+	/** Texto de cabeçalho — opcional, default "Leituras relacionadas". */
+	heading?: string;
+	/** Sub-rótulo de seção — opcional. */
+	eyebrow?: string;
+	/** "stack" = lista vertical com regra divisória; "inline" = parágrafo corrido. */
+	variant?: 'stack' | 'inline';
+	class?: string;
+}
+
+const {
+	items,
+	currentPath,
+	topic,
+	kind,
+	limit = 3,
+	excludePaths = [],
+	heading = 'Leituras relacionadas',
+	eyebrow,
+	variant = 'stack',
+	class: className,
+} = Astro.props;
+
+function entryToItem(entry: EditorialEntry): EditorialLinksItem {
+	return {
+		href: entry.href,
+		label: entry.anchorText,
+		description: entry.teaser ?? entry.description,
+		tag: entry.editorialLabel ?? entry.kind,
+	};
+}
+
+let resolved: EditorialLinksItem[] = items ?? [];
+if (!items || items.length === 0) {
+	let pool: EditorialEntry[] = [];
+	const kinds = Array.isArray(kind) ? kind : kind ? [kind] : undefined;
+	if (topic) {
+		pool = getByTopic(topic, limit + 2, [
+			...(currentPath ? [canonPath(currentPath)] : []),
+			...excludePaths,
+		]);
+		if (kinds) pool = pool.filter((p) => kinds.includes(p.kind));
+	} else if (kinds && kinds.length === 1) {
+		pool = getByKind(kinds[0]!, limit + 2, [
+			...(currentPath ? [canonPath(currentPath)] : []),
+			...excludePaths,
+		]);
+	} else if (currentPath) {
+		pool = getRelated(currentPath, { limit: limit + 2, excludePaths, kinds });
+	}
+	resolved = pool.slice(0, limit).map(entryToItem);
+}
+
+const list = resolved.slice(0, limit);
+---
+
+{
+	list.length ? (
+		<aside
+			class:list={[
+				'editorial-links not-prose rounded-2xl border border-white/10 bg-brand-900/30 px-5 py-5 ring-1 ring-white/5 sm:px-6 sm:py-6',
+				className,
+			]}
+			aria-label={heading}
+		>
+			{eyebrow ? (
+				<p class="text-[10px] font-bold uppercase tracking-[0.32em] text-pop sm:text-[11px]">{eyebrow}</p>
+			) : null}
+			<p class:list={[
+				'font-display text-[0.95rem] font-bold tracking-tight text-on-ink-body sm:text-base',
+				eyebrow ? 'mt-1.5' : '',
+			]}>
+				{heading}
+			</p>
+
+			{variant === 'stack' ? (
+				<ul class="mt-3 divide-y divide-white/[0.07] text-sm leading-relaxed sm:text-[0.95rem]">
+					{list.map((item) => (
+						<li class="group py-3 first:pt-2 last:pb-1">
+							<a
+								href={item.href}
+								class="flex items-baseline gap-3 text-on-ink-body transition hover:text-pop"
+							>
+								<span aria-hidden="true" class="mt-0.5 select-none text-[0.85em] text-pop/60 transition group-hover:text-pop">
+									→
+								</span>
+								<span class="min-w-0 flex-1">
+									{item.tag ? (
+										<span class="mr-2 inline-flex items-center text-[10px] font-semibold uppercase tracking-[0.24em] text-on-ink-muted">
+											{item.tag}
+										</span>
+									) : null}
+									<span class="font-semibold text-on-ink-body underline decoration-pop/30 decoration-[1.5px] underline-offset-[5px] transition group-hover:decoration-pop">
+										{item.label}
+									</span>
+									{item.description ? (
+										<span class="mt-1 block text-xs leading-relaxed text-on-ink-muted sm:text-[0.85rem]">
+											{item.description}
+										</span>
+									) : null}
+								</span>
+							</a>
+						</li>
+					))}
+				</ul>
+			) : (
+				<p class="mt-3 text-sm leading-relaxed text-on-ink-muted sm:text-[0.95rem]">
+					{list.map((item, index) => (
+						<>
+							<a
+								href={item.href}
+								class="font-semibold text-on-ink-body underline decoration-pop/30 decoration-[1.5px] underline-offset-[5px] transition hover:text-pop hover:decoration-pop"
+							>
+								{item.label}
+							</a>
+							{index < list.length - 1 ? <span class="text-on-ink-muted/60"> · </span> : null}
+						</>
+					))}
+				</p>
+			)}
+		</aside>
+	) : null
+}
+
+<style>
+	.editorial-links {
+		position: relative;
+	}
+	.editorial-links::before {
+		content: '';
+		position: absolute;
+		left: 1.25rem;
+		top: 0;
+		width: 28px;
+		height: 2px;
+		background: linear-gradient(90deg, var(--color-pop), transparent);
+		transform: translateY(-1px);
+		opacity: 0.85;
+	}
+	@media (min-width: 640px) {
+		.editorial-links::before {
+			left: 1.5rem;
+			width: 36px;
+		}
+	}
+</style>

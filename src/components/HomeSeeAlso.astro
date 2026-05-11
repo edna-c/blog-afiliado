@@ -1,48 +1,88 @@
+---
+/**
+ * HomeSeeAlso — hub editorial discreto da home.
+ *
+ * Curadoria fixa: 4 entradas representando guia, comparativo, análise longa
+ * e leitura lifestyle (decoração / cozinha moderna). Mantém a estética
+ * dark premium da home; links naturais, sem cara de bloco de afiliado.
+ */
+import { findEntry, type EditorialEntry } from '../data/editorialContent';
+
+const guia = findEntry((e) => e.href === '/melhor-fogao-5-bocas');
+const comparativo = findEntry((e) => e.href === '/comparativo-fogao-4-vs-5-bocas');
+const analise = findEntry((e) => e.href === '/brastemp-bfs5ncr-vale-a-pena');
+const lifestyle = findEntry((e) => e.href === '/blog/review-fogao-com-mesa-de-vidro/');
+const lifestyleAlt = findEntry((e) => e.href === '/blog/guia-fogao-embutir-ou-de-piso/');
+
+const cards: EditorialEntry[] = [guia, comparativo, analise, lifestyle].filter(Boolean) as EditorialEntry[];
+
+const editorialIntroLifestyle = lifestyleAlt;
+---
+
 <section class="bg-ink py-16 lg:py-20" aria-labelledby="see-also-heading">
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-		<h2 id="see-also-heading" class="font-display text-2xl font-extrabold tracking-tight text-on-ink-body sm:text-3xl">
+		<p class="text-[10px] font-bold uppercase tracking-[0.32em] text-pop sm:text-[11px]">
+			Hub editorial
+		</p>
+		<h2
+			id="see-also-heading"
+			class="font-display mt-2 text-2xl font-extrabold tracking-tight text-on-ink-body sm:text-3xl"
+		>
 			Veja também
 		</h2>
-		<p class="mt-2 max-w-2xl text-sm leading-relaxed text-on-ink-body">
-			Outros conteúdos que podem te ajudar a decidir com calma — inclusive o{' '}
-			<a href="/como-escolher-fogao-5-bocas" class="font-semibold text-pop underline-offset-2 hover:underline">
-				guia de compra passo a passo
-			</a>
-			. Para leitura profunda do modelo mais equilibrado da seleção, abra também a{' '}
-			<a href="/brastemp-bfs5ncr-vale-a-pena" class="font-semibold text-pop underline-offset-2 hover:underline">
-				análise completa Brastemp BFS5NCR
-			</a>
-			. Quando quiser conferir preço de novo, volte à página inicial: ver mais opções antes de comprar costuma valer a pena.
+		<p class="mt-3 max-w-2xl text-sm leading-relaxed text-on-ink-body sm:text-base">
+			{guia ? (
+				<>
+					Outros conteúdos para decidir com calma — começando pelo{' '}
+					<a href={guia.href} class="font-semibold text-on-ink-body underline decoration-pop/40 decoration-[1.5px] underline-offset-[5px] transition hover:text-pop hover:decoration-pop">
+						guia mestre
+					</a>
+				</>
+			) : null}
+			{analise ? (
+				<>
+					{' '}e abrindo a{' '}
+					<a href={analise.href} class="font-semibold text-on-ink-body underline decoration-pop/40 decoration-[1.5px] underline-offset-[5px] transition hover:text-pop hover:decoration-pop">
+						análise completa Brastemp BFS5NCR
+					</a>
+				</>
+			) : null}
+			{editorialIntroLifestyle ? (
+				<>
+					. Para quem está reformando, vale também a leitura editorial sobre{' '}
+					<a href={editorialIntroLifestyle.href} class="font-semibold text-on-ink-body underline decoration-pop/40 decoration-[1.5px] underline-offset-[5px] transition hover:text-pop hover:decoration-pop">
+						embutir ou de piso
+					</a>
+					.
+				</>
+			) : '.'}
 		</p>
-		<ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-			<li>
-				<a
-					href="/melhor-fogao-5-bocas"
-					class="group flex h-full flex-col justify-between border border-white/10 bg-brand-900/40 p-5 transition hover:border-pop/40"
-				>
-					<span class="font-display font-bold text-on-ink-body group-hover:text-pop">Melhor fogão 5 bocas (guia completo)</span>
-					<span class="mt-2 text-xs text-on-ink-muted">Critérios, perfis e leitura em texto longo</span>
-				</a>
-			</li>
-			<li>
-				<a
-					href="/fogao-5-bocas-custo-beneficio"
-					class="group flex h-full flex-col justify-between border border-white/10 bg-brand-900/40 p-5 transition hover:border-pop/40"
-				>
-					<span class="font-display font-bold text-on-ink-body group-hover:text-pop">Fogão 5 bocas custo-benefício</span>
-					<span class="mt-2 text-xs text-on-ink-muted">Onde vale economizar — e onde não vale</span>
-				</a>
-			</li>
-			<li>
-				<a
-					href="/comparativo-fogao-4-vs-5-bocas"
-					class="group flex h-full flex-col justify-between border border-white/10 bg-brand-900/40 p-5 transition hover:border-pop/40 sm:col-span-2 lg:col-span-1"
-				>
-					<span class="font-display font-bold text-on-ink-body group-hover:text-pop">Comparativo 4 vs 5 bocas</span>
-					<span class="mt-2 text-xs text-on-ink-muted">Decisão em um só lugar</span>
-				</a>
-			</li>
+
+		<ul class="mt-8 grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
+			{cards.map((card) => (
+				<li>
+					<a
+						href={card.href}
+						class="group flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-brand-900/40 p-5 ring-1 ring-white/5 transition duration-300 ease-out hover:-translate-y-0.5 hover:border-pop/35 hover:bg-brand-900/60 hover:ring-white/10 sm:p-6"
+					>
+						<span class="inline-flex w-fit max-w-full rounded-full border border-white/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-on-ink-muted">
+							{card.editorialLabel ?? card.kind}
+						</span>
+						<span class="font-display mt-3 text-base font-bold leading-snug text-on-ink-body transition group-hover:text-pop sm:text-lg">
+							{card.title}
+						</span>
+						<span class="mt-2 line-clamp-2 text-xs leading-relaxed text-on-ink-muted sm:text-sm">
+							{card.teaser ?? card.description}
+						</span>
+						<span class="mt-4 inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-pop">
+							Abrir
+							<span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span>
+						</span>
+					</a>
+				</li>
+			))}
 		</ul>
+
 		<div class="mt-12 max-w-2xl border-t border-white/10 pt-10">
 			<p class="text-sm font-medium text-on-ink-body">
 				Pronto para cruzar tudo com preço de hoje? Volte à lista principal e confira disponibilidade na hora.

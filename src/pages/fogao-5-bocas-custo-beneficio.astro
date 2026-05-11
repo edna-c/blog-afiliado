@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import RelatedArticles from '../components/RelatedArticles.astro';
+import RelatedContent from '../components/RelatedContent.astro';
+import SmartRecommendations from '../components/SmartRecommendations.astro';
 import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
 ---
 
@@ -57,6 +58,18 @@ import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
 				Ver avaliação completa (Brastemp)
 			</a>
 		</div>
-		<RelatedArticles class="mt-14" currentPath="/fogao-5-bocas-custo-beneficio" />
+		<RelatedContent
+			class="mt-14"
+			currentPath="/fogao-5-bocas-custo-beneficio"
+			eyebrow="Veja também"
+			title="Leituras relacionadas"
+			subtitle="Reviews dos modelos citados e leituras editoriais para alinhar custo-benefício com o ambiente da cozinha."
+		/>
+
+		<SmartRecommendations
+			class="mt-12"
+			currentPath="/fogao-5-bocas-custo-beneficio"
+			heading="Próximos passos editoriais"
+		/>
 	</article>
 </BaseLayout>

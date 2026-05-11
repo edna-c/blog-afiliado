@@ -1,7 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import RelatedArticles from '../components/RelatedArticles.astro';
+import RelatedContent from '../components/RelatedContent.astro';
+import EditorialLinks from '../components/EditorialLinks.astro';
+import SmartRecommendations from '../components/SmartRecommendations.astro';
 import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
+import { findEntry, type EditorialEntry } from '../data/editorialContent';
+
+const reviewBrastemp = findEntry((e) => e.href === '/review-fogao-5-bocas-brastemp');
+const reviewConsul = findEntry((e) => e.href === '/review-fogao-5-bocas-consul');
+const reviewElectrolux = findEntry((e) => e.href === '/review-fogao-5-bocas-electrolux');
+const guiaCustoBeneficio = findEntry((e) => e.href === '/fogao-5-bocas-custo-beneficio');
+const lifestyleEmbutir = findEntry((e) => e.href === '/blog/guia-fogao-embutir-ou-de-piso/');
+
+const reviewItems: EditorialEntry[] = [reviewBrastemp, reviewConsul, reviewElectrolux].filter(Boolean) as EditorialEntry[];
 ---
 
 <BaseLayout
@@ -85,6 +96,46 @@ import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
 				Ver guia de compra — 5 bocas
 			</a>
 		</div>
-		<RelatedArticles class="mt-14" currentPath="/comparativo-fogao-4-vs-5-bocas" />
+
+		<RelatedContent
+			class="mt-14"
+			currentPath="/comparativo-fogao-4-vs-5-bocas"
+			eyebrow="Reviews dos modelos citados"
+			title="Veja os reviews por marca"
+			subtitle="Leituras curtas para confirmar perfil antes de fechar — Brastemp, Consul e Electrolux na mesma faixa."
+			items={reviewItems}
+			columns={3}
+		/>
+
+		<EditorialLinks
+			class="mt-12"
+			eyebrow="Decisões de ambiente"
+			heading="Antes de comprar, alinhe layout e custo-benefício"
+			items={[
+				...(guiaCustoBeneficio
+					? [{
+						href: guiaCustoBeneficio.href,
+						label: guiaCustoBeneficio.anchorText,
+						description: guiaCustoBeneficio.teaser ?? guiaCustoBeneficio.description,
+						tag: guiaCustoBeneficio.editorialLabel ?? 'Guia',
+					}]
+					: []),
+				...(lifestyleEmbutir
+					? [{
+						href: lifestyleEmbutir.href,
+						label: lifestyleEmbutir.anchorText,
+						description: lifestyleEmbutir.teaser ?? lifestyleEmbutir.description,
+						tag: lifestyleEmbutir.editorialLabel ?? 'Lifestyle',
+					}]
+					: []),
+			]}
+			variant="stack"
+		/>
+
+		<SmartRecommendations
+			class="mt-12"
+			currentPath="/comparativo-fogao-4-vs-5-bocas"
+			heading="Próximos passos editoriais"
+		/>
 	</article>
 </BaseLayout>

@@ -1,0 +1,153 @@
+---
+/**
+ * SmartRecommendations — fecha o artigo respeitando o funil editorial.
+ *
+ * Decide automaticamente o "próximo passo" do leitor com base na posição
+ * da página atual no funil (lifestyle → guia → comparativo → review):
+ *  - Lifestyle (1) entrega Guia + Comparativo + Review (subindo o funil)
+ *  - Guia (2) entrega Comparativo + Análise + Lifestyle de gancho
+ *  - Comparativo (3) entrega Reviews/Análise + Guia
+ *  - Review/Análise (4) entrega outras Reviews + Comparativo + Lifestyle
+ *
+ * UI: 3 cards horizontais com chip de ETAPA ("Próximo passo") +
+ * descritor curto, mantendo identidade dark premium.
+ */
+import {
+	getEditorialFlow,
+	getEditorialEntry,
+	type EditorialEntry,
+} from '../data/editorialContent';
+
+interface Props {
+	currentPath: string;
+	limit?: number;
+	excludePaths?: string[];
+	heading?: string;
+	subtitle?: string;
+	eyebrow?: string;
+	class?: string;
+}
+
+const {
+	currentPath,
+	limit = 3,
+	excludePaths = [],
+	heading = 'Próximos passos editoriais',
+	subtitle,
+	eyebrow = 'Continue lendo',
+	class: className,
+} = Astro.props;
+
+const current = getEditorialEntry(currentPath);
+const flowStage = current?.flow ?? 1;
+
+const stageLabel: Record<1 | 2 | 3 | 4, string> = {
+	1: 'Lifestyle',
+	2: 'Guia',
+	3: 'Comparativo',
+	4: 'Review',
+};
+
+const stageHint: Record<1 | 2 | 3 | 4, string> = {
+	1: 'Entrada editorial — define ambiente e prioridades.',
+	2: 'Guia — critérios para fechar a decisão.',
+	3: 'Comparativo — pesa opções lado a lado.',
+	4: 'Review — leitura final antes de comprar.',
+};
+
+const recommendations: EditorialEntry[] = getEditorialFlow(currentPath, limit, excludePaths);
+
+const defaultSubtitle = current
+	? `Você está em ${stageLabel[flowStage].toLowerCase()}. ${stageHint[flowStage]} A seguir, sugestões editoriais para fechar a jornada com calma.`
+	: 'Sugestões editoriais para fechar a jornada de leitura no ritmo certo.';
+
+const subtitleText = subtitle ?? defaultSubtitle;
+
+const stageChip = (entry: EditorialEntry): string => {
+	if (entry.editorialLabel) return entry.editorialLabel;
+	return stageLabel[entry.flow];
+};
+
+const stepLabel = (i: number, total: number) => {
+	if (total <= 1) return 'Próxima leitura';
+	if (i === 0) return 'Próximo passo';
+	if (i === total - 1) return 'Para fechar';
+	return 'Aprofundar';
+};
+---
+
+{
+	recommendations.length ? (
+		<section
+			class:list={['smart-recs scroll-mt-24 rounded-3xl border border-white/10 bg-gradient-to-b from-brand-900/45 to-ink/85 p-6 ring-1 ring-white/5 sm:p-8', className]}
+			aria-labelledby="smart-recs-heading"
+		>
+			<header class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
+				<div class="min-w-0">
+					{eyebrow ? (
+						<p class="text-[10px] font-bold uppercase tracking-[0.32em] text-pop sm:text-[11px]">{eyebrow}</p>
+					) : null}
+					<h2
+						id="smart-recs-heading"
+						class:list={[
+							'font-display text-xl font-extrabold tracking-tight text-on-ink-body sm:text-2xl',
+							eyebrow ? 'mt-1.5' : '',
+						]}
+					>
+						{heading}
+					</h2>
+					{subtitleText ? (
+						<p class="mt-2 max-w-2xl text-sm leading-relaxed text-on-ink-muted sm:text-base">{subtitleText}</p>
+					) : null}
+				</div>
+			</header>
+
+			<ol class="mt-8 grid list-none gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+				{recommendations.map((entry, i) => (
+					<li class="relative">
+						<a
+							href={entry.href}
+							class="group flex h-full flex-col gap-3 rounded-2xl border border-white/10 bg-ink/70 p-5 ring-1 ring-white/5 transition duration-300 ease-out hover:-translate-y-0.5 hover:border-pop/35 hover:bg-ink/85 hover:ring-white/10 sm:p-6"
+						>
+							<div class="flex items-center justify-between gap-3">
+								<span class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.28em] text-pop">
+									<span class="tabular-nums">0{i + 1}</span>
+									<span class="opacity-60" aria-hidden="true">·</span>
+									<span class="text-on-ink-muted">{stepLabel(i, recommendations.length)}</span>
+								</span>
+								<span class="rounded-full border border-white/12 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-on-ink-muted">
+									{stageChip(entry)}
+								</span>
+							</div>
+							<p class="font-display text-base font-bold leading-snug text-on-ink-body transition group-hover:text-pop sm:text-lg">
+								{entry.title}
+							</p>
+							<p class="line-clamp-3 flex-1 text-sm leading-relaxed text-on-ink-muted">
+								{entry.teaser ?? entry.description}
+							</p>
+							<span class="mt-1 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-pop">
+								Abrir
+								<span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span>
+							</span>
+						</a>
+					</li>
+				))}
+			</ol>
+		</section>
+	) : null
+}
+
+<style>
+	.smart-recs {
+		position: relative;
+		overflow: hidden;
+	}
+	.smart-recs::before {
+		content: '';
+		position: absolute;
+		inset: -1px -1px auto -1px;
+		height: 1px;
+		background: linear-gradient(90deg, transparent, rgba(223, 255, 31, 0.45), transparent);
+		opacity: 0.6;
+	}
+</style>

@@ -1,0 +1,145 @@
+---
+/**
+ * RelatedContent — bloco editorial em cards (variação premium do RelatedArticles).
+ *
+ * Diferenças em relação a RelatedArticles:
+ *  - Aceita filtros por `topics` e/ou `kinds` (consulta editorialContent.ts).
+ *  - Aceita override por `items` (curado).
+ *  - Mostra `editorialLabel` quando disponível ("Lifestyle · Cozinha moderna").
+ *  - Hover/visual respeita identidade dark premium do site.
+ *
+ * Quando vazio, não renderiza — não polui a página.
+ */
+import {
+	getRelated,
+	getByTopic,
+	type EditorialEntry,
+	type EditorialKind,
+	type EditorialTopic,
+} from '../data/editorialContent';
+
+interface Props {
+	currentPath?: string;
+	title?: string;
+	subtitle?: string;
+	eyebrow?: string;
+	limit?: number;
+	excludePaths?: string[];
+	/** Filtra por kinds. */
+	kinds?: EditorialKind[];
+	/** Lista de tópicos preferidos (boost). */
+	topics?: EditorialTopic[];
+	/** Tópico-âncora exclusivo (entrega só itens com esse tópico). */
+	anchorTopic?: EditorialTopic;
+	/** Itens curados sobrescrevem o pool automático. */
+	items?: EditorialEntry[];
+	/** Layout em colunas (default 2 no desktop). */
+	columns?: 2 | 3;
+	class?: string;
+}
+
+const {
+	currentPath,
+	title = 'Leituras relacionadas',
+	subtitle = 'Continue navegando entre guia, comparativo e leituras editoriais — caminho direto para fechar a decisão sem cansar.',
+	eyebrow,
+	limit = 4,
+	excludePaths = [],
+	kinds,
+	topics,
+	anchorTopic,
+	items,
+	columns = 2,
+	class: className,
+} = Astro.props;
+
+let entries: EditorialEntry[] = items ?? [];
+if (!items || items.length === 0) {
+	if (anchorTopic) {
+		entries = getByTopic(anchorTopic, limit, [
+			...(currentPath ? [currentPath] : []),
+			...excludePaths,
+		]);
+		if (kinds) entries = entries.filter((e) => kinds.includes(e.kind));
+	} else if (currentPath) {
+		entries = getRelated(currentPath, {
+			limit,
+			excludePaths,
+			kinds,
+			preferTopics: topics,
+		});
+	}
+}
+
+const list = entries.slice(0, limit);
+
+const kindClass: Record<EditorialKind, string> = {
+	Guia: 'border-emerald-400/25 text-emerald-200/95',
+	Review: 'border-sky-400/20 text-sky-100/95',
+	Comparativo: 'border-amber-400/25 text-amber-100/95',
+	Análise: 'border-pop/35 text-pop',
+	Blog: 'border-white/15 text-on-ink-muted',
+};
+
+const gridClass = columns === 3 ? 'sm:grid-cols-2 lg:grid-cols-3' : 'sm:grid-cols-2';
+---
+
+{
+	list.length ? (
+		<section
+			class:list={['scroll-mt-24 border-t border-white/10 pt-12 sm:pt-14', className]}
+			aria-labelledby="related-content-heading"
+		>
+			<div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
+				<div class="min-w-0">
+					{eyebrow ? (
+						<p class="text-[10px] font-bold uppercase tracking-[0.32em] text-pop sm:text-[11px]">{eyebrow}</p>
+					) : null}
+					<h2
+						id="related-content-heading"
+						class:list={[
+							'font-display text-xl font-extrabold tracking-tight text-on-ink-body sm:text-2xl',
+							eyebrow ? 'mt-1.5' : '',
+						]}
+					>
+						{title}
+					</h2>
+					{subtitle ? (
+						<p class="mt-2 max-w-2xl text-sm leading-relaxed text-on-ink-muted sm:text-base">{subtitle}</p>
+					) : null}
+				</div>
+			</div>
+			<ul class:list={['mt-8 grid list-none gap-4 sm:gap-5', gridClass]}>
+				{list.map((entry) => (
+					<li>
+						<a
+							href={entry.href}
+							class="group relative flex h-full min-h-[7.5rem] flex-col rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/5 transition duration-300 ease-out after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:opacity-0 after:shadow-[0_0_0_1px_rgba(223,255,31,0.12)] after:transition-opacity hover:-translate-y-0.5 hover:border-pop/35 hover:bg-brand-900/55 hover:ring-white/10 hover:after:opacity-100 sm:min-h-[8rem] sm:p-6"
+						>
+							<span
+								class:list={[
+									'inline-flex w-fit max-w-full rounded-full border px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider',
+									kindClass[entry.kind],
+								]}
+							>
+								{entry.editorialLabel ?? entry.kind}
+							</span>
+							<span class="font-display mt-3 text-base font-bold leading-snug text-on-ink-body transition group-hover:text-pop sm:text-lg">
+								{entry.title}
+							</span>
+							<span class="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-on-ink-muted">
+								{entry.teaser ?? entry.description}
+							</span>
+							<span class="mt-4 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-pop">
+								Abrir
+								<span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">
+									→
+								</span>
+							</span>
+						</a>
+					</li>
+				))}
+			</ul>
+		</section>
+	) : null
+}

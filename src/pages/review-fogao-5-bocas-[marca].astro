@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import RelatedArticles from '../components/RelatedArticles.astro';
+import RelatedContent from '../components/RelatedContent.astro';
+import EditorialLinks from '../components/EditorialLinks.astro';
+import SmartRecommendations from '../components/SmartRecommendations.astro';
 import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
 import ProductMedia from '../components/ProductMedia.astro';
 import { produtos } from '../data/products';
@@ -149,6 +151,15 @@ const structuredData = {
 				</p>
 			) : null
 		}
+		<EditorialLinks
+			class="mt-10"
+			currentPath={Astro.url.pathname}
+			eyebrow="Leituras relacionadas"
+			heading="Para complementar essa decisão"
+			limit={3}
+			kind={['Blog', 'Comparativo']}
+		/>
+
 		<h2 class="font-display mt-12 text-xl font-bold text-on-ink-body">Para quem esse fogão faz sentido</h2>
 		<ul class="mt-4 list-inside list-disc space-y-2 text-base leading-relaxed text-on-ink-body">
 			<li>Quer decidir rápido com critérios de segurança e forno, não só estética.</li>
@@ -202,6 +213,18 @@ const structuredData = {
 			</a>{' '}
 			você lê o texto completo com mais calma.
 		</p>
-		<RelatedArticles class="mt-14" currentPath={Astro.url.pathname} />
+		<RelatedContent
+			class="mt-14"
+			currentPath={Astro.url.pathname}
+			eyebrow="Veja também"
+			title="Leituras relacionadas"
+			subtitle="Comparativos, guias e leituras editoriais (manutenção, decoração e cozinha moderna) para fechar a decisão sem voltar à estaca zero."
+		/>
+
+		<SmartRecommendations
+			class="mt-12"
+			currentPath={Astro.url.pathname}
+			heading="Continue a jornada"
+		/>
 	</article>
 </BaseLayout>
