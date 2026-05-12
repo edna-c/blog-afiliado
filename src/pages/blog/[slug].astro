@@ -11,15 +11,12 @@ import { getBlogThumbnailAsset } from '../../data/blogThumbnailAssets';
 import { getImage, Picture } from 'astro:assets';
 import blogHeroImage from '../../assets/images/blog/electrolux-cozinha-hero-premium.png';
 import reviewMesaVidroHeroImage from '../../assets/images/blog/reviews/review-fogao-com-mesa-de-vidro-blog-premium.webp';
-import melhoresFogoesHeroImage from '../../assets/images/heroes/melhores-fogoes-5-bocas-hero.webp';
 import { findEntry, type EditorialEntry } from '../../data/editorialContent';
 
 const blogHeroAlt =
 	'Cozinha moderna com fogão Electrolux de cinco bocas preto com porta de vidro, integrado entre armários escuros e bancada de granito.';
 const reviewMesaVidroHeroAlt =
 	'Cozinha moderna com fogão de mesa de vidro integrado à bancada e armários, ambiente iluminado para leitura sobre vidro temperado.';
-const melhoresFogoesHeroAlt =
-	'Melhores fogões 5 bocas em destaque em cozinha planejada moderna, com foco em comparação de modelos e custo-benefício.';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -31,18 +28,9 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
-const isMelhoresFogoesPage = post.id === 'melhor-fogao-5-bocas';
 const isReviewMesaVidroPage = post.id === 'review-fogao-com-mesa-de-vidro';
-const heroImage = isMelhoresFogoesPage
-	? melhoresFogoesHeroImage
-	: isReviewMesaVidroPage
-		? reviewMesaVidroHeroImage
-		: blogHeroImage;
-const heroAlt = isMelhoresFogoesPage
-	? melhoresFogoesHeroAlt
-	: isReviewMesaVidroPage
-		? reviewMesaVidroHeroAlt
-		: blogHeroAlt;
+const heroImage = isReviewMesaVidroPage ? reviewMesaVidroHeroImage : blogHeroImage;
+const heroAlt = isReviewMesaVidroPage ? reviewMesaVidroHeroAlt : blogHeroAlt;
 
 /**
  * Pareamento editorial por slug — escolhe naturalmente:
@@ -62,10 +50,6 @@ const editorialPairings: Record<string, string[]> = {
 	],
 	'fogao-4-bocas-ainda-vale-a-pena': [
 		'/melhor-fogao-5-bocas',
-		'/comparativo-fogao-4-vs-5-bocas',
-	],
-	'melhor-fogao-5-bocas': [
-		'/brastemp-bfs5ncr-vale-a-pena',
 		'/comparativo-fogao-4-vs-5-bocas',
 	],
 };

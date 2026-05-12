@@ -1,35 +1,265 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import RelatedContent from '../components/RelatedContent.astro';
+import EditorialLinks from '../components/EditorialLinks.astro';
 import SmartRecommendations from '../components/SmartRecommendations.astro';
 import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
 ---
 
 <BaseLayout
-	title="Fogão 5 bocas custo-benefício em 2026 | Casa Prática Eletro"
-	description="Casa Prática Eletro mostra onde economizar e onde investir ao escolher fogão 5 bocas com melhor custo-benefício."
+	title="Melhor fogão 5 bocas custo-benefício em 2026 | Casa Prática Eletro"
+	description="Compare perfis, forno, trempes, consumo e limpeza para escolher o fogão 5 bocas com melhor custo-benefício sem pagar a mais."
 >
 	<article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
 		<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Compra inteligente</p>
 		<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">
-			Melhores fogões 5 bocas em 2026: custo-benefício real
+			Melhor fogão 5 bocas custo-benefício em 2026: qual perfil vale mais?
 		</h1>
 		<p class="mt-4 text-lg leading-relaxed text-on-ink-body">
-			<strong class="text-on-ink-body">Melhor fogão 5 bocas 2026</strong> em custo-benefício não é só o mais barato que aparece por aí — é o
+			<strong class="text-on-ink-body">Melhor fogão 5 bocas custo-benefício</strong> não é só o mais barato que aparece por aí — é o
 			que entrega segurança, forno utilizável e manutenção razoável pelo preço.
 		</p>
 		<div class="mt-8">
 			<EditorialTrustRibbon />
 		</div>
-		<div class="mt-10 space-y-6 text-base leading-relaxed text-on-ink-body">
-			<h2 class="font-display text-xl font-bold text-on-ink-body">Onde economizar sem arrependimento</h2>
-			<p>Acabamento “premium” se você prioriza função; número de funções de forno que você nunca usa.</p>
-			<h2 class="font-display text-xl font-bold text-on-ink-body">Onde não vale economizar na compra</h2>
-			<ul class="list-inside list-disc space-y-2">
-				<li>Válvula de segurança e estabilidade da chama.</li>
-				<li>Estrutura da grade e distância entre bocas (panela grande).</li>
-				<li>Instalação correta (nível, mangueira, ventilação).</li>
-			</ul>
+		<section class="mt-10" aria-labelledby="decisao-rapida-heading">
+			<h2 id="decisao-rapida-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Decisão rápida por perfil
+			</h2>
+			<div class="mt-6 grid gap-4 sm:grid-cols-3">
+				<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Compra enxuta</h3>
+					<p class="mt-3 text-sm leading-relaxed text-on-ink-muted">
+						Se a prioridade é entrar em 5 bocas sem exagerar no gasto, modelos de perfil Consul costumam fazer mais sentido.
+					</p>
+				</div>
+				<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Equilíbrio geral</h3>
+					<p class="mt-3 text-sm leading-relaxed text-on-ink-muted">
+						Quando você quer forno, uso diário e acabamento mais redondo, vale olhar Brastemp e Electrolux com calma.
+					</p>
+				</div>
+				<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Premium com propósito</h3>
+					<p class="mt-3 text-sm leading-relaxed text-on-ink-muted">
+						Se o forno e o visual realmente pesam, pagar mais pode fazer sentido. Se não pesam, vira excesso disfarçado de upgrade.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<div class="mt-12 space-y-10 text-base leading-relaxed text-on-ink-body">
+			<section aria-labelledby="economizar-heading">
+				<h2 id="economizar-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Onde economizar sem arrependimento
+				</h2>
+				<p class="mt-4">
+					Dá para economizar em acabamento “premium” quando o foco é função, em extras que você não usa no forno e em recursos que
+					ficam bonitos no anúncio, mas não mudam sua rotina real.
+				</p>
+			</section>
+
+			<section aria-labelledby="nao-economizar-heading">
+				<h2 id="nao-economizar-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Onde não vale economizar na compra
+				</h2>
+				<ul class="mt-4 list-inside list-disc space-y-2">
+					<li>válvula de segurança e estabilidade da chama;</li>
+					<li>estrutura da grade e distância entre bocas;</li>
+					<li>forno que realmente atenda sua rotina;</li>
+					<li>instalação correta: nível, mangueira e ventilação.</li>
+				</ul>
+			</section>
+
+			<section aria-labelledby="perfil-uso-heading">
+				<h2 id="perfil-uso-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Perfil de uso, tipo de família e rotina
+				</h2>
+				<div class="table-premium-shell mt-6">
+					<table class="table-premium min-w-[420px]">
+						<thead>
+							<tr>
+								<th scope="col">Perfil</th>
+								<th scope="col">O que costuma fazer mais sentido</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">Casal / rotina leve</th>
+								<td>Modelo de entrada sólida, sem pagar por recursos que vão sobrar.</td>
+							</tr>
+							<tr class="bg-brand-900/25">
+								<th scope="row" class="font-semibold text-on-ink-body">Família pequena ou média</th>
+								<td>Equilíbrio entre forno, trempes confiáveis e preço sem exagero.</td>
+							</tr>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">Família maior / uso intenso</th>
+								<td>Vale subir de linha quando o forno, a robustez e o uso simultâneo realmente pesam.</td>
+							</tr>
+							<tr class="bg-brand-900/25">
+								<th scope="row" class="font-semibold text-on-ink-body">Cozinha planejada / estética forte</th>
+								<td>Acabamento e presença visual entram mais no custo-benefício do que só o menor preço.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<section aria-labelledby="limitacoes-heading">
+				<h2 id="limitacoes-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Limitações reais de um “custo-benefício”
+				</h2>
+				<ul class="mt-4 list-inside list-disc space-y-2">
+					<li>modelo barato demais pode frustrar no forno;</li>
+					<li>trempes mais simples podem incomodar com panela grande;</li>
+					<li>acabamento básico envelhece visualmente mais rápido;</li>
+					<li>o que parece economia inicial pode virar arrependimento em uso intenso.</li>
+				</ul>
+			</section>
+
+			<section aria-labelledby="criterios-tecnicos-heading">
+				<h2 id="criterios-tecnicos-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Forno, trempes, consumo e limpeza: onde o valor aparece
+				</h2>
+				<div class="mt-6 space-y-8">
+					<div>
+						<h3 class="font-display text-lg font-bold text-on-ink-body">Forno</h3>
+						<p class="mt-3">
+							Se você assa pouco, não faz sentido pagar caro por um forno que vai ficar ocioso. Se assa toda semana, um forno mais
+							confiável muda a experiência e entra diretamente no custo-benefício.
+						</p>
+					</div>
+					<div>
+						<h3 class="font-display text-lg font-bold text-on-ink-body">Trempes e uso com panelas</h3>
+						<p class="mt-3">
+							Trempes são um divisor silencioso entre fogão “ok” e fogão agradável. Quando a rotina envolve panelas maiores ou mais
+							bocas ao mesmo tempo, estrutura melhor costuma compensar cada real a mais.
+						</p>
+					</div>
+					<div>
+						<h3 class="font-display text-lg font-bold text-on-ink-body">Consumo</h3>
+						<p class="mt-3">
+							Custo-benefício não é só preço de compra. Consumo de gás depende do tempo de uso, do forno e do comportamento da casa.
+							Comprar um 5 bocas mais robusto para uma rotina mínima nem sempre é decisão inteligente.
+						</p>
+					</div>
+					<div>
+						<h3 class="font-display text-lg font-bold text-on-ink-body">Limpeza</h3>
+						<p class="mt-3">
+							Alguns modelos parecem equivalentes no anúncio, mas diferem muito em mesa, botões, grades e acesso à limpeza. Quando a
+							rotina é pesada, esse detalhe impacta a satisfação no longo prazo.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section aria-labelledby="comparacao-lateral-heading">
+				<h2 id="comparacao-lateral-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Comparação lateral por perfil
+				</h2>
+				<div class="table-premium-shell mt-6">
+					<table class="table-premium min-w-[520px]">
+						<thead>
+							<tr>
+								<th scope="col">Critério</th>
+								<th scope="col">Consul CFS5NAB</th>
+								<th scope="col">Electrolux FE5IG</th>
+								<th scope="col">Brastemp BFS5NCR</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">Perfil principal</th>
+								<td>Entrada sólida e compra controlada</td>
+								<td>Acabamento + forno + rotina ativa</td>
+								<td>Equilíbrio premium para uso frequente</td>
+							</tr>
+							<tr class="bg-brand-900/25">
+								<th scope="row" class="font-semibold text-on-ink-body">Família ideal</th>
+								<td>Pequena a média</td>
+								<td>Média</td>
+								<td>Média a maior</td>
+							</tr>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">Forno</th>
+								<td>Adequado ao básico bem feito</td>
+								<td>Pesa mais na compra</td>
+								<td>Costuma ser um dos grandes argumentos</td>
+							</tr>
+							<tr class="bg-brand-900/25">
+								<th scope="row" class="font-semibold text-on-ink-body">Objeção principal</th>
+								<td>Pode faltar refinamento e fôlego em uso pesado</td>
+								<td>Pode custar mais do que sua rotina precisa</td>
+								<td>Pode subir demais o ticket para quem quer só função</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<section aria-labelledby="diferenciacao-heading">
+				<h2 id="diferenciacao-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Diferenciação: barato, justo ou premium com propósito?
+				</h2>
+				<p class="mt-4">
+					O melhor custo-benefício não é sempre o mais barato. É o modelo que entrega o nível certo de forno, trempes, limpeza e
+					acabamento para a sua rotina. Quando você compra abaixo disso, falta fogão. Quando compra muito acima, sobra fogão.
+				</p>
+			</section>
+
+			<section aria-labelledby="objecoes-heading">
+				<h2 id="objecoes-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Objeções comuns antes de fechar
+				</h2>
+				<dl class="mt-6 space-y-6">
+					<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
+						<dt class="font-display text-lg font-bold text-on-ink-body">“Vale pagar mais por acabamento?”</dt>
+						<dd class="mt-3 text-on-ink-muted">
+							Só vale se a estética da cozinha realmente fizer parte da decisão e se o restante do conjunto acompanhar o preço.
+						</dd>
+					</div>
+					<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
+						<dt class="font-display text-lg font-bold text-on-ink-body">“Modelo mais barato sempre consome menos?”</dt>
+						<dd class="mt-3 text-on-ink-muted">
+							Não. Consumo depende mais da intensidade de uso e do forno do que do rótulo “barato” ou “premium”.
+						</dd>
+					</div>
+					<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
+						<dt class="font-display text-lg font-bold text-on-ink-body">“Qual eu escolho se ainda estou em dúvida?”</dt>
+						<dd class="mt-3 text-on-ink-muted">
+							Se a dúvida é orçamento, comece no Consul. Se é acabamento e forno, compare Electrolux e Brastemp lado a lado.
+						</dd>
+					</div>
+				</dl>
+			</section>
+
+			<EditorialLinks
+				class="mt-10"
+				currentPath="/fogao-5-bocas-custo-beneficio"
+				eyebrow="Reviews para cruzar a decisão"
+				heading="Leia os perfis por marca antes de fechar"
+				items={[
+					{
+						href: '/review-fogao-5-bocas-consul',
+						label: 'review rápida do Consul CFS5NAB',
+						description: 'entrada sólida quando o orçamento pede controle',
+						tag: 'Review',
+					},
+					{
+						href: '/review-fogao-5-bocas-electrolux',
+						label: 'review rápida do Electrolux FE5IG',
+						description: 'acabamento e forno para uso mais exigente',
+						tag: 'Review',
+					},
+					{
+						href: '/brastemp-bfs5ncr-vale-a-pena',
+						label: 'análise completa do Brastemp BFS5NCR',
+						description: 'forno, acabamento e uso diário com mais profundidade',
+						tag: 'Análise',
+					},
+				]}
+			/>
+
 			<p>
 				Compare com a página inicial e o guia completo em{' '}
 				<a href="/melhor-fogao-5-bocas" class="font-semibold text-pop underline-offset-2 hover:underline">melhor fogão 5 bocas</a>

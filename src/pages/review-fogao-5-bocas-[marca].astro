@@ -13,55 +13,332 @@ export async function getStaticPaths() {
 		{
 			params: { marca: 'brastemp' },
 			props: {
-				title: 'Review: fogão 5 bocas Brastemp (BFS5NCR) — vale a pena? | Casa Prática Eletro',
+				title: 'Fogão 5 bocas Brastemp BFS5NCR vale a pena? Review rápido | Casa Prática Eletro',
 				description:
-					'Review objetiva do fogão 5 bocas Brastemp: pontos fortes, armadilhas comuns e link para conferir preço atualizado.',
+					'Veja para quem o Brastemp BFS5NCR faz sentido, como ele se sai em forno, trempes, limpeza e quando não compensa pagar mais.',
 				model: 'Brastemp BFS5NCR',
+				headline: 'Fogão 5 bocas Brastemp BFS5NCR vale a pena? Review rápido',
 				summary:
 					'Linha popular e fácil de achar: costuma equilibrar preço, forno útil e o básico bem resolvido. Confira no anúncio a versão exata — acabamento e acessórios mudam de um modelo para outro.',
 				offerUrl: produtos.brastempBFS5NCR.ml,
 				longReviewHref: '/brastemp-bfs5ncr-vale-a-pena',
 				longReviewLabel: 'Abrir análise completa (texto longo + FAQ + ficha)',
+				idealFor: [
+					'famílias médias que cozinham com frequência',
+					'quem quer forno grande e uso mais robusto',
+					'cozinhas planejadas com pegada premium',
+					'quem valoriza acabamento sem abrir mão de função',
+				],
+				notIdealFor: [
+					'quem busca o menor preço da categoria',
+					'rotina muito leve com pouco uso de forno',
+					'cozinhas pequenas demais para um 5 bocas mais encorpado',
+				],
+				familyProfile:
+					'Costuma encaixar melhor em casais que cozinham bastante, famílias médias e casas onde o forno não fica esquecido.',
+				routineProfile:
+					'Faz mais sentido quando há uso recorrente de panelas grandes, refeições simultâneas e preparo de forno ao longo da semana.',
+				realLimitations: [
+					'preço acima de linhas mais simples',
+					'mesa de vidro pede cuidado contra impacto e limpeza mais frequente',
+					'pode ser exagerado para quem cozinha pouco e quer só função básica',
+				],
+				ovenAnalysis:
+					'O forno é um dos pontos que mais puxam o valor percebido do modelo. Para quem assa com frequência, a sensação costuma ser de conjunto mais sério que o das linhas de entrada.',
+				gratesAnalysis:
+					'As trempes costumam conversar melhor com panelas maiores e rotina mais pesada. Ainda assim, vale olhar no anúncio a estabilidade e o desenho exato da versão anunciada.',
+				consumptionAnalysis:
+					'Não é um fogão pensado para quem usa uma boca de vez em quando. Em uso mais intenso, o consumo acompanha o porte do conjunto e a frequência de forno; confirme sempre a etiqueta vigente da versão publicada.',
+				cleaningAnalysis:
+					'A proposta de limpeza é boa para a categoria, especialmente quando o conjunto traz botões removíveis e mesa mais lisa. Em troca, acabamento premium mostra gordura e dedo com mais facilidade se a limpeza ficar para depois.',
+				differentiators: [
+					'forno e sensação de robustez acima da média básica',
+					'visual que valoriza cozinha moderna',
+					'experiência mais equilibrada entre potência, acabamento e rotina familiar',
+				],
+				comparisonRows: [
+					{ criterion: 'Preço', current: 'Faixa intermediária para premium', alternative: 'Linhas de entrada custam menos' },
+					{ criterion: 'Forno', current: 'Pesa a favor de quem usa de verdade', alternative: 'Modelos básicos entregam menos conforto' },
+					{ criterion: 'Acabamento', current: 'Visual mais refinado', alternative: 'Linhas econômicas simplificam mais' },
+					{ criterion: 'Melhor perfil', current: 'Família média / rotina intensa', alternative: 'Uso ocasional / compra enxuta' },
+				],
+				objections: [
+					{
+						question: 'Vale pagar mais que um modelo básico?',
+						answer:
+							'Vale quando você realmente usa forno, cozinha com frequência e se importa com acabamento. Se o foco é só economizar, o ganho pode não se pagar.',
+					},
+					{
+						question: 'É exagerado para casal?',
+						answer:
+							'Depende da rotina. Casal que cozinha bastante pode aproveitar bem; casal que quase não usa forno talvez fique melhor servido por algo mais simples.',
+					},
+					{
+						question: 'A mesa de vidro compensa?',
+						answer:
+							'Compensa no visual e na limpeza da superfície, mas exige mais cuidado contra impacto e uma limpeza mais constante para seguir bonita.',
+					},
+				],
+				faqItems: [
+					{
+						question: 'O Brastemp BFS5NCR vale a pena para família?',
+						answer:
+							'Sim, principalmente quando há uso frequente de forno e preparo simultâneo de mais panelas. É um perfil em que o conjunto costuma fazer mais sentido.',
+					},
+					{
+						question: 'É melhor que um Consul mais barato?',
+						answer:
+							'Em acabamento, sensação de robustez e forno, costuma entregar mais. Em economia imediata, modelos Consul de entrada podem fazer mais sentido.',
+					},
+					{
+						question: 'Consome muito gás?',
+						answer:
+							'O consumo depende do tempo de forno e da intensidade real de uso. Por ser um 5 bocas mais robusto, ele faz mais sentido quando essa estrutura será aproveitada.',
+					},
+				],
+				verdict:
+					'Para quem quer um 5 bocas mais completo e usa a cozinha de verdade, o BFS5NCR continua sendo uma compra muito sólida. Para orçamento muito apertado, vale comparar com linhas mais simples antes de fechar.',
 			},
 		},
 		{
 			params: { marca: 'consul' },
 			props: {
-				title: 'Review: fogão 5 bocas Consul (CFS5NAB) — análise direta | Casa Prática Eletro',
+				title: 'Fogão 5 bocas Consul CFS5NAB vale a pena? Review rápido | Casa Prática Eletro',
 				description:
-					'Review do fogão 5 bocas Consul focada em entrada sólida: para quem é, limitações e link para ver oferta.',
+					'Análise direta do Consul CFS5NAB: perfil ideal, limitações reais, forno, trempes, limpeza e quando ele compensa no custo-benefício.',
 				model: 'Consul CFS5NAB',
+				headline: 'Fogão 5 bocas Consul CFS5NAB vale a pena? Review rápido',
 				summary:
 					'Perfil “primeiro fogão bom”: costuma agradar quem quer menos firula e mais função. Se você cozinha muito pesado, compare forno e distância entre bocas com um modelo de linha acima antes de decidir.',
 				offerUrl: produtos.consulCFS5NAB.ml,
+				idealFor: [
+					'casais e famílias pequenas a médias',
+					'quem quer entrar na categoria 5 bocas sem subir demais o orçamento',
+					'rotina comum com uso doméstico normal',
+					'quem prefere compra direta, sem frescura de acabamento premium',
+				],
+				notIdealFor: [
+					'famílias grandes com uso intenso de forno',
+					'quem quer sensação premium de acabamento',
+					'rotina pesada com panelas grandes simultaneamente o tempo todo',
+				],
+				familyProfile:
+					'O Consul costuma fazer mais sentido para primeira compra boa, casa com rotina comum e famílias que querem 5 bocas sem dar um salto muito alto de preço.',
+				routineProfile:
+					'Funciona melhor em almoço e jantar do dia a dia, preparo doméstico normal e uso de forno sem tanta exigência de volume ou frequência.',
+				realLimitations: [
+					'quando a rotina fica pesada, linhas acima costumam parecer mais resolvidas',
+					'forno e sensação geral podem ficar mais modestos para quem assa muito',
+					'quem busca acabamento premium talvez sinta falta de refinamento',
+				],
+				ovenAnalysis:
+					'O forno costuma atender bem o cotidiano comum, mas não é o tipo de ponto que normalmente justifica a compra por si só. Se o forno é protagonista na sua rotina, compare com modelos acima antes de decidir.',
+				gratesAnalysis:
+					'As trempes cumprem bem a proposta de entrada sólida. Ainda assim, vale olhar com atenção se você usa panela grande e várias bocas simultaneamente, porque esse é um ponto onde linhas superiores costumam transmitir mais confiança.',
+				consumptionAnalysis:
+					'Como em todo 5 bocas, consumo depende mais da rotina do que do número de bocas sozinho. No perfil certo, o modelo tende a equilibrar custo inicial e uso razoável sem exigir investimento alto.',
+				cleaningAnalysis:
+					'A proposta mais direta ajuda quem quer menos complicação. A limpeza tende a ser simples o bastante para o dia a dia, especialmente para quem prioriza função antes de acabamento sofisticado.',
+				differentiators: [
+					'entrada sólida para quem quer 5 bocas sem exagero',
+					'compra mais racional para primeira cozinha ou upgrade controlado',
+					'menos promessa estética, mais foco em função básica bem entregue',
+				],
+				comparisonRows: [
+					{ criterion: 'Preço de entrada', current: 'Ponto forte da página', alternative: 'Linhas premium sobem mais' },
+					{ criterion: 'Acabamento', current: 'Mais funcional que aspiracional', alternative: 'Premium entrega mais presença visual' },
+					{ criterion: 'Forno', current: 'Adequado para rotina comum', alternative: 'Modelos acima costumam convencer mais' },
+					{ criterion: 'Melhor perfil', current: 'Família pequena/média com orçamento controlado', alternative: 'Uso pesado e cozinha gourmet pedem mais' },
+				],
+				objections: [
+					{
+						question: 'Ele fica pequeno para família grande?',
+						answer:
+							'Pode ficar. Se a casa usa várias panelas grandes e forno com frequência, vale comparar com linhas mais robustas antes de comprar.',
+					},
+					{
+						question: 'Vale a pena frente ao Electrolux?',
+						answer:
+							'Vale quando a prioridade é economizar na compra sem sair da categoria 5 bocas. O Electrolux costuma conversar melhor com acabamento e forno como critério principal.',
+					},
+					{
+						question: 'É uma boa compra para apartamento?',
+						answer:
+							'Pode ser, especialmente em apartamento com rotina comum e orçamento enxuto. Só continue atento a medidas, ventilação e folga ao redor do aparelho.',
+					},
+				],
+				faqItems: [
+					{
+						question: 'O Consul CFS5NAB é bom para uso diário?',
+						answer:
+							'Sim, especialmente para rotina doméstica comum, casal ou família pequena a média que quer 5 bocas sem investir em uma linha premium.',
+					},
+					{
+						question: 'Vale a pena como primeiro fogão 5 bocas?',
+						answer:
+							'Na maior parte dos casos, sim. O modelo conversa bem com quem quer subir de categoria sem pagar por recursos que talvez não vá usar.',
+					},
+					{
+						question: 'Quando não vale escolher esse Consul?',
+						answer:
+							'Quando o forno é muito importante, a rotina é pesada ou você quer acabamento e sensação de linha superior no uso diário.',
+					},
+				],
+				verdict:
+					'O CFS5NAB é uma boa porta de entrada para quem quer 5 bocas com racionalidade. Ele tende a acertar mais quando o foco é função e orçamento, não sofisticação nem uso pesado.',
 			},
 		},
 		{
 			params: { marca: 'electrolux' },
 			props: {
-				title: 'Review: fogão 5 bocas Electrolux (FE5IG PerfectCook) — recursos e pegadinhas | Casa Prática Eletro',
+				title: 'Fogão 5 bocas Electrolux FE5IG vale a pena? Review rápido | Casa Prática Eletro',
 				description:
-					'Review do fogão 5 bocas Electrolux FE5IG (linha PerfectCook): acabamento, forno e para quem compensa o investimento.',
+					'Veja se o Electrolux FE5IG compensa pelo forno e acabamento, para qual rotina ele faz sentido e quando alternativas mais baratas bastam.',
 				model: 'Electrolux FE5IG',
+				headline: 'Fogão 5 bocas Electrolux FE5IG vale a pena? Review rápido',
 				summary:
 					'Foco em acabamento e no dia a dia: faz sentido quando o visual importa e você usa forno de verdade. Confira na ficha do anúncio se vêm as funções que você quer.',
 				offerUrl: produtos.electroluxFE5IG.ml,
+				idealFor: [
+					'famílias médias ou casas com rotina mais intensa',
+					'quem usa forno com frequência real',
+					'cozinhas modernas em que acabamento pesa na decisão',
+					'quem aceita pagar mais por sensação de linha superior',
+				],
+				notIdealFor: [
+					'quem quer só o menor preço possível',
+					'rotina simples com pouco uso de forno',
+					'quem não liga para acabamento ou recursos extras',
+				],
+				familyProfile:
+					'Costuma encaixar melhor em famílias médias, casais que cozinham bastante e projetos de cozinha em que o fogão também precisa “conversar” com o ambiente.',
+				routineProfile:
+					'O FE5IG ganha mais sentido quando há uso real de forno, preparo frequente e busca por uma experiência mais premium do que a das linhas de entrada.',
+				realLimitations: [
+					'investimento acima do que muita rotina simples precisa',
+					'alguns recursos só valem a pena se você realmente usa forno e acabamento premium',
+					'antes de fechar, vale conferir no anúncio a versão exata e os acessórios incluídos',
+				],
+				ovenAnalysis:
+					'O forno é parte central da proposta do FE5IG. Se você realmente assa, aquece e usa o forno como parte da rotina, o modelo tende a se justificar melhor do que para quem quase nunca passa dessa etapa.',
+				gratesAnalysis:
+					'Na leitura comercial, o modelo chama atenção por parecer mais completo. Ainda assim, para panelas muito grandes e uso simultâneo pesado, vale sempre confirmar a ergonomia da mesa e o espaço real entre queimadores na versão anunciada.',
+				consumptionAnalysis:
+					'Acabamento premium e forno mais protagonista não significam “gastar muito” sozinhos, mas sim que o retorno do investimento depende de rotina real. Quanto mais você usa forno e múltiplas bocas, mais sentido o FE5IG tende a fazer.',
+				cleaningAnalysis:
+					'A limpeza costuma ser percebida como parte do apelo de linha mais refinada. Superfícies mais bonitas ajudam na manutenção visual, mas também pedem cuidado para continuar com aparência premium no longo prazo.',
+				differentiators: [
+					'combinação de acabamento forte com proposta de forno mais convincente',
+					'boa conversa com cozinha planejada ou moderna',
+					'perfil mais completo para quem não quer só “um 5 bocas qualquer”',
+				],
+				comparisonRows: [
+					{ criterion: 'Acabamento', current: 'Pesa bastante a favor', alternative: 'Linhas básicas simplificam mais' },
+					{ criterion: 'Forno', current: 'Parte importante da compra', alternative: 'Modelos enxutos entregam menos apelo aqui' },
+					{ criterion: 'Preço', current: 'Acima da entrada', alternative: 'Consul e linhas básicas aliviam o caixa' },
+					{ criterion: 'Melhor perfil', current: 'Uso frequente + estética + forno', alternative: 'Compra só por economia talvez não compense' },
+				],
+				objections: [
+					{
+						question: 'Vale pagar mais que um Consul?',
+						answer:
+							'Vale quando forno, acabamento e experiência geral realmente entram no seu critério. Se o foco é apenas economizar, o ganho pode ser pequeno para o seu perfil.',
+					},
+					{
+						question: 'É exagero para apartamento?',
+						answer:
+							'Não necessariamente. Em apartamento com cozinha planejada e uso frequente, pode encaixar muito bem. O exagero aparece quando o espaço ou a rotina não pedem esse nível de produto.',
+					},
+					{
+						question: 'A diferença aparece no dia a dia?',
+						answer:
+							'Aparece mais para quem usa forno de verdade e se importa com acabamento. Em rotina muito simples, a percepção de ganho diminui bastante.',
+					},
+				],
+				faqItems: [
+					{
+						question: 'O Electrolux FE5IG vale a pena para quem usa muito forno?',
+						answer:
+							'Sim. Esse é justamente um dos cenários em que o modelo tende a justificar melhor o investimento frente a opções mais básicas.',
+					},
+					{
+						question: 'Compensa para família média?',
+						answer:
+							'Compensa quando a rotina é ativa, há uso frequente da cozinha e o acabamento também pesa na escolha do eletro.',
+					},
+					{
+						question: 'Quando não vale a pena escolher o FE5IG?',
+						answer:
+							'Quando a compra é guiada quase só por preço ou quando o forno e o acabamento premium não terão uso real no dia a dia.',
+					},
+				],
+				verdict:
+					'O FE5IG costuma ser a escolha mais interessante para quem quer subir um degrau em acabamento e forno, desde que a rotina realmente aproveite isso. Para compra estritamente econômica, há alternativas mais racionais.',
 			},
 		},
 	];
+}
+
+interface ComparisonRow {
+	criterion: string;
+	current: string;
+	alternative: string;
+}
+
+interface QAItem {
+	question: string;
+	answer: string;
 }
 
 interface Props {
 	title: string;
 	description: string;
 	model: string;
+	headline: string;
 	summary: string;
 	offerUrl: string;
 	longReviewHref?: string;
 	longReviewLabel?: string;
+	idealFor: string[];
+	notIdealFor: string[];
+	familyProfile: string;
+	routineProfile: string;
+	realLimitations: string[];
+	ovenAnalysis: string;
+	gratesAnalysis: string;
+	consumptionAnalysis: string;
+	cleaningAnalysis: string;
+	differentiators: string[];
+	comparisonRows: ComparisonRow[];
+	objections: QAItem[];
+	faqItems: QAItem[];
+	verdict: string;
 }
 
-const { title, description, model, summary, offerUrl, longReviewHref, longReviewLabel } = Astro.props;
+const {
+	title,
+	description,
+	model,
+	headline,
+	summary,
+	offerUrl,
+	longReviewHref,
+	longReviewLabel,
+	idealFor,
+	notIdealFor,
+	familyProfile,
+	routineProfile,
+	realLimitations,
+	ovenAnalysis,
+	gratesAnalysis,
+	consumptionAnalysis,
+	cleaningAnalysis,
+	differentiators,
+	comparisonRows,
+	objections,
+	faqItems,
+	verdict,
+} = Astro.props as Props;
 const marca = Astro.params.marca;
 const marcaLabel = marca ? marca.charAt(0).toUpperCase() + marca.slice(1) : '';
 
@@ -73,9 +350,7 @@ const productImage = new URL(imagePath.replace(/^\//, ''), site).href;
 
 const brandName = model.split(/\s+/)[0] ?? marcaLabel;
 
-const structuredData = {
-	'@context': 'https://schema.org',
-	'@graph': [
+const graph: Record<string, unknown>[] = [
 		{
 			'@type': 'BreadcrumbList',
 			itemListElement: [
@@ -95,7 +370,25 @@ const structuredData = {
 				priceCurrency: 'BRL',
 			},
 		},
-	],
+	];
+
+if (faqItems.length) {
+	graph.push({
+		'@type': 'FAQPage',
+		mainEntity: faqItems.map((item) => ({
+			'@type': 'Question',
+			name: item.question,
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: item.answer,
+			},
+		})),
+	});
+}
+
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@graph': graph,
 };
 ---
 
@@ -116,7 +409,7 @@ const structuredData = {
 	<article class="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14 lg:py-16">
 		<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Review · {marcaLabel}</p>
 		<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">
-			Fogão 5 bocas {marcaLabel}: análise para compra
+			{headline}
 		</h1>
 		<p class="mt-2 text-sm text-on-ink-muted">
 			Modelo referência: <span class="text-on-ink-body">{model}</span>
@@ -160,18 +453,51 @@ const structuredData = {
 			kind={['Blog', 'Comparativo']}
 		/>
 
-		<h2 class="font-display mt-12 text-xl font-bold text-on-ink-body">Para quem esse fogão faz sentido</h2>
-		<ul class="mt-4 list-inside list-disc space-y-2 text-base leading-relaxed text-on-ink-body">
-			<li>Quer decidir rápido com critérios de segurança e forno, não só estética.</li>
-			<li>Prefere comparar preço agora e validar detalhes na página da loja.</li>
-			<li>
-				Ainda está na dúvida entre economia e recursos: veja{' '}
+		<section class="mt-12" aria-labelledby="perfil-heading">
+			<h2 id="perfil-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Perfil de uso: para quem ele encaixa melhor
+			</h2>
+			<div class="mt-6 grid gap-4 sm:grid-cols-2">
+				<div class="rounded-2xl border border-emerald-400/30 bg-emerald-950/20 p-5 ring-1 ring-emerald-400/15 sm:p-6">
+					<h3 class="text-sm font-bold uppercase tracking-wider text-emerald-300">Faz mais sentido para</h3>
+					<ul class="mt-4 list-inside list-disc space-y-2.5 text-sm leading-relaxed text-on-ink-body sm:text-base">
+						{idealFor.map((item) => <li>{item}</li>)}
+					</ul>
+				</div>
+				<div class="rounded-2xl border border-amber-300/25 bg-brand-900/45 p-5 ring-1 ring-white/10 sm:p-6">
+					<h3 class="text-sm font-bold uppercase tracking-wider text-amber-200">Pode não compensar tanto para</h3>
+					<ul class="mt-4 list-inside list-disc space-y-2.5 text-sm leading-relaxed text-on-ink-body sm:text-base">
+						{notIdealFor.map((item) => <li>{item}</li>)}
+					</ul>
+				</div>
+			</div>
+			<div class="mt-6 grid gap-4 sm:grid-cols-2">
+				<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Tipo de família</h3>
+					<p class="mt-3 text-base leading-relaxed text-on-ink-body">{familyProfile}</p>
+				</div>
+				<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Rotina ideal</h3>
+					<p class="mt-3 text-base leading-relaxed text-on-ink-body">{routineProfile}</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="mt-12" aria-labelledby="diferenciacao-heading">
+			<h2 id="diferenciacao-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				O que diferencia esse modelo na prática
+			</h2>
+			<ul class="mt-5 list-inside list-disc space-y-2.5 text-base leading-relaxed text-on-ink-body">
+				{differentiators.map((item) => <li>{item}</li>)}
+			</ul>
+			<p class="mt-5 text-base leading-relaxed text-on-ink-muted">
+				Se você ainda está comparando proposta de valor entre marcas, vale abrir também o{' '}
 				<a
 					href="/fogao-5-bocas-custo-beneficio"
 					class="font-semibold text-pop underline-offset-2 hover:underline"
 					aria-label="Guia fogão 5 bocas custo-benefício"
 				>
-					custo-benefício
+					guia de fogão 5 bocas custo-benefício
 				</a>{' '}
 				e o passo a passo em{' '}
 				<a
@@ -179,11 +505,89 @@ const structuredData = {
 					class="font-semibold text-pop underline-offset-2 hover:underline"
 					aria-label="Guia como escolher fogão 5 bocas"
 				>
-					como escolher
+					como escolher fogão 5 bocas
 				</a>
 				.
-			</li>
-		</ul>
+			</p>
+		</section>
+
+		<section class="mt-12" aria-labelledby="limitacoes-heading">
+			<h2 id="limitacoes-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Limitações reais antes de comprar
+			</h2>
+			<ul class="mt-5 list-inside list-disc space-y-2.5 text-base leading-relaxed text-on-ink-body">
+				{realLimitations.map((item) => <li>{item}</li>)}
+			</ul>
+		</section>
+
+		<section class="mt-12" aria-labelledby="analise-tecnica-heading">
+			<h2 id="analise-tecnica-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Forno, trempes, consumo e limpeza
+			</h2>
+			<div class="mt-6 space-y-8 text-base leading-relaxed text-on-ink-body">
+				<div>
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Forno</h3>
+					<p class="mt-3">{ovenAnalysis}</p>
+				</div>
+				<div>
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Trempes e uso com panelas</h3>
+					<p class="mt-3">{gratesAnalysis}</p>
+				</div>
+				<div>
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Consumo e custo de uso</h3>
+					<p class="mt-3">{consumptionAnalysis}</p>
+				</div>
+				<div>
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Limpeza e manutenção visual</h3>
+					<p class="mt-3">{cleaningAnalysis}</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="mt-12" aria-labelledby="comparacao-heading">
+			<h2 id="comparacao-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Comparação lateral: onde ele ganha e onde perde
+			</h2>
+			<div class="table-premium-shell mt-6">
+				<table class="table-premium min-w-[420px]">
+					<thead>
+						<tr>
+							<th scope="col">Critério</th>
+							<th scope="col">{model}</th>
+							<th scope="col">Alternativa típica</th>
+						</tr>
+					</thead>
+					<tbody>
+						{
+							comparisonRows.map((row, index) => (
+								<tr class:list={[index % 2 === 0 ? 'bg-ink' : 'bg-brand-900/25']}>
+									<th scope="row" class="font-semibold text-on-ink-body">{row.criterion}</th>
+									<td>{row.current}</td>
+									<td>{row.alternative}</td>
+								</tr>
+							))
+						}
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section class="mt-12" aria-labelledby="objecoes-heading">
+			<h2 id="objecoes-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Objeções comuns de compra
+			</h2>
+			<dl class="mt-6 space-y-6">
+				{
+					objections.map((item) => (
+						<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
+							<dt class="font-display text-lg font-bold text-on-ink-body">{item.question}</dt>
+							<dd class="mt-3 text-base leading-relaxed text-on-ink-muted">{item.answer}</dd>
+						</div>
+					))
+				}
+			</dl>
+		</section>
+
 		<div class="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
 			<a
 				href={offerUrl}
@@ -213,6 +617,29 @@ const structuredData = {
 			</a>{' '}
 			você lê o texto completo com mais calma.
 		</p>
+		<section class="mt-12 rounded-2xl border border-white/10 bg-brand-900/35 p-6 ring-1 ring-white/10" aria-labelledby="veredito-heading">
+			<h2 id="veredito-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Veredito editorial
+			</h2>
+			<p class="mt-4 text-base leading-relaxed text-on-ink-body">{verdict}</p>
+		</section>
+		{
+			faqItems.length ? (
+				<section class="mt-14 border-t border-white/10 pt-12" aria-labelledby="faq-heading">
+					<h2 id="faq-heading" class="font-display text-2xl font-bold tracking-tight text-on-ink-body">
+						Perguntas frequentes
+					</h2>
+					<dl class="mt-8 space-y-8">
+						{faqItems.map((item) => (
+							<div>
+								<dt class="font-semibold text-on-ink-body">{item.question}</dt>
+								<dd class="mt-2 text-base leading-relaxed text-on-ink-muted">{item.answer}</dd>
+							</div>
+						))}
+					</dl>
+				</section>
+			) : null
+		}
 		<RelatedContent
 			class="mt-14"
 			currentPath={Astro.url.pathname}

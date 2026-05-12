@@ -105,6 +105,82 @@ Campos usados para SEO e metadados:
 - **Sufixo de marca:** páginas editoriais longas costumam terminar o título com **`| Casa Prática Eletro`**
 - **Ano no conteúdo:** várias páginas e componentes referenciam **2026** como contexto temporal (alinhar título/description com a revisão real do conteúdo)
 
+## Regra estrutural principal
+
+### 1 intenção principal = 1 URL principal
+
+Esta é a regra mais importante da arquitetura SEO do projeto.
+
+Cada keyword/intenção principal deve ter **uma URL dona clara**, com papel explícito no cluster. A meta não é "ter muitas páginas parecidas"; a meta é **concentrar sinal**, evitar canibalismo e deixar o Google entender qual URL deve ranquear para cada busca.
+
+### Mapa-base atual do projeto
+
+| Intenção principal | URL principal | Papel |
+|------|----------------|--------|
+| `melhor fogão 5 bocas` | `/melhor-fogao-5-bocas` | Hub / guia mestre comercial |
+| `fogão 5 bocas custo benefício` | `/fogao-5-bocas-custo-beneficio` | Subintenção comercial por valor/preço |
+| `fogão 4 bocas vale a pena` | `/blog/fogao-4-bocas-ainda-vale-a-pena/` | Editorial / lifestyle / reflexão de compra |
+| `fogão embutir ou piso` | `/blog/guia-fogao-embutir-ou-de-piso/` | Guia de instalação e layout |
+| `fogão 4 ou 5 bocas` | `/comparativo-fogao-4-vs-5-bocas` | Comparativo de decisão |
+| `review por modelo` | `/review-fogao-5-bocas-<marca>` | Review curta por SKU/modelo |
+
+### O que NÃO fazer
+
+Não usar os seguintes atalhos estruturais:
+
+- recriar páginas muito parecidas para a mesma query;
+- criar múltiplos artigos para a mesma intenção principal;
+- trocar slug compulsivamente sem ganho claro de arquitetura;
+- usar `canonical` como muleta para corrigir duplicidade que deveria ser resolvida na estrutura;
+- reescrever tudo do zero quando a URL já tem função válida e pode ser consolidada.
+
+### O que fazer quando surgir uma ideia de nova página
+
+Antes de criar uma URL, responder estas 3 perguntas:
+
+1. **Qual é a intenção principal exata?**
+2. **Essa intenção já tem uma URL dona no site?**
+3. **A nova página é realmente diferente em SERP, papel editorial e estágio do funil?**
+
+Se a resposta da segunda pergunta for "sim", o padrão preferido é:
+
+- **melhorar a URL existente**;
+- **aprofundar conteúdo**;
+- **reforçar interlinkagem**;
+- ou **reposicionar/redirecionar** a página redundante.
+
+### Como tratar canibalismo
+
+Quando duas URLs começarem a disputar a mesma intenção:
+
+1. eleger uma URL principal;
+2. consolidar o que for útil nela;
+3. redirecionar a URL redundante quando fizer sentido;
+4. corrigir links internos;
+5. atualizar títulos, H1 e description para reforçar a separação de papéis.
+
+### Canonical: uso correto
+
+`canonical` serve para **reforçar a URL canônica de uma página**, não para justificar a existência contínua de duas páginas mirando a mesma query.
+
+Se houver disputa real de intenção, o tratamento preferido é **arquitetural**:
+
+- consolidar;
+- redirecionar;
+- ou reposicionar a página secundária para outra intenção.
+
+### Diretriz editorial moderna para o estágio atual
+
+O crescimento do projeto deve priorizar:
+
+- consolidação;
+- profundidade;
+- intenção correta;
+- fortalecimento dos hubs principais;
+- expansão só quando a nova URL atender uma intenção realmente distinta.
+
+Evitar crescimento por "mais páginas aleatórias". Nesta fase, isso tende a diluir sinal mais do que ajudar.
+
 ## Acessibilidade e HTML semântico (impacto indireto em SEO)
 
 - Link **“Pular para o conteúdo principal”** e `<main id="conteudo-principal">` no `BaseLayout`
@@ -113,11 +189,14 @@ Campos usados para SEO e metadados:
 
 ## Checklist para nova página
 
-1. Definir `title` e `description` únicos e alinhados ao H1/conteúdo.
-2. Se a página for estratégica para compartilhamento ou Google Discover: adicionar **`canonical`** + objeto **`openGraph`** (URL absoluta, imagem absoluta em formato adequado — ver páginas existentes).
-3. Para artigos/reviews/guia: considerar **JSON-LD** coerente (`Article`, `BreadcrumbList`, `FAQPage` se houver FAQ visível na página).
-4. Conteúdo em Markdown do blog: preencher `title`, `description`, `pubDate`, `category`; opcional `coverImage`, `updatedDate`, `faq`.
-5. Manter **`site`** e URLs absolutas consistentes com `astro.config.mjs` após mudança de domínio.
+1. Definir a **intenção principal** da página e confirmar que ela ainda não tem uma URL dona.
+2. Definir `title` e `description` únicos e alinhados ao H1/conteúdo.
+3. Garantir que a nova URL tenha papel distinto no cluster (hub, comparativo, review, editorial, etc.).
+4. Se a página for estratégica para compartilhamento ou Google Discover: adicionar **`canonical`** + objeto **`openGraph`** (URL absoluta, imagem absoluta em formato adequado — ver páginas existentes).
+5. Para artigos/reviews/guia: considerar **JSON-LD** coerente (`Article`, `BreadcrumbList`, `FAQPage` se houver FAQ visível na página).
+6. Conteúdo em Markdown do blog: preencher `title`, `description`, `pubDate`, `category`; opcional `coverImage`, `updatedDate`, `faq`.
+7. Manter **`site`** e URLs absolutas consistentes com `astro.config.mjs` após mudança de domínio.
+8. Se a ideia da nova página colidir com uma URL existente, preferir **consolidar ou aprofundar** antes de criar uma nova rota.
 
 ## Lacunas conscientes (opcional evoluir)
 

@@ -138,7 +138,7 @@ Páginas estáticas `.astro` com conteúdo inline e padrão recorrente `RelatedA
 
 | Arquivo | Rota | Notas |
 |---------|------|--------|
-| `blog/[slug].astro` | `/blog/<id-do-arquivo>` | `getStaticPaths` a partir da collection; render MD/MDX; hero especial para post `melhor-fogao-5-bocas` |
+| `blog/[slug].astro` | `/blog/<id-do-arquivo>` | `getStaticPaths` a partir da collection; render MD/MDX; hero especial por tipo de post quando houver regra curada |
 
 Os arquivos em `src/content/blog/*.md` geram **apenas** URLs sob `/blog/...` (não há `.md` em `pages/`).
 
