@@ -75,7 +75,7 @@ Se quiser uma visão rápida de mercado antes de comparar ficha técnica, [veja 
 | Cozinha compacta | Exige mais espaço | Costuma encaixar melhor |
 | Orçamento | Normalmente maior | Normalmente menor |
 
-Comparativo completo com critérios de escolha: [melhores fogões 4 bocas em 2026](/blog/comparativo-fogao-4-bocas-2026/).
+Leitura complementar com foco em espaço e rotina: [quando o fogão 4 bocas ainda vale a pena](/blog/fogao-4-bocas-ainda-vale-a-pena/).
 
 ## Fogão ou cooktop: qual melhor?
 
@@ -104,7 +104,7 @@ Se você está em dúvida entre tecnologias, trate como decisão de **infraestru
 
 ## Onde ver análises e comparativos no site
 
-- Comparativo de linha: [melhores fogões 4 bocas em 2026](/blog/comparativo-fogao-4-bocas-2026/)
+- Leitura editorial: [quando o fogão 4 bocas ainda vale a pena](/blog/fogao-4-bocas-ainda-vale-a-pena/)
 - Review de estilo (mesa de vidro): [review fogão com mesa de vidro](/blog/review-fogao-com-mesa-de-vidro/)
 - Decisão de tamanho em página prática: [comparativo entre fogões 4 e 5 bocas](/comparativo-fogao-4-vs-5-bocas)
 

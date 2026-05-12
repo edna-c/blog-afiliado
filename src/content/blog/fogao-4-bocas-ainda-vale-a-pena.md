@@ -151,7 +151,7 @@ Em muitos apartamentos modernos, ele acaba sendo o ponto de equilíbrio ideal en
 
 ## Conclusão
 
-O fogão 4 bocas continua fazendo sentido e, em muitos casos, mais do que nunca.
+O fogão 4 bocas continua fazendo sentido, e em muitos casos mais do que nunca.
 
 A diferença é que hoje ele não aparece apenas como opção econômica, mas como parte de cozinhas modernas, organizadas e visualmente equilibradas.
 

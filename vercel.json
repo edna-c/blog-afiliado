@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/blog/comparativo-fogao-4-bocas-2026",
+      "destination": "/blog/fogao-4-bocas-ainda-vale-a-pena/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/comparativo-fogao-4-bocas-2026/",
+      "destination": "/blog/fogao-4-bocas-ainda-vale-a-pena/",
+      "permanent": true
+    }
+  ]
+}
