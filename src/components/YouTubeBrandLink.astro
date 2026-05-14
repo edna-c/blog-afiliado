@@ -12,7 +12,7 @@ interface Props {
 const { variant = 'footer' } = Astro.props;
 
 const baseClass =
-	'group inline-flex max-w-full items-center gap-2.5 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-on-ink-muted ring-1 ring-white/[0.06] transition hover:border-pop/25 hover:text-on-ink-body hover:ring-pop/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pop';
+	'group inline-flex max-w-full items-center gap-2.5 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-on-ink-body underline decoration-white/30 decoration-1 underline-offset-[0.2em] ring-1 ring-white/[0.06] transition hover:border-pop/25 hover:text-pop hover:decoration-pop hover:ring-pop/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pop';
 const footerExtra = 'text-[11px] font-semibold uppercase tracking-[0.22em]';
 const inlineExtra = 'text-sm font-medium normal-case tracking-normal';
 ---
@@ -25,7 +25,7 @@ const inlineExtra = 'text-sm font-medium normal-case tracking-normal';
 	aria-label="Abrir o canal oficial Casa Prática Eletro no YouTube em nova aba"
 >
 	<svg
-		class="h-5 w-5 shrink-0 text-on-ink-muted transition group-hover:text-pop"
+		class="h-5 w-5 shrink-0 text-on-ink-body/80 transition group-hover:text-pop"
 		viewBox="0 0 24 24"
 		aria-hidden="true"
 		fill="currentColor"

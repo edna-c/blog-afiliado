@@ -11,8 +11,8 @@
 	--color-brand-800: #1a1d26;
 	/* Texto sobre fundos escuros — contraste alinhado a WCAG / PageSpeed */
 	--color-on-ink-body: #ffffff;
-	--color-on-ink-muted: #e5e7eb;
-	--color-on-ink-list: #d1d5db;
+	--color-on-ink-muted: #eef1f5;
+	--color-on-ink-list: #dde2ea;
 	/* CTA sólido (alto contraste em fundo escuro) */
 	--color-cta: #22c55e;
 	--color-cta-hover: #16a34a;
@@ -83,6 +83,17 @@
 
 	.btn-secondary-premium.is-pill {
 		@apply rounded-full px-8;
+	}
+
+	/**
+	 * Links cor de destaque no corpo: sublinhado sempre visível (WCAG — não distinguir só pela cor).
+	 */
+	.link-accent {
+		@apply font-semibold text-pop underline decoration-pop/50 decoration-2 underline-offset-[0.2em] transition-colors hover:text-accent-hover hover:decoration-pop;
+	}
+
+	.link-accent-soft {
+		@apply font-medium text-pop underline decoration-pop/45 decoration-2 underline-offset-[0.2em] transition-colors hover:text-accent-hover hover:decoration-pop;
 	}
 
 	/**

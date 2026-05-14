@@ -25,7 +25,7 @@ const links = [
 			<p class="mt-4 text-xs text-on-ink-muted">
 				<a
 					href="/contato"
-					class="text-on-ink-body underline-offset-2 transition hover:text-pop hover:underline"
+					class="text-on-ink-body underline decoration-white/35 decoration-1 underline-offset-[0.2em] transition hover:text-pop hover:decoration-pop"
 					aria-label="Pedir alerta de preço ou enviar recado pela página de contato"
 				>
 					Quer alerta quando o preço mudar?
@@ -37,15 +37,17 @@ const links = [
 				<YouTubeBrandLink variant="footer" />
 			</div>
 		</div>
-		<nav class="flex flex-wrap gap-x-8 gap-y-2 text-xs font-semibold uppercase tracking-[0.2em] text-on-ink-muted" aria-label="Rodapé">
+		<nav class="flex flex-wrap gap-x-8 gap-y-2 text-xs font-semibold uppercase tracking-[0.2em]" aria-label="Rodapé">
 			{links.map((item) => {
 				const active = isNavActive(pathname, item.href);
 				return (
 					<a
 						href={item.href}
 						class:list={[
-							'transition hover:text-pop',
-							active && 'text-pop underline decoration-pop decoration-2 underline-offset-[0.28em]',
+							'transition',
+							active
+								? 'text-pop underline decoration-pop decoration-2 underline-offset-[0.28em]'
+								: 'text-on-ink-body underline decoration-white/35 decoration-1 underline-offset-[0.28em] hover:text-pop hover:decoration-pop',
 						]}
 						aria-label={item.ariaLabel}
 						aria-current={active ? 'page' : undefined}
@@ -63,7 +65,7 @@ const links = [
 			no Brasil.{' '}
 			<a
 				href="/politica-de-afiliados"
-				class="text-on-ink-body underline-offset-2 transition hover:text-pop hover:underline"
+				class="text-on-ink-body underline decoration-white/35 decoration-1 underline-offset-[0.2em] transition hover:text-pop hover:decoration-pop"
 			>
 				Política do site
 			</a>.

@@ -18,14 +18,14 @@ const { items, class: className } = Astro.props;
 			items.map((item, index) => (
 				<li class="flex min-w-0 items-center gap-x-1.5">
 					{index > 0 ? (
-						<span class="shrink-0 text-on-ink-muted/70" aria-hidden="true">
+						<span class="shrink-0 text-on-ink-muted" aria-hidden="true">
 							/
 						</span>
 					) : null}
 					{item.href ? (
 						<a
 							href={item.href}
-							class="truncate font-medium text-pop underline-offset-2 transition hover:text-accent-hover hover:underline"
+							class="truncate link-accent-soft"
 						>
 							{item.name}
 						</a>

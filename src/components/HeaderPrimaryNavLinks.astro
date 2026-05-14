@@ -21,7 +21,7 @@ const { pathname, linkBaseClass = '' } = Astro.props;
 					'transition',
 					active
 						? 'text-pop underline decoration-pop decoration-2 underline-offset-[0.28em]'
-						: 'hover:text-pop',
+						: 'text-on-ink-body underline decoration-white/35 decoration-1 underline-offset-[0.28em] hover:text-pop hover:decoration-pop',
 				]}
 				aria-label={item.ariaLabel}
 				aria-current={active ? 'page' : undefined}
