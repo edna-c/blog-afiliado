@@ -2,14 +2,31 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogGrid from '../components/BlogGrid.astro';
+import { PRODUCT_IMAGE_REVIEW } from '../data/productImages';
+
+const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
+const canonical = new URL(Astro.url.pathname, site).href;
+const pageTitle = 'Blog de Eletrodomésticos | Casa Prática Eletro';
+const description =
+	'Casa Prática Eletro: artigos, reviews e comparativos de eletrodomésticos para ajudar você a comprar melhor.';
+const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).href;
 
 const allPosts = await getCollection('blog');
 const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <BaseLayout
-	title="Blog de Eletrodomésticos | Casa Prática Eletro"
-	description="Casa Prática Eletro: artigos, reviews e comparativos de eletrodomésticos para ajudar você a comprar melhor."
+	title={pageTitle}
+	description={description}
+	canonical={canonical}
+	openGraph={{
+		title: pageTitle,
+		description,
+		url: canonical,
+		type: 'website',
+		image: ogImage,
+		imageAlt: 'Fogão 5 bocas em inox — ilustração editorial do blog Casa Prática Eletro',
+	}}
 >
 	<header class="mx-auto max-w-7xl px-4 pt-12 sm:px-6 lg:px-8">
 		<h1 class="font-display text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">Blog</h1>

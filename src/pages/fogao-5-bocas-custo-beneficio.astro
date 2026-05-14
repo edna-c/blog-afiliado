@@ -4,11 +4,29 @@ import RelatedContent from '../components/RelatedContent.astro';
 import EditorialLinks from '../components/EditorialLinks.astro';
 import SmartRecommendations from '../components/SmartRecommendations.astro';
 import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
+import { produtos } from '../data/products';
+import { PRODUCT_IMAGE_REVIEW } from '../data/productImages';
+
+const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
+const canonical = new URL('/fogao-5-bocas-custo-beneficio', site).href;
+const pageTitle = 'Melhor fogão 5 bocas custo-benefício em 2026 | Casa Prática Eletro';
+const description =
+	'Compare perfis, forno, trempes, consumo e limpeza para escolher o fogão 5 bocas com melhor custo-benefício sem pagar a mais.';
+const ogImage = new URL(PRODUCT_IMAGE_REVIEW.consul.replace(/^\//, ''), site).href;
 ---
 
 <BaseLayout
-	title="Melhor fogão 5 bocas custo-benefício em 2026 | Casa Prática Eletro"
-	description="Compare perfis, forno, trempes, consumo e limpeza para escolher o fogão 5 bocas com melhor custo-benefício sem pagar a mais."
+	title={pageTitle}
+	description={description}
+	canonical={canonical}
+	openGraph={{
+		title: pageTitle,
+		description,
+		url: canonical,
+		type: 'article',
+		image: ogImage,
+		imageAlt: 'Fogão 5 bocas Consul em inox — referência visual custo-benefício',
+	}}
 >
 	<article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
 		<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Compra inteligente</p>
@@ -272,7 +290,7 @@ import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
 		</div>
 		<div class="mt-12 flex flex-wrap gap-4">
 			<a
-				href="https://example.com/afiliado/fogao-5-bocas-custo-beneficio"
+				href={produtos.consulCFS5NAB.ml}
 				class="inline-flex min-h-[48px] items-center justify-center bg-cta px-8 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-cta-hover"
 				target="_blank"
 				rel="nofollow sponsored noopener noreferrer"

@@ -9,19 +9,33 @@ import HomeGuideSection from '../components/HomeGuideSection.astro';
 import BlogGrid from '../components/BlogGrid.astro';
 import HomeSeeAlso from '../components/HomeSeeAlso.astro';
 import HomeFaqSection from '../components/HomeFaqSection.astro';
+import { PRODUCT_IMAGE_REVIEW } from '../data/productImages';
+
+const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
+const canonical = new URL(Astro.url.pathname, site).href;
+const pageTitle = 'Casa Prática Eletro | Reviews e comparativos de eletrodomésticos';
+const metaDescription =
+	'Casa Prática Eletro: reviews, comparativos e guias para escolher fogões e outros eletrodomésticos com mais segurança.';
+const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).href;
 
 const allPosts = await getCollection('blog');
 const posts = allPosts
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 3);
-
-const metaDescription =
-	'Casa Prática Eletro: reviews, comparativos e guias para escolher fogões e outros eletrodomésticos com mais segurança.';
 ---
 
 <BaseLayout
-	title="Casa Prática Eletro | Reviews e comparativos de eletrodomésticos"
+	title={pageTitle}
 	description={metaDescription}
+	canonical={canonical}
+	openGraph={{
+		title: pageTitle,
+		description: metaDescription,
+		url: canonical,
+		type: 'website',
+		image: ogImage,
+		imageAlt: 'Fogão 5 bocas em inox — referência visual Casa Prática Eletro',
+	}}
 >
 	<Hero />
 	<HomeTopProducts />

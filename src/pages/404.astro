@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Página não encontrada | Casa Prática Eletro';
+const description =
+	'A página que você procura não existe ou foi movida. Volte ao início ou use o blog para encontrar guias e comparativos.';
+---
+
+<BaseLayout title={title} description={description}>
+	<meta name="robots" content="noindex, follow" slot="head" />
+	<article class="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+		<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Erro 404</p>
+		<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">Página não encontrada</h1>
+		<p class="mt-4 text-lg leading-relaxed text-on-ink-body">
+			O endereço pode estar incorreto ou o conteúdo foi reorganizado. Nada foi apagado do site sem redirecionamento quando a URL
+			mudou de verdade — vale tentar de novo a partir do início.
+		</p>
+		<div class="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+			<a
+				href="/"
+				class="inline-flex min-h-[48px] items-center justify-center bg-cta px-8 text-xs font-bold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover"
+			>
+				Ir para o início
+			</a>
+			<a href="/blog" class="btn-secondary-premium inline-flex min-h-[48px] items-center justify-center px-8 text-center">
+				Abrir o blog
+			</a>
+			<a
+				href="/melhor-fogao-5-bocas"
+				class="btn-secondary-premium inline-flex min-h-[48px] items-center justify-center px-8 text-center"
+			>
+				Guia melhor fogão 5 bocas
+			</a>
+		</div>
+	</article>
+</BaseLayout>

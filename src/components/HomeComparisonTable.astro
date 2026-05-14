@@ -96,7 +96,7 @@ const rows = [
 											Ver preço e compra — {r.model}
 										</a>
 										{
-											r.links.shopee ? (
+											'shopee' in r.links && r.links.shopee ? (
 												<a
 													href={r.links.shopee}
 													class="btn-secondary-premium w-full px-4"

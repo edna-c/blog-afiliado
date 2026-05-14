@@ -3,11 +3,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import RelatedContent from '../components/RelatedContent.astro';
 import SmartRecommendations from '../components/SmartRecommendations.astro';
 import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
+import { produtos } from '../data/products';
+import { PRODUCT_IMAGE_REVIEW } from '../data/productImages';
+
+const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
+const canonical = new URL('/como-escolher-fogao-5-bocas', site).href;
+const pageTitle = 'Como escolher fogão 5 bocas em 2026 | Casa Prática Eletro';
+const description =
+	'Guia da Casa Prática Eletro para escolher fogão 5 bocas: medidas, gás, forno, segurança e comparativos práticos.';
+const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).href;
 ---
 
 <BaseLayout
-	title="Como escolher fogão 5 bocas em 2026 | Casa Prática Eletro"
-	description="Guia da Casa Prática Eletro para escolher fogão 5 bocas: medidas, gás, forno, segurança e comparativos práticos."
+	title={pageTitle}
+	description={description}
+	canonical={canonical}
+	openGraph={{
+		title: pageTitle,
+		description,
+		url: canonical,
+		type: 'article',
+		image: ogImage,
+		imageAlt: 'Fogão 5 bocas em inox — referência visual do guia prático',
+	}}
 >
 	<article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
 		<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Guia prático</p>
@@ -62,7 +80,7 @@ import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
 		</div>
 		<div class="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
 			<a
-				href="https://example.com/afiliado/fogao-5-bocas"
+				href={produtos.brastempBFS5NCR.ml}
 				class="inline-flex min-h-[52px] flex-1 items-center justify-center bg-cta px-8 text-xs font-bold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-w-[200px]"
 				target="_blank"
 				rel="nofollow sponsored noopener noreferrer"

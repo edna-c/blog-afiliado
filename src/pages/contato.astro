@@ -1,10 +1,31 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import YouTubeBrandLink from '../components/YouTubeBrandLink.astro';
+import { PRODUCT_IMAGE_REVIEW } from '../data/productImages';
+import { getPublicContactEmail } from '../data/siteContact';
+
+const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
+const canonical = new URL(Astro.url.pathname, site).href;
+const pageTitle = 'Contato | Casa Prática Eletro';
+const description =
+	'Fale com a Casa Prática Eletro para enviar dúvidas, sugestões e pedidos sobre reviews e comparativos de eletrodomésticos.';
+const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).href;
+
+const contactEmail = getPublicContactEmail();
 ---
 
 <BaseLayout
-	title="Contato | Casa Prática Eletro"
-	description="Fale com a Casa Prática Eletro para enviar dúvidas, sugestões e pedidos sobre reviews e comparativos de eletrodomésticos."
+	title={pageTitle}
+	description={description}
+	canonical={canonical}
+	openGraph={{
+		title: pageTitle,
+		description,
+		url: canonical,
+		type: 'website',
+		image: ogImage,
+		imageAlt: 'Fogão 5 bocas em inox — referência visual Casa Prática Eletro',
+	}}
 >
 	<article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
 		<header>
@@ -14,14 +35,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			<p>Se você tiver dúvidas, sugestões ou quiser entrar em contato, envie um e-mail para:</p>
 			<p>
 				<a
-					href="mailto:seuemail@email.com"
+					href={`mailto:${contactEmail}`}
 					class="font-semibold text-pop underline-offset-2 transition hover:underline"
-					aria-label="Enviar e-mail para contato em seuemail@email.com"
+					aria-label={`Enviar e-mail para contato em ${contactEmail}`}
 				>
-					seuemail@email.com
+					{contactEmail}
 				</a>
 			</p>
 			<p>Respondemos quando possível.</p>
+
+			<section
+				class="mt-12 rounded-2xl border border-white/10 bg-brand-900/30 p-6 ring-1 ring-white/[0.07] sm:p-8"
+				aria-labelledby="canais-heading"
+			>
+				<h2 id="canais-heading" class="text-xs font-bold uppercase tracking-[0.35em] text-pop">
+					Canais oficiais
+				</h2>
+				<p class="mt-4 text-sm leading-relaxed text-on-ink-body">
+					No YouTube reunimos leituras em vídeo que complementam os guias e comparativos do site — sempre com o mesmo critério:
+					clareza, método e zero sensacionalismo.
+				</p>
+				<div class="mt-6">
+					<YouTubeBrandLink variant="inline" />
+				</div>
+			</section>
 		</div>
 	</article>
 </BaseLayout>

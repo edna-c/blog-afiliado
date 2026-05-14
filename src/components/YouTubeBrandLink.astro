@@ -1,0 +1,38 @@
+---
+/**
+ * Link discreto para o canal oficial no YouTube (ícone + texto curto).
+ * `variant`: `footer` — linha compacta; `inline` — bloco em página de conteúdo.
+ */
+import { YOUTUBE_CHANNEL_URL } from '../data/siteContact';
+
+interface Props {
+	variant?: 'footer' | 'inline';
+}
+
+const { variant = 'footer' } = Astro.props;
+
+const baseClass =
+	'group inline-flex max-w-full items-center gap-2.5 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-on-ink-muted ring-1 ring-white/[0.06] transition hover:border-pop/25 hover:text-on-ink-body hover:ring-pop/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pop';
+const footerExtra = 'text-[11px] font-semibold uppercase tracking-[0.22em]';
+const inlineExtra = 'text-sm font-medium normal-case tracking-normal';
+---
+
+<a
+	href={YOUTUBE_CHANNEL_URL}
+	class:list={[baseClass, variant === 'footer' ? footerExtra : inlineExtra]}
+	target="_blank"
+	rel="noopener noreferrer"
+	aria-label="Abrir o canal oficial Casa Prática Eletro no YouTube em nova aba"
+>
+	<svg
+		class="h-5 w-5 shrink-0 text-on-ink-muted transition group-hover:text-pop"
+		viewBox="0 0 24 24"
+		aria-hidden="true"
+		fill="currentColor"
+	>
+		<path
+			d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1 31.7 31.7 0 0 0 .5-5.8 31.7 31.7 0 0 0-.5-5.8ZM9.75 15.02V8.98L15.5 12l-5.75 3.02Z"
+		/>
+	</svg>
+	<span class="min-w-0 truncate">{variant === 'footer' ? 'YouTube' : 'Canal no YouTube'}</span>
+</a>

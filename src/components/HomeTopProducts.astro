@@ -1,6 +1,6 @@
 ---
-import type { ImageMetadata } from 'astro:assets';
 import { produtos } from '../data/products';
+import type { AstroRasterImport } from '../types/astro-image';
 import brastempCardImage from '../assets/images/cards/brastemp-bfs5ncr-card-premium.webp';
 import consulCardImage from '../assets/images/cards/consul-fe5ig-card-premium.webp';
 import electroluxCardImage from '../assets/images/cards/electrolux-cfs5nab-card-premium.webp';
@@ -20,7 +20,7 @@ export interface Product {
 	/** Rótulos opcionais dos CTAs de loja (só onde o copy for específico). */
 	mlCtaText?: string;
 	shopeeCtaText?: string;
-	image?: string | ImageMetadata;
+	image?: string | AstroRasterImport;
 	/** Escala fina (contain) só quando a arte desequilibra altura vs. os outros cards. */
 	imageVisualScale?: number;
 	imageAlt?: string;

@@ -1,4 +1,4 @@
-import type { ImageMetadata } from 'astro:assets';
+import type { AstroRasterImport } from '../types/astro-image';
 
 /**
  * Miniaturas editoriais do blog (`<slug-do-post>-blog-premium.webp|png`) em
@@ -11,21 +11,21 @@ import type { ImageMetadata } from 'astro:assets';
  * **Cursor (integração):** manter o nome do ficheiro igual ao `post.id` + sufixo `-blog-premium`;
  * substituir o asset na pasta da categoria e rodar `bun run build`.
  */
-const raw = import.meta.glob<{ default: ImageMetadata }>('../assets/images/blog/**/*-blog-premium.{webp,png}', {
+const raw = import.meta.glob('../assets/images/blog/**/*-blog-premium.{webp,png}', {
 	eager: true,
 	import: 'default',
-});
+}) as Record<string, AstroRasterImport>;
 
-const byPostId: Record<string, ImageMetadata> = {};
+const byPostId: Record<string, AstroRasterImport> = {};
 
 for (const path of Object.keys(raw)) {
 	const file = path.split('/').pop() ?? '';
 	const m = /^(.+)-blog-premium\.(?:webp|png)$/.exec(file);
 	if (m?.[1]) {
-		byPostId[m[1]] = raw[path] as ImageMetadata;
+		byPostId[m[1]] = raw[path];
 	}
 }
 
-export function getBlogThumbnailAsset(postId: string): ImageMetadata | undefined {
+export function getBlogThumbnailAsset(postId: string): AstroRasterImport | undefined {
 	return byPostId[postId];
 }

@@ -5,6 +5,15 @@ import EditorialLinks from '../components/EditorialLinks.astro';
 import SmartRecommendations from '../components/SmartRecommendations.astro';
 import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
 import { findEntry, type EditorialEntry } from '../data/editorialContent';
+import { produtos } from '../data/products';
+import { PRODUCT_IMAGE_REVIEW } from '../data/productImages';
+
+const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
+const canonical = new URL('/comparativo-fogao-4-vs-5-bocas', site).href;
+const pageTitle = 'Fogão 4 ou 5 bocas: qual vale mais a pena em 2026? | Casa Prática Eletro';
+const description =
+	'Compare fogão 4 e 5 bocas por espaço, rotina, família e custo para decidir qual faz mais sentido na sua cozinha.';
+const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).href;
 
 const reviewBrastemp = findEntry((e) => e.href === '/review-fogao-5-bocas-brastemp');
 const reviewConsul = findEntry((e) => e.href === '/review-fogao-5-bocas-consul');
@@ -16,8 +25,17 @@ const reviewItems: EditorialEntry[] = [reviewBrastemp, reviewConsul, reviewElect
 ---
 
 <BaseLayout
-	title="Fogão 4 ou 5 bocas: qual vale mais a pena em 2026? | Casa Prática Eletro"
-	description="Compare fogão 4 e 5 bocas por espaço, rotina, família e custo para decidir qual faz mais sentido na sua cozinha."
+	title={pageTitle}
+	description={description}
+	canonical={canonical}
+	openGraph={{
+		title: pageTitle,
+		description,
+		url: canonical,
+		type: 'article',
+		image: ogImage,
+		imageAlt: 'Comparativo visual entre fogão 4 e 5 bocas — referência editorial',
+	}}
 >
 	<article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
 		<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Comparativo</p>
@@ -80,7 +98,7 @@ const reviewItems: EditorialEntry[] = [reviewBrastemp, reviewConsul, reviewElect
 		</p>
 		<div class="mt-10 flex flex-wrap gap-4">
 			<a
-				href="https://example.com/afiliado/fogao-5-bocas"
+				href={produtos.brastempBFS5NCR.ml}
 				class="inline-flex min-h-[48px] items-center justify-center bg-cta px-8 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-cta-hover"
 				target="_blank"
 				rel="nofollow sponsored noopener noreferrer"

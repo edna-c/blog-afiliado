@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://casapraticaeletro.com.br/sitemap-index.xml
