@@ -9,14 +9,33 @@ import { getCollection, render } from 'astro:content';
 import { PRODUCT_IMAGE_REVIEW } from '../../data/productImages';
 import { getBlogThumbnailAsset } from '../../data/blogThumbnailAssets';
 import { getImage, Picture } from 'astro:assets';
-import blogHeroImage from '../../assets/images/blog/electrolux-cozinha-hero-premium.png';
-import reviewMesaVidroHeroImage from '../../assets/images/blog/reviews/review-fogao-com-mesa-de-vidro-blog-premium.webp';
+import mesaVidroArticleHero from '../../assets/images/blog/reviews/review-fogao-com-mesa-de-vidro-article-hero.png';
+import embutirPisoArticleHero from '../../assets/images/blog/guias/guia-fogao-embutir-ou-de-piso-article-hero.png';
 import { findEntry, type EditorialEntry } from '../../data/editorialContent';
 
-const blogHeroAlt =
-	'Cozinha moderna com fogão Electrolux de cinco bocas preto com porta de vidro, integrado entre armários escuros e bancada de granito.';
-const reviewMesaVidroHeroAlt =
-	'Cozinha moderna com fogão de mesa de vidro integrado à bancada e armários, ambiente iluminado para leitura sobre vidro temperado.';
+type ArticleHeroEntry = {
+	src: typeof mesaVidroArticleHero;
+	alt: string;
+	/** Ajuste fino do recorte em `object-fit: cover` (16:10). */
+	objectPosition: 'mesa-vidro' | 'center';
+	/** Legenda curta abaixo da imagem (estilo artigo). */
+	caption?: string;
+};
+
+const articleHeroes: Record<string, ArticleHeroEntry> = {
+	'review-fogao-com-mesa-de-vidro': {
+		src: mesaVidroArticleHero,
+		alt: 'Cooktop de quatro bocas com mesa de vidro temperado embutido em bancada escura, cozinha moderna com iluminação quente sob a prateleira.',
+		objectPosition: 'mesa-vidro',
+	},
+	'guia-fogao-embutir-ou-de-piso': {
+		src: embutirPisoArticleHero,
+		alt: 'Comparação entre fogão de piso com pés e fogão embutido na bancada, ambos em inox com mesa de vidro em cozinha escura.',
+		objectPosition: 'center',
+		caption:
+			'À esquerda, fogão de piso; à direita, fogão embutido na bancada — o mesmo tipo de produto em formatos de instalação diferentes.',
+	},
+};
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -28,9 +47,7 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
-const isReviewMesaVidroPage = post.id === 'review-fogao-com-mesa-de-vidro';
-const heroImage = isReviewMesaVidroPage ? reviewMesaVidroHeroImage : blogHeroImage;
-const heroAlt = isReviewMesaVidroPage ? reviewMesaVidroHeroAlt : blogHeroAlt;
+const articleHero = articleHeroes[post.id];
 
 /**
  * Pareamento editorial por slug — escolhe naturalmente:
@@ -65,9 +82,10 @@ const canonical = new URL(Astro.url.pathname, site).href;
 const faq = post.data.faq;
 
 const thumbMeta = getBlogThumbnailAsset(post.id);
+const ogSource = articleHero?.src ?? thumbMeta;
 let ogImage: string;
-if (thumbMeta) {
-	const og = await getImage({ src: thumbMeta, width: 1200, format: 'webp' });
+if (ogSource) {
+	const og = await getImage({ src: ogSource, width: 1200, format: 'webp' });
 	ogImage = og.src.startsWith('http') ? og.src : new URL(og.src.replace(/^\//, ''), site).href;
 } else if (post.data.coverImage) {
 	ogImage = new URL(String(post.data.coverImage).replace(/^\//, ''), site).href;
@@ -143,14 +161,14 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 		description: post.data.description,
 		url: canonical,
 		image: ogImage,
-		imageAlt: post.data.title,
+		imageAlt: articleHero?.alt ?? post.data.title,
 		type: 'article',
 		publishedTime: post.data.pubDate.toISOString(),
 		modifiedTime: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
 	}}
 >
 	<script type="application/ld+json" slot="head" set:html={JSON.stringify(structuredData)} />
-	<article class="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
+	<article class="mx-auto max-w-2xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
 		<Breadcrumbs
 			class="mb-8"
 			items={[
@@ -171,25 +189,49 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 		<div class="mt-8">
 			<EditorialTrustRibbon />
 		</div>
-		<figure
-			class="mt-10 overflow-hidden rounded-2xl shadow-[0_14px_40px_rgba(0,0,0,0.45)] ring-1 ring-white/10"
-		>
-			<div class="relative aspect-[16/9] w-full bg-white/5">
-				<span class="absolute inset-0 block overflow-hidden">
-					<Picture
-						src={heroImage}
-						alt={heroAlt}
-						formats={['avif', 'webp']}
-						widths={[640, 768, 960, 1152]}
-						sizes="(max-width: 768px) 100vw, 768px"
-						quality={80}
-						priority
-						class="h-full w-full object-cover"
-						pictureAttributes={{ class: 'absolute inset-0 block h-full w-full [&>img]:h-full [&>img]:w-full [&>img]:object-cover' }}
-					/>
-				</span>
-			</div>
-		</figure>
+		{
+			articleHero ? (
+				<figure
+					class="mt-10 overflow-hidden rounded-2xl shadow-[0_14px_40px_rgba(0,0,0,0.45)] ring-1 ring-white/10"
+				>
+					<div class="relative aspect-[16/10] w-full overflow-hidden bg-brand-900/40">
+						<Picture
+							src={articleHero.src}
+							alt={articleHero.alt}
+							formats={['avif', 'webp']}
+							width={articleHero.src.width}
+							height={articleHero.src.height}
+							widths={[640, 768, 960, 1152]}
+							sizes="(max-width: 768px) 100vw, 672px"
+							quality={82}
+							priority
+							class:list={[
+								'h-full w-full object-cover',
+								articleHero.objectPosition === 'mesa-vidro' ? 'object-[center_58%]' : 'object-center',
+							]}
+							pictureAttributes={{
+								class:
+									articleHero.objectPosition === 'mesa-vidro'
+										? 'absolute inset-0 block h-full w-full [&>img]:h-full [&>img]:w-full [&>img]:object-cover [&>img]:object-[center_58%]'
+										: 'absolute inset-0 block h-full w-full [&>img]:h-full [&>img]:w-full [&>img]:object-cover [&>img]:object-center',
+							}}
+						/>
+					</div>
+					{articleHero.caption ? (
+						<figcaption class="mt-3 text-center text-xs leading-relaxed text-on-ink-muted sm:text-sm">
+							{articleHero.caption}
+						</figcaption>
+					) : null}
+				</figure>
+			) : (
+				<div
+					class="mt-10 overflow-hidden rounded-2xl shadow-[0_14px_40px_rgba(0,0,0,0.45)] ring-1 ring-white/10"
+					aria-hidden="true"
+				>
+					<div class="aspect-[16/10] w-full bg-gradient-to-br from-brand-900/70 via-brand-900/40 to-ink" />
+				</div>
+			)
+		}
 		<div
 			class:list={[
 				'prose prose-invert prose-lg max-w-none prose-headings:font-display prose-a:text-pop prose-a:underline prose-a:decoration-pop/50 prose-a:decoration-2 prose-a:underline-offset-[0.2em] hover:prose-a:text-accent-hover hover:prose-a:decoration-pop',

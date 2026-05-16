@@ -10,7 +10,7 @@ const blog = defineCollection({
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
 		category: z.string(),
-		/** Legado: miniatura vem de `src/assets/images/blog/{guias,reviews,comparativos}/<slug>-blog-premium.webp` */
+		// Opcional: miniatura em src/assets/images/blog (subpastas): nome post.id + sufixo -blog-premium.webp ou .png; senão placeholder no grid.
 		coverImage: z.string().optional(),
 		faq: z
 			.array(
