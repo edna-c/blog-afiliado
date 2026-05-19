@@ -2,6 +2,9 @@
 import type { CollectionEntry } from 'astro:content';
 import { Picture } from 'astro:assets';
 import { getBlogThumbnailAsset } from '../data/blogThumbnailAssets';
+import { BLOG_THUMBNAIL, picturePropsFrom } from '../data/editorialImageSpecs';
+
+const blogThumbPicture = picturePropsFrom(BLOG_THUMBNAIL);
 
 interface Props {
 	posts: CollectionEntry<'blog'>[];
@@ -95,10 +98,10 @@ const isDark = variant === 'dark';
 											alt=""
 											width={thumbAsset.width}
 											height={thumbAsset.height}
-											widths={[480, 640, 800, 960]}
-											sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-											formats={['avif', 'webp']}
-											quality={82}
+											widths={blogThumbPicture.widths}
+											sizes={blogThumbPicture.sizes}
+											formats={blogThumbPicture.formats}
+											quality={blogThumbPicture.quality}
 											loading={index === 0 ? 'eager' : 'lazy'}
 											decoding="async"
 											fetchpriority={index === 0 ? 'high' : undefined}

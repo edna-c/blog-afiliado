@@ -1,15 +1,9 @@
 import type { AstroRasterImport } from '../types/astro-image';
+import { BLOG_THUMBNAIL } from './editorialImageSpecs';
 
 /**
- * Miniaturas editoriais do blog (`<slug-do-post>-blog-premium.webp|png`) em
- * `src/assets/images/blog/{guias,reviews,comparativos}/`.
- *
- * **Gemini (geração):** exportar WEBP ~1200×750 (16:10), fundo #121212–#1a1a1a, luz lateral suave,
- * produto nítido com sombra de contacto suave; cozinha premium só em bokeh desfocado; sem fundo branco,
- * sem neon, sem estética de thumbnail sensacionalista. Não reutilizar as artes dos cards da home.
- *
- * **Cursor (integração):** manter o nome do ficheiro igual ao `post.id` + sufixo `-blog-premium`;
- * substituir o asset na pasta da categoria e rodar `bun run build`.
+ * Miniaturas do blog — ver `BLOG_THUMBNAIL` em `editorialImageSpecs.ts`
+ * (export {width}×{height}, pasta, brief e Picture).
  */
 const raw = import.meta.glob('../assets/images/blog/**/*-blog-premium.{webp,png}', {
 	eager: true,
@@ -29,3 +23,6 @@ for (const path of Object.keys(raw)) {
 export function getBlogThumbnailAsset(postId: string): AstroRasterImport | undefined {
 	return byPostId[postId];
 }
+
+/** Reexport para documentação em ferramentas de geração de imagem */
+export const blogThumbnailSpec = BLOG_THUMBNAIL;

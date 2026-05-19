@@ -6,6 +6,9 @@ import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
 import { Picture } from 'astro:assets';
 import melhoresFogoesHero from '../assets/images/heroes/melhores-fogoes-5-bocas-hero.webp';
 import { PRODUCT_IMAGE_REVIEW } from '../data/productImages';
+import { GUIDE_PAGE_HERO, picturePropsFrom } from '../data/editorialImageSpecs';
+
+const guideHeroPicture = picturePropsFrom(GUIDE_PAGE_HERO);
 
 const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
 const canonical = new URL('/melhor-fogao-5-bocas', site).href;
@@ -72,12 +75,12 @@ const description =
 				<Picture
 					src={melhoresFogoesHero}
 					alt="Linha de fogões 5 bocas em cozinha planejada, destacando modelos para comparação de custo-benefício em 2026"
-					formats={['avif', 'webp']}
-					widths={[640, 768, 960, 1152]}
-					sizes="(max-width: 640px) 100vw, (max-width: 1024px) 768px, 960px"
+					formats={guideHeroPicture.formats}
+					widths={guideHeroPicture.widths}
+					sizes={guideHeroPicture.sizes}
 					width={melhoresFogoesHero.width}
 					height={melhoresFogoesHero.height}
-					quality={80}
+					quality={guideHeroPicture.quality}
 					loading="eager"
 					decoding="async"
 					priority

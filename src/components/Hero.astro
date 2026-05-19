@@ -6,6 +6,9 @@
  */
 import { Picture } from 'astro:assets';
 import heroImage from '../assets/images/heroes/melhores-fogoes-5-bocas-hero.webp';
+import { HOME_HERO, picturePropsFrom } from '../data/editorialImageSpecs';
+
+const homeHeroPicture = picturePropsFrom(HOME_HERO);
 ---
 
 <section class="relative isolate overflow-hidden border-b border-white/10 bg-ink" aria-labelledby="hero-heading">
@@ -96,10 +99,10 @@ import heroImage from '../assets/images/heroes/melhores-fogoes-5-bocas-hero.webp
 					<Picture
 						src={heroImage}
 						alt="Cozinha moderna em tons neutros com fogão a gás de piso preto de cinco bocas, armários cinza e bancada branca."
-						formats={['avif', 'webp']}
-						widths={[360, 480, 640, 800, 960, 1200]}
-						sizes="(min-width: 1024px) min(50vw, 640px), 100vw"
-						quality={82}
+						formats={homeHeroPicture.formats}
+						widths={homeHeroPicture.widths}
+						sizes={homeHeroPicture.sizes}
+						quality={homeHeroPicture.quality}
 						priority
 						class="absolute inset-0 h-full w-full object-cover object-[60%_32%] md:object-[62%_38%] lg:object-[66%_44%]"
 						pictureAttributes={{

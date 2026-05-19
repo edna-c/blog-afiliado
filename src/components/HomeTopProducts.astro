@@ -1,9 +1,11 @@
 ---
+import { Picture } from 'astro:assets';
+import { HOME_PRODUCT_CARD, picturePropsFrom } from '../data/editorialImageSpecs';
 import { produtos } from '../data/products';
 import type { AstroRasterImport } from '../types/astro-image';
-import brastempCardImage from '../assets/images/cards/brastemp-bfs5ncr-card-premium.webp';
-import consulCardImage from '../assets/images/cards/consul-fe5ig-card-premium.webp';
-import electroluxCardImage from '../assets/images/cards/electrolux-cfs5nab-card-premium.webp';
+import brastempCardImage from '../assets/images/cards/optimized/brastemp-bfs5ncr-card-premium.webp';
+import consulCardImage from '../assets/images/cards/optimized/consul-fe5ig-card-premium.webp';
+import electroluxCardImage from '../assets/images/cards/optimized/electrolux-cfs5nab-card-premium.webp';
 
 export type ProductBadgeTone = 'emerald' | 'amber' | 'pop';
 
@@ -97,9 +99,10 @@ const badgeToneClass: Record<ProductBadgeTone, string> = {
 	pop: 'border-b border-white/[0.06] bg-zinc-900/95 text-pop/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] ring-1 ring-white/10',
 };
 
-const imageSrc = (img: NonNullable<Product['image']>) => (typeof img === 'string' ? img : img.src);
-const imageWidth = (img: NonNullable<Product['image']>) => (typeof img === 'string' ? 800 : img.width);
-const imageHeight = (img: NonNullable<Product['image']>) => (typeof img === 'string' ? 800 : img.height);
+const isRasterImage = (img: Product['image']): img is AstroRasterImport =>
+	typeof img !== 'string' && img != null;
+
+const cardPicture = picturePropsFrom(HOME_PRODUCT_CARD);
 ---
 
 <section
@@ -159,27 +162,47 @@ const imageHeight = (img: NonNullable<Product['image']>) => (typeof img === 'str
 									class="product-media-frame relative aspect-square w-full max-w-[min(100%,21.5rem)] overflow-hidden rounded-[0.875rem] bg-[#151515]"
 								>
 									<div class="absolute inset-3 flex items-center justify-center sm:inset-[0.8125rem]">
-										<img
-											class:list={[
-												'max-h-full max-w-full object-contain object-center',
-												p.reviewSlug === 'electrolux' &&
-													'brightness-[1.03] contrast-[1.06] saturate-[1.02]',
-											]}
-											style={
-												p.imageVisualScale && p.imageVisualScale !== 1
-													? {
-															transform: `scale(${p.imageVisualScale})`,
-															transformOrigin: 'center center',
-														}
-													: undefined
-											}
-											src={imageSrc(p.image)}
-											alt={p.imageAlt ?? ''}
-											width={imageWidth(p.image)}
-											height={imageHeight(p.image)}
-											loading="lazy"
-											decoding="async"
-										/>
+										{isRasterImage(p.image) ? (
+											<Picture
+												src={p.image}
+												alt={p.imageAlt ?? ''}
+												width={p.image.width}
+												height={p.image.height}
+												widths={cardPicture.widths}
+												sizes={cardPicture.sizes}
+												formats={cardPicture.formats}
+												quality={cardPicture.quality}
+												loading="lazy"
+												decoding="async"
+												class:list={[
+													'max-h-full max-w-full object-contain object-center',
+													p.reviewSlug === 'electrolux' &&
+														'brightness-[1.03] contrast-[1.06] saturate-[1.02]',
+												]}
+												style={
+													p.imageVisualScale && p.imageVisualScale !== 1
+														? {
+																transform: `scale(${p.imageVisualScale})`,
+																transformOrigin: 'center center',
+															}
+														: undefined
+												}
+												pictureAttributes={{
+													class:
+														'flex h-full w-full max-h-full max-w-full items-center justify-center [&>img]:max-h-full [&>img]:max-w-full [&>img]:object-contain [&>img]:object-center',
+												}}
+											/>
+										) : (
+											<img
+												class="max-h-full max-w-full object-contain object-center"
+												src={p.image}
+												alt={p.imageAlt ?? ''}
+												width={800}
+												height={800}
+												loading="lazy"
+												decoding="async"
+											/>
+										)}
 									</div>
 								</div>
 							</div>

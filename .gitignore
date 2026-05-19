@@ -1,5 +1,9 @@
 # build output
 dist/
+
+# backups locais de otimização de imagem
+src/assets/images/cards/.backup-originals/
+src/assets/images/cards/.optimize-tmp-*
 # generated types
 .astro/
 

@@ -12,6 +12,9 @@ import { getImage, Picture } from 'astro:assets';
 import mesaVidroArticleHero from '../../assets/images/blog/reviews/review-fogao-com-mesa-de-vidro-article-hero.png';
 import embutirPisoArticleHero from '../../assets/images/blog/guias/guia-fogao-embutir-ou-de-piso-article-hero.png';
 import { findEntry, type EditorialEntry } from '../../data/editorialContent';
+import { BLOG_ARTICLE_HERO, picturePropsFrom } from '../../data/editorialImageSpecs';
+
+const articleHeroPicture = picturePropsFrom(BLOG_ARTICLE_HERO);
 
 type ArticleHeroEntry = {
 	src: typeof mesaVidroArticleHero;
@@ -198,12 +201,12 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 						<Picture
 							src={articleHero.src}
 							alt={articleHero.alt}
-							formats={['avif', 'webp']}
+							formats={articleHeroPicture.formats}
 							width={articleHero.src.width}
 							height={articleHero.src.height}
-							widths={[640, 768, 960, 1152]}
-							sizes="(max-width: 768px) 100vw, 672px"
-							quality={82}
+							widths={articleHeroPicture.widths}
+							sizes={articleHeroPicture.sizes}
+							quality={articleHeroPicture.quality}
 							priority
 							class:list={[
 								'h-full w-full object-cover',
