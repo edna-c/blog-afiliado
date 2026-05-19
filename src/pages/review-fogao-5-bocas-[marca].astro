@@ -23,6 +23,10 @@ export async function getStaticPaths() {
 				offerUrl: produtos.brastempBFS5NCR.ml,
 				longReviewHref: '/brastemp-bfs5ncr-vale-a-pena',
 				longReviewLabel: 'Abrir análise completa (texto longo + FAQ + ficha)',
+				peerReview: {
+					href: '/review-fogao-5-bocas-consul',
+					label: 'Consul CFS5NAB',
+				},
 				idealFor: [
 					'famílias médias que cozinham com frequência',
 					'quem quer forno grande e uso mais robusto',
@@ -111,6 +115,10 @@ export async function getStaticPaths() {
 				summary:
 					'Perfil “primeiro fogão bom”: costuma agradar quem quer menos firula e mais função. Se você cozinha muito pesado, compare forno e distância entre bocas com um modelo de linha acima antes de decidir.',
 				offerUrl: produtos.consulCFS5NAB.ml,
+				peerReview: {
+					href: '/review-fogao-5-bocas-electrolux',
+					label: 'Electrolux FE5IG',
+				},
 				idealFor: [
 					'casais e famílias pequenas a médias',
 					'quem quer entrar na categoria 5 bocas sem subir demais o orçamento',
@@ -199,6 +207,10 @@ export async function getStaticPaths() {
 				summary:
 					'Foco em acabamento e no dia a dia: faz sentido quando o visual importa e você usa forno de verdade. Confira na ficha do anúncio se vêm as funções que você quer.',
 				offerUrl: produtos.electroluxFE5IG.ml,
+				peerReview: {
+					href: '/review-fogao-5-bocas-brastemp',
+					label: 'Brastemp BFS5NCR',
+				},
 				idealFor: [
 					'famílias médias ou casas com rotina mais intensa',
 					'quem usa forno com frequência real',
@@ -299,6 +311,7 @@ interface Props {
 	offerUrl: string;
 	longReviewHref?: string;
 	longReviewLabel?: string;
+	peerReview?: { href: string; label: string };
 	idealFor: string[];
 	notIdealFor: string[];
 	familyProfile: string;
@@ -324,6 +337,7 @@ const {
 	offerUrl,
 	longReviewHref,
 	longReviewLabel,
+	peerReview,
 	idealFor,
 	notIdealFor,
 	familyProfile,
@@ -416,6 +430,22 @@ const structuredData = {
 		</p>
 		<p class="mt-6 text-lg leading-relaxed text-on-ink-body">
 			{summary}
+		</p>
+		<p class="mt-4 text-sm leading-relaxed text-on-ink-muted">
+			Este review integra o{' '}
+			<a href="/melhor-fogao-5-bocas" class="link-accent-soft">
+				melhor fogão 5 bocas
+			</a>
+			{peerReview ? (
+				<>
+					{' '}
+					— para outro perfil na mesma categoria, vale comparar com o{' '}
+					<a href={peerReview.href} class="link-accent-soft">
+						{peerReview.label}
+					</a>
+				</>
+			) : null}
+			.
 		</p>
 		<div class="mt-8">
 			<EditorialTrustRibbon />

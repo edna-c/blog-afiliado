@@ -9,14 +9,16 @@
 import { findEntry, type EditorialEntry } from '../data/editorialContent';
 
 const guia = findEntry((e) => e.href === '/melhor-fogao-5-bocas');
+const reviewBrastemp = findEntry((e) => e.href === '/review-fogao-5-bocas-brastemp');
+const reviewConsul = findEntry((e) => e.href === '/review-fogao-5-bocas-consul');
+const reviewElectrolux = findEntry((e) => e.href === '/review-fogao-5-bocas-electrolux');
 const comparativo = findEntry((e) => e.href === '/comparativo-fogao-4-vs-5-bocas');
-const analise = findEntry((e) => e.href === '/brastemp-bfs5ncr-vale-a-pena');
-const lifestyle = findEntry((e) => e.href === '/blog/review-fogao-com-mesa-de-vidro/');
-const lifestyleAlt = findEntry((e) => e.href === '/blog/guia-fogao-embutir-ou-de-piso/');
+const analiseBrastemp = findEntry((e) => e.href === '/brastemp-bfs5ncr-vale-a-pena');
 
-const cards: EditorialEntry[] = [guia, comparativo, analise, lifestyle].filter(Boolean) as EditorialEntry[];
-
-const editorialIntroLifestyle = lifestyleAlt;
+/** Hub visível: guia pilar + três reviews da curadoria. */
+const cards: EditorialEntry[] = [guia, reviewBrastemp, reviewConsul, reviewElectrolux].filter(
+	Boolean,
+) as EditorialEntry[];
 ---
 
 <section class="bg-ink py-16 lg:py-20" aria-labelledby="see-also-heading">
@@ -33,29 +35,44 @@ const editorialIntroLifestyle = lifestyleAlt;
 		<p class="mt-3 max-w-2xl text-sm leading-relaxed text-on-ink-body sm:text-base">
 			{guia ? (
 				<>
-					Outros conteúdos para decidir com calma — começando pelo{' '}
-					<a href={guia.href} class="font-semibold text-on-ink-body underline decoration-pop/40 decoration-[1.5px] underline-offset-[5px] transition hover:text-pop hover:decoration-pop">
-						guia mestre
+					Para decidir com calma, comece pelo{' '}
+					<a
+						href={guia.href}
+						class="font-semibold text-on-ink-body underline decoration-pop/40 decoration-[1.5px] underline-offset-[5px] transition hover:text-pop hover:decoration-pop"
+					>
+						melhor fogão 5 bocas
 					</a>
 				</>
 			) : null}
-			{analise ? (
+			{comparativo ? (
 				<>
-					{' '}e abrindo a{' '}
-					<a href={analise.href} class="font-semibold text-on-ink-body underline decoration-pop/40 decoration-[1.5px] underline-offset-[5px] transition hover:text-pop hover:decoration-pop">
+					{' '}
+					— ou feche o tamanho certo no{' '}
+					<a
+						href={comparativo.href}
+						class="font-semibold text-on-ink-body underline decoration-pop/40 decoration-[1.5px] underline-offset-[5px] transition hover:text-pop hover:decoration-pop"
+					>
+						comparativo 4 vs 5 bocas
+					</a>
+				</>
+			) : null}
+			. Os cards abaixo levam às{' '}
+			<strong class="font-semibold text-on-ink-body">reviews por marca</strong> (Brastemp, Consul e Electrolux).
+			{analiseBrastemp ? (
+				<>
+					{' '}
+					Quem quiser texto longo com FAQ pode abrir a{' '}
+					<a
+						href={analiseBrastemp.href}
+						class="font-semibold text-on-ink-body underline decoration-pop/40 decoration-[1.5px] underline-offset-[5px] transition hover:text-pop hover:decoration-pop"
+					>
 						análise completa Brastemp BFS5NCR
-					</a>
-				</>
-			) : null}
-			{editorialIntroLifestyle ? (
-				<>
-					. Para quem está reformando, vale também a leitura editorial sobre{' '}
-					<a href={editorialIntroLifestyle.href} class="font-semibold text-on-ink-body underline decoration-pop/40 decoration-[1.5px] underline-offset-[5px] transition hover:text-pop hover:decoration-pop">
-						embutir ou de piso
 					</a>
 					.
 				</>
-			) : '.'}
+			) : (
+				'.'
+			)}
 		</p>
 
 		<ul class="mt-8 grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
