@@ -21,7 +21,7 @@ faq:
 
 Escolher entre **fogão de embutir ou de piso** parece uma decisão de estilo, mas na prática ela envolve instalação, ventilação, segurança, manutenção e custo total.
 
-O embutir costuma chamar atenção pelo visual limpo e pela integração com marcenaria. Já o fogão de piso segue forte porque resolve a vida com menos obra, menos adaptação e troca mais simples no futuro.
+O formato embutido costuma chamar atenção pelo visual limpo e pela integração com marcenaria. Já o modelo de piso segue forte porque resolve a vida com menos obra, menos adaptação e troca mais simples no futuro.
 
 Se você ainda está definindo tamanho e rotina, vale cruzar esta leitura com o [comparativo entre fogões 4 e 5 bocas](/comparativo-fogao-4-vs-5-bocas) antes de decidir o tipo de instalação.
 
@@ -32,7 +32,7 @@ Em poucas palavras:
 - **fogão de embutir**: depende mais de nicho, medidas exatas, ventilação e integração com o projeto;
 - **fogão de piso**: costuma ser mais simples de posicionar, instalar, limpar ao redor e substituir depois.
 
-Na prática, quem escolhe embutir normalmente está comprando também uma experiência visual mais alinhada à cozinha planejada. Quem escolhe piso costuma priorizar simplicidade, flexibilidade e menor risco de obra.
+Na prática, quem opta pela instalação embutida normalmente está comprando também uma experiência visual mais alinhada à cozinha planejada. Quem prefere o aparelho de chão costuma priorizar simplicidade, flexibilidade e menor risco de obra.
 
 ## Vantagens do fogão de embutir
 
@@ -62,7 +62,7 @@ Esse é o ponto mais ignorado por quem escolhe só pela estética: o embutir pod
 - costuma funcionar melhor em cozinhas já prontas;
 - tende a reduzir custo total de implantação.
 
-Para muita gente, especialmente em imóveis alugados ou cozinhas sem reforma prevista, o fogão de piso continua sendo a escolha mais racional.
+Para muita gente, especialmente em imóveis alugados ou cozinhas sem reforma prevista, essa configuração continua sendo a escolha mais racional.
 
 ## Desvantagens do fogão de piso
 
@@ -71,7 +71,7 @@ Para muita gente, especialmente em imóveis alugados ou cozinhas sem reforma pre
 - em cozinhas muito pequenas, o conjunto pode parecer mais pesado visualmente;
 - alguns modelos deixam folgas laterais e traseiras que exigem atenção na limpeza.
 
-Mesmo assim, isso não significa que ele fique ruim visualmente. Em muitos apartamentos, um bom fogão de piso ainda entrega ótimo equilíbrio entre praticidade e aparência, principalmente quando o espaço é mais compacto e a rotina é moderada.
+Mesmo assim, isso não significa que ele fique ruim visualmente. Em muitos apartamentos, um bom modelo de piso ainda entrega ótimo equilíbrio entre praticidade e aparência, principalmente quando o espaço é mais compacto e a rotina é moderada.
 
 ## Custo de instalação: onde muita gente erra a conta
 
@@ -86,9 +86,9 @@ No fogão de embutir, o custo real pode incluir:
 - mão de obra especializada;
 - eventuais ajustes de marcenaria.
 
-No fogão de piso, o custo total costuma ser mais previsível. Em muitos casos, basta confirmar compatibilidade do gás, nivelamento e distância segura de armários e paredes.
+No formato de piso, o custo total costuma ser mais previsível. Em muitos casos, basta confirmar compatibilidade do gás, nivelamento e distância segura de armários e paredes.
 
-Ou seja: se o orçamento está apertado, o fogão de piso normalmente protege melhor contra gastos invisíveis.
+Ou seja: se o orçamento está apertado, essa opção normalmente protege melhor contra gastos invisíveis.
 
 ## Ventilação e segurança
 
@@ -109,9 +109,9 @@ Se houver qualquer dúvida, o caminho certo é usar profissional credenciado. Se
 
 ## Manutenção e limpeza no dia a dia
 
-O fogão de piso tende a ser mais simples de acessar quando é preciso puxar o aparelho, revisar mangueira ou limpar áreas laterais e traseiras.
+O aparelho de chão tende a ser mais simples de acessar quando é preciso puxar o equipamento, revisar mangueira ou limpar áreas laterais e traseiras.
 
-No embutir, a manutenção pode ser mais trabalhosa porque o acesso costuma depender do desenho do nicho e da folga deixada na instalação.
+Na instalação embutida, a manutenção pode ser mais trabalhosa porque o acesso costuma depender do desenho do nicho e da folga deixada na obra.
 
 Na limpeza do dia a dia, os dois podem funcionar bem, mas a praticidade depende de:
 
@@ -121,15 +121,15 @@ Na limpeza do dia a dia, os dois podem funcionar bem, mas a praticidade depende 
 - folgas onde gordura costuma acumular;
 - acesso às laterais.
 
-Se você prioriza baixa complexidade de uso e manutenção, o fogão de piso costuma sair na frente.
+Se você prioriza baixa complexidade de uso e manutenção, o formato de piso costuma sair na frente.
 
 ## Estética e cozinha planejada
 
-É aqui que o fogão de embutir realmente ganha força.
+É aqui que a instalação embutida realmente ganha força.
 
-Em cozinha planejada, ele tende a criar uma leitura visual mais contínua, alinhada e premium. Isso pesa bastante quando o projeto valoriza bancada limpa, armários retos e menos interferência visual.
+Em cozinha planejada, ela tende a criar uma leitura visual mais contínua, alinhada e premium. Isso pesa bastante quando o projeto valoriza bancada limpa, armários retos e menos interferência visual.
 
-Já o fogão de piso funciona melhor quando:
+Já o modelo de piso funciona melhor quando:
 
 - a cozinha não foi desenhada ao redor dele;
 - o foco está mais em função do que em acabamento;
@@ -150,7 +150,7 @@ Mas existem alguns cuidados extras:
 - eventual troca futura pode ser mais sensível por causa do encaixe;
 - regras do prédio ou da reforma podem limitar adaptações.
 
-Se o apartamento já está pronto e você quer praticidade, o fogão de piso costuma ser o caminho mais simples. Se o ambiente está em projeto e a estética pesa muito, o embutir passa a fazer mais sentido.
+Se o apartamento já está pronto e você quer praticidade, o formato de piso costuma ser o caminho mais simples. Se o ambiente está em projeto e a estética pesa muito, a instalação embutida passa a fazer mais sentido.
 
 ## Quando não vale a pena embutir
 
@@ -195,7 +195,7 @@ O **fogão de piso** costuma fazer mais sentido para quem:
 - prefere trocar de aparelho com mais liberdade;
 - mora de aluguel ou quer evitar dependência de marcenaria.
 
-Depois de definir o tipo de instalação, [veja os modelos mais vendidos aqui](/#top-produtos) para comparar preço e disponibilidade. Se a prioridade for compra mais racional, vale seguir também para o [guia de melhor fogão 5 bocas](/melhor-fogao-5-bocas).
+Depois de definir o tipo de instalação, [veja os modelos mais vendidos aqui](/#top-produtos) para comparar preço e disponibilidade. Se a prioridade for compra mais racional, vale seguir também para o [guia de referência em fogão 5 bocas](/melhor-fogao-5-bocas).
 
 ## Onde conferir preços
 

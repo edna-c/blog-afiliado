@@ -19,13 +19,13 @@ Durante muito tempo, o fogão 4 bocas foi o padrão mais natural das cozinhas br
 
 Mas essa leitura nem sempre combina com a vida real.
 
-Em apartamento, em cozinha pequena e até para casal que cozinha com frequência normal, o fogão 4 bocas continua sendo uma escolha muito coerente. Em vez de pensar nele como "simples demais", faz mais sentido enxergar esse formato como uma decisão de equilíbrio: ocupa menos, organiza melhor o ambiente e costuma atender bem a rotina comum.
+Em apartamento, em cozinha pequena e até para casal que cozinha com frequência normal, o modelo de quatro bocas continua sendo uma escolha muito coerente. Em vez de pensar nele como "simples demais", faz mais sentido enxergar essa configuração como uma decisão de equilíbrio: ocupa menos, organiza melhor o ambiente e costuma atender bem a rotina comum.
 
 ---
 
 ## Por que ainda existe tanta dúvida
 
-A dúvida em torno do fogão 4 bocas geralmente nasce de uma comparação emocional: a pessoa vê cozinhas grandes, projetos premium ou anúncios muito chamativos e começa a sentir que precisa de algo maior para fazer uma compra boa.
+A dúvida em torno desse formato geralmente nasce de uma comparação emocional: a pessoa vê cozinhas grandes, projetos premium ou anúncios muito chamativos e começa a sentir que precisa de algo maior para fazer uma compra boa.
 
 Só que compra boa não é a mais chamativa. Compra boa é a que combina com:
 
@@ -90,7 +90,7 @@ Esse detalhe pesa muito quando a cozinha é integrada, planejada ou simplesmente
 
 ## Ele ainda pode ser bonito e atual
 
-Existe uma ideia antiga de que fogão 4 bocas teria sempre aparência básica. Hoje isso já não representa bem o mercado.
+Existe uma ideia antiga de que o formato de quatro bocas teria sempre aparência básica. Hoje isso já não representa bem o mercado.
 
 Muitos modelos atuais combinam:
 
@@ -104,7 +104,7 @@ Se o acabamento também pesa na sua decisão, o texto sobre [fogão com mesa de 
 
 ## Quando ele compensa mais
 
-Em geral, o fogão 4 bocas compensa bastante para quem:
+Em geral, essa opção compensa bastante para quem:
 
 - mora em apartamento;
 - cozinha para uma ou duas pessoas na maior parte do tempo;
@@ -118,7 +118,7 @@ Esse é o ponto central da decisão: ele não compensa só porque é menor. Ele 
 
 ## Quando talvez não seja a melhor escolha
 
-O fogão 4 bocas pode perder força quando a rotina foge bastante do uso comum.
+O formato de quatro bocas pode perder força quando a rotina foge bastante do uso comum.
 
 Por exemplo:
 
@@ -150,7 +150,7 @@ Muita compra ruim nasce da vontade de "não errar para menos".
 
 Só que, em cozinha, exagerar também pode ser errar.
 
-O fogão 4 bocas ainda vale a pena justamente porque ele continua sendo suficiente, confortável e coerente para muitas casas reais. Especialmente em apartamento, casal e cozinha pequena, ele costuma representar mais equilíbrio do que limitação.
+O fogão 4 bocas ainda vale a pena justamente porque continua sendo suficiente, confortável e coerente para muitas casas reais. Especialmente em apartamento, casal e cozinha pequena, costuma representar mais equilíbrio do que limitação.
 
 Ele não precisa provar nada para ser uma boa compra. Ele só precisa encaixar bem na vida que você realmente leva.
 
@@ -162,4 +162,4 @@ O fogão 4 bocas continua valendo muito a pena em 2026, especialmente para quem 
 
 Mais do que uma escolha “menor”, ele pode ser a escolha mais inteligente quando espaço, rotina e conforto visual importam de verdade.
 
-Em muitas casas, ainda é ele que entrega o melhor ponto de equilíbrio entre praticidade, proporção e bem-estar no ambiente.
+Em muitas casas, ainda é essa configuração que entrega o melhor ponto de equilíbrio entre praticidade, proporção e bem-estar no ambiente.
