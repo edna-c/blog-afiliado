@@ -11,6 +11,7 @@ import { getBlogThumbnailAsset } from '../../data/blogThumbnailAssets';
 import { getImage, Picture } from 'astro:assets';
 import mesaVidroArticleHero from '../../assets/images/blog/reviews/review-fogao-com-mesa-de-vidro-article-hero.png';
 import embutirPisoArticleHero from '../../assets/images/blog/guias/guia-fogao-embutir-ou-de-piso-article-hero.png';
+import reduzEspacoArticleHero from '../../assets/images/blog/guias/fogao-5-bocas-reduz-espaco-cozinha-article-hero.webp';
 import { findEntry, type EditorialEntry } from '../../data/editorialContent';
 import { BLOG_ARTICLE_HERO, picturePropsFrom } from '../../data/editorialImageSpecs';
 
@@ -37,6 +38,13 @@ const articleHeroes: Record<string, ArticleHeroEntry> = {
 		objectPosition: 'center',
 		caption:
 			'À esquerda, fogão de piso; à direita, fogão embutido na bancada — o mesmo tipo de produto em formatos de instalação diferentes.',
+	},
+	'fogao-5-bocas-reduz-espaco-cozinha': {
+		src: reduzEspacoArticleHero,
+		alt: 'Fogão a gás de cinco bocas em inox integrado à bancada de pedra escura, cozinha moderna com iluminação quente e vista noturna da cidade ao fundo.',
+		objectPosition: 'center',
+		caption:
+			'Com layout e iluminação equilibrados, um fogão 5 bocas pode integrar-se à cozinha sem parecer desproporcional.',
 	},
 };
 
@@ -69,6 +77,10 @@ const editorialPairings: Record<string, string[]> = {
 		'/comparativo-fogao-4-vs-5-bocas',
 	],
 	'fogao-4-bocas-ainda-vale-a-pena': [
+		'/melhor-fogao-5-bocas',
+		'/comparativo-fogao-4-vs-5-bocas',
+	],
+	'fogao-5-bocas-reduz-espaco-cozinha': [
 		'/melhor-fogao-5-bocas',
 		'/comparativo-fogao-4-vs-5-bocas',
 	],
