@@ -10,7 +10,7 @@ faq:
   - question: 'Qual a largura média de um fogão 5 bocas?'
     answer: 'A maioria dos modelos possui largura entre 75 cm e 80 cm. A profundidade costuma ficar entre 60 cm e 70 cm, com altura em torno de 90 cm.'
   - question: 'Cooktop deixa a cozinha mais espaçosa?'
-    answer: 'Visualmente, sim. O cooktop costuma criar sensação de continuidade na bancada e menos peso visual do que um fogão tradicional com forno integrado.'
+    answer: 'Visualmente, sim. O cooktop costuma criar sensação de continuidade na bancada e menos peso visual do que um fogão de embutir com forno integrado.'
   - question: 'Fogão 4 ou 5 bocas para cozinha pequena?'
     answer: 'Depende da rotina. Quem cozinha bastante e usa várias panelas ao mesmo tempo costuma aproveitar melhor um fogão 5 bocas compacto; quem cozinha de forma mais simples pode avaliar o 4 bocas.'
   - question: 'Qual a distância ideal entre fogão e pia?'
@@ -103,22 +103,22 @@ Outro ponto importante é respeitar **áreas mínimas de circulação** entre m�
 
 Se a dúvida também envolver o tipo de instalação, o guia sobre [fogão de embutir ou de piso](/blog/guia-fogao-embutir-ou-de-piso/) mostra como o formato do aparelho muda a leitura do ambiente.
 
-## Cooktop ou fogão 5 bocas: qual deixa a cozinha mais leve visualmente?
+## Cooktop ou fogão de embutir: qual deixa a cozinha mais leve visualmente?
 
-Essa comparação aparece bastante nas buscas atuais porque muita gente tenta equilibrar estética e funcionalidade.
+Essa comparação aparece bastante nas buscas atuais porque muita gente tenta equilibrar estética, funcionalidade e tipo de instalação.
 
-![Cooktop embutido à esquerda e fogão de piso à direita na mesma cozinha escura](/images/blog/fogao-5-bocas-reduz-espaco-cozinha/corpo-comparativo-cooktop-fogao-piso.webp)
+![Cooktop à esquerda e fogão de embutir à direita na mesma cozinha escura](/images/blog/fogao-5-bocas-reduz-espaco-cozinha/corpo-comparativo-cooktop-fogao-piso.webp)
 
-*À esquerda, cooktop na bancada; à direita, fogão de piso com forno — o mesmo ambiente, com leitura de espaço diferente.*
+*À esquerda, cooktop na bancada; à direita, fogão de embutir com forno — o mesmo ambiente, com leitura de espaço diferente.*
 
 O **cooktop** costuma transmitir sensação de espaço maior porque ocupa apenas a bancada e cria uma linha visual mais limpa.
 
-Já o **fogão tradicional** possui:
+Já o **fogão de embutir** reúne cooktop e forno num bloco integrado ao móvel. Por isso costuma ter:
 
 - forno integrado;
-- laterais aparentes;
-- estrutura completa;
-- presença visual maior.
+- encaixe no nicho da cozinha planejada;
+- presença visual mais forte que o cooktop isolado;
+- leitura de cozinha mais “fechada” e estruturada.
 
 Na prática, a escolha depende muito mais do estilo da cozinha e da rotina da casa do que apenas da estética.
 
@@ -138,20 +138,21 @@ Na prática, a escolha depende muito mais do estilo da cozinha e da rotina da ca
 - forno separado;
 - custo geralmente maior.
 
-### Fogão 5 bocas tradicional
+### Fogão de embutir
 
 **Pontos positivos**
 
-- instalação simples;
-- forno integrado;
-- praticidade;
-- excelente custo-benefício.
+- forno integrado no mesmo conjunto;
+- integração com marcenaria e cozinha planejada;
+- visual alinhado e mais premium;
+- praticidade sem precisar de forno separado.
 
 **Pontos negativos**
 
-- ocupa mais volume visual;
-- exige mais espaço lateral;
-- alguns modelos são robustos demais para cozinhas pequenas.
+- exige nicho, medidas e projeto prévio;
+- instalação e obra costumam sair mais caras;
+- presença visual maior que o cooktop na bancada;
+- troca futura pode depender do encaixe do nicho.
 
 O ideal é analisar não apenas o tamanho da cozinha, mas também:
 
