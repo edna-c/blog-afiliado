@@ -249,9 +249,9 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 		}
 		<div
 			class:list={[
-				'prose prose-invert prose-lg max-w-none prose-headings:font-display prose-a:text-pop prose-a:underline prose-a:decoration-pop/50 prose-a:decoration-2 prose-a:underline-offset-[0.2em] hover:prose-a:text-accent-hover hover:prose-a:decoration-pop',
-				'prose-p:leading-relaxed prose-li:marker:text-pop/80',
-				'mt-10 sm:mt-12',
+				'blog-prose prose prose-invert prose-lg max-w-none prose-headings:font-display prose-a:text-pop prose-a:underline prose-a:decoration-pop/50 prose-a:decoration-2 prose-a:underline-offset-[0.2em] hover:prose-a:text-accent-hover hover:prose-a:decoration-pop',
+				'prose-p:leading-[1.72] prose-li:marker:text-pop/80 prose-strong:text-on-ink-body',
+				'mt-11 sm:mt-[3.25rem]',
 			]}
 		>
 			<Content />
@@ -284,15 +284,15 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 		</p>
 		{
 			faq?.length ? (
-				<section class="mt-14 border-t border-white/10 pt-12" aria-labelledby="faq-heading">
+				<section class="mt-16 border-t border-white/10 pt-[3.25rem]" aria-labelledby="faq-heading">
 					<h2 id="faq-heading" class="font-display text-2xl font-bold tracking-tight text-on-ink-body">
 						Perguntas frequentes
 					</h2>
-					<dl class="mt-8 space-y-8">
+					<dl class="blog-faq mt-9">
 						{faq.map((item) => (
-							<div>
-								<dt class="font-semibold text-on-ink-body">{item.question}</dt>
-								<dd class="mt-2 text-base leading-relaxed text-on-ink-muted">{item.answer}</dd>
+							<div class="blog-faq-item">
+								<dt>{item.question}</dt>
+								<dd class="text-base leading-[1.7] text-on-ink-muted">{item.answer}</dd>
 							</div>
 						))}
 					</dl>

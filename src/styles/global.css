@@ -200,6 +200,144 @@
 	.table-premium tbody th[scope='row'] {
 		@apply px-4 py-3.5 align-top text-on-ink-body sm:px-5 sm:py-4;
 	}
+
+	/**
+	 * Blog — corpo do artigo: ritmo editorial, respiro e imagens cinematográficas.
+	 * Escopo `.blog-prose` para não alterar outras páginas com `prose`.
+	 */
+	.blog-prose.prose {
+		--blog-prose-gap: 1.35rem;
+	}
+
+	.blog-prose.prose :where(p) {
+		margin-top: 0;
+		margin-bottom: var(--blog-prose-gap);
+	}
+
+	.blog-prose.prose :where(p + p) {
+		margin-top: 0;
+	}
+
+	.blog-prose :where(h2) {
+		margin-bottom: 1.15rem;
+		letter-spacing: -0.02em;
+	}
+
+	.blog-prose :where(h2:not(:first-child)) {
+		margin-top: 3.35rem;
+		padding-top: 0.65rem;
+	}
+
+	.blog-prose :where(h3) {
+		margin-top: 2rem;
+		margin-bottom: 0.85rem;
+	}
+
+	.blog-prose.prose :where(ul, ol) {
+		margin-top: 1.15rem;
+		margin-bottom: 1.65rem;
+	}
+
+	.blog-prose.prose :where(li) {
+		margin-top: 0.4rem;
+		margin-bottom: 0.4rem;
+	}
+
+	.blog-prose.prose :where(ul + p, ol + p, p + ul, p + ol) {
+		margin-top: 0.15rem;
+	}
+
+	.blog-prose.prose :where(img) {
+		display: block;
+		width: 100%;
+		max-height: min(26rem, 72vh);
+		margin-top: 2.35rem;
+		margin-bottom: 0.85rem;
+		border-radius: 0.875rem;
+		object-fit: cover;
+		object-position: center;
+		box-shadow:
+			0 14px 40px -22px rgba(0, 0, 0, 0.62),
+			inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+	}
+
+	/* Legenda editorial imediatamente após a imagem (parágrafo só com ênfase) */
+	.blog-prose.prose :where(p:has(> img) + p > em:only-child) {
+		display: block;
+		margin-top: -0.15rem;
+		margin-bottom: 2.35rem;
+		text-align: center;
+		font-size: 0.8125rem;
+		line-height: 1.55;
+		font-style: normal;
+		color: color-mix(in srgb, var(--color-on-ink-muted) 82%, transparent);
+	}
+
+	.blog-prose.prose :where(p:has(> img) + p > em:only-child)::before {
+		content: none;
+	}
+
+	.blog-prose .editorial-observation {
+		margin: 2.65rem 0;
+		padding: 1.35rem 1.15rem 1.35rem 1.35rem;
+		border-left: 2px solid rgba(223, 255, 31, 0.28);
+		background: linear-gradient(
+			105deg,
+			rgba(255, 255, 255, 0.03) 0%,
+			rgba(15, 17, 23, 0.55) 48%,
+			rgba(15, 17, 23, 0.35) 100%
+		);
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+	}
+
+	.blog-prose .editorial-observation p {
+		margin: 0;
+		font-family: var(--font-display);
+		font-size: 1.0625rem;
+		line-height: 1.62;
+		font-weight: 500;
+		letter-spacing: -0.01em;
+		color: color-mix(in srgb, var(--color-on-ink-body) 92%, var(--color-on-ink-muted));
+	}
+
+	.blog-prose .editorial-pause {
+		margin: 2.25rem auto;
+		width: min(7rem, 42%);
+		height: 1px;
+		border: 0;
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(255, 255, 255, 0.14) 50%,
+			transparent 100%
+		);
+	}
+
+	/** FAQ do artigo — hierarquia e varredura sem cards pesados */
+	.blog-faq dt {
+		font-family: var(--font-display);
+		font-size: 1.0625rem;
+		font-weight: 600;
+		letter-spacing: -0.015em;
+		line-height: 1.4;
+	}
+
+	.blog-faq dd {
+		margin-top: 0.65rem;
+		padding-left: 0.15rem;
+		max-width: 62ch;
+	}
+
+	.blog-faq-item + .blog-faq-item {
+		margin-top: 0;
+		padding-top: 1.65rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.07);
+	}
+
+	.blog-faq-item:first-child {
+		padding-top: 0;
+		border-top: 0;
+	}
 }
 
 @layer utilities {

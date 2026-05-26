@@ -40,7 +40,7 @@ Isso costuma acontecer em:
 - ambientes escuros;
 - cozinhas com excesso de armários ou objetos.
 
-![Fogão de cinco bocas em inox numa cozinha estreita em corredor, com pia à esquerda e circulação ao fundo](/images/blog/fogao-5-bocas-reduz-espaco-cozinha/corpo-cozinha-corredor-fogao-5-bocas.webp)
+![Fogão de cinco bocas em inox numa cozinha estreita em corredor, com pia à esquerda e circulação ao fundo](/images/blog/fogao-5-bocas-reduz-espaco-cozinha/corpo-cozinha-corredor-fogao-5-bocas-estreita.webp)
 
 *Cozinha em corredor com fogão 5 bocas — o layout e a circulação pesam tanto quanto a largura do eletrodoméstico.*
 
@@ -59,6 +59,10 @@ A sensação de aperto aumenta ainda mais quando a cozinha possui:
 - pouca entrada de luz natural.
 
 Por isso, antes da compra, vale analisar o ambiente como um todo — e não apenas as medidas do eletrodoméstico.
+
+<aside class="editorial-observation not-prose" aria-label="Observação editorial">
+<p>Em cozinhas compactas, a sensação de espaço muitas vezes depende mais da circulação do que da metragem total.</p>
+</aside>
 
 ## Existem fogões 5 bocas compactos?
 
@@ -103,6 +107,8 @@ Outro ponto importante é respeitar **áreas mínimas de circulação** entre m�
 
 Se a dúvida também envolver o tipo de instalação, o guia sobre [fogão de embutir ou de piso](/blog/guia-fogao-embutir-ou-de-piso/) mostra como o formato do aparelho muda a leitura do ambiente.
 
+<hr class="editorial-pause not-prose" role="presentation" />
+
 ## Cooktop ou fogão de embutir: qual deixa a cozinha mais leve visualmente?
 
 Essa comparação aparece bastante nas buscas atuais porque muita gente tenta equilibrar estética, funcionalidade e tipo de instalação.
@@ -121,6 +127,10 @@ Já o **fogão de embutir** reúne cooktop e forno num bloco integrado ao móvel
 - leitura de cozinha mais “fechada” e estruturada.
 
 Na prática, a escolha depende muito mais do estilo da cozinha e da rotina da casa do que apenas da estética.
+
+<aside class="editorial-observation not-prose" aria-label="Observação editorial">
+<p>Na comparação entre cooktop e embutir, o que mais altera a sensação de amplitude costuma ser a continuidade da bancada — não apenas o número de bocas.</p>
+</aside>
 
 ### Cooktop
 
@@ -256,6 +266,8 @@ O segredo está em equilibrar:
 - rotina da casa.
 
 Quem ainda hesita entre tamanhos pode comparar com o texto [quando o fogão 4 bocas ainda vale a pena](/blog/fogao-4-bocas-ainda-vale-a-pena/) antes de fechar o pedido.
+
+<hr class="editorial-pause not-prose" role="presentation" />
 
 ## Conclusão
 
