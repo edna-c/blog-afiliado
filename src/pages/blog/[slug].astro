@@ -12,6 +12,7 @@ import { getImage, Picture } from 'astro:assets';
 import mesaVidroArticleHero from '../../assets/images/blog/reviews/review-fogao-com-mesa-de-vidro-article-hero.png';
 import embutirPisoArticleHero from '../../assets/images/blog/guias/guia-fogao-embutir-ou-de-piso-article-hero.png';
 import reduzEspacoArticleHero from '../../assets/images/blog/guias/fogao-5-bocas-reduz-espaco-cozinha-article-hero.webp';
+import fogao4BocasArticleHero from '../../assets/images/blog/guias/fogao-4-bocas-ainda-vale-a-pena-article-hero.webp';
 import { findEntry, type EditorialEntry } from '../../data/editorialContent';
 import { BLOG_ARTICLE_HERO, picturePropsFrom } from '../../data/editorialImageSpecs';
 
@@ -45,6 +46,13 @@ const articleHeroes: Record<string, ArticleHeroEntry> = {
 		objectPosition: 'center',
 		caption:
 			'Com layout e iluminação equilibrados, um fogão 5 bocas pode integrar-se à cozinha sem parecer desproporcional.',
+	},
+	'fogao-4-bocas-ainda-vale-a-pena': {
+		src: fogao4BocasArticleHero,
+		alt: 'Fogão em inox na bancada de granito escuro, cozinha compacta integrada à sala com iluminação quente e vista noturna da cidade ao fundo.',
+		objectPosition: 'center',
+		caption:
+			'Cozinha compacta bem iluminada — o tamanho do fogão precisa combinar com o espaço e a rotina, não com o apelo do anúncio.',
 	},
 };
 

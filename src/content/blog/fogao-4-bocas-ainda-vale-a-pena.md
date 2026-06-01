@@ -25,6 +25,10 @@ Em apartamento, em cozinha pequena e até para casal que cozinha com frequência
 
 ## Por que ainda existe tanta dúvida
 
+![Fogão em inox na bancada de granito escuro, cozinha compacta integrada à sala com iluminação quente e vista noturna da cidade ao fundo](/images/blog/fogao-4-bocas-ainda-vale-a-pena/corpo-fogao-4-bocas-cozinha-compacta-moderna.webp)
+
+*Cozinha compacta bem iluminada — o tamanho do fogão precisa combinar com o espaço e a rotina, não com o apelo do anúncio.*
+
 A dúvida em torno desse formato geralmente nasce de uma comparação emocional: a pessoa vê cozinhas grandes, projetos premium ou anúncios muito chamativos e começa a sentir que precisa de algo maior para fazer uma compra boa.
 
 Só que compra boa não é a mais chamativa. Compra boa é a que combina com:
