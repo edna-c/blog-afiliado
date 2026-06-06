@@ -211,6 +211,18 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 		teaser: 'visual clean, com cuidados de manutenção que importam',
 		weight: 6,
 	},
+	{
+		href: '/blog/fogao-mesa-de-vidro-seguro/',
+		title: 'Fogão com mesa de vidro é seguro?',
+		description: 'Riscos reais, mitos, vantagens e quando vale a pena investir nesse acabamento.',
+		kind: 'Blog',
+		flow: 1,
+		editorialLabel: 'Guia · Segurança',
+		topics: ['cozinha-moderna', 'manutencao', 'mesa-vidro'],
+		anchorText: 'guia sobre segurança do fogão com mesa de vidro',
+		teaser: 'mitos, riscos reais e cuidados antes da compra',
+		weight: 7,
+	},
 ];
 
 /** Mapa rápido por path canônico. */

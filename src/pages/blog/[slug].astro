@@ -10,6 +10,7 @@ import { PRODUCT_IMAGE_REVIEW } from '../../data/productImages';
 import { getBlogThumbnailAsset } from '../../data/blogThumbnailAssets';
 import { getImage, Picture } from 'astro:assets';
 import mesaVidroArticleHero from '../../assets/images/blog/reviews/review-fogao-com-mesa-de-vidro-article-hero.png';
+import mesaVidroSeguroArticleHero from '../../assets/images/blog/reviews/fogao-mesa-de-vidro-seguro-article-hero.png';
 import embutirPisoArticleHero from '../../assets/images/blog/guias/guia-fogao-embutir-ou-de-piso-article-hero.png';
 import reduzEspacoArticleHero from '../../assets/images/blog/guias/fogao-5-bocas-reduz-espaco-cozinha-article-hero.webp';
 import fogao4BocasArticleHero from '../../assets/images/blog/guias/fogao-4-bocas-ainda-vale-a-pena-article-hero.webp';
@@ -32,6 +33,13 @@ const articleHeroes: Record<string, ArticleHeroEntry> = {
 		src: mesaVidroArticleHero,
 		alt: 'Cooktop de quatro bocas com mesa de vidro temperado embutido em bancada escura, cozinha moderna com iluminação quente sob a prateleira.',
 		objectPosition: 'mesa-vidro',
+	},
+	'fogao-mesa-de-vidro-seguro': {
+		src: mesaVidroSeguroArticleHero,
+		alt: 'Fogão a gás de cinco bocas com mesa de vidro temperado preto e forno em inox, embutido em bancada de pedra bege com iluminação quente sob os armários.',
+		objectPosition: 'center',
+		caption:
+			'Mesa de vidro temperado em cozinha planejada — o acabamento liso valoriza o visual e facilita a limpeza no uso diário.',
 	},
 	'guia-fogao-embutir-ou-de-piso': {
 		src: embutirPisoArticleHero,
@@ -79,6 +87,10 @@ const editorialPairings: Record<string, string[]> = {
 	'review-fogao-com-mesa-de-vidro': [
 		'/brastemp-bfs5ncr-vale-a-pena',
 		'/review-fogao-5-bocas-electrolux',
+	],
+	'fogao-mesa-de-vidro-seguro': [
+		'/blog/review-fogao-com-mesa-de-vidro',
+		'/brastemp-bfs5ncr-vale-a-pena',
 	],
 	'guia-fogao-embutir-ou-de-piso': [
 		'/brastemp-bfs5ncr-vale-a-pena',
