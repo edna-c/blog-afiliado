@@ -201,4 +201,4 @@ Depois de definir o tipo de instalação, [veja os modelos mais vendidos aqui](/
 
 Use o link abaixo para validar preço e disponibilidade no momento da compra. Na loja, use os filtros para **cooktop** ou **kit para embutir**, se for o seu perfil — o link abre na vitrine parceira (fogão 5 bocas como referência de linha e preço).
 
-- [Conferir preços na loja parceira (Mercado Livre)](https://www.mercadolivre.com.br/fogao-5-bocas-brastemp-bfs5ncr/up/MLBU1757362978?matt_tool=38524122)
+- [Conferir preços na loja parceira (Mercado Livre)](https://meli.la/2BvbH5s)

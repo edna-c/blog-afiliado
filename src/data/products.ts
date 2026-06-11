@@ -10,7 +10,7 @@ export type ProdutoAfiliado = {
 
 export const produtos = {
 	brastempBFS5NCR: {
-		ml: 'https://www.mercadolivre.com.br/fogao-5-bocas-brastemp-bfs5ncr/up/MLBU1757362978?matt_tool=38524122',
+		ml: 'https://meli.la/2BvbH5s',
 		shopee: 'https://s.shopee.com.br/2qQVdcWHwK',
 	},
 	consulCFS5NAB: {
