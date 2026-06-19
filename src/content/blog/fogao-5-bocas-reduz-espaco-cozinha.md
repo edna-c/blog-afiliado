@@ -76,7 +76,7 @@ Alguns fabricantes desenvolveram versões slim com:
 - distribuição mais eficiente dos queimadores;
 - estrutura visualmente mais leve.
 
-Os modelos com **mesa de vidro** costumam transmitir sensação de espaço maior porque refletem melhor a iluminação do ambiente e criam um visual mais limpo. Se o acabamento também pesa na decisão, o artigo sobre [fogão com mesa de vidro](/blog/review-fogao-com-mesa-de-vidro/) ajuda a ver quando esse visual compensa no dia a dia.
+Os modelos com **mesa de vidro** costumam transmitir sensação de espaço maior porque refletem melhor a iluminação do ambiente e criam um visual mais limpo. Se o acabamento também pesa na decisão, o [comparativo entre mesa de vidro e inox](/blog/fogao-mesa-de-vidro-ou-inox/) ajuda a decidir qual tampo faz mais sentido no dia a dia.
 
 Já certos modelos em **inox escovado** ajudam a suavizar a presença visual do fogão dentro da cozinha planejada.
 

@@ -14,6 +14,7 @@ import mesaVidroSeguroArticleHero from '../../assets/images/blog/reviews/fogao-m
 import embutirPisoArticleHero from '../../assets/images/blog/guias/guia-fogao-embutir-ou-de-piso-article-hero.png';
 import reduzEspacoArticleHero from '../../assets/images/blog/guias/fogao-5-bocas-reduz-espaco-cozinha-article-hero.webp';
 import fogao4BocasArticleHero from '../../assets/images/blog/guias/fogao-4-bocas-ainda-vale-a-pena-article-hero.webp';
+import vidroOuInoxArticleHero from '../../assets/images/blog/comparativos/fogao-mesa-de-vidro-ou-inox-article-hero.webp';
 import { findEntry, type EditorialEntry } from '../../data/editorialContent';
 import { BLOG_ARTICLE_HERO, picturePropsFrom } from '../../data/editorialImageSpecs';
 
@@ -62,6 +63,13 @@ const articleHeroes: Record<string, ArticleHeroEntry> = {
 		caption:
 			'Cozinha compacta bem iluminada — o tamanho do fogão precisa combinar com o espaço e a rotina, não com o apelo do anúncio.',
 	},
+	'fogao-mesa-de-vidro-ou-inox': {
+		src: vidroOuInoxArticleHero,
+		alt: 'Comparativo entre fogão com mesa de vidro temperado preto, à esquerda, e fogão com mesa de inox, à direita, em cozinha moderna com bancada clara e iluminação natural.',
+		objectPosition: 'center',
+		caption:
+			'À esquerda, mesa de vidro; à direita, mesa inox — o mesmo modelo 5 bocas mostra como cada acabamento muda o visual da cozinha.',
+	},
 };
 
 export async function getStaticPaths() {
@@ -84,23 +92,32 @@ const articleHero = articleHeroes[post.id];
  *  - artigo guia 5 bocas                    → análise Brastemp + comparativo
  */
 const editorialPairings: Record<string, string[]> = {
+	'fogao-mesa-de-vidro-ou-inox': [
+		'/blog/review-fogao-com-mesa-de-vidro',
+		'/blog/fogao-mesa-de-vidro-seguro',
+	],
 	'review-fogao-com-mesa-de-vidro': [
+		'/blog/fogao-mesa-de-vidro-ou-inox',
+		'/blog/fogao-mesa-de-vidro-seguro',
 		'/brastemp-bfs5ncr-vale-a-pena',
-		'/review-fogao-5-bocas-electrolux',
 	],
 	'fogao-mesa-de-vidro-seguro': [
+		'/blog/fogao-mesa-de-vidro-ou-inox',
 		'/blog/review-fogao-com-mesa-de-vidro',
 		'/brastemp-bfs5ncr-vale-a-pena',
 	],
 	'guia-fogao-embutir-ou-de-piso': [
-		'/brastemp-bfs5ncr-vale-a-pena',
+		'/blog/fogao-mesa-de-vidro-ou-inox',
 		'/comparativo-fogao-4-vs-5-bocas',
+		'/brastemp-bfs5ncr-vale-a-pena',
 	],
 	'fogao-4-bocas-ainda-vale-a-pena': [
+		'/blog/fogao-mesa-de-vidro-ou-inox',
 		'/melhor-fogao-5-bocas',
 		'/comparativo-fogao-4-vs-5-bocas',
 	],
 	'fogao-5-bocas-reduz-espaco-cozinha': [
+		'/blog/fogao-mesa-de-vidro-ou-inox',
 		'/melhor-fogao-5-bocas',
 		'/comparativo-fogao-4-vs-5-bocas',
 	],

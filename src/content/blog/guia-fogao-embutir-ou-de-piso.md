@@ -42,7 +42,7 @@ Na prática, quem opta pela instalação embutida normalmente está comprando ta
 - bom encaixe em projetos premium ou contemporâneos;
 - pode valorizar a estética do ambiente quando o nicho foi bem planejado.
 
-Em cozinhas modernas, esse tipo de instalação costuma pesar bastante na percepção final do ambiente. Se o seu foco também passa por acabamento, vale ler depois o artigo sobre [fogão com mesa de vidro](/blog/review-fogao-com-mesa-de-vidro/), porque o visual do tampo também muda bastante o resultado.
+Em cozinhas modernas, esse tipo de instalação costuma pesar bastante na percepção final do ambiente. Se o seu foco também passa por acabamento, comece pelo [comparativo entre fogão com mesa de vidro e inox](/blog/fogao-mesa-de-vidro-ou-inox/) — e, se quiser aprofundar só o vidro, leia também [fogão com mesa de vidro vale a pena?](/blog/review-fogao-com-mesa-de-vidro/).
 
 ## Desvantagens do fogão de embutir
 

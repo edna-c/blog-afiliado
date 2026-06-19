@@ -104,7 +104,7 @@ Muitos modelos atuais combinam:
 - forno bem resolvido;
 - proposta mais alinhada com cozinhas contemporâneas.
 
-Se o acabamento também pesa na sua decisão, o texto sobre [fogão com mesa de vidro](/blog/review-fogao-com-mesa-de-vidro/) pode ajudar, porque ele mostra quando esse visual realmente compensa no dia a dia.
+Se o acabamento também pesa na sua decisão, o [comparativo entre mesa de vidro e inox](/blog/fogao-mesa-de-vidro-ou-inox/) ajuda a ver qual tampo combina com sua rotina antes de olhar modelos específicos.
 
 ## Quando ele compensa mais
 

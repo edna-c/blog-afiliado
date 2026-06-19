@@ -26,7 +26,7 @@ A verdade é que boa parte do receio está relacionada a informações incomplet
 
 Mas isso não significa que qualquer modelo seja igual ou que não existam cuidados importantes.
 
-Neste guia do Casa Prática, vamos esclarecer os riscos reais, separar mitos de fatos e mostrar exatamente quando um fogão com mesa de vidro vale a pena para sua casa. Se a dúvida também envolver o encaixe do aparelho no projeto, vale ler o guia sobre [fogão de embutir ou de piso](/blog/guia-fogao-embutir-ou-de-piso/). Para o lado estético e de manutenção, o artigo [fogão com mesa de vidro vale a pena?](/blog/review-fogao-com-mesa-de-vidro/) complementa bem esta leitura.
+Neste guia do Casa Prática, vamos esclarecer os riscos reais, separar mitos de fatos e mostrar exatamente quando um fogão com mesa de vidro vale a pena para sua casa. Se você ainda está entre **vidro e inox**, o [comparativo entre os dois acabamentos](/blog/fogao-mesa-de-vidro-ou-inox/) ajuda a enquadrar a decisão antes de mergulhar na segurança. Se a dúvida também envolver o encaixe do aparelho no projeto, vale ler o guia sobre [fogão de embutir ou de piso](/blog/guia-fogao-embutir-ou-de-piso/). Para o lado estético e de manutenção, o artigo [fogão com mesa de vidro vale a pena?](/blog/review-fogao-com-mesa-de-vidro/) complementa bem esta leitura.
 
 ---
 
@@ -254,4 +254,4 @@ A maior parte do medo vem de mitos amplificados na internet, não de riscos cons
 
 Se o seu perfil combina com cozinha moderna, limpeza mais simples e visual sofisticado, esse acabamento pode ser uma escolha muito acertada. Se a prioridade é robustez acima de tudo, vale comparar outras opções antes de fechar a compra.
 
-Em resumo: a mesa de vidro não é frágil por natureza — mas exige escolha consciente e uso responsável, como qualquer eletrodoméstico que você quer manter bonito e funcional por anos.
+Em resumo: a mesa de vidro não é frágil por natureza — mas exige escolha consciente e uso responsável, como qualquer eletrodoméstico que você quer manter bonito e funcional por anos. Para fechar a escolha entre acabamentos, volte ao [comparativo fogão com mesa de vidro ou inox](/blog/fogao-mesa-de-vidro-ou-inox/).

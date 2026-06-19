@@ -9,7 +9,7 @@ O fogão com mesa de vidro ganhou espaço porque conversa muito bem com cozinhas
 
 Mas a escolha não deve ser feita apenas pelo visual.
 
-Antes de decidir, vale entender como esse acabamento se comporta no uso diário, quais cuidados ele exige e em que tipo de cozinha ele costuma funcionar melhor.
+Antes de decidir, vale entender como esse acabamento se comporta no uso diário, quais cuidados ele exige e em que tipo de cozinha ele costuma funcionar melhor. Se a dúvida for **fogão inox ou mesa de vidro**, comece pelo [comparativo completo entre os dois acabamentos](/blog/fogao-mesa-de-vidro-ou-inox/) — este artigo aprofunda só o lado do vidro.
 
 ## Por que a mesa de vidro chama atenção
 
@@ -100,4 +100,4 @@ O fogão com mesa de vidro pode valer muito a pena, principalmente quando a prio
 
 Mas ele faz mais sentido quando o acabamento combina com a rotina da casa e com o cuidado esperado no dia a dia.
 
-Em resumo: não é uma escolha melhor só por ser mais bonita, mas pode ser uma escolha bastante acertada quando visual, manutenção e perfil de uso estão alinhados.
+Em resumo: não é uma escolha melhor só por ser mais bonita, mas pode ser uma escolha bastante acertada quando visual, manutenção e perfil de uso estão alinhados. Para cruzar com o inox antes de fechar a compra, volte ao [comparativo fogão com mesa de vidro ou inox](/blog/fogao-mesa-de-vidro-ou-inox/).
