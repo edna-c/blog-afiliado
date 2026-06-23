@@ -1,5 +1,6 @@
 import type { AstroRasterImport } from '../types/astro-image';
 import { BLOG_THUMBNAIL } from './editorialImageSpecs';
+import fogaoVidroOuInoxBlogPremium from '../assets/images/blog/comparativos/fogao-mesa-de-vidro-ou-inox-blog-premium.webp';
 
 /**
  * Miniaturas do blog — ver `BLOG_THUMBNAIL` em `editorialImageSpecs.ts`
@@ -18,6 +19,15 @@ for (const path of Object.keys(raw)) {
 	if (m?.[1]) {
 		byPostId[m[1]] = raw[path];
 	}
+}
+
+/** Imports explícitos — garantem HMR e build quando o glob não recarrega subpastas novas. */
+const explicitThumbnails: Record<string, AstroRasterImport> = {
+	'fogao-mesa-de-vidro-ou-inox': fogaoVidroOuInoxBlogPremium,
+};
+
+for (const [postId, asset] of Object.entries(explicitThumbnails)) {
+	byPostId[postId] = asset;
 }
 
 export function getBlogThumbnailAsset(postId: string): AstroRasterImport | undefined {
