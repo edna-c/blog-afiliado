@@ -5,23 +5,32 @@ import { primaryNav } from '../data/navigation';
 interface Props {
 	pathname: string;
 	linkBaseClass?: string;
+	underlined?: boolean;
 }
 
-const { pathname, linkBaseClass = '' } = Astro.props;
+const { pathname, linkBaseClass = '', underlined = true } = Astro.props;
+
+const activeClass = 'text-on-ink-body';
+const idleClass = 'text-on-ink-muted hover:text-on-ink-body';
+const decorationClass = underlined
+	? 'underline decoration-1 underline-offset-[0.35em] decoration-transparent hover:decoration-white/30'
+	: '';
+const activeDecoration = underlined ? 'decoration-pop/70' : 'border-b border-pop pb-0.5';
 ---
 
 {
 	primaryNav.map((item) => {
-		const active = isNavActive(pathname, item.href);
+		const active = isNavActive(pathname, item.href, item.activePrefixes);
 		return (
 			<a
 				href={item.href}
 				class:list={[
 					linkBaseClass,
-					'transition',
+					'text-[0.8125rem] font-medium tracking-[0.01em] transition-colors duration-200',
+					decorationClass,
 					active
-						? 'text-pop underline decoration-pop decoration-2 underline-offset-[0.28em]'
-						: 'text-on-ink-body underline decoration-white/35 decoration-1 underline-offset-[0.28em] hover:text-pop hover:decoration-pop',
+						? [activeClass, activeDecoration, linkBaseClass && 'bg-white/[0.04] font-semibold lg:bg-transparent']
+						: idleClass,
 				]}
 				aria-label={item.ariaLabel}
 				aria-current={active ? 'page' : undefined}

@@ -1,0 +1,64 @@
+---
+description: Regras permanentes — arquitetura estável, escopo de tarefas, Blog/Reviews e preservação do projeto
+alwaysApply: true
+---
+
+# Casa Prática Eletro — regras permanentes
+
+Respeitar em **todas** as tarefas futuras.
+
+## 1. Arquitetura estável
+
+A arquitetura é **ESTÁVEL**. Não alterar automaticamente:
+
+- Header, Footer, menu de navegação, homepage
+- Layouts e componentes globais
+- Estrutura do Blog e dos Reviews
+- Rotas, URLs, sitemap, categorias, organização do conteúdo, estrutura de páginas
+
+Alteração estrutural **somente** se o usuário solicitar explicitamente. Nunca melhorias arquiteturais por iniciativa própria.
+
+## 2. Organização oficial
+
+| Área | Conteúdo |
+|------|----------|
+| **Home** | Página inicial |
+| **Blog** | Todo conteúdo informativo: guias, comparativos, dúvidas, tutoriais, educativo, sem monetização direta |
+| **Reviews** | Apenas análises individuais de produto com objetivo de afiliados |
+| **Sobre** / **Contato** | Institucional |
+
+Menu: **Início → Blog → Reviews → Sobre → Contato**.
+
+Não criar novas categorias públicas, menus ou seções. Categorias no frontmatter são **internas** — nunca viram item de menu.
+
+Referência: `docs/site-blueprint.md`.
+
+## 3. Escopo das tarefas
+
+Executar **somente** o solicitado (artigo, revisão, SEO, imagens, links, layout pedido, correções, performance).
+
+Não aproveitar uma tarefa para alterar arquitetura.
+
+## 4. Preservação
+
+Antes de modificar componente global, **confirmar com o usuário**.
+
+## 5. Git e diffs
+
+- Alterar apenas arquivos necessários ao objetivo.
+- Evitar mudanças estruturais desnecessárias.
+- Não criar commits salvo pedido explícito.
+
+## 6. Identidade visual
+
+Não alterar automaticamente: cores, tipografia, espaçamentos, componentes, header, estilo geral. Redesign só se solicitado.
+
+## 7. Em caso de dúvida
+
+**PARE.** Pergunte antes de modificar estrutura. Priorize estabilidade e manutenção.
+
+## Antes de concluir
+
+Apresentar resumo dos arquivos **criados, modificados ou excluídos**.
+
+Nunca alterar componentes globais sem informar previamente quais arquivos serão afetados.

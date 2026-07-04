@@ -1,68 +1,904 @@
 ---
+import Logo from '../assets/logo.png';
+import { getCollection } from 'astro:content';
 import { isNavActive } from '../utils/isNavActive';
-import HeaderPrimaryNavLinks from './HeaderPrimaryNavLinks.astro';
 
 const pathname = Astro.url.pathname;
+const isHome = pathname === '/';
 
-const ctaBase =
-	'rounded-none px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-cta-hover ring-1 ring-white/15';
+/** Menu do header — ordem e itens do layout editorial. Guias aponta ao Blog (conteúdo informativo). */
+const guidePrefixes = ['/como-escolher', '/comparativo', '/melhor-fogao', '/fogao-5-bocas'];
+
+const headerNav = [
+	{ href: '/', label: 'Início', ariaLabel: 'Página inicial Casa Prática Eletro' },
+	{ href: '/blog', label: 'Blog', ariaLabel: 'Blog — conteúdo informativo sobre eletrodomésticos' },
+	{
+		href: '/blog',
+		label: 'Guias',
+		ariaLabel: 'Guias de compra de eletrodomésticos',
+		activePrefixes: guidePrefixes,
+	},
+	{ href: '/sobre', label: 'Sobre', ariaLabel: 'Sobre o Casa Prática Eletro' },
+	{ href: '/contato', label: 'Contato', ariaLabel: 'Página de contato' },
+];
+
+function isHeaderNavActive(item: (typeof headerNav)[number]): boolean {
+	if (item.label === 'Guias') {
+		return isNavActive(pathname, '/__guias__', item.activePrefixes);
+	}
+	if (item.label === 'Blog') {
+		return isNavActive(pathname, '/blog');
+	}
+	return isNavActive(pathname, item.href, item.activePrefixes);
+}
+
+const blogPosts = await getCollection('blog');
+const searchIndex = [
+	{ title: 'Início', url: '/' },
+	{ title: 'Blog', url: '/blog' },
+	{ title: 'Sobre', url: '/sobre' },
+	{ title: 'Contato', url: '/contato' },
+	{ title: 'Melhor fogão 5 bocas', url: '/melhor-fogao-5-bocas' },
+	{ title: 'Como escolher fogão 5 bocas', url: '/como-escolher-fogao-5-bocas' },
+	{ title: 'Comparativo fogão 4 vs 5 bocas', url: '/comparativo-fogao-4-vs-5-bocas' },
+	{ title: 'Fogão 5 bocas custo-benefício', url: '/fogao-5-bocas-custo-beneficio' },
+	...blogPosts.map((post) => ({
+		title: post.data.title,
+		url: `/blog/${post.id}/`,
+	})),
+];
 ---
 
-<header class="sticky top-0 z-50 border-b border-white/10 bg-ink/85 backdrop-blur-xl">
-	<div
-		class="mx-auto flex max-w-7xl flex-col flex-wrap gap-3 px-4 py-5 sm:px-6 md:flex-row md:flex-nowrap md:items-center md:justify-between md:gap-4 lg:px-8"
-	>
-		<div
-			class="flex min-w-0 w-full flex-wrap items-center justify-between gap-x-3 gap-y-2 md:contents md:w-auto md:gap-0"
-		>
-			<a
-				href="/"
-				class="min-w-0 max-w-[min(100%,calc(100%-7rem))] font-display text-[1.3125rem] leading-tight tracking-[-0.022em] sm:text-[1.4375rem] lg:text-[1.5rem] xl:text-[1.5625rem] md:max-w-none md:shrink-0"
-				aria-label="Casa Prática Eletro — página inicial"
-			>
-				<span class="block font-extrabold text-on-ink-body">Casa Prática Eletro</span>
-				<span class="mt-1.5 block text-[11px] font-semibold normal-case tracking-normal text-on-ink-muted">
-					Guia completo para escolher os melhores eletrodomésticos para sua casa
-				</span>
-			</a>
-			<details class="relative z-50 shrink-0 md:hidden">
-				<summary
-					aria-label="Abrir menu de navegação"
-					aria-haspopup="menu"
-					aria-controls="mobile-primary-nav"
-					class="flex cursor-pointer list-none items-center justify-center gap-2 rounded border border-white/15 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-on-ink-muted transition hover:border-pop hover:text-on-ink-body [&::-webkit-details-marker]:hidden"
-				>
-					<span>Menu</span>
-					<span class="text-pop" aria-hidden="true">▾</span>
-				</summary>
-				<div
-					class="absolute right-0 top-full z-50 mt-2 min-w-[13rem] rounded-md border border-white/10 bg-ink p-2 shadow-xl ring-1 ring-white/10"
-				>
-					<nav id="mobile-primary-nav" class="flex flex-col gap-0.5" aria-label="Principal">
-						<HeaderPrimaryNavLinks
-							pathname={pathname}
-							linkBaseClass="block rounded px-3 py-2.5 text-sm font-semibold uppercase tracking-[0.15em] text-on-ink-muted hover:bg-white/5 hover:text-pop"
-						/>
-					</nav>
-				</div>
-			</details>
-			<nav
-				class="hidden items-center gap-8 text-xs font-semibold uppercase tracking-[0.2em] text-on-ink-body md:flex"
-				aria-label="Principal"
-			>
-				<HeaderPrimaryNavLinks pathname={pathname} />
-			</nav>
+<header
+	id="site-header"
+	class:list={['editorial-header sticky top-0 z-50', isHome && 'is-home']}
+>
+	<!-- Barra Superior -->
+	<div class="top-bar" data-header-rail>
+		<div class="top-copy">
+			<span class="top-left">PUBLICAÇÃO EDITORIAL INDEPENDENTE DESDE 2026</span>
+			<span class="site-slogan">Guias, comparativos e reviews para decisões de compra.</span>
 		</div>
-		<a
-			href="/contato"
-			class:list={[
-				ctaBase,
-				'mt-1 flex min-h-[44px] w-full items-center justify-center text-center md:mt-0 md:inline-flex md:w-auto md:shrink-0',
-				isNavActive(pathname, '/contato') ? 'bg-cta-hover ring-2 ring-white/40' : 'bg-cta',
-			]}
-			aria-label="Abrir página de contato para enviar mensagem"
-		>
-			Enviar mensagem
-		</a>
+		<div class="top-line" aria-hidden="true"></div>
+
+		<div class="top-utility">
+			<button
+				type="button"
+				class="utility-btn header-menu-toggle"
+				aria-label="Abrir menu de navegação"
+				aria-expanded="false"
+				aria-controls="mobile-nav-panel"
+				data-header-menu-toggle
+			>
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" data-menu-icon-open>
+					<path d="M4 8h16M4 12h16M4 16h16" stroke-linecap="round" />
+				</svg>
+				<svg class="is-hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" data-menu-icon-close>
+					<path d="M6 6l12 12M18 6L6 18" stroke-linecap="round" />
+				</svg>
+			</button>
+		</div>
+	</div>
+
+	<!-- Cabeçalho Principal: Logo | Menu | Busca -->
+	<div class="header-main">
+		<div class="logo-area">
+			<a href="/" aria-label="Casa Prática Eletro — página inicial">
+				<img
+					src={Logo.src}
+					alt="Casa Prática Eletro"
+					width={Logo.width}
+					height={Logo.height}
+					class="logo"
+					decoding="async"
+					fetchpriority="high"
+				/>
+			</a>
+		</div>
+
+		<nav class="menu" aria-label="Principal">
+			{
+				headerNav.map((item) => {
+					const active = isHeaderNavActive(item);
+					return (
+						<a
+							href={item.href}
+							class:list={[active && 'active']}
+							aria-label={item.ariaLabel}
+							aria-current={active ? 'page' : undefined}
+						>
+							{item.label}
+						</a>
+					);
+				})
+			}
+		</nav>
+
+		<div class="search-area">
+			<form role="search" aria-label="Buscar artigos no site" class="search-box" data-header-search-form>
+				<label for="header-search-input" class="sr-only">Buscar no site</label>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="20"
+					height="20"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					viewBox="0 0 24 24"
+					aria-hidden="true"
+				>
+					<circle cx="11" cy="11" r="7"></circle>
+					<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+				</svg>
+				<input
+					id="header-search-input"
+					type="search"
+					name="q"
+					autocomplete="off"
+					placeholder="Buscar no site"
+					data-header-search-input
+				/>
+				<div
+					class="search-results"
+					data-header-search-results
+					role="listbox"
+					aria-label="Resultados da busca"
+					hidden
+				/>
+			</form>
+		</div>
+	</div>
+
+	<!-- Linha Verde -->
+	<div class="bottom-line" aria-hidden="true"></div>
+
+	<div id="mobile-search-panel" class="header-drawer" hidden data-mobile-search-panel>
+		<div class="header-drawer__inner">
+			<form role="search" aria-label="Buscar artigos no site" class="search-box search-box--mobile" data-header-search-form-mobile>
+				<label for="header-search-input-mobile" class="sr-only">Buscar no site</label>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="20"
+					height="20"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					viewBox="0 0 24 24"
+					aria-hidden="true"
+				>
+					<circle cx="11" cy="11" r="7"></circle>
+					<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+				</svg>
+				<input
+					id="header-search-input-mobile"
+					type="search"
+					name="q"
+					autocomplete="off"
+					placeholder="Buscar no site"
+					data-header-search-input
+				/>
+				<div
+					class="search-results search-results--mobile"
+					data-header-search-results
+					role="listbox"
+					aria-label="Resultados da busca"
+					hidden
+				/>
+			</form>
+		</div>
+	</div>
+
+	<div id="mobile-nav-panel" class="header-drawer" hidden data-mobile-nav-panel>
+		<nav class="header-drawer__inner menu menu--mobile" aria-label="Principal">
+			{
+				headerNav.map((item) => {
+					const active = isHeaderNavActive(item);
+					return (
+						<a
+							href={item.href}
+							class:list={[active && 'active']}
+							aria-label={item.ariaLabel}
+							aria-current={active ? 'page' : undefined}
+						>
+							{item.label}
+						</a>
+					);
+				})
+			}
+		</nav>
 	</div>
 </header>
+
+<script id="site-search-index" type="application/json" set:html={JSON.stringify(searchIndex)} />
+
+<script>
+	const searchIndex = JSON.parse(
+		(document.getElementById('site-search-index') as HTMLScriptElement | null)?.textContent || '[]',
+	) as { title: string; url: string }[];
+
+	const header = document.getElementById('site-header');
+	const headerRail = document.querySelector('[data-header-rail]');
+	const menuToggle = document.querySelector('[data-header-menu-toggle]');
+	const menuPanel = document.querySelector('[data-mobile-nav-panel]');
+	const searchToggle = document.querySelector('[data-header-search-toggle]');
+	const mobileSearchPanel = document.querySelector('[data-mobile-search-panel]');
+	const menuIconOpen = document.querySelector('[data-menu-icon-open]');
+	const menuIconClose = document.querySelector('[data-menu-icon-close]');
+	const desktopNavMq = window.matchMedia('(min-width: 769px)');
+
+	function resetMobileUi() {
+		closePanel(menuPanel, menuToggle);
+		closePanel(mobileSearchPanel, searchToggle);
+		menuIconOpen?.classList.remove('is-hidden');
+		menuIconClose?.classList.add('is-hidden');
+	}
+
+	function setExpanded(button: Element | null, expanded: boolean) {
+		if (button instanceof HTMLButtonElement) button.setAttribute('aria-expanded', String(expanded));
+	}
+
+	function closePanel(panel: Element | null, button: Element | null) {
+		if (panel instanceof HTMLElement) panel.hidden = true;
+		setExpanded(button, false);
+	}
+
+	function openPanel(panel: Element | null, button: Element | null) {
+		if (panel instanceof HTMLElement) panel.hidden = false;
+		setExpanded(button, true);
+	}
+
+	menuToggle?.addEventListener('click', () => {
+		if (desktopNavMq.matches) return;
+		const isOpen = menuPanel instanceof HTMLElement && !menuPanel.hidden;
+		if (isOpen) {
+			closePanel(menuPanel, menuToggle);
+			menuIconOpen?.classList.remove('is-hidden');
+			menuIconClose?.classList.add('is-hidden');
+		} else {
+			closePanel(mobileSearchPanel, searchToggle);
+			openPanel(menuPanel, menuToggle);
+			menuIconOpen?.classList.add('is-hidden');
+			menuIconClose?.classList.remove('is-hidden');
+		}
+	});
+
+	searchToggle?.addEventListener('click', () => {
+		if (desktopNavMq.matches) return;
+		const isOpen = mobileSearchPanel instanceof HTMLElement && !mobileSearchPanel.hidden;
+		if (isOpen) {
+			closePanel(mobileSearchPanel, searchToggle);
+		} else {
+			closePanel(menuPanel, menuToggle);
+			menuIconOpen?.classList.remove('is-hidden');
+			menuIconClose?.classList.add('is-hidden');
+			openPanel(mobileSearchPanel, searchToggle);
+			const input = mobileSearchPanel?.querySelector('[data-header-search-input]');
+			if (input instanceof HTMLInputElement) input.focus();
+		}
+	});
+
+	const onScroll = () => {
+		if (!header) return;
+		const scrolled = window.scrollY > 16;
+		header.classList.toggle('is-scrolled', scrolled);
+		if (headerRail instanceof HTMLElement) {
+			headerRail.setAttribute('aria-hidden', String(scrolled));
+		}
+	};
+	onScroll();
+	window.addEventListener('scroll', onScroll, { passive: true });
+	desktopNavMq.addEventListener('change', (event) => {
+		if (event.matches) resetMobileUi();
+	});
+
+	function normalize(value: string) {
+		return value
+			.normalize('NFD')
+			.replace(/[\u0300-\u036f]/g, '')
+			.toLowerCase()
+			.trim();
+	}
+
+	function renderResults(container: HTMLElement, query: string) {
+		const q = normalize(query);
+		const matches =
+			q.length < 2 ? [] : searchIndex.filter((item) => normalize(item.title).includes(q)).slice(0, 6);
+
+		container.innerHTML = '';
+		if (!matches.length) {
+			container.hidden = true;
+			container.classList.remove('search-results--open');
+			return;
+		}
+
+		for (const match of matches) {
+			const link = document.createElement('a');
+			link.href = match.url;
+			link.className = 'search-result';
+			link.textContent = match.title;
+			link.setAttribute('role', 'option');
+			container.appendChild(link);
+		}
+
+		container.hidden = false;
+		container.classList.add('search-results--open');
+	}
+
+	function bindSearch(form: HTMLFormElement) {
+		const input = form.querySelector('[data-header-search-input]');
+		const results = form.querySelector('[data-header-search-results]');
+
+		if (!(input instanceof HTMLInputElement) || !(results instanceof HTMLElement)) return;
+
+		input.addEventListener('input', () => renderResults(results, input.value));
+
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
+			const q = normalize(input.value);
+			if (!q) return;
+			const match = searchIndex.find((item) => normalize(item.title).includes(q));
+			if (match) window.location.href = match.url;
+		});
+
+		document.addEventListener('click', (event) => {
+			if (!form.contains(event.target as Node)) {
+				results.hidden = true;
+				results.classList.remove('search-results--open');
+			}
+		});
+	}
+
+	document.querySelectorAll('form[data-header-search-form], form[data-header-search-form-mobile]').forEach((form) => {
+		if (form instanceof HTMLFormElement) bindSearch(form);
+	});
+</script>
+
+<style>
+	/* ===========================
+	   BASE / VARIÁVEIS (inalteradas)
+	=========================== */
+
+	.editorial-header {
+		--green: #00c853;
+		--border: #222;
+		--bg: #000000;
+		--text: #ffffff;
+		--text-muted: #bdbdbd;
+		background: var(--bg);
+		color: var(--text);
+		box-shadow:
+			inset 0 -1px 0 #222,
+			0 15px 35px rgba(0, 0, 0, 0.45);
+	}
+
+	.editorial-header.is-home {
+		margin-bottom: 0;
+	}
+
+	/* ===========================
+	   BARRA SUPERIOR
+	=========================== */
+
+	.top-bar {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		padding: 12px 40px 4px;
+	}
+
+	.top-copy {
+		display: flex;
+		flex-direction: column;
+		flex-shrink: 0;
+		gap: 4px;
+		min-width: 0;
+	}
+
+	.top-left {
+		font-size: 0.7rem;
+		font-weight: 600;
+		letter-spacing: 2px;
+		line-height: 1.2;
+		text-transform: uppercase;
+		color: var(--text-muted);
+	}
+
+	.site-slogan {
+		font-size: 0.82rem;
+		line-height: 1.35;
+		color: var(--text-muted);
+		opacity: 0.7;
+	}
+
+	.top-line {
+		flex: 1;
+		height: 1px;
+		min-width: 2rem;
+		background: var(--border);
+	}
+
+	.top-utility {
+		display: none;
+		flex-shrink: 0;
+		align-items: center;
+		gap: 0.125rem;
+	}
+
+	/* ===========================
+	   CABEÇALHO PRINCIPAL
+	   Logo → Menu → Busca
+	=========================== */
+
+	.header-main {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 12px;
+		padding-top: 28px;
+		padding-bottom: 24px;
+		padding-inline: 40px;
+	}
+
+	/* ===========================
+	   LOGO
+	=========================== */
+
+	.logo-area {
+		flex-shrink: 0;
+		min-width: 0;
+		max-width: 432px;
+		order: 1;
+	}
+
+	.logo-area a {
+		display: block;
+		line-height: 0;
+		max-width: 100%;
+	}
+
+	.logo {
+		display: block;
+		width: 100%;
+		max-width: 432px;
+		height: auto;
+		transition: 0.35s ease;
+	}
+
+	.logo:hover {
+		transform: scale(1.02);
+	}
+
+	/* ===========================
+	   MENU (logo → menu → busca)
+	=========================== */
+
+	.menu {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		flex: 0 1 auto;
+		flex-wrap: wrap;
+		order: 2;
+		gap: 2rem;
+		padding: 0;
+		border: none;
+		background: transparent;
+	}
+
+	.menu a {
+		position: relative;
+		padding-bottom: 6px;
+		color: #ececec;
+		text-decoration: none;
+		font-size: 0.82rem;
+		font-weight: 600;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		white-space: nowrap;
+		transition: 0.25s;
+	}
+
+	.menu a:hover {
+		color: var(--green);
+		letter-spacing: 2.5px;
+	}
+
+	.menu a.active {
+		color: var(--green);
+	}
+
+	.menu a::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 0;
+		height: 2px;
+		background: var(--green);
+		transition: 0.3s;
+	}
+
+	.menu a:hover::after,
+	.menu a.active::after {
+		width: 100%;
+	}
+
+	/* ===========================
+	   BUSCA (canto direito)
+	=========================== */
+
+	.search-area {
+		display: flex;
+		flex: 0 0 auto;
+		align-items: center;
+		justify-content: flex-end;
+		order: 3;
+		margin-inline-start: auto;
+	}
+
+	.search-box {
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		width: 100%;
+		max-width: 280px;
+		padding: 14px 18px;
+		border: 1px solid var(--border);
+		border-radius: 14px;
+		background: #0c0c0c;
+		color: var(--text-muted);
+		transition:
+			border-color 0.25s ease,
+			box-shadow 0.25s ease;
+	}
+
+	.search-box:focus-within {
+		border-color: var(--green);
+		box-shadow: 0 0 20px rgba(0, 200, 83, 0.25);
+		color: var(--text);
+	}
+
+	.search-box svg {
+		flex-shrink: 0;
+	}
+
+	.search-box input {
+		width: 100%;
+		min-width: 0;
+		border: none;
+		background: transparent;
+		padding: 0;
+		font-family: inherit;
+		font-size: 0.9rem;
+		color: var(--text);
+	}
+
+	.search-box input::placeholder {
+		color: var(--text-muted);
+	}
+
+	.search-box input:focus {
+		outline: none;
+	}
+
+	.search-box input::-webkit-search-cancel-button {
+		-webkit-appearance: none;
+	}
+
+	.search-results {
+		pointer-events: none;
+		visibility: hidden;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: calc(100% + 0.5rem);
+		z-index: 50;
+		border: 1px solid var(--border);
+		border-radius: 12px;
+		background: #0c0c0c;
+		padding: 0.375rem;
+		opacity: 0;
+		transition:
+			opacity 200ms ease,
+			visibility 200ms ease;
+	}
+
+	.search-results--open {
+		pointer-events: auto;
+		visibility: visible;
+		opacity: 1;
+	}
+
+	.search-results--mobile {
+		position: static;
+		width: 100%;
+		margin-top: 0.75rem;
+	}
+
+	.search-result {
+		display: block;
+		padding: 0.5625rem 0.6875rem;
+		border-radius: 8px;
+		font-size: 0.8125rem;
+		color: #ececec;
+		transition:
+			color 200ms ease,
+			background-color 200ms ease;
+	}
+
+	.search-result:hover,
+	.search-result:focus-visible {
+		background: rgb(255 255 255 / 0.06);
+		color: var(--green);
+		outline: none;
+	}
+
+	/* ===========================
+	   LINHA VERDE
+	=========================== */
+
+	.bottom-line {
+		width: 100%;
+		height: 4px;
+		background: linear-gradient(90deg, #00c853, #16d864, #00c853);
+		box-shadow: 0 0 12px rgba(0, 200, 83, 0.45);
+	}
+
+	/* ===========================
+	   MOBILE / UTILITÁRIOS
+	=========================== */
+
+	.utility-btn {
+		display: flex;
+		width: 2.5rem;
+		height: 2.5rem;
+		align-items: center;
+		justify-content: center;
+		border: none;
+		background: transparent;
+		color: var(--text-muted);
+		cursor: pointer;
+	}
+
+	.utility-btn:hover {
+		color: var(--green);
+	}
+
+	.utility-btn svg {
+		width: 1.25rem;
+		height: 1.25rem;
+	}
+
+	.is-hidden {
+		display: none !important;
+	}
+
+	.header-drawer {
+		display: none;
+		background: #090909;
+		border-top: 1px solid var(--border);
+	}
+
+	.header-drawer:not([hidden]) {
+		display: block;
+	}
+
+	.header-drawer__inner {
+		padding: 20px;
+	}
+
+	.search-box--mobile {
+		max-width: none;
+	}
+
+	.menu--mobile {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 0;
+		margin-left: 0;
+		padding: 0;
+		border: none;
+		background: transparent;
+	}
+
+	.menu--mobile a {
+		display: block;
+		padding: 14px 0;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.menu--mobile a::after {
+		display: none;
+	}
+
+	/* ===========================
+	   DESKTOP — Logo | Menu | Busca
+	=========================== */
+
+	@media (min-width: 1101px) {
+		.top-utility {
+			display: none !important;
+		}
+
+		.header-drawer {
+			display: none !important;
+		}
+	}
+
+	/* ===========================
+	   TABLET — Logo / Menu / Busca empilhados
+	=========================== */
+
+	@media (max-width: 1100px) and (min-width: 769px) {
+		.header-main {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			gap: 20px;
+		}
+
+		.logo-area {
+			align-items: stretch;
+		}
+
+		.menu {
+			justify-content: center;
+			gap: 28px;
+		}
+
+		.search-area {
+			justify-content: center;
+			min-width: 0;
+		}
+
+		.logo {
+			max-width: 320px;
+		}
+
+		.logo-area {
+			max-width: 320px;
+		}
+
+		.top-utility {
+			display: none !important;
+		}
+
+		.header-drawer {
+			display: none !important;
+		}
+
+		.search-box {
+			width: 100%;
+			max-width: 420px;
+		}
+	}
+
+	/* ===========================
+	   MOBILE — Logo, hambúrguer, busca abaixo
+	=========================== */
+
+	@media (max-width: 768px) {
+		.top-bar {
+			padding: 12px 20px;
+		}
+
+		.top-copy {
+			flex: 1;
+			min-width: 0;
+		}
+
+		.top-left {
+			font-size: 0.62rem;
+		}
+
+		.site-slogan {
+			font-size: 0.78rem;
+		}
+
+		.top-line {
+			display: none;
+		}
+
+		.top-utility {
+			display: flex;
+		}
+
+		.header-main {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			padding: 30px 20px;
+			gap: 16px;
+		}
+
+		.logo-area {
+			max-width: 260px;
+		}
+
+		.menu:not(.menu--mobile) {
+			display: none;
+		}
+
+		.search-area {
+			width: 100%;
+			justify-content: center;
+			min-width: 0;
+		}
+
+		.logo {
+			max-width: 260px;
+		}
+
+		.search-box {
+			padding: 12px 15px;
+			width: 100%;
+			max-width: none;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.logo-area {
+			max-width: 210px;
+		}
+
+		.logo {
+			max-width: 210px;
+		}
+
+		.search-box {
+			border-radius: 12px;
+		}
+
+		.menu a {
+			font-size: 0.72rem;
+		}
+	}
+
+	/* ===========================
+	   STICKY COMPACTO
+	=========================== */
+
+	.editorial-header.is-scrolled .top-bar {
+		padding-top: 8px;
+		padding-bottom: 8px;
+	}
+
+	.editorial-header.is-scrolled .top-copy {
+		display: none;
+	}
+
+	.editorial-header.is-scrolled .top-line {
+		display: none;
+	}
+
+	.editorial-header.is-scrolled .header-main {
+		padding-top: 12px;
+		padding-bottom: 12px;
+	}
+
+	.editorial-header.is-scrolled .logo {
+		max-width: 220px;
+	}
+
+	.editorial-header.is-scrolled .menu {
+		gap: 28px;
+	}
+
+	@media (max-width: 1100px) {
+		.editorial-header.is-scrolled .header-main {
+			padding: 12px 20px;
+			gap: 16px;
+		}
+
+		.editorial-header.is-scrolled .logo {
+			max-width: 180px;
+		}
+
+		.editorial-header.is-scrolled .menu {
+			gap: 20px;
+		}
+	}
+</style>

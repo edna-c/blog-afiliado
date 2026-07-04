@@ -1,77 +1,124 @@
 ---
 import { isNavActive } from '../utils/isNavActive';
+import { primaryNav } from '../data/navigation';
 import YouTubeBrandLink from './YouTubeBrandLink.astro';
 
 const year = new Date().getFullYear();
 const pathname = Astro.url.pathname;
-const links = [
-	{ href: '/sobre', label: 'Sobre', ariaLabel: 'Sobre o site Casa Prática Eletro' },
-	{ href: '/blog', label: 'Blog', ariaLabel: 'Blog com artigos e comparativos de fogões' },
-	{ href: '/contato', label: 'Contato', ariaLabel: 'Página de contato' },
-	{ href: '/politica-de-afiliados', label: 'Política do Site', ariaLabel: 'Política do site e recomendações' },
+
+const quickLinks = primaryNav.filter((item) => item.href !== '/');
+
+const categories = [
+	{ href: '/melhor-fogao-5-bocas', label: 'Fogões 5 bocas', ariaLabel: 'Guia melhor fogão 5 bocas' },
+	{ href: '/comparativo-fogao-4-vs-5-bocas', label: 'Comparativos', ariaLabel: 'Comparativo fogão 4 vs 5 bocas' },
+	{ href: '/como-escolher-fogao-5-bocas', label: 'Como escolher', ariaLabel: 'Como escolher fogão 5 bocas' },
 ];
+
+const legalLinks = [
+	{ href: '/politica-de-afiliados', label: 'Aviso de Afiliados', ariaLabel: 'Aviso de afiliados e política do site' },
+	{ href: '/politica-de-afiliados', label: 'Política de Privacidade', ariaLabel: 'Política de privacidade' },
+	{ href: '/politica-de-afiliados', label: 'Termos de Uso', ariaLabel: 'Termos de uso do site' },
+];
+
+const linkClass =
+	'text-sm text-on-ink-muted transition-colors duration-200 hover:text-on-ink-body focus-visible:text-on-ink-body';
 ---
 
-<footer class="border-t border-white/10 bg-ink-muted/50">
-	<div class="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-12 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-		<div>
-			<p class="font-display text-sm font-extrabold tracking-tight text-on-ink-body">Casa Prática Eletro</p>
-			<p class="mt-2 max-w-sm text-sm text-on-ink-body">
-				Guia completo para escolher os melhores eletrodomésticos para sua casa.
-			</p>
-			<p class="mt-2 max-w-sm text-xs leading-relaxed text-on-ink-muted">
-				Compare os melhores fogões antes de comprar e escolha com segurança.
-			</p>
-			<p class="mt-4 text-xs text-on-ink-muted">
-				<a
-					href="/contato"
-					class="text-on-ink-body underline decoration-white/35 decoration-1 underline-offset-[0.2em] transition hover:text-pop hover:decoration-pop"
-					aria-label="Pedir alerta de preço ou enviar recado pela página de contato"
-				>
-					Quer alerta quando o preço mudar?
-				</a>{' '}
-				Deixe um recado.
-			</p>
-			<div class="mt-5 flex flex-wrap items-center gap-3 border-t border-white/10 pt-5">
-				<span class="text-[10px] font-semibold uppercase tracking-[0.28em] text-on-ink-muted">Canal</span>
-				<YouTubeBrandLink variant="footer" />
+<footer class="border-t border-white/[0.08] bg-[#050506]">
+	<div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+		<div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-12 lg:gap-10">
+			<div class="lg:col-span-5">
+				<a href="/" aria-label="Casa Prática Eletro — página inicial">
+					<img
+						src="/images/logo/logo-casa-pratica-eletro.webp"
+						alt="Casa Prática Eletro"
+						width={400}
+						height={72}
+						class="h-9 w-auto sm:h-10"
+						loading="lazy"
+						decoding="async"
+					/>
+				</a>
+				<p class="mt-5 max-w-md text-sm leading-relaxed text-on-ink-muted">
+					Conteúdo independente para ajudar consumidores brasileiros a escolherem melhor seus eletrodomésticos — com
+					análises claras, critérios objetivos e linguagem acessível.
+				</p>
+				<div class="mt-6">
+					<YouTubeBrandLink variant="footer" />
+				</div>
 			</div>
+
+			<nav class="lg:col-span-2" aria-label="Links rápidos">
+				<h2 class="text-[11px] font-semibold uppercase tracking-[0.22em] text-on-ink-body/80">Links rápidos</h2>
+				<ul class="mt-4 space-y-2.5">
+					{
+						quickLinks.map((item) => {
+							const active = isNavActive(pathname, item.href);
+							return (
+								<li>
+									<a
+										href={item.href}
+										class:list={[linkClass, active && 'text-on-ink-body']}
+										aria-label={item.ariaLabel}
+										aria-current={active ? 'page' : undefined}
+									>
+										{item.label}
+									</a>
+								</li>
+							);
+						})
+					}
+				</ul>
+			</nav>
+
+			<nav class="lg:col-span-2" aria-label="Categorias principais">
+				<h2 class="text-[11px] font-semibold uppercase tracking-[0.22em] text-on-ink-body/80">Categorias</h2>
+				<ul class="mt-4 space-y-2.5">
+					{
+						categories.map((item) => (
+							<li>
+								<a href={item.href} class={linkClass} aria-label={item.ariaLabel}>
+									{item.label}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</nav>
+
+			<nav class="lg:col-span-3" aria-label="Informações legais">
+				<h2 class="text-[11px] font-semibold uppercase tracking-[0.22em] text-on-ink-body/80">Legal</h2>
+				<ul class="mt-4 space-y-2.5">
+					{
+						legalLinks.map((item) => (
+							<li>
+								<a href={item.href} class={linkClass} aria-label={item.ariaLabel}>
+									{item.label}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</nav>
 		</div>
-		<nav class="flex flex-wrap gap-x-8 gap-y-2 text-xs font-semibold uppercase tracking-[0.2em]" aria-label="Rodapé">
-			{links.map((item) => {
-				const active = isNavActive(pathname, item.href);
-				return (
-					<a
-						href={item.href}
-						class:list={[
-							'transition',
-							active
-								? 'text-pop underline decoration-pop decoration-2 underline-offset-[0.28em]'
-								: 'text-on-ink-body underline decoration-white/35 decoration-1 underline-offset-[0.28em] hover:text-pop hover:decoration-pop',
-						]}
-						aria-label={item.ariaLabel}
-						aria-current={active ? 'page' : undefined}
-					>
-						{item.label}
-					</a>
-				);
-			})}
-		</nav>
 	</div>
-	<div class="border-t border-white/5 bg-ink-muted/30 px-4 py-5 sm:px-6 lg:px-8">
-		<p class="mx-auto max-w-3xl text-center text-xs leading-relaxed text-on-ink-muted">
-			Este site não realiza vendas nem possui carrinho: a compra é concluída no site do parceiro (afiliado). Prazos, frete e
-			áreas atendidas seguem a política da loja — em geral voltadas ao território nacional. O conteúdo é pensado para o público
-			no Brasil.{' '}
-			<a
-				href="/politica-de-afiliados"
-				class="text-on-ink-body underline decoration-white/35 decoration-1 underline-offset-[0.2em] transition hover:text-pop hover:decoration-pop"
-			>
-				Política do site
-			</a>.
+
+	<div class="border-t border-white/[0.06]">
+		<div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+			<p class="mx-auto max-w-3xl text-center text-xs leading-relaxed text-on-ink-muted/90 sm:text-sm">
+				<strong class="font-semibold text-on-ink-muted">Casa Prática Eletro</strong> — Conteúdo independente para ajudar
+				consumidores brasileiros a escolherem melhor seus eletrodomésticos.
+			</p>
+			<p class="mx-auto mt-4 max-w-3xl text-center text-xs leading-relaxed text-on-ink-muted/75">
+				Este site não realiza vendas: a compra é concluída no site do parceiro (afiliado). Prazos, frete e áreas atendidas
+				seguem a política da loja.
+			</p>
+		</div>
+	</div>
+
+	<div class="border-t border-white/[0.06] py-6">
+		<p class="text-center text-xs text-on-ink-muted/70">
+			© {year} Casa Prática Eletro. Todos os direitos reservados.
 		</p>
-	</div>
-	<div class="border-t border-white/5 py-6 text-center text-xs text-on-ink-muted">
-		© {year} Casa Prática Eletro. Todos os direitos reservados.
 	</div>
 </footer>
