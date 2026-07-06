@@ -1,36 +1,11 @@
 ---
 import Logo from '../assets/logo.png';
 import { getCollection } from 'astro:content';
+import { primaryNav } from '../data/navigation';
 import { isNavActive } from '../utils/isNavActive';
 
 const pathname = Astro.url.pathname;
 const isHome = pathname === '/';
-
-/** Menu do header — ordem e itens do layout editorial. Guias aponta ao Blog (conteúdo informativo). */
-const guidePrefixes = ['/como-escolher', '/comparativo', '/melhor-fogao', '/fogao-5-bocas'];
-
-const headerNav = [
-	{ href: '/', label: 'Início', ariaLabel: 'Página inicial Casa Prática Eletro' },
-	{ href: '/blog', label: 'Blog', ariaLabel: 'Blog — conteúdo informativo sobre eletrodomésticos' },
-	{
-		href: '/blog',
-		label: 'Guias',
-		ariaLabel: 'Guias de compra de eletrodomésticos',
-		activePrefixes: guidePrefixes,
-	},
-	{ href: '/sobre', label: 'Sobre', ariaLabel: 'Sobre o Casa Prática Eletro' },
-	{ href: '/contato', label: 'Contato', ariaLabel: 'Página de contato' },
-];
-
-function isHeaderNavActive(item: (typeof headerNav)[number]): boolean {
-	if (item.label === 'Guias') {
-		return isNavActive(pathname, '/__guias__', item.activePrefixes);
-	}
-	if (item.label === 'Blog') {
-		return isNavActive(pathname, '/blog');
-	}
-	return isNavActive(pathname, item.href, item.activePrefixes);
-}
 
 const blogPosts = await getCollection('blog');
 const searchIndex = [
@@ -98,8 +73,8 @@ const searchIndex = [
 
 		<nav class="menu" aria-label="Principal">
 			{
-				headerNav.map((item) => {
-					const active = isHeaderNavActive(item);
+				primaryNav.map((item) => {
+					const active = isNavActive(pathname, item.href, item.activePrefixes);
 					return (
 						<a
 							href={item.href}
@@ -191,8 +166,8 @@ const searchIndex = [
 	<div id="mobile-nav-panel" class="header-drawer" hidden data-mobile-nav-panel>
 		<nav class="header-drawer__inner menu menu--mobile" aria-label="Principal">
 			{
-				headerNav.map((item) => {
-					const active = isHeaderNavActive(item);
+				primaryNav.map((item) => {
+					const active = isNavActive(pathname, item.href, item.activePrefixes);
 					return (
 						<a
 							href={item.href}
@@ -480,7 +455,7 @@ const searchIndex = [
 		flex: 0 1 auto;
 		flex-wrap: wrap;
 		order: 2;
-		gap: 2rem;
+		gap: 2.5rem;
 		padding: 0;
 		border: none;
 		background: transparent;
