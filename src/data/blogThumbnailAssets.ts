@@ -1,6 +1,7 @@
 import type { AstroRasterImport } from '../types/astro-image';
 import { BLOG_THUMBNAIL } from './editorialImageSpecs';
 import fogaoVidroOuInoxBlogPremium from '../assets/images/blog/comparativos/fogao-mesa-de-vidro-ou-inox-blog-premium.webp';
+import melhorFogaoFornoDuploBlogPremium from '../assets/images/blog/guias/melhor-fogao-com-forno-duplo-blog-premium.png';
 
 /**
  * Miniaturas do blog — ver `BLOG_THUMBNAIL` em `editorialImageSpecs.ts`
@@ -24,6 +25,7 @@ for (const path of Object.keys(raw)) {
 /** Imports explícitos — garantem HMR e build quando o glob não recarrega subpastas novas. */
 const explicitThumbnails: Record<string, AstroRasterImport> = {
 	'fogao-mesa-de-vidro-ou-inox': fogaoVidroOuInoxBlogPremium,
+	'melhor-fogao-com-forno-duplo': melhorFogaoFornoDuploBlogPremium,
 };
 
 for (const [postId, asset] of Object.entries(explicitThumbnails)) {

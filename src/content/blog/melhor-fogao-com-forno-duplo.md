@@ -31,7 +31,7 @@ Este guia explica o que é o formato, como ele funciona na prática, onde compen
 - **Quando não vale a pena:** forno esporádico no cardápio, cozinha muito compacta ou orçamento no limite para um investimento que pode ficar ocioso.
 - **Objetivo deste guia:** orientar a decisão com base em funcionamento, limitações e critérios práticos — sem ranking de modelos.
 
-<!-- HERO IMAGE (IA PREMIUM) -->
+![Fogão com forno duplo em cozinha moderna, com os dois compartimentos em uso ao mesmo tempo: assado no forno principal e preparo paralelo no forno auxiliar, portas abertas e iluminação interna visível.](/images/blog/melhor-fogao-com-forno-duplo/corpo-fogao-forno-duplo-fornos-paralelos.png)
 
 ## O que é um fogão com forno duplo?
 
@@ -57,7 +57,7 @@ Antes de assumir qualquer comportamento, valide três pontos na documentação o
 - se o uso **simultâneo** dos dois compartimentos é permitido;
 - qual **fonte de energia** cada compartimento exige (gás, elétrica, voltagem).
 
-![Fogão com forno duplo instalado em cozinha moderna: dois compartimentos de forno visíveis em perspectiva angular, com iluminação natural e aparelho inteiro enquadrado.](/images/blog/melhor-fogao-com-forno-duplo/corpo-fogao-forno-duplo-cozinha-editorial.webp)
+![Fogão com forno duplo em inox integrado a cozinha com armários verdes, bancada clara e azulejo hexagonal, fornos acesos com preparos em andamento.](/images/blog/melhor-fogao-com-forno-duplo/corpo-fogao-forno-duplo-cozinha-verde.png)
 
 ## Principais vantagens
 
