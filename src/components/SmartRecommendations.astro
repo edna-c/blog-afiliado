@@ -102,30 +102,32 @@ const stepLabel = (i: number, total: number) => {
 				</div>
 			</header>
 
-			<ol class="mt-8 grid list-none gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+			<ol class="mt-8 grid list-none gap-3">
 				{recommendations.map((entry, i) => (
 					<li class="relative">
 						<a
 							href={entry.href}
-							class="group flex h-full flex-col gap-3 rounded-2xl border border-white/10 bg-ink/70 p-5 ring-1 ring-white/5 transition duration-300 ease-out hover:-translate-y-0.5 hover:border-pop/35 hover:bg-ink/85 hover:ring-white/10 sm:p-6"
+							class="group flex flex-col gap-2 rounded-2xl border border-white/10 bg-ink/70 p-5 ring-1 ring-white/5 transition duration-300 ease-out hover:-translate-y-0.5 hover:border-pop/35 hover:bg-ink/85 hover:ring-white/10 sm:flex-row sm:items-center sm:gap-6 sm:p-5"
 						>
-							<div class="flex items-center justify-between gap-3">
-								<span class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.28em] text-pop">
-									<span class="tabular-nums">0{i + 1}</span>
-									<span class="opacity-60" aria-hidden="true">·</span>
-									<span class="text-on-ink-muted">{stepLabel(i, recommendations.length)}</span>
-								</span>
-								<span class="rounded-full border border-white/12 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-on-ink-muted">
-									{stageChip(entry)}
-								</span>
+							<div class="flex min-w-0 flex-1 flex-col gap-2">
+								<div class="flex flex-wrap items-center gap-2 sm:gap-3">
+									<span class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.28em] text-pop">
+										<span class="tabular-nums">0{i + 1}</span>
+										<span class="opacity-60" aria-hidden="true">·</span>
+										<span class="text-on-ink-muted">{stepLabel(i, recommendations.length)}</span>
+									</span>
+									<span class="rounded-full border border-white/12 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-on-ink-muted">
+										{stageChip(entry)}
+									</span>
+								</div>
+								<p class="font-display text-base font-bold leading-snug text-on-ink-body transition group-hover:text-pop sm:text-lg">
+									{entry.title}
+								</p>
+								<p class="line-clamp-2 text-sm leading-relaxed text-on-ink-muted">
+									{entry.teaser ?? entry.description}
+								</p>
 							</div>
-							<p class="font-display text-base font-bold leading-snug text-on-ink-body transition group-hover:text-pop sm:text-lg">
-								{entry.title}
-							</p>
-							<p class="line-clamp-3 flex-1 text-sm leading-relaxed text-on-ink-muted">
-								{entry.teaser ?? entry.description}
-							</p>
-							<span class="mt-1 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-pop">
+							<span class="inline-flex shrink-0 items-center gap-1 text-xs font-bold uppercase tracking-wider text-pop sm:self-center">
 								Abrir
 								<span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span>
 							</span>

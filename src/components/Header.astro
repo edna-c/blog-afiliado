@@ -8,15 +8,21 @@ const pathname = Astro.url.pathname;
 const isHome = pathname === '/';
 
 const blogPosts = await getCollection('blog');
+const melhoresGuides = (await getCollection('melhores')).filter((guide) => !guide.id.startsWith('_'));
 const searchIndex = [
 	{ title: 'Início', url: '/' },
+	{ title: 'Guias de Compra', url: '/melhores' },
 	{ title: 'Blog', url: '/blog' },
 	{ title: 'Sobre', url: '/sobre' },
 	{ title: 'Contato', url: '/contato' },
-	{ title: 'Melhor fogão 5 bocas', url: '/melhor-fogao-5-bocas' },
+	{ title: 'Melhor fogão 5 bocas', url: '/melhores/melhor-fogao-5-bocas' },
 	{ title: 'Como escolher fogão 5 bocas', url: '/como-escolher-fogao-5-bocas' },
 	{ title: 'Comparativo fogão 4 vs 5 bocas', url: '/comparativo-fogao-4-vs-5-bocas' },
 	{ title: 'Fogão 5 bocas custo-benefício', url: '/fogao-5-bocas-custo-beneficio' },
+	...melhoresGuides.map((guide) => ({
+		title: guide.data.title,
+		url: `/melhores/${guide.id}/`,
+	})),
 	...blogPosts.map((post) => ({
 		title: post.data.title,
 		url: `/blog/${post.id}/`,
@@ -741,9 +747,41 @@ const searchIndex = [
 
 	/* ===========================
 	   DESKTOP — Logo | Menu | Busca
+	   Compacto + dizeres editoriais em faixa fina (tolerância mínima de altura)
 	=========================== */
 
 	@media (min-width: 1101px) {
+		.top-bar {
+			display: flex;
+			align-items: center;
+			gap: 16px;
+			padding: 6px 40px 0;
+		}
+
+		.top-copy {
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: baseline;
+			gap: 0.5rem 1rem;
+		}
+
+		.top-left {
+			font-size: 0.62rem;
+			letter-spacing: 1.6px;
+			line-height: 1.2;
+		}
+
+		.site-slogan {
+			font-size: 0.72rem;
+			line-height: 1.25;
+			opacity: 0.75;
+		}
+
+		.top-line {
+			display: block;
+			height: 1px;
+		}
+
 		.top-utility {
 			display: none !important;
 		}
@@ -752,8 +790,38 @@ const searchIndex = [
 			display: none !important;
 		}
 
+		.header-main {
+			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-inline: 40px;
+			gap: 28px;
+		}
+
+		.logo-area {
+			max-width: 200px;
+		}
+
+		.logo {
+			max-width: 200px;
+		}
+
+		.menu {
+			gap: 2rem;
+		}
+
 		.search-area {
-			translate: 0 -3px;
+			translate: none;
+		}
+
+		.search-box {
+			max-width: 260px;
+			padding: 10px 16px;
+			border-radius: 999px;
+			gap: 10px;
+		}
+
+		.search-box input {
+			font-size: 0.85rem;
 		}
 	}
 
@@ -891,8 +959,8 @@ const searchIndex = [
 	=========================== */
 
 	.editorial-header.is-scrolled .top-bar {
-		padding-top: 8px;
-		padding-bottom: 8px;
+		padding-top: 4px;
+		padding-bottom: 0;
 	}
 
 	.editorial-header.is-scrolled .top-copy {
@@ -904,16 +972,26 @@ const searchIndex = [
 	}
 
 	.editorial-header.is-scrolled .header-main {
-		padding-top: 12px;
-		padding-bottom: 12px;
+		padding-top: 10px;
+		padding-bottom: 10px;
 	}
 
 	.editorial-header.is-scrolled .logo {
-		max-width: 231px;
+		max-width: 200px;
 	}
 
 	.editorial-header.is-scrolled .menu {
-		gap: 28px;
+		gap: 2rem;
+	}
+
+	@media (min-width: 1101px) {
+		.editorial-header.is-scrolled .top-bar {
+			display: none;
+		}
+
+		.editorial-header.is-scrolled .logo {
+			max-width: 200px;
+		}
 	}
 
 	@media (max-width: 1100px) {

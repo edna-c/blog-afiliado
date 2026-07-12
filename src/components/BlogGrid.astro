@@ -6,11 +6,23 @@ import { BLOG_THUMBNAIL, picturePropsFrom } from '../data/editorialImageSpecs';
 
 const blogThumbPicture = picturePropsFrom(BLOG_THUMBNAIL);
 
+type GridEntry = CollectionEntry<'blog'> | CollectionEntry<'melhores'>;
+
 interface Props {
-	posts: CollectionEntry<'blog'>[];
+	posts: GridEntry[];
 	title?: string;
 	subtitle?: string;
+	eyebrow?: string;
 	showViewAllLink?: boolean;
+	/** Base das rotas dos cards (ex.: `/blog` ou `/melhores`). */
+	basePath?: string;
+	/** Destino e rótulo do botão "ver todos" (default: baseado em basePath). */
+	viewAllHref?: string;
+	viewAllLabel?: string;
+	/** Tempo de leitura opcional por id (mostra "· N min de leitura"). */
+	readingTimes?: Record<string, number>;
+	/** Destino alternativo por id do post (ex.: card que aponta para âncora na home). */
+	hrefOverrides?: Record<string, string>;
 	/** `dark` alinha à home premium; `light` mantém o bloco claro (ex.: legado). */
 	variant?: 'light' | 'dark';
 }
@@ -19,13 +31,24 @@ const {
 	posts,
 	title = 'Artigos recentes',
 	subtitle = 'Textos e comparativos para ajudar na hora de escolher fogão.',
+	eyebrow,
 	showViewAllLink = true,
+	basePath = '/blog',
+	viewAllHref,
+	viewAllLabel,
+	readingTimes,
+	hrefOverrides,
 	variant = 'light',
 } = Astro.props;
 
 const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' });
 
+const postHref = (id: string) => hrefOverrides?.[id] ?? `${basePath}/${id}/`;
+
 const isDark = variant === 'dark';
+const allHref = viewAllHref ?? basePath;
+const allLabel = viewAllLabel ?? 'Ver todos os artigos no blog';
+const defaultEyebrow = isDark ? 'Leitura complementar' : 'Artigos';
 ---
 
 <section
@@ -54,7 +77,7 @@ const isDark = variant === 'dark';
 					isDark ? 'text-pop' : 'text-accent-on-light',
 				]}
 			>
-				{isDark ? 'Leitura complementar' : 'Artigos'}
+				{eyebrow ?? defaultEyebrow}
 			</p>
 			<h2
 				id="blog-grid-heading"
@@ -72,8 +95,9 @@ const isDark = variant === 'dark';
 		<div class="mt-14 grid gap-6 sm:grid-cols-2 sm:gap-6 lg:mt-16 lg:grid-cols-3 lg:gap-8">
 			{
 				posts.map((post, index) => {
-					const thumbAsset = getBlogThumbnailAsset(post.id);
-					const cover = post.data.coverImage;
+					const cardImage = 'cardImage' in post.data ? post.data.cardImage : undefined;
+					const thumbAsset = cardImage ? undefined : getBlogThumbnailAsset(post.id);
+					const listingImage = cardImage ?? post.data.coverImage;
 					return (
 						<article
 							class:list={[
@@ -84,15 +108,27 @@ const isDark = variant === 'dark';
 							]}
 						>
 							<a
-								href={`/blog/${post.id}/`}
+								href={postHref(post.id)}
 								class:list={[
 									'relative block aspect-[16/10] w-full overflow-hidden',
 									isDark ? 'rounded-xl bg-[#151515] product-media-thumb' : 'rounded-[12px] ring-1 ring-black/[0.06]',
 								]}
-								aria-label={`Abrir artigo no blog: ${post.data.title}`}
+								aria-label={`Abrir conteúdo: ${post.data.title}`}
 							>
 								<span class="absolute inset-0 block origin-center transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform group-hover:scale-[1.02]">
-									{thumbAsset ? (
+									{cardImage ? (
+										<img
+											src={cardImage}
+											alt=""
+											class="h-full w-full object-cover object-center"
+											width={960}
+											height={600}
+											loading={index === 0 ? 'eager' : 'lazy'}
+											decoding="async"
+											fetchpriority={index === 0 ? 'high' : undefined}
+											sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+										/>
+									) : thumbAsset ? (
 										<Picture
 											src={thumbAsset}
 											alt=""
@@ -111,9 +147,9 @@ const isDark = variant === 'dark';
 													'absolute inset-0 block h-full w-full [&>img]:h-full [&>img]:w-full [&>img]:object-cover [&>img]:object-center',
 											}}
 										/>
-									) : cover ? (
+									) : listingImage ? (
 										<img
-											src={cover}
+											src={listingImage}
 											alt=""
 											class="h-full w-full object-cover object-center"
 											width={960}
@@ -151,6 +187,7 @@ const isDark = variant === 'dark';
 									]}
 								>
 									{post.data.category} · {fmt.format(post.data.pubDate)}
+									{readingTimes?.[post.id] ? ` · ${readingTimes[post.id]} min de leitura` : ''}
 								</p>
 								<h3
 									class:list={[
@@ -159,7 +196,7 @@ const isDark = variant === 'dark';
 									]}
 								>
 									<a
-										href={`/blog/${post.id}/`}
+										href={postHref(post.id)}
 										class:list={[
 											'transition',
 											isDark ? 'hover:text-pop' : 'hover:text-accent-on-light-hover',
@@ -177,14 +214,14 @@ const isDark = variant === 'dark';
 									{post.data.description}
 								</p>
 								<a
-									href={`/blog/${post.id}/`}
+									href={postHref(post.id)}
 									class:list={[
 										'mt-6 inline-flex min-h-[44px] items-center gap-2 text-sm font-bold transition',
 										isDark
 											? 'text-pop underline decoration-pop/50 decoration-2 underline-offset-[6px] hover:text-accent-hover hover:decoration-pop'
 											: 'font-semibold text-accent-on-light underline decoration-pop/70 decoration-2 underline-offset-4 hover:text-accent-on-light-hover hover:decoration-pop',
 									]}
-									aria-label={`Ler artigo completo: ${post.data.title}`}
+									aria-label={`Ler conteúdo completo: ${post.data.title}`}
 								>
 									Ler artigo completo
 									<span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">
@@ -201,14 +238,14 @@ const isDark = variant === 'dark';
 			showViewAllLink ? (
 				<div class="mt-14 flex justify-center sm:mt-16">
 					<a
-						href="/blog"
+						href={allHref}
 						class:list={[
 							'inline-flex min-h-[48px] items-center justify-center px-7 text-sm font-bold transition',
 							isDark ? 'btn-secondary-premium is-pill' : 'rounded-full border border-brand-900/15 font-semibold text-brand-900 hover:border-brand-900/30 hover:bg-neutral-50',
 						]}
-						aria-label="Ver todos os artigos e guias no blog"
+						aria-label={allLabel}
 					>
-						Ver todos os artigos no blog
+						{allLabel}
 					</a>
 				</div>
 			) : null

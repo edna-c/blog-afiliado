@@ -41,6 +41,15 @@ A ideia é separar preparos que, em um fogão convencional, disputariam o mesmo 
 
 Atenção ao marketing: nem todo produto anunciado com essa nomenclatura oferece dois fornos independentes. Alguns combinam forno convencional com função grill no **mesmo** compartimento — configuração diferente, com outra lógica de uso. A ficha técnica e o manual do fabricante são a referência para saber qual é o caso.
 
+| Formato | O que é |
+| --- | --- |
+| Forno duplo real | Dois compartimentos distintos (principal + auxiliar) |
+| Forno + grill no mesmo espaço | Funções alternadas no **mesmo** compartimento |
+
+<aside class="editorial-observation not-prose" aria-label="Observação editorial">
+<p>Nem todo “forno duplo” da vitrine são dois fornos independentes. Confirme no manual antes de comprar.</p>
+</aside>
+
 ## Como funciona um fogão com forno duplo?
 
 A configuração mais comum reúne um **forno principal** — destinado a assados, bolos e travessas de maior volume — e um **forno auxiliar** compacto, frequentemente associado a grill ou a preparos menores.
@@ -76,15 +85,11 @@ Quem usa o forno raramente pode não perceber diferença no dia a dia. Quem já 
 
 ## Principais limitações
 
-**Preço.** Na mesma faixa de bocas e acabamento, o forno duplo costuma custar mais que um equivalente com forno simples. Se o segundo compartimento ficar pouco usado, a diferença de preço pode não se pagar na prática.
-
-**Variedade de oferta.** O segmento cresceu, mas ainda há menos opções que na categoria de forno simples — especialmente em configurações de 4 bocas, embutir ou entrada de preço.
-
-**Espaço físico.** Dois compartimentos podem aumentar a altura do aparelho e, em alguns projetos, a profundidade. Portas abertas podem exigir mais folga lateral e frontal do que em um fogão convencional — meça o vão com essa margem.
-
-**Manutenção.** Mais cavidades, vedações e componentes elétricos ou de combustão podem significar reparos mais complexos que em um forno único. Vale verificar rede de assistência do fabricante na sua região antes de fechar a compra.
-
-**Risco de expectativa errada.** Comprar acreditando ter dois fornos independentes e descobrir depois um grill alternável no mesmo compartimento é arrependimento comum. A conferência documental evita isso.
+- **Preço.** Na mesma faixa de bocas e acabamento, costuma custar mais que o equivalente com forno simples. Se o segundo compartimento ficar pouco usado, a diferença pode não se pagar.
+- **Variedade de oferta.** Ainda há menos opções que na categoria de forno simples — sobretudo 4 bocas, embutir ou entrada de preço.
+- **Espaço físico.** Pode aumentar altura e, em alguns projetos, profundidade. Portas abertas pedem mais folga.
+- **Manutenção.** Mais cavidades e componentes podem significar reparos mais complexos. Verifique assistência na sua região.
+- **Risco de expectativa errada.** Comprar achando ter dois fornos independentes e descobrir grill alternável no mesmo espaço é arrependimento comum.
 
 Nenhum desses pontos invalida o formato; eles indicam cenários em que o fogão convencional continua sendo a escolha mais racional.
 
@@ -105,23 +110,17 @@ Nesses casos, um fogão com forno simples e grill bem dimensionado para o seu us
 
 ## Como escolher
 
-**Confirme o tipo de forno.** Leia manual e ficha técnica para saber se são dois compartimentos utilizáveis de forma independente ou funções alternadas no mesmo espaço. Essa é a primeira filtragem — antes de olhar acabamento ou número de bocas.
+Checklist de decisão:
 
-**Número de bocas.** O forno duplo existe em configurações de 4 e 5 bocas (e outras, conforme o catálogo). Mais bocas ajudam quando várias panelas entram ao mesmo tempo no fogão; menos bocas ocupam menos largura. Para calibrar essa decisão, o [comparativo fogão 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas) e o artigo [fogão 4 bocas ainda vale a pena?](/blog/fogao-4-bocas-ainda-vale-a-pena/) ajudam a separar necessidade de apelo visual.
+- [ ] Confirmar no manual: dois compartimentos independentes ou funções no mesmo espaço
+- [ ] Definir número de bocas pela rotina ([4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas) · [4 bocas ainda vale?](/blog/fogao-4-bocas-ainda-vale-a-pena/))
+- [ ] Escolher acabamento do tampo ([vidro ou inox](/blog/fogao-mesa-de-vidro-ou-inox/) · [vidro é seguro?](/blog/fogao-mesa-de-vidro-seguro/))
+- [ ] Listar funções que a rotina exige e marcar na ficha do modelo
+- [ ] Medir vão com portas abertas; checar gás, voltagem e condomínio ([5 bocas reduz espaço?](/blog/fogao-5-bocas-reduz-espaco-cozinha/))
+- [ ] Definir embutir ou piso ([guia](/blog/guia-fogao-embutir-ou-de-piso/))
+- [ ] Somar custo total: aparelho + frete + instalação + adaptação elétrica
 
-**Acabamento do tampo.** Inox e vidro têm perfis de uso e manutenção diferentes. O [guia mesa de vidro ou inox](/blog/fogao-mesa-de-vidro-ou-inox/) detalha prós e contras; para cuidados com vidro, veja [fogão com mesa de vidro é seguro?](/blog/fogao-mesa-de-vidro-seguro/).
-
-**Funções que importam para você.** Liste o que a rotina exige — timer, acendimento automático, grill no auxiliar, porta com vidro — e marque o que consta na ficha do modelo específico. Nem todo fogão com forno duplo reúne os mesmos itens.
-
-**Instalação e gabarito.** Meça largura, profundidade e altura do vão; confira recuo para instalação de gás, voltagem exigida pelo compartimento elétrico (quando houver) e regras do condomínio. Simule portas abertas para garantir que não encostam em paredes ou armários. Cozinha estreita? Leia [fogão 5 bocas reduz espaço na cozinha?](/blog/fogao-5-bocas-reduz-espaco-cozinha/) antes de optar por mais bocas só pelo apelo do forno duplo.
-
-**Embutir ou de piso.** Nem todo modelo existe nas duas versões. O [guia embutir ou de piso](/blog/guia-fogao-embutir-ou-de-piso/) orienta essa etapa.
-
-**Antes de fechar a compra**, três conferências reduzem arrependimento:
-
-- validar no manual se os dois compartimentos funcionam **ao mesmo tempo**, quando essa for sua necessidade;
-- medir o vão com **portas abertas** e checar voltagem de qualquer parte elétrica do aparelho;
-- somar custo total: aparelho, frete, instalação de gás e eventual adaptação elétrica.
+**Antes de fechar**, três conferências reduzem arrependimento: uso simultâneo no manual (se precisar), vão com portas abertas, e custo total de uso.
 
 ![Fogão com forno duplo em vista lateral com indicação de altura, largura e profundidade para conferência de gabarito.](/images/blog/melhor-fogao-com-forno-duplo/corpo-fogao-forno-duplo-gabarito-medidas.webp)
 

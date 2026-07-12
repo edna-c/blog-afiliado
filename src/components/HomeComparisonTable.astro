@@ -1,7 +1,19 @@
 ---
 import { produtos } from '../data/products';
+import { getCommercialGuideBlock, type CommercialGuideId } from '../data/commercialGuideBlocks';
+import type { ComparisonRow } from '../types/commercial';
 
-const rows = [
+export type { ComparisonRow } from '../types/commercial';
+
+interface Props {
+	guideId?: CommercialGuideId;
+}
+
+const { guideId } = Astro.props;
+const guideBlock = guideId ? getCommercialGuideBlock(guideId) : null;
+const isGuideEmbed = guideBlock != null;
+
+const homeRows: ComparisonRow[] = [
 	{
 		badge: 'Melhor custo-benefício',
 		recommended: true,
@@ -31,106 +43,214 @@ const rows = [
 		links: produtos.electroluxFE5IG,
 	},
 ];
+
+const rows = guideBlock?.comparisonRows ?? homeRows;
+const sectionId = isGuideEmbed ? 'guia-comercial-comparativo' : 'compare-heading';
+const reviewHref = guideBlock?.reviewPathPrefix;
+
+function rowReviewHref(row: ComparisonRow): string {
+	if (reviewHref) return reviewHref;
+	return `/review-fogao-5-bocas-${row.slug}`;
+}
 ---
 
-<section class="border-b border-white/10 bg-ink py-16 sm:py-20 lg:py-24" aria-labelledby="compare-heading">
-	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-		<h2 id="compare-heading" class="font-display text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">
-			Tabela comparativa: melhores fogões 5 bocas
-		</h2>
-		<div class="mt-5 max-w-2xl space-y-4 text-sm leading-relaxed text-on-ink-body">
-			<p>Veja os modelos mais vendidos e compare as ofertas sem sair da página.</p>
-			<p>A tabela abaixo reúne preço de referência, nota e o destaque de cada modelo para facilitar sua decisão.</p>
-			<p>
-				Quer entender os critérios antes de comparar? Confira o{' '}
-				<a href="/melhor-fogao-5-bocas" class="link-accent">guia de melhor fogão 5 bocas</a>.
-			</p>
-			<p>Se o foco for economia, a coluna “Melhor para” ajuda a identificar rapidamente os modelos com melhor custo-benefício.</p>
-			<p>Analise o comparativo completo e escolha com mais segurança.</p>
-		</div>
-		<div class="table-premium-shell mt-8">
-			<table class="table-premium min-w-[720px]">
-				<thead>
-					<tr>
-						<th scope="col">Modelo</th>
-						<th scope="col">Preço (ref.)</th>
-						<th scope="col">Avaliação</th>
-						<th scope="col">Melhor para</th>
-						<th scope="col">Ação</th>
-					</tr>
-				</thead>
-				<tbody>
-					{
-						rows.map((r, i) => (
-							<tr
-								class:list={[
-									r.recommended
-										? 'border-l-4 border-l-emerald-400 bg-emerald-950/40 ring-2 ring-inset ring-emerald-400/50 shadow-[inset_0_0_0_1px_rgba(52,211,153,0.15)]'
-										: i % 2 === 0
-											? 'bg-ink'
-											: 'bg-brand-900/30',
-								]}
-							>
-								<th scope="row" class="text-left align-top">
-									{
-										r.recommended ? (
-											<p class="mb-2 text-xs font-bold tracking-wide text-pop">⭐ Recomendado</p>
-										) : null
-									}
-									<p class="text-[10px] font-bold uppercase tracking-[0.25em] text-pop">{r.badge}</p>
-									<div class="font-display mt-2 text-base font-bold text-on-ink-body">{r.model}</div>
-								</th>
-								<td class="text-on-ink-body">{r.price}</td>
-								<td class="font-semibold text-pop">{r.rating}</td>
-								<td class="text-on-ink-body">{r.bestFor}</td>
-								<td class="align-top">
-									<div class="flex min-w-[12rem] flex-col gap-2">
-										<a
-											href={r.links.ml}
-											class="inline-flex min-h-[48px] w-full items-center justify-center gap-1 rounded-lg border-2 border-transparent bg-cta px-4 text-xs font-bold uppercase tracking-wide text-white ring-1 ring-white/15 transition duration-300 ease-out hover:bg-cta-hover"
-											target="_blank"
-											rel="noopener noreferrer nofollow sponsored"
-											aria-label={`Ver preço e compra do fogão ${r.model} no Mercado Livre — abre em nova aba (link patrocinado)`}
-										>
-											<span aria-hidden="true">🔥</span>
-											Ver preço e compra — {r.model}
-										</a>
-										{
-											'shopee' in r.links && r.links.shopee ? (
+{
+	isGuideEmbed ? (
+		<div class="guia-comercial-embed not-prose relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen max-w-[100vw]">
+			<section class="border-b border-white/10 bg-ink py-12 sm:py-16" aria-labelledby={sectionId}>
+				<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+					<div class="guia-comercial-copy max-w-2xl">
+						<h2 id={sectionId} class="font-display font-extrabold tracking-tight text-on-ink-body">
+							{guideBlock!.comparisonCopy.heading}
+						</h2>
+						{guideBlock!.comparisonCopy.introParagraphs.map((paragraph) => (
+							<p>{paragraph}</p>
+						))}
+					</div>
+					<div class="table-premium-shell mt-8">
+						<table class="table-premium min-w-[720px]">
+							<thead>
+								<tr>
+									<th scope="col">Modelo</th>
+									<th scope="col">Preço (ref.)</th>
+									<th scope="col">Avaliação</th>
+									<th scope="col">Melhor para</th>
+									<th scope="col">Ação</th>
+								</tr>
+							</thead>
+							<tbody>
+								{rows.map((r, i) => (
+									<tr
+										class:list={[
+											r.recommended
+												? 'border-l-4 border-l-emerald-400 bg-emerald-950/40 ring-2 ring-inset ring-emerald-400/50 shadow-[inset_0_0_0_1px_rgba(52,211,153,0.15)]'
+												: i % 2 === 0
+													? 'bg-ink'
+													: 'bg-brand-900/30',
+										]}
+									>
+										<th scope="row" class="text-left align-top">
+											{r.recommended ? (
+												<p class="mb-2 text-xs font-bold tracking-wide text-pop">⭐ Recomendado</p>
+											) : null}
+											<p class="text-[10px] font-bold uppercase tracking-[0.25em] text-pop">{r.badge}</p>
+											<div class="font-display mt-2 text-base font-bold text-on-ink-body">{r.model}</div>
+										</th>
+										<td class="text-on-ink-body">{r.price}</td>
+										<td class="font-semibold text-pop">{r.rating}</td>
+										<td class="text-on-ink-body">{r.bestFor}</td>
+										<td class="align-top">
+											<div class="flex min-w-[12rem] flex-col gap-2">
 												<a
-													href={r.links.shopee}
-													class="btn-secondary-premium w-full px-4"
+													href={r.links.ml}
+													class="inline-flex min-h-[48px] w-full items-center justify-center gap-1 rounded-lg border-2 border-transparent bg-cta px-4 text-xs font-bold uppercase tracking-wide text-white ring-1 ring-white/15 transition duration-300 ease-out hover:bg-cta-hover"
 													target="_blank"
 													rel="noopener noreferrer nofollow sponsored"
-													aria-label={`Ver oferta do fogão ${r.model} na Shopee — abre em nova aba (link patrocinado)`}
+													aria-label={`Ver preço e compra do fogão ${r.model} no Mercado Livre — abre em nova aba (link patrocinado)`}
 												>
-													<span aria-hidden="true">👉</span>
-													Ver oferta na Shopee — {r.model}
+													<span aria-hidden="true">🔥</span>
+													Ver preço e compra — {r.model}
 												</a>
-											) : null
-										}
-									</div>
-									<a
-										href={`/review-fogao-5-bocas-${r.slug}`}
-										class="mt-3 inline-flex min-h-[44px] items-center text-xs font-bold text-pop underline decoration-pop/40 decoration-2 underline-offset-[5px] transition hover:text-accent-hover hover:decoration-pop"
-										aria-label={`Ler avaliação completa do fogão ${r.model}`}
-									>
-										Ver avaliação completa — {r.model}
-									</a>
-								</td>
-							</tr>
-						))
-					}
-				</tbody>
-			</table>
+												{'shopee' in r.links && r.links.shopee ? (
+													<a
+														href={r.links.shopee}
+														class="btn-secondary-premium w-full px-4"
+														target="_blank"
+														rel="noopener noreferrer nofollow sponsored"
+														aria-label={`Ver oferta do fogão ${r.model} na Shopee — abre em nova aba (link patrocinado)`}
+													>
+														<span aria-hidden="true">👉</span>
+														Ver oferta na Shopee — {r.model}
+													</a>
+												) : null}
+											</div>
+											<a
+												href={rowReviewHref(r)}
+												class="mt-3 inline-flex min-h-[44px] items-center text-xs font-bold text-pop underline decoration-pop/40 decoration-2 underline-offset-[5px] transition hover:text-accent-hover hover:decoration-pop"
+												aria-label={`Ler avaliação completa do fogão ${r.model}`}
+											>
+												Ver avaliação completa — {r.model}
+											</a>
+										</td>
+									</tr>
+								))}
+							</tbody>
+						</table>
+					</div>
+					{guideBlock!.comparisonCopy.footerNote ? (
+						<p class="guia-comercial-footnote mt-6">
+							{guideBlock!.comparisonCopy.footerNote}{' '}
+							<a href="/comparativo-fogao-4-vs-5-bocas" class="link-accent-soft">
+								Comparativo entre fogões 4 e 5 bocas
+							</a>
+							.
+						</p>
+					) : null}
+					{guideBlock!.comparisonCopy.footerCta ? (
+						<p class="mt-3 text-sm font-medium text-on-ink-body">{guideBlock!.comparisonCopy.footerCta}</p>
+					) : null}
+				</div>
+			</section>
 		</div>
-		<p class="mt-6 text-xs text-on-ink-muted">
-			Antes de fechar, vale cruzar com o{' '}
-			<a href="/comparativo-fogao-4-vs-5-bocas" class="link-accent-soft">
-				comparativo entre fogões 4 e 5 bocas
-			</a>
-			.
-		</p>
-		<p class="mt-3 text-sm font-medium text-on-ink-body">Continue lendo para entender melhor os critérios de compra e evitar erro na escolha.</p>
-	</div>
-</section>
+	) : (
+		<section class="border-b border-white/10 bg-ink py-16 sm:py-20 lg:py-24" aria-labelledby={sectionId}>
+			<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+				<h2 id={sectionId} class="font-display text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">
+					Tabela comparativa: melhores fogões 5 bocas
+				</h2>
+				<div class="mt-5 max-w-2xl space-y-4 text-sm leading-relaxed text-on-ink-body">
+					<p>Veja os modelos mais vendidos e compare as ofertas sem sair da página.</p>
+					<p>A tabela abaixo reúne preço de referência, nota e o destaque de cada modelo para facilitar sua decisão.</p>
+					<p>
+						Quer entender os critérios antes de comparar? Confira o{' '}
+						<a href="/melhores/melhor-fogao-5-bocas" class="link-accent">guia de melhor fogão 5 bocas</a>.
+					</p>
+					<p>Se o foco for economia, a coluna “Melhor para” ajuda a identificar rapidamente os modelos com melhor custo-benefício.</p>
+					<p>Analise o comparativo completo e escolha com mais segurança.</p>
+				</div>
+				<div class="table-premium-shell mt-8">
+					<table class="table-premium min-w-[720px]">
+						<thead>
+							<tr>
+								<th scope="col">Modelo</th>
+								<th scope="col">Preço (ref.)</th>
+								<th scope="col">Avaliação</th>
+								<th scope="col">Melhor para</th>
+								<th scope="col">Ação</th>
+							</tr>
+						</thead>
+						<tbody>
+							{
+								rows.map((r, i) => (
+									<tr
+										class:list={[
+											r.recommended
+												? 'border-l-4 border-l-emerald-400 bg-emerald-950/40 ring-2 ring-inset ring-emerald-400/50 shadow-[inset_0_0_0_1px_rgba(52,211,153,0.15)]'
+												: i % 2 === 0
+													? 'bg-ink'
+													: 'bg-brand-900/30',
+										]}
+									>
+										<th scope="row" class="text-left align-top">
+											{r.recommended ? (
+												<p class="mb-2 text-xs font-bold tracking-wide text-pop">⭐ Recomendado</p>
+											) : null}
+											<p class="text-[10px] font-bold uppercase tracking-[0.25em] text-pop">{r.badge}</p>
+											<div class="font-display mt-2 text-base font-bold text-on-ink-body">{r.model}</div>
+										</th>
+										<td class="text-on-ink-body">{r.price}</td>
+										<td class="font-semibold text-pop">{r.rating}</td>
+										<td class="text-on-ink-body">{r.bestFor}</td>
+										<td class="align-top">
+											<div class="flex min-w-[12rem] flex-col gap-2">
+												<a
+													href={r.links.ml}
+													class="inline-flex min-h-[48px] w-full items-center justify-center gap-1 rounded-lg border-2 border-transparent bg-cta px-4 text-xs font-bold uppercase tracking-wide text-white ring-1 ring-white/15 transition duration-300 ease-out hover:bg-cta-hover"
+													target="_blank"
+													rel="noopener noreferrer nofollow sponsored"
+													aria-label={`Ver preço e compra do fogão ${r.model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+												>
+													<span aria-hidden="true">🔥</span>
+													Ver preço e compra — {r.model}
+												</a>
+												{
+													'shopee' in r.links && r.links.shopee ? (
+														<a
+															href={r.links.shopee}
+															class="btn-secondary-premium w-full px-4"
+															target="_blank"
+															rel="noopener noreferrer nofollow sponsored"
+															aria-label={`Ver oferta do fogão ${r.model} na Shopee — abre em nova aba (link patrocinado)`}
+														>
+															<span aria-hidden="true">👉</span>
+															Ver oferta na Shopee — {r.model}
+														</a>
+													) : null
+												}
+											</div>
+											<a
+												href={rowReviewHref(r)}
+												class="mt-3 inline-flex min-h-[44px] items-center text-xs font-bold text-pop underline decoration-pop/40 decoration-2 underline-offset-[5px] transition hover:text-accent-hover hover:decoration-pop"
+												aria-label={`Ler avaliação completa do fogão ${r.model}`}
+											>
+												Ver avaliação completa — {r.model}
+											</a>
+										</td>
+									</tr>
+								))
+							}
+						</tbody>
+					</table>
+				</div>
+				<p class="mt-6 text-xs text-on-ink-muted">
+					Antes de fechar, vale cruzar com o{' '}
+					<a href="/comparativo-fogao-4-vs-5-bocas" class="link-accent-soft">
+						comparativo entre fogões 4 e 5 bocas
+					</a>
+					.
+				</p>
+				<p class="mt-3 text-sm font-medium text-on-ink-body">Continue lendo para entender melhor os critérios de compra e evitar erro na escolha.</p>
+			</div>
+		</section>
+	)
+}

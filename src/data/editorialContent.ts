@@ -66,7 +66,19 @@ export function canonPath(path: string): string {
  */
 export const EDITORIAL_POOL: EditorialEntry[] = [
 	{
-		href: '/melhor-fogao-5-bocas',
+		href: '/melhores/melhor-fogao-4-bocas',
+		title: 'Melhor fogão 4 bocas (guia de compra)',
+		description: 'Os 3 melhores fogões 4 bocas de 2026 com critérios, comparativo e recomendação por perfil.',
+		kind: 'Guia',
+		flow: 2,
+		editorialLabel: 'Guia de compra',
+		topics: ['fogao-4-bocas', 'custo-beneficio', 'compra-segura', 'cozinha-pequena'],
+		anchorText: 'guia de compra do melhor fogão 4 bocas',
+		teaser: 'ranking dos 3 melhores 4 bocas por perfil de uso',
+		weight: 8,
+	},
+	{
+		href: '/melhores/melhor-fogao-5-bocas',
 		title: 'Melhor fogão 5 bocas (guia mestre)',
 		description: 'Critérios de compra, perfis e leitura longa para fechar decisão com segurança.',
 		kind: 'Guia',

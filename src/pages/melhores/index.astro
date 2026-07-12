@@ -1,0 +1,133 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BlogGrid from '../../components/BlogGrid.astro';
+import RelatedContent from '../../components/RelatedContent.astro';
+import { PRODUCT_IMAGE_REVIEW } from '../../data/productImages';
+import { readingMinutes } from '../../utils/readingTime';
+import { EDITORIAL_POOL, canonPath, type EditorialEntry } from '../../data/editorialContent';
+
+const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
+const canonical = new URL(Astro.url.pathname, site).href;
+const pageTitle = 'Melhores Eletrodomésticos: Guias de Compra e Reviews | Casa Prática Eletro';
+const metaDescription =
+	'Centro de guias de compra do Casa Prática Eletro: rankings, comparativos e reviews para escolher o melhor eletrodoméstico com segurança e sem achismo.';
+const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).href;
+
+const guides = (await getCollection('melhores'))
+	.filter((guide) => !guide.id.startsWith('_'))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const readingTimes: Record<string, number> = {};
+for (const guide of guides) {
+	readingTimes[guide.id] = readingMinutes(guide.body);
+}
+
+const collectionPaths = new Set(guides.map((g) => canonPath(`/melhores/${g.id}`)));
+
+/** Guias/reviews comerciais que ainda vivem em rotas próprias (cluster fogão 5 bocas). */
+const COMMERCIAL_KINDS = new Set(['Guia', 'Comparativo', 'Review', 'Análise']);
+const clusterGuides: EditorialEntry[] = EDITORIAL_POOL.filter(
+	(e) => COMMERCIAL_KINDS.has(e.kind) && !collectionPaths.has(canonPath(e.href)),
+).sort((a, b) => (b.weight ?? 0) - (a.weight ?? 0));
+
+const guidesCount = guides.length + clusterGuides.length;
+
+const itemListSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'CollectionPage',
+	name: pageTitle,
+	description: metaDescription,
+	url: canonical,
+	mainEntity: {
+		'@type': 'ItemList',
+		itemListElement: [
+			...guides.map((g, i) => ({
+				'@type': 'ListItem',
+				position: i + 1,
+				name: g.data.title,
+				url: new URL(`/melhores/${g.id}`, site).href,
+			})),
+			...clusterGuides.map((g, i) => ({
+				'@type': 'ListItem',
+				position: guides.length + i + 1,
+				name: g.title,
+				url: new URL(g.href.replace(/^\//, ''), site).href,
+			})),
+		],
+	},
+};
+---
+
+<BaseLayout
+	title={pageTitle}
+	description={metaDescription}
+	canonical={canonical}
+	openGraph={{
+		title: pageTitle,
+		description: metaDescription,
+		url: canonical,
+		type: 'website',
+		image: ogImage,
+		imageAlt: 'Centro de guias de compra Casa Prática Eletro',
+	}}
+>
+	<script type="application/ld+json" slot="head" set:html={JSON.stringify(itemListSchema)} />
+
+	<section class="relative overflow-hidden border-b border-white/10 bg-gradient-to-b from-brand-950 via-ink to-[#06060a]">
+		<div
+			class="pointer-events-none absolute inset-0 opacity-[0.08]"
+			aria-hidden="true"
+			style="background-image: radial-gradient(circle at 18% 15%, rgba(223,255,31,0.35), transparent 45%), radial-gradient(circle at 82% 0%, rgba(255,255,255,0.12), transparent 40%);"
+		>
+		</div>
+		<div class="relative mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 sm:pb-20 lg:px-8 lg:pb-24">
+			<Breadcrumbs items={[{ name: 'Início', href: '/' }, { name: 'Melhores' }]} />
+			<div class="mt-10 max-w-3xl">
+				<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop sm:text-sm">
+					Centro de Guias de Compra
+				</p>
+				<h1 class="font-display mt-4 text-4xl font-extrabold leading-tight tracking-tight text-on-ink-body sm:text-5xl lg:text-6xl">
+					Melhores eletrodomésticos, sem achismo
+				</h1>
+				<p class="mt-6 text-lg leading-relaxed text-on-ink-body sm:text-xl">
+					Rankings, comparativos e reviews com critério editorial: o que priorizar, para quem cada modelo faz sentido e
+					quando vale (ou não) subir de linha. Nossa curadoria para você comprar com confiança.
+				</p>
+				<p class="mt-6 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.03] px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-on-ink-muted">
+					{guidesCount} {guidesCount === 1 ? 'guia publicado' : 'guias publicados'}
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<BlogGrid
+		variant="dark"
+		posts={guides}
+		basePath="/melhores"
+		hrefOverrides={{ 'melhor-fogao-5-bocas': '/#hero-heading' }}
+		eyebrow="Guias de compra"
+		title="Rankings e reviews"
+		subtitle="Cada guia reúne os modelos que mais se destacaram na categoria, com pontos fortes, pontos fracos e recomendação por perfil de uso."
+		readingTimes={readingTimes}
+		showViewAllLink={false}
+	/>
+
+	{
+		clusterGuides.length ? (
+			<section class="border-t border-white/10 bg-ink py-16 lg:py-20">
+				<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+					<RelatedContent
+						items={clusterGuides}
+						columns={3}
+						limit={12}
+						eyebrow="Cluster fogão 5 bocas"
+						title="Mais guias, comparativos e reviews"
+						subtitle="Conteúdo comercial complementar do Casa Prática Eletro — do guia mestre às análises por marca."
+					/>
+				</div>
+			</section>
+		) : null
+	}
+</BaseLayout>

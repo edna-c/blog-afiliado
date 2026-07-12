@@ -186,31 +186,27 @@ Se o tampo de vidro trinca, a troca da peça — quando disponível — ou do co
 
 ## Afinal, vale mais a pena comprar fogão com mesa de vidro ou inox?
 
-Não existe uma resposta única para todo mundo. O que existe é o acabamento certo para cada perfil. Use o guia abaixo como decisão rápida — e ajuste conforme marca, tamanho e instalação.
+Não existe uma resposta única. Use o guia abaixo — e ajuste conforme marca, tamanho e instalação.
+
+| Perfil | Preferência |
+| --- | --- |
+| Prioriza estética / visual clean | Mesa de vidro |
+| Cozinha todos os dias / ritmo intenso | Inox |
+| Famílias grandes / cozinha compartilhada | Inox |
+| Apartamento compacto e bem iluminado | Vidro (se o uso não for agressivo) |
+| Apartamento estreito + uso intenso | Inox |
+| Economia no longo prazo | Inox |
+| Máxima durabilidade / panelas pesadas | Inox |
+
+Se o tamanho ainda está em aberto em apartamento, cruze com [fogão 4 bocas ainda vale a pena?](/blog/fogao-4-bocas-ainda-vale-a-pena/).
 
 ### Quem prioriza estética
 
-**Tende a preferir mesa de vidro.** O tampo liso, a aparência contemporânea e a integração com cozinhas planejadas pesam mais do que a necessidade de manuseio mais cuidadoso. Se o ambiente é pequeno, o efeito de leveza visual reforça ainda mais essa escolha.
+**Tende a preferir mesa de vidro.** Tampo liso, aparência contemporânea e integração com cozinhas planejadas. Em ambiente pequeno, o efeito de leveza reforça a escolha.
 
-### Quem cozinha todos os dias
+### Quem cozinha todos os dias ou em família grande
 
-**Tende a preferir inox.** Rotina intensa envolve mais panelas, mais movimento, mais respingos e menos tempo para limpeza imediata. O inox acompanha melhor esse ritmo sem transformar cada gesto em preocupação com o tampo.
-
-### Famílias grandes
-
-**Inox costuma ser a escolha mais segura.** Mais pessoas na cozinha significa mais chance de impacto, panelas simultâneas e uso menos "delicado". O inox oferece margem maior para esse tipo de rotina.
-
-### Apartamentos
-
-**Depende do projeto, mas o vidro aparece com frequência.** Em cozinhas compactas e bem iluminadas, a mesa de vidro ajuda a não "fechar" o ambiente. Se o apartamento tem cozinha estreita e uso compartilhado intenso, o inox pode ser mais prático. Vale cruzar com o artigo sobre [fogão 4 bocas em apartamento](/blog/fogao-4-bocas-ainda-vale-a-pena/) se o tamanho ainda está em aberto.
-
-### Quem busca economia
-
-**Inox tende a entregar mais retorno no longo prazo.** Não porque seja sempre mais barato na compra, mas porque costuma conviver melhor com desgaste, reduz risco de troca prematura do tampo e concentra mais opções em faixas acessíveis.
-
-### Quem deseja máxima durabilidade
-
-**Inox é a aposta mais racional.** Se a prioridade é um fogão que aguente anos de uso sem surpresa, o acabamento metálico continua sendo a referência mais confiável — especialmente em cozinhas com panelas pesadas e rotina exigente.
+**Tende a preferir inox.** Mais panelas, mais movimento, menos tempo para limpeza imediata — e mais margem para impacto.
 
 ---
 

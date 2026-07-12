@@ -1,0 +1,127 @@
+---
+/**
+ * HomeMelhoresSection — bloco "Guias de Compra" da home.
+ *
+ * Identidade visual própria (autoridade/premium), distinta do bloco do Blog:
+ *  - chip "Guia de Compra" + selo de destaque (topPick)
+ *  - numeração de ranking, data e tempo de leitura
+ *  - CTA "Ver guia completo" apontando para /melhores/<slug>
+ *
+ * Lê a collection `melhores` e mostra os guias mais recentes.
+ */
+import { getCollection } from 'astro:content';
+import { readingMinutes } from '../utils/readingTime';
+
+interface Props {
+	limit?: number;
+}
+const { limit = 3 } = Astro.props;
+
+const guides = (await getCollection('melhores'))
+	.filter((guide) => !guide.id.startsWith('_'))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, limit);
+
+const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' });
+---
+
+{
+	guides.length ? (
+		<section
+			class="relative border-y border-white/10 bg-[#07070b] py-20 sm:py-24 lg:py-28"
+			aria-labelledby="home-melhores-heading"
+		>
+			<div
+				class="pointer-events-none absolute inset-0 opacity-[0.06]"
+				aria-hidden="true"
+				style="background-image: linear-gradient(120deg, rgba(223,255,31,0.18), transparent 38%), radial-gradient(circle at 88% 12%, rgba(255,255,255,0.10), transparent 42%);"
+			/>
+			<div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+				<div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+					<div class="max-w-2xl">
+						<p class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.35em] text-pop sm:text-sm">
+							<span class="inline-block h-px w-8 bg-pop/70" aria-hidden="true" />
+							Guias de Compra
+						</p>
+						<h2
+							id="home-melhores-heading"
+							class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl lg:text-[2.5rem] lg:leading-tight"
+						>
+							Escolha certa, sem achismo
+						</h2>
+						<p class="mt-4 text-base leading-relaxed text-on-ink-muted sm:text-lg">
+							Rankings e reviews com critério editorial: o que priorizar e para quem cada modelo faz sentido.
+						</p>
+					</div>
+					<a
+						href="/melhores"
+						class="btn-secondary-premium is-pill inline-flex min-h-[48px] shrink-0 items-center justify-center px-7 text-sm font-bold"
+						aria-label="Ver todos os guias de compra"
+					>
+						Ver todos os guias
+					</a>
+				</div>
+
+				<ul class="mt-14 grid list-none gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-8">
+					{guides.map((guide, index) => {
+						const listingImage = guide.data.cardImage ?? guide.data.coverImage;
+						return (
+						<li>
+							<a
+								href={`/melhores/${guide.id}/`}
+								class="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-brand-900/40 ring-1 ring-white/5 transition duration-300 ease-out hover:-translate-y-0.5 hover:border-pop/30 hover:bg-brand-900/60 hover:shadow-[0_18px_48px_-26px_rgba(0,0,0,0.7)]"
+								aria-label={`Abrir guia de compra: ${guide.data.title}`}
+							>
+								<div class="relative aspect-[16/10] w-full overflow-hidden bg-[#141414]">
+									{listingImage ? (
+										<img
+											src={listingImage}
+											alt=""
+											width={960}
+											height={600}
+											loading={index === 0 ? 'eager' : 'lazy'}
+											decoding="async"
+											class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+										/>
+									) : (
+										<div class="h-full w-full bg-gradient-to-br from-brand-800/80 via-brand-900 to-ink" aria-hidden="true" />
+									)}
+									<span class="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-pop/40 bg-ink/70 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-pop backdrop-blur">
+										Guia de Compra
+									</span>
+									<span
+										class="absolute right-4 top-4 inline-flex h-8 w-8 items-center justify-center rounded-full bg-pop text-sm font-extrabold text-ink"
+										aria-hidden="true"
+									>
+										{index + 1}
+									</span>
+								</div>
+								<div class="flex flex-1 flex-col p-6 sm:p-7">
+									<p class="text-xs font-semibold uppercase tracking-wide text-on-ink-muted">
+										{guide.data.category} · {fmt.format(guide.data.pubDate)} · {readingMinutes(guide.body)} min
+									</p>
+									<h3 class="font-display mt-3 text-lg font-bold leading-snug text-on-ink-body transition group-hover:text-pop sm:text-xl">
+										{guide.data.title}
+									</h3>
+									{guide.data.topPick ? (
+										<p class="mt-3 inline-flex w-fit items-center gap-1.5 rounded-md bg-pop/10 px-2.5 py-1 text-xs font-semibold text-pop">
+											🏆 Destaque: {guide.data.topPick}
+										</p>
+									) : null}
+									<p class="mt-3 line-clamp-2 flex-1 text-sm leading-relaxed text-on-ink-muted">
+										{guide.data.description}
+									</p>
+									<span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-pop">
+										Ver guia completo
+										<span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span>
+									</span>
+								</div>
+							</a>
+						</li>
+						);
+					})}
+				</ul>
+			</div>
+		</section>
+	) : null
+}
