@@ -23,14 +23,14 @@ export const produtos = {
 	/** Placeholders temporários — substituir pelos links definitivos de afiliado. */
 	consulCF04NAR: {
 		ml: 'https://www.mercadolivre.com.br/fogo-consul-cf04nar-4-bocas-acendimento-aut-inox/p/MLB6331388?pdp_filters=item_id%3AMLB2048022316&matt_tool=38524122',
-		shopee: '#ver-preco-shopee-consul-cf04nar',
+		shopee: 'https://s.shopee.com.br/8pk9rbQxV1',
 	},
 	electroluxFE4IW: {
 		ml: 'https://www.mercadolivre.com.br/fogo-4-bocas-electrolux-efficient-branco-mesa-inox-perfectcook-e-vaporbake-fe4iw-bivolt/p/MLB58911417?pdp_filters=item_id%3AMLB6545490148&matt_tool=38524122',
-		shopee: '#ver-preco-shopee-electrolux-fe4iw',
+		shopee: 'https://s.shopee.com.br/5VThxEhHjk',
 	},
 	atlasMonacoPlus: {
 		ml: 'https://www.mercadolivre.com.br/fogao-monaco-plus-4-bocas-mesa-de-inox-forno-48-litros-atlas/up/MLBU3862344155?pdp_filters=item_id%3AMLB6526475006&matt_tool=38524122',
-		shopee: '#ver-preco-shopee-atlas-monaco-plus',
+		shopee: 'https://s.shopee.com.br/1VxZCI4Dcy',
 	},
 } as const satisfies Record<string, ProdutoAfiliado>;
