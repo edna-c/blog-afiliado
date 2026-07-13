@@ -21,16 +21,16 @@ export const produtos = {
 		ml: 'https://www.mercadolivre.com.br/fogo-5-bocas-electrolux-cinza-mesa-inox-perfectcook-fe5ig/p/MLB58200579?pdp_filters=item_id%3AMLB4510248811&matt_event_ts=1778028554553&matt_d2id=f3daa5c6-aabd-43a1-9dec-ee1d4967e855&matt_tracing_id=49d6633b-aa48-4908-96f2-9aada3f8c220',
 	},
 	/** Placeholders temporários — substituir pelos links definitivos de afiliado. */
-	consulCFO4VAR: {
-		ml: '#ver-preco-mercado-livre-consul-cfo4var',
-		shopee: '#ver-preco-shopee-consul-cfo4var',
+	consulCF04NAR: {
+		ml: 'https://www.mercadolivre.com.br/fogo-consul-cf04nar-4-bocas-acendimento-aut-inox/p/MLB6331388?pdp_filters=item_id%3AMLB2048022316&matt_tool=38524122',
+		shopee: '#ver-preco-shopee-consul-cf04nar',
 	},
-	electroluxFE4GP: {
-		ml: '#ver-preco-mercado-livre-electrolux-fe4gp',
-		shopee: '#ver-preco-shopee-electrolux-fe4gp',
+	electroluxFE4IW: {
+		ml: 'https://www.mercadolivre.com.br/fogo-4-bocas-electrolux-efficient-branco-mesa-inox-perfectcook-e-vaporbake-fe4iw-bivolt/p/MLB58911417?pdp_filters=item_id%3AMLB6545490148&matt_tool=38524122',
+		shopee: '#ver-preco-shopee-electrolux-fe4iw',
 	},
 	atlasMonacoPlus: {
-		ml: '#ver-preco-mercado-livre-atlas-monaco-plus',
+		ml: 'https://www.mercadolivre.com.br/fogao-monaco-plus-4-bocas-mesa-de-inox-forno-48-litros-atlas/up/MLBU3862344155?pdp_filters=item_id%3AMLB6526475006&matt_tool=38524122',
 		shopee: '#ver-preco-shopee-atlas-monaco-plus',
 	},
 } as const satisfies Record<string, ProdutoAfiliado>;

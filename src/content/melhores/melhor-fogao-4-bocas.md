@@ -2,7 +2,7 @@
 
 title: 'Melhor Fogão 4 Bocas em 2026: Os 3 Melhores Modelos para Comprar'
 
-description: 'Guia completo com os 3 melhores fogões 4 bocas de 2026: Consul CFO4VAR, Electrolux Experience FE4GP e Atlas Mônaco Plus, com critérios de escolha, comparativo e FAQ.'
+description: 'Guia completo com os 3 melhores fogões 4 bocas de 2026: Consul CF04NAR, Electrolux Efficient FE4IW e Atlas Mônaco Plus, com critérios de escolha, comparativo e FAQ.'
 
 pubDate: 2026-07-07
 
@@ -20,13 +20,13 @@ dek: 'Compare Consul, Electrolux e Atlas, confirme o modelo certo para o seu per
 
 eyebrow: 'Atualizado 2026 · Guia de compra'
 
-topPick: 'Consul CFO4VAR'
+topPick: 'Consul CF04NAR'
 
 faq:
 
   - question: 'Qual é o melhor fogão 4 bocas atualmente?'
 
-    answer: 'Entre os modelos analisados, o Consul CFO4VAR apresentou o melhor equilíbrio entre qualidade, desempenho, facilidade de limpeza e custo-benefício.'
+    answer: 'Entre os modelos analisados, o Consul CF04NAR apresentou o melhor equilíbrio entre qualidade, desempenho, acendimento automático, praticidade no dia a dia e custo-benefício.'
 
   - question: 'Fogão de mesa de vidro quebra com facilidade?'
 

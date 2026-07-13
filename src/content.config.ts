@@ -57,7 +57,7 @@ const melhores = defineCollection({
 		dek: z.string().optional(),
 		/** Eyebrow acima do H1 (ex.: "Atualizado 2026 · Guia de compra"). */
 		eyebrow: z.string().optional(),
-		// Rótulo curto do "top pick" do guia (ex.: "Consul CFO4VAR"). Opcional.
+		// Rótulo curto do "top pick" do guia (ex.: "Consul CF04NAR"). Opcional.
 		topPick: z.string().optional(),
 		/** Card "Decisão em 20 segundos" — equivalente ao TL;DR visual da página original. */
 		tldr: z

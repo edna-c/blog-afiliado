@@ -9,7 +9,7 @@ category: 'Guia de Compra'
 
 Regra para empate:
 
-- Cozinha todo dia + orçamento médio → **Consul**
-- Design é requisito do projeto → **Electrolux**
+- Cozinha todo dia + orçamento médio → **Consul CF04NAR**
+- Design e recursos de forno são requisito → **Electrolux Efficient FE4IW**
 - Precisa gastar o mínimo agora → **Atlas**
 - Família grande / muitas panelas → [fogão 5 bocas](/melhores/melhor-fogao-5-bocas)
