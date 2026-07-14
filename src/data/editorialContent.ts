@@ -116,13 +116,14 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 	{
 		href: '/comparativo-fogao-4-vs-5-bocas',
 		title: 'Fogão 4 vs 5 bocas',
-		description: 'Regra simples para decidir pelo tamanho certo da cozinha e da rotina.',
+		description:
+			'Comparativo completo: rotina, espaço, família e custo para decidir entre fogão 4 ou 5 bocas antes de escolher o modelo.',
 		kind: 'Comparativo',
 		flow: 3,
 		editorialLabel: 'Comparativo',
 		topics: ['fogao-5-bocas', 'fogao-4-bocas', 'cozinha-pequena', 'compra-segura'],
 		anchorText: 'comparativo entre fogões 4 e 5 bocas',
-		teaser: 'tamanho certo de fogão para sua cozinha e rotina',
+		teaser: 'regra prática + FAQ para fechar 4 ou 5 bocas',
 		weight: 8,
 	},
 	{

@@ -5,14 +5,13 @@ import EditorialLinks from '../components/EditorialLinks.astro';
 import SmartRecommendations from '../components/SmartRecommendations.astro';
 import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
 import { findEntry, type EditorialEntry } from '../data/editorialContent';
-import { produtos } from '../data/products';
 import { PRODUCT_IMAGE_REVIEW } from '../data/productImages';
 
 const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
 const canonical = new URL('/comparativo-fogao-4-vs-5-bocas', site).href;
 const pageTitle = 'Fogão 4 ou 5 bocas: qual vale mais a pena em 2026? | Casa Prática Eletro';
 const description =
-	'Compare fogão 4 e 5 bocas por espaço, rotina, família e custo para decidir qual faz mais sentido na sua cozinha.';
+	'Fogão 4 ou 5 bocas? Comparativo completo por rotina, espaço, família e custo — com regra prática para decidir o tamanho certo antes de olhar modelos.';
 const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).href;
 
 const reviewBrastemp = findEntry((e) => e.href === '/review-fogao-5-bocas-brastemp');
@@ -20,8 +19,68 @@ const reviewConsul = findEntry((e) => e.href === '/review-fogao-5-bocas-consul')
 const reviewElectrolux = findEntry((e) => e.href === '/review-fogao-5-bocas-electrolux');
 const guiaCustoBeneficio = findEntry((e) => e.href === '/fogao-5-bocas-custo-beneficio');
 const lifestyleEmbutir = findEntry((e) => e.href === '/blog/guia-fogao-embutir-ou-de-piso/');
+const blog4Bocas = findEntry((e) => e.href === '/blog/fogao-4-bocas-ainda-vale-a-pena/');
+const guia4Bocas = findEntry((e) => e.href === '/melhores/melhor-fogao-4-bocas');
+const guia5Bocas = findEntry((e) => e.href === '/melhores/melhor-fogao-5-bocas');
 
-const reviewItems: EditorialEntry[] = [reviewBrastemp, reviewConsul, reviewElectrolux].filter(Boolean) as EditorialEntry[];
+const reviewItems: EditorialEntry[] = [reviewBrastemp, reviewConsul, reviewElectrolux].filter(
+	Boolean,
+) as EditorialEntry[];
+
+const faqItems = [
+	{
+		question: 'Fogão 4 ou 5 bocas: qual vale mais a pena?',
+		answer:
+			'Depende da rotina. Se no dia a dia você usa até três panelas ao mesmo tempo, o 4 bocas costuma ser suficiente e mais confortável em cozinhas menores. Se a casa frequentemente “lota” o fogão com quatro ou cinco panelas, o 5 bocas costuma valer mais.',
+	},
+	{
+		question: 'Fogão 4 bocas atende uma família?',
+		answer:
+			'Sim, em muitas famílias — desde que a rotina não exija várias panelas grandes ligadas ao mesmo tempo. Família grande com cozinha intensa e receitas simultâneas tende a aproveitar melhor o 5 bocas.',
+	},
+	{
+		question: 'Fogão 5 bocas ocupa muito mais espaço?',
+		answer:
+			'Em geral é um pouco mais largo, mas o impacto visual depende mais do layout, da circulação e do modelo do que só do número de bocas. Em planta estreita, meça o vão com portas abertas antes de decidir.',
+	},
+	{
+		question: '5 bocas é sempre mais caro que 4 bocas?',
+		answer:
+			'Não necessariamente. Há 4 bocas com recursos caros e 5 bocas de entrada competitivos. Compare modelo a modelo — não use o número de bocas como único proxy de preço.',
+	},
+	{
+		question: 'Como decidir rápido entre 4 e 5 bocas?',
+		answer:
+			'Conte quantas panelas ficam ligadas ao mesmo tempo em um dia normal — não no Natal. Até três com folga aponta para 4 bocas; quatro ou mais com frequência aponta para 5 bocas. Depois feche o modelo no guia correspondente.',
+	},
+];
+
+const faqId = `${canonical}#faq`;
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'WebPage',
+			'@id': canonical,
+			url: canonical,
+			name: pageTitle,
+			description,
+			inLanguage: 'pt-BR',
+		},
+		{
+			'@type': 'FAQPage',
+			'@id': faqId,
+			mainEntity: faqItems.map((item) => ({
+				'@type': 'Question',
+				name: item.question,
+				acceptedAnswer: {
+					'@type': 'Answer',
+					text: item.answer,
+				},
+			})),
+		},
+	],
+};
 ---
 
 <BaseLayout
@@ -37,83 +96,312 @@ const reviewItems: EditorialEntry[] = [reviewBrastemp, reviewConsul, reviewElect
 		imageAlt: 'Comparativo visual entre fogão 4 e 5 bocas — referência editorial',
 	}}
 >
+	<script type="application/ld+json" slot="head" set:html={JSON.stringify(structuredData)} />
+
 	<article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
 		<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Comparativo</p>
 		<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">
 			Fogão 4 ou 5 bocas: qual vale mais a pena para sua cozinha?
 		</h1>
 		<p class="mt-4 text-lg leading-relaxed text-on-ink-body">
-			Se você ainda hesita entre <strong class="text-on-ink-body">fogão 4 bocas</strong> e <strong class="text-on-ink-body">5 bocas</strong>, use esta regra: conte
-			quantas panelas ficam ligadas ao mesmo tempo em dias normais — não no Natal.
+			A dúvida entre <strong class="text-on-ink-body">fogão 4 bocas</strong> e{' '}
+			<strong class="text-on-ink-body">fogão 5 bocas</strong> costuma travar a compra antes mesmo de olhar marca ou preço.
+			Este comparativo fecha o tamanho certo pela rotina real — não pelo anúncio da cozinha gourmet.
 		</p>
 		<div class="mt-8">
 			<EditorialTrustRibbon />
 		</div>
-		<div class="table-premium-shell mt-10">
-			<table class="table-premium min-w-[520px]">
-				<thead>
-					<tr>
-						<th scope="col">Critério</th>
-						<th scope="col">4 bocas</th>
-						<th scope="col">5 bocas</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr class="bg-ink">
-						<th scope="row" class="font-semibold text-on-ink-body">Uso simultâneo</th>
-						<td class="text-on-ink-body">Suficiente na maioria</td>
-						<td class="font-medium text-pop">Melhor para quem “lotam” o fogão</td>
-					</tr>
-					<tr class="bg-brand-900/25">
-						<th scope="row" class="font-semibold text-on-ink-body">Espaço</th>
-						<td class="text-on-ink-body">Encaixa em cozinhas menores</td>
-						<td class="text-on-ink-body">Exige bancada/corredor confortáveis</td>
-					</tr>
-					<tr class="bg-ink">
-						<th scope="row" class="font-semibold text-on-ink-body">Orçamento</th>
-						<td class="text-on-ink-body">Normalmente menor</td>
-						<td class="text-on-ink-body">Mais bocas ≠ sempre mais caro; compare modelo a modelo</td>
-					</tr>
-				</tbody>
-			</table>
+
+		<section class="mt-10" aria-labelledby="resumo-heading">
+			<h2 id="resumo-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Resumo rápido
+			</h2>
+			<ul class="mt-4 list-inside list-disc space-y-2 text-base leading-relaxed text-on-ink-body">
+				<li>
+					<strong class="text-on-ink-body">Regra prática:</strong> conte quantas panelas ficam ligadas ao mesmo tempo em
+					dias normais — não no Natal.
+				</li>
+				<li>
+					<strong class="text-on-ink-body">4 bocas</strong> — casal, apartamento, cozinha compacta e até três panelas com
+					folga.
+				</li>
+				<li>
+					<strong class="text-on-ink-body">5 bocas</strong> — família maior, receitas simultâneas e fogão “lotado” com
+					frequência.
+				</li>
+				<li>Mais bocas não garantem cozinha melhor: espaço, circulação e forno também pesam.</li>
+				<li>Depois de fechar o tamanho, vá ao guia de compra correspondente (4 ou 5 bocas).</li>
+			</ul>
+		</section>
+
+		<aside
+			class="mt-8 border-l-2 border-pop/30 bg-brand-900/35 px-5 py-4 text-base font-medium leading-relaxed text-on-ink-body ring-1 ring-white/5"
+			aria-label="Observação editorial"
+		>
+			<p>
+				Compra boa não é a com mais bocas. É a que combina com o vão real da cozinha e com o jeito que a casa cozinha no
+				dia a dia.
+			</p>
+		</aside>
+
+		<section class="mt-12" aria-labelledby="tabela-heading">
+			<h2 id="tabela-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Tabela comparativa: 4 bocas vs 5 bocas
+			</h2>
+			<div class="table-premium-shell mt-6">
+				<table class="table-premium min-w-[520px]">
+					<thead>
+						<tr>
+							<th scope="col">Critério</th>
+							<th scope="col">4 bocas</th>
+							<th scope="col">5 bocas</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="bg-ink">
+							<th scope="row" class="font-semibold text-on-ink-body">Uso simultâneo</th>
+							<td class="text-on-ink-body">Suficiente na maioria das rotinas</td>
+							<td class="font-medium text-pop">Melhor quando o fogão “lota” com frequência</td>
+						</tr>
+						<tr class="bg-brand-900/25">
+							<th scope="row" class="font-semibold text-on-ink-body">Espaço na cozinha</th>
+							<td class="text-on-ink-body">Encaixa melhor em plantas compactas</td>
+							<td class="text-on-ink-body">Pede vão e circulação um pouco mais folgados</td>
+						</tr>
+						<tr class="bg-ink">
+							<th scope="row" class="font-semibold text-on-ink-body">Perfil típico</th>
+							<td class="text-on-ink-body">Casal, 1–2 pessoas, apartamento</td>
+							<td class="text-on-ink-body">Família, cozinha intensa, várias panelas grandes</td>
+						</tr>
+						<tr class="bg-brand-900/25">
+							<th scope="row" class="font-semibold text-on-ink-body">Peso visual</th>
+							<td class="text-on-ink-body">Costuma deixar o ambiente mais leve</td>
+							<td class="text-on-ink-body">Mais presença na bancada — modelo importa</td>
+						</tr>
+						<tr class="bg-ink">
+							<th scope="row" class="font-semibold text-on-ink-body">Orçamento</th>
+							<td class="text-on-ink-body">Normalmente mais acessível na entrada</td>
+							<td class="text-on-ink-body">Mais bocas ≠ sempre mais caro; compare modelo a modelo</td>
+						</tr>
+						<tr class="bg-brand-900/25">
+							<th scope="row" class="font-semibold text-on-ink-body">Risco de arrependimento</th>
+							<td class="text-on-ink-body">Pouco uso da 5ª boca — pagar por espaço que não precisa</td>
+							<td class="text-on-ink-body">Falta de boca quando a rotina é intensa</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<div class="mt-12 space-y-10 text-base leading-relaxed text-on-ink-body">
+			<section aria-labelledby="regra-heading">
+				<h2 id="regra-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					A regra que realmente decide
+				</h2>
+				<p class="mt-4">
+					Ignore o Natal, o churrasco de domingo e a foto do anúncio. Olhe a semana comum: arroz, feijão, carne, um
+					acompanhamento, talvez uma panela a mais no jantar corrido.
+				</p>
+				<ul class="mt-4 list-inside list-disc space-y-2">
+					<li>
+						<strong class="text-on-ink-body">Até 3 panelas com folga</strong> → 4 bocas costuma ser o tamanho certo.
+					</li>
+					<li>
+						<strong class="text-on-ink-body">4 ou 5 panelas com frequência</strong> → 5 bocas deixa de ser luxo e vira
+						praticidade.
+					</li>
+					<li>
+						<strong class="text-on-ink-body">Panelas grandes ocupando duas bocas</strong> → o 5 bocas ajuda mesmo
+						quando “só” três receitas estão no fogo.
+					</li>
+				</ul>
+			</section>
+
+			<section aria-labelledby="quando-4-heading">
+				<h2 id="quando-4-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Quando o fogão 4 bocas costuma vencer
+				</h2>
+				<p class="mt-4">
+					O 4 bocas continua sendo a escolha mais equilibrada quando o espaço e a leveza visual importam tanto quanto
+					cozinhar bem.
+				</p>
+				<ul class="mt-4 list-inside list-disc space-y-2">
+					<li>apartamento ou cozinha pequena / integrada;</li>
+					<li>casal ou casa com rotina simples no fogão;</li>
+					<li>prioridade em circulação, proporção e acabamento limpo;</li>
+					<li>orçamento mais enxuto na faixa de entrada.</li>
+				</ul>
+				<p class="mt-4">
+					Quer aprofundar o lado lifestyle? Leia{' '}
+					<a href="/blog/fogao-4-bocas-ainda-vale-a-pena/" class="link-accent">
+						quando o fogão 4 bocas ainda vale a pena
+					</a>
+					. Quando o tamanho já estiver fechado, vá ao{' '}
+					<a
+						href="/melhores/melhor-fogao-4-bocas"
+						class="link-accent"
+						aria-label="Guia melhor fogão 4 bocas com ranking de modelos"
+					>
+						guia melhor fogão 4 bocas
+					</a>
+					.
+				</p>
+			</section>
+
+			<section aria-labelledby="quando-5-heading">
+				<h2 id="quando-5-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Quando o fogão 5 bocas costuma valer mais
+				</h2>
+				<p class="mt-4">
+					O quinto queimador deixa de ser “extra de catálogo” quando a casa realmente usa o fogão em paralelo —
+					almoço de família, refeições em etapas ou várias panelas grandes no mesmo horário.
+				</p>
+				<ul class="mt-4 list-inside list-disc space-y-2">
+					<li>família maior ou refeições em volume com frequência;</li>
+					<li>rotina com quatro bocas ocupadas e falta a quinta;</li>
+					<li>panelas grandes que “roubam” espaço da mesa;</li>
+					<li>vão da cozinha já medido e confortável para o modelo.</li>
+				</ul>
+				<p class="mt-4">
+					Com o tamanho definido, refine por critérios em{' '}
+					<a href="/como-escolher-fogao-5-bocas" class="link-accent">
+						como escolher fogão 5 bocas
+					</a>
+					{' '}e pelos modelos do{' '}
+					<a
+						href="/melhores/melhor-fogao-5-bocas"
+						class="link-accent"
+						aria-label="Guia melhor fogão 5 bocas com critérios de compra"
+					>
+						guia melhor fogão 5 bocas
+					</a>
+					. Espaço ainda te preocupa? Cruze com{' '}
+					<a href="/blog/fogao-5-bocas-reduz-espaco-cozinha/" class="link-accent">
+						fogão 5 bocas reduz o espaço da cozinha?
+					</a>
+				</p>
+			</section>
+
+			<section aria-labelledby="espaco-heading">
+				<h2 id="espaco-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Espaço: o número de bocas não é o único fator
+				</h2>
+				<p class="mt-4">
+					Uma cozinha bem projetada acomoda 5 bocas sem apertar; outra, mal resolvida, fica pesada mesmo com 4. Meça
+					largura do vão, abertura da porta do forno, distância da pia e circulação lateral — com as portas abertas.
+				</p>
+				<p class="mt-4">
+					Se a decisão também envolve instalação, alinhe com o guia{' '}
+					<a href="/blog/guia-fogao-embutir-ou-de-piso/" class="link-accent">
+						fogão de embutir ou de piso
+					</a>
+					.
+				</p>
+			</section>
+
+			<section aria-labelledby="custo-heading">
+				<h2 id="custo-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Custo: não use “mais bocas” como atalho de preço
+				</h2>
+				<p class="mt-4">
+					Acabamento, forno, mesa (vidro ou inox) e marca pesam tanto quanto a quinta boca. Depois do tamanho certo,
+					compare valor real no{' '}
+					<a href="/fogao-5-bocas-custo-beneficio" class="link-accent">
+						guia de custo-benefício 5 bocas
+					</a>
+					{' '}ou no ranking do perfil que você escolheu.
+				</p>
+			</section>
+
+			<section aria-labelledby="checklist-heading">
+				<h2 id="checklist-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Checklist antes de decidir
+				</h2>
+				<ul class="mt-4 space-y-2">
+					<li class="flex gap-2">
+						<span aria-hidden="true">□</span>
+						<span>Quantas panelas ligam ao mesmo tempo em um dia normal?</span>
+					</li>
+					<li class="flex gap-2">
+						<span aria-hidden="true">□</span>
+						<span>O vão da cozinha já foi medido (incluindo abertura do forno)?</span>
+					</li>
+					<li class="flex gap-2">
+						<span aria-hidden="true">□</span>
+						<span>Prioridade: leveza visual ou máxima simultaneidade?</span>
+					</li>
+					<li class="flex gap-2">
+						<span aria-hidden="true">□</span>
+						<span>Casal / cozinha compacta → tendência 4 bocas; família intensa → tendência 5</span>
+					</li>
+					<li class="flex gap-2">
+						<span aria-hidden="true">□</span>
+						<span>Tamanho fechado → abrir o guia de modelos correspondente</span>
+					</li>
+				</ul>
+			</section>
+
+			<section aria-labelledby="conclusao-heading">
+				<h2 id="conclusao-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Conclusão
+				</h2>
+				<p class="mt-4">
+					Entre fogão 4 ou 5 bocas, o melhor é o que acompanha a rotina da casa sem apertar o espaço. Feche o tamanho
+					com calma; só depois escolha marca, acabamento e preço no guia certo.
+				</p>
+			</section>
 		</div>
-		<p class="mt-8 text-base text-on-ink-body">
-			Quer ir mais a fundo em texto:{' '}
-			<a href="/blog/fogao-4-bocas-ainda-vale-a-pena/" class="link-accent">
-				quando o fogão 4 bocas ainda vale a pena
-			</a>
-			. Para decidir o modelo 5 bocas, volte à{' '}
-			<a href="/" class="link-accent" aria-label="Lista de fogões 5 bocas na página inicial">
-				lista na página inicial
-			</a>
-			{' ou ao '}
-			<a
-				href="/melhores/melhor-fogao-5-bocas"
-				class="link-accent"
-				aria-label="Guia melhor fogão 5 bocas com critérios de compra"
-			>
-				guia melhor fogão 5 bocas
-			</a>
-			.
-		</p>
-		<div class="mt-10 flex flex-wrap gap-4">
-			<a
-				href={produtos.brastempBFS5NCR.ml}
-				class="inline-flex min-h-[48px] items-center justify-center bg-cta px-8 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-cta-hover"
-				target="_blank"
-				rel="nofollow sponsored noopener noreferrer"
-				aria-label="Ver preço atualizado de fogões 5 bocas na loja parceira — abre em nova aba (link patrocinado)"
-			>
-				Ver preço atualizado — 5 bocas
-			</a>
-			<a
-				href="/como-escolher-fogao-5-bocas"
-				class="btn-secondary-premium px-8"
-				aria-label="Abrir guia passo a passo: como escolher fogão 5 bocas"
-			>
-				Ver guia de compra — 5 bocas
-			</a>
-		</div>
+
+		<section class="mt-12 rounded-2xl border border-white/10 bg-brand-900/35 p-6 ring-1 ring-white/10 sm:p-8" aria-labelledby="proximos-heading">
+			<h2 id="proximos-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Próximo passo: escolha o guia do seu tamanho
+			</h2>
+			<p class="mt-3 text-base leading-relaxed text-on-ink-muted">
+				Com o formato definido, os rankings evitam comparação entre categorias diferentes.
+			</p>
+			<div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+				<a
+					href="/melhores/melhor-fogao-4-bocas"
+					class="inline-flex min-h-[52px] flex-1 items-center justify-center bg-cta px-8 text-center text-xs font-bold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-w-[200px]"
+					aria-label="Abrir guia melhor fogão 4 bocas"
+				>
+					Já sei: quero 4 bocas
+				</a>
+				<a
+					href="/melhores/melhor-fogao-5-bocas"
+					class="btn-secondary-premium flex-1 px-8 sm:min-w-[200px]"
+					aria-label="Abrir guia melhor fogão 5 bocas"
+				>
+					Já sei: quero 5 bocas
+				</a>
+			</div>
+			<p class="mt-5 text-sm leading-relaxed text-on-ink-muted">
+				Ainda em critério técnico no 5 bocas?{' '}
+				<a href="/como-escolher-fogao-5-bocas" class="link-accent">
+					Como escolher fogão 5 bocas
+				</a>
+				{' · '}
+				<a href="/" class="link-accent" aria-label="Lista de fogões 5 bocas na página inicial">
+					lista na página inicial
+				</a>
+			</p>
+		</section>
+
+		<section class="mt-16 border-t border-white/10 pt-14" aria-labelledby="faq-heading" id="faq">
+			<h2 id="faq-heading" class="font-display text-2xl font-bold tracking-tight text-on-ink-body">
+				Perguntas frequentes
+			</h2>
+			<dl class="mt-8 space-y-10">
+				{
+					faqItems.map((item) => (
+						<div>
+							<dt class="font-display text-lg font-bold text-on-ink-body">{item.question}</dt>
+							<dd class="mt-3 text-base leading-relaxed text-on-ink-muted">{item.answer}</dd>
+						</div>
+					))
+				}
+			</dl>
+		</section>
 
 		<RelatedContent
 			class="mt-14"
@@ -128,23 +416,57 @@ const reviewItems: EditorialEntry[] = [reviewBrastemp, reviewConsul, reviewElect
 		<EditorialLinks
 			class="mt-12"
 			eyebrow="Decisões de ambiente"
-			heading="Antes de comprar, alinhe layout e custo-benefício"
+			heading="Antes de comprar, alinhe layout e leitura satélite"
 			items={[
+				...(guia4Bocas
+					? [
+							{
+								href: guia4Bocas.href,
+								label: guia4Bocas.anchorText,
+								description: guia4Bocas.teaser ?? guia4Bocas.description,
+								tag: guia4Bocas.editorialLabel ?? 'Guia',
+							},
+						]
+					: []),
+				...(guia5Bocas
+					? [
+							{
+								href: guia5Bocas.href,
+								label: guia5Bocas.anchorText,
+								description: guia5Bocas.teaser ?? guia5Bocas.description,
+								tag: guia5Bocas.editorialLabel ?? 'Guia',
+							},
+						]
+					: []),
 				...(guiaCustoBeneficio
-					? [{
-						href: guiaCustoBeneficio.href,
-						label: guiaCustoBeneficio.anchorText,
-						description: guiaCustoBeneficio.teaser ?? guiaCustoBeneficio.description,
-						tag: guiaCustoBeneficio.editorialLabel ?? 'Guia',
-					}]
+					? [
+							{
+								href: guiaCustoBeneficio.href,
+								label: guiaCustoBeneficio.anchorText,
+								description: guiaCustoBeneficio.teaser ?? guiaCustoBeneficio.description,
+								tag: guiaCustoBeneficio.editorialLabel ?? 'Guia',
+							},
+						]
+					: []),
+				...(blog4Bocas
+					? [
+							{
+								href: blog4Bocas.href,
+								label: blog4Bocas.anchorText,
+								description: blog4Bocas.teaser ?? blog4Bocas.description,
+								tag: blog4Bocas.editorialLabel ?? 'Lifestyle',
+							},
+						]
 					: []),
 				...(lifestyleEmbutir
-					? [{
-						href: lifestyleEmbutir.href,
-						label: lifestyleEmbutir.anchorText,
-						description: lifestyleEmbutir.teaser ?? lifestyleEmbutir.description,
-						tag: lifestyleEmbutir.editorialLabel ?? 'Lifestyle',
-					}]
+					? [
+							{
+								href: lifestyleEmbutir.href,
+								label: lifestyleEmbutir.anchorText,
+								description: lifestyleEmbutir.teaser ?? lifestyleEmbutir.description,
+								tag: lifestyleEmbutir.editorialLabel ?? 'Lifestyle',
+							},
+						]
 					: []),
 			]}
 			variant="stack"
