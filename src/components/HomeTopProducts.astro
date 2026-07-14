@@ -162,6 +162,14 @@ function productReviewHref(product: CommercialProduct): string {
 														loading="lazy"
 														decoding="async"
 														class="max-h-full max-w-full object-contain object-center"
+														style={
+															p.imageVisualScale && p.imageVisualScale !== 1
+																? {
+																		transform: `scale(${p.imageVisualScale})`,
+																		transformOrigin: 'center center',
+																	}
+																: undefined
+														}
 														pictureAttributes={{
 															class:
 																'flex h-full w-full max-h-full max-w-full items-center justify-center [&>img]:max-h-full [&>img]:max-w-full [&>img]:object-contain [&>img]:object-center',
@@ -176,6 +184,14 @@ function productReviewHref(product: CommercialProduct): string {
 														height={800}
 														loading="lazy"
 														decoding="async"
+														style={
+															p.imageVisualScale && p.imageVisualScale !== 1
+																? {
+																		transform: `scale(${p.imageVisualScale})`,
+																		transformOrigin: 'center center',
+																	}
+																: undefined
+														}
 													/>
 												)}
 											</div>

@@ -7,6 +7,25 @@ Formato: mais recente no topo.
 
 ---
 
+## 2026-07-13
+
+### Design System — cards comerciais e links afiliados
+
+- `MANUAL_DESIGN_SYSTEM.md` §6.1: DNA visual oficial do packshot de card (3/4, fundo escuro, WebP ~1254², conjunto editorial).
+- Novo §7: estrutura do card, CTAs (ML primário / Shopee opcional), `products.ts` como fonte única, `rel` sponsored; checklist e objetivo renumerados (§8 / §9).
+
+### Design System — Princípio 9 (Banco Editorial de Imagens)
+
+- `MANUAL_DESIGN_SYSTEM.md` §2: novo princípio oficial — imagens comerciais tratadas como conjunto (consistência visual, mesma linguagem fotográfica, direção de arte e percepção de qualidade), nunca seleção isolada por produto.
+- Seção renomeada para “nove princípios”; checklist (§7) cruzado com o Princípio 9 e §6.
+
+### Design System — imagens de produtos (uso comercial)
+
+- `MANUAL_DESIGN_SYSTEM.md` §6: regras oficiais para imagens comerciais (fabricante → loja oficial, sem marca d’água/promo, enquadramento consistente, WebP/alta resolução, aprovação antes do repositório).
+- Checklist estrutural (§7) inclui verificação das regras de imagem; objetivo final renumerado para §8.
+
+---
+
 ## 2026-07-11
 
 ### Manual de Direção Visual

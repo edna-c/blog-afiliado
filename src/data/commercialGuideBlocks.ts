@@ -85,7 +85,7 @@ const melhorFogao4Bocas: CommercialGuideBlock = {
 			shopeeUrl: produtos.electroluxFE4IW.shopee,
 			mlCtaText: 'VER PREÇO NO MERCADO LIVRE',
 			shopeeCtaText: 'VER OFERTA NA SHOPEE',
-			image: '/images/melhores/melhor-fogao-4-bocas/electrolux-fe4gp.webp',
+			image: '/images/melhores/melhor-fogao-4-bocas/electrolux-fe4iw.webp',
 			imageAlt: 'Fogão Electrolux Efficient FE4IW branco com mesa inox',
 		},
 		{
@@ -106,7 +106,7 @@ const melhorFogao4Bocas: CommercialGuideBlock = {
 			mlCtaText: 'VER PREÇO NO MERCADO LIVRE',
 			shopeeCtaText: 'VER OFERTA NA SHOPEE',
 			image: '/images/melhores/melhor-fogao-4-bocas/atlas-monaco-plus.webp',
-			imageAlt: 'Fogão Atlas Mônaco Plus em cozinha funcional',
+			imageAlt: 'Fogão Atlas Mônaco Plus preto com mesa inox',
 		},
 	],
 	comparisonRows: [

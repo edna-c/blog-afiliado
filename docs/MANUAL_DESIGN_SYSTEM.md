@@ -50,7 +50,7 @@ Toda decisão de design deve reforçar essa percepção.
 
 ---
 
-## 2. Os oito princípios oficiais
+## 2. Os nove princípios oficiais
 
 ### Princípio 1 — Layout Editorial Amplo
 
@@ -129,6 +129,23 @@ Portal editorial premium: autoridade, organização, clareza, confiança, confor
 O mesmo DNA visual acomoda: guias, educativos, comparativos, reviews, tutoriais, institucionais.
 
 **Muda o conteúdo. Não muda a identidade editorial.**
+
+### Princípio 9 — Banco Editorial de Imagens
+
+As imagens comerciais do portal deverão ser tratadas como um **conjunto**.
+
+Nunca selecionar a melhor imagem de cada produto isoladamente.
+
+A seleção deverá considerar:
+
+- consistência visual  
+- mesma linguagem fotográfica  
+- mesma direção de arte  
+- mesma percepção de qualidade  
+
+O visitante deve ter a sensação de que todas as imagens pertencem ao mesmo **catálogo editorial**.
+
+(Complementa as regras operacionais de §6 — Imagens de produtos.)
 
 ---
 
@@ -228,7 +245,91 @@ Cada fase: QA visual + checagem leve de LCP/CLS.
 
 ---
 
-## 6. Checklist antes de mudança estrutural de design
+## 6. Imagens de produtos (uso comercial)
+
+Regras obrigatórias para imagens de produtos em páginas comerciais (reviews, guias `/melhores/`, cards, tabelas e módulos afiliados).
+
+- Priorizar imagens oficiais do fabricante.  
+- Na ausência, utilizar imagens de lojas oficiais.  
+- Evitar marcas d’água, banners promocionais e textos sobrepostos.  
+- Manter enquadramento consistente entre produtos.  
+- Preferir WebP e alta resolução.  
+- Toda nova imagem deve passar por aprovação antes de ser incorporada ao repositório.  
+
+### 6.1 DNA visual do card comercial (oficial)
+
+Referência visual: cards premium do guia **Melhor Fogão 5 Bocas** (e o mesmo tratamento no **Melhor Fogão 4 Bocas**).
+
+| Critério | Padrão |
+|----------|--------|
+| Estilo | Packshot studio editorial — sem lifestyle / cozinha |
+| Perspectiva | **3/4** elevada (frente + lateral + topo) |
+| Porta | Fechada; produto **inteiro** (pés a tampa) |
+| Escala | ~75–85% da altura do quadro; respiro equilibrado |
+| Fundo | Estúdio escuro infinito (vinheta / halo suave) |
+| Iluminação | Direcional controlada; realces metálicos; sombra de contato suave |
+| Formato | Quadrado WebP (~**1254×1254**) |
+| Conjunto | Princípio 9 — as 3 imagens do ranking formam um **único catálogo** |
+
+**Nomenclatura sugerida (guias `/melhores/`):**  
+`public/images/melhores/{slug-do-guia}/{marca}-{sku}.webp`  
+Ex.: `…/melhor-fogao-4-bocas/consul-cf04nar.webp`
+
+Home / 5 bocas (legado otimizado): `src/assets/images/cards/optimized/*-card-premium.webp`.
+
+---
+
+## 7. Cards comerciais e links afiliados
+
+Padrão oficial de apresentação dos produtos recomendados em páginas de decisão e na home.
+
+**Implementação de referência:** `HomeTopProducts.astro`  
+**Dados de afiliado:** `src/data/products.ts`  
+**Bloco do guia comercial:** `src/data/commercialGuideBlocks.ts`  
+**Conteúdo / ordem do funil:** `MANUAL_PAGINA_DECISAO.md` (este § define o **DNA visual e de CTA** dos cards)
+
+### 7.1 Estrutura do card (ordem fixa)
+
+```text
+Badge (papel no ranking)
+→ Imagem comercial (DNA §6.1)
+→ Nome do modelo
+→ Preço de referência
+→ Lista de benefícios (bullets)
+→ Prova social
+→ CTAs afiliados + link de análise
+→ Linhas de confiança (estoque / frete / atualização)
+```
+
+- Grid: **3 cards** em desktop; empilhados no mobile.  
+- Nunca alterar a **função comercial** do card (comparativo rápido + conversão).  
+- Badge + tom visual (`emerald` / `amber` / `pop`) distinguem o papel no ranking — não redesenhar.
+
+### 7.2 Links afiliados (obrigatório)
+
+| Regra | Padrão |
+|-------|--------|
+| Fonte única | URLs em `src/data/products.ts` (`ml` obrigatório; `shopee` opcional) |
+| Loja principal | **Mercado Livre** (CTA primário) |
+| Loja secundária | Shopee, quando houver link |
+| `target` | `_blank` |
+| `rel` | `noopener noreferrer nofollow sponsored` |
+| Featured (destaque) | CTA ML: **VER MELHOR PREÇO** |
+| Demais cards | `mlCtaText` ou **Ver preço no Mercado Livre** |
+| Análise | Link interno **Ver análise completa** (âncora / review do guia) |
+
+Sempre comunicar que ofertas, frete e estoque podem variar — conferir na loja.
+
+### 7.3 O que não fazer neste módulo
+
+- Não criar card com imagem fora do DNA §6.1 / Princípio 9  
+- Não hardcodar URL de afiliado fora de `products.ts`  
+- Não omitir `nofollow sponsored` nos CTAs externos  
+- Não substituir o packshot editorial por lifestyle no card  
+
+---
+
+## 8. Checklist antes de mudança estrutural de design
 
 - [ ] Este manual foi lido  
 - [ ] A mudança reforça portal editorial (não blog/loja)  
@@ -237,12 +338,14 @@ Cada fase: QA visual + checagem leve de LCP/CLS.
 - [ ] Ritmo vertical considerado (não gap aleatório)  
 - [ ] Escaneabilidade preservada ou melhorada  
 - [ ] Impacto em componentes compartilhados mapeado  
+- [ ] Se houver novas imagens de produto, §6 / §6.1 e Princípio 9 foram seguidos  
+- [ ] Se houver cards / CTAs afiliados, §7 foi seguido  
 - [ ] `CHANGELOG.md` será atualizado se a regra mudar  
 - [ ] Se for mudança de conteúdo afiliado, cruzar com `MANUAL_PAGINA_DECISAO.md`  
 
 ---
 
-## 7. Objetivo final
+## 9. Objetivo final
 
 O Layout Editorial Amplo é característica **permanente** do Casa Prática Eletro.
 
