@@ -717,9 +717,18 @@
 		margin-top: 0;
 	}
 
+	/*
+	 * Heroes largos (1280×800 / 16:10). No notebook o max-height + object-fit:cover
+	 * do .blog-prose cortava o fogão; no mobile a faixa estreita mascarava o problema.
+	 */
 	.guide-editorial .ctx-module--justificativas img {
 		margin-top: 1.35rem;
 		margin-bottom: 1.3rem;
+		max-height: none;
+		height: auto;
+		aspect-ratio: 16 / 10;
+		object-fit: cover;
+		object-position: center;
 	}
 
 	.guide-editorial .ctx-module--justificativas hr {

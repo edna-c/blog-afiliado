@@ -50,7 +50,7 @@ Toda decisão de design deve reforçar essa percepção.
 
 ---
 
-## 2. Os nove princípios oficiais
+## 2. Os dez princípios oficiais
 
 ### Princípio 1 — Layout Editorial Amplo
 
@@ -146,6 +146,32 @@ A seleção deverá considerar:
 O visitante deve ter a sensação de que todas as imagens pertencem ao mesmo **catálogo editorial**.
 
 (Complementa as regras operacionais de §6 — Imagens de produtos.)
+
+### Princípio 10 — Responsividade Editorial
+
+A responsividade do portal **não** é só ajuste técnico de CSS.  
+É responsabilidade com a **experiência de leitura** em qualquer dispositivo.
+
+O visitante deve reconhecer a mesma identidade editorial em mobile, tablet, notebook e desktop — com conforto, hierarquia e ritmo preservados.
+
+| É | Não é |
+|---|--------|
+| Experiência editorial consistente em toda a largura | “Quebrar” o layout e depois remendar só no celular |
+| Hermenêutica da leitura (como o conteúdo respira na tela) | Só encolher fontes e empilhar colunas |
+| Hierarquia e toque facilitados em telas pequenas | CTAs apertados ou ilegíveis no polegar |
+
+**Diretrizes obrigatórias:**
+
+| Elemento | Comportamento |
+|----------|----------------|
+| Hero | Reorganiza texto e imagem conforme a largura da tela |
+| Cards | Passam de **3 colunas → 2 → 1** conforme o breakpoint |
+| Tabelas | Permanecem legíveis sem quebrar a experiência |
+| Imagens | Mantêm proporção e qualidade (sem cortes que invalidem o produto / cenário) |
+| CTAs | Continuam fáceis de tocar no celular |
+| Espaçamentos | Ritmo visual preservado em qualquer dispositivo |
+
+Em conflito entre “preencher a tela” e “preservar leitura + integridade da imagem”, a **leitura e a integridade editorial vencem**.
 
 ---
 
@@ -337,6 +363,7 @@ Sempre comunicar que ofertas, frete e estoque podem variar — conferir na loja.
 - [ ] Não introduz Full Width de prosa  
 - [ ] Ritmo vertical considerado (não gap aleatório)  
 - [ ] Escaneabilidade preservada ou melhorada  
+- [ ] Responsividade Editorial considerada (mobile → desktop; imagens sem corte inválido; CTAs tocáveis)  
 - [ ] Impacto em componentes compartilhados mapeado  
 - [ ] Se houver novas imagens de produto, §6 / §6.1 e Princípio 9 foram seguidos  
 - [ ] Se houver cards / CTAs afiliados, §7 foi seguido  

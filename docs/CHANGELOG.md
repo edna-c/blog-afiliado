@@ -7,6 +7,16 @@ Formato: mais recente no topo.
 
 ---
 
+## 2026-07-14
+
+### Design System — Princípio 10 (Responsividade Editorial)
+
+- `MANUAL_DESIGN_SYSTEM.md` §2: novo princípio oficial — responsividade como experiência de leitura (não só CSS), consistente em mobile, tablet, notebook e desktop.
+- Diretrizes: Hero reorganiza texto/imagem; cards 3→2→1; tabelas legíveis; imagens com proporção íntegra; CTAs tocáveis; ritmo preservado.
+- Seção renomeada para “dez princípios”; checklist (§8) inclui verificação de Responsividade Editorial.
+
+---
+
 ## 2026-07-13
 
 ### Design System — cards comerciais e links afiliados
