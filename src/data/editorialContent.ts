@@ -78,6 +78,19 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 		weight: 8,
 	},
 	{
+		href: '/melhores/melhor-fogao-mesa-de-vidro',
+		title: 'Melhor fogão mesa de vidro (guia de compra)',
+		description:
+			'Os 3 melhores fogões com mesa de vidro em 2026: Consul CFO4VAR, Brastemp BFO4VAE e Atlas Atenas Glass.',
+		kind: 'Guia',
+		flow: 2,
+		editorialLabel: 'Guia de compra',
+		topics: ['mesa-vidro', 'fogao-4-bocas', 'cozinha-moderna', 'compra-segura', 'custo-beneficio'],
+		anchorText: 'guia do melhor fogão com mesa de vidro',
+		teaser: 'ranking dos 3 melhores fogões de mesa de vidro',
+		weight: 8,
+	},
+	{
 		href: '/melhores/melhor-fogao-5-bocas',
 		title: 'Melhor fogão 5 bocas (guia mestre)',
 		description: 'Critérios de compra, perfis e leitura longa para fechar decisão com segurança.',

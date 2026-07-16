@@ -749,6 +749,74 @@
 	.guide-editorial .blog-faq-item + .blog-faq-item {
 		padding-top: 2.65rem;
 	}
+
+	/**
+	 * Lapidação visual — só Melhor Fogão Mesa de Vidro.
+	 * Não altera outras páginas de decisão / Design System global.
+	 */
+	.guide-editorial--mesa-vidro #guia-comercial-comparativo .table-premium-shell {
+		margin-top: calc(2rem + 0.875rem); /* mt-8 + ~14px */
+	}
+
+	.guide-editorial--mesa-vidro #guia-comercial-comparativo .guia-comercial-footnote {
+		margin-top: calc(1.5rem + 0.875rem); /* mt-6 + ~14px */
+	}
+
+	.guide-editorial--mesa-vidro #guia-comercial-comparativo .guia-comercial-footnote + p {
+		margin-top: calc(0.75rem + 0.25rem);
+	}
+
+	/* Justificativas: catálogo 16:10 sem crop parcial */
+	.guide-editorial--mesa-vidro .ctx-module--justificativas img {
+		object-fit: contain;
+		background-color: #151515;
+	}
+
+	/**
+	 * Cards afiliados (mesa de vidro): packshot full-bleed + fundo cinza uniforme.
+	 * !important: utilities Tailwind (max-w / rounded / inset) vivem em @layer utilities.
+	 */
+	.guide-editorial--mesa-vidro #guia-comercial-produtos .grid > article .product-media-area {
+		display: block !important;
+		width: 100% !important;
+		padding: 0 !important;
+		background: #b5b5b5 !important;
+	}
+
+	.guide-editorial--mesa-vidro #guia-comercial-produtos .grid > article .product-media-area,
+	.guide-editorial--mesa-vidro #guia-comercial-produtos .grid > article .product-media-frame,
+	.guide-editorial--mesa-vidro #guia-comercial-produtos .grid > article .product-media-frame > div {
+		background: #b5b5b5 !important;
+	}
+
+	.guide-editorial--mesa-vidro #guia-comercial-produtos .grid > article .product-media-frame {
+		max-width: none !important;
+		width: 100% !important;
+		border-radius: 0 !important;
+		box-shadow: none !important;
+	}
+
+	.guide-editorial--mesa-vidro #guia-comercial-produtos .grid > article .product-media-frame > div {
+		inset: 0 !important;
+		display: block !important;
+	}
+
+	.guide-editorial--mesa-vidro #guia-comercial-produtos .grid > article .product-media-frame picture {
+		display: block !important;
+		height: 100% !important;
+		width: 100% !important;
+	}
+
+	.guide-editorial--mesa-vidro #guia-comercial-produtos .grid > article .product-media-frame img {
+		display: block !important;
+		height: 100% !important;
+		width: 100% !important;
+		max-height: none !important;
+		max-width: none !important;
+		object-fit: cover !important;
+		object-position: center !important;
+		border-radius: 0 !important;
+	}
 }
 
 @layer utilities {

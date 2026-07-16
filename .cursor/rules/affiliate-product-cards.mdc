@@ -1,0 +1,40 @@
+---
+description: Padrão de imagens dos cards de link afiliado (guias Melhores)
+globs: public/images/melhores/**/*,scripts/*affiliate*,scripts/normalize-affiliate-cards.mjs,src/data/commercialGuideBlocks.ts,src/styles/global.css
+alwaysApply: false
+---
+
+# Cards afiliados — padrão visual
+
+Aplicar em **todo** card de produto com link afiliado nos guias Melhores.
+
+## Arquivo
+
+- Canvas: **1254 × 1254** px, WebP q88
+- Nome: `{marca}-{sku}.webp` em `public/images/melhores/{slug-do-guia}/`
+- Fonte: `_src/{marca}-{sku}-card-user.png`
+- Path em `commercialGuideBlocks.ts` → `image: '/images/melhores/.../{marca}-{sku}.webp'`
+
+## Composição (obrigatório)
+
+1. **Fundo uniforme** sólido `#b5b5b5` (RGB 181) — mesma cor na imagem e no CSS do media area
+2. **Altura do produto** ≈ **78%** do card (`TARGET_H = round(1254 * 0.78)`)
+3. **Baseline** (pés) no mesmo nível: margem inferior ≈ **5,5%** do card
+4. Produto **centrado** na horizontal; proporção preservada (Atlas frontal pode ficar mais estreita)
+5. Card **full-bleed**: sem `max-width` 21.5rem, sem inset/padding na mídia, sem `border-radius`/sombra no frame (overrides em `.guide-editorial--*` se necessário)
+
+## Processo
+
+Usar o script:
+
+```bash
+bun scripts/normalize-affiliate-cards.mjs
+```
+
+Editar a lista `cards` no script (ou passar pasta do guia). Referência de tamanho = **primeiro produto** da lista (em geral o “Melhor geral”).
+
+## Não fazer
+
+- Deixar cada foto com escala/posição própria
+- Fundos com gradiente ou tons diferentes entre cards do mesmo guia
+- `object-contain` + inset no card afiliado do guia (gera “degrau”)
