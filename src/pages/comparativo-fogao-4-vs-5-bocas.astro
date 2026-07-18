@@ -8,20 +8,20 @@ import { findEntry, type EditorialEntry } from '../data/editorialContent';
 import { PRODUCT_IMAGE_REVIEW } from '../data/productImages';
 
 const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
-const canonical = new URL('/comparativo-fogao-4-vs-5-bocas', site).href;
+const canonical = new URL('/comparativo-fogao-4-vs-5-bocas/', site).href;
 const pageTitle = 'Fogão 4 ou 5 bocas: qual vale mais a pena em 2026? | Casa Prática Eletro';
 const description =
 	'Fogão 4 ou 5 bocas? Comparativo completo por rotina, espaço, família e custo — com regra prática para decidir o tamanho certo antes de olhar modelos.';
 const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).href;
 
-const reviewBrastemp = findEntry((e) => e.href === '/review-fogao-5-bocas-brastemp');
-const reviewConsul = findEntry((e) => e.href === '/review-fogao-5-bocas-consul');
-const reviewElectrolux = findEntry((e) => e.href === '/review-fogao-5-bocas-electrolux');
-const guiaCustoBeneficio = findEntry((e) => e.href === '/fogao-5-bocas-custo-beneficio');
+const reviewBrastemp = findEntry((e) => e.href === '/review-fogao-5-bocas-brastemp/');
+const reviewConsul = findEntry((e) => e.href === '/review-fogao-5-bocas-consul/');
+const reviewElectrolux = findEntry((e) => e.href === '/review-fogao-5-bocas-electrolux/');
+const guiaCustoBeneficio = findEntry((e) => e.href === '/fogao-5-bocas-custo-beneficio/');
 const lifestyleEmbutir = findEntry((e) => e.href === '/blog/guia-fogao-embutir-ou-de-piso/');
 const blog4Bocas = findEntry((e) => e.href === '/blog/fogao-4-bocas-ainda-vale-a-pena/');
-const guia4Bocas = findEntry((e) => e.href === '/melhores/melhor-fogao-4-bocas');
-const guia5Bocas = findEntry((e) => e.href === '/melhores/melhor-fogao-5-bocas');
+const guia4Bocas = findEntry((e) => e.href === '/melhores/melhor-fogao-4-bocas/');
+const guia5Bocas = findEntry((e) => e.href === '/melhores/melhor-fogao-5-bocas/');
 
 const reviewItems: EditorialEntry[] = [reviewBrastemp, reviewConsul, reviewElectrolux].filter(
 	Boolean,
@@ -238,7 +238,7 @@ const structuredData = {
 					</a>
 					. Quando o tamanho já estiver fechado, vá ao{' '}
 					<a
-						href="/melhores/melhor-fogao-4-bocas"
+						href="/melhores/melhor-fogao-4-bocas/"
 						class="link-accent"
 						aria-label="Guia melhor fogão 4 bocas com ranking de modelos"
 					>
@@ -264,12 +264,12 @@ const structuredData = {
 				</ul>
 				<p class="mt-4">
 					Com o tamanho definido, refine por critérios em{' '}
-					<a href="/como-escolher-fogao-5-bocas" class="link-accent">
+					<a href="/como-escolher-fogao-5-bocas/" class="link-accent">
 						como escolher fogão 5 bocas
 					</a>
 					{' '}e pelos modelos do{' '}
 					<a
-						href="/melhores/melhor-fogao-5-bocas"
+						href="/melhores/melhor-fogao-5-bocas/"
 						class="link-accent"
 						aria-label="Guia melhor fogão 5 bocas com critérios de compra"
 					>
@@ -306,7 +306,7 @@ const structuredData = {
 				<p class="mt-4">
 					Acabamento, forno, mesa (vidro ou inox) e marca pesam tanto quanto a quinta boca. Depois do tamanho certo,
 					compare valor real no{' '}
-					<a href="/fogao-5-bocas-custo-beneficio" class="link-accent">
+					<a href="/fogao-5-bocas-custo-beneficio/" class="link-accent">
 						guia de custo-benefício 5 bocas
 					</a>
 					{' '}ou no ranking do perfil que você escolheu.
@@ -361,14 +361,14 @@ const structuredData = {
 			</p>
 			<div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
 				<a
-					href="/melhores/melhor-fogao-4-bocas"
+					href="/melhores/melhor-fogao-4-bocas/"
 					class="inline-flex min-h-[52px] flex-1 items-center justify-center bg-cta px-8 text-center text-xs font-bold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-w-[200px]"
 					aria-label="Abrir guia melhor fogão 4 bocas"
 				>
 					Já sei: quero 4 bocas
 				</a>
 				<a
-					href="/melhores/melhor-fogao-5-bocas"
+					href="/melhores/melhor-fogao-5-bocas/"
 					class="btn-secondary-premium flex-1 px-8 sm:min-w-[200px]"
 					aria-label="Abrir guia melhor fogão 5 bocas"
 				>
@@ -377,7 +377,7 @@ const structuredData = {
 			</div>
 			<p class="mt-5 text-sm leading-relaxed text-on-ink-muted">
 				Ainda em critério técnico no 5 bocas?{' '}
-				<a href="/como-escolher-fogao-5-bocas" class="link-accent">
+				<a href="/como-escolher-fogao-5-bocas/" class="link-accent">
 					Como escolher fogão 5 bocas
 				</a>
 				{' · '}
@@ -405,7 +405,7 @@ const structuredData = {
 
 		<RelatedContent
 			class="mt-14"
-			currentPath="/comparativo-fogao-4-vs-5-bocas"
+			currentPath="/comparativo-fogao-4-vs-5-bocas/"
 			eyebrow="Reviews dos modelos citados"
 			title="Veja os reviews por marca"
 			subtitle="Leituras curtas para confirmar perfil antes de fechar — Brastemp, Consul e Electrolux na mesma faixa."
@@ -474,7 +474,7 @@ const structuredData = {
 
 		<SmartRecommendations
 			class="mt-12"
-			currentPath="/comparativo-fogao-4-vs-5-bocas"
+			currentPath="/comparativo-fogao-4-vs-5-bocas/"
 			heading="Próximos passos editoriais"
 		/>
 	</article>

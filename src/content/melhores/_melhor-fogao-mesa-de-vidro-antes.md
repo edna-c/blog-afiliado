@@ -14,4 +14,4 @@ Itens que **bloqueiam** a compra se estiverem errados:
 - SKU exato no anúncio (CFO4VAR / BFO4VAE / Atenas Glass — evite “parecido”)
 - Histórico de preço (evita “promoção” que não é)
 - Vidro vs inox ainda em aberto? → [guia](/blog/fogao-mesa-de-vidro-ou-inox/) antes de pagar
-- 4 vs 5 bocas ainda em aberto? → [comparativo](/comparativo-fogao-4-vs-5-bocas) antes de pagar
+- 4 vs 5 bocas ainda em aberto? → [comparativo](/comparativo-fogao-4-vs-5-bocas/) antes de pagar

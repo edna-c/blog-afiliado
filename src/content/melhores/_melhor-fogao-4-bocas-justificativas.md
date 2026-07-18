@@ -16,7 +16,7 @@ A medalha não é por “mais recursos”: é por **fechar a compra sem arrepend
 - Acendimento automático simplifica o dia a dia sem complicar a rotina
 - Mesa **inox** tolera melhor panelas e uso frequente que acabamentos mais delicados
 - Ponto fraco real: marcas de dedo e água no inox pedem limpeza regular
-- Várias panelas grandes ao mesmo tempo? O upgrade certo é [5 bocas](/melhores/melhor-fogao-5-bocas), não outro 4 bocas
+- Várias panelas grandes ao mesmo tempo? O upgrade certo é [5 bocas](/melhores/melhor-fogao-5-bocas/), não outro 4 bocas
 
 <!-- CTAs: produtos.consulCF04NAR (src/data/products.ts) -->
 <p class="not-prose mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">

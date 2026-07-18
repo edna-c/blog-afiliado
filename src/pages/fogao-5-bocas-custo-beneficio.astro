@@ -8,7 +8,7 @@ import { produtos } from '../data/products';
 import { PRODUCT_IMAGE_REVIEW } from '../data/productImages';
 
 const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
-const canonical = new URL('/fogao-5-bocas-custo-beneficio', site).href;
+const canonical = new URL('/fogao-5-bocas-custo-beneficio/', site).href;
 const pageTitle = 'Melhor fogão 5 bocas custo-benefício em 2026 | Casa Prática Eletro';
 const description =
 	'Compare perfis, forno, trempes, consumo e limpeza para escolher o fogão 5 bocas com melhor custo-benefício sem pagar a mais.';
@@ -253,24 +253,24 @@ const ogImage = new URL(PRODUCT_IMAGE_REVIEW.consul.replace(/^\//, ''), site).hr
 
 			<EditorialLinks
 				class="mt-10"
-				currentPath="/fogao-5-bocas-custo-beneficio"
+				currentPath="/fogao-5-bocas-custo-beneficio/"
 				eyebrow="Reviews para cruzar a decisão"
 				heading="Leia os perfis por marca antes de fechar"
 				items={[
 					{
-						href: '/review-fogao-5-bocas-consul',
+						href: '/review-fogao-5-bocas-consul/',
 						label: 'review rápida do Consul CFS5NAB',
 						description: 'entrada sólida quando o orçamento pede controle',
 						tag: 'Review',
 					},
 					{
-						href: '/review-fogao-5-bocas-electrolux',
+						href: '/review-fogao-5-bocas-electrolux/',
 						label: 'review rápida do Electrolux FE5IG',
 						description: 'acabamento e forno para uso mais exigente',
 						tag: 'Review',
 					},
 					{
-						href: '/brastemp-bfs5ncr-vale-a-pena',
+						href: '/brastemp-bfs5ncr-vale-a-pena/',
 						label: 'análise completa do Brastemp BFS5NCR',
 						description: 'forno, acabamento e uso diário com mais profundidade',
 						tag: 'Análise',
@@ -280,9 +280,9 @@ const ogImage = new URL(PRODUCT_IMAGE_REVIEW.consul.replace(/^\//, ''), site).hr
 
 			<p>
 				Compare com a página inicial e o guia completo em{' '}
-				<a href="/melhores/melhor-fogao-5-bocas" class="link-accent">melhor fogão 5 bocas</a>
+				<a href="/melhores/melhor-fogao-5-bocas/" class="link-accent">melhor fogão 5 bocas</a>
 				. Para medidas e dicas simples, use{' '}
-				<a href="/como-escolher-fogao-5-bocas" class="link-accent">
+				<a href="/como-escolher-fogao-5-bocas/" class="link-accent">
 					como escolher fogão 5 bocas
 				</a>
 				.
@@ -299,7 +299,7 @@ const ogImage = new URL(PRODUCT_IMAGE_REVIEW.consul.replace(/^\//, ''), site).hr
 				Ver preço atualizado
 			</a>
 			<a
-				href="/review-fogao-5-bocas-brastemp"
+				href="/review-fogao-5-bocas-brastemp/"
 				class="btn-secondary-premium px-8"
 				aria-label="Ler avaliação completa do fogão 5 bocas Brastemp"
 			>
@@ -308,7 +308,7 @@ const ogImage = new URL(PRODUCT_IMAGE_REVIEW.consul.replace(/^\//, ''), site).hr
 		</div>
 		<RelatedContent
 			class="mt-14"
-			currentPath="/fogao-5-bocas-custo-beneficio"
+			currentPath="/fogao-5-bocas-custo-beneficio/"
 			eyebrow="Veja também"
 			title="Leituras relacionadas"
 			subtitle="Reviews dos modelos citados e leituras editoriais para alinhar custo-benefício com o ambiente da cozinha."
@@ -316,7 +316,7 @@ const ogImage = new URL(PRODUCT_IMAGE_REVIEW.consul.replace(/^\//, ''), site).hr
 
 		<SmartRecommendations
 			class="mt-12"
-			currentPath="/fogao-5-bocas-custo-beneficio"
+			currentPath="/fogao-5-bocas-custo-beneficio/"
 			heading="Próximos passos editoriais"
 		/>
 	</article>

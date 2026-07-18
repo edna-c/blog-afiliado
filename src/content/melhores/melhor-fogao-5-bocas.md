@@ -20,14 +20,14 @@ tldr:
     - 'Mediu a cozinha? Sem profundidade e porta de forno livres, o melhor modelo vira troca e estresse.'
     - 'Preço importa, mas válvula, chama estável e forno utilizável costumam ser onde “barato demais” cobra a conta.'
   footerText: 'Quer o passo a passo completo? Abra o'
-  footerHref: '/como-escolher-fogao-5-bocas'
+  footerHref: '/como-escolher-fogao-5-bocas/'
   footerLabel: 'guia como escolher fogão 5 bocas'
 ctas:
   - href: '/#top-produtos'
     label: 'Ver ofertas na lista principal'
     ariaLabel: 'Ver lista de fogões 5 bocas com preços na página inicial'
     variant: primary
-  - href: '/blog'
+  - href: '/blog/'
     label: 'Ler artigos no blog'
     ariaLabel: 'Abrir o blog com artigos complementares'
     variant: secondary
@@ -44,12 +44,12 @@ O “melhor fogão 5 bocas” muda conforme **espaço**, **tipo de gás**, **rot
 
 ## Reviews por marca (leitura rápida + loja)
 
-Se você já está mirando um modelo, as reviews abaixo servem para confirmar perfil de uso — leitura curta, sem pressa de compra. Quem quiser aprofundar no Brastemp com FAQ e ficha técnica pode seguir para a [análise completa Brastemp BFS5NCR](/brastemp-bfs5ncr-vale-a-pena).
+Se você já está mirando um modelo, as reviews abaixo servem para confirmar perfil de uso — leitura curta, sem pressa de compra. Quem quiser aprofundar no Brastemp com FAQ e ficha técnica pode seguir para a [análise completa Brastemp BFS5NCR](/brastemp-bfs5ncr-vale-a-pena/).
 
-- [Brastemp BFS5NCR](/review-fogao-5-bocas-brastemp) — custo-benefício e forno generoso.
-- [Consul CFS5NAB](/review-fogao-5-bocas-consul) — entrada sólida quando o orçamento aperta.
-- [Electrolux FE5IG](/review-fogao-5-bocas-electrolux) — acabamento e recursos para cozinha mais premium.
+- [Brastemp BFS5NCR](/review-fogao-5-bocas-brastemp/) — custo-benefício e forno generoso.
+- [Consul CFS5NAB](/review-fogao-5-bocas-consul/) — entrada sólida quando o orçamento aperta.
+- [Electrolux FE5IG](/review-fogao-5-bocas-electrolux/) — acabamento e recursos para cozinha mais premium.
 
 ## Comparativos que fecham a decisão
 
-Feche o tamanho certo com o [comparativo fogão 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas). Depois, refine por dinheiro no [guia de custo-benefício](/fogao-5-bocas-custo-beneficio).
+Feche o tamanho certo com o [comparativo fogão 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas/). Depois, refine por dinheiro no [guia de custo-benefício](/fogao-5-bocas-custo-beneficio/).

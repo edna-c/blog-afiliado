@@ -1,0 +1,35 @@
+---
+description: Interlinkagem em seções editoriais e páginas comerciais — máximo de 3 links com propósito claro
+alwaysApply: true
+---
+
+# Interlinkagem editorial — Casa Prática Eletro
+
+Aplicar sempre que criar ou editar seções de texto com links internos (home, guias Melhores, blog, reviews).
+
+## Regra central
+
+**Cada link deve ter um propósito claro.** Em seções comerciais/editoriais, limitar a **no máximo 3 links internos por seção** — idealmente 1 por parágrafo, como oportunidade natural de aprofundamento.
+
+## Critérios de escolha
+
+- Priorizar links que **acrescentam** algo que o texto não explica (passo a passo, comparativo, review aprofundada).
+- **Não linkar** conceito que o próprio parágrafo já explica (ex.: se o texto já define custo-benefício, não precisa de link para a página de custo-benefício).
+- **Evitar redundância de destino**: hub da categoria *ou* review individual — não os dois na mesma seção. Para mostrar profundidade, preferir a review.
+- Âncoras descritivas com a intenção da página de destino (ex.: "comparativo fogão 4 vs 5 bocas"), nunca "clique aqui".
+- Links no fluxo do texto (inline), sem criar blocos ou listas de links extras.
+- Usar as classes de link já existentes (`link-accent` / `link-accent-soft`) — sem estilos novos.
+
+## Exemplo de distribuição (seção "Como escolhemos" da home)
+
+| Parágrafo | Propósito | Destino |
+|-----------|-----------|---------|
+| 1º | critérios / passo a passo | `/como-escolher-fogao-5-bocas` |
+| 2º | decisão de formato | `/comparativo-fogao-4-vs-5-bocas` |
+| 3º | profundidade em um SKU | `/review-fogao-5-bocas-brastemp` |
+
+## O que não fazer
+
+- 4+ links na mesma seção curta.
+- Linkar hub e review da mesma categoria juntos.
+- Repetir na seção um link já presente na seção vizinha com a mesma âncora/destino, sem novo propósito.

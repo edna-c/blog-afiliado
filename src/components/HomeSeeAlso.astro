@@ -8,12 +8,12 @@
  */
 import { findEntry, type EditorialEntry } from '../data/editorialContent';
 
-const guia = findEntry((e) => e.href === '/melhores/melhor-fogao-5-bocas');
-const reviewBrastemp = findEntry((e) => e.href === '/review-fogao-5-bocas-brastemp');
-const reviewConsul = findEntry((e) => e.href === '/review-fogao-5-bocas-consul');
-const reviewElectrolux = findEntry((e) => e.href === '/review-fogao-5-bocas-electrolux');
-const comparativo = findEntry((e) => e.href === '/comparativo-fogao-4-vs-5-bocas');
-const analiseBrastemp = findEntry((e) => e.href === '/brastemp-bfs5ncr-vale-a-pena');
+const guia = findEntry((e) => e.href === '/melhores/melhor-fogao-5-bocas/');
+const reviewBrastemp = findEntry((e) => e.href === '/review-fogao-5-bocas-brastemp/');
+const reviewConsul = findEntry((e) => e.href === '/review-fogao-5-bocas-consul/');
+const reviewElectrolux = findEntry((e) => e.href === '/review-fogao-5-bocas-electrolux/');
+const comparativo = findEntry((e) => e.href === '/comparativo-fogao-4-vs-5-bocas/');
+const analiseBrastemp = findEntry((e) => e.href === '/brastemp-bfs5ncr-vale-a-pena/');
 
 /** Hub visível: guia pilar + três reviews da curadoria. */
 const cards: EditorialEntry[] = [guia, reviewBrastemp, reviewConsul, reviewElectrolux].filter(

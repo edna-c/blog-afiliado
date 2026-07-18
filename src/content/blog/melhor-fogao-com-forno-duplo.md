@@ -113,7 +113,7 @@ Nesses casos, um fogão com forno simples e grill bem dimensionado para o seu us
 Checklist de decisão:
 
 - [ ] Confirmar no manual: dois compartimentos independentes ou funções no mesmo espaço
-- [ ] Definir número de bocas pela rotina ([4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas) · [4 bocas ainda vale?](/blog/fogao-4-bocas-ainda-vale-a-pena/))
+- [ ] Definir número de bocas pela rotina ([4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas/) · [4 bocas ainda vale?](/blog/fogao-4-bocas-ainda-vale-a-pena/))
 - [ ] Escolher acabamento do tampo ([vidro ou inox](/blog/fogao-mesa-de-vidro-ou-inox/) · [vidro é seguro?](/blog/fogao-mesa-de-vidro-seguro/))
 - [ ] Listar funções que a rotina exige e marcar na ficha do modelo
 - [ ] Medir vão com portas abertas; checar gás, voltagem e condomínio ([5 bocas reduz espaço?](/blog/fogao-5-bocas-reduz-espaco-cozinha/))

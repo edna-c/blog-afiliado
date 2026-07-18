@@ -58,7 +58,7 @@ Em apartamentos, ajuda a reforçar a sensação de cozinha mais organizada. Se o
 | Rotina intensa e agressiva | Avaliar inox |
 | Prioridade: robustez acima de estética | Avaliar inox |
 
-Também vale cruzar com [quando o fogão 4 bocas ainda vale a pena](/blog/fogao-4-bocas-ainda-vale-a-pena/) e o [comparativo 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas).
+Também vale cruzar com [quando o fogão 4 bocas ainda vale a pena](/blog/fogao-4-bocas-ainda-vale-a-pena/) e o [comparativo 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas/).
 
 ## Antes de decidir — checklist
 

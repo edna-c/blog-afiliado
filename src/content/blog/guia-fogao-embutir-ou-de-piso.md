@@ -21,7 +21,7 @@ faq:
 
 Escolher entre **fogão de embutir ou de piso** parece uma decisão de estilo. Na prática envolve instalação, ventilação, segurança, manutenção e custo total.
 
-Se tamanho e rotina ainda estão em aberto, cruze com o [comparativo 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas).
+Se tamanho e rotina ainda estão em aberto, cruze com o [comparativo 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas/).
 
 ## Decisão em 1 minuto
 
@@ -101,7 +101,7 @@ Cozinha pequena? Cruze também com [quando o fogão 4 bocas ainda vale a pena](/
 
 ## Próximo passo
 
-Depois de definir o tipo de instalação, [veja os modelos mais vendidos](/#top-produtos) ou o [guia de referência em fogão 5 bocas](/melhores/melhor-fogao-5-bocas).
+Depois de definir o tipo de instalação, [veja os modelos mais vendidos](/#top-produtos) ou o [guia de referência em fogão 5 bocas](/melhores/melhor-fogao-5-bocas/).
 
 ### Onde conferir preços
 

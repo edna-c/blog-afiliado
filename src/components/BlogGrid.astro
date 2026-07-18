@@ -46,7 +46,7 @@ const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short', y
 const postHref = (id: string) => hrefOverrides?.[id] ?? `${basePath}/${id}/`;
 
 const isDark = variant === 'dark';
-const allHref = viewAllHref ?? basePath;
+const allHref = viewAllHref ?? `${basePath}/`;
 const allLabel = viewAllLabel ?? 'Ver todos os artigos no blog';
 const defaultEyebrow = isDark ? 'Leitura complementar' : 'Artigos';
 ---

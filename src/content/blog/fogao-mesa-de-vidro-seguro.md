@@ -73,7 +73,7 @@ O vidro temperado passa por aquecimento e resfriamento controlados para ganhar r
 | Panelas enormes / rotina agressiva | Avaliar inox |
 | Prioridade: robustez acima de estética | Avaliar inox |
 
-Também vale cruzar com [4 bocas ainda vale a pena?](/blog/fogao-4-bocas-ainda-vale-a-pena/) e o [comparativo 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas).
+Também vale cruzar com [4 bocas ainda vale a pena?](/blog/fogao-4-bocas-ainda-vale-a-pena/) e o [comparativo 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas/).
 
 ## Antes de comprar — checklist
 
@@ -84,7 +84,7 @@ Também vale cruzar com [4 bocas ainda vale a pena?](/blog/fogao-4-bocas-ainda-v
 - [ ] Garantia e reputação do fabricante
 - [ ] Instalação conforme o manual
 
-Para ver o acabamento em produtos reais: [análise Brastemp BFS5NCR](/brastemp-bfs5ncr-vale-a-pena) e [review Electrolux 5 bocas](/review-fogao-5-bocas-electrolux).
+Para ver o acabamento em produtos reais: [análise Brastemp BFS5NCR](/brastemp-bfs5ncr-vale-a-pena/) e [review Electrolux 5 bocas](/review-fogao-5-bocas-electrolux/).
 
 ## Conclusão
 

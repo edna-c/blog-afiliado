@@ -1,0 +1,33 @@
+---
+description: Padrão de URLs internas — sempre com barra final (trailing slash)
+alwaysApply: true
+---
+
+# URLs internas — Casa Prática Eletro
+
+O site serve URLs **com barra final** (`"trailingSlash": true` no `vercel.json`; canonical e sitemap usam `/caminho/`). Links internos sem barra geram um redirect 308 desnecessário.
+
+## Regra
+
+Todo link interno (href em `.astro`, markdown em `src/content`, dados em `src/data`) deve terminar com `/`:
+
+```text
+✅ /blog/fogao-4-bocas-ainda-vale-a-pena/
+✅ /melhores/melhor-fogao-5-bocas/
+✅ /melhores/melhor-fogao-4-bocas/#analises-detalhadas  (barra antes do fragmento)
+✅ /#top-produtos  (raiz + fragmento)
+
+❌ /blog/fogao-4-bocas-ainda-vale-a-pena
+❌ /melhores/melhor-fogao-5-bocas#analises-detalhadas
+```
+
+## Pontos de atenção
+
+- `src/data/editorialContent.ts`: os `href` do `EDITORIAL_POOL` têm barra final, e as buscas `findEntry((e) => e.href === '...')` nas páginas comparam a **string exata** — manter os dois lados idênticos (com barra).
+- `BlogGrid.astro`: a prop `basePath` **não** leva barra final (é usada em concatenação `${basePath}/${id}/`).
+- Links externos (afiliados, YouTube) não são afetados por esta regra.
+
+## SEO — estabilidade de URLs
+
+- **Não renomear slugs de páginas publicadas.** Migração de URL zera o histórico no Google (caso real: `/blog/comparativo-fogao-4-bocas-2026/` → `/blog/fogao-4-bocas-ainda-vale-a-pena/` causou desindexação temporária).
+- Se um rename for explicitamente solicitado, adicionar redirect permanente no `vercel.json` (variantes com e sem barra) com destino **com barra final**, para evitar cadeia de redirects.

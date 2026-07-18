@@ -66,7 +66,7 @@ export function canonPath(path: string): string {
  */
 export const EDITORIAL_POOL: EditorialEntry[] = [
 	{
-		href: '/melhores/melhor-fogao-4-bocas',
+		href: '/melhores/melhor-fogao-4-bocas/',
 		title: 'Melhor fogão 4 bocas (guia de compra)',
 		description: 'Os 3 melhores fogões 4 bocas de 2026 com critérios, comparativo e recomendação por perfil.',
 		kind: 'Guia',
@@ -78,7 +78,7 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 		weight: 8,
 	},
 	{
-		href: '/melhores/melhor-fogao-mesa-de-vidro',
+		href: '/melhores/melhor-fogao-mesa-de-vidro/',
 		title: 'Melhor fogão mesa de vidro (guia de compra)',
 		description:
 			'Os 3 melhores fogões com mesa de vidro em 2026: Consul CFO4VAR, Brastemp BFO4VAE e Atlas Atenas Glass.',
@@ -91,7 +91,7 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 		weight: 8,
 	},
 	{
-		href: '/melhores/melhor-fogao-5-bocas',
+		href: '/melhores/melhor-fogao-5-bocas/',
 		title: 'Melhor fogão 5 bocas (guia mestre)',
 		description: 'Critérios de compra, perfis e leitura longa para fechar decisão com segurança.',
 		kind: 'Guia',
@@ -103,7 +103,7 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 		weight: 9,
 	},
 	{
-		href: '/como-escolher-fogao-5-bocas',
+		href: '/como-escolher-fogao-5-bocas/',
 		title: 'Como escolher fogão 5 bocas',
 		description: 'Medidas, gás, forno e ventilação — checklist prático antes de pagar.',
 		kind: 'Guia',
@@ -115,7 +115,7 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 		weight: 7,
 	},
 	{
-		href: '/fogao-5-bocas-custo-beneficio',
+		href: '/fogao-5-bocas-custo-beneficio/',
 		title: 'Fogão 5 bocas custo-benefício',
 		description: 'Onde vale economizar e onde não vale na mesma categoria.',
 		kind: 'Guia',
@@ -127,7 +127,7 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 		weight: 7,
 	},
 	{
-		href: '/comparativo-fogao-4-vs-5-bocas',
+		href: '/comparativo-fogao-4-vs-5-bocas/',
 		title: 'Fogão 4 vs 5 bocas',
 		description:
 			'Comparativo completo: rotina, espaço, família e custo para decidir entre fogão 4 ou 5 bocas antes de escolher o modelo.',
@@ -140,7 +140,7 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 		weight: 8,
 	},
 	{
-		href: '/brastemp-bfs5ncr-vale-a-pena',
+		href: '/brastemp-bfs5ncr-vale-a-pena/',
 		title: 'Brastemp BFS5NCR vale a pena? Análise completa',
 		description: 'Análise longa com FAQ, ficha técnica e comparativo de uso real.',
 		kind: 'Análise',
@@ -160,7 +160,7 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 		weight: 9,
 	},
 	{
-		href: '/review-fogao-5-bocas-brastemp',
+		href: '/review-fogao-5-bocas-brastemp/',
 		title: 'Review rápida: Brastemp BFS5NCR',
 		description: 'Resumo direto + link para conferir preço na loja parceira.',
 		kind: 'Review',
@@ -172,7 +172,7 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 		weight: 6,
 	},
 	{
-		href: '/review-fogao-5-bocas-consul',
+		href: '/review-fogao-5-bocas-consul/',
 		title: 'Review rápida: Consul CFS5NAB',
 		description: 'Entrada sólida: para quem é e quando vale subir de linha.',
 		kind: 'Review',
@@ -184,7 +184,7 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 		weight: 6,
 	},
 	{
-		href: '/review-fogao-5-bocas-electrolux',
+		href: '/review-fogao-5-bocas-electrolux/',
 		title: 'Review rápida: Electrolux FE5IG',
 		description: 'Acabamento e forno — recursos que costumam importar no dia a dia.',
 		kind: 'Review',

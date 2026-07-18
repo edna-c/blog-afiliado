@@ -11,14 +11,14 @@ const blogPosts = await getCollection('blog');
 const melhoresGuides = (await getCollection('melhores')).filter((guide) => !guide.id.startsWith('_'));
 const searchIndex = [
 	{ title: 'Início', url: '/' },
-	{ title: 'Guias de Compra', url: '/melhores' },
-	{ title: 'Blog', url: '/blog' },
-	{ title: 'Sobre', url: '/sobre' },
-	{ title: 'Contato', url: '/contato' },
-	{ title: 'Melhor fogão 5 bocas', url: '/melhores/melhor-fogao-5-bocas' },
-	{ title: 'Como escolher fogão 5 bocas', url: '/como-escolher-fogao-5-bocas' },
-	{ title: 'Comparativo fogão 4 vs 5 bocas', url: '/comparativo-fogao-4-vs-5-bocas' },
-	{ title: 'Fogão 5 bocas custo-benefício', url: '/fogao-5-bocas-custo-beneficio' },
+	{ title: 'Guias de Compra', url: '/melhores/' },
+	{ title: 'Blog', url: '/blog/' },
+	{ title: 'Sobre', url: '/sobre/' },
+	{ title: 'Contato', url: '/contato/' },
+	{ title: 'Melhor fogão 5 bocas', url: '/melhores/melhor-fogao-5-bocas/' },
+	{ title: 'Como escolher fogão 5 bocas', url: '/como-escolher-fogao-5-bocas/' },
+	{ title: 'Comparativo fogão 4 vs 5 bocas', url: '/comparativo-fogao-4-vs-5-bocas/' },
+	{ title: 'Fogão 5 bocas custo-benefício', url: '/fogao-5-bocas-custo-beneficio/' },
 	...melhoresGuides.map((guide) => ({
 		title: guide.data.title,
 		url: `/melhores/${guide.id}/`,

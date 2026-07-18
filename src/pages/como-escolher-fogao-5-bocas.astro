@@ -7,7 +7,7 @@ import { produtos } from '../data/products';
 import { PRODUCT_IMAGE_REVIEW } from '../data/productImages';
 
 const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
-const canonical = new URL('/como-escolher-fogao-5-bocas', site).href;
+const canonical = new URL('/como-escolher-fogao-5-bocas/', site).href;
 const pageTitle = 'Como escolher fogão 5 bocas em 2026 | Casa Prática Eletro';
 const description =
 	'Guia da Casa Prática Eletro para escolher fogão 5 bocas: medidas, gás, forno, segurança e comparativos práticos.';
@@ -60,7 +60,7 @@ const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).
 					</a>
 					, ao{' '}
 					<a
-						href="/comparativo-fogao-4-vs-5-bocas"
+						href="/comparativo-fogao-4-vs-5-bocas/"
 						class="link-accent"
 						aria-label="Comparativo entre fogão 4 bocas e fogão 5 bocas"
 					>
@@ -68,7 +68,7 @@ const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).
 					</a>{' '}
 					e ao{' '}
 					<a
-						href="/fogao-5-bocas-custo-beneficio"
+						href="/fogao-5-bocas-custo-beneficio/"
 						class="link-accent"
 						aria-label="Guia fogão 5 bocas custo-benefício"
 					>
@@ -88,11 +88,11 @@ const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).
 			>
 				Ver preço atualizado
 			</a>
-			<a href="/melhores/melhor-fogao-5-bocas" class="btn-secondary-premium flex-1 px-8 sm:min-w-[200px]">Abrir guia mestre 5 bocas</a>
+			<a href="/melhores/melhor-fogao-5-bocas/" class="btn-secondary-premium flex-1 px-8 sm:min-w-[200px]">Abrir guia mestre 5 bocas</a>
 		</div>
 		<RelatedContent
 			class="mt-14"
-			currentPath="/como-escolher-fogao-5-bocas"
+			currentPath="/como-escolher-fogao-5-bocas/"
 			eyebrow="Veja também"
 			title="Leituras relacionadas"
 			subtitle="Comparativos e leituras editoriais para alinhar layout e custo-benefício antes de fechar."
@@ -100,7 +100,7 @@ const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).
 
 		<SmartRecommendations
 			class="mt-12"
-			currentPath="/como-escolher-fogao-5-bocas"
+			currentPath="/como-escolher-fogao-5-bocas/"
 			heading="Próximos passos editoriais"
 		/>
 	</article>

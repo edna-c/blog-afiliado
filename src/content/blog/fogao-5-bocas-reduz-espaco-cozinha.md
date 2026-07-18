@@ -21,7 +21,7 @@ Planejar cozinha pequena gera dúvida: um fogão 5 bocas reduz circulação e am
 
 O impacto depende menos do número de bocas e mais de **layout**, **profundidade**, **iluminação** e **distribuição dos móveis**. Com projeto equilibrado, 5 bocas podem funcionar bem até em cozinhas compactas.
 
-Cruze também o [comparativo 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas).
+Cruze também o [comparativo 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas/).
 
 ## Resumo rápido
 
@@ -53,7 +53,7 @@ A **profundidade** e o **peso visual** (grades pesadas, volume exagerado) també
 | Profundidade | 60–70 cm |
 | Altura | ~90 cm |
 
-Além disso, considere abertura do forno, ventilação, circulação lateral, distância da pia e conforto de movimentação. Checklist completo: [como escolher fogão 5 bocas](/como-escolher-fogao-5-bocas).
+Além disso, considere abertura do forno, ventilação, circulação lateral, distância da pia e conforto de movimentação. Checklist completo: [como escolher fogão 5 bocas](/como-escolher-fogao-5-bocas/).
 
 ## Cooktop × fogão de embutir
 
@@ -80,7 +80,7 @@ Detalhe de instalação: [fogão de embutir ou de piso](/blog/guia-fogao-embutir
 
 Costuma fazer sentido para famílias maiores, quem cozinha diariamente, várias panelas ao mesmo tempo ou receitas grandes. Modelos slim, mesa de vidro e linhas retas ajudam a não “dominar” o ambiente.
 
-Modelos e critérios: [melhor fogão 5 bocas](/melhores/melhor-fogao-5-bocas). Hesita entre tamanhos? [4 bocas ainda vale a pena?](/blog/fogao-4-bocas-ainda-vale-a-pena/).
+Modelos e critérios: [melhor fogão 5 bocas](/melhores/melhor-fogao-5-bocas/). Hesita entre tamanhos? [4 bocas ainda vale a pena?](/blog/fogao-4-bocas-ainda-vale-a-pena/).
 
 ## Erros que fazem a cozinha parecer menor
 

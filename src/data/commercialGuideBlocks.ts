@@ -63,7 +63,7 @@ const melhorFogao4Bocas: CommercialGuideBlock = {
 			'Antes de fechar, vale cruzar com o comparativo entre fogões 4 e 5 bocas se ainda estiver em dúvida sobre o tamanho ideal.',
 		footerCta: 'Continue lendo para entender melhor os critérios de compra e evitar erro na escolha.',
 	},
-	reviewPathPrefix: '/melhores/melhor-fogao-4-bocas#analises-detalhadas',
+	reviewPathPrefix: '/melhores/melhor-fogao-4-bocas/#analises-detalhadas',
 	heroRanking: [
 		{ toneClass: 'text-pop', text: '🥇 Melhor geral: Consul CF04NAR' },
 		{ toneClass: 'text-cta', text: '🥈 Melhor premium: Electrolux Efficient FE4IW' },
@@ -191,7 +191,7 @@ const melhorFogaoMesaDeVidro: CommercialGuideBlock = {
 			'Antes de fechar, confirme se a dúvida é acabamento (vidro) ou tamanho (4 vs 5 bocas) — são decisões diferentes.',
 		footerCta: 'Continue lendo para entender melhor os critérios de compra e evitar erro na escolha.',
 	},
-	reviewPathPrefix: '/melhores/melhor-fogao-mesa-de-vidro#analises-detalhadas',
+	reviewPathPrefix: '/melhores/melhor-fogao-mesa-de-vidro/#analises-detalhadas',
 	heroRanking: [
 		{ toneClass: 'text-pop', text: '🥇 Melhor geral: Consul CFO4VAR' },
 		{ toneClass: 'text-cta', text: '🥈 Melhor premium: Brastemp BFO4VAE' },

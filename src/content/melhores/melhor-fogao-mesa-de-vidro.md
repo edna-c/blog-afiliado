@@ -19,7 +19,7 @@ topics:
 
 coverImage: '/images/melhores/melhor-fogao-mesa-de-vidro/melhor-fogao-mesa-de-vidro-2026.webp'
 
-coverAlt: 'Melhores fogões com mesa de vidro em 2026 — comparativo visual para decisão de compra'
+coverAlt: 'Fogão Consul com mesa de vidro preta em cozinha planejada — capa do ranking 2026'
 
 headline: 'Melhor Fogão Mesa de Vidro em 2026: Os 3 Melhores Modelos'
 
@@ -47,11 +47,11 @@ faq:
 
   - question: 'Quando escolher mesa de vidro em vez de inox?'
 
-    answer: 'Escolha vidro se prioriza limpeza visual da mesa e acabamento moderno. Se a rotina for muito intensa com panelas pesadas e você quer menor sensação de “cuidado com riscos”, compare também com [fogão 4 bocas em inox](/melhores/melhor-fogao-4-bocas) e o [guia vidro vs inox](/blog/fogao-mesa-de-vidro-ou-inox/).'
+    answer: 'Escolha vidro se prioriza limpeza visual da mesa e acabamento moderno. Se a rotina for muito intensa com panelas pesadas e você quer menor sensação de “cuidado com riscos”, compare também com [fogão 4 bocas em inox](/melhores/melhor-fogao-4-bocas/) e o [guia vidro vs inox](/blog/fogao-mesa-de-vidro-ou-inox/).'
 
   - question: 'Esses modelos são só 4 bocas?'
 
-    answer: 'O ranking prioriza fogões de piso com mesa de vidro na faixa com maior oferta comercial (4 bocas). Se a dúvida for espaço e volume de panelas, veja o [comparativo 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas) e o [melhor fogão 5 bocas](/melhores/melhor-fogao-5-bocas).'
+    answer: 'O ranking prioriza fogões de piso com mesa de vidro na faixa com maior oferta comercial (4 bocas). Se a dúvida for espaço e volume de panelas, veja o [comparativo 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas/) e o [melhor fogão 5 bocas](/melhores/melhor-fogao-5-bocas/).'
 
   - question: 'Vale a pena o Electrolux FE4GP nesta categoria?'
 

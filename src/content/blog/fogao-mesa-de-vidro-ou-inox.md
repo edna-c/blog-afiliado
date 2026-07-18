@@ -27,7 +27,7 @@ Os dois acabamentos dominam as vitrines, aparecem em modelos de 4 e 5 bocas, com
 
 Este artigo é um **comparativo central** do cluster de fogões do Casa Prática Eletro. A ideia não é repetir tudo o que já publicamos sobre mesa de vidro, mas ajudar você a decidir com clareza qual acabamento combina com a sua rotina. Quando quiser se aprofundar em um tema específico, indicamos os guias especializados ao longo da leitura.
 
-Se a decisão também envolve formato de instalação, vale cruzar esta leitura com o [guia fogão de embutir ou de piso](/blog/guia-fogao-embutir-ou-de-piso/). Se o tamanho ainda está em aberto, o [comparativo entre fogões 4 e 5 bocas](/comparativo-fogao-4-vs-5-bocas) ajuda a fechar o conjunto antes de olhar o acabamento.
+Se a decisão também envolve formato de instalação, vale cruzar esta leitura com o [guia fogão de embutir ou de piso](/blog/guia-fogao-embutir-ou-de-piso/). Se o tamanho ainda está em aberto, o [comparativo entre fogões 4 e 5 bocas](/comparativo-fogao-4-vs-5-bocas/) ajuda a fechar o conjunto antes de olhar o acabamento.
 
 ## Quais são as diferenças entre fogão com mesa de vidro e inox?
 

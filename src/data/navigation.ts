@@ -9,12 +9,12 @@ export type PrimaryNavItem = {
 export const primaryNav: PrimaryNavItem[] = [
 	{ href: '/', label: 'Início', ariaLabel: 'Página inicial Casa Prática Eletro' },
 	{
-		href: '/melhores',
+		href: '/melhores/',
 		label: 'Guias de Compra',
 		ariaLabel: 'Guias de Compra — rankings, comparativos e reviews de eletrodomésticos',
 		activePrefixes: ['/melhores'],
 	},
-	{ href: '/blog', label: 'Blog', ariaLabel: 'Blog — conteúdo informativo sobre eletrodomésticos' },
-	{ href: '/sobre', label: 'Sobre', ariaLabel: 'Sobre o Casa Prática Eletro' },
-	{ href: '/contato', label: 'Contato', ariaLabel: 'Página de contato' },
+	{ href: '/blog/', label: 'Blog', ariaLabel: 'Blog — conteúdo informativo sobre eletrodomésticos' },
+	{ href: '/sobre/', label: 'Sobre', ariaLabel: 'Sobre o Casa Prática Eletro' },
+	{ href: '/contato/', label: 'Contato', ariaLabel: 'Página de contato' },
 ];
