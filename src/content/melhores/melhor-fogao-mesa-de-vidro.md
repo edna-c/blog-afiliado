@@ -2,7 +2,7 @@
 
 title: 'Melhor Fogão Mesa de Vidro em 2026: Os 3 Melhores Modelos'
 
-description: 'Guia de decisão com os 3 melhores fogões de mesa de vidro em 2026: Consul CFO4VAR, Brastemp BFO4VAE e Atlas Atenas Glass — ranking, ofertas e perfil de uso.'
+description: 'Guia de decisão com os 3 melhores fogões de mesa de vidro em 2026: Consul CFO4VAR, Brastemp BFO4VAE e Atlas Atenas Glass (Top Glass) — ranking, ofertas e perfil de uso.'
 
 pubDate: 2026-07-14
 
@@ -53,9 +53,9 @@ faq:
 
     answer: 'O ranking prioriza fogões de piso com mesa de vidro na faixa com maior oferta comercial (4 bocas). Se a dúvida for espaço e volume de panelas, veja o [comparativo 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas/) e o [melhor fogão 5 bocas](/melhores/melhor-fogao-5-bocas/).'
 
-  - question: 'Vale a pena o Electrolux FE4GP nesta categoria?'
+  - question: 'E se o critério principal for o forno (PerfectCook/VaporBake)?'
 
-    answer: 'Sim, como perfil específico de forno (PerfectCook/VaporBake), não como medalha premium deste ranking. Se assar muito for o critério principal, ele entra na decisão — sem competir com a Brastemp no papel de upgrade construtivo da mesa.'
+    answer: 'Este ranking prioriza mesa de vidro, grades e equilíbrio de compra. Quem compra pelo pacote de forno tecnológico fica fora do pódio — nenhum dos três medalhistas compete nesse critério. Nesse caso, use a seção de perfil: não force um dos três só pelo acabamento do vidro.'
 
   - question: 'É possível converter o fogão para gás natural?'
 
@@ -67,7 +67,7 @@ faq:
 
   - question: 'Vale a pena esperar promoções?'
 
-    answer: 'Sim. Campanhas de varejo e marketplaces costumam alterar o preço. Ainda assim, compare o histórico e confirme o SKU exato (CFO4VAR, BFO4VAE ou Atenas Glass) antes de concluir a compra.'
+    answer: 'Sim. Campanhas de varejo e marketplaces costumam alterar o preço. Ainda assim, compare o histórico e confirme o SKU exato (CFO4VAR, BFO4VAE ou Atenas Glass / Top Glass) antes de concluir a compra.'
 
 ---
 

@@ -11,7 +11,7 @@ Regra para empate:
 
 - Cozinha todo dia + vidro sem complicar → **Consul CFO4VAR**
 - Quer upgrade sensível na mesa (grades duplas / presença premium) → **Brastemp BFO4VAE**
-- Entrada em vidro com menor investimento → **Atlas Atenas Glass**
-- Usa muito o forno e paga por PerfectCook/VaporBake → **Electrolux FE4GP** (perfil forno; fora do pódio)
+- Entrada em vidro com menor investimento → **Atlas Atenas Glass (Top Glass)**
+- Usa muito o forno e paga por PerfectCook/VaporBake → critério forno (fora deste pódio; nenhum dos três medalhistas)
 - Ainda em dúvida de tamanho → [comparativo 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas/)
 - Família grande / muitas panelas → [fogão 5 bocas](/melhores/melhor-fogao-5-bocas/)

@@ -81,7 +81,7 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 		href: '/melhores/melhor-fogao-mesa-de-vidro/',
 		title: 'Melhor fogão mesa de vidro (guia de compra)',
 		description:
-			'Os 3 melhores fogões com mesa de vidro em 2026: Consul CFO4VAR, Brastemp BFO4VAE e Atlas Atenas Glass.',
+			'Os 3 melhores fogões com mesa de vidro em 2026: Consul CFO4VAR, Brastemp BFO4VAE e Atlas Atenas Glass (Top Glass).',
 		kind: 'Guia',
 		flow: 2,
 		editorialLabel: 'Guia de compra',

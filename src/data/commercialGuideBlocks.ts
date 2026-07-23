@@ -195,7 +195,7 @@ const melhorFogaoMesaDeVidro: CommercialGuideBlock = {
 	heroRanking: [
 		{ toneClass: 'text-pop', text: '🥇 Melhor geral: Consul CFO4VAR' },
 		{ toneClass: 'text-cta', text: '🥈 Melhor premium: Brastemp BFO4VAE' },
-		{ toneClass: 'text-amber-300', text: '🥉 Melhor custo-benefício: Atlas Atenas Glass' },
+		{ toneClass: 'text-amber-300', text: '🥉 Melhor custo-benefício: Atlas Atenas Glass (Top Glass)' },
 	],
 	moduleIds: [
 		'_melhor-fogao-mesa-de-vidro-justificativas',
@@ -247,7 +247,7 @@ const melhorFogaoMesaDeVidro: CommercialGuideBlock = {
 			imageAlt: 'Fogão Brastemp BFO4VAE preto com mesa de vidro e grades duplas',
 		},
 		{
-			name: 'Atlas Atenas Glass',
+			name: 'Atlas Atenas Glass (Top Glass)',
 			badge: '🥉 Melhor custo-benefício',
 			badgeTone: 'amber',
 			basePrice: 'Confira na loja',
@@ -265,7 +265,7 @@ const melhorFogaoMesaDeVidro: CommercialGuideBlock = {
 			shopeeCtaText: 'VER OFERTA NA SHOPEE',
 			imageVisualScale: 1,
 			image: '/images/melhores/melhor-fogao-mesa-de-vidro/atlas-atenas-glass.webp',
-			imageAlt: 'Fogão Atlas Atenas Glass preto com mesa de vidro temperado',
+			imageAlt: 'Fogão Atlas Atenas Glass (Top Glass) preto com mesa de vidro temperado',
 		},
 	],
 	comparisonRows: [
@@ -290,7 +290,7 @@ const melhorFogaoMesaDeVidro: CommercialGuideBlock = {
 		},
 		{
 			badge: 'Melhor custo-benefício',
-			model: 'Atlas Atenas Glass',
+			model: 'Atlas Atenas Glass (Top Glass)',
 			price: 'Confira na loja',
 			rating: '⭐⭐⭐⭐☆',
 			bestFor: 'Economia',

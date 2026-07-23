@@ -102,7 +102,3 @@ Cozinha pequena? Cruze também com [quando o fogão 4 bocas ainda vale a pena](/
 ## Próximo passo
 
 Depois de definir o tipo de instalação, [veja os modelos mais vendidos](/#top-produtos) ou o [guia de referência em fogão 5 bocas](/melhores/melhor-fogao-5-bocas/).
-
-### Onde conferir preços
-
-- [Conferir preços na loja parceira (Mercado Livre)](https://meli.la/2BvbH5s)

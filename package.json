@@ -9,9 +9,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check",
-    "optimize:cards": "node scripts/optimize-card-sources.mjs",
-    "astro": "astro"
+		"check": "astro check",
+		"test": "node --experimental-strip-types --test src/utils/**/*.test.ts",
+		"optimize:cards": "node scripts/optimize-card-sources.mjs",
+		"astro": "astro"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",
