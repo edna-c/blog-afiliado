@@ -1,9 +1,29 @@
 # CHANGELOG – Documentação Casa Prática Eletro
 
-Registro de mudanças nos manuais e padrões oficiais em `docs/`.  
-Atualize este arquivo sempre que um manual canônico for alterado de forma relevante.
+**Responsabilidade:** histórico de mudanças documentais.  
+Estado atual → `README.md` · Governança → `docs/ROADMAP-PLATAFORMA.md` · Dívidas → `docs/TECH-DEBT.md`.
 
 Formato: mais recente no topo.
+
+---
+
+## 2026-07-24
+
+### Encerramento definitivo da documentação arquitetural — Fase 1
+
+- ROADMAP declarado **documento normativo** da plataforma.
+- Responsabilidades únicas: README (estado) · ROADMAP (governança/evolução) · CHANGELOG (histórico) · TECH-DEBT (adiados).
+- Redundâncias removidas; princípios e políticas só no ROADMAP.
+- Sem alteração funcional.
+
+### Consolidação documental da Fase 1
+
+- Princípios permanentes e Política Permanente de Governança no ROADMAP; README/TECH-DEBT enxutos.
+- Prioridade operacional e fechamento da Fase 1 registrados no ROADMAP.
+
+### Manutenção de consistência e criação do ROADMAP
+
+- README fora do starter Astro; blueprint/auditorias; ROADMAP inicial; TECH-DEBT; alinhamento SSOT/`/ir/`.
 
 ---
 

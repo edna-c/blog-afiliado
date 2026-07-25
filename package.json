@@ -10,7 +10,8 @@
     "build": "astro build",
     "preview": "astro preview",
 		"check": "astro check",
-		"test": "node --experimental-strip-types --test src/utils/**/*.test.ts",
+		"test": "node --experimental-strip-types --test src/utils/**/*.test.ts src/modules/**/*.test.ts",
+		"monitor:affiliates": "node --experimental-strip-types src/modules/affiliate-monitor/cli.ts",
 		"optimize:cards": "node scripts/optimize-card-sources.mjs",
 		"astro": "astro"
   },

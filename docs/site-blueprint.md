@@ -1,6 +1,8 @@
 # Blueprint do site — Casa Prática Eletro
 
-Visão da arquitetura atual do repositório (Astro 6, saída estática, Tailwind 4). Útil para onboarding, refactors e planejamento de novas seções.
+Visão da arquitetura **atual** do repositório (Astro 6, saída estática, Tailwind 4). Útil para onboarding e manutenção da Fase 1.
+
+Complementos: `README.md` (estado atual), `docs/ROADMAP-PLATAFORMA.md` (evolução), `docs/seo-rules.md`.
 
 ## Visão geral técnica
 
@@ -9,11 +11,13 @@ Visão da arquitetura atual do repositório (Astro 6, saída estática, Tailwind
 | Framework | [Astro](https://astro.build/) 6.x |
 | Renderização | `output: 'static'` — HTML pré-gerado em `dist/` |
 | Estilo | Tailwind CSS 4 via `@tailwindcss/vite` + `src/styles/global.css` |
-| Conteúdo editorial | Content Collections (`src/content/blog`, loader glob + schema Zod em `src/content.config.ts`) |
-| SEO auxiliar | `@astrojs/sitemap` + metadados no `BaseLayout` (ver `docs/seo-rules.md`) |
+| Conteúdo editorial | Content Collections `blog` + `melhores` (`src/content.config.ts`, schema Zod) |
+| Product Inventory | `src/data/products.ts` — URLs afiliadas (SSOT) |
+| Ops | `src/modules/affiliate-monitor/` — CLI fora do build do site |
+| SEO auxiliar | `@astrojs/sitemap` + metadados no `BaseLayout` (`docs/seo-rules.md`) |
 | Runtime JS | Mínimo; páginas majoritariamente HTML + CSS |
 
-Domínio configurado em `astro.config.mjs`: `https://casapraticaeletro.com.br`.
+Domínio: `https://casapraticaeletro.com.br` (`astro.config.mjs`).
 
 ---
 
@@ -21,126 +25,94 @@ Domínio configurado em `astro.config.mjs`: `https://casapraticaeletro.com.br`.
 
 ```text
 casa-pratica-eletro/
-├── astro.config.mjs          # site, integrações (sitemap), Vite/Tailwind
-├── package.json              # scripts: dev, build, preview
-├── public/                   # assets servidos como estáticos (URL raiz)
-│   ├── favicon.svg
-│   └── images/               # imagens de produto / OG usadas por caminhos /images/...
-├── docs/                     # documentação do projeto (SEO, blueprint, workflows)
+├── astro.config.mjs
+├── package.json                 # dev, build, preview, check, test, monitor:affiliates
+├── vercel.json                  # trailingSlash + redirects permanentes
+├── public/                      # assets por URL raiz (/images/...)
+├── docs/                        # manuais, ROADMAP, CHANGELOG, auditorias
 ├── src/
-│   ├── layouts/
-│   │   └── BaseLayout.astro  # shell HTML: head, Header, main, Footer, WhatsApp float
-│   ├── pages/                # file-based routing (cada .astro = rota)
-│   ├── components/           # blocos UI Astro reutilizáveis
-│   ├── content/
-│   │   └── blog/             # posts .md / .mdx (collection `blog`)
-│   ├── content.config.ts     # define collection `blog` + schema
-│   ├── data/                 # dados de navegação, links de afiliado, páginas relacionadas
-│   ├── utils/                # helpers (ex.: destaque de link ativo no nav)
-│   ├── styles/
-│   │   └── global.css        # tokens Tailwind + estilos globais
-│   └── assets/               # imagens importáveis no build (astro:assets, Picture)
-└── dist/                     # saída do `build` (não versionar)
+│   ├── layouts/BaseLayout.astro
+│   ├── pages/                   # file-based routing
+│   ├── components/              # UI Astro
+│   ├── content/blog/            # → /blog/<id>/
+│   ├── content/melhores/        # → /melhores/<id>/ (fragments _* não viram rota)
+│   ├── content.config.ts
+│   ├── data/                    # navigation, products, editorial, commercial blocks…
+│   ├── modules/affiliate-monitor/
+│   ├── utils/
+│   ├── styles/global.css
+│   └── assets/                  # astro:assets (Picture)
+└── dist/                        # build (não versionar)
 ```
 
-**Convenção de imagens**
-
-- `src/assets/...` — otimização via `astro:assets` (`Picture`, imports tipados).
-- `public/images/reviews|blog/...` — URLs fixas para produto (reviews/OG) e capas do blog (`*-blog-premium.webp`); ver `src/data/productImages.ts`.
+**Imagens:** `src/assets/...` (otimizadas no build) · `public/images/...` (URLs fixas; ver `productImages.ts`).
 
 ---
 
-## Layout e shell global
+## Layout e shell
 
-**`BaseLayout.astro`** concentra:
+`BaseLayout.astro`: head (title, description, canonical, OG), skip link, `Header` + `main` + `Footer` + `WhatsAppFloat`.
 
-- `<head>`: charset, viewport, título, descrição, canonical opcional, Open Graph opcional, slot `head` (ex.: JSON-LD).
-- Acessibilidade: link “Pular para o conteúdo principal”, `<main id="conteudo-principal">`.
-- **`Header`** + **`Footer`** + **`WhatsAppFloat`** em todas as páginas que usam o layout.
-
-Navegação principal vem de **`src/data/navigation.ts`** (`primaryNav`), consumida por **`Header.astro`** / **`HeaderPrimaryNavLinks.astro`**. Estado ativo da rota: **`src/utils/isNavActive.ts`**.
+Navegação: `src/data/navigation.ts` → `Header` / `HeaderPrimaryNavLinks`. Ativo: `src/utils/isNavActive.ts`.
 
 ---
 
 ## Componentes
 
-### Acoplados ao fluxo atual
+### Em uso no fluxo atual
 
-Componentes importados por páginas ou pelo layout:
+| Componente | Função |
+|------------|--------|
+| `Header` / `HeaderPrimaryNavLinks` / `Footer` / `WhatsAppFloat` | Shell |
+| `Hero` / `LogoStrip` / `HomeTopProducts` / `HomeComparisonTable` | Home comercial |
+| `HomeGuideSection` / `HomeMelhoresSection` / `BlogGrid` / `HomeSeeAlso` / `HomeFaqSection` | Home / listagens |
+| `Breadcrumbs` / `EditorialTrustRibbon` / `AffiliateOfferBlock` / `ProductMedia` | Guias e reviews |
+| `RelatedContent` / `EditorialLinks` / `SmartRecommendations` | Interlink (via `editorialContent.ts`) |
+| `YouTubeBrandLink` | Contato / footer |
 
-| Componente | Função resumida |
-|------------|-----------------|
-| `Header.astro` | Logo, menu responsivo, CTA contato |
-| `HeaderPrimaryNavLinks.astro` | Links do nav (mobile/desktop) |
-| `Footer.astro` | Links institucionais + ano |
-| `WhatsAppFloat.astro` | Botão flutuante; número via env / fallback em `data/whatsapp.ts` |
-| `Hero.astro` | Hero da home (H1, ranking, imagem otimizada) |
-| `HomeTopProducts.astro` | Cards de produtos + links ML/Shopee |
-| `HomeComparisonTable.astro` | Tabela comparativa (usa `data/products.ts`) |
-| `HomeGuideSection.astro` | Bloco de guias com links internos |
-| `LogoStrip.astro` | Faixa de marcas/logos |
-| `BlogGrid.astro` | Grade de posts (home e listagem `/blog`) |
-| `HomeSeeAlso.astro` | Links transversais na home |
-| `HomeFaqSection.astro` | FAQ da home + schema FAQPage (JSON-LD) |
-| `Breadcrumbs.astro` | Trilha semântica (blog, review longa) |
-| `RelatedArticles.astro` | Cards “ver também” (alimentado por `data/relatedPages.ts`) |
-| `EditorialTrustRibbon.astro` | Faixa de confiança editorial (guias/reviews) |
-| `AffiliateOfferBlock.astro` | CTA de oferta afiliada (review Brastemp) |
+### Sem import atual (candidatos — ver `AUDITORIA-COMPONENTES-ORFAOS.md`)
 
-### Presentes no repositório, sem uso atual
-
-Estes arquivos existem em `src/components/` mas **não são importados** por nenhuma página/layout no estado atual do código:
-
-- `AboutSection.astro`
-- `LeadFormSection.astro`
-- `NewsletterBar.astro`
-- `ProcessSection.astro`
-- `ServiceRows.astro`
-- `TestimonialSection.astro`
-
-Servem como **biblioteca potencial** para novas landing pages ou podem ser removidos/arquivados se forem legado.
+`AboutSection`, `LeadFormSection`, `NewsletterBar`, `ProcessSection`, `ServiceRows`, `TestimonialSection`, `RelatedArticles` (+ shim `data/relatedPages.ts`).
 
 ---
 
-## Organização das páginas (`src/pages/`)
-
-Astro deriva rotas a partir dos caminhos dos arquivos.
+## Páginas (`src/pages/`)
 
 ### Hub e institucional
 
-| Arquivo | Rota (exemplo) | Notas |
-|---------|----------------|--------|
-| `index.astro` | `/` | Home: composição de seções “home” + últimos posts |
-| `blog.astro` | `/blog` | Listagem de todos os posts da collection |
-| `sobre.astro` | `/sobre` | Institucional |
-| `contato.astro` | `/contato` | Contato |
-| `politica-de-afiliados.astro` | `/politica-de-afiliados` | Transparência / afiliados |
+| Arquivo | Rota |
+|---------|------|
+| `index.astro` | `/` |
+| `blog.astro` | `/blog/` |
+| `melhores/index.astro` | `/melhores/` |
+| `sobre.astro` / `contato.astro` / `politica-de-afiliados.astro` | institucionais |
+| `404.astro` | 404 |
 
-### Funil “fogão 5 bocas” (HTML dedicado)
+### Funil fogão 5 bocas (HTML dedicado)
 
-Páginas estáticas `.astro` com conteúdo inline e padrão recorrente `RelatedArticles` + `EditorialTrustRibbon`:
+Satélites com conteúdo inline + `RelatedContent` / `SmartRecommendations`:
 
 | Arquivo | Função |
 |---------|--------|
-| `melhor-fogao-5-bocas.astro` | Pillar / guia mestre (SEO rico: OG + JSON-LD) |
-| `como-escolher-fogao-5-bocas.astro` | Guia de critérios |
+| `como-escolher-fogao-5-bocas.astro` | Critérios |
 | `comparativo-fogao-4-vs-5-bocas.astro` | Comparativo de formato |
 | `fogao-5-bocas-custo-beneficio.astro` | Ângulo preço/valor |
 
-### Reviews e produto
+O pillar **Melhor fogão 5 bocas** vive na collection `melhores` → `/melhores/melhor-fogao-5-bocas/` (redirects antigos em `vercel.json`).
 
-| Arquivo | Rota | Notas |
-|---------|------|--------|
-| `brastemp-bfs5ncr-vale-a-pena.astro` | `/brastemp-bfs5ncr-vale-a-pena` | Review longa; FAQ + offers; dados em página |
-| `review-fogao-5-bocas-[marca].astro` | `/review-fogao-5-bocas-brastemp` etc. | `getStaticPaths` com três marcas; links de `data/products.ts` |
+### Reviews
 
-### Blog dinâmico
+| Arquivo | Notas |
+|---------|--------|
+| `brastemp-bfs5ncr-vale-a-pena.astro` | Review longa; CTAs via `produtos.*` |
+| `review-fogao-5-bocas-[marca].astro` | `getStaticPaths` (marcas); links de `products.ts` |
 
-| Arquivo | Rota | Notas |
-|---------|------|--------|
-| `blog/[slug].astro` | `/blog/<id-do-arquivo>` | `getStaticPaths` a partir da collection; render MD/MDX; hero especial por tipo de post quando houver regra curada |
+### Dinâmicos
 
-Os arquivos em `src/content/blog/*.md` geram **apenas** URLs sob `/blog/...` (não há `.md` em `pages/`).
+| Arquivo | Rota |
+|---------|------|
+| `blog/[slug].astro` | `/blog/<id>/` |
+| `melhores/[slug].astro` | `/melhores/<id>/` (ignora entries `_`) |
 
 ---
 
@@ -148,32 +120,28 @@ Os arquivos em `src/content/blog/*.md` geram **apenas** URLs sob `/blog/...` (n�
 
 | Arquivo | Papel |
 |---------|--------|
-| `navigation.ts` | Itens do menu principal |
-| `products.ts` | **Fonte única** de URLs de afiliado (ML/Shopee) por SKU — home, tabela, reviews |
-| `relatedPages.ts` | Lista tipada de “artigos relacionados” (títulos, descrições, hrefs) para `RelatedArticles` |
-| `whatsapp.ts` | Constantes / fallback para o componente WhatsApp |
+| `products.ts` | **SSOT** de URLs afiliadas |
+| `commercialGuideBlocks.ts` | Cards/tabela/ranking dos guias money page (consome `products`) |
+| `editorialContent.ts` | Pool de interlinkagem (kind, topics, flow) |
+| `navigation.ts` | Menu principal |
+| `productImages.ts` / `editorialImageSpecs.ts` / `blogThumbnailAssets.ts` | Imagens / specs |
+| `whatsapp.ts` / `siteContact.ts` | Contato |
+| `relatedPages.ts` | Shim legado (só `RelatedArticles`) — ver auditoria de órfãos |
+
+**Nota SSOT:** fragmentos `_*-justificativas.md` ainda embutem hrefs afiliados literais iguais ao inventário. Ver `docs/AUDITORIA-SSOT-AFILIADOS.md` (correção só com aprovação).
 
 ---
 
-## Possibilidades de expansão futura
+## Módulo operacional
 
-1. **Novas verticais de produto** — Repetir o padrão “pillar + satélites + reviews + rota dinâmica”: novas pastas de guias em `pages/`, novo arquivo em `data/products.ts`, entradas em `relatedPages.ts`, e opcionalmente nova subárvore em `content/blog`.
-
-2. **Mais posts sem duplicar layout** — Adicionar `.md` em `src/content/blog/` respeitando o schema; rotas surgem automaticamente. Campos `faq` e `coverImage` já suportam SEO enriquecido.
-
-3. **Componentes órfãos** — Reutilizar `AboutSection`, `NewsletterBar`, etc., em `/sobre`, home ou captura de lead; ou remover para reduzir ruído.
-
-4. **Internacionalização** — Hoje `pt-BR` fixo no layout. Expansão exigiria estratégia i18n (rotas por locale ou subdomínio) e ajuste de `lang`/hreflang.
-
-5. **APIs ou formulários dinâmicos** — O projeto é estático; formulários reais exigiria action serverless, serviço externo ou `output: 'hybrid'`/`server` com adaptador.
-
-6. **Design system** — Centralizar tokens (já parcialmente em `global.css`) e padrões de seção para novos templates de “guia longo” com menos cópia de markup entre `.astro`.
-
-7. **Testes e qualidade** — Adicionar `astro check`, lint/format ou testes E2E conforme o time crescer; hoje o foco é build estático + revisão manual.
+`src/modules/affiliate-monitor/` — inventário → collectors → validators → reports. CLI: `npm run monitor:affiliates`. Doc: `src/modules/affiliate-monitor/README.md`.
 
 ---
 
 ## Documentos relacionados
 
-- `docs/seo-rules.md` — metadados, OG, JSON-LD, checklist SEO.
-- `docs/workflow-pages.md` — fluxo de trabalho em páginas (se mantido pelo time).
+- `README.md` — onboarding e comandos
+- `docs/ROADMAP-PLATAFORMA.md` — evolução e governança
+- `docs/CHANGELOG.md` — histórico de docs
+- `docs/seo-rules.md` — SEO detalhado
+- `docs/AUDITORIA-SSOT-AFILIADOS.md` / `docs/AUDITORIA-COMPONENTES-ORFAOS.md` — manutenção Fase 1
