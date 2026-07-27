@@ -1,8 +1,8 @@
 ---
 title: 'Fogão 4 bocas ainda vale a pena? Para apartamento, casal e cozinha pequena'
-description: 'Uma reflexão de compra sobre quando o fogão 4 bocas ainda compensa, especialmente em apartamento, casal e cozinha pequena.'
+description: 'Quando o fogão 4 bocas ainda compensa em apartamento, casal e cozinha pequena — e como escolher o modelo certo no ranking atualizado.'
 pubDate: 2026-03-18
-updatedDate: 2026-05-12
+updatedDate: 2026-07-26
 category: 'Lifestyle'
 faq:
   - question: 'Fogão 4 bocas ainda vale a pena?'
@@ -92,3 +92,5 @@ Se o acabamento pesa na decisão, o [comparativo entre mesa de vidro e inox](/bl
 O fogão 4 bocas continua valendo a pena em 2026 para apartamento, casal e cozinha pequena.
 
 Mais do que uma escolha “menor”, pode ser a mais coerente quando espaço, rotina e conforto visual importam de verdade. Em muitas casas, ainda é o melhor equilíbrio entre praticidade, proporção e bem-estar no ambiente.
+
+**Já fechou o tamanho?** Compare Consul, Electrolux e Atlas no [ranking do melhor fogão 4 bocas](/melhores/melhor-fogao-4-bocas/) — perfil de cada medalha e botões de oferta na mesma página.

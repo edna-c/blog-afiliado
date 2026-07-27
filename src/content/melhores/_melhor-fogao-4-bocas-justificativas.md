@@ -52,7 +52,9 @@ O 2º lugar existe para quem paga **linha Efficient e recursos de forno** (Perfe
 O 3º lugar é a troca consciente: **preço + peças**, sem tentar parecer premium.
 
 - Perfil forte: aluguel / primeiro imóvel — foco em preço e peças, não em recursos como PerfectCook/VaporBake
+- Mesa inox e uso simples: entrega o básico que fecha a compra quando o teto de gasto manda
 - Não é “quase Consul”: acabamento e recursos ficam atrás de propósito
+- Se a meta é equilíbrio no meio da faixa, o ranking manda voltar ao Consul CF04NAR
 
 <!-- CTAs: produtos.atlasMonacoPlus (src/data/products.ts) -->
 <p class="not-prose mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">

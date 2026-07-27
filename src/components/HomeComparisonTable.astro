@@ -15,35 +15,34 @@ const isGuideEmbed = guideBlock != null;
 
 const homeRows: ComparisonRow[] = [
 	{
-		badge: 'Melhor custo-benefício',
+		badge: 'Melhor geral',
 		recommended: true,
+		model: 'Electrolux FE5IG',
+		price: 'Confira na loja',
+		rating: '⭐⭐⭐⭐⭐',
+		bestFor: 'Forno + acabamento',
+		slug: 'electrolux',
+		links: produtos.electroluxFE5IG,
+	},
+	{
+		badge: 'Custo-benefício',
 		model: 'Brastemp BFS5NCR',
-		price: 'A partir de R$ 1.999,00',
-		rating: '4,7/5',
-		bestFor: 'Custo-benefício e uso diário',
+		price: 'Confira na loja',
+		rating: '⭐⭐⭐⭐⭐',
+		bestFor: 'Rotina familiar',
 		slug: 'brastemp',
 		links: produtos.brastempBFS5NCR,
 	},
 	{
-		badge: 'Mais vendido',
+		badge: 'Entrada',
 		model: 'Consul CFS5NAB',
-		price: 'A partir de R$ 1.460,76',
-		rating: '4,5/5',
-		bestFor: 'Orçamento enxuto',
+		price: 'Confira na loja',
+		rating: '⭐⭐⭐⭐☆',
+		bestFor: 'Orçamento contido',
 		slug: 'consul',
 		links: produtos.consulCFS5NAB,
 	},
-	{
-		badge: 'Melhor para famílias',
-		model: 'Electrolux FE5IG',
-		price: 'A partir de R$ 2.178,00',
-		rating: '4,6/5',
-		bestFor: 'Acabamento e forno espaçoso',
-		slug: 'electrolux',
-		links: produtos.electroluxFE5IG,
-	},
 ];
-
 const rows = guideBlock?.comparisonRows ?? homeRows;
 const sectionId = isGuideEmbed ? 'guia-comercial-comparativo' : 'compare-heading';
 const reviewHref = guideBlock?.reviewPathPrefix;

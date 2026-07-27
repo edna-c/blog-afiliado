@@ -11,5 +11,6 @@ Regra para empate:
 
 - Cozinha todo dia + orçamento médio → **Consul CF04NAR**
 - Design e recursos de forno são requisito → **Electrolux Efficient FE4IW**
-- Precisa gastar o mínimo agora → **Atlas**
+- Precisa gastar o mínimo agora → **Atlas Mônaco Plus**
 - Família grande / muitas panelas → [fogão 5 bocas](/melhores/melhor-fogao-5-bocas/)
+- Já decidiu por mesa de vidro → [ranking mesa de vidro](/melhores/melhor-fogao-mesa-de-vidro/)

@@ -1,7 +1,10 @@
 import { produtos } from './products';
 import type { CommercialProduct, ComparisonRow } from '../types/commercial';
 
-export type CommercialGuideId = 'melhor-fogao-4-bocas' | 'melhor-fogao-mesa-de-vidro';
+export type CommercialGuideId =
+	| 'melhor-fogao-5-bocas'
+	| 'melhor-fogao-4-bocas'
+	| 'melhor-fogao-mesa-de-vidro';
 
 export type CommercialTopProductsCopy = {
 	eyebrow: string;
@@ -41,13 +44,143 @@ export type CommercialGuideBlock = {
 	];
 };
 
+const melhorFogao5Bocas: CommercialGuideBlock = {
+	topProductsCopy: {
+		eyebrow: 'Escolha rápida',
+		heading: 'Os 3 melhores fogões 5 bocas — comparativo direto',
+		introParagraphs: [
+			'Alguns links podem gerar comissão para o site, sem custo para você. Os preços podem variar, então vale conferir no momento da compra.',
+			'Confira abaixo os modelos recomendados neste guia. As justificativas de cada medalha continuam mais adiante na página.',
+		],
+		ctaParagraph:
+			'Agora veja os modelos selecionados, <strong class="font-semibold text-on-ink-body">ofertas atualizadas hoje</strong> — estoque pode variar; use os botões para <strong class="font-semibold text-on-ink-body">ver disponibilidade</strong> na loja.',
+	},
+	comparisonCopy: {
+		heading: 'Tabela comparativa: melhores fogões 5 bocas',
+		introParagraphs: [
+			'Compare os três modelos do ranking sem sair desta página.',
+			'A tabela reúne preço de referência, nota e o perfil de cada medalha para acelerar a decisão.',
+			'Se o foco for só economia, a coluna “Melhor para” aponta rápido o custo-benefício e a entrada.',
+		],
+		footerNote:
+			'Ainda em dúvida entre 4 e 5 bocas? Feche o tamanho antes do modelo — o comparativo 4 vs 5 bocas resolve essa etapa.',
+		footerCta: 'Continue lendo para ver por que cada medalha existe e qual perfil combina com você.',
+	},
+	reviewPathPrefix: '/melhores/melhor-fogao-5-bocas/#analises-detalhadas',
+	heroRanking: [
+		{ toneClass: 'text-pop', text: '🥇 Melhor geral: Electrolux FE5IG' },
+		{ toneClass: 'text-cta', text: '💰 Melhor custo-benefício: Brastemp BFS5NCR' },
+		{ toneClass: 'text-amber-300', text: '🔥 Entrada / mais acessível: Consul CFS5NAB' },
+	],
+	moduleIds: [
+		'_melhor-fogao-5-bocas-justificativas',
+		'_melhor-fogao-5-bocas-como-avaliamos',
+		'_melhor-fogao-5-bocas-perfil',
+		'_melhor-fogao-5-bocas-antes',
+		'_melhor-fogao-5-bocas-aprofundar',
+	],
+	topProducts: [
+		{
+			name: 'Electrolux FE5IG',
+			badge: '🥇 Melhor geral',
+			badgeTone: 'emerald',
+			basePrice: 'Confira na loja',
+			benefits: [
+				'Forno e acabamento para quem cozinha de verdade',
+				'Mesa inox com presença mais premium',
+				'Bom equilíbrio de bocas para várias panelas',
+				'Linha com reputação consolidada no pós-venda',
+			],
+			socialProof: '⭐ Destaque do ranking 2026',
+			reviewSlug: 'electrolux',
+			mercadoLivreUrl: produtos.electroluxFE5IG.ml,
+			shopeeUrl: produtos.electroluxFE5IG.shopee,
+			mlCtaText: 'VER PREÇO NO MERCADO LIVRE',
+			shopeeCtaText: 'VER OFERTA NA SHOPEE',
+			image: '/images/melhores/melhor-fogao-5-bocas/electrolux-fe5ig.webp',
+			imageAlt: 'Fogão Electrolux FE5IG 5 bocas em inox com mesa inox',
+			featured: true,
+		},
+		{
+			name: 'Brastemp BFS5NCR',
+			badge: '💰 Melhor custo-benefício',
+			badgeTone: 'pop',
+			basePrice: 'Confira na loja',
+			benefits: [
+				'Potência e forno sem pagar o topo do ranking',
+				'Equilíbrio forte para rotina familiar',
+				'Limpeza e manutenção no uso diário',
+				'Boa disponibilidade nas lojas afiliadas',
+			],
+			socialProof: '⭐ Melhor equilíbrio preço/desempenho',
+			reviewSlug: 'brastemp',
+			mercadoLivreUrl: produtos.brastempBFS5NCR.ml,
+			shopeeUrl: produtos.brastempBFS5NCR.shopee,
+			mlCtaText: 'VER PREÇO NO MERCADO LIVRE',
+			shopeeCtaText: 'VER OFERTA NA SHOPEE',
+			image: '/images/melhores/melhor-fogao-5-bocas/brastemp-bfs5ncr.webp',
+			imageAlt: 'Fogão Brastemp BFS5NCR 5 bocas em inox',
+		},
+		{
+			name: 'Consul CFS5NAB',
+			badge: '🔥 Entrada / mais acessível',
+			badgeTone: 'amber',
+			basePrice: 'Confira na loja',
+			benefits: [
+				'Entra em 5 bocas com orçamento mais contido',
+				'Uso simples, sem firula desnecessária',
+				'Adequado para cozinha média e rotina básica',
+				'SKU fácil de achar e comparar preço',
+			],
+			socialProof: '✔ Entrada mais acessível do ranking',
+			reviewSlug: 'consul',
+			mercadoLivreUrl: produtos.consulCFS5NAB.ml,
+			shopeeUrl: produtos.consulCFS5NAB.shopee,
+			mlCtaText: 'VER PREÇO NO MERCADO LIVRE',
+			shopeeCtaText: 'VER OFERTA NA SHOPEE',
+			image: '/images/melhores/melhor-fogao-5-bocas/consul-cfs5nab.webp',
+			imageAlt: 'Fogão Consul CFS5NAB 5 bocas em inox com tampa de vidro',
+		},
+	],
+	comparisonRows: [
+		{
+			badge: 'Melhor geral',
+			recommended: true,
+			model: 'Electrolux FE5IG',
+			price: 'Confira na loja',
+			rating: '⭐⭐⭐⭐⭐',
+			bestFor: 'Forno + acabamento',
+			slug: 'electrolux',
+			links: produtos.electroluxFE5IG,
+		},
+		{
+			badge: 'Custo-benefício',
+			model: 'Brastemp BFS5NCR',
+			price: 'Confira na loja',
+			rating: '⭐⭐⭐⭐⭐',
+			bestFor: 'Rotina familiar',
+			slug: 'brastemp',
+			links: produtos.brastempBFS5NCR,
+		},
+		{
+			badge: 'Entrada',
+			model: 'Consul CFS5NAB',
+			price: 'Confira na loja',
+			rating: '⭐⭐⭐⭐☆',
+			bestFor: 'Orçamento contido',
+			slug: 'consul',
+			links: produtos.consulCFS5NAB,
+		},
+	],
+};
+
 const melhorFogao4Bocas: CommercialGuideBlock = {
 	topProductsCopy: {
 		eyebrow: 'Escolha rápida',
 		heading: 'Os 3 melhores fogões 4 bocas — comparativo direto',
 		introParagraphs: [
 			'Alguns links podem gerar comissão para o site, sem custo para você. Os preços podem variar, então vale conferir no momento da compra.',
-			'Confira abaixo os modelos recomendados neste guia. As análises detalhadas de cada um continuam mais adiante no artigo.',
+			'Confira abaixo os modelos recomendados neste guia. As justificativas de cada medalha continuam mais adiante na página.',
 		],
 		ctaParagraph:
 			'Agora veja os modelos selecionados, <strong class="font-semibold text-on-ink-body">ofertas atualizadas hoje</strong> — estoque pode variar; use os botões para <strong class="font-semibold text-on-ink-body">ver disponibilidade</strong> na loja.',
@@ -55,13 +188,13 @@ const melhorFogao4Bocas: CommercialGuideBlock = {
 	comparisonCopy: {
 		heading: 'Tabela comparativa: melhores fogões 4 bocas',
 		introParagraphs: [
-			'Veja os modelos recomendados e compare as ofertas sem sair desta página.',
-			'A tabela abaixo reúne preço de referência, nota e o destaque de cada modelo para facilitar sua decisão.',
-			'Se o foco for economia, a coluna “Melhor para” ajuda a identificar rapidamente os modelos com melhor custo-benefício.',
+			'Compare os três modelos do ranking sem sair desta página.',
+			'A tabela reúne preço de referência, nota e o perfil de cada medalha para acelerar a decisão.',
+			'Se o foco for só economia, a coluna “Melhor para” aponta rápido o custo-benefício.',
 		],
 		footerNote:
-			'Antes de fechar, vale cruzar com o comparativo entre fogões 4 e 5 bocas se ainda estiver em dúvida sobre o tamanho ideal.',
-		footerCta: 'Continue lendo para entender melhor os critérios de compra e evitar erro na escolha.',
+			'Ainda em dúvida entre 4 e 5 bocas? Feche o tamanho antes do modelo — o comparativo 4 vs 5 bocas resolve essa etapa.',
+		footerCta: 'Continue lendo para ver por que cada medalha existe e qual perfil combina com você.',
 	},
 	reviewPathPrefix: '/melhores/melhor-fogao-4-bocas/#analises-detalhadas',
 	heroRanking: [
@@ -175,7 +308,7 @@ const melhorFogaoMesaDeVidro: CommercialGuideBlock = {
 		heading: 'Os 3 melhores fogões com mesa de vidro — comparativo direto',
 		introParagraphs: [
 			'Alguns links podem gerar comissão para o site, sem custo para você. Os preços podem variar, então vale conferir no momento da compra.',
-			'Confira abaixo os modelos recomendados neste guia. As análises detalhadas de cada um continuam mais adiante no artigo.',
+			'Confira abaixo os modelos recomendados neste guia. As justificativas de cada medalha continuam mais adiante na página.',
 		],
 		ctaParagraph:
 			'Agora veja os modelos selecionados, <strong class="font-semibold text-on-ink-body">ofertas atualizadas hoje</strong> — estoque pode variar; use os botões para <strong class="font-semibold text-on-ink-body">ver disponibilidade</strong> na loja.',
@@ -183,13 +316,13 @@ const melhorFogaoMesaDeVidro: CommercialGuideBlock = {
 	comparisonCopy: {
 		heading: 'Tabela comparativa: melhores fogões mesa de vidro',
 		introParagraphs: [
-			'Veja os modelos recomendados e compare as ofertas sem sair desta página.',
-			'A tabela abaixo reúne preço de referência, nota e o destaque de cada modelo para facilitar sua decisão.',
-			'Se o foco for economia, a coluna “Melhor para” ajuda a identificar rapidamente os modelos com melhor custo-benefício.',
+			'Compare os três modelos do ranking sem sair desta página.',
+			'A tabela reúne preço de referência, nota e o perfil de cada medalha para acelerar a decisão.',
+			'Se o foco for só economia, a coluna “Melhor para” aponta rápido o custo-benefício.',
 		],
 		footerNote:
 			'Antes de fechar, confirme se a dúvida é acabamento (vidro) ou tamanho (4 vs 5 bocas) — são decisões diferentes.',
-		footerCta: 'Continue lendo para entender melhor os critérios de compra e evitar erro na escolha.',
+		footerCta: 'Continue lendo para ver por que cada medalha existe e qual perfil combina com você.',
 	},
 	reviewPathPrefix: '/melhores/melhor-fogao-mesa-de-vidro/#analises-detalhadas',
 	heroRanking: [
@@ -301,6 +434,7 @@ const melhorFogaoMesaDeVidro: CommercialGuideBlock = {
 };
 
 export const commercialGuideBlocks: Record<CommercialGuideId, CommercialGuideBlock> = {
+	'melhor-fogao-5-bocas': melhorFogao5Bocas,
 	'melhor-fogao-4-bocas': melhorFogao4Bocas,
 	'melhor-fogao-mesa-de-vidro': melhorFogaoMesaDeVidro,
 };
