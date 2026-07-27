@@ -93,8 +93,10 @@ Ao finalizar deverá informar:
 
 # Princípio Geral
 
-Quando houver dúvida entre executar ou perguntar,
+Quando o **Prompt Mestre — Modo Execução** estiver ativo (`docs/BIBLIOTECA_DE_PROMPTS.md` §8 e `.cursor/rules/modo-execucao-crescimento.mdc`):
 
-o agente deverá sempre perguntar primeiro.
+- executar e continuar sem nova autorização nos casos previstos nesse prompt;
+- pedir aprovação só para risco arquitetural, novos módulos, mudanças irreversíveis ou decisão estratégica;
+- escolher a próxima tarefa pela ordem de prioridade do Prompt Mestre.
 
-A previsibilidade é mais importante do que a velocidade.
+Fora do Modo Execução: quando houver dúvida entre executar ou perguntar, **perguntar primeiro**. A previsibilidade é mais importante do que a velocidade.

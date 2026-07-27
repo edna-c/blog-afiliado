@@ -93,4 +93,4 @@ O fogão 4 bocas continua valendo a pena em 2026 para apartamento, casal e cozin
 
 Mais do que uma escolha “menor”, pode ser a mais coerente quando espaço, rotina e conforto visual importam de verdade. Em muitas casas, ainda é o melhor equilíbrio entre praticidade, proporção e bem-estar no ambiente.
 
-**Já fechou o tamanho?** Compare Consul, Electrolux e Atlas no [ranking do melhor fogão 4 bocas](/melhores/melhor-fogao-4-bocas/) — perfil de cada medalha e botões de oferta na mesma página.
+**Já fechou o tamanho?** Compare Consul, Electrolux e Atlas no [ranking do melhor fogão 4 bocas](/melhores/melhor-fogao-4-bocas/#guia-comercial-produtos) — perfil de cada medalha e botões de oferta na mesma página.

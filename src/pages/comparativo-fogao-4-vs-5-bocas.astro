@@ -9,9 +9,9 @@ import { PRODUCT_IMAGE_REVIEW } from '../data/productImages';
 
 const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
 const canonical = new URL('/comparativo-fogao-4-vs-5-bocas/', site).href;
-const pageTitle = 'Fogão 4 ou 5 bocas: qual vale mais a pena em 2026? | Casa Prática Eletro';
+const pageTitle = 'Fogão 4 ou 5 bocas 2026: comparativo para decidir o tamanho | Casa Prática Eletro';
 const description =
-	'Fogão 4 ou 5 bocas? Comparativo completo por rotina, espaço, família e custo — com regra prática para decidir o tamanho certo antes de olhar modelos.';
+	'Fogão 4 ou 5 bocas? Compare rotina, espaço, família e custo — regra prática para fechar o tamanho e ir ao ranking certo.';
 const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).href;
 
 const reviewBrastemp = findEntry((e) => e.href === '/review-fogao-5-bocas-brastemp/');
@@ -52,6 +52,11 @@ const faqItems = [
 		question: 'Como decidir rápido entre 4 e 5 bocas?',
 		answer:
 			'Conte quantas panelas ficam ligadas ao mesmo tempo em um dia normal — não no Natal. Até três com folga aponta para 4 bocas; quatro ou mais com frequência aponta para 5 bocas. Depois feche o modelo no guia correspondente.',
+	},
+	{
+		question: 'Primeiro escolho o tamanho ou o acabamento (vidro/inox)?',
+		answer:
+			'Feche o tamanho antes do acabamento. 4 vs 5 bocas muda vão e rotina; vidro vs inox é outra decisão. Com o tamanho definido, use o ranking do hub certo e, se ainda restar dúvida de tampo, o comparativo vidro ou inox.',
 	},
 ];
 
@@ -101,12 +106,13 @@ const structuredData = {
 	<article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
 		<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Comparativo</p>
 		<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">
-			Fogão 4 ou 5 bocas: qual vale mais a pena para sua cozinha?
+			Fogão 4 ou 5 bocas: comparativo para decidir o tamanho em 2026
 		</h1>
 		<p class="mt-4 text-lg leading-relaxed text-on-ink-body">
 			A dúvida entre <strong class="text-on-ink-body">fogão 4 bocas</strong> e{' '}
 			<strong class="text-on-ink-body">fogão 5 bocas</strong> costuma travar a compra antes mesmo de olhar marca ou preço.
-			Este comparativo fecha o tamanho certo pela rotina real — não pelo anúncio da cozinha gourmet.
+			Este comparativo fecha o tamanho certo pela rotina real — não pelo anúncio da cozinha gourmet. Depois, vá ao ranking do
+			seu tamanho com ofertas na mesma página.
 		</p>
 		<div class="mt-8">
 			<EditorialTrustRibbon />
@@ -263,11 +269,7 @@ const structuredData = {
 					<li>vão da cozinha já medido e confortável para o modelo.</li>
 				</ul>
 				<p class="mt-4">
-					Com o tamanho definido, refine por critérios em{' '}
-					<a href="/como-escolher-fogao-5-bocas/" class="link-accent">
-						como escolher fogão 5 bocas
-					</a>
-					{' '}e pelos modelos do{' '}
+					Com o tamanho definido, refine pelos modelos do{' '}
 					<a
 						href="/melhores/melhor-fogao-5-bocas/"
 						class="link-accent"
@@ -279,6 +281,7 @@ const structuredData = {
 					<a href="/blog/fogao-5-bocas-reduz-espaco-cozinha/" class="link-accent">
 						fogão 5 bocas reduz o espaço da cozinha?
 					</a>
+					.
 				</p>
 			</section>
 
@@ -347,7 +350,7 @@ const structuredData = {
 				</h2>
 				<p class="mt-4">
 					Entre fogão 4 ou 5 bocas, o melhor é o que acompanha a rotina da casa sem apertar o espaço. Feche o tamanho
-					com calma; só depois escolha marca, acabamento e preço no guia certo.
+					abaixo e abra o ranking correspondente — ofertas e perfil de cada medalha estão na money page.
 				</p>
 			</section>
 		</div>
@@ -381,8 +384,12 @@ const structuredData = {
 					Como escolher fogão 5 bocas
 				</a>
 				{' · '}
-				<a href="/" class="link-accent" aria-label="Lista de fogões 5 bocas na página inicial">
-					lista na página inicial
+				<a
+					href="/melhores/melhor-fogao-5-bocas/#guia-comercial-produtos"
+					class="link-accent"
+					aria-label="Ver ofertas do ranking de fogão 5 bocas"
+				>
+					ofertas do ranking 5 bocas
 				</a>
 			</p>
 		</section>

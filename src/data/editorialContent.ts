@@ -106,14 +106,14 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 	},
 	{
 		href: '/como-escolher-fogao-5-bocas/',
-		title: 'Como escolher fogão 5 bocas',
-		description: 'Medidas, gás, forno e ventilação — checklist prático antes de pagar.',
+		title: 'Como escolher fogão 5 bocas 2026 (checklist)',
+		description: 'Medidas, gás e forno — checklist antes de abrir o ranking com ofertas.',
 		kind: 'Guia',
 		flow: 2,
 		editorialLabel: 'Guia prático',
 		topics: ['fogao-5-bocas', 'instalacao', 'compra-segura', 'manutencao'],
 		anchorText: 'guia de como escolher fogão 5 bocas',
-		teaser: 'checklist de medidas, gás, forno e ventilação',
+		teaser: 'checklist prático antes de comparar os 3 modelos',
 		weight: 7,
 	},
 	{
@@ -130,15 +130,15 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 	},
 	{
 		href: '/comparativo-fogao-4-vs-5-bocas/',
-		title: 'Fogão 4 vs 5 bocas',
+		title: 'Fogão 4 ou 5 bocas 2026 (comparativo)',
 		description:
-			'Comparativo completo: rotina, espaço, família e custo para decidir entre fogão 4 ou 5 bocas antes de escolher o modelo.',
+			'Compare rotina, espaço e custo — feche o tamanho e vá ao ranking certo com ofertas.',
 		kind: 'Comparativo',
 		flow: 3,
 		editorialLabel: 'Comparativo',
 		topics: ['fogao-5-bocas', 'fogao-4-bocas', 'cozinha-pequena', 'compra-segura'],
 		anchorText: 'comparativo entre fogões 4 e 5 bocas',
-		teaser: 'regra prática + FAQ para fechar 4 ou 5 bocas',
+		teaser: 'regra prática para decidir 4 ou 5 bocas antes do modelo',
 		weight: 8,
 	},
 	{
@@ -175,8 +175,8 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 	},
 	{
 		href: '/review-fogao-5-bocas-consul/',
-		title: 'Review rápida: Consul CFS5NAB',
-		description: 'Entrada sólida: para quem é e quando vale subir de linha.',
+		title: 'Consul CFS5NAB vale a pena? Para quem serve',
+		description: 'Entrada sólida em 5 bocas: para quem é e quando vale subir de linha.',
 		kind: 'Review',
 		flow: 4,
 		editorialLabel: 'Review',
@@ -211,8 +211,8 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 	},
 	{
 		href: '/blog/guia-fogao-embutir-ou-de-piso/',
-		title: 'Embutir ou de piso: decisão de layout',
-		description: 'Decisão de instalação e ambiente antes de travar marca/modelo.',
+		title: 'Fogão de embutir ou de piso: qual escolher?',
+		description: 'Tabela rápida: obra, custo de instalação, troca futura e cozinha planejada.',
 		kind: 'Blog',
 		flow: 1,
 		editorialLabel: 'Lifestyle · Decoração',
@@ -229,8 +229,8 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 	},
 	{
 		href: '/blog/fogao-mesa-de-vidro-ou-inox/',
-		title: 'Fogão com mesa de vidro ou inox: qual o melhor?',
-		description: 'Comparativo completo entre acabamentos — estética, resistência, limpeza e custo-benefício.',
+		title: 'Fogão mesa de vidro ou inox: qual escolher?',
+		description: 'Comparativo prático — limpeza, resistência, risco e perfil de uso antes de fechar o acabamento.',
 		kind: 'Comparativo',
 		flow: 3,
 		editorialLabel: 'Comparativo · Acabamento',
@@ -261,8 +261,8 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 	},
 	{
 		href: '/blog/fogao-mesa-de-vidro-seguro/',
-		title: 'Fogão com mesa de vidro é seguro?',
-		description: 'Riscos reais, mitos, vantagens e quando vale a pena investir nesse acabamento.',
+		title: 'Fogão com mesa de vidro é seguro? Sim — mitos e riscos reais',
+		description: 'Resposta direta: seguro no uso doméstico. O que realmente danifica o tampo e quando o acabamento vale a pena.',
 		kind: 'Blog',
 		flow: 1,
 		editorialLabel: 'Guia · Segurança',
@@ -270,6 +270,32 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 		anchorText: 'guia sobre segurança do fogão com mesa de vidro',
 		teaser: 'mitos, riscos reais e cuidados antes da compra',
 		weight: 7,
+	},
+	{
+		href: '/blog/fogao-5-bocas-reduz-espaco-cozinha/',
+		title: 'Fogão 5 bocas reduz o espaço da cozinha?',
+		description:
+			'Quando o 5 bocas realmente pesa no ambiente, o que muda no layout e como escolher sem perder circulação.',
+		kind: 'Guia',
+		flow: 2,
+		editorialLabel: 'Guia · Espaço',
+		topics: ['fogao-5-bocas', 'cozinha-pequena', 'organizacao', 'instalacao'],
+		anchorText: 'guia sobre fogão 5 bocas em cozinha pequena',
+		teaser: 'layout, circulação e quando o 5 bocas ainda cabe',
+		weight: 7,
+	},
+	{
+		href: '/blog/melhor-fogao-com-forno-duplo/',
+		title: 'Melhor fogão com forno duplo: como escolher',
+		description:
+			'O que é forno duplo de verdade, quando compensa e quais conferências fazer antes de comprar.',
+		kind: 'Guia',
+		flow: 2,
+		editorialLabel: 'Guia · Forno',
+		topics: ['fogao-5-bocas', 'forno-grande', 'familia-grande', 'custo-beneficio'],
+		anchorText: 'guia de fogão com forno duplo',
+		teaser: 'quando o segundo compartimento muda a rotina — e quando não',
+		weight: 6,
 	},
 ];
 

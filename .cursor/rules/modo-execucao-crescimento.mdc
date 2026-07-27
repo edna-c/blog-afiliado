@@ -1,0 +1,86 @@
+---
+description: Modo Execução — continuidade e seleção automática da próxima tarefa de crescimento
+alwaysApply: true
+---
+
+# Modo Execução — seleção da próxima tarefa
+
+Quando o projeto estiver em fase de crescimento / Prompt Mestre ativo (`docs/BIBLIOTECA_DE_PROMPTS.md` §8):
+
+## Fase ativa: Consolidação e Escala
+
+Até segunda ordem: **maximizar tráfego, autoridade e receita dos ativos já construídos** antes de criar URLs novas.
+
+Páginas prioritárias: impressões no GSC; consultas nas posições **5–30**; CTR abaixo do esperado; potencial de expansão editorial, intenção mais clara e links internos.
+
+Antes de propor página nova: confirmar que **não** há oportunidade de crescimento mais relevante em página existente.
+
+### Otimização em etapas (posições 5–30)
+
+Quando a página estiver entre as posições **5 e 30** no GSC, otimizar **em etapas** — não misturar fatores no mesmo sprint, para medir o que gerou impacto.
+
+| Etapa | Escopo | Depois |
+|-------|--------|--------|
+| **1** | `title` + meta `description` | Aguardar indexação |
+| **2** | Resposta direta + FAQ + enriquecimento editorial | Aguardar novo ciclo do Search Console |
+| **3** | Links internos + ajustes finais | Validar métricas; só então avançar |
+
+Regras:
+- **Diretriz (não lei absoluta):** preferir uma etapa por sprint na mesma URL, para isolar o impacto no GSC.
+- **Exceções:** página claramente incompleta, erro técnico/SEO crítico, ou risco de deixar o ativo quebrado — nesse caso, corrigir o necessário de uma vez e registrar no relatório o que foi agrupado e por quê.
+- Enquanto aguarda indexação/ciclo GSC de uma URL, pode executar Etapa 1 em **outra** URL prioritária, ou melhorias independentes de dados.
+- Não pular para Etapa 2/3 da mesma página sem evidência do ciclo anterior (ou sinal claro de indexação + dados GSC atualizados), **salvo** as exceções acima.
+
+### Página “fortalecida” — checklist (só então avançar)
+
+Uma URL só conta como fortalecida quando:
+
+1. cobre completamente a intenção de busca;
+2. possui links internos suficientes;
+3. apresenta CTAs comerciais coerentes com o hub/ranking certo;
+4. foi atualizada conforme dados do Google Search Console (quando disponíveis);
+5. não restam melhorias adicionais de **alto impacto** antes de partir para nova URL.
+
+## Continuidade
+
+Ao concluir um sprint, **não aguardar** nova instrução se a próxima prioridade puder ser inferida. Atualizar estado → escolher próxima tarefa → iniciar.
+
+Pedir aprovação humana **somente** para: alteração arquitetural significativa; novos módulos; mudanças estruturais irreversíveis; decisões estratégicas de direcionamento.
+
+## Dados externos (GSC, Analytics, afiliados)
+
+Se a próxima prioridade **depender** de dados externos (Google Search Console, Analytics ou receita de afiliados):
+
+1. Solicitar **apenas** os dados estritamente necessários.
+2. **Aguardar** a disponibilização — não inventar métricas nem priorizar no escuro.
+
+Enquanto esses dados **não** estiverem disponíveis: executar automaticamente todas as melhorias **estruturais, editoriais e técnicas independentes** desses dados (funil interno, CTAs, interlinks, SEO on-page, freshness, schema, lacunas de intenção já evidentes no código).
+
+Não paralisar o Modo Execução à espera de export quando ainda houver gaps independentes de alto impacto.
+
+## Ordem de prioridade (obrigatória)
+
+1. Corrigir erros críticos de **build, renderização ou SEO técnico**.
+2. Priorizar páginas **já existentes** com maior potencial de crescimento:
+   - GSC: consultas nas posições **5–30**;
+   - impressões crescentes;
+   - CTR abaixo do esperado;
+   - oportunidades de links internos.
+3. Criar páginas novas **somente** se ampliarem a cobertura do mapa arquitetural / mapa-base SEO **e** não existir URL com a mesma intenção **e** as páginas prioritárias relevantes já estiverem fortalecidas (checklist acima).
+4. **Atualizar conteúdos antigos** antes de criar conteúdos semelhantes.
+5. Refinamentos visuais **somente** com impacto comprovado em UX, SEO ou conversão.
+
+## Antes de iniciar (obrigatório)
+
+1. Explicar em **no máximo 3 frases** por que a tarefa tem o maior potencial de impacto.
+2. Informar o objetivo: **SEO**, **autoridade**, **UX** ou **receita**.
+3. Confirmar que **não gera canibalização** com páginas existentes (1 intenção = 1 URL dona).
+
+## Relatório de sprint
+
+1. O que foi feito.
+2. Impacto esperado.
+3. **Indicador de sucesso** — qual métrica deve melhorar e como validar (impressões, posição média, CTR, cliques, cliques afiliados, Core Web Vitals, erros no Search Console, etc.).
+4. Próxima melhor tarefa (com ≤3 frases de impacto, objetivo SEO/autoridade/UX/receita e confirmação anti-canibalização, se for iniciar em seguida).
+
+Ciclo: **Tarefa → Objetivo → Impacto → Métrica de validação**.

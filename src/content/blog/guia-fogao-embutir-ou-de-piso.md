@@ -1,8 +1,8 @@
 ---
-title: 'Fogão de embutir ou de piso: como decidir em 10 minutos'
-description: 'Compare fogão de embutir e de piso em custo de instalação, ventilação, manutenção, segurança e estética para escolher sem erro.'
+title: 'Fogão de embutir ou de piso: qual escolher? Tabela rápida + custo'
+description: 'Embutir ou piso? Veja em 1 minuto qual encaixa: obra, custo de instalação, troca futura e cozinha planejada — sem escolher só pelo visual.'
 pubDate: 2026-03-10
-updatedDate: 2026-05-12
+updatedDate: 2026-07-26
 category: 'Guia'
 faq:
   - question: 'Fogão de embutir é melhor do que fogão de piso?'
@@ -101,4 +101,4 @@ Cozinha pequena? Cruze também com [quando o fogão 4 bocas ainda vale a pena](/
 
 ## Próximo passo
 
-Depois de definir o tipo de instalação, [veja os modelos mais vendidos](/#top-produtos) ou o [guia de referência em fogão 5 bocas](/melhores/melhor-fogao-5-bocas/).
+Depois de definir o tipo de instalação, feche o modelo no [ranking do melhor fogão 5 bocas](/melhores/melhor-fogao-5-bocas/#guia-comercial-produtos) — perfil de cada medalha e ofertas na mesma página.

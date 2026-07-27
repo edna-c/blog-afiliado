@@ -93,42 +93,84 @@ const { Content } = await render(post);
 const articleHero = articleHeroes[post.id];
 
 /**
- * Pareamento editorial por slug — escolhe naturalmente:
- *  - artigo cozinha-moderna (mesa de vidro) → review de modelo inox premium
- *  - artigo decoração (embutir/piso)        → análise Brastemp + review Electrolux
- *  - artigo 4 bocas / cozinha moderna       → guia 5 bocas + comparativo direto
- *  - artigo guia 5 bocas                    → análise Brastemp + comparativo
+ * Pareamento editorial por slug — reforça a intenção dona (sem cruzar hubs errados):
+ *  - mesa de vidro → satélites do cluster + hub comercial de vidro quando couber
+ *  - 4 bocas → hub 4 bocas + comparativo de tamanho
+ *  - 5 bocas / espaço → hub 5 bocas + comparativo
  */
 const editorialPairings: Record<string, string[]> = {
 	'fogao-mesa-de-vidro-ou-inox': [
 		'/blog/review-fogao-com-mesa-de-vidro/',
 		'/blog/fogao-mesa-de-vidro-seguro/',
+		'/melhores/melhor-fogao-mesa-de-vidro/',
 	],
 	'review-fogao-com-mesa-de-vidro': [
 		'/blog/fogao-mesa-de-vidro-ou-inox/',
 		'/blog/fogao-mesa-de-vidro-seguro/',
-		'/brastemp-bfs5ncr-vale-a-pena/',
+		'/melhores/melhor-fogao-mesa-de-vidro/',
 	],
 	'fogao-mesa-de-vidro-seguro': [
 		'/blog/fogao-mesa-de-vidro-ou-inox/',
 		'/blog/review-fogao-com-mesa-de-vidro/',
-		'/brastemp-bfs5ncr-vale-a-pena/',
+		'/melhores/melhor-fogao-mesa-de-vidro/',
 	],
 	'guia-fogao-embutir-ou-de-piso': [
 		'/blog/fogao-mesa-de-vidro-ou-inox/',
 		'/comparativo-fogao-4-vs-5-bocas/',
-		'/brastemp-bfs5ncr-vale-a-pena/',
+		'/melhores/melhor-fogao-5-bocas/',
 	],
 	'fogao-4-bocas-ainda-vale-a-pena': [
-		'/blog/fogao-mesa-de-vidro-ou-inox/',
-		'/melhores/melhor-fogao-5-bocas/',
+		'/melhores/melhor-fogao-4-bocas/',
 		'/comparativo-fogao-4-vs-5-bocas/',
+		'/blog/fogao-mesa-de-vidro-ou-inox/',
 	],
 	'fogao-5-bocas-reduz-espaco-cozinha': [
-		'/blog/fogao-mesa-de-vidro-ou-inox/',
 		'/melhores/melhor-fogao-5-bocas/',
 		'/comparativo-fogao-4-vs-5-bocas/',
+		'/como-escolher-fogao-5-bocas/',
 	],
+	'melhor-fogao-com-forno-duplo': [
+		'/melhores/melhor-fogao-5-bocas/',
+		'/comparativo-fogao-4-vs-5-bocas/',
+		'/blog/fogao-5-bocas-reduz-espaco-cozinha/',
+	],
+};
+
+/** CTA comercial do rodapé: 1 hub por intenção (nunca a home). */
+const commercialNextBySlug: Record<string, { href: string; label: string }> = {
+	'fogao-4-bocas-ainda-vale-a-pena': {
+		href: '/melhores/melhor-fogao-4-bocas/#guia-comercial-produtos',
+		label: 'ranking do melhor fogão 4 bocas com ofertas',
+	},
+	'fogao-mesa-de-vidro-ou-inox': {
+		href: '/melhores/melhor-fogao-mesa-de-vidro/#guia-comercial-produtos',
+		label: 'ranking mesa de vidro com ofertas',
+	},
+	'review-fogao-com-mesa-de-vidro': {
+		href: '/melhores/melhor-fogao-mesa-de-vidro/#guia-comercial-produtos',
+		label: 'ranking mesa de vidro com ofertas',
+	},
+	'fogao-mesa-de-vidro-seguro': {
+		href: '/melhores/melhor-fogao-mesa-de-vidro/#guia-comercial-produtos',
+		label: 'ranking mesa de vidro com ofertas',
+	},
+	'guia-fogao-embutir-ou-de-piso': {
+		href: '/melhores/melhor-fogao-5-bocas/#guia-comercial-produtos',
+		label: 'ranking do melhor fogão 5 bocas com ofertas',
+	},
+	'fogao-5-bocas-reduz-espaco-cozinha': {
+		href: '/melhores/melhor-fogao-5-bocas/#guia-comercial-produtos',
+		label: 'ranking do melhor fogão 5 bocas com ofertas',
+	},
+	'melhor-fogao-com-forno-duplo': {
+		href: '/melhores/melhor-fogao-5-bocas/#guia-comercial-produtos',
+		label: 'ranking do melhor fogão 5 bocas com ofertas',
+	},
+};
+
+const commercialNext = commercialNextBySlug[post.id] ?? {
+	href: '/melhores/melhor-fogao-5-bocas/#guia-comercial-produtos',
+	label: 'ranking do melhor fogão 5 bocas com ofertas',
 };
 
 const inlinePairingItems: EditorialEntry[] = (editorialPairings[post.id] ?? [])
@@ -321,11 +363,9 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 		}
 
 		<p class="mt-10 rounded-xl border border-white/10 bg-brand-900/30 px-4 py-3 text-sm leading-relaxed text-on-ink-muted sm:px-5">
-			<strong class="text-on-ink-body">Próximo passo comercial (sem pressão):</strong> depois de ler, volte à{' '}
-			<a href="/#top-produtos" class="link-accent">lista principal com ofertas</a>
-			{' '}ou ao{' '}
-			<a href="/melhores/melhor-fogao-5-bocas/" class="link-accent">guia mestre de fogão 5 bocas</a>
-			para cruzar critérios com preço do dia.
+			<strong class="text-on-ink-body">Próximo passo comercial (sem pressão):</strong> depois de ler, abra o{' '}
+			<a href={commercialNext.href} class="link-accent">{commercialNext.label}</a>
+			{' '}para cruzar critérios com o ranking e o preço do dia.
 		</p>
 		{
 			faq?.length ? (

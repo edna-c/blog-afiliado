@@ -7,6 +7,36 @@ Formato: mais recente no topo.
 
 ---
 
+## 2026-07-27
+
+### Otimização GSC em etapas (posições 5–30)
+
+- Prompt Mestre §8 e `.cursor/rules/modo-execucao-crescimento.mdc`: páginas na faixa 5–30 otimizam em 3 etapas isoladas (1 title/description → indexação; 2 resposta direta/FAQ/editorial → ciclo GSC; 3 interlinks/ajustes finais).
+- “Uma etapa por sprint na mesma URL” é **diretriz**, não lei absoluta — exceção para incompleto/erro técnico crítico (corrigir de uma vez e registrar no relatório).
+
+## 2026-07-26
+
+### Dados externos — não paralisar execução
+
+- Prompt Mestre §8 e `.cursor/rules/modo-execucao-crescimento.mdc`: se a prioridade depender de GSC/Analytics/afiliados, pedir só o mínimo e aguardar; enquanto isso, executar melhorias estruturais/editoriais/técnicas independentes desses dados.
+
+### Fase Consolidação e Escala — prioridade em ativos existentes
+
+- `docs/BIBLIOTECA_DE_PROMPTS.md` §8 e `.cursor/rules/modo-execucao-crescimento.mdc`: fase ativa **Consolidação e Escala** até segunda ordem.
+- Prioridade: páginas com impressões / posições GSC 5–30 / CTR fraco / potencial de expansão e interlinks — **antes** de criar URLs novas.
+- Checklist de página “fortalecida”: intenção completa, interlinks, CTAs comerciais coerentes, atualização com GSC, sem gaps de alto impacto pendentes.
+- Nova URL só após confirmar que não há crescimento mais relevante em página existente.
+
+### Prompt Mestre — Modo Execução e seleção automática
+
+- `docs/BIBLIOTECA_DE_PROMPTS.md` §8: Prompt Mestre (continuidade + seleção automática da próxima tarefa).
+- `.cursor/rules/modo-execucao-crescimento.mdc`: regra alwaysApply espelhando a seleção automática.
+- `docs/MANUAL_INTERACAO_AGENTES.md`: Princípio Geral compatível com Modo Execução quando ativo.
+- Critérios de seleção: build/SEO crítico → páginas existentes (GSC 5–30, impressões, CTR, interlinks) → novas URLs só sem canibalização → atualizar antes de duplicar → visual só com impacto comprovado; gate pré-tarefa (≤3 frases + objetivo + anti-canibalização).
+- Relatório de sprint inclui **Indicador de sucesso** (métrica + como validar): ciclo Tarefa → Objetivo → Impacto → Métrica de validação.
+
+---
+
 ## 2026-07-24
 
 ### Encerramento definitivo da documentação arquitetural — Fase 1

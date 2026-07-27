@@ -8,9 +8,9 @@ import { PRODUCT_IMAGE_REVIEW } from '../data/productImages';
 
 const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
 const canonical = new URL('/como-escolher-fogao-5-bocas/', site).href;
-const pageTitle = 'Como escolher fogão 5 bocas em 2026 | Casa Prática Eletro';
+const pageTitle = 'Como escolher fogão 5 bocas em 2026: checklist antes de comprar | Casa Prática Eletro';
 const description =
-	'Guia da Casa Prática Eletro para escolher fogão 5 bocas: medidas, gás, forno, segurança e comparativos práticos.';
+	'Como escolher fogão 5 bocas: medidas, gás, forno e checklist prático — depois compare os 3 modelos do ranking com ofertas.';
 const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).href;
 ---
 
@@ -29,10 +29,12 @@ const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).
 >
 	<article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
 		<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Guia prático</p>
-		<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">Como escolher fogão 5 bocas</h1>
+		<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">
+			Como escolher fogão 5 bocas em 2026
+		</h1>
 		<p class="mt-4 text-lg leading-relaxed text-on-ink-body">
-			Use este guia quando já estiver decidido por <strong class="text-on-ink-body">melhores fogões 5 bocas</strong>, mas ainda travado
-			em medida, tipo de instalação ou versão do forno.
+			Use este guia quando já estiver decidido por <strong class="text-on-ink-body">fogão 5 bocas</strong>, mas ainda travado
+			em medida, gás ou forno — antes de abrir o ranking e as ofertas.
 		</p>
 		<div class="mt-8">
 			<EditorialTrustRibbon />
@@ -52,27 +54,31 @@ const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).
 				</p>
 			</section>
 			<section aria-labelledby="step3">
-				<h2 id="step3" class="font-display text-xl font-bold text-on-ink-body">3. Cruze com comparativos</h2>
+				<h2 id="step3" class="font-display text-xl font-bold text-on-ink-body">3. Cruze com o ranking e os satélites</h2>
 				<p class="mt-3">
-					Depois dessas dicas, volte à{' '}
-					<a href="/" class="link-accent" aria-label="Lista de fogões 5 bocas na página inicial">
-						lista na página inicial
+					Depois do checklist, abra o{' '}
+					<a
+						href="/melhores/melhor-fogao-5-bocas/#guia-comercial-produtos"
+						class="link-accent"
+						aria-label="Ranking melhor fogão 5 bocas com ofertas"
+					>
+						ranking de fogão 5 bocas com ofertas
 					</a>
-					, ao{' '}
+					. Se o tamanho ainda estiver em aberto, use o{' '}
 					<a
 						href="/comparativo-fogao-4-vs-5-bocas/"
 						class="link-accent"
 						aria-label="Comparativo entre fogão 4 bocas e fogão 5 bocas"
 					>
-						4 vs 5 bocas
-					</a>{' '}
-					e ao{' '}
+						comparativo 4 vs 5 bocas
+					</a>
+					. Se a dúvida for só preço, veja o{' '}
 					<a
 						href="/fogao-5-bocas-custo-beneficio/"
 						class="link-accent"
 						aria-label="Guia fogão 5 bocas custo-benefício"
 					>
-						custo-benefício
+						custo-benefício 5 bocas
 					</a>
 					.
 				</p>
@@ -80,15 +86,21 @@ const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).
 		</div>
 		<div class="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
 			<a
-				href={produtos.brastempBFS5NCR.ml}
+				href="/melhores/melhor-fogao-5-bocas/#guia-comercial-produtos"
 				class="inline-flex min-h-[52px] flex-1 items-center justify-center bg-cta px-8 text-xs font-bold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-w-[200px]"
+				aria-label="Abrir ranking de fogão 5 bocas com preços e ofertas"
+			>
+				Ver ranking e ofertas
+			</a>
+			<a
+				href={produtos.brastempBFS5NCR.ml}
+				class="btn-secondary-premium flex-1 px-8 sm:min-w-[200px]"
 				target="_blank"
 				rel="nofollow sponsored noopener noreferrer"
-				aria-label="Ver preço atualizado de fogões 5 bocas na loja parceira — abre em nova aba (link patrocinado)"
+				aria-label="Ver preço do Brastemp BFS5NCR na loja — abre em nova aba (link patrocinado)"
 			>
-				Ver preço atualizado
+				Ver preço (custo-benefício)
 			</a>
-			<a href="/melhores/melhor-fogao-5-bocas/" class="btn-secondary-premium flex-1 px-8 sm:min-w-[200px]">Abrir guia mestre 5 bocas</a>
 		</div>
 		<RelatedContent
 			class="mt-14"
