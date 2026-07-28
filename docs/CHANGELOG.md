@@ -9,6 +9,25 @@ Formato: mais recente no topo.
 
 ## 2026-07-27
 
+### Sprint B — satélite «fogão 4 bocas custo-benefício»
+
+- Nova URL `/fogao-4-bocas-custo-beneficio/`: ângulo preço/valor (Atlas medalha, Consul equilíbrio, Electrolux premium), espelhando o satélite do cluster 5 bocas.
+- Money Page beneficiada: `/melhores/melhor-fogao-4-bocas/`. Interlinks no hub (aprofundar), checklist `como-escolher-fogao-4-bocas`, `editorialContent.ts` e mapa-base SEO.
+- Priorização Motor II: comparado com «como escolher mesa de vidro» e review Consul CF04NAR; escolhido pelo maior potencial comercial + fechamento do funil 4 bocas.
+
+### Sprint B — satélite «como escolher fogão 4 bocas»
+
+- Nova URL `/como-escolher-fogao-4-bocas/`: checklist pré-compra (medidas, gás, mesa, forno) espelhando o satélite do cluster 5 bocas.
+- Money Page beneficiada: `/melhores/melhor-fogao-4-bocas/`. Interlinks no hub (aprofundar / como avaliamos / antes), blog «vale a pena», comparativo 4 vs 5, `editorialContent.ts` e related paths do blog.
+- Mapa-base em `docs/seo-rules.md` atualizado (hubs 4 bocas, mesa de vidro e satélites «como escolher»).
+- Próximo ativo de maior retorno no mesmo cluster (sprint seguinte): `/fogao-4-bocas-custo-beneficio/` — intenção distinta do ranking; espelha o satélite comercial do 5 bocas.
+
+### Ritmo de sprints 70/30 — A Otimização / B Expansão
+
+- Prompt Mestre §8 e `.cursor/rules/modo-execucao-crescimento.mdc`: **Sprint A (~70%)** = GSC, CTR, pos. 5–30, conversão, interlinks; **Sprint B (~30%)** = páginas de decisão, comparativos, guias, novos clusters.
+- Relatório declara o tipo (A ou B). B só sem canibalização e sem gap A de maior impacto imediato.
+- Evolução: proporção **depende do nº de páginas consolidadas** — ~100–150 → ~50/50; domínio forte → possível inversão (mais expansão). Só com decisão explícita.
+
 ### Otimização GSC em etapas (posições 5–30)
 
 - Prompt Mestre §8 e `.cursor/rules/modo-execucao-crescimento.mdc`: páginas na faixa 5–30 otimizam em 3 etapas isoladas (1 title/description → indexação; 2 resposta direta/FAQ/editorial → ciclo GSC; 3 interlinks/ajustes finais).

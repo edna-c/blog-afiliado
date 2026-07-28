@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RelatedContent from '../components/RelatedContent.astro';
+import SmartRecommendations from '../components/SmartRecommendations.astro';
+import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
+import { produtos } from '../data/products';
+
+const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
+const canonical = new URL('/como-escolher-fogao-4-bocas/', site).href;
+const pageTitle = 'Como escolher fogão 4 bocas em 2026: checklist antes de comprar | Casa Prática Eletro';
+const description =
+	'Como escolher fogão 4 bocas: medidas, gás, mesa e forno — checklist prático antes de abrir o ranking com ofertas.';
+const ogImage = new URL('images/melhores/melhor-fogao-4-bocas/melhor-fogao-4-bocas-2026.webp', site).href;
+---
+
+<BaseLayout
+	title={pageTitle}
+	description={description}
+	canonical={canonical}
+	openGraph={{
+		title: pageTitle,
+		description,
+		url: canonical,
+		type: 'article',
+		image: ogImage,
+		imageAlt: 'Fogões 4 bocas — referência visual do guia prático de escolha',
+	}}
+>
+	<article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+		<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Guia prático</p>
+		<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">
+			Como escolher fogão 4 bocas em 2026
+		</h1>
+		<p class="mt-4 text-lg leading-relaxed text-on-ink-body">
+			Use este guia quando já estiver decidido por <strong class="text-on-ink-body">fogão 4 bocas</strong>, mas ainda travado
+			em medida, gás, mesa ou forno — antes de abrir o ranking e as ofertas.
+		</p>
+		<div class="mt-8">
+			<EditorialTrustRibbon />
+		</div>
+		<div class="mt-10 space-y-8 text-base leading-relaxed text-on-ink-body">
+			<section aria-labelledby="step1">
+				<h2 id="step1" class="font-display text-xl font-bold text-on-ink-body">1. Desenhe a cozinha em números</h2>
+				<p class="mt-3">
+					Largura do vão, profundidade útil, altura dos móveis ao lado e espaço para a porta do forno aberta por completo.
+					Em cozinha compacta ou integrada, esses centímetros decidem se o 4 bocas entra sem apertar circulação.
+				</p>
+			</section>
+			<section aria-labelledby="step2">
+				<h2 id="step2" class="font-display text-xl font-bold text-on-ink-body">2. Gás e ventilação</h2>
+				<p class="mt-3">
+					Confirme GLP vs rede e regras do condomínio. Em dúvida, profissional credenciado vale mais que qualquer ranking.
+				</p>
+			</section>
+			<section aria-labelledby="step3">
+				<h2 id="step3" class="font-display text-xl font-bold text-on-ink-body">3. Mesa e forno pela rotina</h2>
+				<p class="mt-3">
+					Inox prioriza robustez no dia a dia; vidro prioriza limpeza visual — feche o acabamento no{' '}
+					<a
+						href="/blog/fogao-mesa-de-vidro-ou-inox/"
+						class="link-accent"
+						aria-label="Comparativo fogão mesa de vidro ou inox"
+					>
+						comparativo vidro ou inox
+					</a>
+					. No forno, peça o que a rotina realmente usa (assados semanais vs uso ocasional) antes de pagar por recurso
+					premium.
+				</p>
+			</section>
+			<section aria-labelledby="step4">
+				<h2 id="step4" class="font-display text-xl font-bold text-on-ink-body">4. Cruze com o ranking e os satélites</h2>
+				<p class="mt-3">
+					Depois do checklist, abra o{' '}
+					<a
+						href="/melhores/melhor-fogao-4-bocas/#guia-comercial-produtos"
+						class="link-accent"
+						aria-label="Ranking melhor fogão 4 bocas com ofertas"
+					>
+						ranking de fogão 4 bocas com ofertas
+					</a>
+					. Se o tamanho ainda estiver em aberto, use o{' '}
+					<a
+						href="/comparativo-fogao-4-vs-5-bocas/"
+						class="link-accent"
+						aria-label="Comparativo entre fogão 4 bocas e fogão 5 bocas"
+					>
+						comparativo 4 vs 5 bocas
+					</a>
+					. Se a dúvida for só preço, veja o{' '}
+					<a
+						href="/fogao-4-bocas-custo-beneficio/"
+						class="link-accent"
+						aria-label="Guia fogão 4 bocas custo-benefício"
+					>
+						custo-benefício 4 bocas
+					</a>
+					.
+				</p>
+			</section>
+		</div>
+		<div class="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+			<a
+				href="/melhores/melhor-fogao-4-bocas/#guia-comercial-produtos"
+				class="inline-flex min-h-[52px] flex-1 items-center justify-center bg-cta px-8 text-xs font-bold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-w-[200px]"
+				aria-label="Abrir ranking de fogão 4 bocas com preços e ofertas"
+			>
+				Ver ranking e ofertas
+			</a>
+			<a
+				href={produtos.consulCF04NAR.ml}
+				class="btn-secondary-premium flex-1 px-8 sm:min-w-[200px]"
+				target="_blank"
+				rel="nofollow sponsored noopener noreferrer"
+				aria-label="Ver preço do Consul CF04NAR na loja — abre em nova aba (link patrocinado)"
+			>
+				Ver preço (melhor geral)
+			</a>
+		</div>
+		<RelatedContent
+			class="mt-14"
+			currentPath="/como-escolher-fogao-4-bocas/"
+			eyebrow="Veja também"
+			title="Leituras relacionadas"
+			subtitle="Comparativos e leituras editoriais para alinhar tamanho, mesa e modelo antes de fechar."
+		/>
+
+		<SmartRecommendations
+			class="mt-12"
+			currentPath="/como-escolher-fogao-4-bocas/"
+			heading="Próximos passos editoriais"
+		/>
+	</article>
+</BaseLayout>

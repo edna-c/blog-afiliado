@@ -11,9 +11,29 @@ Quando o projeto estiver em fase de crescimento / Prompt Mestre ativo (`docs/BIB
 
 Até segunda ordem: **maximizar tráfego, autoridade e receita dos ativos já construídos** antes de criar URLs novas.
 
-Páginas prioritárias: impressões no GSC; consultas nas posições **5–30**; CTR abaixo do esperado; potencial de expansão editorial, intenção mais clara e links internos.
+### Ritmo de sprints (70 / 30)
 
-Antes de propor página nova: confirmar que **não** há oportunidade de crescimento mais relevante em página existente.
+| Tipo | Peso | Foco |
+|------|------|------|
+| **Sprint A — Otimização** | **~70%** | Search Console · CTR · páginas pos. 5–30 · conversão · links internos |
+| **Sprint B — Expansão** | **~30%** | Novas páginas de decisão · comparativos · guias de compra · novos clusters |
+
+**Proporção atual** até segunda ordem. A proporção **depende do número de páginas bem consolidadas** (e da força do domínio) — evolução prevista, só com decisão explícita:
+
+| Estágio do domínio | Otimização (A) | Expansão (B) |
+|--------------------|----------------|--------------|
+| Agora (poucas dezenas de URLs) | ~70% | ~30% |
+| ~100–150 páginas bem consolidadas | ~50% | ~50% |
+| Domínio forte (autoridade alta) | pode inverter | cada nova URL ranqueia com mais facilidade |
+
+Como aplicar (proporção vigente):
+- Na maior parte do tempo, escolher tarefas de **Sprint A**.
+- Só abrir **Sprint B** quando ampliar o mapa arquitetural / mapa-base SEO, **não** houver URL com a mesma intenção, e não houver gap A de maior impacto imediato (ou após um bloco razoável de otimização).
+- No relatório, declarar o tipo: `Sprint A` ou `Sprint B`.
+
+Páginas prioritárias (A): impressões no GSC; consultas nas posições **5–30**; CTR abaixo do esperado; potencial de expansão editorial, intenção mais clara e links internos.
+
+Antes de propor página nova (B): confirmar que **não** há oportunidade de crescimento mais relevante em página existente.
 
 ### Otimização em etapas (posições 5–30)
 
@@ -78,9 +98,10 @@ Não paralisar o Modo Execução à espera de export quando ainda houver gaps in
 
 ## Relatório de sprint
 
-1. O que foi feito.
-2. Impacto esperado.
-3. **Indicador de sucesso** — qual métrica deve melhorar e como validar (impressões, posição média, CTR, cliques, cliques afiliados, Core Web Vitals, erros no Search Console, etc.).
-4. Próxima melhor tarefa (com ≤3 frases de impacto, objetivo SEO/autoridade/UX/receita e confirmação anti-canibalização, se for iniciar em seguida).
+1. Tipo: **Sprint A (Otimização)** ou **Sprint B (Expansão)**.
+2. O que foi feito.
+3. Impacto esperado.
+4. **Indicador de sucesso** — qual métrica deve melhorar e como validar (impressões, posição média, CTR, cliques, cliques afiliados, Core Web Vitals, erros no Search Console, etc.).
+5. Próxima melhor tarefa (com ≤3 frases de impacto, objetivo SEO/autoridade/UX/receita e confirmação anti-canibalização, se for iniciar em seguida).
 
 Ciclo: **Tarefa → Objetivo → Impacto → Métrica de validação**.

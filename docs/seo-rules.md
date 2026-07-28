@@ -117,12 +117,17 @@ Cada keyword/intenção principal deve ter **uma URL dona clara**, com papel exp
 
 | Intenção principal | URL principal | Papel |
 |------|----------------|--------|
-| `melhor fogão 5 bocas` | `/melhor-fogao-5-bocas` | Hub / guia mestre comercial |
-| `fogão 5 bocas custo benefício` | `/fogao-5-bocas-custo-beneficio` | Subintenção comercial por valor/preço |
+| `melhor fogão 5 bocas` | `/melhores/melhor-fogao-5-bocas/` | Hub / guia mestre comercial |
+| `como escolher fogão 5 bocas` | `/como-escolher-fogao-5-bocas/` | Satélite / checklist pré-compra |
+| `fogão 5 bocas custo benefício` | `/fogao-5-bocas-custo-beneficio/` | Subintenção comercial por valor/preço |
+| `melhor fogão 4 bocas` | `/melhores/melhor-fogao-4-bocas/` | Hub / ranking comercial 4 bocas |
+| `como escolher fogão 4 bocas` | `/como-escolher-fogao-4-bocas/` | Satélite / checklist pré-compra |
+| `fogão 4 bocas custo benefício` | `/fogao-4-bocas-custo-beneficio/` | Subintenção comercial por valor/preço |
+| `melhor fogão mesa de vidro` | `/melhores/melhor-fogao-mesa-de-vidro/` | Hub / ranking comercial mesa de vidro |
 | `fogão 4 bocas vale a pena` | `/blog/fogao-4-bocas-ainda-vale-a-pena/` | Editorial / lifestyle / reflexão de compra |
 | `fogão embutir ou piso` | `/blog/guia-fogao-embutir-ou-de-piso/` | Guia de instalação e layout |
-| `fogão 4 ou 5 bocas` | `/comparativo-fogao-4-vs-5-bocas` | Comparativo de decisão |
-| `review por modelo` | `/review-fogao-5-bocas-<marca>` | Review curta por SKU/modelo |
+| `fogão 4 ou 5 bocas` | `/comparativo-fogao-4-vs-5-bocas/` | Comparativo de decisão |
+| `review por modelo` | `/review-fogao-5-bocas-<marca>/` | Review curta por SKU/modelo |
 
 ### O que NÃO fazer
 

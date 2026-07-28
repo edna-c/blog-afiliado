@@ -9,7 +9,7 @@ category: 'Guia de Compra'
 
 Itens que **bloqueiam** a compra se estiverem errados:
 
-- Medidas + espaço para abrir a porta do forno
+- Medidas + espaço para abrir a porta do forno — checklist completo: [como escolher](/como-escolher-fogao-4-bocas/)
 - GLP ou gás natural — e se a marca converte na sua região
 - Histórico de preço (evita “promoção” que não é)
 - 4 vs 5 bocas ainda em aberto? → [comparativo](/comparativo-fogao-4-vs-5-bocas/) antes de pagar

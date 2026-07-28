@@ -87,10 +87,12 @@ Se o acabamento pesa na decisão, o [comparativo entre mesa de vidro e inox](/bl
 - [ ] Prioridade: leveza visual ou mais robustez
 - [ ] Modelo coerente com o restante da cozinha
 
+Passo a passo de instalação e compra: [como escolher fogão 4 bocas](/como-escolher-fogao-4-bocas/).
+
 ## Conclusão
 
 O fogão 4 bocas continua valendo a pena em 2026 para apartamento, casal e cozinha pequena.
 
 Mais do que uma escolha “menor”, pode ser a mais coerente quando espaço, rotina e conforto visual importam de verdade. Em muitas casas, ainda é o melhor equilíbrio entre praticidade, proporção e bem-estar no ambiente.
 
-**Já fechou o tamanho?** Compare Consul, Electrolux e Atlas no [ranking do melhor fogão 4 bocas](/melhores/melhor-fogao-4-bocas/#guia-comercial-produtos) — perfil de cada medalha e botões de oferta na mesma página.
+**Já fechou o tamanho?** Compare Consul, Electrolux e Atlas no [ranking do melhor fogão 4 bocas](/melhores/melhor-fogao-4-bocas/#guia-comercial-produtos) — perfil de cada medalha e botões de oferta na mesma página. Se a dúvida for só preço, use o [custo-benefício 4 bocas](/fogao-4-bocas-custo-beneficio/).

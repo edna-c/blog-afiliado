@@ -136,13 +136,35 @@ Não paralise o Modo Execução à espera de export quando ainda houver gaps ind
 
 Priorize aumentar o desempenho das páginas que já apresentam sinais positivos no Google Search Console antes de criar novas URLs.
 
-Páginas prioritárias:
+## RITMO DE SPRINTS (70 / 30 — proporção atual)
+
+Sprint A — Otimização (~70% hoje):
+- Search Console
+- CTR
+- Páginas posição 5–30
+- Conversão
+- Links internos
+
+Sprint B — Expansão (~30% hoje):
+- Novas páginas de decisão
+- Comparativos
+- Guias de compra
+- Novos clusters
+
+Evolução da proporção — **depende do número de páginas bem consolidadas** (e da força do domínio); só muda com decisão explícita:
+- Agora (poucas dezenas de URLs): ~70% A / ~30% B
+- ~100–150 páginas bem consolidadas: ~50% A / ~50% B
+- Domínio forte: pode inverter — cada nova página ranqueia com mais facilidade
+
+Como aplicar (proporção vigente): na maior parte do tempo, tarefas de Sprint A. Abrir Sprint B só quando ampliar o mapa arquitetural / mapa-base SEO, não houver URL com a mesma intenção, e não houver gap A de maior impacto imediato (ou após um bloco razoável de otimização). Declarar no relatório: Sprint A ou Sprint B.
+
+Páginas prioritárias (A):
 - já recebem impressões;
 - possuem consultas entre as posições 5 e 30;
 - apresentam potencial de aumento de CTR;
 - podem ser fortalecidas com expansão de conteúdo, atualização editorial, melhoria da intenção de busca e links internos.
 
-Antes de propor uma nova página, confirme que não existe oportunidade de crescimento mais relevante em uma página já existente.
+Antes de propor uma nova página (B), confirme que não existe oportunidade de crescimento mais relevante em uma página já existente.
 
 ## OTIMIZAÇÃO EM ETAPAS (posições 5–30)
 
@@ -180,11 +202,12 @@ Antes de iniciar a próxima tarefa:
 - informe qual objetivo ela atende (SEO, autoridade, UX ou receita);
 - confirme que ela não gera canibalização com páginas existentes.
 
-## Frentes
-FRENTE 1 — Otimizar ativos existentes (lacunas vs SERP, SEO on-page, interlinks, profundidade, conversão). Sem cosmético. Dominante nesta fase.
-FRENTE 2 — Expandir patrimônio só após otimização relevante das URLs prioritárias, e só páginas do Mapa Arquitetural / mapa-base SEO.
+## Frentes (= ritmo 70/30)
+Sprint A — Otimização (~70%): GSC, CTR, pos. 5–30, conversão, interlinks. Dominante.
+Sprint B — Expansão (~30%): páginas de decisão, comparativos, guias, novos clusters — só do mapa arquitetural / mapa-base SEO e sem canibalização.
 
 ## Relatório de sprint (somente)
+• Tipo: Sprint A (Otimização) ou Sprint B (Expansão).
 • O que foi feito.
 • Qual impacto esperado.
 • Indicador de sucesso — métrica que deverá melhorar e como validar (ex.: impressões, posição média, CTR, cliques, cliques afiliados, Core Web Vitals, erros no Search Console).
