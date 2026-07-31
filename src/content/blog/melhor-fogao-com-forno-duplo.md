@@ -39,6 +39,10 @@ Fogão com **forno duplo** é um aparelho que integra **dois compartimentos de c
 
 A ideia é separar preparos que, em um fogão convencional, disputariam o mesmo espaço: manter um assado em andamento enquanto outro prato gratinar ou aquecer em paralelo.
 
+![Comparação técnica entre fogão de forno simples com uma cavidade e fogão de forno duplo com duas cavidades independentes, portas abertas sobre fundo escuro](/images/library/L09A.webp)
+
+*Comparação estrutural: uma cavidade maior no forno simples versus duas cavidades independentes no forno duplo — confirme no manual se o uso paralelo é permitido.*
+
 Atenção ao marketing: nem todo produto anunciado com essa nomenclatura oferece dois fornos independentes. Alguns combinam forno convencional com função grill no **mesmo** compartimento — configuração diferente, com outra lógica de uso. A ficha técnica e o manual do fabricante são a referência para saber qual é o caso.
 
 | Formato | O que é |

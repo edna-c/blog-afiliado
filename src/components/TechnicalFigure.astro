@@ -1,0 +1,97 @@
+---
+/**
+ * Figura técnica reutilizável — Biblioteca Técnica (Motor III Tipo B).
+ *
+ * Preferir `id` (lookup na library). Alternativa: passar `image` + metadados.
+ */
+import { Picture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import {
+	getTechnicalAsset,
+	type TechnicalAssetId,
+} from '../data/technicalLibrary';
+import { PICTURE_FORMATS } from '../data/editorialImageSpecs';
+
+interface Props {
+	/** ID canônico LXXA — resolve imagem + defaults da library */
+	id?: TechnicalAssetId;
+	/** Override / uso avançado sem id */
+	image?: ImageMetadata;
+	title?: string;
+	caption?: string;
+	alt?: string;
+	credit?: string;
+	source?: string;
+	/** Classe extra no <figure> */
+	class?: string;
+	loading?: 'lazy' | 'eager';
+	fetchpriority?: 'high' | 'low' | 'auto';
+}
+
+const {
+	id,
+	image: imageProp,
+	title: titleProp,
+	caption: captionProp,
+	alt: altProp,
+	credit,
+	source,
+	class: className,
+	loading = 'lazy',
+	fetchpriority = 'low',
+} = Astro.props;
+
+const asset = id ? getTechnicalAsset(id) : undefined;
+const image = imageProp ?? asset?.image;
+if (!image) {
+	throw new Error('TechnicalFigure: informe `id` da library ou `image`.');
+}
+
+const title = titleProp ?? asset?.defaultTitle;
+const caption = captionProp ?? asset?.defaultCaption;
+const alt = altProp ?? asset?.defaultAlt ?? title ?? 'Figura técnica';
+const width = image.width;
+const height = image.height;
+---
+
+<figure
+	class:list={[
+		'technical-figure not-prose my-8 overflow-hidden rounded-2xl ring-1 ring-white/10',
+		className,
+	]}
+	data-technical-id={id ?? undefined}
+>
+	{
+		title ? (
+			<p class="border-b border-white/10 bg-brand-900/40 px-4 py-3 font-display text-sm font-bold tracking-tight text-on-ink-body sm:px-5 sm:text-base">
+				{title}
+			</p>
+		) : null
+	}
+	<div class="bg-brand-900/30">
+		<Picture
+			src={image}
+			alt={alt}
+			width={width}
+			height={height}
+			formats={[...PICTURE_FORMATS]}
+			widths={[640, 960, 1280, width]}
+			sizes="(max-width: 768px) 100vw, min(720px, 92vw)"
+			quality={85}
+			loading={loading}
+			decoding="async"
+			fetchpriority={fetchpriority}
+			class="mx-auto h-auto w-full max-w-full object-contain"
+			pictureAttributes={{ class: 'block w-full' }}
+		/>
+	</div>
+	{
+		caption || credit || source ? (
+			<figcaption class="space-y-1 border-t border-white/10 bg-brand-900/25 px-4 py-3 text-center text-xs leading-relaxed text-on-ink-muted sm:px-5 sm:text-sm">
+				{caption ? <span class="block">{caption}</span> : null}
+				{credit ? <span class="block text-[0.7rem] opacity-80">Crédito: {credit}</span> : null}
+				{source ? <span class="block text-[0.7rem] opacity-80">Fonte: {source}</span> : null}
+			</figcaption>
+		) : null
+	}
+</figure>

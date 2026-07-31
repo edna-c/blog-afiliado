@@ -230,6 +230,36 @@ O visitante deve reconhecer imediatamente a identidade visual da Casa Prática E
 
 ---
 
+# Auditoria de imagens — critério editorial
+
+**Princípio:** a imagem deve cumprir uma **função editorial**. Nunca recomendar imagem só para preencher espaço ou aumentar a quantidade de elementos visuais.
+
+Em toda auditoria ou brief de imagem, justificar **por que** aquela imagem melhora a experiência do usuário (compreensão, comparação, confiança ou decisão).
+
+Nem toda página que apresenta produtos exige prioridade ALTA. Cruzar o **tipo** da página com a **função** da imagem.
+
+### Prioridade ALTA
+
+- Comparativos
+- Reviews
+- Conteúdo em que a imagem é **essencial** para compreender diferenças, construção, acabamento ou apoiar a decisão de compra
+
+### Prioridade MÉDIA
+
+- Money Pages
+- Guias de compra
+- Artigos de custo-benefício
+- Conteúdo comercial onde as imagens **agregam confiança**, mas a compreensão permanece boa sem elas
+
+### Prioridade BAIXA
+
+- Artigos de cluster
+- Checklists
+- Conteúdo predominantemente textual
+- Páginas cuja missão principal é responder intenção de busca e fortalecer a arquitetura de links internos
+
+---
+
 # Regra de Ouro
 
 A experiência visual deve facilitar a decisão de compra.

@@ -39,8 +39,12 @@ export const produtos = {
 	electroluxFE5IG: {
 		ml: 'https://meli.la/1BfryZq',
 		mlGeneratedByPanel: true,
-		shopee: 'https://s.shopee.com.br/4AyaNdARrV',
-		shopeeGeneratedByPanel: true,
+		/**
+		 * Shopee omitido de propósito: o short link antigo (`4AyaNdARrV`)
+		 * redirecionava para busca genérica (`/search?keyword=electrolux+fe5ig`),
+		 * não para o SKU — cliques sem conversão e perda de confiança.
+		 * Reativar só com short link novo gerado no painel, apontando ao produto.
+		 */
 	},
 	consulCF04NAR: {
 		ml: 'https://meli.la/1mrHBpJ',

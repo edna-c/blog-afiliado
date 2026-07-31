@@ -6,6 +6,10 @@ export type CommercialGuideId =
 	| 'melhor-fogao-4-bocas'
 	| 'melhor-fogao-mesa-de-vidro';
 
+/** Fallback único para rótulo do CTA ML quando o produto não define `mlCtaText`. */
+export const DEFAULT_MERCADO_LIVRE_CTA_TEXT = 'VER PREÇO NO MERCADO LIVRE';
+export const DEFAULT_SHOPEE_CTA_TEXT = 'VER OFERTA NA SHOPEE';
+
 export type CommercialTopProductsCopy = {
 	eyebrow: string;
 	heading: string;
@@ -94,9 +98,7 @@ const melhorFogao5Bocas: CommercialGuideBlock = {
 			socialProof: '⭐ Destaque do ranking 2026',
 			reviewSlug: 'electrolux',
 			mercadoLivreUrl: produtos.electroluxFE5IG.ml,
-			shopeeUrl: produtos.electroluxFE5IG.shopee,
-			mlCtaText: 'VER PREÇO NO MERCADO LIVRE',
-			shopeeCtaText: 'VER OFERTA NA SHOPEE',
+			mlCtaText: DEFAULT_MERCADO_LIVRE_CTA_TEXT,
 			image: '/images/melhores/melhor-fogao-5-bocas/electrolux-fe5ig.webp',
 			imageAlt: 'Fogão Electrolux FE5IG 5 bocas em inox com mesa inox',
 			featured: true,
@@ -116,8 +118,8 @@ const melhorFogao5Bocas: CommercialGuideBlock = {
 			reviewSlug: 'brastemp',
 			mercadoLivreUrl: produtos.brastempBFS5NCR.ml,
 			shopeeUrl: produtos.brastempBFS5NCR.shopee,
-			mlCtaText: 'VER PREÇO NO MERCADO LIVRE',
-			shopeeCtaText: 'VER OFERTA NA SHOPEE',
+			mlCtaText: DEFAULT_MERCADO_LIVRE_CTA_TEXT,
+			shopeeCtaText: DEFAULT_SHOPEE_CTA_TEXT,
 			image: '/images/melhores/melhor-fogao-5-bocas/brastemp-bfs5ncr.webp',
 			imageAlt: 'Fogão Brastemp BFS5NCR 5 bocas em inox',
 		},
@@ -136,8 +138,8 @@ const melhorFogao5Bocas: CommercialGuideBlock = {
 			reviewSlug: 'consul',
 			mercadoLivreUrl: produtos.consulCFS5NAB.ml,
 			shopeeUrl: produtos.consulCFS5NAB.shopee,
-			mlCtaText: 'VER PREÇO NO MERCADO LIVRE',
-			shopeeCtaText: 'VER OFERTA NA SHOPEE',
+			mlCtaText: DEFAULT_MERCADO_LIVRE_CTA_TEXT,
+			shopeeCtaText: DEFAULT_SHOPEE_CTA_TEXT,
 			image: '/images/melhores/melhor-fogao-5-bocas/consul-cfs5nab.webp',
 			imageAlt: 'Fogão Consul CFS5NAB 5 bocas em inox com tampa de vidro',
 		},
@@ -225,6 +227,8 @@ const melhorFogao4Bocas: CommercialGuideBlock = {
 			reviewSlug: 'consul-cf04nar',
 			mercadoLivreUrl: produtos.consulCF04NAR.ml,
 			shopeeUrl: produtos.consulCF04NAR.shopee,
+			mlCtaText: DEFAULT_MERCADO_LIVRE_CTA_TEXT,
+			shopeeCtaText: DEFAULT_SHOPEE_CTA_TEXT,
 			image: '/images/melhores/melhor-fogao-4-bocas/consul-cf04nar.webp',
 			imageAlt: 'Fogão Consul CF04NAR 4 bocas inox com acendimento automático',
 			featured: true,
@@ -244,8 +248,8 @@ const melhorFogao4Bocas: CommercialGuideBlock = {
 			reviewSlug: 'electrolux-fe4iw',
 			mercadoLivreUrl: produtos.electroluxFE4IW.ml,
 			shopeeUrl: produtos.electroluxFE4IW.shopee,
-			mlCtaText: 'VER PREÇO NO MERCADO LIVRE',
-			shopeeCtaText: 'VER OFERTA NA SHOPEE',
+			mlCtaText: DEFAULT_MERCADO_LIVRE_CTA_TEXT,
+			shopeeCtaText: DEFAULT_SHOPEE_CTA_TEXT,
 			image: '/images/melhores/melhor-fogao-4-bocas/electrolux-fe4iw.webp',
 			imageAlt: 'Fogão Electrolux Efficient FE4IW branco com mesa inox',
 		},
@@ -264,8 +268,8 @@ const melhorFogao4Bocas: CommercialGuideBlock = {
 			reviewSlug: 'atlas-monaco-plus',
 			mercadoLivreUrl: produtos.atlasMonacoPlus.ml,
 			shopeeUrl: produtos.atlasMonacoPlus.shopee,
-			mlCtaText: 'VER PREÇO NO MERCADO LIVRE',
-			shopeeCtaText: 'VER OFERTA NA SHOPEE',
+			mlCtaText: DEFAULT_MERCADO_LIVRE_CTA_TEXT,
+			shopeeCtaText: DEFAULT_SHOPEE_CTA_TEXT,
 			image: '/images/melhores/melhor-fogao-4-bocas/atlas-monaco-plus.webp',
 			imageAlt: 'Fogão Atlas Mônaco Plus preto com mesa inox',
 		},
@@ -353,6 +357,8 @@ const melhorFogaoMesaDeVidro: CommercialGuideBlock = {
 			reviewSlug: 'consul-cfo4var',
 			mercadoLivreUrl: produtos.consulCFO4VAR.ml,
 			shopeeUrl: produtos.consulCFO4VAR.shopee,
+			mlCtaText: DEFAULT_MERCADO_LIVRE_CTA_TEXT,
+			shopeeCtaText: DEFAULT_SHOPEE_CTA_TEXT,
 			imageVisualScale: 1,
 			image: '/images/melhores/melhor-fogao-mesa-de-vidro/consul-cfo4var.webp',
 			imageAlt: 'Fogão Consul CFO4VAR 4 bocas com mesa de vidro temperado',
@@ -373,8 +379,8 @@ const melhorFogaoMesaDeVidro: CommercialGuideBlock = {
 			reviewSlug: 'brastemp-bfo4vae',
 			mercadoLivreUrl: produtos.brastempBFO4VAE.ml,
 			shopeeUrl: produtos.brastempBFO4VAE.shopee,
-			mlCtaText: 'VER PREÇO NO MERCADO LIVRE',
-			shopeeCtaText: 'VER OFERTA NA SHOPEE',
+			mlCtaText: DEFAULT_MERCADO_LIVRE_CTA_TEXT,
+			shopeeCtaText: DEFAULT_SHOPEE_CTA_TEXT,
 			imageVisualScale: 1,
 			image: '/images/melhores/melhor-fogao-mesa-de-vidro/brastemp-bfo4vae.webp',
 			imageAlt: 'Fogão Brastemp BFO4VAE preto com mesa de vidro e grades duplas',
@@ -394,8 +400,8 @@ const melhorFogaoMesaDeVidro: CommercialGuideBlock = {
 			reviewSlug: 'atlas-atenas-glass',
 			mercadoLivreUrl: produtos.atlasAtenasGlass.ml,
 			shopeeUrl: produtos.atlasAtenasGlass.shopee,
-			mlCtaText: 'VER PREÇO NO MERCADO LIVRE',
-			shopeeCtaText: 'VER OFERTA NA SHOPEE',
+			mlCtaText: DEFAULT_MERCADO_LIVRE_CTA_TEXT,
+			shopeeCtaText: DEFAULT_SHOPEE_CTA_TEXT,
 			imageVisualScale: 1,
 			image: '/images/melhores/melhor-fogao-mesa-de-vidro/atlas-atenas-glass.webp',
 			imageAlt: 'Fogão Atlas Atenas Glass (Top Glass) preto com mesa de vidro temperado',
@@ -445,4 +451,14 @@ export function getCommercialGuideBlock(guideId: CommercialGuideId): CommercialG
 
 export function isCommercialGuideId(id: string): id is CommercialGuideId {
 	return id in commercialGuideBlocks;
+}
+
+/** Produto destaque do ranking (mesmo objeto consumido pelos cards). */
+export function getFeaturedCommercialProduct(block: CommercialGuideBlock): CommercialProduct {
+	return block.topProducts.find((p) => p.featured) ?? block.topProducts[0]!;
+}
+
+/** Rótulo do CTA Mercado Livre — herda de `mlCtaText` do produto do bloco comercial. */
+export function getMercadoLivreCtaLabel(product: CommercialProduct): string {
+	return product.mlCtaText ?? DEFAULT_MERCADO_LIVRE_CTA_TEXT;
 }

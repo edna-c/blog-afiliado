@@ -5,6 +5,8 @@ import EditorialLinks from '../components/EditorialLinks.astro';
 import SmartRecommendations from '../components/SmartRecommendations.astro';
 import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
 import ProductMedia from '../components/ProductMedia.astro';
+import TechnicalFigure from '../components/TechnicalFigure.astro';
+import AffiliateOfferBlock from '../components/AffiliateOfferBlock.astro';
 import { produtos } from '../data/products';
 import { PRODUCT_IMAGE_REVIEW, type ProductReviewSlug } from '../data/productImages';
 
@@ -21,6 +23,7 @@ export async function getStaticPaths() {
 				summary:
 					'Linha popular e fácil de achar: costuma equilibrar preço, forno útil e o básico bem resolvido. Confira no anúncio a versão exata — acabamento e acessórios mudam de um modelo para outro.',
 				offerUrl: produtos.brastempBFS5NCR.ml,
+				offerShopeeUrl: produtos.brastempBFS5NCR.shopee,
 				longReviewHref: '/brastemp-bfs5ncr-vale-a-pena/',
 				longReviewLabel: 'Abrir análise completa (texto longo + FAQ + ficha)',
 				peerReview: {
@@ -115,6 +118,7 @@ export async function getStaticPaths() {
 				summary:
 					'Perfil “primeiro fogão bom”: costuma agradar quem quer menos firula e mais função. Se você cozinha muito pesado, compare forno e distância entre bocas com um modelo de linha acima antes de decidir.',
 				offerUrl: produtos.consulCFS5NAB.ml,
+				offerShopeeUrl: produtos.consulCFS5NAB.shopee,
 				peerReview: {
 					href: '/review-fogao-5-bocas-electrolux/',
 					label: 'Electrolux FE5IG',
@@ -309,6 +313,7 @@ interface Props {
 	headline: string;
 	summary: string;
 	offerUrl: string;
+	offerShopeeUrl?: string;
 	longReviewHref?: string;
 	longReviewLabel?: string;
 	peerReview?: { href: string; label: string };
@@ -335,6 +340,7 @@ const {
 	headline,
 	summary,
 	offerUrl,
+	offerShopeeUrl,
 	longReviewHref,
 	longReviewLabel,
 	peerReview,
@@ -513,6 +519,18 @@ const structuredData = {
 			</div>
 		</section>
 
+		<div class="mt-12">
+			<AffiliateOfferBlock
+				id="ofertas"
+				variant="featured"
+				productName={model}
+				heading={`Conferir preço atualizado do ${model}`}
+				description="Preço e estoque mudam com frequência. Use os botões para ver disponibilidade e frete na sua região — sem compromisso de compra nesta página."
+				mercadoLivreUrl={offerUrl}
+				shopeeUrl={offerShopeeUrl}
+			/>
+		</div>
+
 		<section class="mt-12" aria-labelledby="diferenciacao-heading">
 			<h2 id="diferenciacao-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
 				O que diferencia esse modelo na prática
@@ -562,6 +580,7 @@ const structuredData = {
 				<div>
 					<h3 class="font-display text-lg font-bold text-on-ink-body">Trempes e uso com panelas</h3>
 					<p class="mt-3">{gratesAnalysis}</p>
+					<TechnicalFigure id="L06A" class="mt-6" />
 				</div>
 				<div>
 					<h3 class="font-display text-lg font-bold text-on-ink-body">Consumo e custo de uso</h3>
@@ -621,22 +640,38 @@ const structuredData = {
 		<div class="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
 			<a
 				href={offerUrl}
-				class="inline-flex min-h-[52px] flex-1 items-center justify-center bg-cta px-6 text-xs font-bold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-w-[200px]"
+				class="inline-flex min-h-[52px] flex-1 items-center justify-center gap-2 bg-cta px-6 text-xs font-extrabold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-w-[200px]"
 				target="_blank"
-				rel="nofollow sponsored noopener noreferrer"
-				aria-label={`Ver preço atualizado do fogão ${model} na loja — abre em nova aba (link patrocinado)`}
+				rel="noopener noreferrer nofollow sponsored"
+				aria-label={`Ver preço do fogão ${model} no Mercado Livre — abre em nova aba (link patrocinado)`}
 			>
-				Ver preço atualizado
+				<span aria-hidden="true">🔥</span>
+				Ver preço no Mercado Livre
 			</a>
-			<a
-				href="/melhores/melhor-fogao-5-bocas/#guia-comercial-produtos"
-				class="btn-secondary-premium flex-1 sm:min-w-[200px]"
-				aria-label="Abrir ranking de fogão 5 bocas com ofertas"
-			>
-				Ver ranking e ofertas
-			</a>
+			{
+				offerShopeeUrl ? (
+					<a
+						href={offerShopeeUrl}
+						class="btn-secondary-premium flex-1 sm:min-w-[200px]"
+						target="_blank"
+						rel="noopener noreferrer nofollow sponsored"
+						aria-label={`Ver oferta do fogão ${model} na Shopee — abre em nova aba (link patrocinado)`}
+					>
+						<span aria-hidden="true">👉</span>
+						Ver oferta na Shopee
+					</a>
+				) : (
+					<a
+						href="/melhores/melhor-fogao-5-bocas/#guia-comercial-produtos"
+						class="btn-secondary-premium flex-1 sm:min-w-[200px]"
+						aria-label="Abrir ranking de fogão 5 bocas com ofertas"
+					>
+						Ver ranking e ofertas
+					</a>
+				)
+			}
 		</div>
-		<p class="mt-10 text-sm leading-relaxed text-on-ink-muted">
+		<p class="mt-6 text-sm leading-relaxed text-on-ink-muted">
 			Transparência: indicação de loja parceira. No guia{' '}
 			<a
 				href="/melhores/melhor-fogao-5-bocas/#guia-comercial-produtos"
@@ -652,6 +687,30 @@ const structuredData = {
 				Veredito editorial
 			</h2>
 			<p class="mt-4 text-base leading-relaxed text-on-ink-body">{verdict}</p>
+			<div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+				<a
+					href={offerUrl}
+					class="inline-flex min-h-[52px] flex-1 items-center justify-center gap-2 rounded-lg bg-cta px-6 text-center text-xs font-extrabold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-w-[200px]"
+					target="_blank"
+					rel="noopener noreferrer nofollow sponsored"
+					aria-label={`Ver preço atualizado do ${model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+				>
+					Ver preço no Mercado Livre
+				</a>
+				{
+					offerShopeeUrl ? (
+						<a
+							href={offerShopeeUrl}
+							class="btn-secondary-premium flex-1 sm:min-w-[200px]"
+							target="_blank"
+							rel="noopener noreferrer nofollow sponsored"
+							aria-label={`Ver oferta do ${model} na Shopee — abre em nova aba (link patrocinado)`}
+						>
+							Ver oferta na Shopee
+						</a>
+					) : null
+				}
+			</div>
 		</section>
 		{
 			faqItems.length ? (

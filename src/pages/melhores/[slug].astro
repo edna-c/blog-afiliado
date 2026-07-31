@@ -15,6 +15,8 @@ import { PRODUCT_IMAGE_REVIEW } from '../../data/productImages';
 import { GUIDE_PAGE_HERO, picturePropsFrom } from '../../data/editorialImageSpecs';
 import {
 	getCommercialGuideBlock,
+	getFeaturedCommercialProduct,
+	getMercadoLivreCtaLabel,
 	isCommercialGuideId,
 	type CommercialGuideId,
 } from '../../data/commercialGuideBlocks';
@@ -60,8 +62,13 @@ export async function getStaticPaths() {
 const { guide } = Astro.props;
 
 const showCommercialBlock = isCommercialGuideId(guide.id);
-const commercialGuideId: CommercialGuideId | null = showCommercialBlock ? guide.id : null;
+const commercialGuideId: CommercialGuideId | null = showCommercialBlock
+	? (guide.id as CommercialGuideId)
+	: null;
 const commercialBlock = commercialGuideId ? getCommercialGuideBlock(commercialGuideId) : null;
+/** Destaque do ranking — mesmo objeto dos cards (`topProducts` + `featured`). */
+const featuredHeroProduct = commercialBlock ? getFeaturedCommercialProduct(commercialBlock) : null;
+const featuredHeroMlCtaLabel = featuredHeroProduct ? getMercadoLivreCtaLabel(featuredHeroProduct) : null;
 
 type MdContent = Awaited<ReturnType<typeof render>>['Content'];
 let IntroContent: MdContent | null = null;
@@ -216,6 +223,19 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 										<li class={line.toneClass}>{line.text}</li>
 									))}
 								</ul>
+								{
+									featuredHeroProduct && featuredHeroMlCtaLabel ? (
+										<a
+											href={featuredHeroProduct.mercadoLivreUrl}
+											class="mt-4 inline-flex min-h-[48px] w-full items-center justify-center bg-cta px-5 text-xs font-bold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-h-[52px]"
+											target="_blank"
+											rel="noopener noreferrer nofollow sponsored"
+											aria-label={`Ver preço atualizado do ${featuredHeroProduct.name} no Mercado Livre — abre em nova aba (link patrocinado)`}
+										>
+											{featuredHeroMlCtaLabel}
+										</a>
+									) : null
+								}
 							</div>
 							{
 								lead ? (

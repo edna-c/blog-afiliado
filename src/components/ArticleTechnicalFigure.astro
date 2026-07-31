@@ -1,0 +1,30 @@
+---
+/**
+ * Alias amigável do TechnicalFigure (API do brief Motor III).
+ * Preferir `id` da Biblioteca Técnica.
+ */
+import TechnicalFigure from './TechnicalFigure.astro';
+import type { TechnicalAssetId } from '../data/technicalLibrary';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+	id?: TechnicalAssetId;
+	/** @deprecated Preferir `id`. Aceito para compatibilidade com `image={L09A}`. */
+	image?: ImageMetadata | TechnicalAssetId;
+	title?: string;
+	caption?: string;
+	alt?: string;
+	credit?: string;
+	source?: string;
+	class?: string;
+}
+
+const { id, image, ...rest } = Astro.props;
+
+const resolvedId: TechnicalAssetId | undefined =
+	id ??
+	(typeof image === 'string' ? (image as TechnicalAssetId) : undefined);
+const resolvedImage = typeof image === 'string' || image === undefined ? undefined : image;
+---
+
+<TechnicalFigure id={resolvedId} image={resolvedImage} {...rest} />

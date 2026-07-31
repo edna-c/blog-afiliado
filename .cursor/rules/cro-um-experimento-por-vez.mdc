@@ -1,0 +1,41 @@
+---
+description: Disciplina de CRO — um experimento por vez, ciclo completo antes do próximo
+alwaysApply: true
+---
+
+# CRO — um experimento por vez
+
+Regra permanente do Casa Prática Eletro.
+
+## Proibição
+
+**Nunca** executar duas mudanças relevantes de CRO ao mesmo tempo.
+
+Inclui (não exaustivo): CTAs afiliados, posição/timing de oferta, cards comerciais, hero comercial, microcopy de conversão, hierarquia de botões de compra, Home comercial ligada ao funil medido.
+
+## Ciclo obrigatório
+
+Todo experimento de CRO deve seguir, nesta ordem:
+
+1. **Hipótese** — formulada e registrada  
+2. **Implementação** — uma alteração controlada  
+3. **Deploy**  
+4. **Janela de observação** — sem contaminação do funil sob teste  
+5. **Veredito** — critérios definidos *antes* de ver os números  
+6. **Registrar aprendizado** — em `docs/CRO_EXPERIMENT_LOG.md`  
+7. **Só então** iniciar o próximo experimento (`CRO-00N`)
+
+## Fontes
+
+- Log: `docs/CRO_EXPERIMENT_LOG.md`  
+- Protocolo ativo (quando houver): ex. `docs/EXPERIMENTO_HERO_CTA_MELHORES.md`
+
+## Em modo execução / Growth
+
+Se houver experimento **em andamento** (Resultado = “Em andamento” no log):
+
+- **Não** propor nem implementar nova sprint de CRO no funil medido.  
+- Permitido: arquitetura, SEO editorial, Motor III / patrimônio visual, correções críticas sem alterar o funil de conversão sob teste.  
+- Próximo CRO só após veredito + registro no log.
+
+Arquitetura busca base sólida. CRO busca aprendizado controlado. **Não misturar as duas na mesma janela de medição.**

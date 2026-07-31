@@ -18,10 +18,9 @@ A medalha não é por “mais botões”: é por **forno + acabamento** que sust
 - Ponto fraco real: costuma sair acima do Brastemp — só vale se forno e acabamento forem requisito
 - Se o teto de gasto manda, o ranking aponta para Brastemp ou Consul, não para “quase Electrolux”
 
-<!-- CTAs: produtos.electroluxFE5IG (src/data/products.ts) -->
-<p class="not-prose mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+<!-- CTAs: produtos.electroluxFE5IG (src/data/products.ts) — Shopee omitido (short link antigo caía em busca) -->
+<p class="not-prose mt-6 grid grid-cols-1 gap-3">
 <a href="https://meli.la/1BfryZq" class="inline-flex min-h-[52px] w-full items-center justify-center gap-1.5 rounded-[0.625rem] border-2 border-transparent bg-cta px-5 py-3.5 text-center text-[0.75rem] font-extrabold uppercase tracking-wide text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:text-[0.72rem]" target="_blank" rel="noopener noreferrer nofollow sponsored" aria-label="Ver preço do fogão Electrolux FE5IG no Mercado Livre — abre em nova aba (link patrocinado)"><span aria-hidden="true">👉</span> Ver preço no Mercado Livre</a>
-<a href="https://s.shopee.com.br/4AyaNdARrV" class="btn-secondary-premium w-full px-5 py-3.5 text-[0.72rem] sm:text-[0.72rem]" target="_blank" rel="noopener noreferrer nofollow sponsored" aria-label="Ver preço do fogão Electrolux FE5IG na Shopee — abre em nova aba (link patrocinado)"><span aria-hidden="true">👉</span> Ver preço na Shopee</a>
 </p>
 
 ---

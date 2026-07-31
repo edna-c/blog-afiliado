@@ -99,4 +99,10 @@ Quando o **Prompt Mestre — Modo Execução** estiver ativo (`docs/BIBLIOTECA_D
 - pedir aprovação só para risco arquitetural, novos módulos, mudanças irreversíveis ou decisão estratégica;
 - escolher a próxima tarefa pela ordem de prioridade do Prompt Mestre.
 
+Quando o **Motor III — Patrimônio Visual** estiver ativo (`docs/BIBLIOTECA_DE_PROMPTS.md` §9 e `.cursor/rules/modo-execucao-patrimonio-visual.mdc`):
+
+- priorizar biblioteca visual (reuso → gaps ALTA → organização);
+- **novo arquivo de imagem no repositório** exige aprovação humana (`MANUAL_DESIGN_SYSTEM.md` §6);
+- ao concluir, atualizar `src/data/visualAssetRegistry.ts` e seguir o próximo gap.
+
 Fora do Modo Execução: quando houver dúvida entre executar ou perguntar, **perguntar primeiro**. A previsibilidade é mais importante do que a velocidade.

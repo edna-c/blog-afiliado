@@ -1,11 +1,15 @@
 ---
 import { WHATSAPP_DEFAULT_MESSAGE, WHATSAPP_PHONE_DIGITS } from '../data/whatsapp';
 
-const digits = (
-	import.meta.env.PUBLIC_WHATSAPP_NUMBER?.toString().replace(/\D/g, '') || WHATSAPP_PHONE_DIGITS
-).replace(/\D/g, '');
+/** Número de exemplo no SSOT — não renderizar float até haver WhatsApp real. */
+const PLACEHOLDER_WHATSAPP_DIGITS = '5511999999999';
+
+const envDigits = import.meta.env.PUBLIC_WHATSAPP_NUMBER?.toString().replace(/\D/g, '') ?? '';
+const fallbackDigits = WHATSAPP_PHONE_DIGITS.replace(/\D/g, '');
+const digits = (envDigits || fallbackDigits).replace(/\D/g, '');
+const isPlaceholder = !digits || digits === PLACEHOLDER_WHATSAPP_DIGITS;
 const message = encodeURIComponent(WHATSAPP_DEFAULT_MESSAGE);
-const href = digits ? `https://wa.me/${digits}?text=${message}` : '';
+const href = !isPlaceholder ? `https://wa.me/${digits}?text=${message}` : '';
 ---
 
 {

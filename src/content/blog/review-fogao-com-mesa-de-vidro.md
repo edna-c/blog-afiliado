@@ -2,7 +2,7 @@
 title: 'Fogão com mesa de vidro vale a pena? O que considerar antes de escolher'
 description: 'Entenda os pontos positivos, os cuidados de uso e quando o fogão com mesa de vidro faz sentido em cozinhas modernas.'
 pubDate: 2026-02-22
-updatedDate: 2026-07-26
+updatedDate: 2026-07-28
 category: 'Guia'
 faq:
   - question: 'Fogão com mesa de vidro vale a pena?'
@@ -26,6 +26,10 @@ Se a dúvida for **vidro ou inox**, comece pelo [comparativo completo](/blog/fog
 - Faz sentido em apartamentos, cozinhas clean e rotina doméstica comum.
 - Pode não combinar com uso intenso ou manuseio mais bruto.
 - O vidro não corrige modelo mal resolvido (trempes, espaço entre bocas, estabilidade).
+
+![Fogão Brastemp com mesa de vidro temperado em cozinha moderna — visual limpo e contínuo](/images/melhores/melhor-fogao-mesa-de-vidro/brastemp-bfo4vae-hero.webp)
+
+*Mesa de vidro em contexto de cozinha: o apelo é estético e de limpeza visual — desde que a rotina combine com o material.*
 
 ## Prós e contras
 

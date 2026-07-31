@@ -1,0 +1,133 @@
+﻿---
+description: Motor III — Patrimônio visual (Tipo A/B, SSOT × backlog)
+alwaysApply: true
+---
+
+# Modo Execução — Motor III — Patrimônio Visual
+
+**Status:** ativo até segunda ordem.  
+**Prompt:** `docs/BIBLIOTECA_DE_PROMPTS.md` §9.  
+**SSOT permanente:** `docs/BIBLIOTECA_VISUAL.md`  
+**Backlog operacional:** `docs/BACKLOG_PATRIMONIO_VISUAL.md`  
+**Registry:** `src/data/visualAssetRegistry.ts`  
+**Biblioteca Técnica:** `src/data/technicalLibrary.ts`
+
+## Fase atual — Status Oficial
+
+A arquitetura permanente da Biblioteca Técnica Visual está **estabelecida**. Ativos atuais = **1ª geração**.
+
+Evolução incremental (não experimento): consistência visual · reutilização · padronização de componentes · UX · cobertura temática gradual.
+
+### Princípio Fundamental
+
+A Biblioteca Técnica **não** é uma coleção de imagens.  
+É um **sistema editorial** de ativos técnicos reutilizáveis: explicar conceitos, apoiar decisão de compra, reforçar autoridade.  
+Cada ativo deve servir **múltiplas páginas** sem adaptação para um único artigo.
+
+Mentalidade: acumular patrimônio editorial reutilizável — não “imagem para este artigo”.
+
+### Meta v1.0 (norte operacional)
+
+**20–30 ativos fundamentais** · **mesmo DNA visual** · reuso em dezenas de páginas.  
+Até lá: **não expandir rápido** — consistência > quantidade. Preferir v2/wiring/padronização a abrir muitas lacunas novas.  
+Após v1.0: novos ativos herdam o padrão consolidado.
+
+### Princípio permanente (ritmo)
+
+**Aprofundar o DNA, não inflar o inventário.**  
+Patrimônio = qualidade + reuso + coerência da coleção — não volume.  
+**Teste de admissão:** todo novo ativo deve tornar a biblioteca **melhor** do que era antes — senão não entra.
+
+### DNA de referência (obrigatório)
+
+**L06A** + **L08A** = âncoras oficiais do DNA tipológico.  
+Novos Tipo B devem herdar essa família (estúdio, grafite, sem texto na arte, clareza tipológica).  
+L08A está **designada**; arte a produzir no padrão L06A. L09A ≠ âncora até alinhada.
+
+### Pós–v1.0 → ritual v2.0
+
+Revisão de **coleção** (não ativo a ativo): mesma família visual? mesma profundidade? algum destoa? lacunas antes de novos temas?
+
+### 1ª geração — lapidar, não recomeçar
+
+Ativos aprovados como 1ª geração. Evoluir L07A/L09A (remover texto). Repensar L05A (separar conceitos). Âncoras DNA: L06A + L08A. **Proibido** regenerar a biblioteca inteira.
+
+### DNA — fotografia editorial
+
+Ativos Tipo B devem parecer **fotografia editorial de produto real**, não renderização perfeita. Evitar aspecto sintético / “imagem de IA”. Credibilidade > CGI impecável.
+
+## Separação SSOT × backlog
+
+| `BIBLIOTECA_VISUAL.md` (SSOT) | `BACKLOG_PATRIMONIO_VISUAL.md` |
+|------------------------------|-------------------------------|
+| Ativos que existem | Ranking / prioridades da vez |
+| Caminhos e usos | Sprints e tarefas |
+| Categorias A/B + governança | “Criar o tipológico X agora” |
+| Lacunas de tipo de ativo | Recomendação do próximo ativo |
+| Ciclo de vida / padrões | Wiring pontual da fila |
+
+O SSOT **nunca** deve conter decisões editoriais temporárias. Deve permanecer válido mesmo se as prioridades mudarem daqui a um ano.
+
+## Classificação obrigatória (Tipo A × Tipo B)
+
+Todo ativo proposto ou registrado deve ser **Tipo A** ou **Tipo B**:
+
+| | **Tipo A — Patrimônio Editorial (contextual)** | **Tipo B — Patrimônio Técnico (reutilizável)** |
+|--|-----------------------------------------------|------------------------------------------------|
+| Função | Contextualiza narrativa de uma página | Explica critério técnico de compra permanente |
+| Reuso | Baixo (em geral 1–2 URLs) | Médio → Patrimônio (3–30+ URLs) |
+| Pertence a | Uma URL / história | Ao acervo Casa Prática Eletro |
+| Exemplos | Embutir×piso no ambiente; cozinha compacta; pessoa cozinhando | Trempes; queimadores; tampo vidro/inox; forno; grades |
+| Objetivo | Experiência editorial | Patrimônio visual permanente |
+
+**Packshots de SKU** ficam fora do eixo A/B (ativos comerciais sob demanda de URL).
+
+### Prioridade
+
+1. Sempre priorizar **Tipo B**.  
+2. Tipo A só quando agregar valor claro à experiência do leitor — **nunca** compete com B na fila.  
+3. Antes de arte nova: *já existe ativo (de preferência B) capaz de cumprir esta função?*
+
+### Antes de propor qualquer ativo (obrigatório)
+
+1. Explica um conceito técnico permanente? → **Tipo B**.  
+2. Apenas contextualiza um artigo? → **Tipo A**.  
+3. Potencial de reuso: Baixo (1–2) · Médio (3–10) · Alto (11–30) · Patrimônio (>30).  
+4. Vale investir em produção profissional? Justificar.  
+5. Torna a biblioteca **melhor** do que era antes? Se não → **não propor**.
+
+### Governança no SSOT (obrigatória por ativo)
+
+- categoria (Editorial | Técnico)  
+- potencial de reutilização  
+- expectativa de vida útil  
+- páginas atuais que utilizam  
+- páginas futuras previstas  
+- responsável pela aprovação  
+- status: Planejado · Produzido · Validado · Incorporado  
+
+## Fluxo obrigatório (não pular)
+
+```text
+1–4  Diagnóstico → atualiza SSOT
+     (inventário, biblioteca, mapa de reuso, lacunas classificadas A/B)
+5–6  Operação → atualiza backlog
+     (ranking: B antes de A; só então recomendação do 1º ativo)
+```
+
+**Gate:** nenhuma recomendação de criação/evolução antes de 1–4 no SSOT.
+
+## Restrições
+
+- Não mover pastas de imagem sem pedido explícito.
+- Não criar/modificar imagens na fase de diagnóstico.
+- Novo arquivo no repo: aprovação humana (`MANUAL_DESIGN_SYSTEM.md` §6).
+- Não alterar Header/Footer/menu/layouts globais sem pedido explícito.
+- Não inventar imagem para preencher espaço.
+
+## Relatório
+
+Declarar se a entrega atualiza SSOT, backlog, ou ambos.  
+Em diagnóstico (1–4): sem recomendar ativo.  
+Recomendação de implementação: só no backlog, após ranking (Tipo B primeiro).  
+Em proposta de ativo: responder as 4 perguntas de decisão + classificação A/B.

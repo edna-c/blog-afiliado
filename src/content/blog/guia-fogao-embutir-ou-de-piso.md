@@ -49,6 +49,10 @@ Se tamanho e rotina ainda estão em aberto, cruze com o [comparativo 4 vs 5 boca
 
 **Em poucas palavras:** embutir compra também uma experiência visual alinhada à cozinha planejada; piso prioriza simplicidade, flexibilidade e menor risco de obra.
 
+![Fogão de embutir em inox integrado à marcenaria à esquerda e fogão de piso branco com pés aparentes à direita, na mesma cozinha moderna](/images/blog/guia-fogao-embutir-ou-de-piso/corpo-comparativo-embutir-vs-piso.webp)
+
+*Embutir (esquerda) segue a linha da bancada e do rodapé; piso (direita) fica independente, com pés e folgas visíveis.*
+
 ## Custo, ventilação e manutenção
 
 No embutir, o custo real pode incluir nicho, pedra, marcenaria, gás, elétrica e mão de obra. No piso, o total costuma ser mais previsível.

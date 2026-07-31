@@ -2,7 +2,7 @@
 title: 'Fogão com mesa de vidro é seguro? Sim — mitos, riscos reais e cuidados'
 description: 'Sim: fogão com mesa de vidro temperado é seguro no uso doméstico. Veja o que realmente quebra o tampo, mitos comuns e quando o acabamento vale a pena.'
 pubDate: 2026-06-05
-updatedDate: 2026-07-26
+updatedDate: 2026-07-28
 category: 'Guia'
 faq:
   - question: 'Fogão com mesa de vidro é seguro?'
@@ -33,6 +33,10 @@ Boa parte do receio vem de relatos isolados e mitos. O vidro temperado foi proje
 | Próximo passo se o medo passou | Comparar modelos no [ranking mesa de vidro](/melhores/melhor-fogao-mesa-de-vidro/#guia-comercial-produtos) |
 
 Se ainda está entre **vidro e inox**, comece pelo [comparativo dos acabamentos](/blog/fogao-mesa-de-vidro-ou-inox/). Se a dúvida de segurança já passou e você quer **escolher um modelo para comprar**, vá direto ao ranking acima.
+
+![Fogão Atlas com mesa de vidro temperado em cozinha moderna — tampo contínuo projetado para uso doméstico](/images/melhores/melhor-fogao-mesa-de-vidro/atlas-atenas-glass-hero.webp)
+
+*Vidro temperado de fogão é feito para calor e panelas no uso normal — o risco sobe com impacto, borda e instalação fora do manual.*
 
 ## Resumo rápido
 

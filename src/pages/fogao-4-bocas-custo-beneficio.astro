@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import RelatedContent from '../components/RelatedContent.astro';
 import SmartRecommendations from '../components/SmartRecommendations.astro';
 import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
+import AffiliateOfferBlock from '../components/AffiliateOfferBlock.astro';
 import { produtos } from '../data/products';
 
 const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
@@ -67,6 +68,18 @@ const ogImage = new URL('images/melhores/melhor-fogao-4-bocas/melhor-fogao-4-boc
 				</div>
 			</div>
 		</section>
+
+		<div class="mt-12">
+			<AffiliateOfferBlock
+				id="ofertas-custo-beneficio-4"
+				variant="featured"
+				productName="Atlas Mônaco Plus"
+				heading="Oferta do destaque de custo-benefício (4 bocas)"
+				description="Medalha de custo-benefício do ranking 4 bocas. Confira preço e frete agora — depois continue lendo se quiser comparar Consul e Electrolux."
+				mercadoLivreUrl={produtos.atlasMonacoPlus.ml}
+				shopeeUrl={produtos.atlasMonacoPlus.shopee}
+			/>
+		</div>
 
 		<div class="mt-12 space-y-10 text-base leading-relaxed text-on-ink-body">
 			<section aria-labelledby="economizar-heading">
@@ -222,19 +235,29 @@ const ogImage = new URL('images/melhores/melhor-fogao-4-bocas/melhor-fogao-4-boc
 		<div class="mt-12 flex flex-wrap gap-4">
 			<a
 				href={produtos.atlasMonacoPlus.ml}
-				class="inline-flex min-h-[48px] items-center justify-center bg-cta px-8 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-cta-hover"
+				class="inline-flex min-h-[48px] items-center justify-center gap-2 bg-cta px-8 text-xs font-extrabold uppercase tracking-wider text-white transition hover:bg-cta-hover"
 				target="_blank"
 				rel="nofollow sponsored noopener noreferrer"
 				aria-label="Ver preço do Atlas Mônaco Plus no Mercado Livre — abre a loja em nova aba (link patrocinado)"
 			>
-				Ver preço do custo-benefício (Atlas)
+				<span aria-hidden="true">🔥</span>
+				Ver preço no Mercado Livre (Atlas)
+			</a>
+			<a
+				href={produtos.atlasMonacoPlus.shopee}
+				class="btn-secondary-premium px-8"
+				target="_blank"
+				rel="nofollow sponsored noopener noreferrer"
+				aria-label="Ver oferta do Atlas Mônaco Plus na Shopee — abre a loja em nova aba (link patrocinado)"
+			>
+				Ver oferta na Shopee
 			</a>
 			<a
 				href="/melhores/melhor-fogao-4-bocas/#guia-comercial-produtos"
 				class="btn-secondary-premium px-8"
 				aria-label="Abrir ranking completo de fogão 4 bocas com ofertas"
 			>
-				Ver ranking completo com ofertas
+				Ver ranking completo
 			</a>
 		</div>
 		<RelatedContent

@@ -5,14 +5,17 @@ import EditorialLinks from '../components/EditorialLinks.astro';
 import SmartRecommendations from '../components/SmartRecommendations.astro';
 import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
 import { findEntry, type EditorialEntry } from '../data/editorialContent';
-import { PRODUCT_IMAGE_REVIEW } from '../data/productImages';
 
 const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
 const canonical = new URL('/comparativo-fogao-4-vs-5-bocas/', site).href;
 const pageTitle = 'Fogão 4 ou 5 bocas 2026: comparativo para decidir o tamanho | Casa Prática Eletro';
 const description =
 	'Fogão 4 ou 5 bocas? Compare rotina, espaço, família e custo — regra prática para fechar o tamanho e ir ao ranking certo.';
-const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).href;
+/** OG: lifestyle de cozinha compacta (reuso) — mais alinhado à decisão 4 vs 5 do que packshot isolado */
+const ogImage = new URL(
+	'images/blog/fogao-4-bocas-ainda-vale-a-pena/corpo-fogao-4-bocas-cozinha-compacta-moderna.webp',
+	site,
+).href;
 
 const reviewBrastemp = findEntry((e) => e.href === '/review-fogao-5-bocas-brastemp/');
 const reviewConsul = findEntry((e) => e.href === '/review-fogao-5-bocas-consul/');
@@ -98,7 +101,7 @@ const structuredData = {
 		url: canonical,
 		type: 'article',
 		image: ogImage,
-		imageAlt: 'Comparativo visual entre fogão 4 e 5 bocas — referência editorial',
+		imageAlt: 'Fogão em cozinha compacta — referência visual para decidir entre 4 e 5 bocas',
 	}}
 >
 	<script type="application/ld+json" slot="head" set:html={JSON.stringify(structuredData)} />
@@ -260,6 +263,21 @@ const structuredData = {
 					</a>
 					.
 				</p>
+				<figure class="mt-8 overflow-hidden rounded-2xl ring-1 ring-white/10">
+					<img
+						src="/images/blog/fogao-4-bocas-ainda-vale-a-pena/corpo-fogao-4-bocas-cozinha-compacta-moderna.webp"
+						alt="Fogão em inox em cozinha compacta integrada à sala — proporção leve típica de quem escolhe 4 bocas"
+						width="1200"
+						height="800"
+						loading="lazy"
+						decoding="async"
+						class="h-auto w-full object-cover"
+					/>
+					<figcaption class="border-t border-white/10 bg-brand-900/60 px-4 py-3 text-center text-xs text-on-ink-muted sm:text-sm">
+						Em planta compacta, o 4 bocas costuma preservar circulação e leveza visual — desde que a rotina não
+						lote o fogão.
+					</figcaption>
+				</figure>
 			</section>
 
 			<section aria-labelledby="quando-5-heading">
@@ -291,6 +309,21 @@ const structuredData = {
 					</a>
 					.
 				</p>
+				<figure class="mt-8 overflow-hidden rounded-2xl ring-1 ring-white/10">
+					<img
+						src="/images/blog/fogao-5-bocas-reduz-espaco-cozinha/corpo-cozinha-corredor-fogao-5-bocas-estreita.webp"
+						alt="Fogão de cinco bocas em inox numa cozinha estreita em corredor — o vão e a circulação pesam tanto quanto o número de bocas"
+						width="1200"
+						height="800"
+						loading="lazy"
+						decoding="async"
+						class="h-auto w-full object-cover"
+					/>
+					<figcaption class="border-t border-white/10 bg-brand-900/60 px-4 py-3 text-center text-xs text-on-ink-muted sm:text-sm">
+						5 bocas só “vale” se o vão e a circulação aguentarem — meça com portas abertas antes de fechar o
+						tamanho.
+					</figcaption>
+				</figure>
 			</section>
 
 			<section aria-labelledby="espaco-heading">

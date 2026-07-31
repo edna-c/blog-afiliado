@@ -224,7 +224,114 @@ Referência de mapa de intenções: `docs/seo-rules.md` (mapa-base). Página de 
 
 ---
 
-## 9. Espaço para novos prompts
+## 9. Prompt Mestre — Motor III — Patrimônio Visual
+
+**Quando usar:** gestão do patrimônio visual (organização, reuso, escala editorial).  
+**Status:** **ativo** até segunda ordem.  
+**SSOT permanente:** `docs/BIBLIOTECA_VISUAL.md`.  
+**Backlog operacional:** `docs/BACKLOG_PATRIMONIO_VISUAL.md`.  
+**Registry:** `src/data/visualAssetRegistry.ts`.  
+**Regra Cursor:** `.cursor/rules/modo-execucao-patrimonio-visual.mdc`.
+
+```text
+# MODO EXECUÇÃO — MOTOR III — PATRIMÔNIO VISUAL
+
+Construa um patrimônio visual organizado, escalável e reutilizável —
+não apenas “produzir imagens”.
+
+## Fase atual
+Arquitetura permanente **estabelecida**. Ativos = 1ª geração.
+Evolução incremental: consistência · reuso · componentes · UX · cobertura temática.
+Não reinventar o sistema a cada sprint.
+
+## Princípio Fundamental
+A Biblioteca Técnica não é coleção de imagens —
+é sistema editorial de ativos técnicos reutilizáveis
+(explicar conceitos, apoiar compra, autoridade temática).
+Cada ativo deve servir múltiplas páginas sem adaptação para um único artigo.
+Mentalidade: patrimônio editorial reutilizável (não “imagem para este artigo”).
+
+## Meta v1.0
+20–30 ativos fundamentais · mesmo DNA visual · reuso em dezenas de páginas.
+Até lá: não expandir rápido — consistência > quantidade
+(preferir v2, wiring, padronização a muitas lacunas novas).
+Após v1.0: novos ativos herdam o padrão.
+
+## Princípio permanente (ritmo)
+Aprofundar o DNA, não inflar o inventário.
+Patrimônio = qualidade + reuso + coerência — não volume.
+Teste de admissão: todo novo ativo deve tornar a biblioteca
+melhor do que era antes — senão não entra.
+
+## DNA de referência
+Âncoras: L06A + L08A.
+Novos Tipo B devem parecer da mesma família.
+L08A designada (arte pendente no DNA de L06A).
+L09A ≠ âncora até alinhada.
+
+## Pós–v1.0 → ritual v2.0
+Revisão de coleção (não ativo a ativo):
+mesma família visual? mesma profundidade? algum destoa?
+lacunas importantes antes de novos temas?
+
+## 1ª geração — lapidar, não recomeçar
+Aprovada. Evoluir L07A/L09A (sem texto). Repensar L05A.
+Âncoras DNA: L06A + L08A. Proibido regenerar tudo.
+
+## DNA — fotografia editorial
+Ativos devem parecer fotografia editorial de produto real,
+não renderização perfeita. Evitar aspecto sintético / “imagem de IA”.
+
+## Classificação obrigatória
+Tipo A — Editorial (contextual): narrativa de página; baixo reuso; experiência do leitor.
+Tipo B — Técnico (reutilizável): critério de compra permanente; alto reuso; acervo do site.
+Packshot de SKU: comercial (fora do eixo A/B; sob demanda de URL).
+
+Prioridade: sempre Tipo B antes de Tipo A.
+Tipo A nunca compete com B na fila.
+
+## Antes de propor qualquer ativo
+1. Explica conceito técnico permanente? → Tipo B
+2. Só contextualiza um artigo? → Tipo A
+3. Reuso: Baixo (1–2) · Médio (3–10) · Alto (11–30) · Patrimônio (>30)
+4. Vale produção profissional? Justificar.
+5. Torna a biblioteca melhor do que era antes? Se não → não propor.
+
+## Governança SSOT (por ativo)
+categoria · potencial de reuso · vida útil · páginas atuais · páginas futuras
+· responsável pela aprovação · status (Planejado|Produzido|Validado|Incorporado)
+
+## SSOT × backlog
+- BIBLIOTECA_VISUAL.md = permanente (existência, path, uso, A/B, lacunas, governança).
+- BACKLOG_PATRIMONIO_VISUAL.md = operacional (ranking B→A, sprints, tarefas).
+- O SSOT nunca contém decisões editoriais temporárias (“nesta semana criamos X”).
+
+## Fluxo obrigatório
+1. Inventário completo → SSOT
+2. Biblioteca organizada → SSOT
+3. Mapa de reutilização → SSOT
+4. Lacunas completas (classificadas A/B) → SSOT
+5. Ranking (Tipo B primeiro) → backlog
+6. Só então — recomendar o primeiro ativo → backlog
+
+Gate: nenhuma recomendação de criação/evolução antes de 1–4.
+
+## Princípios
+- Reutilizar antes de produzir.
+- Função editorial ou técnica obrigatória.
+- DNA: MANUAL_DESIGN_SYSTEM §6 / §6.1 + editorialImageSpecs.ts.
+- Novo arquivo no repositório só com aprovação humana.
+
+## Relatório
+Declarar SSOT / backlog / ambos. Em 1–4: sem recomendar ativo.
+Em proposta: responder as 4 perguntas + classificação A/B.
+```
+
+Critério ALTA/MÉDIA/BAIXA por tipo de página: `docs/MANUAL_DIRECAO_VISUAL.md`.
+
+---
+
+## 10. Espaço para novos prompts
 
 <!-- Adicionar prompts estáveis abaixo, com título numerado e data no CHANGELOG. -->
 

@@ -86,20 +86,30 @@ const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).
 		</div>
 		<div class="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
 			<a
-				href="/melhores/melhor-fogao-5-bocas/#guia-comercial-produtos"
-				class="inline-flex min-h-[52px] flex-1 items-center justify-center bg-cta px-8 text-xs font-bold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-w-[200px]"
-				aria-label="Abrir ranking de fogão 5 bocas com preços e ofertas"
-			>
-				Ver ranking e ofertas
-			</a>
-			<a
 				href={produtos.brastempBFS5NCR.ml}
-				class="btn-secondary-premium flex-1 px-8 sm:min-w-[200px]"
+				class="inline-flex min-h-[52px] flex-1 items-center justify-center gap-2 bg-cta px-8 text-xs font-extrabold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-w-[200px]"
 				target="_blank"
 				rel="nofollow sponsored noopener noreferrer"
 				aria-label="Ver preço do Brastemp BFS5NCR na loja — abre em nova aba (link patrocinado)"
 			>
-				Ver preço (custo-benefício)
+				<span aria-hidden="true">🔥</span>
+				Ver preço no Mercado Livre
+			</a>
+			<a
+				href={produtos.brastempBFS5NCR.shopee}
+				class="btn-secondary-premium flex-1 px-8 sm:min-w-[200px]"
+				target="_blank"
+				rel="nofollow sponsored noopener noreferrer"
+				aria-label="Ver oferta do Brastemp BFS5NCR na Shopee — abre em nova aba (link patrocinado)"
+			>
+				Ver oferta na Shopee
+			</a>
+			<a
+				href="/melhores/melhor-fogao-5-bocas/#guia-comercial-produtos"
+				class="btn-secondary-premium flex-1 px-8 sm:min-w-[200px]"
+				aria-label="Abrir ranking de fogão 5 bocas com preços e ofertas"
+			>
+				Ver ranking e ofertas
 			</a>
 		</div>
 		<RelatedContent

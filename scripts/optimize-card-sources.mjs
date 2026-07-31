@@ -18,8 +18,8 @@ const QUALITY = 85;
 
 const files = [
 	'brastemp-bfs5ncr-card-premium.webp',
-	'consul-fe5ig-card-premium.webp',
-	'electrolux-cfs5nab-card-premium.webp',
+	'consul-cfs5nab-card-premium.webp',
+	'electrolux-fe5ig-card-premium.webp',
 ];
 
 await mkdir(BACKUP_DIR, { recursive: true });

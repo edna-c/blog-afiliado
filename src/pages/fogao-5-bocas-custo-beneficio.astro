@@ -4,6 +4,8 @@ import RelatedContent from '../components/RelatedContent.astro';
 import EditorialLinks from '../components/EditorialLinks.astro';
 import SmartRecommendations from '../components/SmartRecommendations.astro';
 import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
+import TechnicalFigure from '../components/TechnicalFigure.astro';
+import AffiliateOfferBlock from '../components/AffiliateOfferBlock.astro';
 import { produtos } from '../data/products';
 import { PRODUCT_IMAGE_REVIEW } from '../data/productImages';
 
@@ -65,6 +67,18 @@ const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).
 				</div>
 			</div>
 		</section>
+
+		<div class="mt-12">
+			<AffiliateOfferBlock
+				id="ofertas-custo-beneficio"
+				variant="featured"
+				productName="Brastemp BFS5NCR"
+				heading="Oferta do destaque de custo-benefício"
+				description="Medalha de custo-benefício do ranking 5 bocas. Confira preço e frete agora — depois continue lendo se quiser comparar Consul e Electrolux."
+				mercadoLivreUrl={produtos.brastempBFS5NCR.ml}
+				shopeeUrl={produtos.brastempBFS5NCR.shopee}
+			/>
+		</div>
 
 		<div class="mt-12 space-y-10 text-base leading-relaxed text-on-ink-body">
 			<section aria-labelledby="economizar-heading">
@@ -153,6 +167,7 @@ const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).
 							Trempes são um divisor silencioso entre fogão “ok” e fogão agradável. Quando a rotina envolve panelas maiores ou mais
 							bocas ao mesmo tempo, estrutura melhor costuma compensar cada real a mais.
 						</p>
+						<TechnicalFigure id="L06A" class="mt-6" />
 					</div>
 					<div>
 						<h3 class="font-display text-lg font-bold text-on-ink-body">Consumo</h3>
@@ -291,19 +306,29 @@ const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).
 		<div class="mt-12 flex flex-wrap gap-4">
 			<a
 				href={produtos.brastempBFS5NCR.ml}
-				class="inline-flex min-h-[48px] items-center justify-center bg-cta px-8 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-cta-hover"
+				class="inline-flex min-h-[48px] items-center justify-center gap-2 bg-cta px-8 text-xs font-extrabold uppercase tracking-wider text-white transition hover:bg-cta-hover"
 				target="_blank"
 				rel="nofollow sponsored noopener noreferrer"
 				aria-label="Ver preço do Brastemp BFS5NCR no Mercado Livre — abre a loja em nova aba (link patrocinado)"
 			>
-				Ver preço do custo-benefício (Brastemp)
+				<span aria-hidden="true">🔥</span>
+				Ver preço no Mercado Livre (Brastemp)
+			</a>
+			<a
+				href={produtos.brastempBFS5NCR.shopee}
+				class="btn-secondary-premium px-8"
+				target="_blank"
+				rel="nofollow sponsored noopener noreferrer"
+				aria-label="Ver oferta do Brastemp BFS5NCR na Shopee — abre a loja em nova aba (link patrocinado)"
+			>
+				Ver oferta na Shopee
 			</a>
 			<a
 				href="/melhores/melhor-fogao-5-bocas/#guia-comercial-produtos"
 				class="btn-secondary-premium px-8"
 				aria-label="Abrir ranking completo de fogão 5 bocas com ofertas"
 			>
-				Ver ranking completo com ofertas
+				Ver ranking completo
 			</a>
 		</div>
 		<RelatedContent
