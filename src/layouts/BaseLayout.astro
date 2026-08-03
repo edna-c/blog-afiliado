@@ -80,6 +80,16 @@ const ogSiteName = openGraph?.siteName ?? 'Casa Prática Eletro';
 			) : null
 		}
 		<slot name="head" />
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-P718Q3GL8M" is:inline></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+			gtag('config', 'G-P718Q3GL8M');
+		</script>
 	</head>
 	<body class="flex min-h-screen flex-col bg-ink text-on-ink-body">
 		<a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
