@@ -168,7 +168,7 @@ export const PACKSHOT_ASSETS: readonly VisualAsset[] = [
 		path: '/images/melhores/melhor-fogao-mesa-de-vidro/consul-cfo4var.webp',
 		role: 'packshot-card',
 		subject: 'Consul CFO4VAR',
-		usedBy: ['/melhores/melhor-fogao-mesa-de-vidro/'],
+		usedBy: ['/melhores/melhor-fogao-mesa-de-vidro/', '/review-fogao-mesa-de-vidro-consul/'],
 	},
 	{
 		id: 'guide-vidro-brastemp',

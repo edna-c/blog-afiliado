@@ -102,7 +102,7 @@ Auditoria técnica (Motor III): o sistema está correto; o próximo passo é **p
 | **L08A** | Produzir no DNA de L06A | Segunda âncora (interior forno) | Arte ainda pendente |
 | **L07A** | **Evoluir** | Excelente conceito | Perder o texto na arte (título/legenda só HTML) |
 | **L09A** | **Evoluir** | Excelente conceito | Perder o texto/callouts; alinhar ao DNA L06A |
-| **L05A** | **Validado v2** | Eixo único (tampo); sem texto | Wiring quando houver âncora editorial |
+| **L05A** | **Incorporado** | Eixo único (tampo); sem texto | Wired em `/review-fogao-mesa-de-vidro-consul/` |
 | **L06B** | Validar escopo | Complemento a L06A | Só se agregar sem destoar |
 
 **Proibido:** campanha de regeneração em massa. Trabalho = lapidar a família.
@@ -397,7 +397,7 @@ Ranking e fila de produção → `docs/BACKLOG_PATRIMONIO_VISUAL.md` (**Tipo B a
 | L02 | Vista superior 4 bocas × 5 bocas | **B** Técnico | Médio | Comparativo cobre vão, não a mesa | Simultaneidade de panelas |
 | L03 | Close-up tampo vidro | **B** Técnico | Médio–Alto | Heroes mostram produto inteiro | Material, limpeza, risco |
 | L04 | Close-up tampo inox | **B** Técnico | Médio–Alto | Simétrico a L03 | Comparação de acabamento |
-| L05 | Split tampo vidro × inox (uma arte) | **B** Técnico | Médio | **L05A v2 Validado** (sem texto; eixo tampo) · wiring pendente | Comparação imediata / OG |
+| L05 | Split tampo vidro × inox (uma arte) | **B** Técnico | Médio | **L05A Incorporado** (sem texto; eixo tampo) · review CFO4VAR | Comparação imediata / OG |
 | L06 | Tipologia de trempes | **B** Técnico | Alto | **Incorporado L06A** (`library/L06A.webp`) | Decisão técnica no funil |
 | L07 | Tipologia de queimadores | **B** Técnico | Alto | L07A em staging (texto na arte) | Explica diferenças de ranking |
 | L08 | Interior de forno simples (1 cavidade) | **B** Técnico | Médio–Alto | **Âncora DNA L08A** (designada; arte pendente no DNA de L06A) | Critério forno |

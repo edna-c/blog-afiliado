@@ -56,7 +56,7 @@ Antes de recomendar ativo: responder as 4 perguntas de classificação (ver regr
 | Item | Estado |
 |------|--------|
 | Meta | 20–30 ativos fundamentais · mesmo DNA · reuso em dezenas de URLs |
-| Incorporados Tipo B (hoje) | L06A, L09A (+ staging L05A/L06B/L07A sem wiring) |
+| Incorporados Tipo B (hoje) | L06A, L09A, L05A (+ staging L06B/L07A sem wiring) |
 | **DNA de referência** | **L06A** (ativa) + **L08A** (designada — interior forno; arte pendente) |
 | Ritmo | Consistência > quantidade — **não** abrir dezenas de artes novas antes do DNA único |
 | Próximo bloco (evolução, não explosão) | (1) Produzir **L08A** no DNA de L06A · (2) **Evoluir L07A/L09A** (só remover texto) · (3) **Repensar L05A** (separar conceitos) · (4) pipeline único no blog · (5) wiring reuso L06A · **sem** regenerar a biblioteca inteira |
@@ -129,8 +129,9 @@ Arte eventual de L01 (se já produzida / em validação) pode ser incorporada co
 
 | ID | Tema | Path | Wiring |
 |----|------|------|--------|
-| **L06A** | Ferro fundido × aramada esmaltada | `library/L06A.webp` | Custo-benefício 5b · reviews 5b · Brastemp vale a pena |
+| **L06A** | Ferro fundido × aramada esmaltada | `library/L06A.webp` | Custo-benefício 5b · reviews 5b · Brastemp vale a pena · review CFO4VAR |
 | **L09A** | Forno simples × forno duplo | `library/L09A.webp` | Blog forno duplo |
+| **L05A** | Mesa vidro × inox | `library/L05A.webp` | Review Consul CFO4VAR |
 
 ### Staging (Produzido — sem wiring)
 
@@ -138,7 +139,6 @@ Arte eventual de L01 (se já produzida / em validação) pode ser incorporada co
 |----|------|---------|
 | L07A | Chama simples/dupla/tripla | **Evoluir** — perder texto |
 | L09A | Forno simples × duplo (já Incorporado) | **Evoluir** — perder texto/callouts; alinhar DNA |
-| L05A | Mesa vidro × inox | **Validado v2** — sem texto; eixo único (tampo); wiring pendente |
 | L06B | Trempe contínua × individuais | Validar escopo |
 | L08A | Interior forno (âncora DNA) | **Produzir** no DNA de L06A |
 

@@ -1,0 +1,538 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RelatedContent from '../components/RelatedContent.astro';
+import EditorialLinks from '../components/EditorialLinks.astro';
+import SmartRecommendations from '../components/SmartRecommendations.astro';
+import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
+import ProductMedia from '../components/ProductMedia.astro';
+import TechnicalFigure from '../components/TechnicalFigure.astro';
+import AffiliateOfferBlock from '../components/AffiliateOfferBlock.astro';
+import { produtos } from '../data/products';
+
+const model = 'Consul CFO4VAR';
+const headline = 'Fogão Consul mesa de vidro CFO4VAR: vale a pena? Análise completa';
+const title = `${headline} | Casa Prática Eletro`;
+const description =
+	'Consul CFO4VAR (mesa de vidro): para quem o equilíbrio fecha, onde o vidro temperado e o ferro fundido pesam e quando Brastemp ou Atlas fazem mais sentido. Análise completa.';
+
+const summary =
+	'Melhor geral do ranking mesa de vidro: costuma fechar a compra no uso típico — vidro temperado fácil de limpar, grades de ferro fundido e forno Cleartec (~58 L) sem pagar o premium da categoria. Confira no anúncio a versão exata (ref. comercial CFO4VARUNA) — acabamento e acessórios podem variar.';
+
+const imagePath = '/images/melhores/melhor-fogao-mesa-de-vidro/consul-cfo4var.webp';
+const offerUrl = produtos.consulCFO4VAR.ml;
+const offerShopeeUrl = produtos.consulCFO4VAR.shopee;
+
+const idealFor = [
+	'quem já fechou mesa de vidro e quer o melhor equilíbrio do ranking',
+	'casais e famílias pequenas a médias com rotina doméstica comum',
+	'cozinhas modernas em que o visual do tampo de vidro pesa na decisão',
+	'quem prioriza limpeza ágil da mesa sem ir ao Brastemp premium',
+];
+
+const notIdealFor = [
+	'quem precisa de várias panelas grandes ao mesmo tempo — aí o eixo é 5 bocas',
+	'quem quer grades duplas e presença premium na mesa — perfil Brastemp BFO4VAE',
+	'orçamento no mínimo absoluto em vidro — Atlas Atenas Glass costuma ser a entrada',
+	'quem rejeita o cuidado típico do vidro temperado (impacto e abrasivos)',
+];
+
+const familyProfile =
+	'O CFO4VAR costuma encaixar melhor em casal, família pequena a média e casas onde o 4 bocas com mesa de vidro já resolve o dia a dia sem forçar upgrade de tamanho.';
+
+const routineProfile =
+	'Faz mais sentido em almoço e jantar comuns, duas a três panelas por vez e forno sem grande volume gourmet — com limpeza da mesa no ritmo da rotina.';
+
+const realLimitations = [
+	'não substitui um 5 bocas quando a rotina exige muita simultaneidade',
+	'vidro temperado exige cuidado com impactos e produtos abrasivos — limitação da categoria',
+	'quem busca sofisticação máxima na mesa (grades duplas) pode preferir o Brastemp',
+];
+
+const ovenAnalysis =
+	'O forno (~58 L) com tecnologia Cleartec (cavidade esmaltada + vidro interno vedado) atende bem o cotidiano — assados ocasionais e reaquecimento, com rotina de limpeza mais simples que o anúncio sugere. Prateleira auto-deslizante e outra com regulagem de altura ajudam no uso prático. Não é o tipo de ponto que sozinho justifica pagar o premium Brastemp; se o forno for protagonista gourmet, compare linhas acima antes de decidir.';
+
+const gratesAnalysis =
+	'As grades individuais de ferro fundido são um dos diferenciais que sustentam a medalha de melhor geral: estabilidade e robustez no uso diário, alinhadas ao que a Consul destaca na ficha oficial. Vale olhar no anúncio a disposição das bocas se você usa panela grande com frequência.';
+
+const consumptionAnalysis =
+	'Como em todo fogão a gás, o consumo acompanha tempo de chama e frequência de forno — não o acabamento da mesa. No perfil certo, o CFO4VAR equilibra custo inicial e uso doméstico sem exigir o ticket premium da categoria vidro.';
+
+const cleaningAnalysis =
+	'A mesa de vidro temperado é o eixo da proposta: superfície lisa e contínua, limpeza mais ágil que o inox com rebaixos — desde que se evitem abrasivos e impactos. Manípulos removíveis e design frente única reforçam a manutenção. Em troca, marcas de gordura e dedo aparecem com facilidade se a limpeza ficar para depois.';
+
+const differentiators = [
+	'equilíbrio de compra: fecha o uso típico em mesa de vidro sem exagerar no ticket',
+	'vidro temperado + grades de ferro fundido alinhados ao dia a dia',
+	'forno Cleartec com prateleira auto-deslizante e assistência/disponibilidade amplas',
+];
+
+const specsRows = [
+	{ label: 'Tipo', value: 'Fogão de piso · 4 bocas · gás' },
+	{ label: 'Mesa', value: 'Vidro temperado' },
+	{ label: 'Grades', value: 'Ferro fundido · individuais' },
+	{ label: 'Acendimento', value: 'Automático (mesa e forno)' },
+	{ label: 'Forno', value: '~58 L · Cleartec (esmaltado + vidro interno vedado)' },
+	{ label: 'Prateleiras', value: '1 auto-deslizante + 1 deslizante com regulagem' },
+	{ label: 'Voltagem', value: 'Bivolt' },
+	{ label: 'Dimensões (A × L × P)', value: '94,8 × 51,8 × 60,3 cm' },
+	{ label: 'Peso', value: '27,5 kg' },
+	{ label: 'Referência comercial', value: 'CFO4VAR / CFO4VARUNA' },
+];
+
+const comparisonRows = [
+	{ criterion: 'Preço', current: 'Faixa intermediária do ranking mesa de vidro', alternative: 'Atlas costuma ser mais barato; Brastemp sobe' },
+	{ criterion: 'Mesa', current: 'Vidro temperado com limpeza ágil', alternative: 'Inox é outro eixo — compare se o cuidado do vidro não combina' },
+	{ criterion: 'Grades', current: 'Ferro fundido individual — sólido no dia a dia', alternative: 'BFO4VAE sobe com grades duplas (premium na mesa)' },
+	{ criterion: 'Melhor perfil', current: 'Uso diário em vidro sem mínimo nem premium', alternative: 'Teto baixo → Atlas; upgrade de mesa → Brastemp' },
+];
+
+const objections = [
+	{
+		question: 'Vale mais que o Atlas Atenas Glass?',
+		answer:
+			'Vale quando você quer subir um degrau em equilíbrio (ferro fundido, forno Cleartec e sensação de compra sem arrependimento) sem ir ao premium. Se o teto de gasto manda no mínimo em vidro, o Atlas continua sendo a entrada racional.',
+	},
+	{
+		question: 'Devo pagar o Brastemp BFO4VAE em vez deste?',
+		answer:
+			'Só se grades duplas e presença premium na mesa forem requisito real. Caso contrário, o CFO4VAR costuma entregar melhor custo-benefício no meio da faixa mesa de vidro.',
+	},
+	{
+		question: 'Mesa de vidro é segura no uso doméstico?',
+		answer:
+			'Sim, no uso normal com vidro temperado. O que danifica é impacto pontual e abrasivo — não o “vidro em si”. Se a dúvida ainda for de segurança da categoria, aprofunde no guia editorial antes de trocar de acabamento.',
+	},
+];
+
+const faqItems = [
+	{
+		question: 'O Consul CFO4VAR vale a pena?',
+		answer:
+			'Sim, para quem busca o melhor equilíbrio em fogão com mesa de vidro no uso típico: vidro temperado, grades de ferro fundido e forno Cleartec sem pagar linha premium. É a escolha “sem arrependimento” do ranking quando o perfil combina.',
+	},
+	{
+		question: 'O CFO4VAR é bom para apartamento?',
+		answer:
+			'Sim. O porte de 4 bocas costuma combinar melhor com cozinha compacta. Confirme medidas do vão (cerca de 94,8 × 51,8 × 60,3 cm) e folga da porta do forno antes de comprar.',
+	},
+	{
+		question: 'Quando não vale escolher o CFO4VAR?',
+		answer:
+			'Quando o orçamento pede o mínimo absoluto em vidro (Atlas), quando grades duplas/premium na mesa são requisito (Brastemp BFO4VAE) ou quando a rotina exige 5 bocas de verdade.',
+	},
+	{
+		question: 'Qual a diferença entre CFO4VAR e CF04NAR?',
+		answer:
+			'São eixos diferentes: o CFO4VAR é o #1 do ranking mesa de vidro; o CF04NAR é o #1 do ranking 4 bocas com mesa inox. Escolha pelo acabamento e pela intenção de busca — não trate como o mesmo produto.',
+	},
+];
+
+const verdict =
+	'O CFO4VAR continua sendo a compra mais racional no meio da faixa mesa de vidro: fecha o dia a dia com tampo de vidro e ferro fundido sem excesso de ticket. Para teto baixo, Atlas; para upgrade premium na mesa, Brastemp; para muitas panelas simultâneas, suba de categoria — não só de marca dentro do 4 bocas.';
+
+const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
+const canonicalPath = '/review-fogao-mesa-de-vidro-consul/';
+const canonical = new URL(canonicalPath.replace(/^\//, ''), site).href;
+const productImage = new URL(imagePath.replace(/^\//, ''), site).href;
+
+const graph: Record<string, unknown>[] = [
+	{
+		'@type': 'BreadcrumbList',
+		itemListElement: [
+			{ '@type': 'ListItem', position: 1, name: 'Início', item: site.href },
+			{ '@type': 'ListItem', position: 2, name: 'Review Consul CFO4VAR', item: canonical },
+		],
+	},
+	{
+		'@type': 'Product',
+		name: model,
+		description,
+		image: [productImage],
+		brand: { '@type': 'Brand', name: 'Consul' },
+		sku: 'CFO4VAR',
+		offers: {
+			'@type': 'Offer',
+			url: offerUrl,
+			priceCurrency: 'BRL',
+		},
+	},
+	{
+		'@type': 'Article',
+		headline,
+		description,
+		image: [productImage],
+		author: {
+			'@type': 'Organization',
+			name: 'Casa Prática Eletro',
+			url: site.href,
+		},
+		publisher: {
+			'@type': 'Organization',
+			name: 'Casa Prática Eletro',
+			url: site.href,
+		},
+		mainEntityOfPage: canonical,
+		articleSection: 'Reviews',
+		inLanguage: 'pt-BR',
+	},
+	{
+		'@type': 'FAQPage',
+		mainEntity: faqItems.map((item) => ({
+			'@type': 'Question',
+			name: item.question,
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: item.answer,
+			},
+		})),
+	},
+];
+
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@graph': graph,
+};
+---
+
+<BaseLayout
+	title={title}
+	description={description}
+	canonical={canonical}
+	openGraph={{
+		title,
+		description,
+		url: canonical,
+		image: productImage,
+		imageAlt: 'Fogão Consul CFO4VAR 4 bocas com mesa de vidro temperado',
+		type: 'article',
+	}}
+>
+	<script type="application/ld+json" slot="head" set:html={JSON.stringify(structuredData)} />
+	<article class="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14 lg:py-16">
+		<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Review · Consul · Mesa de vidro</p>
+		<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">
+			{headline}
+		</h1>
+		<p class="mt-2 text-sm text-on-ink-muted">
+			Modelo referência: <span class="text-on-ink-body">{model}</span>
+		</p>
+		<p class="mt-6 text-lg leading-relaxed text-on-ink-body">
+			{summary}
+		</p>
+		<p class="mt-4 text-sm leading-relaxed text-on-ink-muted">
+			Este review integra o{' '}
+			<a href="/melhores/melhor-fogao-mesa-de-vidro/#guia-comercial-produtos" class="link-accent-soft">
+				melhor fogão mesa de vidro
+			</a>
+			{' '}— medalha de melhor geral do ranking.
+		</p>
+		<div class="mt-8">
+			<EditorialTrustRibbon />
+		</div>
+		<div class="mt-10">
+			<ProductMedia
+				src={imagePath}
+				alt="Fogão Consul CFO4VAR 4 bocas com mesa de vidro temperado"
+				aspect="square"
+			/>
+		</div>
+		<EditorialLinks
+			class="mt-10"
+			currentPath={canonicalPath}
+			eyebrow="Leituras relacionadas"
+			heading="Para complementar essa decisão"
+			limit={3}
+			kind={['Blog', 'Comparativo']}
+		/>
+
+		<section class="mt-12" aria-labelledby="perfil-heading">
+			<h2 id="perfil-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Perfil de uso: para quem ele encaixa melhor
+			</h2>
+			<div class="mt-6 grid gap-4 sm:grid-cols-2">
+				<div class="rounded-2xl border border-emerald-400/30 bg-emerald-950/20 p-5 ring-1 ring-emerald-400/15 sm:p-6">
+					<h3 class="text-sm font-bold uppercase tracking-wider text-emerald-300">Faz mais sentido para</h3>
+					<ul class="mt-4 list-inside list-disc space-y-2.5 text-sm leading-relaxed text-on-ink-body sm:text-base">
+						{idealFor.map((item) => <li>{item}</li>)}
+					</ul>
+				</div>
+				<div class="rounded-2xl border border-amber-300/25 bg-brand-900/45 p-5 ring-1 ring-white/10 sm:p-6">
+					<h3 class="text-sm font-bold uppercase tracking-wider text-amber-200">Pode não compensar tanto para</h3>
+					<ul class="mt-4 list-inside list-disc space-y-2.5 text-sm leading-relaxed text-on-ink-body sm:text-base">
+						{notIdealFor.map((item) => <li>{item}</li>)}
+					</ul>
+				</div>
+			</div>
+			<div class="mt-6 grid gap-4 sm:grid-cols-2">
+				<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Tipo de família</h3>
+					<p class="mt-3 text-base leading-relaxed text-on-ink-body">{familyProfile}</p>
+				</div>
+				<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Rotina ideal</h3>
+					<p class="mt-3 text-base leading-relaxed text-on-ink-body">{routineProfile}</p>
+				</div>
+			</div>
+		</section>
+
+		<div class="mt-12">
+			<AffiliateOfferBlock
+				id="ofertas"
+				variant="featured"
+				productName={model}
+				heading={`Conferir preço atualizado do ${model}`}
+				description="Preço e estoque mudam com frequência. Use os botões para ver disponibilidade e frete na sua região — sem compromisso de compra nesta página."
+				mercadoLivreUrl={offerUrl}
+				shopeeUrl={offerShopeeUrl}
+			/>
+		</div>
+
+		<section class="mt-12" aria-labelledby="ficha-heading">
+			<h2 id="ficha-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Ficha técnica resumida
+			</h2>
+			<p class="mt-4 text-base leading-relaxed text-on-ink-muted">
+				Dados alinhados à página oficial da Consul e à ficha comercial do SKU. Potências de queimador variam entre anúncios —
+				confirme no anúncio da loja a versão exata.
+			</p>
+			<div class="table-premium-shell mt-6">
+				<table class="table-premium min-w-[320px]">
+					<tbody>
+						{
+							specsRows.map((row, index) => (
+								<tr class:list={[index % 2 === 0 ? 'bg-ink' : 'bg-brand-900/25']}>
+									<th scope="row" class="font-semibold text-on-ink-body">
+										{row.label}
+									</th>
+									<td>{row.value}</td>
+								</tr>
+							))
+						}
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section class="mt-12" aria-labelledby="diferenciacao-heading">
+			<h2 id="diferenciacao-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				O que diferencia esse modelo na prática
+			</h2>
+			<ul class="mt-5 list-inside list-disc space-y-2.5 text-base leading-relaxed text-on-ink-body">
+				{differentiators.map((item) => <li>{item}</li>)}
+			</ul>
+			<p class="mt-5 text-base leading-relaxed text-on-ink-muted">
+				Se a dúvida ainda é de acabamento (vidro ou inox), abra o{' '}
+				<a
+					href="/blog/fogao-mesa-de-vidro-ou-inox/"
+					class="link-accent"
+					aria-label="Comparativo fogão mesa de vidro ou inox"
+				>
+					comparativo mesa de vidro ou inox
+				</a>
+				. Se já fechou o vidro e quer o ranking comercial, volte ao{' '}
+				<a
+					href="/melhores/melhor-fogao-mesa-de-vidro/"
+					class="link-accent"
+					aria-label="Guia melhor fogão mesa de vidro"
+				>
+					guia dos melhores fogões mesa de vidro
+				</a>
+				.
+			</p>
+		</section>
+
+		<section class="mt-12" aria-labelledby="limitacoes-heading">
+			<h2 id="limitacoes-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Limitações reais antes de comprar
+			</h2>
+			<ul class="mt-5 list-inside list-disc space-y-2.5 text-base leading-relaxed text-on-ink-body">
+				{realLimitations.map((item) => <li>{item}</li>)}
+			</ul>
+		</section>
+
+		<section class="mt-12" aria-labelledby="analise-tecnica-heading">
+			<h2 id="analise-tecnica-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Forno, trempes, consumo e limpeza
+			</h2>
+			<div class="mt-6 space-y-8 text-base leading-relaxed text-on-ink-body">
+				<div>
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Forno</h3>
+					<p class="mt-3">{ovenAnalysis}</p>
+				</div>
+				<div>
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Trempes e uso com panelas</h3>
+					<p class="mt-3">{gratesAnalysis}</p>
+					<TechnicalFigure id="L06A" class="mt-6" />
+				</div>
+				<div>
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Consumo e custo de uso</h3>
+					<p class="mt-3">{consumptionAnalysis}</p>
+				</div>
+				<div>
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Limpeza e mesa de vidro × inox</h3>
+					<p class="mt-3">{cleaningAnalysis}</p>
+					<TechnicalFigure id="L05A" class="mt-6" />
+					<p class="mt-5 text-base leading-relaxed text-on-ink-muted">
+						Dúvida de segurança do temperado? Veja{' '}
+						<a
+							href="/blog/fogao-mesa-de-vidro-seguro/"
+							class="link-accent"
+							aria-label="Fogão mesa de vidro é seguro"
+						>
+							fogão mesa de vidro é seguro?
+						</a>
+						.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="mt-12" aria-labelledby="comparacao-heading">
+			<h2 id="comparacao-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Comparação lateral: onde ele ganha e onde perde
+			</h2>
+			<div class="table-premium-shell mt-6">
+				<table class="table-premium min-w-[420px]">
+					<thead>
+						<tr>
+							<th scope="col">Critério</th>
+							<th scope="col">{model}</th>
+							<th scope="col">Alternativa típica</th>
+						</tr>
+					</thead>
+					<tbody>
+						{
+							comparisonRows.map((row, index) => (
+								<tr class:list={[index % 2 === 0 ? 'bg-ink' : 'bg-brand-900/25']}>
+									<th scope="row" class="font-semibold text-on-ink-body">
+										{row.criterion}
+									</th>
+									<td>{row.current}</td>
+									<td>{row.alternative}</td>
+								</tr>
+							))
+						}
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section class="mt-12" aria-labelledby="objecoes-heading">
+			<h2 id="objecoes-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Objeções comuns de compra
+			</h2>
+			<dl class="mt-6 space-y-6">
+				{
+					objections.map((item) => (
+						<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
+							<dt class="font-display text-lg font-bold text-on-ink-body">{item.question}</dt>
+							<dd class="mt-3 text-base leading-relaxed text-on-ink-muted">{item.answer}</dd>
+						</div>
+					))
+				}
+			</dl>
+		</section>
+
+		<div class="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+			<a
+				href={offerUrl}
+				class="inline-flex min-h-[52px] flex-1 items-center justify-center gap-2 bg-cta px-6 text-xs font-extrabold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-w-[200px]"
+				target="_blank"
+				rel="noopener noreferrer nofollow sponsored"
+				aria-label={`Ver preço do fogão ${model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+			>
+				<span aria-hidden="true">🔥</span>
+				Ver preço no Mercado Livre
+			</a>
+			<a
+				href={offerShopeeUrl}
+				class="btn-secondary-premium flex-1 sm:min-w-[200px]"
+				target="_blank"
+				rel="noopener noreferrer nofollow sponsored"
+				aria-label={`Ver oferta do fogão ${model} na Shopee — abre em nova aba (link patrocinado)`}
+			>
+				<span aria-hidden="true">👉</span>
+				Ver oferta na Shopee
+			</a>
+		</div>
+		<p class="mt-6 text-sm leading-relaxed text-on-ink-muted">
+			Transparência: indicação de loja parceira. No guia{' '}
+			<a
+				href="/melhores/melhor-fogao-mesa-de-vidro/#guia-comercial-produtos"
+				class="link-accent-soft"
+				aria-label="Abrir guia melhor fogão mesa de vidro com ofertas"
+			>
+				melhor fogão mesa de vidro
+			</a>{' '}
+			você compara os 3 modelos e as ofertas na mesma página. Se a dúvida ainda for de tamanho, veja o{' '}
+			<a
+				href="/comparativo-fogao-4-vs-5-bocas/"
+				class="link-accent-soft"
+				aria-label="Comparativo fogão 4 vs 5 bocas"
+			>
+				comparativo 4 vs 5 bocas
+			</a>
+			. Já decidiu por inox em 4 bocas? Há a{' '}
+			<a
+				href="/review-fogao-4-bocas-consul/"
+				class="link-accent-soft"
+				aria-label="Review fogão Consul 4 bocas CF04NAR"
+			>
+				review do Consul CF04NAR
+			</a>
+			.
+		</p>
+		<section class="mt-12 rounded-2xl border border-white/10 bg-brand-900/35 p-6 ring-1 ring-white/10" aria-labelledby="veredito-heading">
+			<h2 id="veredito-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Veredito editorial
+			</h2>
+			<p class="mt-4 text-base leading-relaxed text-on-ink-body">{verdict}</p>
+			<div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+				<a
+					href={offerUrl}
+					class="inline-flex min-h-[52px] flex-1 items-center justify-center gap-2 rounded-lg bg-cta px-6 text-center text-xs font-extrabold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-w-[200px]"
+					target="_blank"
+					rel="noopener noreferrer nofollow sponsored"
+					aria-label={`Ver preço atualizado do ${model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+				>
+					Ver preço no Mercado Livre
+				</a>
+				<a
+					href={offerShopeeUrl}
+					class="btn-secondary-premium flex-1 sm:min-w-[200px]"
+					target="_blank"
+					rel="noopener noreferrer nofollow sponsored"
+					aria-label={`Ver oferta do ${model} na Shopee — abre em nova aba (link patrocinado)`}
+				>
+					Ver oferta na Shopee
+				</a>
+			</div>
+		</section>
+		<section class="mt-14 border-t border-white/10 pt-12" aria-labelledby="faq-heading">
+			<h2 id="faq-heading" class="font-display text-2xl font-bold tracking-tight text-on-ink-body">
+				Perguntas frequentes
+			</h2>
+			<dl class="mt-8 space-y-8">
+				{faqItems.map((item) => (
+					<div>
+						<dt class="font-semibold text-on-ink-body">{item.question}</dt>
+						<dd class="mt-2 text-base leading-relaxed text-on-ink-muted">{item.answer}</dd>
+					</div>
+				))}
+			</dl>
+		</section>
+		<RelatedContent
+			class="mt-14"
+			currentPath={canonicalPath}
+			eyebrow="Veja também"
+			title="Leituras relacionadas"
+			subtitle="Ranking, comparativos e guias do cluster mesa de vidro para fechar a decisão sem voltar à estaca zero."
+		/>
+
+		<SmartRecommendations
+			class="mt-12"
+			currentPath={canonicalPath}
+			heading="Continue a jornada"
+		/>
+	</article>
+</BaseLayout>

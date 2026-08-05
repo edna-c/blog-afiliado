@@ -84,6 +84,7 @@ export const TECHNICAL_LIBRARY = {
 			'/review-fogao-5-bocas-consul/',
 			'/review-fogao-5-bocas-electrolux/',
 			'/review-fogao-4-bocas-consul/',
+			'/review-fogao-mesa-de-vidro-consul/',
 		],
 		notes: 'Lacuna L06 · brief L06A. Sem texto na arte. ÂNCORA DNA · pedagogia visual.',
 	},
@@ -161,17 +162,21 @@ export const TECHNICAL_LIBRARY = {
 		tipo: 'comparacao-tecnica',
 		reusePotential: 'alto',
 		lifespan: 'permanente',
-		status: 'validado',
+		status: 'incorporado',
 		hasBakedText: false,
 		defaultAlt:
 			'Comparação técnica entre fogão com mesa de vidro temperado preto à esquerda e fogão com mesa de inox escovado com rebaixos à direita, mesma configuração de bocas e trempes, fundo neutro',
 		defaultTitle: 'Mesa de vidro × mesa de inox',
 		defaultCaption:
 			'Mesa de vidro: superfície lisa e contínua. Mesa de inox: superfície estampada com rebaixos — o material do tampo muda limpeza, visual e retenção de respingos.',
-		plannedFor: ['/blog/fogao-mesa-de-vidro-ou-inox/', '/melhores/melhor-fogao-mesa-de-vidro/'],
-		usedBy: [],
+		plannedFor: [
+			'/blog/fogao-mesa-de-vidro-ou-inox/',
+			'/melhores/melhor-fogao-mesa-de-vidro/',
+			'/review-fogao-mesa-de-vidro-consul/',
+		],
+		usedBy: ['/review-fogao-mesa-de-vidro-consul/'],
 		notes:
-			'Lacuna L05. v2: sem texto na arte; trempes iguais nos dois lados (eixo único = tampo). Fotografia editorial. Validado — wiring pendente.',
+			'Lacuna L05. v2: sem texto na arte; trempes iguais nos dois lados (eixo único = tampo). Fotografia editorial. Incorporado — âncora review CFO4VAR.',
 	},
 } as const satisfies Record<TechnicalAssetId, TechnicalLibraryAsset>;
 
