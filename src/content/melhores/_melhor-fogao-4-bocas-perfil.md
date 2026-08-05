@@ -9,7 +9,7 @@ category: 'Guia de Compra'
 
 Regra para empate:
 
-- Cozinha todo dia + orçamento médio → **Consul CF04NAR**
+- Cozinha todo dia + orçamento médio → **Consul CF04NAR** ([review](/review-fogao-4-bocas-consul/))
 - Design e recursos de forno são requisito → **Electrolux Efficient FE4IW**
 - Precisa gastar o mínimo agora → **Atlas Mônaco Plus**
 - Família grande / muitas panelas → [fogão 5 bocas](/melhores/melhor-fogao-5-bocas/)

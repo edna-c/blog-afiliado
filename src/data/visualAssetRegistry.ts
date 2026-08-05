@@ -147,7 +147,7 @@ export const PACKSHOT_ASSETS: readonly VisualAsset[] = [
 		path: '/images/melhores/melhor-fogao-4-bocas/consul-cf04nar.webp',
 		role: 'packshot-card',
 		subject: 'Consul CF04NAR',
-		usedBy: ['/melhores/melhor-fogao-4-bocas/'],
+		usedBy: ['/melhores/melhor-fogao-4-bocas/', '/review-fogao-4-bocas-consul/'],
 	},
 	{
 		id: 'guide-4b-electrolux',
@@ -261,6 +261,7 @@ export const EDITORIAL_BODY_ASSETS: readonly VisualAsset[] = [
 			'/review-fogao-5-bocas-brastemp/',
 			'/review-fogao-5-bocas-consul/',
 			'/review-fogao-5-bocas-electrolux/',
+			'/review-fogao-4-bocas-consul/',
 		],
 		notes: 'Ver src/data/technicalLibrary.ts',
 		governance: {
@@ -273,6 +274,7 @@ export const EDITORIAL_BODY_ASSETS: readonly VisualAsset[] = [
 				'/review-fogao-5-bocas-brastemp/',
 				'/review-fogao-5-bocas-consul/',
 				'/review-fogao-5-bocas-electrolux/',
+				'/review-fogao-4-bocas-consul/',
 			],
 			plannedFor: ['/fogao-4-bocas-custo-beneficio/', '/melhores/melhor-fogao-5-bocas/'],
 			approver: 'humano',

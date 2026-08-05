@@ -198,6 +198,19 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 		weight: 9,
 	},
 	{
+		href: '/review-fogao-4-bocas-consul/',
+		title: 'Fogão Consul 4 bocas CF04NAR vale a pena?',
+		description:
+			'Melhor geral do ranking 4 bocas: para quem o equilíbrio fecha, onde o inox pesa e quando Atlas ou Electrolux fazem mais sentido.',
+		kind: 'Review',
+		flow: 4,
+		editorialLabel: 'Review',
+		topics: ['fogao-4-bocas', 'custo-beneficio', 'cozinha-pequena', 'compra-segura'],
+		anchorText: 'review do Consul CF04NAR',
+		teaser: 'melhor geral 4 bocas — equilíbrio sem premium',
+		weight: 8,
+	},
+	{
 		href: '/review-fogao-5-bocas-brastemp/',
 		title: 'Review rápida: Brastemp BFS5NCR',
 		description: 'Resumo direto + link para conferir preço na loja parceira.',

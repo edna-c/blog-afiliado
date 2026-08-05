@@ -1,0 +1,470 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RelatedContent from '../components/RelatedContent.astro';
+import EditorialLinks from '../components/EditorialLinks.astro';
+import SmartRecommendations from '../components/SmartRecommendations.astro';
+import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
+import ProductMedia from '../components/ProductMedia.astro';
+import TechnicalFigure from '../components/TechnicalFigure.astro';
+import AffiliateOfferBlock from '../components/AffiliateOfferBlock.astro';
+import { produtos } from '../data/products';
+
+const model = 'Consul CF04NAR';
+const headline = 'Fogão Consul 4 bocas CF04NAR vale a pena?';
+const title = `${headline} | Casa Prática Eletro`;
+const description =
+	'Consul CF04NAR (4 bocas): para quem o equilíbrio fecha, onde o inox e o acendimento pesam e quando Atlas ou Electrolux fazem mais sentido. Review direto.';
+
+const summary =
+	'Melhor geral do ranking 4 bocas: costuma fechar a compra no uso típico — acendimento automático, mesa inox e forno útil sem pagar linha premium. Confira no anúncio a versão exata — acabamento e acessórios mudam de um SKU para outro.';
+
+const imagePath = '/images/melhores/melhor-fogao-4-bocas/consul-cf04nar.webp';
+const offerUrl = produtos.consulCF04NAR.ml;
+const offerShopeeUrl = produtos.consulCF04NAR.shopee;
+
+const idealFor = [
+	'casais e famílias pequenas a médias com rotina doméstica comum',
+	'quem quer 4 bocas com acendimento automático sem ir ao premium',
+	'cozinhas compactas e apartamentos onde o porte do 4 bocas encaixa melhor',
+	'quem prioriza mesa inox robusta no dia a dia',
+];
+
+const notIdealFor = [
+	'quem precisa de várias panelas grandes ao mesmo tempo — aí o eixo é 5 bocas',
+	'quem exige recursos de forno da linha Efficient (PerfectCook/VaporBake)',
+	'orçamento no mínimo absoluto — Atlas costuma ser a entrada mais enxuta',
+];
+
+const familyProfile =
+	'O CF04NAR costuma encaixar melhor em casal, família pequena a média e casas onde o 4 bocas já resolve o dia a dia sem forçar upgrade de tamanho.';
+
+const routineProfile =
+	'Faz mais sentido em almoço e jantar comuns, duas a três panelas por vez e forno sem grande volume ou frequência gourmet.';
+
+const realLimitations = [
+	'não substitui um 5 bocas quando a rotina exige muita simultaneidade',
+	'inox marca dedo e água — pede limpeza regular para manter o visual',
+	'quem busca sofisticação de forno premium pode sentir falta de recursos de linha acima',
+];
+
+const ovenAnalysis =
+	'O forno atende bem o cotidiano comum — assados ocasionais e reaquecimento. Não é o tipo de ponto que sozinho justifica pagar um premium de linha; se o forno for protagonista na rotina, compare com o Electrolux FE4IW antes de decidir.';
+
+const gratesAnalysis =
+	'As trempes cumprem a proposta de uso diário em 4 bocas. Vale olhar no anúncio o material e a estabilidade com panela grande: ferro fundido tende a transmitir mais confiança em uso intenso; aramada esmaltada costuma ser mais leve e barata de manter.';
+
+const consumptionAnalysis =
+	'Como em todo fogão a gás, o consumo acompanha tempo de chama e frequência de forno — não o número de bocas sozinho. No perfil certo, o CF04NAR equilibra custo inicial e uso doméstico sem exigir investimento de linha premium.';
+
+const cleaningAnalysis =
+	'A mesa inox tolera bem panelas e uso frequente. Em troca, marcas de dedo e água aparecem com facilidade se a limpeza ficar para depois — rotina rápida de pano seco/úmido resolve na maioria dos casos.';
+
+const differentiators = [
+	'equilíbrio de compra: fecha o uso típico sem exagerar no ticket',
+	'acendimento automático e mesa inox alinhados ao dia a dia',
+	'assistência e disponibilidade comercial amplas na categoria',
+];
+
+const comparisonRows = [
+	{ criterion: 'Preço', current: 'Faixa intermediária do ranking 4 bocas', alternative: 'Atlas costuma ser mais barato; Electrolux sobe' },
+	{ criterion: 'Forno', current: 'Adequado para rotina comum', alternative: 'FE4IW convence mais se PerfectCook/VaporBake forem requisito' },
+	{ criterion: 'Mesa', current: 'Inox robusto no uso frequente', alternative: 'Vidro prioriza visual — é outro eixo de decisão' },
+	{ criterion: 'Melhor perfil', current: 'Uso diário sem forçar mínimo nem premium', alternative: 'Teto baixo → Atlas; forno premium → Electrolux' },
+];
+
+const objections = [
+	{
+		question: 'Vale mais que o Atlas Mônaco Plus?',
+		answer:
+			'Vale quando você quer subir um degrau em equilíbrio (acendimento, mesa e forno no dia a dia) sem ir ao premium. Se o teto de gasto manda no mínimo, o Atlas continua sendo a entrada racional.',
+	},
+	{
+		question: 'Devo pagar o Electrolux FE4IW em vez deste?',
+		answer:
+			'Só se visual da linha Efficient e recursos de forno forem requisito real. Caso contrário, o CF04NAR costuma entregar melhor custo-benefício no meio da faixa.',
+	},
+	{
+		question: 'Quatro bocas bastam para família?',
+		answer:
+			'Para família pequena a média com rotina comum, sim. Se a casa usa várias panelas grandes ao mesmo tempo, o eixo correto é avaliar 5 bocas — não trocar só de marca dentro do 4 bocas.',
+	},
+];
+
+const faqItems = [
+	{
+		question: 'O Consul CF04NAR vale a pena?',
+		answer:
+			'Sim, para quem busca o melhor equilíbrio em fogão 4 bocas no uso típico: acendimento automático, mesa inox e forno útil sem pagar linha premium. É a escolha “sem arrependimento” do ranking quando o perfil combina.',
+	},
+	{
+		question: 'O CF04NAR é bom para apartamento?',
+		answer:
+			'Sim. O porte de 4 bocas costuma combinar melhor com cozinha compacta e circulação apertada. Confirme medidas do vão e folga da porta do forno antes de comprar.',
+	},
+	{
+		question: 'Quando não vale escolher o CF04NAR?',
+		answer:
+			'Quando o orçamento pede o mínimo absoluto (Atlas), quando o forno premium é requisito (Electrolux FE4IW) ou quando a rotina exige 5 bocas de verdade.',
+	},
+];
+
+const verdict =
+	'O CF04NAR continua sendo a compra mais racional no meio da faixa 4 bocas: fecha o dia a dia sem excesso de ticket. Para teto baixo, Atlas; para forno e linha Efficient como requisito, Electrolux; para muitas panelas simultâneas, suba de categoria — não de marca.';
+
+const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
+const canonicalPath = '/review-fogao-4-bocas-consul/';
+const canonical = new URL(canonicalPath.replace(/^\//, ''), site).href;
+const productImage = new URL(imagePath.replace(/^\//, ''), site).href;
+
+const graph: Record<string, unknown>[] = [
+	{
+		'@type': 'BreadcrumbList',
+		itemListElement: [
+			{ '@type': 'ListItem', position: 1, name: 'Início', item: site.href },
+			{ '@type': 'ListItem', position: 2, name: 'Review Consul CF04NAR', item: canonical },
+		],
+	},
+	{
+		'@type': 'Product',
+		name: model,
+		description,
+		image: [productImage],
+		brand: { '@type': 'Brand', name: 'Consul' },
+		offers: {
+			'@type': 'Offer',
+			url: offerUrl,
+			priceCurrency: 'BRL',
+		},
+	},
+	{
+		'@type': 'Article',
+		headline,
+		description,
+		image: [productImage],
+		author: {
+			'@type': 'Organization',
+			name: 'Casa Prática Eletro',
+			url: site.href,
+		},
+		publisher: {
+			'@type': 'Organization',
+			name: 'Casa Prática Eletro',
+			url: site.href,
+		},
+		mainEntityOfPage: canonical,
+		articleSection: 'Reviews',
+		inLanguage: 'pt-BR',
+	},
+	{
+		'@type': 'FAQPage',
+		mainEntity: faqItems.map((item) => ({
+			'@type': 'Question',
+			name: item.question,
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: item.answer,
+			},
+		})),
+	},
+];
+
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@graph': graph,
+};
+---
+
+<BaseLayout
+	title={title}
+	description={description}
+	canonical={canonical}
+	openGraph={{
+		title,
+		description,
+		url: canonical,
+		image: productImage,
+		imageAlt: 'Fogão Consul CF04NAR 4 bocas inox com acendimento automático',
+		type: 'article',
+	}}
+>
+	<script type="application/ld+json" slot="head" set:html={JSON.stringify(structuredData)} />
+	<article class="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14 lg:py-16">
+		<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Review · Consul · Fogão 4 bocas</p>
+		<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">
+			{headline}
+		</h1>
+		<p class="mt-2 text-sm text-on-ink-muted">
+			Modelo referência: <span class="text-on-ink-body">{model}</span>
+		</p>
+		<p class="mt-6 text-lg leading-relaxed text-on-ink-body">
+			{summary}
+		</p>
+		<p class="mt-4 text-sm leading-relaxed text-on-ink-muted">
+			Este review integra o{' '}
+			<a href="/melhores/melhor-fogao-4-bocas/#guia-comercial-produtos" class="link-accent-soft">
+				melhor fogão 4 bocas
+			</a>
+			{' '}— medalha de melhor geral do ranking.
+		</p>
+		<div class="mt-8">
+			<EditorialTrustRibbon />
+		</div>
+		<div class="mt-10">
+			<ProductMedia
+				src={imagePath}
+				alt="Fogão Consul CF04NAR 4 bocas inox com acendimento automático"
+				aspect="square"
+			/>
+		</div>
+		<EditorialLinks
+			class="mt-10"
+			currentPath={canonicalPath}
+			eyebrow="Leituras relacionadas"
+			heading="Para complementar essa decisão"
+			limit={3}
+			kind={['Blog', 'Comparativo']}
+		/>
+
+		<section class="mt-12" aria-labelledby="perfil-heading">
+			<h2 id="perfil-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Perfil de uso: para quem ele encaixa melhor
+			</h2>
+			<div class="mt-6 grid gap-4 sm:grid-cols-2">
+				<div class="rounded-2xl border border-emerald-400/30 bg-emerald-950/20 p-5 ring-1 ring-emerald-400/15 sm:p-6">
+					<h3 class="text-sm font-bold uppercase tracking-wider text-emerald-300">Faz mais sentido para</h3>
+					<ul class="mt-4 list-inside list-disc space-y-2.5 text-sm leading-relaxed text-on-ink-body sm:text-base">
+						{idealFor.map((item) => <li>{item}</li>)}
+					</ul>
+				</div>
+				<div class="rounded-2xl border border-amber-300/25 bg-brand-900/45 p-5 ring-1 ring-white/10 sm:p-6">
+					<h3 class="text-sm font-bold uppercase tracking-wider text-amber-200">Pode não compensar tanto para</h3>
+					<ul class="mt-4 list-inside list-disc space-y-2.5 text-sm leading-relaxed text-on-ink-body sm:text-base">
+						{notIdealFor.map((item) => <li>{item}</li>)}
+					</ul>
+				</div>
+			</div>
+			<div class="mt-6 grid gap-4 sm:grid-cols-2">
+				<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Tipo de família</h3>
+					<p class="mt-3 text-base leading-relaxed text-on-ink-body">{familyProfile}</p>
+				</div>
+				<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Rotina ideal</h3>
+					<p class="mt-3 text-base leading-relaxed text-on-ink-body">{routineProfile}</p>
+				</div>
+			</div>
+		</section>
+
+		<div class="mt-12">
+			<AffiliateOfferBlock
+				id="ofertas"
+				variant="featured"
+				productName={model}
+				heading={`Conferir preço atualizado do ${model}`}
+				description="Preço e estoque mudam com frequência. Use os botões para ver disponibilidade e frete na sua região — sem compromisso de compra nesta página."
+				mercadoLivreUrl={offerUrl}
+				shopeeUrl={offerShopeeUrl}
+			/>
+		</div>
+
+		<section class="mt-12" aria-labelledby="diferenciacao-heading">
+			<h2 id="diferenciacao-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				O que diferencia esse modelo na prática
+			</h2>
+			<ul class="mt-5 list-inside list-disc space-y-2.5 text-base leading-relaxed text-on-ink-body">
+				{differentiators.map((item) => <li>{item}</li>)}
+			</ul>
+			<p class="mt-5 text-base leading-relaxed text-on-ink-muted">
+				Se você ainda está comparando proposta de valor entre marcas, vale abrir o{' '}
+				<a
+					href="/fogao-4-bocas-custo-beneficio/"
+					class="link-accent"
+					aria-label="Guia fogão 4 bocas custo-benefício"
+				>
+					guia de fogão 4 bocas custo-benefício
+				</a>{' '}
+				e o passo a passo em{' '}
+				<a
+					href="/como-escolher-fogao-4-bocas/"
+					class="link-accent"
+					aria-label="Guia como escolher fogão 4 bocas"
+				>
+					como escolher fogão 4 bocas
+				</a>
+				.
+			</p>
+		</section>
+
+		<section class="mt-12" aria-labelledby="limitacoes-heading">
+			<h2 id="limitacoes-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Limitações reais antes de comprar
+			</h2>
+			<ul class="mt-5 list-inside list-disc space-y-2.5 text-base leading-relaxed text-on-ink-body">
+				{realLimitations.map((item) => <li>{item}</li>)}
+			</ul>
+		</section>
+
+		<section class="mt-12" aria-labelledby="analise-tecnica-heading">
+			<h2 id="analise-tecnica-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Forno, trempes, consumo e limpeza
+			</h2>
+			<div class="mt-6 space-y-8 text-base leading-relaxed text-on-ink-body">
+				<div>
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Forno</h3>
+					<p class="mt-3">{ovenAnalysis}</p>
+				</div>
+				<div>
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Trempes e uso com panelas</h3>
+					<p class="mt-3">{gratesAnalysis}</p>
+					<TechnicalFigure id="L06A" class="mt-6" />
+				</div>
+				<div>
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Consumo e custo de uso</h3>
+					<p class="mt-3">{consumptionAnalysis}</p>
+				</div>
+				<div>
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Limpeza e manutenção visual</h3>
+					<p class="mt-3">{cleaningAnalysis}</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="mt-12" aria-labelledby="comparacao-heading">
+			<h2 id="comparacao-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Comparação lateral: onde ele ganha e onde perde
+			</h2>
+			<div class="table-premium-shell mt-6">
+				<table class="table-premium min-w-[420px]">
+					<thead>
+						<tr>
+							<th scope="col">Critério</th>
+							<th scope="col">{model}</th>
+							<th scope="col">Alternativa típica</th>
+						</tr>
+					</thead>
+					<tbody>
+						{
+							comparisonRows.map((row, index) => (
+								<tr class:list={[index % 2 === 0 ? 'bg-ink' : 'bg-brand-900/25']}>
+									<th scope="row" class="font-semibold text-on-ink-body">{row.criterion}</th>
+									<td>{row.current}</td>
+									<td>{row.alternative}</td>
+								</tr>
+							))
+						}
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section class="mt-12" aria-labelledby="objecoes-heading">
+			<h2 id="objecoes-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Objeções comuns de compra
+			</h2>
+			<dl class="mt-6 space-y-6">
+				{
+					objections.map((item) => (
+						<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
+							<dt class="font-display text-lg font-bold text-on-ink-body">{item.question}</dt>
+							<dd class="mt-3 text-base leading-relaxed text-on-ink-muted">{item.answer}</dd>
+						</div>
+					))
+				}
+			</dl>
+		</section>
+
+		<div class="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+			<a
+				href={offerUrl}
+				class="inline-flex min-h-[52px] flex-1 items-center justify-center gap-2 bg-cta px-6 text-xs font-extrabold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-w-[200px]"
+				target="_blank"
+				rel="noopener noreferrer nofollow sponsored"
+				aria-label={`Ver preço do fogão ${model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+			>
+				<span aria-hidden="true">🔥</span>
+				Ver preço no Mercado Livre
+			</a>
+			<a
+				href={offerShopeeUrl}
+				class="btn-secondary-premium flex-1 sm:min-w-[200px]"
+				target="_blank"
+				rel="noopener noreferrer nofollow sponsored"
+				aria-label={`Ver oferta do fogão ${model} na Shopee — abre em nova aba (link patrocinado)`}
+			>
+				<span aria-hidden="true">👉</span>
+				Ver oferta na Shopee
+			</a>
+		</div>
+		<p class="mt-6 text-sm leading-relaxed text-on-ink-muted">
+			Transparência: indicação de loja parceira. No guia{' '}
+			<a
+				href="/melhores/melhor-fogao-4-bocas/#guia-comercial-produtos"
+				class="link-accent-soft"
+				aria-label="Abrir guia melhor fogão 4 bocas com ofertas"
+			>
+				melhor fogão 4 bocas
+			</a>{' '}
+			você compara os 3 modelos e as ofertas na mesma página. Se a dúvida ainda for de tamanho, veja o{' '}
+			<a
+				href="/comparativo-fogao-4-vs-5-bocas/"
+				class="link-accent-soft"
+				aria-label="Comparativo fogão 4 vs 5 bocas"
+			>
+				comparativo 4 vs 5 bocas
+			</a>
+			.
+		</p>
+		<section class="mt-12 rounded-2xl border border-white/10 bg-brand-900/35 p-6 ring-1 ring-white/10" aria-labelledby="veredito-heading">
+			<h2 id="veredito-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Veredito editorial
+			</h2>
+			<p class="mt-4 text-base leading-relaxed text-on-ink-body">{verdict}</p>
+			<div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+				<a
+					href={offerUrl}
+					class="inline-flex min-h-[52px] flex-1 items-center justify-center gap-2 rounded-lg bg-cta px-6 text-center text-xs font-extrabold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-w-[200px]"
+					target="_blank"
+					rel="noopener noreferrer nofollow sponsored"
+					aria-label={`Ver preço atualizado do ${model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+				>
+					Ver preço no Mercado Livre
+				</a>
+				<a
+					href={offerShopeeUrl}
+					class="btn-secondary-premium flex-1 sm:min-w-[200px]"
+					target="_blank"
+					rel="noopener noreferrer nofollow sponsored"
+					aria-label={`Ver oferta do ${model} na Shopee — abre em nova aba (link patrocinado)`}
+				>
+					Ver oferta na Shopee
+				</a>
+			</div>
+		</section>
+		<section class="mt-14 border-t border-white/10 pt-12" aria-labelledby="faq-heading">
+			<h2 id="faq-heading" class="font-display text-2xl font-bold tracking-tight text-on-ink-body">
+				Perguntas frequentes
+			</h2>
+			<dl class="mt-8 space-y-8">
+				{faqItems.map((item) => (
+					<div>
+						<dt class="font-semibold text-on-ink-body">{item.question}</dt>
+						<dd class="mt-2 text-base leading-relaxed text-on-ink-muted">{item.answer}</dd>
+					</div>
+				))}
+			</dl>
+		</section>
+		<RelatedContent
+			class="mt-14"
+			currentPath={canonicalPath}
+			eyebrow="Veja também"
+			title="Leituras relacionadas"
+			subtitle="Ranking, checklist e comparativos do cluster 4 bocas para fechar a decisão sem voltar à estaca zero."
+		/>
+
+		<SmartRecommendations
+			class="mt-12"
+			currentPath={canonicalPath}
+			heading="Continue a jornada"
+		/>
+	</article>
+</BaseLayout>

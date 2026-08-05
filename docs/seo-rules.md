@@ -86,6 +86,12 @@ Convencionadas assim:
 - `BreadcrumbList` simples (Início → review)
 - Open Graph com imagem do produto por marca
 
+#### Review curta 4 bocas — `src/pages/review-fogao-4-bocas-consul.astro`
+
+- Mesmo padrão de review curta (Product + BreadcrumbList + FAQPage) + `Article.headline` conforme `docs/EDITORIAL_NAMING_CONVENTIONS.md`
+- Canonical: `/review-fogao-4-bocas-consul/`
+- H1 / Title: `Fogão Consul 4 bocas CF04NAR vale a pena?`
+
 ## Conteúdo editorial (blog) — `src/content.config.ts`
 
 Campos usados para SEO e metadados:
@@ -127,7 +133,8 @@ Cada keyword/intenção principal deve ter **uma URL dona clara**, com papel exp
 | `fogão 4 bocas vale a pena` | `/blog/fogao-4-bocas-ainda-vale-a-pena/` | Editorial / lifestyle / reflexão de compra |
 | `fogão embutir ou piso` | `/blog/guia-fogao-embutir-ou-de-piso/` | Guia de instalação e layout |
 | `fogão 4 ou 5 bocas` | `/comparativo-fogao-4-vs-5-bocas/` | Comparativo de decisão |
-| `review por modelo` | `/review-fogao-5-bocas-<marca>/` | Review curta por SKU/modelo |
+| `consul cf04nar` / `consul 4 bocas vale a pena` (SKU) | `/review-fogao-4-bocas-consul/` | Review curta do #1 do hub 4 bocas |
+| `review por modelo` (5 bocas) | `/review-fogao-5-bocas-<marca>/` | Review curta por SKU/modelo (cluster 5 bocas) |
 
 ### O que NÃO fazer
 
