@@ -88,7 +88,7 @@ Conteúdos de **maior ROI imediato**: fechar buracos de receita nos hubs 4 bocas
 | **Intenção** | `consul cfo4var` / `consul mesa de vidro review` |
 | **URL** | `/review-fogao-mesa-de-vidro-consul/` |
 
-#### 1.3 Review Electrolux FE4IW (fogão 4 bocas) — ⬜
+#### 1.3 Review Electrolux FE4IW (fogão 4 bocas) — 🟩
 
 | Campo | Conteúdo |
 |--------|----------|
@@ -98,7 +98,7 @@ Conteúdos de **maior ROI imediato**: fechar buracos de receita nos hubs 4 bocas
 | **Páginas fortalecidas** | Hub 4 bocas, `/fogao-4-bocas-custo-beneficio/` |
 | **Dependências** | Preferível após 1.1 (comparação lateral); afiliado `produtos.electroluxFE4IW` |
 | **Intenção** | `electrolux fe4iw` / `electrolux fogão 4 bocas` |
-| **URL planejada** | `/review-fogao-4-bocas-electrolux/` |
+| **URL** | `/review-fogao-4-bocas-electrolux/` |
 
 #### 1.4 Como escolher fogão mesa de vidro — ⬜
 
@@ -353,7 +353,7 @@ Biblioteca Técnica (Tipo B compartilhado)
 |--------|--------|--------|
 | Hub | ✅ Completo | `/melhores/melhor-fogao-4-bocas/` |
 | Comparativos | 🟡 | ✅ 4 vs 5 (compartilhado) · ❌ CF04NAR vs FE4IW |
-| Reviews | 🟡 Parcial | ✅ Consul CF04NAR · ❌ Electrolux · Atlas — **Sprint 1–2** |
+| Reviews | 🟡 Parcial | ✅ Consul CF04NAR · ✅ Electrolux FE4IW · ❌ Atlas — **Sprint 2** |
 | Satélites | ✅ Completo | Como escolher · custo-benefício · blog vale a pena |
 | Biblioteca | 🟡 | Reuso L06A/L07A/L05A nas reviews futuras |
 
@@ -445,6 +445,8 @@ Inventário de páginas publicadas e planejadas (função no cluster). ROI = pot
 | `/review-fogao-5-bocas-consul/` | 5 bocas | Review curta | 🟩 | Alto | Manter |
 | `/review-fogao-5-bocas-electrolux/` | 5 bocas | Review curta | 🟩 | Alto | Manter |
 | `/review-fogao-4-bocas-consul/` | 4 bocas | Review SKU 🥇 | 🟩 | Muito alto | Manter |
+| `/review-fogao-4-bocas-electrolux/` | 4 bocas | Review SKU 🥈 | 🟩 | Alto | Manter |
+| `/review-fogao-mesa-de-vidro-consul/` | Mesa de vidro | Review SKU 🥇 | 🟩 | Muito alto | Manter |
 | `/brastemp-bfs5ncr-vale-a-pena/` | 5 bocas | Análise longa | 🟩 | Muito alto | Modelo de longas |
 | `/blog/fogao-4-bocas-ainda-vale-a-pena/` | 4 bocas | Editorial / reflexão | 🟩 | Médio | Manter |
 | `/blog/guia-fogao-embutir-ou-de-piso/` | Layout / instalação | Guia formato | 🟩 | Médio | Manter |
@@ -460,7 +462,7 @@ Inventário de páginas publicadas e planejadas (função no cluster). ROI = pot
 |--------------------|---------|--------|--------|-----|------------|
 | Review CF04NAR | 4 bocas | Review SKU 🥇 | 🟩 | Muito alto | Publicado |
 | Review CFO4VAR | Mesa de vidro | Review SKU 🥇 | 🟩 | Muito alto | Publicado |
-| Review FE4IW | 4 bocas | Review SKU 🥈 | ⬜ | Alto | Sprint 1 |
+| Review FE4IW | 4 bocas | Review SKU 🥈 | 🟩 | Alto | Publicado |
 | Como escolher mesa de vidro | Mesa de vidro | Satélite critérios | ⬜ | Alto | Sprint 1 |
 | Custo-benefício mesa de vidro | Mesa de vidro | Satélite valor | ⬜ | Alto | Sprint 1 |
 | Review BFO4VAE | Mesa de vidro | Review SKU 🥈 | ⬜ | Alto | Sprint 2 |
@@ -494,7 +496,7 @@ Atualizar a cada conteúdo iniciado, publicado ou pausado.
 | 2026-08-03 | Documento `MASTER_ROADMAP_EDITORIAL.md` criado | 🟩 | Formaliza auditoria de ROI; sem implementação de páginas |
 | 2026-08-04 | Review Consul CF04NAR | 🟩 | `/review-fogao-4-bocas-consul/` — H1/Title conforme `EDITORIAL_NAMING_CONVENTIONS.md` |
 | 2026-08-05 | Review Consul CFO4VAR | 🟩 | `/review-fogao-mesa-de-vidro-consul/` — H1/Title + L05A wiring |
-| — | Review Electrolux FE4IW | ⬜ | Próximo conteúdo canônico Sprint 1 |
+| 2026-08-06 | Review Electrolux FE4IW | 🟩 | `/review-fogao-4-bocas-electrolux/` — H1/Title + L06A wiring |
 
 ---
 
@@ -522,5 +524,5 @@ Atualizar a cada conteúdo iniciado, publicado ou pausado.
 6. Só então avançar ao próximo item
 ```
 
-**Top 3 da auditoria (produzir primeiro):** Review FE4IW / satélites vidro / FE5IG longa conforme Sprint 1–2. (CF04NAR 🟩 · CFO4VAR 🟩)
+**Top 3 da auditoria (produzir primeiro):** satélites vidro / FE5IG longa / Review Atlas Mônaco conforme Sprint 1–2. (CF04NAR 🟩 · CFO4VAR 🟩 · FE4IW 🟩)
 )

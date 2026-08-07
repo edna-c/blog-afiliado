@@ -154,7 +154,7 @@ export const PACKSHOT_ASSETS: readonly VisualAsset[] = [
 		path: '/images/melhores/melhor-fogao-4-bocas/electrolux-fe4iw.webp',
 		role: 'packshot-card',
 		subject: 'Electrolux FE4IW',
-		usedBy: ['/melhores/melhor-fogao-4-bocas/'],
+		usedBy: ['/melhores/melhor-fogao-4-bocas/', '/review-fogao-4-bocas-electrolux/'],
 	},
 	{
 		id: 'guide-4b-atlas',
@@ -262,6 +262,7 @@ export const EDITORIAL_BODY_ASSETS: readonly VisualAsset[] = [
 			'/review-fogao-5-bocas-consul/',
 			'/review-fogao-5-bocas-electrolux/',
 			'/review-fogao-4-bocas-consul/',
+			'/review-fogao-4-bocas-electrolux/',
 		],
 		notes: 'Ver src/data/technicalLibrary.ts',
 		governance: {
@@ -275,6 +276,7 @@ export const EDITORIAL_BODY_ASSETS: readonly VisualAsset[] = [
 				'/review-fogao-5-bocas-consul/',
 				'/review-fogao-5-bocas-electrolux/',
 				'/review-fogao-4-bocas-consul/',
+				'/review-fogao-4-bocas-electrolux/',
 			],
 			plannedFor: ['/fogao-4-bocas-custo-beneficio/', '/melhores/melhor-fogao-5-bocas/'],
 			approver: 'humano',

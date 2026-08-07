@@ -211,6 +211,19 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 		weight: 8,
 	},
 	{
+		href: '/review-fogao-4-bocas-electrolux/',
+		title: 'Fogão Electrolux 4 bocas FE4IW: vale a pena? Análise completa',
+		description:
+			'Melhor premium do ranking 4 bocas: para quem PerfectCook/VaporBake e a linha Efficient fecham a compra — e quando Consul ou Atlas fazem mais sentido.',
+		kind: 'Review',
+		flow: 4,
+		editorialLabel: 'Review',
+		topics: ['fogao-4-bocas', 'cozinha-moderna', 'inox-premium', 'forno-grande', 'compra-segura'],
+		anchorText: 'review do Electrolux FE4IW',
+		teaser: 'melhor premium 4 bocas — Efficient com propósito',
+		weight: 8,
+	},
+	{
 		href: '/review-fogao-mesa-de-vidro-consul/',
 		title: 'Fogão Consul mesa de vidro CFO4VAR: vale a pena? Análise completa',
 		description:

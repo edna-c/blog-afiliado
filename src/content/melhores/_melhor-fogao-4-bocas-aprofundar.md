@@ -10,6 +10,7 @@ category: 'Guia de Compra'
 Só se a dúvida ainda travar a decisão:
 
 - Review do #1 do ranking → [Consul CF04NAR](/review-fogao-4-bocas-consul/)
+- Review do #2 (premium) → [Electrolux FE4IW](/review-fogao-4-bocas-electrolux/)
 - Medidas, gás, mesa e forno → [como escolher fogão 4 bocas](/como-escolher-fogao-4-bocas/)
 - Preço / onde economizar → [custo-benefício 4 bocas](/fogao-4-bocas-custo-beneficio/)
 - “4 bocas ainda faz sentido?” → [artigo](/blog/fogao-4-bocas-ainda-vale-a-pena/)

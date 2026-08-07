@@ -84,6 +84,7 @@ export const TECHNICAL_LIBRARY = {
 			'/review-fogao-5-bocas-consul/',
 			'/review-fogao-5-bocas-electrolux/',
 			'/review-fogao-4-bocas-consul/',
+			'/review-fogao-4-bocas-electrolux/',
 			'/review-fogao-mesa-de-vidro-consul/',
 		],
 		notes: 'Lacuna L06 · brief L06A. Sem texto na arte. ÂNCORA DNA · pedagogia visual.',

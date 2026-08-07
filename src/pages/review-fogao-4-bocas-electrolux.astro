@@ -9,110 +9,131 @@ import TechnicalFigure from '../components/TechnicalFigure.astro';
 import AffiliateOfferBlock from '../components/AffiliateOfferBlock.astro';
 import { produtos } from '../data/products';
 
-const model = 'Consul CF04NAR';
-const headline = 'Fogão Consul 4 bocas CF04NAR vale a pena?';
+const model = 'Electrolux FE4IW';
+const headline = 'Fogão Electrolux 4 bocas FE4IW: vale a pena? Análise completa';
 const title = `${headline} | Casa Prática Eletro`;
 const description =
-	'Consul CF04NAR (4 bocas): para quem o equilíbrio fecha, onde o inox e o acendimento pesam e quando Atlas ou Electrolux fazem mais sentido. Review direto.';
+	'Electrolux FE4IW (4 bocas): para quem a linha Efficient e o forno (PerfectCook/VaporBake) fecham a compra, onde o premium pesa e quando Consul ou Atlas fazem mais sentido. Análise completa.';
 
 const summary =
-	'Melhor geral do ranking 4 bocas: costuma fechar a compra no uso típico — acendimento automático, mesa inox e forno útil sem pagar linha premium. Confira no anúncio a versão exata — acabamento e acessórios mudam de um SKU para outro.';
+	'Melhor premium do ranking 4 bocas: faz sentido quando visual da linha Efficient e recursos de forno (PerfectCook, VaporBake, Regenerar a Vapor) são requisito — não quando a meta é só “cozinhar um pouco melhor”. Confira no anúncio a versão exata — acabamento e acessórios podem variar.';
 
-const imagePath = '/images/melhores/melhor-fogao-4-bocas/consul-cf04nar.webp';
-const offerUrl = produtos.consulCF04NAR.ml;
-const offerShopeeUrl = produtos.consulCF04NAR.shopee;
+const imagePath = '/images/melhores/melhor-fogao-4-bocas/electrolux-fe4iw.webp';
+const offerUrl = produtos.electroluxFE4IW.ml;
+const offerShopeeUrl = produtos.electroluxFE4IW.shopee;
 
 const idealFor = [
-	'casais e famílias pequenas a médias com rotina doméstica comum',
-	'quem quer 4 bocas com acendimento automático sem ir ao premium',
-	'cozinhas compactas e apartamentos onde o porte do 4 bocas encaixa melhor',
-	'quem prioriza mesa inox robusta no dia a dia',
+	'quem já fechou 4 bocas e quer o degrau premium do ranking',
+	'quem assa com frequência e valoriza PerfectCook / VaporBake de verdade',
+	'cozinhas planejadas em que o visual branco + mesa inox da linha Efficient pesa',
+	'quem aceita pagar mais por forno e acabamento — não só por marca',
 ];
 
 const notIdealFor = [
 	'quem precisa de várias panelas grandes ao mesmo tempo — aí o eixo é 5 bocas',
-	'quem exige recursos de forno da linha Efficient (PerfectCook/VaporBake)',
-	'orçamento no mínimo absoluto — Atlas costuma ser a entrada mais enxuta',
+	'quem busca o melhor equilíbrio sem premium — perfil Consul CF04NAR',
+	'orçamento no mínimo absoluto — Atlas Mônaco Plus costuma ser a entrada',
+	'quem não usa forno além do básico — o ticket Efficient sobra na conta',
 ];
 
 const familyProfile =
-	'O CF04NAR costuma encaixar melhor em casal, família pequena a média e casas onde o 4 bocas já resolve o dia a dia sem forçar upgrade de tamanho.';
+	'O FE4IW costuma encaixar melhor em casal, família pequena a média e casas onde o 4 bocas já resolve o dia a dia — e o forno da linha Efficient entra como critério real de compra, não como “extra de vitrine”.';
 
 const routineProfile =
-	'Faz mais sentido em almoço e jantar comuns, duas a três panelas por vez e forno sem grande volume ou frequência gourmet.';
+	'Faz mais sentido quando há assados com alguma frequência, reaquecimento cuidadoso e rotina de duas a três panelas por vez — com disposição a pagar o premium de recursos de forno.';
 
 const realLimitations = [
 	'não substitui um 5 bocas quando a rotina exige muita simultaneidade',
+	'premium de linha: só compensa se PerfectCook/VaporBake (ou o visual Efficient) forem requisito',
+	'grades em arame cilíndrico — quem prioriza massa/estabilidade de ferro fundido pode preferir outro perfil',
 	'inox marca dedo e água — pede limpeza regular para manter o visual',
-	'quem busca sofisticação de forno premium pode sentir falta de recursos de linha acima',
 ];
 
 const ovenAnalysis =
-	'O forno atende bem o cotidiano comum — assados ocasionais e reaquecimento. Não é o tipo de ponto que sozinho justifica pagar um premium de linha; se o forno for protagonista na rotina, compare com o Electrolux FE4IW antes de decidir.';
+	'O forno (~59 L) é o eixo do premium: PerfectCook (cavidade selada com melhor isolamento térmico, segundo a Electrolux) e VaporBake / Regenerar a Vapor ampliam o uso além do assado ocasional. FastClean e vidro interno removível ajudam na manutenção. Se o forno não for protagonista na rotina, o Consul CF04NAR costuma entregar melhor valor no meio da faixa.';
 
 const gratesAnalysis =
-	'As trempes cumprem a proposta de uso diário em 4 bocas. Vale olhar no anúncio o material e a estabilidade com panela grande: ferro fundido tende a transmitir mais confiança em uso intenso; aramada esmaltada costuma ser mais leve e barata de manter.';
+	'As grades individuais em arame cilíndrico são o padrão deste SKU nas fichas comerciais — mais leves e fáceis de manusear na limpeza; ferro fundido tende a transmitir mais massa e estabilidade em uso intenso. Vale olhar no anúncio a disposição das bocas (inclui queimador de tripla chama) se você usa panela grande com frequência.';
 
 const consumptionAnalysis =
-	'Como em todo fogão a gás, o consumo acompanha tempo de chama e frequência de forno — não o número de bocas sozinho. No perfil certo, o CF04NAR equilibra custo inicial e uso doméstico sem exigir investimento de linha premium.';
+	'Como em todo fogão a gás, o consumo acompanha tempo de chama e frequência de forno — não o acabamento branco sozinho. No perfil certo, o FE4IW justifica o ticket pelos recursos de forno; fora desse perfil, sobra custo inicial sem ganho proporcional no dia a dia.';
 
 const cleaningAnalysis =
-	'A mesa inox tolera bem panelas e uso frequente. Em troca, marcas de dedo e água aparecem com facilidade se a limpeza ficar para depois — rotina rápida de pano seco/úmido resolve na maioria dos casos.';
+	'A mesa de inox compartimentada (com rebaixos) ajuda a conter líquidos na superfície e facilita a limpeza do que escorre entre bocas — proposta da linha Efficient. Em troca, marcas de dedo e água aparecem com facilidade se a limpeza ficar para depois. No forno, FastClean e vidro interno removível reduzem o atrito da manutenção profunda.';
 
 const differentiators = [
-	'equilíbrio de compra: fecha o uso típico sem exagerar no ticket',
-	'acendimento automático e mesa inox alinhados ao dia a dia',
-	'assistência e disponibilidade comercial amplas na categoria',
+	'linha Efficient com visual branco + mesa inox alinhados a cozinha planejada',
+	'forno com PerfectCook, VaporBake e Regenerar a Vapor — o motivo real do premium',
+	'queimador de tripla chama + grades individuais; bivolt na instalação',
+];
+
+const specsRows = [
+	{ label: 'Tipo', value: 'Fogão de piso · 4 bocas · gás' },
+	{ label: 'Linha / cor', value: 'Efficient · branco' },
+	{ label: 'Mesa', value: 'Inox compartimentada' },
+	{ label: 'Grades', value: 'Individuais · arame cilíndrico' },
+	{ label: 'Queimadores', value: '4 bocas · 1× tripla chama (conforme ficha comercial)' },
+	{ label: 'Forno', value: '~59 L · PerfectCook · VaporBake · Regenerar a Vapor · FastClean' },
+	{ label: 'Voltagem', value: 'Bivolt' },
+	{ label: 'Eficiência energética', value: 'Classe A' },
+	{ label: 'Dimensões (A × L × P)', value: '97 × 52 × 65 cm' },
+	{ label: 'Peso', value: '26,7 kg' },
+	{ label: 'Referência comercial', value: 'FE4IW' },
 ];
 
 const comparisonRows = [
-	{ criterion: 'Preço', current: 'Faixa intermediária do ranking 4 bocas', alternative: 'Atlas costuma ser mais barato; Electrolux sobe' },
-	{ criterion: 'Forno', current: 'Adequado para rotina comum', alternative: 'FE4IW convence mais se PerfectCook/VaporBake forem requisito' },
-	{ criterion: 'Mesa', current: 'Inox robusto no uso frequente', alternative: 'Vidro prioriza visual — é outro eixo de decisão' },
-	{ criterion: 'Melhor perfil', current: 'Uso diário sem forçar mínimo nem premium', alternative: 'Teto baixo → Atlas; forno premium → Electrolux' },
+	{ criterion: 'Preço', current: 'Faixa premium do ranking 4 bocas', alternative: 'Consul no meio; Atlas costuma ser a entrada' },
+	{ criterion: 'Forno', current: 'PerfectCook / VaporBake como diferencial', alternative: 'CF04NAR atende rotina comum sem o ticket Efficient' },
+	{ criterion: 'Mesa', current: 'Inox compartimentada + visual Efficient', alternative: 'Vidro é outro eixo — não compare só por marca' },
+	{ criterion: 'Melhor perfil', current: 'Premium com propósito (forno/visual)', alternative: 'Equilíbrio → Consul; teto baixo → Atlas' },
 ];
 
 const objections = [
 	{
-		question: 'Vale mais que o Atlas Mônaco Plus?',
+		question: 'Vale mais que o Consul CF04NAR?',
 		answer:
-			'Vale quando você quer subir um degrau em equilíbrio (acendimento, mesa e forno no dia a dia) sem ir ao premium. Se o teto de gasto manda no mínimo, o Atlas continua sendo a entrada racional.',
+			'Vale quando PerfectCook/VaporBake ou o visual da linha Efficient são requisito real. Se a meta é equilíbrio no uso típico sem premium, o CF04NAR costuma entregar melhor custo-benefício no meio da faixa.',
 	},
 	{
-		question: 'Devo pagar o Electrolux FE4IW em vez deste?',
+		question: 'Devo pagar o FE4IW em vez do Atlas Mônaco Plus?',
 		answer:
-			'Só se visual da linha Efficient e recursos de forno forem requisito real. Caso contrário, o CF04NAR costuma entregar melhor custo-benefício no meio da faixa.',
+			'Só se você realmente for usar recursos de forno e acabamento de linha. Se o teto de gasto manda no mínimo, o Atlas continua sendo a entrada racional — o FE4IW não é “Atlas com polish”; é outra proposta de compra.',
 	},
 	{
-		question: 'Quatro bocas bastam para família?',
+		question: 'Quatro bocas bastam se eu assar bastante?',
 		answer:
-			'Para família pequena a média com rotina comum, sim. Se a casa usa várias panelas grandes ao mesmo tempo, o eixo correto é avaliar 5 bocas — não trocar só de marca dentro do 4 bocas.',
+			'Para família pequena a média com rotina comum de panelas, sim — o forno Efficient é o ganho. Se a casa usa várias panelas grandes ao mesmo tempo, o eixo correto é avaliar 5 bocas — não trocar só de marca dentro do 4 bocas.',
 	},
 ];
 
 const faqItems = [
 	{
-		question: 'O Consul CF04NAR vale a pena?',
+		question: 'O Electrolux FE4IW vale a pena?',
 		answer:
-			'Sim, para quem busca o melhor equilíbrio em fogão 4 bocas no uso típico: acendimento automático, mesa inox e forno útil sem pagar linha premium. É a escolha “sem arrependimento” do ranking quando o perfil combina.',
+			'Sim, para quem busca o premium do ranking 4 bocas com propósito: linha Efficient, mesa inox e forno com PerfectCook/VaporBake. Se esses recursos não forem requisito, o Consul CF04NAR costuma ser a compra mais racional.',
 	},
 	{
-		question: 'O CF04NAR é bom para apartamento?',
+		question: 'O FE4IW é bom para apartamento?',
 		answer:
-			'Sim. O porte de 4 bocas costuma combinar melhor com cozinha compacta e circulação apertada. Confirme medidas do vão e folga da porta do forno antes de comprar.',
+			'Sim. O porte de 4 bocas costuma combinar melhor com cozinha compacta. Confirme medidas do vão (cerca de 97 × 52 × 65 cm) e folga da porta do forno antes de comprar.',
 	},
 	{
-		question: 'Quando não vale escolher o CF04NAR?',
+		question: 'Quando não vale escolher o FE4IW?',
 		answer:
-			'Quando o orçamento pede o mínimo absoluto (Atlas), quando o forno premium é requisito (Electrolux FE4IW) ou quando a rotina exige 5 bocas de verdade.',
+			'Quando o orçamento pede o mínimo absoluto (Atlas), quando o equilíbrio sem premium fecha a rotina (Consul CF04NAR) ou quando a simultaneidade de panelas exige 5 bocas de verdade.',
+	},
+	{
+		question: 'Qual a diferença entre FE4IW e CF04NAR?',
+		answer:
+			'Ambos são 4 bocas com mesa inox no mesmo hub, mas com papéis distintos: o CF04NAR é o melhor geral (equilíbrio); o FE4IW é o melhor premium (linha Efficient e recursos de forno). Escolha pelo perfil de uso — não trate como o mesmo produto com outra marca.',
 	},
 ];
 
 const verdict =
-	'O CF04NAR continua sendo a compra mais racional no meio da faixa 4 bocas: fecha o dia a dia sem excesso de ticket. Para teto baixo, Atlas; para forno e linha Efficient como requisito, Electrolux; para muitas panelas simultâneas, suba de categoria — não de marca.';
+	'O FE4IW continua sendo a compra premium com propósito no ranking 4 bocas: fecha quando forno Efficient e visual importam de verdade. Para equilíbrio sem excesso de ticket, Consul; para teto baixo, Atlas; para muitas panelas simultâneas, suba de categoria — não só de marca dentro do 4 bocas.';
 
 const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
-const canonicalPath = '/review-fogao-4-bocas-consul/';
+const canonicalPath = '/review-fogao-4-bocas-electrolux/';
 const canonical = new URL(canonicalPath.replace(/^\//, ''), site).href;
 const productImage = new URL(imagePath.replace(/^\//, ''), site).href;
 
@@ -121,7 +142,7 @@ const graph: Record<string, unknown>[] = [
 		'@type': 'BreadcrumbList',
 		itemListElement: [
 			{ '@type': 'ListItem', position: 1, name: 'Início', item: site.href },
-			{ '@type': 'ListItem', position: 2, name: 'Review Consul CF04NAR', item: canonical },
+			{ '@type': 'ListItem', position: 2, name: 'Review Electrolux FE4IW', item: canonical },
 		],
 	},
 	{
@@ -129,7 +150,8 @@ const graph: Record<string, unknown>[] = [
 		name: model,
 		description,
 		image: [productImage],
-		brand: { '@type': 'Brand', name: 'Consul' },
+		brand: { '@type': 'Brand', name: 'Electrolux' },
+		sku: 'FE4IW',
 		offers: {
 			'@type': 'Offer',
 			url: offerUrl,
@@ -183,18 +205,19 @@ const structuredData = {
 		description,
 		url: canonical,
 		image: productImage,
-		imageAlt: 'Fogão Consul CF04NAR 4 bocas inox com acendimento automático',
+		imageAlt: 'Fogão Electrolux Efficient FE4IW branco com mesa inox',
 		type: 'article',
 	}}
 >
 	<script type="application/ld+json" slot="head" set:html={JSON.stringify(structuredData)} />
 	<article class="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14 lg:py-16">
-		<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Review · Consul · Fogão 4 bocas</p>
+		<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Review · Electrolux · Fogão 4 bocas</p>
 		<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">
 			{headline}
 		</h1>
 		<p class="mt-2 text-sm text-on-ink-muted">
 			Modelo referência: <span class="text-on-ink-body">{model}</span>
+			{' '}· linha Efficient
 		</p>
 		<p class="mt-6 text-lg leading-relaxed text-on-ink-body">
 			{summary}
@@ -204,7 +227,7 @@ const structuredData = {
 			<a href="/melhores/melhor-fogao-4-bocas/#guia-comercial-produtos" class="link-accent-soft">
 				melhor fogão 4 bocas
 			</a>
-			{' '}— medalha de melhor geral do ranking.
+			{' '}— medalha de melhor premium do ranking.
 		</p>
 		<div class="mt-8">
 			<EditorialTrustRibbon />
@@ -212,7 +235,7 @@ const structuredData = {
 		<div class="mt-10">
 			<ProductMedia
 				src={imagePath}
-				alt="Fogão Consul CF04NAR 4 bocas inox com acendimento automático"
+				alt="Fogão Electrolux Efficient FE4IW branco com mesa inox"
 				aspect="square"
 			/>
 		</div>
@@ -266,6 +289,32 @@ const structuredData = {
 				shopeeUrl={offerShopeeUrl}
 			/>
 		</div>
+
+		<section class="mt-12" aria-labelledby="ficha-heading">
+			<h2 id="ficha-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Ficha técnica resumida
+			</h2>
+			<p class="mt-4 text-base leading-relaxed text-on-ink-muted">
+				Dados alinhados à página oficial da Electrolux e a fichas comerciais do SKU FE4IW. Potências de queimador e
+				detalhe de acendimento podem variar entre anúncios — confirme no anúncio da loja a versão exata.
+			</p>
+			<div class="table-premium-shell mt-6">
+				<table class="table-premium min-w-[320px]">
+					<tbody>
+						{
+							specsRows.map((row, index) => (
+								<tr class:list={[index % 2 === 0 ? 'bg-ink' : 'bg-brand-900/25']}>
+									<th scope="row" class="font-semibold text-on-ink-body">
+										{row.label}
+									</th>
+									<td>{row.value}</td>
+								</tr>
+							))
+						}
+					</tbody>
+				</table>
+			</div>
+		</section>
 
 		<section class="mt-12" aria-labelledby="diferenciacao-heading">
 			<h2 id="diferenciacao-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
@@ -346,7 +395,9 @@ const structuredData = {
 						{
 							comparisonRows.map((row, index) => (
 								<tr class:list={[index % 2 === 0 ? 'bg-ink' : 'bg-brand-900/25']}>
-									<th scope="row" class="font-semibold text-on-ink-body">{row.criterion}</th>
+									<th scope="row" class="font-semibold text-on-ink-body">
+										{row.criterion}
+									</th>
 									<td>{row.current}</td>
 									<td>{row.alternative}</td>
 								</tr>
@@ -412,13 +463,13 @@ const structuredData = {
 			>
 				comparativo 4 vs 5 bocas
 			</a>
-			. Quer o degrau premium de forno? Há a{' '}
+			. Prefere equilíbrio sem premium? Há a{' '}
 			<a
-				href="/review-fogao-4-bocas-electrolux/"
+				href="/review-fogao-4-bocas-consul/"
 				class="link-accent-soft"
-				aria-label="Review fogão Electrolux 4 bocas FE4IW"
+				aria-label="Review fogão Consul 4 bocas CF04NAR"
 			>
-				review do Electrolux FE4IW
+				review do Consul CF04NAR
 			</a>
 			.
 		</p>

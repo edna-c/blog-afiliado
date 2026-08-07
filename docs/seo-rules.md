@@ -92,6 +92,12 @@ Convencionadas assim:
 - Canonical: `/review-fogao-4-bocas-consul/`
 - H1 / Title: `Fogão Consul 4 bocas CF04NAR vale a pena?`
 
+#### Review Electrolux FE4IW — `src/pages/review-fogao-4-bocas-electrolux.astro`
+
+- Mesmo padrão de review (Product + BreadcrumbList + Article + FAQPage) + `Article.headline` conforme `docs/EDITORIAL_NAMING_CONVENTIONS.md`
+- Canonical: `/review-fogao-4-bocas-electrolux/`
+- H1 / Title: `Fogão Electrolux 4 bocas FE4IW: vale a pena? Análise completa`
+
 #### Review mesa de vidro — `src/pages/review-fogao-mesa-de-vidro-consul.astro`
 
 - Mesmo padrão de review (Product + BreadcrumbList + Article + FAQPage) + `Article.headline` conforme `docs/EDITORIAL_NAMING_CONVENTIONS.md`
@@ -140,6 +146,7 @@ Cada keyword/intenção principal deve ter **uma URL dona clara**, com papel exp
 | `fogão embutir ou piso` | `/blog/guia-fogao-embutir-ou-de-piso/` | Guia de instalação e layout |
 | `fogão 4 ou 5 bocas` | `/comparativo-fogao-4-vs-5-bocas/` | Comparativo de decisão |
 | `consul cf04nar` / `consul 4 bocas vale a pena` (SKU) | `/review-fogao-4-bocas-consul/` | Review curta do #1 do hub 4 bocas |
+| `electrolux fe4iw` / `electrolux fogão 4 bocas` (SKU) | `/review-fogao-4-bocas-electrolux/` | Review do #2 (premium) do hub 4 bocas |
 | `consul cfo4var` / `consul mesa de vidro review` (SKU) | `/review-fogao-mesa-de-vidro-consul/` | Review do #1 do hub mesa de vidro |
 | `review por modelo` (5 bocas) | `/review-fogao-5-bocas-<marca>/` | Review curta por SKU/modelo (cluster 5 bocas) |
 

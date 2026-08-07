@@ -37,6 +37,7 @@ O 2º lugar existe para quem paga **linha Efficient e recursos de forno** (Perfe
 - PerfectCook e VaporBake ampliam o uso do forno no dia a dia
 - Ponto fraco real: premium de linha — só vale se visual e recursos forem requisito
 - Se a meta é desempenho por menos, o ranking manda voltar ao Consul CF04NAR
+- Review do SKU: [Fogão Electrolux 4 bocas FE4IW](/review-fogao-4-bocas-electrolux/)
 
 <!-- CTAs: produtos.electroluxFE4IW (src/data/products.ts) -->
 <p class="not-prose mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
