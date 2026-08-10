@@ -55,7 +55,7 @@ Parece lento; em afiliados, costuma ser mais consistente do que várias mudança
 | Não contaminação | Nenhum deploy de funil comercial nas páginas sob teste durante a janela |
 | Data deploy | _preencher_ |
 | Veredito final | _preencher após a janela_ |
-| Próximo passo | Se sucesso → Sprint B (Hero outras money pages → Home → Reviews → Cards). Se não → nova hipótese (confiança / SKU / microcopy). |
+| Próximo passo | Se sucesso → Sprint B (Hero outras money pages → Home → Reviews → Cards). Se não → nova hipótese (confiança / SKU / microcopy). Plano de conversão Melhores (bloqueado): [`docs/PLANO_POS_CRO_001_CONVERSAO_MELHORES.md`](./PLANO_POS_CRO_001_CONVERSAO_MELHORES.md) |
 
 ---
 

@@ -2,7 +2,12 @@
 import { Picture } from 'astro:assets';
 import { HOME_PRODUCT_CARD, picturePropsFrom } from '../data/editorialImageSpecs';
 import { produtos } from '../data/products';
-import { getCommercialGuideBlock, type CommercialGuideId } from '../data/commercialGuideBlocks';
+import {
+	getCommercialGuideBlock,
+	getExistingProductReviewUrl,
+	getMercadoLivreCtaLabel,
+	type CommercialGuideId,
+} from '../data/commercialGuideBlocks';
 import type { AstroRasterImport } from '../types/astro-image';
 import type { CommercialProduct, ProductBadgeTone } from '../types/commercial';
 import brastempCardImage from '../assets/images/cards/optimized/brastemp-bfs5ncr-card-premium.webp';
@@ -81,7 +86,8 @@ const homeProducts: CommercialProduct[] = [
 ];
 const products = guideBlock?.topProducts ?? homeProducts;
 const sectionId = isGuideEmbed ? 'guia-comercial-produtos' : 'top-produtos';
-const reviewHref = guideBlock?.reviewPathPrefix;
+/** Âncora de justificativas na própria página — fallback quando não há review do SKU. */
+const justificativaHref = guideBlock?.reviewPathPrefix;
 
 const badgeToneClass: Record<ProductBadgeTone, string> = {
 	emerald:
@@ -96,9 +102,31 @@ const isRasterImage = (img: CommercialProduct['image']): img is AstroRasterImpor
 
 const cardPicture = picturePropsFrom(HOME_PRODUCT_CARD);
 
-function productReviewHref(product: CommercialProduct): string {
-	if (reviewHref) return reviewHref;
-	return `/review-fogao-5-bocas-${product.reviewSlug}`;
+function productAnalysisLink(product: CommercialProduct): {
+	href: string;
+	label: string;
+	ariaLabel: string;
+} {
+	const reviewUrl = getExistingProductReviewUrl(guideId, product.reviewSlug);
+	if (reviewUrl) {
+		return {
+			href: reviewUrl,
+			label: 'Ver análise completa',
+			ariaLabel: `Ver análise completa do fogão ${product.name}`,
+		};
+	}
+	if (justificativaHref) {
+		return {
+			href: justificativaHref,
+			label: 'Ver justificativa do ranking',
+			ariaLabel: `Ver justificativa do ranking para o fogão ${product.name} nesta página`,
+		};
+	}
+	return {
+		href: `/review-fogao-5-bocas-${product.reviewSlug}/`,
+		label: 'Ver análise completa',
+		ariaLabel: `Ver análise completa do fogão ${product.name}`,
+	};
 }
 ---
 
@@ -232,19 +260,12 @@ function productReviewHref(product: CommercialProduct): string {
 												]}
 												target="_blank"
 												rel="noopener noreferrer nofollow sponsored"
-												aria-label={`Ver preço e disponibilidade do fogão ${p.name} no Mercado Livre — abre em nova aba`}
+												aria-label={`Ver preço e disponibilidade do fogão ${p.name} no Mercado Livre — abre em nova aba (link patrocinado)`}
 											>
-												{p.featured ? (
-													<span class="inline-flex items-center gap-1.5">
-														<span aria-hidden="true">🔥</span>
-														<span>VER MELHOR PREÇO</span>
-													</span>
-												) : (
-													<span class="inline-flex items-center gap-1.5">
-														<span aria-hidden="true">👉</span>
-														<span>{p.mlCtaText ?? 'Ver preço no Mercado Livre'}</span>
-													</span>
-												)}
+												<span class="inline-flex items-center gap-1.5">
+													<span aria-hidden="true">{p.featured ? '🔥' : '👉'}</span>
+													<span>{getMercadoLivreCtaLabel(p)}</span>
+												</span>
 											</a>
 											{p.shopeeUrl ? (
 												<a
@@ -260,12 +281,12 @@ function productReviewHref(product: CommercialProduct): string {
 											) : null}
 										</div>
 										<a
-											href={productReviewHref(p)}
+											href={productAnalysisLink(p).href}
 											class="btn-secondary-premium w-full !normal-case px-5 py-3.5 text-[0.8125rem] font-bold tracking-normal"
-											aria-label={`Ver análise completa do fogão ${p.name}`}
+											aria-label={productAnalysisLink(p).ariaLabel}
 										>
 											<span aria-hidden="true">👉</span>
-											Ver análise completa
+											{productAnalysisLink(p).label}
 										</a>
 										<ul class="space-y-1 border-t border-white/10 pt-3 text-[11px] leading-relaxed text-on-ink-muted sm:text-xs">
 											<li>✔ Ofertas atualizadas hoje</li>
@@ -415,19 +436,12 @@ function productReviewHref(product: CommercialProduct): string {
 												]}
 												target="_blank"
 												rel="noopener noreferrer nofollow sponsored"
-												aria-label={`Ver preço e disponibilidade do fogão ${p.name} no Mercado Livre — abre em nova aba`}
+												aria-label={`Ver preço e disponibilidade do fogão ${p.name} no Mercado Livre — abre em nova aba (link patrocinado)`}
 											>
-												{p.featured ? (
-													<span class="inline-flex items-center gap-1.5">
-														<span aria-hidden="true">🔥</span>
-														<span>VER MELHOR PREÇO</span>
-													</span>
-												) : (
-													<span class="inline-flex items-center gap-1.5">
-														<span aria-hidden="true">👉</span>
-														<span>{p.mlCtaText ?? 'Ver preço no Mercado Livre'}</span>
-													</span>
-												)}
+												<span class="inline-flex items-center gap-1.5">
+													<span aria-hidden="true">{p.featured ? '🔥' : '👉'}</span>
+													<span>{getMercadoLivreCtaLabel(p)}</span>
+												</span>
 											</a>
 											{p.shopeeUrl ? (
 												<a
@@ -443,12 +457,12 @@ function productReviewHref(product: CommercialProduct): string {
 											) : null}
 										</div>
 										<a
-											href={productReviewHref(p)}
+											href={productAnalysisLink(p).href}
 											class="btn-secondary-premium w-full !normal-case px-5 py-3.5 text-[0.8125rem] font-bold tracking-normal"
-											aria-label={`Ver análise completa do fogão ${p.name}`}
+											aria-label={productAnalysisLink(p).ariaLabel}
 										>
 											<span aria-hidden="true">👉</span>
-											Ver análise completa
+											{productAnalysisLink(p).label}
 										</a>
 										<ul class="space-y-1 border-t border-white/10 pt-3 text-[11px] leading-relaxed text-on-ink-muted sm:text-xs">
 											<li>✔ Ofertas atualizadas hoje</li>

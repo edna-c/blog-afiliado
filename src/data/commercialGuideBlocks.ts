@@ -462,3 +462,36 @@ export function getFeaturedCommercialProduct(block: CommercialGuideBlock): Comme
 export function getMercadoLivreCtaLabel(product: CommercialProduct): string {
 	return product.mlCtaText ?? DEFAULT_MERCADO_LIVRE_CTA_TEXT;
 }
+
+/**
+ * Reviews individuais já publicadas, indexadas por `reviewSlug` / `slug` do ranking.
+ * Só inclui URLs existentes — sem inventar páginas.
+ */
+const EXISTING_REVIEW_URL_BY_GUIDE_SLUG: Record<CommercialGuideId, Partial<Record<string, string>>> = {
+	'melhor-fogao-5-bocas': {
+		electrolux: '/review-fogao-5-bocas-electrolux/',
+		brastemp: '/review-fogao-5-bocas-brastemp/',
+		consul: '/review-fogao-5-bocas-consul/',
+	},
+	'melhor-fogao-4-bocas': {
+		'consul-cf04nar': '/review-fogao-4-bocas-consul/',
+		'electrolux-fe4iw': '/review-fogao-4-bocas-electrolux/',
+	},
+	'melhor-fogao-mesa-de-vidro': {
+		'consul-cfo4var': '/review-fogao-mesa-de-vidro-consul/',
+	},
+};
+
+/** URL da review do SKU quando a página já existe; senão `null` (usar âncora de justificativa). */
+export function getExistingProductReviewUrl(
+	guideId: CommercialGuideId | undefined,
+	slug: string,
+): string | null {
+	if (!guideId) {
+		if (slug === 'electrolux' || slug === 'brastemp' || slug === 'consul') {
+			return `/review-fogao-5-bocas-${slug}/`;
+		}
+		return null;
+	}
+	return EXISTING_REVIEW_URL_BY_GUIDE_SLUG[guideId][slug] ?? null;
+}

@@ -73,6 +73,8 @@ Exemplo:
 🟩 Publicado
 ```
 
+O status **Publicado** somente poderá ser registrado após as validações de build descritas neste documento.
+
 Não alterar prioridades.  
 Não reorganizar Sprints.  
 Não modificar o planejamento editorial durante implementações.
@@ -88,6 +90,70 @@ A criação de uma nova página prevista no roadmap não deverá provocar reestr
 Durante uma Sprint, o foco do Agent deve ser implementar conteúdo.
 
 Mudanças em documentação estratégica devem ocorrer apenas quando houver uma decisão de arquitetura ou de processo, e nunca como consequência automática da criação de uma nova página.
+
+---
+
+## Build — conclusão obrigatória
+
+A implementação somente poderá ser considerada concluída após:
+
+- build executado;
+- build sem erros;
+- geração da página;
+- validação final.
+
+O status **Publicado** somente poderá ser registrado após essas validações.
+
+---
+
+## Recuperação de build
+
+Caso o build falhe por:
+
+- cache;
+- Vite;
+- lockfile;
+- processo concorrente;
+- EPERM;
+
+o Agent deverá realizar **apenas uma** tentativa automática de recuperação.
+
+Se a recuperação falhar novamente:
+
+1. interromper a execução;
+2. explicar objetivamente o motivo;
+3. aguardar orientação do usuário.
+
+Não encadear novas tentativas automáticas além dessa única recuperação.
+
+---
+
+## Ambiente — conflito com desenvolvimento ativo
+
+Antes do build final, verificar se existe ambiente de desenvolvimento ativo.
+
+Exemplos:
+
+- `bun run dev`
+- `astro dev`
+- `vite`
+
+Caso exista:
+
+- informar ao usuário que poderá ocorrer conflito de cache;
+- **não** executar múltiplos builds concorrentes.
+
+---
+
+## Implementação × Review
+
+Nunca entrar em modo Review antes da validação final.
+
+Review somente após:
+
+- build aprovado;
+- checklist aprovado;
+- implementação concluída.
 
 ---
 

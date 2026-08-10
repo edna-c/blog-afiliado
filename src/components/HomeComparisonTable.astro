@@ -1,6 +1,10 @@
 ---
 import { produtos } from '../data/products';
-import { getCommercialGuideBlock, type CommercialGuideId } from '../data/commercialGuideBlocks';
+import {
+	getCommercialGuideBlock,
+	getExistingProductReviewUrl,
+	type CommercialGuideId,
+} from '../data/commercialGuideBlocks';
 import type { ComparisonRow } from '../types/commercial';
 
 export type { ComparisonRow } from '../types/commercial';
@@ -45,11 +49,34 @@ const homeRows: ComparisonRow[] = [
 ];
 const rows = guideBlock?.comparisonRows ?? homeRows;
 const sectionId = isGuideEmbed ? 'guia-comercial-comparativo' : 'compare-heading';
-const reviewHref = guideBlock?.reviewPathPrefix;
+/** Âncora de justificativas — fallback quando não há review do SKU. */
+const justificativaHref = guideBlock?.reviewPathPrefix;
 
-function rowReviewHref(row: ComparisonRow): string {
-	if (reviewHref) return reviewHref;
-	return `/review-fogao-5-bocas-${row.slug}`;
+function rowAnalysisLink(row: ComparisonRow): {
+	href: string;
+	label: string;
+	ariaLabel: string;
+} {
+	const reviewUrl = getExistingProductReviewUrl(guideId, row.slug);
+	if (reviewUrl) {
+		return {
+			href: reviewUrl,
+			label: `Ver análise completa — ${row.model}`,
+			ariaLabel: `Ler análise completa do fogão ${row.model}`,
+		};
+	}
+	if (justificativaHref) {
+		return {
+			href: justificativaHref,
+			label: `Ver justificativa do ranking — ${row.model}`,
+			ariaLabel: `Ver justificativa do ranking para o fogão ${row.model} nesta página`,
+		};
+	}
+	return {
+		href: `/review-fogao-5-bocas-${row.slug}/`,
+		label: `Ver análise completa — ${row.model}`,
+		ariaLabel: `Ler análise completa do fogão ${row.model}`,
+	};
 }
 ---
 
@@ -105,10 +132,10 @@ function rowReviewHref(row: ComparisonRow): string {
 													class="inline-flex min-h-[48px] w-full items-center justify-center gap-1 rounded-lg border-2 border-transparent bg-cta px-4 text-xs font-bold uppercase tracking-wide text-white ring-1 ring-white/15 transition duration-300 ease-out hover:bg-cta-hover"
 													target="_blank"
 													rel="noopener noreferrer nofollow sponsored"
-													aria-label={`Ver preço e compra do fogão ${r.model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+													aria-label={`Ver preço do fogão ${r.model} no Mercado Livre — abre em nova aba (link patrocinado)`}
 												>
-													<span aria-hidden="true">🔥</span>
-													Ver preço e compra — {r.model}
+													<span aria-hidden="true">👉</span>
+													Ver preço no Mercado Livre — {r.model}
 												</a>
 												{'shopee' in r.links && r.links.shopee ? (
 													<a
@@ -124,11 +151,11 @@ function rowReviewHref(row: ComparisonRow): string {
 												) : null}
 											</div>
 											<a
-												href={rowReviewHref(r)}
+												href={rowAnalysisLink(r).href}
 												class="mt-3 inline-flex min-h-[44px] items-center text-xs font-bold text-pop underline decoration-pop/40 decoration-2 underline-offset-[5px] transition hover:text-accent-hover hover:decoration-pop"
-												aria-label={`Ler avaliação completa do fogão ${r.model}`}
+												aria-label={rowAnalysisLink(r).ariaLabel}
 											>
-												Ver avaliação completa — {r.model}
+												{rowAnalysisLink(r).label}
 											</a>
 										</td>
 									</tr>
@@ -207,10 +234,10 @@ function rowReviewHref(row: ComparisonRow): string {
 													class="inline-flex min-h-[48px] w-full items-center justify-center gap-1 rounded-lg border-2 border-transparent bg-cta px-4 text-xs font-bold uppercase tracking-wide text-white ring-1 ring-white/15 transition duration-300 ease-out hover:bg-cta-hover"
 													target="_blank"
 													rel="noopener noreferrer nofollow sponsored"
-													aria-label={`Ver preço e compra do fogão ${r.model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+													aria-label={`Ver preço do fogão ${r.model} no Mercado Livre — abre em nova aba (link patrocinado)`}
 												>
-													<span aria-hidden="true">🔥</span>
-													Ver preço e compra — {r.model}
+													<span aria-hidden="true">👉</span>
+													Ver preço no Mercado Livre — {r.model}
 												</a>
 												{
 													'shopee' in r.links && r.links.shopee ? (
@@ -228,11 +255,11 @@ function rowReviewHref(row: ComparisonRow): string {
 												}
 											</div>
 											<a
-												href={rowReviewHref(r)}
+												href={rowAnalysisLink(r).href}
 												class="mt-3 inline-flex min-h-[44px] items-center text-xs font-bold text-pop underline decoration-pop/40 decoration-2 underline-offset-[5px] transition hover:text-accent-hover hover:decoration-pop"
-												aria-label={`Ler avaliação completa do fogão ${r.model}`}
+												aria-label={rowAnalysisLink(r).ariaLabel}
 											>
-												Ver avaliação completa — {r.model}
+												{rowAnalysisLink(r).label}
 											</a>
 										</td>
 									</tr>
