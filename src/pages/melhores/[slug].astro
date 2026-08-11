@@ -20,6 +20,7 @@ import {
 	isCommercialGuideId,
 	type CommercialGuideId,
 } from '../../data/commercialGuideBlocks';
+import { mlAffiliateAttrs } from '../../utils/affiliateTracking';
 import { readingTimeLabel } from '../../utils/readingTime';
 
 const guideHeroPicture = picturePropsFrom(GUIDE_PAGE_HERO);
@@ -231,6 +232,7 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 											target="_blank"
 											rel="noopener noreferrer nofollow sponsored"
 											aria-label={`Ver preço atualizado do ${featuredHeroProduct.name} no Mercado Livre — abre em nova aba (link patrocinado)`}
+											{...mlAffiliateAttrs(featuredHeroProduct.productId, 'hero')}
 										>
 											{featuredHeroMlCtaLabel}
 										</a>

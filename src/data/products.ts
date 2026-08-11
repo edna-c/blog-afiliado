@@ -85,3 +85,6 @@ export const produtos = {
 		shopeeGeneratedByPanel: true,
 	},
 } as const satisfies Record<string, ProdutoAfiliado>;
+
+/** Chave estável do inventário — usar como `product_id` no tracking comercial. */
+export type ProductId = keyof typeof produtos;

@@ -8,6 +8,7 @@ import ProductMedia from '../components/ProductMedia.astro';
 import TechnicalFigure from '../components/TechnicalFigure.astro';
 import AffiliateOfferBlock from '../components/AffiliateOfferBlock.astro';
 import { produtos } from '../data/products';
+import { mlAffiliateAttrs, shopeeAffiliateAttrs } from '../utils/affiliateTracking';
 
 const model = 'Consul CF04NAR';
 const headline = 'Fogão Consul 4 bocas CF04NAR vale a pena?';
@@ -260,6 +261,7 @@ const structuredData = {
 				id="ofertas"
 				variant="featured"
 				productName={model}
+				productId="consulCF04NAR"
 				heading={`Conferir preço atualizado do ${model}`}
 				description="Preço e estoque mudam com frequência. Use os botões para ver disponibilidade e frete na sua região — sem compromisso de compra nesta página."
 				mercadoLivreUrl={offerUrl}
@@ -380,6 +382,7 @@ const structuredData = {
 				target="_blank"
 				rel="noopener noreferrer nofollow sponsored"
 				aria-label={`Ver preço do fogão ${model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+				{...mlAffiliateAttrs('consulCF04NAR', 'inline')}
 			>
 				<span aria-hidden="true">🔥</span>
 				Ver preço no Mercado Livre
@@ -390,6 +393,7 @@ const structuredData = {
 				target="_blank"
 				rel="noopener noreferrer nofollow sponsored"
 				aria-label={`Ver oferta do fogão ${model} na Shopee — abre em nova aba (link patrocinado)`}
+				{...shopeeAffiliateAttrs('consulCF04NAR', 'inline')}
 			>
 				<span aria-hidden="true">👉</span>
 				Ver oferta na Shopee
@@ -434,6 +438,7 @@ const structuredData = {
 					target="_blank"
 					rel="noopener noreferrer nofollow sponsored"
 					aria-label={`Ver preço atualizado do ${model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+					{...mlAffiliateAttrs('consulCF04NAR', 'page_end')}
 				>
 					Ver preço no Mercado Livre
 				</a>
@@ -443,6 +448,7 @@ const structuredData = {
 					target="_blank"
 					rel="noopener noreferrer nofollow sponsored"
 					aria-label={`Ver oferta do ${model} na Shopee — abre em nova aba (link patrocinado)`}
+					{...shopeeAffiliateAttrs('consulCF04NAR', 'page_end')}
 				>
 					Ver oferta na Shopee
 				</a>

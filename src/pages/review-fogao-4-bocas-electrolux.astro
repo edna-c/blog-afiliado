@@ -8,6 +8,7 @@ import ProductMedia from '../components/ProductMedia.astro';
 import TechnicalFigure from '../components/TechnicalFigure.astro';
 import AffiliateOfferBlock from '../components/AffiliateOfferBlock.astro';
 import { produtos } from '../data/products';
+import { mlAffiliateAttrs, shopeeAffiliateAttrs } from '../utils/affiliateTracking';
 
 const model = 'Electrolux FE4IW';
 const headline = 'Fogão Electrolux 4 bocas FE4IW: vale a pena? Análise completa';
@@ -283,6 +284,7 @@ const structuredData = {
 				id="ofertas"
 				variant="featured"
 				productName={model}
+				productId="electroluxFE4IW"
 				heading={`Conferir preço atualizado do ${model}`}
 				description="Preço e estoque mudam com frequência. Use os botões para ver disponibilidade e frete na sua região — sem compromisso de compra nesta página."
 				mercadoLivreUrl={offerUrl}
@@ -431,6 +433,7 @@ const structuredData = {
 				target="_blank"
 				rel="noopener noreferrer nofollow sponsored"
 				aria-label={`Ver preço do fogão ${model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+				{...mlAffiliateAttrs('electroluxFE4IW', 'inline')}
 			>
 				<span aria-hidden="true">🔥</span>
 				Ver preço no Mercado Livre
@@ -441,6 +444,7 @@ const structuredData = {
 				target="_blank"
 				rel="noopener noreferrer nofollow sponsored"
 				aria-label={`Ver oferta do fogão ${model} na Shopee — abre em nova aba (link patrocinado)`}
+				{...shopeeAffiliateAttrs('electroluxFE4IW', 'inline')}
 			>
 				<span aria-hidden="true">👉</span>
 				Ver oferta na Shopee
@@ -485,6 +489,7 @@ const structuredData = {
 					target="_blank"
 					rel="noopener noreferrer nofollow sponsored"
 					aria-label={`Ver preço atualizado do ${model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+					{...mlAffiliateAttrs('electroluxFE4IW', 'page_end')}
 				>
 					Ver preço no Mercado Livre
 				</a>
@@ -494,6 +499,7 @@ const structuredData = {
 					target="_blank"
 					rel="noopener noreferrer nofollow sponsored"
 					aria-label={`Ver oferta do ${model} na Shopee — abre em nova aba (link patrocinado)`}
+					{...shopeeAffiliateAttrs('electroluxFE4IW', 'page_end')}
 				>
 					Ver oferta na Shopee
 				</a>

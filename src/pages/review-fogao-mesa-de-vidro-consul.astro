@@ -8,6 +8,7 @@ import ProductMedia from '../components/ProductMedia.astro';
 import TechnicalFigure from '../components/TechnicalFigure.astro';
 import AffiliateOfferBlock from '../components/AffiliateOfferBlock.astro';
 import { produtos } from '../data/products';
+import { mlAffiliateAttrs, shopeeAffiliateAttrs } from '../utils/affiliateTracking';
 
 const model = 'Consul CFO4VAR';
 const headline = 'Fogão Consul mesa de vidro CFO4VAR: vale a pena? Análise completa';
@@ -280,6 +281,7 @@ const structuredData = {
 				id="ofertas"
 				variant="featured"
 				productName={model}
+				productId="consulCFO4VAR"
 				heading={`Conferir preço atualizado do ${model}`}
 				description="Preço e estoque mudam com frequência. Use os botões para ver disponibilidade e frete na sua região — sem compromisso de compra nesta página."
 				mercadoLivreUrl={offerUrl}
@@ -440,6 +442,7 @@ const structuredData = {
 				target="_blank"
 				rel="noopener noreferrer nofollow sponsored"
 				aria-label={`Ver preço do fogão ${model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+				{...mlAffiliateAttrs('consulCFO4VAR', 'inline')}
 			>
 				<span aria-hidden="true">🔥</span>
 				Ver preço no Mercado Livre
@@ -450,6 +453,7 @@ const structuredData = {
 				target="_blank"
 				rel="noopener noreferrer nofollow sponsored"
 				aria-label={`Ver oferta do fogão ${model} na Shopee — abre em nova aba (link patrocinado)`}
+				{...shopeeAffiliateAttrs('consulCFO4VAR', 'inline')}
 			>
 				<span aria-hidden="true">👉</span>
 				Ver oferta na Shopee
@@ -494,6 +498,7 @@ const structuredData = {
 					target="_blank"
 					rel="noopener noreferrer nofollow sponsored"
 					aria-label={`Ver preço atualizado do ${model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+					{...mlAffiliateAttrs('consulCFO4VAR', 'page_end')}
 				>
 					Ver preço no Mercado Livre
 				</a>
@@ -503,6 +508,7 @@ const structuredData = {
 					target="_blank"
 					rel="noopener noreferrer nofollow sponsored"
 					aria-label={`Ver oferta do ${model} na Shopee — abre em nova aba (link patrocinado)`}
+					{...shopeeAffiliateAttrs('consulCFO4VAR', 'page_end')}
 				>
 					Ver oferta na Shopee
 				</a>

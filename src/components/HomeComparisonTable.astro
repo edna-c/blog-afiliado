@@ -6,6 +6,7 @@ import {
 	type CommercialGuideId,
 } from '../data/commercialGuideBlocks';
 import type { ComparisonRow } from '../types/commercial';
+import { mlAffiliateAttrs, shopeeAffiliateAttrs } from '../utils/affiliateTracking';
 
 export type { ComparisonRow } from '../types/commercial';
 
@@ -26,6 +27,7 @@ const homeRows: ComparisonRow[] = [
 		rating: '⭐⭐⭐⭐⭐',
 		bestFor: 'Forno + acabamento',
 		slug: 'electrolux',
+		productId: 'electroluxFE5IG',
 		links: produtos.electroluxFE5IG,
 	},
 	{
@@ -35,6 +37,7 @@ const homeRows: ComparisonRow[] = [
 		rating: '⭐⭐⭐⭐⭐',
 		bestFor: 'Rotina familiar',
 		slug: 'brastemp',
+		productId: 'brastempBFS5NCR',
 		links: produtos.brastempBFS5NCR,
 	},
 	{
@@ -44,6 +47,7 @@ const homeRows: ComparisonRow[] = [
 		rating: '⭐⭐⭐⭐☆',
 		bestFor: 'Orçamento contido',
 		slug: 'consul',
+		productId: 'consulCFS5NAB',
 		links: produtos.consulCFS5NAB,
 	},
 ];
@@ -133,6 +137,7 @@ function rowAnalysisLink(row: ComparisonRow): {
 													target="_blank"
 													rel="noopener noreferrer nofollow sponsored"
 													aria-label={`Ver preço do fogão ${r.model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+													{...mlAffiliateAttrs(r.productId, 'comparison_table')}
 												>
 													<span aria-hidden="true">👉</span>
 													Ver preço no Mercado Livre — {r.model}
@@ -144,6 +149,7 @@ function rowAnalysisLink(row: ComparisonRow): {
 														target="_blank"
 														rel="noopener noreferrer nofollow sponsored"
 														aria-label={`Ver oferta do fogão ${r.model} na Shopee — abre em nova aba (link patrocinado)`}
+														{...shopeeAffiliateAttrs(r.productId, 'comparison_table')}
 													>
 														<span aria-hidden="true">👉</span>
 														Ver oferta na Shopee — {r.model}
@@ -235,6 +241,7 @@ function rowAnalysisLink(row: ComparisonRow): {
 													target="_blank"
 													rel="noopener noreferrer nofollow sponsored"
 													aria-label={`Ver preço do fogão ${r.model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+													{...mlAffiliateAttrs(r.productId, 'comparison_table')}
 												>
 													<span aria-hidden="true">👉</span>
 													Ver preço no Mercado Livre — {r.model}
@@ -247,6 +254,7 @@ function rowAnalysisLink(row: ComparisonRow): {
 															target="_blank"
 															rel="noopener noreferrer nofollow sponsored"
 															aria-label={`Ver oferta do fogão ${r.model} na Shopee — abre em nova aba (link patrocinado)`}
+															{...shopeeAffiliateAttrs(r.productId, 'comparison_table')}
 														>
 															<span aria-hidden="true">👉</span>
 															Ver oferta na Shopee — {r.model}

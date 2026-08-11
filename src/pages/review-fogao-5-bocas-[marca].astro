@@ -7,7 +7,8 @@ import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
 import ProductMedia from '../components/ProductMedia.astro';
 import TechnicalFigure from '../components/TechnicalFigure.astro';
 import AffiliateOfferBlock from '../components/AffiliateOfferBlock.astro';
-import { produtos } from '../data/products';
+import { produtos, type ProductId } from '../data/products';
+import { mlAffiliateAttrs, shopeeAffiliateAttrs } from '../utils/affiliateTracking';
 import { PRODUCT_IMAGE_REVIEW, type ProductReviewSlug } from '../data/productImages';
 
 export async function getStaticPaths() {
@@ -24,6 +25,7 @@ export async function getStaticPaths() {
 					'Linha popular e fácil de achar: costuma equilibrar preço, forno útil e o básico bem resolvido. Confira no anúncio a versão exata — acabamento e acessórios mudam de um modelo para outro.',
 				offerUrl: produtos.brastempBFS5NCR.ml,
 				offerShopeeUrl: produtos.brastempBFS5NCR.shopee,
+				productId: 'brastempBFS5NCR' as ProductId,
 				longReviewHref: '/brastemp-bfs5ncr-vale-a-pena/',
 				longReviewLabel: 'Abrir análise completa (texto longo + FAQ + ficha)',
 				peerReview: {
@@ -119,6 +121,7 @@ export async function getStaticPaths() {
 					'Perfil “primeiro fogão bom”: costuma agradar quem quer menos firula e mais função. Se você cozinha muito pesado, compare forno e distância entre bocas com um modelo de linha acima antes de decidir.',
 				offerUrl: produtos.consulCFS5NAB.ml,
 				offerShopeeUrl: produtos.consulCFS5NAB.shopee,
+				productId: 'consulCFS5NAB' as ProductId,
 				peerReview: {
 					href: '/review-fogao-5-bocas-electrolux/',
 					label: 'Electrolux FE5IG',
@@ -211,6 +214,7 @@ export async function getStaticPaths() {
 				summary:
 					'Foco em acabamento e no dia a dia: faz sentido quando o visual importa e você usa forno de verdade. Confira na ficha do anúncio se vêm as funções que você quer.',
 				offerUrl: produtos.electroluxFE5IG.ml,
+				productId: 'electroluxFE5IG' as ProductId,
 				peerReview: {
 					href: '/review-fogao-5-bocas-brastemp/',
 					label: 'Brastemp BFS5NCR',
@@ -314,6 +318,7 @@ interface Props {
 	summary: string;
 	offerUrl: string;
 	offerShopeeUrl?: string;
+	productId: ProductId;
 	longReviewHref?: string;
 	longReviewLabel?: string;
 	peerReview?: { href: string; label: string };
@@ -341,6 +346,7 @@ const {
 	summary,
 	offerUrl,
 	offerShopeeUrl,
+	productId,
 	longReviewHref,
 	longReviewLabel,
 	peerReview,
@@ -524,6 +530,7 @@ const structuredData = {
 				id="ofertas"
 				variant="featured"
 				productName={model}
+				productId={productId}
 				heading={`Conferir preço atualizado do ${model}`}
 				description="Preço e estoque mudam com frequência. Use os botões para ver disponibilidade e frete na sua região — sem compromisso de compra nesta página."
 				mercadoLivreUrl={offerUrl}
@@ -644,6 +651,7 @@ const structuredData = {
 				target="_blank"
 				rel="noopener noreferrer nofollow sponsored"
 				aria-label={`Ver preço do fogão ${model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+				{...mlAffiliateAttrs(productId, 'inline')}
 			>
 				<span aria-hidden="true">🔥</span>
 				Ver preço no Mercado Livre
@@ -656,6 +664,7 @@ const structuredData = {
 						target="_blank"
 						rel="noopener noreferrer nofollow sponsored"
 						aria-label={`Ver oferta do fogão ${model} na Shopee — abre em nova aba (link patrocinado)`}
+						{...shopeeAffiliateAttrs(productId, 'inline')}
 					>
 						<span aria-hidden="true">👉</span>
 						Ver oferta na Shopee
@@ -694,6 +703,7 @@ const structuredData = {
 					target="_blank"
 					rel="noopener noreferrer nofollow sponsored"
 					aria-label={`Ver preço atualizado do ${model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+					{...mlAffiliateAttrs(productId, 'page_end')}
 				>
 					Ver preço no Mercado Livre
 				</a>
@@ -705,6 +715,7 @@ const structuredData = {
 							target="_blank"
 							rel="noopener noreferrer nofollow sponsored"
 							aria-label={`Ver oferta do ${model} na Shopee — abre em nova aba (link patrocinado)`}
+							{...shopeeAffiliateAttrs(productId, 'page_end')}
 						>
 							Ver oferta na Shopee
 						</a>

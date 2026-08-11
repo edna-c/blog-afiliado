@@ -4,6 +4,7 @@ import RelatedContent from '../components/RelatedContent.astro';
 import SmartRecommendations from '../components/SmartRecommendations.astro';
 import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
 import { produtos } from '../data/products';
+import { mlAffiliateAttrs, shopeeAffiliateAttrs } from '../utils/affiliateTracking';
 import { PRODUCT_IMAGE_REVIEW } from '../data/productImages';
 
 const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
@@ -91,6 +92,7 @@ const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).
 				target="_blank"
 				rel="nofollow sponsored noopener noreferrer"
 				aria-label="Ver preço do Brastemp BFS5NCR na loja — abre em nova aba (link patrocinado)"
+				{...mlAffiliateAttrs('brastempBFS5NCR', 'page_end')}
 			>
 				<span aria-hidden="true">🔥</span>
 				Ver preço no Mercado Livre
@@ -101,6 +103,7 @@ const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).
 				target="_blank"
 				rel="nofollow sponsored noopener noreferrer"
 				aria-label="Ver oferta do Brastemp BFS5NCR na Shopee — abre em nova aba (link patrocinado)"
+				{...shopeeAffiliateAttrs('brastempBFS5NCR', 'page_end')}
 			>
 				Ver oferta na Shopee
 			</a>

@@ -4,6 +4,7 @@ import RelatedContent from '../components/RelatedContent.astro';
 import SmartRecommendations from '../components/SmartRecommendations.astro';
 import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
 import { produtos } from '../data/products';
+import { mlAffiliateAttrs, shopeeAffiliateAttrs } from '../utils/affiliateTracking';
 
 const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
 const canonical = new URL('/como-escolher-fogao-4-bocas/', site).href;
@@ -105,6 +106,7 @@ const ogImage = new URL('images/melhores/melhor-fogao-4-bocas/melhor-fogao-4-boc
 				target="_blank"
 				rel="nofollow sponsored noopener noreferrer"
 				aria-label="Ver preço do Consul CF04NAR na loja — abre em nova aba (link patrocinado)"
+				{...mlAffiliateAttrs('consulCF04NAR', 'page_end')}
 			>
 				<span aria-hidden="true">🔥</span>
 				Ver preço no Mercado Livre
@@ -115,6 +117,7 @@ const ogImage = new URL('images/melhores/melhor-fogao-4-bocas/melhor-fogao-4-boc
 				target="_blank"
 				rel="nofollow sponsored noopener noreferrer"
 				aria-label="Ver oferta do Consul CF04NAR na Shopee — abre em nova aba (link patrocinado)"
+				{...shopeeAffiliateAttrs('consulCF04NAR', 'page_end')}
 			>
 				Ver oferta na Shopee
 			</a>

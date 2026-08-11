@@ -1,5 +1,5 @@
 import type { AstroRasterImport } from './astro-image';
-import type { ProdutoAfiliado } from '../data/products';
+import type { ProductId, ProdutoAfiliado } from '../data/products';
 
 export type ProductBadgeTone = 'emerald' | 'amber' | 'pop';
 
@@ -11,6 +11,8 @@ export interface CommercialProduct {
 	benefits: string[];
 	socialProof: string;
 	reviewSlug: string;
+	/** Chave SSOT em `produtos` — tracking `affiliate_click.product_id`. */
+	productId: ProductId;
 	mercadoLivreUrl: string;
 	shopeeUrl?: string;
 	mlCtaText?: string;
@@ -29,5 +31,7 @@ export interface ComparisonRow {
 	rating: string;
 	bestFor: string;
 	slug: string;
+	/** Chave SSOT em `produtos` — tracking `affiliate_click.product_id`. */
+	productId: ProductId;
 	links: ProdutoAfiliado;
 }

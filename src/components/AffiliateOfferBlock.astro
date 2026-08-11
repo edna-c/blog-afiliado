@@ -1,8 +1,12 @@
 ---
+import type { ProductId } from '../data/products';
+import { mlAffiliateAttrs, shopeeAffiliateAttrs } from '../utils/affiliateTracking';
+
 interface Props {
 	heading: string;
 	description?: string;
 	productName: string;
+	productId: ProductId;
 	mercadoLivreUrl: string;
 	shopeeUrl?: string;
 	variant?: 'featured' | 'default';
@@ -13,6 +17,7 @@ const {
 	heading,
 	description,
 	productName,
+	productId,
 	mercadoLivreUrl,
 	shopeeUrl,
 	variant = 'default',
@@ -20,6 +25,8 @@ const {
 } = Astro.props;
 
 const isFeatured = variant === 'featured';
+const mlAttrs = mlAffiliateAttrs(productId, 'offer_block');
+const shopeeAttrs = shopeeAffiliateAttrs(productId, 'offer_block');
 ---
 
 <section
@@ -61,6 +68,7 @@ const isFeatured = variant === 'featured';
 			target="_blank"
 			rel="noopener noreferrer nofollow sponsored"
 			aria-label={`Ver preço e disponibilidade do ${productName} no Mercado Livre — abre em nova aba (link patrocinado)`}
+			{...mlAttrs}
 		>
 			<span aria-hidden="true">{isFeatured ? '🔥' : '👉'}</span>
 			<span>{isFeatured ? 'Ver melhor preço no Mercado Livre' : 'Ver preço no Mercado Livre'}</span>
@@ -73,6 +81,7 @@ const isFeatured = variant === 'featured';
 					target="_blank"
 					rel="noopener noreferrer nofollow sponsored"
 					aria-label={`Ver oferta do ${productName} na Shopee — abre em nova aba (link patrocinado)`}
+					{...shopeeAttrs}
 				>
 					<span aria-hidden="true">👉</span>
 					<span>Ver oferta na Shopee</span>

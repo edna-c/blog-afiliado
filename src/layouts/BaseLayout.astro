@@ -3,6 +3,10 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import {
+	resolvePageType,
+	type AffiliatePageType,
+} from '../utils/affiliateTracking';
 
 export interface OpenGraphConfig {
 	title?: string;
@@ -22,6 +26,8 @@ interface Props {
 	description?: string;
 	canonical?: string;
 	openGraph?: OpenGraphConfig;
+	/** Override opcional; padrão = taxonomia a partir do pathname. */
+	pageType?: AffiliatePageType;
 }
 
 const {
@@ -29,7 +35,10 @@ const {
 	description = 'Casa Prática Eletro traz reviews, comparativos e guias de eletrodomésticos para ajudar você a comprar com confiança.',
 	canonical,
 	openGraph,
+	pageType: pageTypeProp,
 } = Astro.props;
+
+const pageType = pageTypeProp ?? resolvePageType(Astro.url.pathname);
 
 const ogTitle = openGraph?.title ?? title;
 const ogDescription = openGraph?.description ?? description;
@@ -90,8 +99,41 @@ const ogSiteName = openGraph?.siteName ?? 'Casa Prática Eletro';
 			gtag('js', new Date());
 			gtag('config', 'G-P718Q3GL8M');
 		</script>
+		<!-- P0: affiliate_click — listener único por delegação; não altera navegação -->
+		<script is:inline>
+			(function () {
+				document.addEventListener(
+					'click',
+					function (event) {
+						var target = event.target;
+						if (!target || typeof target.closest !== 'function') return;
+						var anchor = target.closest(
+							'a[data-product-id][data-merchant][data-cta-type][data-cta-position]',
+						);
+						if (!anchor) return;
+						var productId = anchor.getAttribute('data-product-id');
+						var merchant = anchor.getAttribute('data-merchant');
+						var ctaType = anchor.getAttribute('data-cta-type');
+						var ctaPosition = anchor.getAttribute('data-cta-position');
+						var pageType =
+							(document.body && document.body.getAttribute('data-page-type')) ||
+							anchor.getAttribute('data-page-type');
+						if (!productId || !merchant || !ctaType || !ctaPosition || !pageType) return;
+						if (typeof gtag !== 'function') return;
+						gtag('event', 'affiliate_click', {
+							product_id: productId,
+							merchant: merchant,
+							cta_type: ctaType,
+							cta_position: ctaPosition,
+							page_type: pageType,
+						});
+					},
+					false,
+				);
+			})();
+		</script>
 	</head>
-	<body class="flex min-h-screen flex-col bg-ink text-on-ink-body">
+	<body class="flex min-h-screen flex-col bg-ink text-on-ink-body" data-page-type={pageType}>
 		<a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
 		<Header />
 		<main id="conteudo-principal" class="flex-1" tabindex="-1">

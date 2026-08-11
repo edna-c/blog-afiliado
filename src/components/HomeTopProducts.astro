@@ -10,6 +10,7 @@ import {
 } from '../data/commercialGuideBlocks';
 import type { AstroRasterImport } from '../types/astro-image';
 import type { CommercialProduct, ProductBadgeTone } from '../types/commercial';
+import { mlAffiliateAttrs, shopeeAffiliateAttrs } from '../utils/affiliateTracking';
 import brastempCardImage from '../assets/images/cards/optimized/brastemp-bfs5ncr-card-premium.webp';
 import consulCardImage from '../assets/images/cards/optimized/consul-cfs5nab-card-premium.webp';
 import electroluxCardImage from '../assets/images/cards/optimized/electrolux-fe5ig-card-premium.webp';
@@ -38,6 +39,7 @@ const homeProducts: CommercialProduct[] = [
 		],
 		socialProof: '⭐ Destaque do ranking 2026',
 		reviewSlug: 'electrolux',
+		productId: 'electroluxFE5IG',
 		mercadoLivreUrl: produtos.electroluxFE5IG.ml,
 		mlCtaText: 'VER PREÇO NO MERCADO LIVRE',
 		image: electroluxCardImage,
@@ -57,6 +59,7 @@ const homeProducts: CommercialProduct[] = [
 		],
 		socialProof: '⭐ Melhor equilíbrio preço/desempenho',
 		reviewSlug: 'brastemp',
+		productId: 'brastempBFS5NCR',
 		mercadoLivreUrl: produtos.brastempBFS5NCR.ml,
 		shopeeUrl: produtos.brastempBFS5NCR.shopee,
 		image: brastempCardImage,
@@ -75,6 +78,7 @@ const homeProducts: CommercialProduct[] = [
 		],
 		socialProof: '✔ Entrada mais acessível do ranking',
 		reviewSlug: 'consul',
+		productId: 'consulCFS5NAB',
 		mercadoLivreUrl: produtos.consulCFS5NAB.ml,
 		shopeeUrl: produtos.consulCFS5NAB.shopee,
 		mlCtaText: 'VER PREÇO NO MERCADO LIVRE',
@@ -261,6 +265,7 @@ function productAnalysisLink(product: CommercialProduct): {
 												target="_blank"
 												rel="noopener noreferrer nofollow sponsored"
 												aria-label={`Ver preço e disponibilidade do fogão ${p.name} no Mercado Livre — abre em nova aba (link patrocinado)`}
+												{...mlAffiliateAttrs(p.productId, 'product_card')}
 											>
 												<span class="inline-flex items-center gap-1.5">
 													<span aria-hidden="true">{p.featured ? '🔥' : '👉'}</span>
@@ -274,6 +279,7 @@ function productAnalysisLink(product: CommercialProduct): {
 													target="_blank"
 													rel="noopener noreferrer nofollow sponsored"
 													aria-label={`Ver oferta do fogão ${p.name} na Shopee — abre em nova aba (link patrocinado)`}
+													{...shopeeAffiliateAttrs(p.productId, 'product_card')}
 												>
 													<span aria-hidden="true">👉</span>
 													{p.shopeeCtaText ?? 'Ver oferta na Shopee'}
@@ -437,6 +443,7 @@ function productAnalysisLink(product: CommercialProduct): {
 												target="_blank"
 												rel="noopener noreferrer nofollow sponsored"
 												aria-label={`Ver preço e disponibilidade do fogão ${p.name} no Mercado Livre — abre em nova aba (link patrocinado)`}
+												{...mlAffiliateAttrs(p.productId, 'product_card')}
 											>
 												<span class="inline-flex items-center gap-1.5">
 													<span aria-hidden="true">{p.featured ? '🔥' : '👉'}</span>
@@ -450,6 +457,7 @@ function productAnalysisLink(product: CommercialProduct): {
 													target="_blank"
 													rel="noopener noreferrer nofollow sponsored"
 													aria-label={`Ver oferta do fogão ${p.name} na Shopee — abre em nova aba (link patrocinado)`}
+													{...shopeeAffiliateAttrs(p.productId, 'product_card')}
 												>
 													<span aria-hidden="true">👉</span>
 													{p.shopeeCtaText ?? 'Ver oferta na Shopee'}
