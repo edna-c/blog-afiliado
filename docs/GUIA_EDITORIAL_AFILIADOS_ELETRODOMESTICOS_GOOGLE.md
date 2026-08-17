@@ -615,10 +615,47 @@ Permitido:
 
 ## 12.5 Preços e atualização **[CPE]**
 
+Preço é um **dado comercial volátil** e não deve ser tratado como informação editorial permanente nas reviews, rankings, comparativos ou guias do Casa Prática Eletro.
+
+### Política vigente
+
 - Tratar preço como volátil.  
 - Preferir faixas, posições relativas e “verifique o preço atual”.  
 - Atualizar recomendações quando mudança de preço alterar o veredito.  
-- Não apresentar print antigo como preço garantido.
+- Não apresentar print antigo como preço garantido.  
+- Não inventar, estimar ou congelar preços atuais como se fossem permanentes.  
+- Quando não existir fonte factual, atualizada e confiável de preço **integrada ao projeto**, não inserir preço numérico no corpo do conteúdo apenas para enriquecer a página, satisfazer structured data ou eliminar avisos do Google Search Console.  
+- Um alerta de structured data ou Search Console **não** constitui, por si só, autorização para introduzir preço no conteúdo editorial.  
+- Ofertas e CTAs devem direcionar o leitor ao **merchant** para consultar o preço/oferta atual — não substituir essa consulta por um valor fixo na página.
+
+### O que a orientação editorial prioriza
+
+1. Identificação do produto  
+2. Critérios de escolha  
+3. Análise  
+4. Comparação  
+5. Adequação ao perfil do consumidor  
+6. Indicação clara de que o preço/oferta atual deve ser conferido no merchant  
+
+### Por que esta política existe
+
+1. Evitar obsolescência do conteúdo  
+2. Reduzir manutenção manual de preços  
+3. Evitar divergência entre preço publicado e preço real no merchant  
+4. Preservar a validade das reviews ao longo do tempo  
+5. Impedir que decisões de structured data sejam tomadas apenas para eliminar warnings do GSC  
+
+### Reavaliação futura (não é proibição absoluta)
+
+Esta regra **não** proíbe preços de forma absoluta.
+
+Preços somente poderão ser utilizados de forma estruturada quando houver:
+
+- fonte factual adequada;  
+- atualização confiável;  
+- política de manutenção compatível com a volatilidade do dado.
+
+Se futuramente existir uma fonte de preço atualizada e confiável integrada ao projeto, a utilização de preço poderá ser **reavaliada tecnicamente** — sem que um warning do GSC, por si só, force a mudança.
 
 ---
 

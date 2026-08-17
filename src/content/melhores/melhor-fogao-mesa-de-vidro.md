@@ -1,8 +1,8 @@
 ---
-title: 'Melhor fogão mesa de vidro 2026: ranking dos 3 modelos'
-description: 'Ranking dos melhores fogões com mesa de vidro em 2026 — Consul CFO4VAR, Brastemp BFO4VAE e Atlas Atenas Glass. Veja para quem cada um serve e confira o preço.'
+title: 'Melhor fogão mesa de vidro em 2026: os 3 modelos para decidir agora'
+description: 'Consul CFO4VAR, Brastemp BFO4VAE e Atlas Atenas Glass — ranking 2026 com perfil de uso, prós/contras e preço na loja parceira.'
 pubDate: 2026-07-14
-updatedDate: 2026-07-26
+updatedDate: 2026-08-17
 category: 'Guia de Compra'
 type: ranking
 topics:
