@@ -3,12 +3,22 @@
   "redirects": [
     {
       "source": "/melhor-fogao-5-bocas",
-      "destination": "/melhores/melhor-fogao-5-bocas/",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/melhor-fogao-5-bocas/",
-      "destination": "/melhores/melhor-fogao-5-bocas/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/melhores/melhor-fogao-5-bocas",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/melhores/melhor-fogao-5-bocas/",
+      "destination": "/",
       "permanent": true
     },
     {
@@ -23,12 +33,12 @@
     },
     {
       "source": "/blog/melhor-fogao-5-bocas",
-      "destination": "/melhores/melhor-fogao-5-bocas/",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/blog/melhor-fogao-5-bocas/",
-      "destination": "/melhores/melhor-fogao-5-bocas/",
+      "destination": "/",
       "permanent": true
     },
     {

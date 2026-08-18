@@ -150,4 +150,4 @@ Quando esses três pontos apontam para o formato, faz sentido comparar opções 
 
 Não existe modelo ideal universal. O melhor fogão com forno duplo, para a sua casa, é o que combina com a rotina, o espaço disponível e a frequência real de uso do forno — não com o apelo do segundo compartimento na vitrine.
 
-Se o formato convencional (forno único) for o caminho, feche o modelo no [ranking do melhor fogão 5 bocas](/melhores/melhor-fogao-5-bocas/#guia-comercial-produtos) — medalhas, perfil de uso e ofertas na mesma página.
+Se o formato convencional (forno único) for o caminho, feche o modelo no [ranking do melhor fogão 5 bocas](/#top-produtos) — medalhas, perfil de uso e ofertas na mesma página.

@@ -80,7 +80,7 @@ Detalhe de instalação: [fogão de embutir ou de piso](/blog/guia-fogao-embutir
 
 Costuma fazer sentido para famílias maiores, quem cozinha diariamente, várias panelas ao mesmo tempo ou receitas grandes. Modelos slim, mesa de vidro e linhas retas ajudam a não “dominar” o ambiente.
 
-Modelos e critérios: [melhor fogão 5 bocas](/melhores/melhor-fogao-5-bocas/#guia-comercial-produtos). Hesita entre tamanhos? [4 bocas ainda vale a pena?](/blog/fogao-4-bocas-ainda-vale-a-pena/).
+Modelos e critérios: [melhor fogão 5 bocas](/#top-produtos). Hesita entre tamanhos? [4 bocas ainda vale a pena?](/blog/fogao-4-bocas-ainda-vale-a-pena/).
 
 ## Erros que fazem a cozinha parecer menor
 
@@ -104,4 +104,4 @@ Um fogão 5 bocas **não reduz automaticamente** o espaço. A sensação de aper
 
 Com medidas certas e design mais limpo, 5 bocas podem trazer praticidade sem comprometer o conforto visual.
 
-**Vão e rotina fecham para 5 bocas?** Compare Electrolux, Brastemp e Consul no [ranking do melhor fogão 5 bocas](/melhores/melhor-fogao-5-bocas/#guia-comercial-produtos) — perfil de cada medalha e ofertas na mesma página. Ainda em dúvida de tamanho? Volte ao [comparativo 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas/).
+**Vão e rotina fecham para 5 bocas?** Compare Electrolux, Brastemp e Consul no [ranking do melhor fogão 5 bocas](/#top-produtos) — perfil de cada medalha e ofertas na mesma página. Ainda em dúvida de tamanho? Volte ao [comparativo 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas/).

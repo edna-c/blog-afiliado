@@ -14,4 +14,4 @@ Regra para empate:
 - Entrada em vidro com menor investimento → **Atlas Atenas Glass (Top Glass)**
 - Usa muito o forno e paga por PerfectCook/VaporBake → critério forno (fora deste pódio; nenhum dos três medalhistas)
 - Ainda em dúvida de tamanho → [comparativo 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas/)
-- Família grande / muitas panelas → [fogão 5 bocas](/melhores/melhor-fogao-5-bocas/)
+- Família grande / muitas panelas → [fogão 5 bocas](/#top-produtos)

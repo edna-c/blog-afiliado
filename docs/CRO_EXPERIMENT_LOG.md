@@ -35,7 +35,7 @@ Parece lento; em afiliados, costuma ser mais consistente do que várias mudança
 
 | ID | Hipótese | Alteração | Resultado | Decisão |
 |----|----------|-----------|-----------|---------|
-| **CRO-001** | Aproximar o CTA do momento da decisão aumenta os cliques afiliados | CTA afiliado único no Hero dos hubs Melhores (5 bocas, 4 bocas, mesa de vidro), SSOT via `featuredHeroProduct` | Em andamento | Aguardando janela de observação |
+| **CRO-001** | Aproximar o CTA do momento da decisão aumenta os cliques afiliados | CTA afiliado único no Hero dos hubs Melhores (5 bocas, 4 bocas, mesa de vidro), SSOT via `featuredHeroProduct` | **Parcialmente encerrado no 5 bocas** (17/ago/2026): a URL `/melhores/melhor-fogao-5-bocas/` não era a dona da intenção — ranking fica na home. Janela segue só em 4 bocas e mesa de vidro. | Aguardando janela nas 2 URLs restantes |
 | CRO-002 | — | — | — | — |
 
 ---
@@ -46,7 +46,7 @@ Parece lento; em afiliados, costuma ser mais consistente do que várias mudança
 |-------|--------|
 | Protocolo | [`docs/EXPERIMENTO_HERO_CTA_MELHORES.md`](./EXPERIMENTO_HERO_CTA_MELHORES.md) |
 | Hipótese | Reduzir a distância entre a decisão (ranking 🥇) e a 1ª consulta de preço aumenta cliques / CTR afiliado |
-| Escopo | `/melhores/melhor-fogao-5-bocas/`, `/melhores/melhor-fogao-4-bocas/`, `/melhores/melhor-fogao-mesa-de-vidro/` |
+| Escopo | Original: 3 hubs. **Desde 17/ago/2026:** `/melhores/melhor-fogao-4-bocas/`, `/melhores/melhor-fogao-mesa-de-vidro/` (`/melhores/melhor-fogao-5-bocas/` saiu do teste — 301 para a home) |
 | KPI principal | **CTR Afiliado** = cliques afiliados ÷ sessões Melhores |
 | Janela | 7 dias corridos **ou** ≥ 300 sessões (o que vier depois) |
 | Sucesso | CTR Afiliado e/ou cliques afiliados sobem de forma significativa **sem** depender só de mais tráfego |

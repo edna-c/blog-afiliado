@@ -11,6 +11,7 @@
  */
 import { getCollection } from 'astro:content';
 import { readingMinutes } from '../utils/readingTime';
+import { isRoutedMelhoresGuide, melhoresGuideHref } from '../data/melhoresListing';
 
 interface Props {
 	limit?: number;
@@ -18,7 +19,7 @@ interface Props {
 const { limit = 3 } = Astro.props;
 
 const guides = (await getCollection('melhores'))
-	.filter((guide) => !guide.id.startsWith('_'))
+	.filter((guide) => isRoutedMelhoresGuide(guide.id))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, limit);
 
@@ -68,7 +69,7 @@ const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short', y
 						return (
 						<li>
 							<a
-								href={`/melhores/${guide.id}/`}
+								href={melhoresGuideHref(guide.id)}
 								class="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-brand-900/40 ring-1 ring-white/5 transition duration-300 ease-out hover:-translate-y-0.5 hover:border-pop/30 hover:bg-brand-900/60 hover:shadow-[0_18px_48px_-26px_rgba(0,0,0,0.7)]"
 								aria-label={`Abrir guia de compra: ${guide.data.title}`}
 							>

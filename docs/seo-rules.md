@@ -135,7 +135,7 @@ Cada keyword/intenção principal deve ter **uma URL dona clara**, com papel exp
 
 | Intenção principal | URL principal | Papel |
 |------|----------------|--------|
-| `melhor fogão 5 bocas` | `/melhores/melhor-fogao-5-bocas/` | Hub / guia mestre comercial |
+| `melhor fogão 5 bocas` | `/` (home, âncora `/#top-produtos`) | Ranking comercial — **não** há artigo em `/melhores/melhor-fogao-5-bocas/` (card no hub aponta para a home; 301 no `vercel.json`) |
 | `como escolher fogão 5 bocas` | `/como-escolher-fogao-5-bocas/` | Satélite / checklist pré-compra |
 | `fogão 5 bocas custo benefício` | `/fogao-5-bocas-custo-beneficio/` | Subintenção comercial por valor/preço |
 | `melhor fogão 4 bocas` | `/melhores/melhor-fogao-4-bocas/` | Hub / ranking comercial 4 bocas |

@@ -98,7 +98,7 @@ Satélites com conteúdo inline + `RelatedContent` / `SmartRecommendations`:
 | `comparativo-fogao-4-vs-5-bocas.astro` | Comparativo de formato |
 | `fogao-5-bocas-custo-beneficio.astro` | Ângulo preço/valor |
 
-O pillar **Melhor fogão 5 bocas** vive na collection `melhores` → `/melhores/melhor-fogao-5-bocas/` (redirects antigos em `vercel.json`).
+O ranking **Melhor fogão 5 bocas** vive na **home** (`/#top-produtos`). Em `/melhores/` o card existe só como atalho (sem rota própria). URLs antigas 301 → `/` no `vercel.json`.
 
 ### Reviews
 

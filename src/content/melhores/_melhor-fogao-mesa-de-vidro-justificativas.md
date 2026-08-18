@@ -16,7 +16,7 @@ A medalha não é por “mais brilho no vidro”: é por **fechar a compra sem a
 - Vidro temperado + grades de ferro fundido — estabilidade no dia a dia sem cair para linha de entrada
 - Forno Cleartec (~58 L) com rotina de limpeza mais simples que o anúncio sugere
 - Ponto fraco real: vidro exige cuidado com impactos e abrasivos (limitações da categoria, não só deste SKU)
-- Precisa de mais bocas ao mesmo tempo? O upgrade certo é [melhor fogão 5 bocas](/melhores/melhor-fogao-5-bocas/), não outro 4 bocas de vidro
+- Precisa de mais bocas ao mesmo tempo? O upgrade certo é [melhor fogão 5 bocas](/#top-produtos), não outro 4 bocas de vidro
 - Review do SKU: [Fogão Consul mesa de vidro CFO4VAR](/review-fogao-mesa-de-vidro-consul/)
 
 <!-- CTAs: produtos.consulCFO4VAR (src/data/products.ts) -->

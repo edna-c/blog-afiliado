@@ -3,6 +3,7 @@ import Logo from '../assets/logo.png';
 import { getCollection } from 'astro:content';
 import { primaryNav } from '../data/navigation';
 import { isNavActive } from '../utils/isNavActive';
+import { melhoresGuideHref } from '../data/melhoresListing';
 
 const pathname = Astro.url.pathname;
 const isHome = pathname === '/';
@@ -15,13 +16,13 @@ const searchIndex = [
 	{ title: 'Blog', url: '/blog/' },
 	{ title: 'Sobre', url: '/sobre/' },
 	{ title: 'Contato', url: '/contato/' },
-	{ title: 'Melhor fogão 5 bocas', url: '/melhores/melhor-fogao-5-bocas/' },
+	{ title: 'Melhor fogão 5 bocas', url: '/#top-produtos' },
 	{ title: 'Como escolher fogão 5 bocas', url: '/como-escolher-fogao-5-bocas/' },
 	{ title: 'Comparativo fogão 4 vs 5 bocas', url: '/comparativo-fogao-4-vs-5-bocas/' },
 	{ title: 'Fogão 5 bocas custo-benefício', url: '/fogao-5-bocas-custo-beneficio/' },
 	...melhoresGuides.map((guide) => ({
 		title: guide.data.title,
-		url: `/melhores/${guide.id}/`,
+		url: melhoresGuideHref(guide.id),
 	})),
 	...blogPosts.map((post) => ({
 		title: post.data.title,

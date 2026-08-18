@@ -117,7 +117,7 @@ const editorialPairings: Record<string, string[]> = {
 	'guia-fogao-embutir-ou-de-piso': [
 		'/blog/fogao-mesa-de-vidro-ou-inox/',
 		'/comparativo-fogao-4-vs-5-bocas/',
-		'/melhores/melhor-fogao-5-bocas/',
+		'/#top-produtos',
 	],
 	'fogao-4-bocas-ainda-vale-a-pena': [
 		'/melhores/melhor-fogao-4-bocas/',
@@ -125,18 +125,18 @@ const editorialPairings: Record<string, string[]> = {
 		'/comparativo-fogao-4-vs-5-bocas/',
 	],
 	'fogao-5-bocas-reduz-espaco-cozinha': [
-		'/melhores/melhor-fogao-5-bocas/',
+		'/#top-produtos',
 		'/comparativo-fogao-4-vs-5-bocas/',
 		'/como-escolher-fogao-5-bocas/',
 	],
 	'melhor-fogao-com-forno-duplo': [
-		'/melhores/melhor-fogao-5-bocas/',
+		'/#top-produtos',
 		'/comparativo-fogao-4-vs-5-bocas/',
 		'/blog/fogao-5-bocas-reduz-espaco-cozinha/',
 	],
 };
 
-/** CTA comercial do rodapé: 1 hub por intenção (nunca a home). */
+/** CTA comercial do rodapé: 1 hub por intenção. Ranking 5 bocas = home. */
 const commercialNextBySlug: Record<string, { href: string; label: string }> = {
 	'fogao-4-bocas-ainda-vale-a-pena': {
 		href: '/melhores/melhor-fogao-4-bocas/#guia-comercial-produtos',
@@ -155,21 +155,21 @@ const commercialNextBySlug: Record<string, { href: string; label: string }> = {
 		label: 'ranking mesa de vidro com ofertas',
 	},
 	'guia-fogao-embutir-ou-de-piso': {
-		href: '/melhores/melhor-fogao-5-bocas/#guia-comercial-produtos',
+		href: '/#top-produtos',
 		label: 'ranking do melhor fogão 5 bocas com ofertas',
 	},
 	'fogao-5-bocas-reduz-espaco-cozinha': {
-		href: '/melhores/melhor-fogao-5-bocas/#guia-comercial-produtos',
+		href: '/#top-produtos',
 		label: 'ranking do melhor fogão 5 bocas com ofertas',
 	},
 	'melhor-fogao-com-forno-duplo': {
-		href: '/melhores/melhor-fogao-5-bocas/#guia-comercial-produtos',
+		href: '/#top-produtos',
 		label: 'ranking do melhor fogão 5 bocas com ofertas',
 	},
 };
 
 const commercialNext = commercialNextBySlug[post.id] ?? {
-	href: '/melhores/melhor-fogao-5-bocas/#guia-comercial-produtos',
+	href: '/#top-produtos',
 	label: 'ranking do melhor fogão 5 bocas com ofertas',
 };
 

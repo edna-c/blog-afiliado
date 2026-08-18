@@ -22,6 +22,7 @@ import {
 } from '../../data/commercialGuideBlocks';
 import { mlAffiliateAttrs } from '../../utils/affiliateTracking';
 import { readingTimeLabel } from '../../utils/readingTime';
+import { isRoutedMelhoresGuide } from '../../data/melhoresListing';
 
 const guideHeroPicture = picturePropsFrom(GUIDE_PAGE_HERO);
 
@@ -53,7 +54,7 @@ const optimizedHeroes: Record<
 export async function getStaticPaths() {
 	const guides = await getCollection('melhores');
 	return guides
-		.filter((guide) => !guide.id.startsWith('_'))
+		.filter((guide) => isRoutedMelhoresGuide(guide.id))
 		.map((guide) => ({
 			params: { slug: guide.id },
 			props: { guide },

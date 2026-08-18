@@ -7,6 +7,7 @@ import RelatedContent from '../../components/RelatedContent.astro';
 import { PRODUCT_IMAGE_REVIEW } from '../../data/productImages';
 import { readingMinutes } from '../../utils/readingTime';
 import { EDITORIAL_POOL, canonPath, type EditorialEntry } from '../../data/editorialContent';
+import { MELHORES_HREF_OVERRIDES, melhoresGuideHref, FOGAO_5_BOCAS_RANKING_HREF, isRoutedMelhoresGuide } from '../../data/melhoresListing';
 
 const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
 const canonical = new URL(Astro.url.pathname, site).href;
@@ -21,6 +22,7 @@ const guides = (await getCollection('melhores'))
 
 const readingTimes: Record<string, number> = {};
 for (const guide of guides) {
+	if (!isRoutedMelhoresGuide(guide.id)) continue;
 	readingTimes[guide.id] = readingMinutes(guide.body);
 }
 
@@ -29,7 +31,10 @@ const collectionPaths = new Set(guides.map((g) => canonPath(`/melhores/${g.id}`)
 /** Guias/reviews comerciais que ainda vivem em rotas próprias (cluster fogão 5 bocas). */
 const COMMERCIAL_KINDS = new Set(['Guia', 'Comparativo', 'Review', 'Análise']);
 const clusterGuides: EditorialEntry[] = EDITORIAL_POOL.filter(
-	(e) => COMMERCIAL_KINDS.has(e.kind) && !collectionPaths.has(canonPath(e.href)),
+	(e) =>
+		COMMERCIAL_KINDS.has(e.kind) &&
+		e.href !== FOGAO_5_BOCAS_RANKING_HREF &&
+		!collectionPaths.has(canonPath(e.href)),
 ).sort((a, b) => (b.weight ?? 0) - (a.weight ?? 0));
 
 const guidesCount = guides.length + clusterGuides.length;
@@ -47,7 +52,7 @@ const itemListSchema = {
 				'@type': 'ListItem',
 				position: i + 1,
 				name: g.data.title,
-				url: new URL(`/melhores/${g.id}`, site).href,
+				url: new URL(melhoresGuideHref(g.id), site).href,
 			})),
 			...clusterGuides.map((g, i) => ({
 				'@type': 'ListItem',
@@ -106,6 +111,13 @@ const itemListSchema = {
 		variant="dark"
 		posts={guides}
 		basePath="/melhores"
+		hrefOverrides={MELHORES_HREF_OVERRIDES}
+		ctaOverrides={{
+			'melhor-fogao-5-bocas': {
+				label: 'Ver ranking na página inicial',
+				ariaLabel: 'Abrir o ranking de fogão 5 bocas na página inicial',
+			},
+		}}
 		eyebrow="Guias de compra"
 		title="Rankings e reviews"
 		subtitle="Cada guia reúne os modelos que mais se destacaram na categoria, com pontos fortes, pontos fracos e recomendação por perfil de uso."

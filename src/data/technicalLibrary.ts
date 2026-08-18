@@ -72,7 +72,7 @@ export const TECHNICAL_LIBRARY = {
 			'/review-fogao-5-bocas-consul/',
 			'/review-fogao-5-bocas-electrolux/',
 			'/brastemp-bfs5ncr-vale-a-pena/',
-			'/melhores/melhor-fogao-5-bocas/',
+			'/',
 			'/melhores/melhor-fogao-4-bocas/',
 			'/melhores/melhor-fogao-mesa-de-vidro/',
 			'/blog/fogao-mesa-de-vidro-ou-inox/',
@@ -109,7 +109,7 @@ export const TECHNICAL_LIBRARY = {
 			'/blog/melhor-fogao-com-forno-duplo/',
 			'/como-escolher-fogao-5-bocas/',
 			'/como-escolher-fogao-4-bocas/',
-			'/melhores/melhor-fogao-5-bocas/',
+			'/',
 		],
 		usedBy: ['/blog/melhor-fogao-com-forno-duplo/'],
 		notes:

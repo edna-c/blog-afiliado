@@ -105,4 +105,4 @@ Cozinha pequena? Cruze também com [quando o fogão 4 bocas ainda vale a pena](/
 
 ## Próximo passo
 
-Depois de definir o tipo de instalação, feche o modelo no [ranking do melhor fogão 5 bocas](/melhores/melhor-fogao-5-bocas/#guia-comercial-produtos) — perfil de cada medalha e ofertas na mesma página.
+Depois de definir o tipo de instalação, feche o modelo no [ranking do melhor fogão 5 bocas](/#top-produtos) — perfil de cada medalha e ofertas na mesma página.

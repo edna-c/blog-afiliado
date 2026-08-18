@@ -18,6 +18,8 @@
  *  - pickEditorialPairings: pareamentos editoriais curados manualmente
  */
 
+import { FOGAO_5_BOCAS_RANKING_HREF } from './melhoresListing';
+
 export type EditorialKind = 'Guia' | 'Review' | 'Comparativo' | 'Análise' | 'Blog';
 
 export type EditorialTopic =
@@ -92,7 +94,7 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 		weight: 8,
 	},
 	{
-		href: '/melhores/melhor-fogao-5-bocas/',
+		href: FOGAO_5_BOCAS_RANKING_HREF,
 		title: 'Melhor fogão 5 bocas 2026 (ranking para comprar)',
 		description:
 			'Ranking dos 3 melhores fogões 5 bocas: Electrolux FE5IG, Brastemp BFS5NCR e Consul CFS5NAB — para quem cada um serve e onde ver o preço.',

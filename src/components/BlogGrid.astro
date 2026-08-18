@@ -23,6 +23,8 @@ interface Props {
 	readingTimes?: Record<string, number>;
 	/** Destino alternativo por id do post (ex.: card que aponta para âncora na home). */
 	hrefOverrides?: Record<string, string>;
+	/** Rótulo do CTA por id (quando o card não abre um artigo). */
+	ctaOverrides?: Record<string, { label: string; ariaLabel: string }>;
 	/** `dark` alinha à home premium; `light` mantém o bloco claro (ex.: legado). */
 	variant?: 'light' | 'dark';
 }
@@ -38,6 +40,7 @@ const {
 	viewAllLabel,
 	readingTimes,
 	hrefOverrides,
+	ctaOverrides,
 	variant = 'light',
 } = Astro.props;
 
@@ -98,6 +101,8 @@ const defaultEyebrow = isDark ? 'Leitura complementar' : 'Artigos';
 					const cardImage = 'cardImage' in post.data ? post.data.cardImage : undefined;
 					const thumbAsset = cardImage ? undefined : getBlogThumbnailAsset(post.id);
 					const listingImage = cardImage ?? post.data.coverImage;
+					const cta = ctaOverrides?.[post.id];
+					const openLabel = cta?.ariaLabel ?? `Abrir conteúdo: ${post.data.title}`;
 					return (
 						<article
 							class:list={[
@@ -113,7 +118,7 @@ const defaultEyebrow = isDark ? 'Leitura complementar' : 'Artigos';
 									'relative block aspect-[16/10] w-full overflow-hidden',
 									isDark ? 'rounded-xl bg-[#151515] product-media-thumb' : 'rounded-[12px] ring-1 ring-black/[0.06]',
 								]}
-								aria-label={`Abrir conteúdo: ${post.data.title}`}
+								aria-label={openLabel}
 							>
 								<span class="absolute inset-0 block origin-center transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform group-hover:scale-[1.02]">
 									{cardImage ? (
@@ -221,9 +226,9 @@ const defaultEyebrow = isDark ? 'Leitura complementar' : 'Artigos';
 											? 'text-pop underline decoration-pop/50 decoration-2 underline-offset-[6px] hover:text-accent-hover hover:decoration-pop'
 											: 'font-semibold text-accent-on-light underline decoration-pop/70 decoration-2 underline-offset-4 hover:text-accent-on-light-hover hover:decoration-pop',
 									]}
-									aria-label={`Ler conteúdo completo: ${post.data.title}`}
+									aria-label={cta?.ariaLabel ?? `Ler conteúdo completo: ${post.data.title}`}
 								>
-									Ler artigo completo
+									{cta?.label ?? 'Ler artigo completo'}
 									<span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">
 										→
 									</span>
