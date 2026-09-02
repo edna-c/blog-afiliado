@@ -14,17 +14,17 @@ const model = 'Consul CFO4VAR';
 const headline = 'Fogão Consul mesa de vidro CFO4VAR: vale a pena? Análise completa';
 const title = `${headline} | Casa Prática Eletro`;
 const description =
-	'Consul CFO4VAR (mesa de vidro): para quem o equilíbrio fecha, onde o vidro temperado e o ferro fundido pesam e quando Brastemp ou Atlas fazem mais sentido. Análise completa.';
+	'Consul com mesa de vidro: o CFO4VAR equilibra vidro temperado e ferro fundido sem o premium. Para quem vale e quando Brastemp ou Atlas fazem mais sentido.';
 
 const summary =
-	'Melhor geral do ranking mesa de vidro: costuma fechar a compra no uso típico — vidro temperado fácil de limpar, grades de ferro fundido e forno Cleartec (~58 L) sem pagar o premium da categoria. Confira no anúncio a versão exata (ref. comercial CFO4VARUNA) — acabamento e acessórios podem variar.';
+	'Quem procura fogão Consul com mesa de vidro encontra no CFO4VAR o modelo de referência da marca: vidro temperado fácil de limpar, grades de ferro fundido e forno Cleartec (~58 L), sem pagar o premium da categoria. Confira no anúncio a versão exata (ref. comercial CFO4VARUNA) — acabamento e acessórios podem variar.';
 
 const imagePath = '/images/melhores/melhor-fogao-mesa-de-vidro/consul-cfo4var.webp';
 const offerUrl = produtos.consulCFO4VAR.ml;
 const offerShopeeUrl = produtos.consulCFO4VAR.shopee;
 
 const idealFor = [
-	'quem já fechou mesa de vidro e quer o melhor equilíbrio do ranking',
+	'quem busca Consul com tampo de vidro em 4 bocas e quer equilíbrio sem ir ao premium',
 	'casais e famílias pequenas a médias com rotina doméstica comum',
 	'cozinhas modernas em que o visual do tampo de vidro pesa na decisão',
 	'quem prioriza limpeza ágil da mesa sem ir ao Brastemp premium',
@@ -81,6 +81,7 @@ const specsRows = [
 ];
 
 const comparisonRows = [
+	{ criterion: 'Vs Consul inox', current: 'Vidro temperado — visual e limpeza da mesa', alternative: 'CF04NAR: mesma marca e 4 bocas, tampo inox (outro eixo)' },
 	{ criterion: 'Preço', current: 'Faixa intermediária do ranking mesa de vidro', alternative: 'Atlas costuma ser mais barato; Brastemp sobe' },
 	{ criterion: 'Mesa', current: 'Vidro temperado com limpeza ágil', alternative: 'Inox é outro eixo — compare se o cuidado do vidro não combina' },
 	{ criterion: 'Grades', current: 'Ferro fundido individual — sólido no dia a dia', alternative: 'BFO4VAE sobe com grades duplas (premium na mesa)' },
@@ -107,9 +108,19 @@ const objections = [
 
 const faqItems = [
 	{
+		question: 'Qual fogão Consul com mesa de vidro vale a pena?',
+		answer:
+			'O CFO4VAR é o 4 bocas Consul com tampo de vidro temperado que usamos como referência: ferro fundido, forno Cleartec e equilíbrio de preço na categoria. Não confundir com o CF04NAR, que é o Consul de mesa inox.',
+	},
+	{
 		question: 'O Consul CFO4VAR vale a pena?',
 		answer:
 			'Sim, para quem busca o melhor equilíbrio em fogão com mesa de vidro no uso típico: vidro temperado, grades de ferro fundido e forno Cleartec sem pagar linha premium. É a escolha “sem arrependimento” do ranking quando o perfil combina.',
+	},
+	{
+		question: 'Qual a diferença entre CFO4VAR e CF04NAR?',
+		answer:
+			'São eixos diferentes na mesma marca: o CFO4VAR é o Consul de mesa de vidro; o CF04NAR é o Consul de mesa inox. Escolha pelo acabamento — não trate como o mesmo produto.',
 	},
 	{
 		question: 'O CFO4VAR é bom para apartamento?',
@@ -121,15 +132,10 @@ const faqItems = [
 		answer:
 			'Quando o orçamento pede o mínimo absoluto em vidro (Atlas), quando grades duplas/premium na mesa são requisito (Brastemp BFO4VAE) ou quando a rotina exige 5 bocas de verdade.',
 	},
-	{
-		question: 'Qual a diferença entre CFO4VAR e CF04NAR?',
-		answer:
-			'São eixos diferentes: o CFO4VAR é o #1 do ranking mesa de vidro; o CF04NAR é o #1 do ranking 4 bocas com mesa inox. Escolha pelo acabamento e pela intenção de busca — não trate como o mesmo produto.',
-	},
 ];
 
 const verdict =
-	'O CFO4VAR continua sendo a compra mais racional no meio da faixa mesa de vidro: fecha o dia a dia com tampo de vidro e ferro fundido sem excesso de ticket. Para teto baixo, Atlas; para upgrade premium na mesa, Brastemp; para muitas panelas simultâneas, suba de categoria — não só de marca dentro do 4 bocas.';
+	'O CFO4VAR continua sendo a compra Consul mais racional na mesa de vidro: fecha o dia a dia com tampo de vidro e ferro fundido sem excesso de ticket. Para teto baixo, Atlas; para upgrade premium na mesa, Brastemp; para mesa inox na mesma marca, o CF04NAR; para muitas panelas simultâneas, suba de categoria — não só de marca dentro do 4 bocas.';
 
 const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
 const canonicalPath = '/review-fogao-mesa-de-vidro-consul/';
@@ -227,6 +233,9 @@ const structuredData = {
 			</a>
 			{' '}— medalha de melhor geral do ranking.
 		</p>
+		<p class="mt-4 text-base leading-relaxed text-on-ink-body">
+			Na Consul, vidro e inox são linhas diferentes: o CFO4VAR é o 4 bocas de tampo de vidro temperado; o CF04NAR é o de mesa inox. Quem pesquisou a marca com mesa de vidro deve avaliar este modelo — não o irmão de aço.
+		</p>
 		<div class="mt-8">
 			<EditorialTrustRibbon />
 		</div>
@@ -317,7 +326,7 @@ const structuredData = {
 
 		<section class="mt-12" aria-labelledby="diferenciacao-heading">
 			<h2 id="diferenciacao-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
-				O que diferencia esse modelo na prática
+				O que o Consul CFO4VAR entrega na mesa de vidro
 			</h2>
 			<ul class="mt-5 list-inside list-disc space-y-2.5 text-base leading-relaxed text-on-ink-body">
 				{differentiators.map((item) => <li>{item}</li>)}
@@ -391,7 +400,7 @@ const structuredData = {
 
 		<section class="mt-12" aria-labelledby="comparacao-heading">
 			<h2 id="comparacao-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
-				Comparação lateral: onde ele ganha e onde perde
+				Comparação: CFO4VAR, o Consul de inox e as alternativas
 			</h2>
 			<div class="table-premium-shell mt-6">
 				<table class="table-premium min-w-[420px]">
