@@ -252,7 +252,7 @@ Specs-alvo: packshot ~1254² · hero guia/article ~1280×800 · thumb ~1200×750
 | logo-casa-pratica-eletro-header.webp | idem | 1024×455 | 13 | webp | Logo | Header | — | ATIVO |
 | logo-casa-pratica-eletro.webp | idem | 1000×455 | 12 | webp | Logo | Footer | — | ATIVO |
 | atlas-monaco-plus-hero | melhores/4-bocas | 1280×800 | 119 | webp | Hero/Mesa inox | Hub 4b justificativas | Médio | ATIVO |
-| atlas-monaco-plus | idem | 1254² | 40 | webp | Packshot | Hub cards | Médio | ATIVO |
+| atlas-monaco-plus | idem | 1254² | 40 | webp | Packshot | Hub cards; /fogao-atlas-e-bom/ | Médio | ATIVO |
 | consul-cf04nar-hero | idem | 1280×800 | 108 | webp | Hero/Mesa inox | Hub; blog vidro/inox | Alto | REUTILIZÁVEL |
 | consul-cf04nar | idem | 1254² | 30 | webp | Packshot | Hub cards | Médio | ATIVO |
 | electrolux-fe4iw-hero | idem | 1280×800 | 105 | webp | Hero/Mesa inox | Hub 4b | Médio | ATIVO |
@@ -267,7 +267,7 @@ Specs-alvo: packshot ~1254² · hero guia/article ~1280×800 · thumb ~1200×750
 | electrolux-fe5ig | idem | 1254² | 54 | webp | Packshot | Hub; home | Médio | ATIVO |
 | melhores-fogoes-5-bocas-hero | public + assets/heroes | 1000² | 70 | webp | Hero | Home; hub 5b | Alto | ATIVO |
 | atlas-atenas-glass-hero | melhores/mesa-vidro | 1600×1000 | 95 | webp | Hero/Mesa vidro | Hub; blog seguro | Alto | REUTILIZÁVEL |
-| atlas-atenas-glass | idem | 1254² | 17 | webp | Packshot | Hub | Médio | ATIVO |
+| atlas-atenas-glass | idem | 1254² | 17 | webp | Packshot | Hub; /fogao-atlas-e-bom/ | Médio | ATIVO |
 | brastemp-bfo4vae-hero | idem | 1600×1000 | 106 | webp | Hero/Mesa vidro | Hub; blog vale a pena | Alto | REUTILIZÁVEL |
 | brastemp-bfo4vae | idem | 1254² | 25 | webp | Packshot | Hub | Médio | ATIVO |
 | consul-cfo4var-hero | idem | 1600×1000 | 100 | webp | Hero/Mesa vidro | Hub; blog vidro/inox | Alto | REUTILIZÁVEL |

@@ -331,7 +331,23 @@ Critério ALTA/MÉDIA/BAIXA por tipo de página: `docs/MANUAL_DIRECAO_VISUAL.md`
 
 ---
 
-## 10. Espaço para novos prompts
+## 10. Prompt — página de marca Atlas (trava de canibalização)
+
+**Quando usar:** criar, editar ou otimizar SEO de URL cuja intenção é **avaliação da marca Atlas** (ex.: “Fogão Atlas é bom?”).  
+**Regra de agente:** `.cursor/rules/canibalizacao-pagina-atlas.mdc`.
+
+```text
+CONTROLE DE CANIBALIZAÇÃO:
+Esta página tem como intenção primária a avaliação da marca Atlas e a decisão de compra relacionada à marca. Não transformá-la em ranking geral de fogões, não otimizar o conteúdo como concorrente de /melhores/melhor-fogao-4-bocas/ ou /melhores/melhor-fogao-mesa-de-vidro/, e não criar seções cujo objetivo principal seja disputar as palavras-chave dessas páginas. Quando mencionar essas categorias, fazê-lo apenas como contexto ou através de links internos para as páginas existentes.
+
+- Title / H1 / description / FAQ: marca Atlas, não “melhor fogão 4 bocas” nem “melhor fogão mesa de vidro”.
+- SKUs Atlas = exemplos da marca (inventário atlasMonacoPlus / atlasAtenasGlass), não Top 3 de categoria.
+- 4 bocas ou mesa de vidro: contexto ou link para a URL dona (barra final). Proibido hero/cards/tabela de ranking de hub.
+```
+
+---
+
+## 11. Espaço para novos prompts
 
 <!-- Adicionar prompts estáveis abaixo, com título numerado e data no CHANGELOG. -->
 

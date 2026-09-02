@@ -61,7 +61,11 @@ export function resolvePageType(pathname: string): AffiliatePageType {
 
 	if (path.startsWith('/comparativo-')) return 'comparison';
 
-	if (path.startsWith('/como-escolher-') || path.includes('custo-beneficio')) {
+	if (
+		path.startsWith('/como-escolher-') ||
+		path.includes('custo-beneficio') ||
+		path === '/fogao-atlas-e-bom/'
+	) {
 		return 'guide';
 	}
 

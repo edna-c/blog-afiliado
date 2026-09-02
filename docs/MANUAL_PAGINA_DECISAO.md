@@ -307,6 +307,20 @@ Se um benefício já foi explicado, apenas faça referência a ele.
 - Preservar âncora `#analises-detalhadas` quando os cards apontarem para ela
 - Fonte de afiliados do modelo 5 bocas: `src/data/products.ts` (Brastemp, Consul, Electrolux)
 
+## Gate — produto/marca sem afiliado de fabricante
+
+Antes de publicar página de decisão que nomeie produto ou marca **sem programa de afiliados direto**, verificar se dá para monetizar pelos programas de **varejistas**, especialmente **Shopee** e **Mercado Livre**.
+
+1. Checar oferta rastreável no painel ML (CTA principal) e no painel Shopee (CTA secundário).
+2. Se houver: cadastrar em `src/data/products.ts` com `mlGeneratedByPanel` / `shopeeGeneratedByPanel` e ligar os CTAs pelo inventário.
+3. Se não houver: omitir o CTA daquele SKU (ou não incluí-lo no ranking comercial), registrar a lacuna e avisar no relatório.
+
+**Exemplo:** Atlas não tem afiliado de fabricante; `atlasMonacoPlus` e `atlasAtenasGlass` monetizam via ML + Shopee. Não excluir um SKU do ranking só porque o fabricante não tem programa próprio.
+
+Não inventar URL (link orgânico, busca genérica, short link quebrado). Não publicar CTA sem confirmação no painel.
+
+Regra de agente: `.cursor/rules/monetizacao-paginas-decisao.mdc`.
+
 ---
 
 # Links Internos e satélites

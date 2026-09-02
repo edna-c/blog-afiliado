@@ -20,6 +20,8 @@ describe('resolvePageType', () => {
 		assert.equal(resolvePageType('/comparativo-fogao-4-vs-5-bocas/'), 'comparison');
 		assert.equal(resolvePageType('/como-escolher-fogao-5-bocas/'), 'guide');
 		assert.equal(resolvePageType('/fogao-5-bocas-custo-beneficio/'), 'guide');
+		assert.equal(resolvePageType('/fogao-atlas-e-bom/'), 'guide');
+		assert.equal(resolvePageType('/fogao-atlas-e-bom'), 'guide');
 		assert.equal(resolvePageType('/sobre/'), 'institutional');
 		assert.equal(resolvePageType('/contato/'), 'institutional');
 		assert.equal(resolvePageType('/politica-de-afiliados/'), 'institutional');

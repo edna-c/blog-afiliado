@@ -175,6 +175,15 @@ Se a resposta da segunda pergunta for "sim", o padrão preferido é:
 - **reforçar interlinkagem**;
 - ou **reposicionar/redirecionar** a página redundante.
 
+### Trava — página de marca Atlas
+
+Intenção `fogão Atlas é bom` / avaliação de marca **não** é dona de ranking de categoria. URLs donas permanecem:
+
+- `/melhores/melhor-fogao-4-bocas/` → `melhor fogão 4 bocas`
+- `/melhores/melhor-fogao-mesa-de-vidro/` → `melhor fogão mesa de vidro`
+
+A página Atlas não replica ranking, title/H1/FAQ nem seções feitas para essas queries. Categoria só como contexto ou link interno. Prompt: `docs/BIBLIOTECA_DE_PROMPTS.md` §10 · regra `.cursor/rules/canibalizacao-pagina-atlas.mdc`.
+
 ### Como tratar canibalismo
 
 Quando duas URLs começarem a disputar a mesma intenção:

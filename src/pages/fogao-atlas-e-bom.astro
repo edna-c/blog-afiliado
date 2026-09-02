@@ -1,0 +1,331 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import RelatedContent from '../components/RelatedContent.astro';
+import SmartRecommendations from '../components/SmartRecommendations.astro';
+import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
+import AffiliateOfferBlock from '../components/AffiliateOfferBlock.astro';
+import ProductMedia from '../components/ProductMedia.astro';
+import { produtos } from '../data/products';
+
+const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
+const canonicalPath = '/fogao-atlas-e-bom/';
+const canonical = new URL(canonicalPath.replace(/^\//, ''), site).href;
+
+const headline = 'Fogão Atlas é bom? Análise da marca e dos modelos';
+const pageTitle = `${headline} | Casa Prática Eletro`;
+const description =
+	'Fogão Atlas é bom para o seu perfil? Veja quando a marca faz sentido, os limites reais e como se diferenciam o Mônaco Plus e o Atenas Glass.';
+
+const monacoImage = '/images/melhores/melhor-fogao-4-bocas/atlas-monaco-plus.webp';
+const atenasImage = '/images/melhores/melhor-fogao-mesa-de-vidro/atlas-atenas-glass.webp';
+const ogImage = new URL(
+	'images/melhores/melhor-fogao-4-bocas/atlas-monaco-plus-hero.webp',
+	site,
+).href;
+
+const publishedTime = '2026-09-01T20:00:00-03:00';
+const modifiedTime = publishedTime;
+
+const breadcrumbLabel = 'Fogão Atlas é bom?';
+
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'WebPage',
+			'@id': `${canonical}#webpage`,
+			url: canonical,
+			name: pageTitle,
+			description,
+			inLanguage: 'pt-BR',
+		},
+		{
+			'@type': 'Article',
+			headline,
+			description,
+			image: [ogImage],
+			author: {
+				'@type': 'Organization',
+				name: 'Casa Prática Eletro',
+				url: site.href,
+			},
+			publisher: {
+				'@type': 'Organization',
+				name: 'Casa Prática Eletro',
+				url: site.href,
+			},
+			datePublished: publishedTime,
+			dateModified: modifiedTime,
+			mainEntityOfPage: canonical,
+			articleSection: 'Decisão de marca',
+			inLanguage: 'pt-BR',
+		},
+		{
+			'@type': 'BreadcrumbList',
+			itemListElement: [
+				{ '@type': 'ListItem', position: 1, name: 'Início', item: site.href },
+				{ '@type': 'ListItem', position: 2, name: breadcrumbLabel, item: canonical },
+			],
+		},
+	],
+};
+---
+
+<BaseLayout
+	title={pageTitle}
+	description={description}
+	canonical={canonical}
+	pageType="guide"
+	openGraph={{
+		title: pageTitle,
+		description,
+		url: canonical,
+		type: 'article',
+		image: ogImage,
+		imageAlt: 'Fogão Atlas Mônaco Plus preto com mesa inox',
+		publishedTime,
+		modifiedTime,
+	}}
+>
+	<script type="application/ld+json" slot="head" set:html={JSON.stringify(structuredData)} />
+	<article class="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14 lg:py-16">
+		<Breadcrumbs
+			class="mb-8"
+			items={[{ name: 'Início', href: '/' }, { name: breadcrumbLabel }]}
+		/>
+
+		<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Decisão de marca · Atlas · 2026</p>
+		<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">
+			{headline}
+		</h1>
+		<p class="mt-6 text-lg leading-relaxed text-on-ink-body">
+			<strong class="text-on-ink-body">Sim, para um perfil específico.</strong> Fogão Atlas costuma ser uma boa compra
+			quando o orçamento é o critério que fecha a decisão e a rotina cabe no essencial — cozinhar no dia a dia, sem
+			esperar o mesmo acabamento ou forno de uma linha premium. Não é a resposta certa se você quer o conjunto mais
+			completo da categoria, nem se a dúvida real é escolher entre marcas no meio ou no topo da faixa.
+		</p>
+		<div class="mt-8">
+			<EditorialTrustRibbon />
+		</div>
+
+		<section class="mt-12 space-y-4 text-base leading-relaxed text-on-ink-body" aria-labelledby="atlas-e-bom-heading">
+			<h2 id="atlas-e-bom-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Fogão Atlas é bom?
+			</h2>
+			<p>
+				Atlas é boa no que se propõe: entrada acessível, funcionamento simples e custo de manutenção mais baixo. Não é
+				“boa” no sentido de entregar o mesmo equilíbrio de uma Consul no uso típico, nem o forno e o visual de linhas
+				premium. A pergunta útil não é se a marca é boa em absoluto — é se o seu teto de gasto e a sua rotina combinam
+				com uma compra de entrada.
+			</p>
+			<p>
+				Os modelos que avaliamos com oferta rastreável hoje são de <strong class="text-on-ink-body">4 bocas</strong>: o
+				Mônaco Plus (mesa inox) e o Atenas Glass (mesa de vidro). Quem pesquisa se um fogão Atlas de 5 bocas é bom precisa
+				primeiro fechar o tamanho. Se a casa usa várias panelas grandes ao mesmo tempo, a marca deixa de ser o eixo da
+				decisão.
+			</p>
+		</section>
+
+		<section class="mt-12 space-y-4 text-base leading-relaxed text-on-ink-body" aria-labelledby="atlas-confiavel-heading">
+			<h2 id="atlas-confiavel-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Fogão Atlas é confiável?
+			</h2>
+			<p>
+				No uso doméstico comum, a linha se comporta como fogão de entrada: acendimento, chamas e rotina simples sem
+				recursos extras para justificar. A construção é consciente da faixa — não tenta parecer premium.
+			</p>
+			<p>
+				Sobre assistência e garantia: não afirmamos rede ampla nem prazo específico sem o dado no anúncio. O que já pesa
+				na avaliação editorial da linha é a facilidade de encontrar peças e o custo de manutenção mais baixo, sobretudo
+				no Mônaco Plus. Na hora da compra, confira a garantia do fabricante no anúncio e, na sua cidade, se há assistência
+				autorizada. Medidas, tipo de gás e folga de instalação continuam no{' '}
+				<a href="/como-escolher-fogao-4-bocas/" class="link-accent">checklist de como escolher fogão 4 bocas</a>.
+			</p>
+		</section>
+
+		<section class="mt-12 space-y-4 text-base leading-relaxed text-on-ink-body" aria-labelledby="atlas-positivos-heading">
+			<h2 id="atlas-positivos-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Quais são os pontos positivos dos fogões Atlas?
+			</h2>
+			<ul class="mt-4 list-inside list-disc space-y-2">
+				<li>ticket de entrada na categoria 4 bocas, quando o teto de gasto manda;</li>
+				<li>uso simples: entrega o básico que fecha a compra, sem recursos que você pagaria e não usaria;</li>
+				<li>peças e manutenção mais acessíveis no perfil do Mônaco Plus;</li>
+				<li>dois caminhos de mesa — inox (Mônaco Plus) ou vidro (Atenas Glass) — sem mudar de marca;</li>
+				<li>disponibilidade comercial real nos canais que rastreamos para esses dois modelos.</li>
+			</ul>
+		</section>
+
+		<section class="mt-12 space-y-4 text-base leading-relaxed text-on-ink-body" aria-labelledby="atlas-atencao-heading">
+			<h2 id="atlas-atencao-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Quais são os pontos de atenção?
+			</h2>
+			<p>
+				Atlas não é “a mesma compra das marcas do meio da faixa, só mais barata”. Acabamento, forno e trempes ficam atrás
+				de propósito. Se a expectativa for visual premium, ferro fundido ou forno mais generoso, a decepção não é falha
+				oculta da marca — é descompasso de faixa.
+			</p>
+			<ul class="mt-4 list-inside list-disc space-y-2">
+				<li>forno atende rotina básica; no Atenas Glass o volume fica na casa de ~50 L, com trempes de aço esmaltado;</li>
+				<li>não substitui um 5 bocas quando a simultaneidade de panelas é o problema real;</li>
+				<li>
+					reclamações isoladas de marketplace não provam defeito de marca — vale checar se a queixa é de expectativa
+					acima da faixa, SKU diferente do anúncio ou instalação;
+				</li>
+				<li>no Atenas Glass, o mesmo modelo pode aparecer como Atenas Glass ou Top Glass: confira o SKU no anúncio.</li>
+			</ul>
+			<p>
+				Se a casa precisa de 5 bocas de verdade, feche o tamanho no{' '}
+				<a href="/comparativo-fogao-4-vs-5-bocas/" class="link-accent">comparativo entre fogão 4 e 5 bocas</a>
+				{' '}antes de insistir na marca.
+			</p>
+		</section>
+
+		<section class="mt-12 space-y-4 text-base leading-relaxed text-on-ink-body" aria-labelledby="atlas-modelos-heading">
+			<h2 id="atlas-modelos-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Quais modelos Atlas merecem atenção?
+			</h2>
+			<p>
+				Só entram aqui os dois modelos com oferta rastreável neste projeto: <strong class="text-on-ink-body">Atlas Mônaco Plus</strong> e{' '}
+				<strong class="text-on-ink-body">Atlas Atenas Glass</strong>. Não há ranking da marca nesta página — são dois
+				perfis diferentes dentro da mesma faixa de entrada.
+			</p>
+			<p>
+				A diferença prática é a mesa. Inox no Mônaco Plus; vidro temperado no Atenas Glass. Se a dúvida for só o
+				acabamento, o{' '}
+				<a href="/blog/fogao-mesa-de-vidro-ou-inox/" class="link-accent">comparativo entre mesa de vidro e inox</a>
+				{' '}ajuda a fechar isso antes do modelo.
+			</p>
+		</section>
+
+		<section class="mt-12 space-y-4 text-base leading-relaxed text-on-ink-body" aria-labelledby="monaco-plus-heading">
+			<h2 id="monaco-plus-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Atlas Mônaco Plus
+			</h2>
+			<div class="mt-6">
+				<ProductMedia
+					src={monacoImage}
+					alt="Fogão Atlas Mônaco Plus preto com mesa inox"
+					aspect="square"
+				/>
+			</div>
+			<p>
+				Faz sentido para quem precisa entrar em 4 bocas com teto baixo: aluguel, primeiro imóvel, casal ou troca barata
+				em que o critério é preço e peças, não visual de cozinha planejada. Mesa inox e uso simples fecham a compra
+				quando o orçamento manda.
+			</p>
+			<p>
+				Não é o caminho se você quer subir um degrau em equilíbrio no dia a dia sem ir ao premium — aí a comparação
+				deixa de ser “qual Atlas” e passa a ser a categoria. Use o{' '}
+				<a href="/melhores/melhor-fogao-4-bocas/" class="link-accent">ranking de fogão 4 bocas</a>
+				{' '}só nesse próximo passo.
+			</p>
+		</section>
+
+		<div class="mt-10">
+			<AffiliateOfferBlock
+				id="oferta-monaco-plus"
+				productName="Atlas Mônaco Plus"
+				productId="atlasMonacoPlus"
+				heading="Conferir preço do Atlas Mônaco Plus"
+				description="Oferta rastreável no Mercado Livre e na Shopee. Preço e estoque mudam — confira no momento da compra."
+				mercadoLivreUrl={produtos.atlasMonacoPlus.ml}
+				shopeeUrl={produtos.atlasMonacoPlus.shopee}
+			/>
+		</div>
+
+		<section class="mt-12 space-y-4 text-base leading-relaxed text-on-ink-body" aria-labelledby="atenas-glass-heading">
+			<h2 id="atenas-glass-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Atlas Atenas Glass
+			</h2>
+			<div class="mt-6">
+				<ProductMedia
+					src={atenasImage}
+					alt="Fogão Atlas Atenas Glass preto com mesa de vidro temperado"
+					aspect="square"
+				/>
+			</div>
+			<p>
+				Faz sentido para quem quer mesa de vidro sem pagar o ticket das marcas do meio e do topo da faixa. É a entrada
+				consciente em vidro: acendimento automático, uso simples e forno para rotina básica (~50 L). Em anúncios, o mesmo
+				modelo pode aparecer como Atenas Glass ou Top Glass.
+			</p>
+			<p>
+				Não indicado se a rotina pede grades de ferro fundido ou forno mais generoso. Nesse caso, a comparação correta é
+				a categoria de mesa de vidro — não outro Atlas. Siga para o{' '}
+				<a href="/melhores/melhor-fogao-mesa-de-vidro/" class="link-accent">ranking de fogão mesa de vidro</a>
+				{' '}se o vidro já estiver fechado e a marca ainda estiver em dúvida.
+			</p>
+		</section>
+
+		<!-- Shopee do Atenas Glass omitido: SKU do painel ainda não confirmado. CTA só com ML validado. -->
+		<div class="mt-10">
+			<AffiliateOfferBlock
+				id="oferta-atenas-glass"
+				productName="Atlas Atenas Glass"
+				productId="atlasAtenasGlass"
+				heading="Conferir preço do Atlas Atenas Glass"
+				description="Oferta rastreável no Mercado Livre para este SKU. Preço e estoque mudam — confira no momento da compra."
+				mercadoLivreUrl={produtos.atlasAtenasGlass.ml}
+			/>
+		</div>
+
+		<section class="mt-12 space-y-4 text-base leading-relaxed text-on-ink-body" aria-labelledby="atlas-vale-a-pena-heading">
+			<h2 id="atlas-vale-a-pena-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Fogão Atlas vale a pena?
+			</h2>
+			<div class="mt-6 grid gap-4 sm:grid-cols-2">
+				<div class="rounded-2xl border border-emerald-400/30 bg-emerald-950/20 p-5 ring-1 ring-emerald-400/15 sm:p-6">
+					<h3 class="text-sm font-bold uppercase tracking-wider text-emerald-300">Pode valer a pena para</h3>
+					<ul class="mt-4 list-inside list-disc space-y-2.5 text-sm leading-relaxed text-on-ink-body sm:text-base">
+						<li>quem tem teto de gasto baixo e aceita fogão de entrada bem resolvido;</li>
+						<li>aluguel, primeiro imóvel ou troca urgente em 4 bocas;</li>
+						<li>quem prioriza peças e manutenção simples (Mônaco Plus);</li>
+						<li>quem quer vidro acessível, sem ferro fundido nem forno grande (Atenas Glass).</li>
+					</ul>
+				</div>
+				<div class="rounded-2xl border border-amber-300/25 bg-brand-900/45 p-5 ring-1 ring-white/10 sm:p-6">
+					<h3 class="text-sm font-bold uppercase tracking-wider text-amber-200">Compare outras opções se</h3>
+					<ul class="mt-4 list-inside list-disc space-y-2.5 text-sm leading-relaxed text-on-ink-body sm:text-base">
+						<li>o uso diário pede equilíbrio no meio da faixa, não o mínimo absoluto;</li>
+						<li>forno, ferro fundido ou visual de linha acima são requisito real;</li>
+						<li>a rotina exige 5 bocas — aí o tamanho pesa mais do que a marca;</li>
+						<li>você já fechou a categoria e só quer o melhor conjunto dentro dela.</li>
+					</ul>
+				</div>
+			</div>
+			<p class="mt-6">
+				O que deve pesar: teto de gasto, tipo de mesa, uso real do forno, quantas panelas ao mesmo tempo e se você
+				aceita a faixa de entrada. Se Atlas sair da conta, o{' '}
+				<a href="/fogao-4-bocas-custo-beneficio/" class="link-accent">guia de fogão 4 bocas custo-benefício</a>
+				{' '}ajuda a casar preço com o próximo degrau — sem tratar esta página como ranking da categoria.
+			</p>
+		</section>
+
+		<section class="mt-12 space-y-4 text-base leading-relaxed text-on-ink-body" aria-labelledby="atlas-conclusao-heading">
+			<h2 id="atlas-conclusao-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Afinal, fogão Atlas é bom?
+			</h2>
+			<p>
+				É bom quando a compra é de entrada e o perfil combina: 4 bocas, orçamento no comando, expectativa alinhada à
+				faixa. Mônaco Plus fecha mesa inox e peças; Atenas Glass fecha vidro acessível. Fora desse recorte, a marca deixa
+				de ser a melhor pergunta — e a decisão passa a ser categoria, tamanho ou o degrau acima.
+			</p>
+		</section>
+
+		<RelatedContent
+			class="mt-14"
+			currentPath={canonicalPath}
+			eyebrow="Veja também"
+			title="Leituras relacionadas"
+			subtitle="Próximo passo da decisão: categoria, tamanho ou acabamento — não um ranking da marca Atlas."
+		/>
+
+		<SmartRecommendations
+			class="mt-12"
+			currentPath={canonicalPath}
+			heading="Próximos passos editoriais"
+		/>
+	</article>
+</BaseLayout>

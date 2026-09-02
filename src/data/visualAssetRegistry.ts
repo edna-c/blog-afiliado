@@ -161,7 +161,7 @@ export const PACKSHOT_ASSETS: readonly VisualAsset[] = [
 		path: '/images/melhores/melhor-fogao-4-bocas/atlas-monaco-plus.webp',
 		role: 'packshot-card',
 		subject: 'Atlas Mônaco Plus',
-		usedBy: ['/melhores/melhor-fogao-4-bocas/'],
+		usedBy: ['/melhores/melhor-fogao-4-bocas/', '/fogao-atlas-e-bom/'],
 	},
 	{
 		id: 'guide-vidro-consul',
@@ -182,7 +182,7 @@ export const PACKSHOT_ASSETS: readonly VisualAsset[] = [
 		path: '/images/melhores/melhor-fogao-mesa-de-vidro/atlas-atenas-glass.webp',
 		role: 'packshot-card',
 		subject: 'Atlas Atenas Glass',
-		usedBy: ['/melhores/melhor-fogao-mesa-de-vidro/'],
+		usedBy: ['/melhores/melhor-fogao-mesa-de-vidro/', '/fogao-atlas-e-bom/'],
 	},
 ] as const;
 

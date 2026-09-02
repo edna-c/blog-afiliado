@@ -1,0 +1,34 @@
+---
+description: Trava de canibalização — página de avaliação da marca Atlas não disputa os hubs de ranking 4 bocas nem mesa de vidro
+alwaysApply: true
+---
+
+# CONTROLE DE CANIBALIZAÇÃO — página Atlas (marca)
+
+Aplicar ao **criar, editar, otimizar SEO** (title, description, H1, FAQ, schema, âncoras) de qualquer URL cuja intenção primária seja **avaliação da marca Atlas** e a decisão de compra ligada à marca (ex.: “Fogão Atlas é bom?”).
+
+Não aplicar aos hubs Melhores, satélites de categoria, nem reviews cuja URL dona já é um SKU de outra marca.
+
+## Intenção dona desta página
+
+Avaliar a **marca Atlas** (reputação, para quem serve, limites, se vale comprar Atlas). SKUs (`atlasMonacoPlus`, `atlasAtenasGlass`) entram como **exemplos da marca**, não como ranking de categoria.
+
+## URLs donas — não disputar
+
+| Intenção | URL dona |
+|---|---|
+| Melhor fogão 4 bocas | `/melhores/melhor-fogao-4-bocas/` |
+| Melhor fogão mesa de vidro | `/melhores/melhor-fogao-mesa-de-vidro/` |
+
+## Obrigatório
+
+- Título, H1, description e FAQ miram **marca Atlas**, não “melhor fogão 4 bocas” / “melhor fogão mesa de vidro”.
+- Categoria 4 bocas ou mesa de vidro: só **contexto** ou **link interno** para a URL dona (barra final).
+- CTAs comerciais: inventário Atlas (`produtos.atlasMonacoPlus` / `produtos.atlasAtenasGlass`), sem montar Top 3 de categoria.
+
+## Proibido
+
+- Transformar a página em ranking geral de fogões (🥇🥈🥉, “os 3 melhores”, tabela Consul vs Electrolux vs Atlas como hub).
+- Otimizar a página como concorrente dos dois hubs acima.
+- Criar seção cujo objetivo principal seja ranquear nas keywords dessas páginas.
+- Copiar estrutura/copy de hub Melhores (hero de ranking, cards das 3 medalhas, “como escolhemos o melhor da categoria”).

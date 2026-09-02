@@ -239,6 +239,19 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 		weight: 8,
 	},
 	{
+		href: '/fogao-atlas-e-bom/',
+		title: 'Fogão Atlas é bom? Análise da marca e dos modelos',
+		description:
+			'Quando a marca Atlas faz sentido, limites reais e diferença entre Mônaco Plus e Atenas Glass — decisão de marca, não ranking de categoria.',
+		kind: 'Guia',
+		flow: 2,
+		editorialLabel: 'Decisão de marca',
+		topics: ['fogao-4-bocas', 'mesa-vidro', 'custo-beneficio', 'compra-segura'],
+		anchorText: 'análise se fogão Atlas é bom',
+		teaser: 'quando a marca fecha — e quando o eixo é outra categoria',
+		weight: 8,
+	},
+	{
 		href: '/review-fogao-5-bocas-brastemp/',
 		title: 'Review rápida: Brastemp BFS5NCR',
 		description: 'Resumo direto + link para conferir preço na loja parceira.',

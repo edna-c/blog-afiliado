@@ -7,6 +7,16 @@ Formato: mais recente no topo.
 
 ---
 
+## 2026-09-01
+
+### Trava de canibalização — página de marca Atlas
+
+- Intenção dona: avaliação da marca Atlas (não ranking de categoria).
+- Não disputar `/melhores/melhor-fogao-4-bocas/` nem `/melhores/melhor-fogao-mesa-de-vidro/`.
+- Prompt: `docs/BIBLIOTECA_DE_PROMPTS.md` §10 · regra `.cursor/rules/canibalizacao-pagina-atlas.mdc` · nota em `docs/seo-rules.md`.
+
+---
+
 ## 2026-07-30
 
 ### Motor III — L05A v2 (mesa vidro × inox)

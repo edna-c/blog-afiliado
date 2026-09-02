@@ -1,0 +1,37 @@
+---
+description: Gate de monetização — produto/marca sem afiliado de fabricante deve ser checado em varejistas (ML e Shopee) antes de publicar página de decisão
+alwaysApply: true
+---
+
+# Monetização — páginas de decisão
+
+Gate obrigatório **antes de publicar** hub Melhores, satélite comercial ou review que nomeie produto ou marca.
+
+## Quando aplicar
+
+O SKU ou a marca **não** tem programa de afiliados próprio (fabricante sem painel, marca de entrada, linha sem parceria direta).
+
+## Obrigação
+
+Verificar se o produto existe nos programas de afiliados de **varejistas**, nesta ordem:
+
+1. **Mercado Livre** — CTA principal do projeto
+2. **Shopee** — CTA secundário
+3. Outro varejista com programa ativo, só se ML/Shopee não tiverem oferta rastreável
+
+Se houver oferta: cadastrar em `src/data/products.ts` (`mlGeneratedByPanel` / `shopeeGeneratedByPanel`) e ligar CTAs via inventário (`commercialGuideBlocks`, `AffiliateOfferBlock`). Não hardcodar URL fora do SSOT.
+
+## Exemplo válido
+
+Atlas não tem afiliado de fabricante. `atlasMonacoPlus` e `atlasAtenasGlass` monetizam via ML + Shopee no inventário — o ranking comercial permanece viável.
+
+## Não fazer
+
+- Publicar página de decisão com produto/marca nomeado **sem** ter checado varejistas
+- Inventar link (URL orgânica, busca genérica, short link quebrado, params `matt_`/`utm_` como “prova” de afiliado)
+- Excluir o SKU do ranking **só** porque não há programa de fabricante — checar varejo primeiro
+- Incluir CTA comercial sem link confirmado no painel
+
+## Se não houver oferta
+
+Omitir o CTA daquele SKU (ou não incluí-lo no ranking comercial), registrar a lacuna e avisar no relatório. Não publicar CTA vazio nem inventar URL.
