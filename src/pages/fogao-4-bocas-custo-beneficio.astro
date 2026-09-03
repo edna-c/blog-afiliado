@@ -14,6 +14,56 @@ const pageTitle =
 const description =
 	'Qual fogão 4 bocas entrega mais pelo preço? Atlas Mônaco Plus, Consul CF04NAR e Electrolux FE4IW — perfil de cada um e oferta na loja.';
 const ogImage = new URL('images/melhores/melhor-fogao-4-bocas/melhor-fogao-4-bocas-2026.webp', site).href;
+const faqId = `${canonical}#faq`;
+
+const faqItems = [
+	{
+		question: 'Qual fogão 4 bocas vale mais a pena pelo preço?',
+		answer:
+			'Depende da rotina, não só do menor ticket. Atlas Mônaco Plus é a entrada por preço e peças quando o teto é baixo. Consul CF04NAR costuma entregar melhor valor no meio da faixa — acendimento, mesa inox e forno no dia a dia, sem ir ao premium. Electrolux FE4IW só fecha o custo-benefício se PerfectCook/VaporBake (ou o visual da linha Efficient) forem requisito real; senão o ticket sobra.',
+	},
+	{
+		question: 'Para quem cada opção faz sentido?',
+		answer:
+			'Atlas Mônaco Plus: casal ou primeiro imóvel com teto baixo, perfil de entrada que não tenta parecer premium. Consul CF04NAR: casal a família pequena com uso diário, quando dá para subir um degrau sem ir ao premium. Electrolux FE4IW: quem assa com frequência e trata PerfectCook/VaporBake como requisito. Se a rotina exige muitas panelas ao mesmo tempo, feche 4 ou 5 bocas antes do modelo.',
+	},
+	{
+		question: 'Quando vale pagar mais por um modelo?',
+		answer:
+			'Pagar o Consul em vez do Atlas faz sentido quando a rotina pede mais equilíbrio — acendimento, mesa inox e forno do dia a dia — sem ir ao premium. Pagar o Electrolux só vale se PerfectCook/VaporBake ou o visual da linha Efficient forem requisito real. Nesta página, não vale economizar em estabilidade das trempes, distância entre bocas, acendimento que você realmente usa, forno adequado ao que assa e instalação correta.',
+	},
+	{
+		question: 'Qual opção tende a fazer mais sentido no uso cotidiano?',
+		answer:
+			'Para uso diário sem forçar o mínimo, o Consul CF04NAR é o perfil de equilíbrio desta comparação: acendimento, mesa inox e forno adequados ao dia a dia, em casal ou família pequena. Atlas entra quando o teto manda ficar na entrada. Electrolux sobe o ticket para quem assa com frequência de verdade.',
+	},
+] as const;
+
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'WebPage',
+			'@id': canonical,
+			url: canonical,
+			name: pageTitle,
+			description,
+			inLanguage: 'pt-BR',
+		},
+		{
+			'@type': 'FAQPage',
+			'@id': faqId,
+			mainEntity: faqItems.map((item) => ({
+				'@type': 'Question',
+				name: item.question,
+				acceptedAnswer: {
+					'@type': 'Answer',
+					text: item.answer,
+				},
+			})),
+		},
+	],
+};
 ---
 
 <BaseLayout
@@ -29,6 +79,7 @@ const ogImage = new URL('images/melhores/melhor-fogao-4-bocas/melhor-fogao-4-boc
 		imageAlt: 'Fogões 4 bocas — referência visual custo-benefício',
 	}}
 >
+	<script type="application/ld+json" slot="head" set:html={JSON.stringify(structuredData)} />
 	<article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
 		<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Compra inteligente</p>
 		<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">
@@ -235,6 +286,22 @@ const ogImage = new URL('images/melhores/melhor-fogao-4-bocas/melhor-fogao-4-boc
 				{' '}com ofertas. Para medidas e checklist, use{' '}
 				<a href="/como-escolher-fogao-4-bocas/" class="link-accent">como escolher fogão 4 bocas</a>.
 			</p>
+
+			<section class="mt-16 border-t border-white/10 pt-14" aria-labelledby="faq-heading" id="faq">
+				<h2 id="faq-heading" class="font-display text-2xl font-bold tracking-tight text-on-ink-body">
+					Perguntas frequentes
+				</h2>
+				<dl class="mt-8 space-y-10">
+					{
+						faqItems.map((item) => (
+							<div>
+								<dt class="font-display text-lg font-bold text-on-ink-body">{item.question}</dt>
+								<dd class="mt-3 text-base leading-relaxed text-on-ink-muted">{item.answer}</dd>
+							</div>
+						))
+					}
+				</dl>
+			</section>
 		</div>
 		<div class="mt-12 flex flex-wrap gap-4">
 			<a
