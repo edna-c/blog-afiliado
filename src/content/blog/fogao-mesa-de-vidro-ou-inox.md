@@ -1,6 +1,6 @@
 ---
-title: 'Fogão mesa de vidro ou inox: qual escolher? Comparativo prático 2026'
-description: 'Vidro ou inox no fogão? Compare limpeza, resistência, risco e perfil de uso — e saiba qual caminho seguir depois (ranking vidro ou 4 bocas).'
+title: 'Fogão com mesa de vidro ou inox: qual escolher? Comparativo 2026'
+description: 'Fogão com mesa de vidro ou inox? Compare limpeza, resistência, risco e perfil de uso — e só depois vá ao ranking de vidro ou ao de 4 bocas.'
 pubDate: 2026-06-16
 updatedDate: 2026-07-28
 category: 'Guia'

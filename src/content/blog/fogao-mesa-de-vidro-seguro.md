@@ -1,6 +1,6 @@
 ---
-title: 'Fogão com mesa de vidro é seguro? Riscos reais e cuidados práticos'
-description: 'Vidro temperado aguenta o uso doméstico — mas impacto e limpeza errada quebram. Veja mitos, cuidados diários e quando vale comprar.'
+title: 'Fogão com mesa de vidro é perigoso? Riscos reais e o que é seguro'
+description: 'Fogão com mesa de vidro é perigoso? No uso doméstico normal, não — o risco sobe com impacto e instalação ruim. Veja mitos e cuidados práticos.'
 pubDate: 2026-06-05
 updatedDate: 2026-08-17
 category: 'Guia'
