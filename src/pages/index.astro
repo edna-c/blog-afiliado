@@ -14,9 +14,9 @@ import { PRODUCT_IMAGE_REVIEW } from '../data/productImages';
 
 const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
 const canonical = new URL(Astro.url.pathname, site).href;
-const pageTitle = 'Casa Prática Eletro | Reviews e comparativos de eletrodomésticos';
+const pageTitle = 'Melhores fogões 5 bocas em 2026: ranking atualizado | Casa Prática Eletro';
 const metaDescription =
-	'Casa Prática Eletro: reviews, comparativos e guias para escolher fogões e outros eletrodomésticos com mais segurança.';
+	'Ranking e recomendação dos melhores fogões 5 bocas em 2026: Electrolux FE5IG, Brastemp BFS5NCR e Consul CFS5NAB. Compare os modelos e decida a compra.';
 const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).href;
 
 const allPosts = await getCollection('blog');
