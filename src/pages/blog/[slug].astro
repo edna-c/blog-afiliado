@@ -107,7 +107,6 @@ const editorialPairings: Record<string, string[]> = {
 	'review-fogao-com-mesa-de-vidro': [
 		'/blog/fogao-mesa-de-vidro-ou-inox/',
 		'/blog/fogao-mesa-de-vidro-seguro/',
-		'/melhores/melhor-fogao-mesa-de-vidro/',
 	],
 	'fogao-mesa-de-vidro-seguro': [
 		'/blog/fogao-mesa-de-vidro-ou-inox/',
@@ -172,6 +171,9 @@ const commercialNext = commercialNextBySlug[post.id] ?? {
 	href: '/#top-produtos',
 	label: 'ranking do melhor fogão 5 bocas com ofertas',
 };
+
+/** Página-piloto: convite ao ranking fica só no fecho condicionado do artigo. */
+const isPilotMesaVidro = post.id === 'review-fogao-com-mesa-de-vidro';
 
 const inlinePairingItems: EditorialEntry[] = (editorialPairings[post.id] ?? [])
 	.map((href) => findEntry((e) => e.href === href))
@@ -289,7 +291,7 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 			<p class="mt-4 text-lg leading-relaxed text-on-ink-body">{post.data.description}</p>
 		</header>
 		<div class="mt-8">
-			<EditorialTrustRibbon />
+			<EditorialTrustRibbon hideProcessLabels={isPilotMesaVidro} />
 		</div>
 		{
 			articleHero ? (
@@ -348,10 +350,12 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 			inlinePairingItems.length ? (
 				<EditorialLinks
 					class="mt-10"
-					eyebrow="Pareamento editorial"
-					heading={post.data.category === 'Review' || post.data.category === 'Comparativo'
-						? 'Antes de comprar, leia também'
-						: 'Para fechar a decisão'}
+					eyebrow={isPilotMesaVidro ? 'Se ainda restou uma dúvida' : 'Leia também'}
+					heading={isPilotMesaVidro
+						? 'Comparar acabamentos ou esclarecer segurança'
+						: post.data.category === 'Review' || post.data.category === 'Comparativo'
+							? 'Antes de comprar, leia também'
+							: 'Para fechar a decisão'}
 					items={inlinePairingItems.map((entry) => ({
 						href: entry.href,
 						label: entry.anchorText,
@@ -362,11 +366,15 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 			) : null
 		}
 
-		<p class="mt-10 rounded-xl border border-white/10 bg-brand-900/30 px-4 py-3 text-sm leading-relaxed text-on-ink-muted sm:px-5">
-			<strong class="text-on-ink-body">Próximo passo comercial (sem pressão):</strong> depois de ler, abra o{' '}
-			<a href={commercialNext.href} class="link-accent">{commercialNext.label}</a>
-			{' '}para cruzar critérios com o ranking e o preço do dia.
-		</p>
+		{
+			!isPilotMesaVidro ? (
+				<p class="mt-10 rounded-xl border border-white/10 bg-brand-900/30 px-4 py-3 text-sm leading-relaxed text-on-ink-muted sm:px-5">
+					<strong class="text-on-ink-body">Se quiser comparar modelos:</strong> depois de ler, abra o{' '}
+					<a href={commercialNext.href} class="link-accent">{commercialNext.label}</a>
+					{' '}para cruzar critérios com as opções e o preço do dia.
+				</p>
+			) : null
+		}
 		{
 			faq?.length ? (
 				<section class="mt-16 border-t border-white/10 pt-[3.25rem]" aria-labelledby="faq-heading">
@@ -390,14 +398,23 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 			excludePaths={[`/blog/${post.id}`, `/blog/${post.id}/`]}
 			eyebrow="Veja também"
 			title="Leituras relacionadas"
-			subtitle="Continue do mesmo cluster — guias, comparativos e artigos editoriais conectados ao tema deste post."
+			subtitle={isPilotMesaVidro
+				? 'Outros textos sobre mesa de vidro, se ainda restou alguma dúvida.'
+				: 'Mais textos sobre o mesmo tema.'}
 		/>
 
 		<SmartRecommendations
 			class="mt-12"
 			currentPath={Astro.url.pathname}
-			excludePaths={[`/blog/${post.id}`, `/blog/${post.id}/`]}
-			heading="Próximos passos editoriais"
+			excludePaths={[
+				`/blog/${post.id}`,
+				`/blog/${post.id}/`,
+				...(isPilotMesaVidro ? ['/melhores/melhor-fogao-mesa-de-vidro/'] : []),
+			]}
+			heading="Continuar a leitura"
+			subtitle={isPilotMesaVidro
+				? 'Se a mesa de vidro ainda levanta uma dúvida, estas leituras ajudam a fechar o recorte — sem pressa de escolher modelo.'
+				: undefined}
 		/>
 		<p class="mt-12 border-t border-white/10 pt-8 text-sm text-on-ink-muted">
 			<a href="/blog/" class="text-pop transition hover:text-accent-hover" aria-label="Voltar à listagem do blog">

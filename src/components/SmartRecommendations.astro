@@ -32,7 +32,7 @@ const {
 	currentPath,
 	limit = 3,
 	excludePaths = [],
-	heading = 'Próximos passos editoriais',
+	heading = 'Continuar a leitura',
 	subtitle,
 	eyebrow = 'Continue lendo',
 	class: className,
@@ -42,24 +42,24 @@ const current = getEditorialEntry(currentPath);
 const flowStage = current?.flow ?? 1;
 
 const stageLabel: Record<1 | 2 | 3 | 4, string> = {
-	1: 'Lifestyle',
+	1: 'Leitura',
 	2: 'Guia',
 	3: 'Comparativo',
 	4: 'Review',
 };
 
 const stageHint: Record<1 | 2 | 3 | 4, string> = {
-	1: 'Entrada editorial — define ambiente e prioridades.',
-	2: 'Guia — critérios para fechar a decisão.',
-	3: 'Comparativo — pesa opções lado a lado.',
-	4: 'Review — leitura final antes de comprar.',
+	1: 'Se ainda está organizando o que importa na cozinha, estas leituras ajudam.',
+	2: 'Critérios para avaliar o aparelho antes de comparar modelos.',
+	3: 'Pesa opções lado a lado.',
+	4: 'Leitura mais próxima da escolha de um modelo.',
 };
 
 const recommendations: EditorialEntry[] = getEditorialFlow(currentPath, limit, excludePaths);
 
 const defaultSubtitle = current
-	? `Você está em ${stageLabel[flowStage].toLowerCase()}. ${stageHint[flowStage]} A seguir, sugestões editoriais para fechar a jornada com calma.`
-	: 'Sugestões editoriais para fechar a jornada de leitura no ritmo certo.';
+	? `${stageHint[flowStage]} A seguir, sugestões para seguir se ainda restou alguma dúvida.`
+	: 'Sugestões para seguir se ainda restou alguma dúvida.';
 
 const subtitleText = subtitle ?? defaultSubtitle;
 

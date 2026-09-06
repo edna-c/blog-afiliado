@@ -347,7 +347,7 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 			'compra-segura',
 		],
 		anchorText: 'comparativo entre fogão com mesa de vidro e inox',
-		teaser: 'hub do cluster — qual acabamento combina com sua rotina',
+		teaser: 'qual acabamento combina com sua rotina',
 		weight: 9,
 	},
 	{
