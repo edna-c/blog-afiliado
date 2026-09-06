@@ -86,6 +86,7 @@ export const TECHNICAL_LIBRARY = {
 			'/review-fogao-4-bocas-consul/',
 			'/review-fogao-4-bocas-electrolux/',
 			'/review-fogao-mesa-de-vidro-consul/',
+			'/como-escolher-fogao-mesa-de-vidro/',
 		],
 		notes: 'Lacuna L06 · brief L06A. Sem texto na arte. ÂNCORA DNA · pedagogia visual.',
 	},
@@ -174,8 +175,9 @@ export const TECHNICAL_LIBRARY = {
 			'/blog/fogao-mesa-de-vidro-ou-inox/',
 			'/melhores/melhor-fogao-mesa-de-vidro/',
 			'/review-fogao-mesa-de-vidro-consul/',
+			'/como-escolher-fogao-mesa-de-vidro/',
 		],
-		usedBy: ['/review-fogao-mesa-de-vidro-consul/'],
+		usedBy: ['/review-fogao-mesa-de-vidro-consul/', '/como-escolher-fogao-mesa-de-vidro/'],
 		notes:
 			'Lacuna L05. v2: sem texto na arte; trempes iguais nos dois lados (eixo único = tampo). Fotografia editorial. Incorporado — âncora review CFO4VAR.',
 	},

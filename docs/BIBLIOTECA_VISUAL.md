@@ -102,7 +102,7 @@ Auditoria técnica (Motor III): o sistema está correto; o próximo passo é **p
 | **L08A** | Produzir no DNA de L06A | Segunda âncora (interior forno) | Arte ainda pendente |
 | **L07A** | **Evoluir** | Excelente conceito | Perder o texto na arte (título/legenda só HTML) |
 | **L09A** | **Evoluir** | Excelente conceito | Perder o texto/callouts; alinhar ao DNA L06A |
-| **L05A** | **Incorporado** | Eixo único (tampo); sem texto | Wired em `/review-fogao-mesa-de-vidro-consul/` |
+| **L05A** | **Incorporado** | Eixo único (tampo); sem texto | Wired em `/review-fogao-mesa-de-vidro-consul/` e `/como-escolher-fogao-mesa-de-vidro/` |
 | **L06B** | Validar escopo | Complemento a L06A | Só se agregar sem destoar |
 
 **Proibido:** campanha de regeneração em massa. Trabalho = lapidar a família.

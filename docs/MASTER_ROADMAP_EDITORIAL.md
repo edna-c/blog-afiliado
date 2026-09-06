@@ -100,7 +100,7 @@ Conteúdos de **maior ROI imediato**: fechar buracos de receita nos hubs 4 bocas
 | **Intenção** | `electrolux fe4iw` / `electrolux fogão 4 bocas` |
 | **URL** | `/review-fogao-4-bocas-electrolux/` |
 
-#### 1.4 Como escolher fogão mesa de vidro — ⬜
+#### 1.4 Como escolher fogão mesa de vidro — 🟩
 
 | Campo | Conteúdo |
 |--------|----------|
@@ -110,7 +110,7 @@ Conteúdos de **maior ROI imediato**: fechar buracos de receita nos hubs 4 bocas
 | **Páginas fortalecidas** | `/melhores/melhor-fogao-mesa-de-vidro/` |
 | **Dependências** | L05A prioritário; não depende de reviews, mas as fortalece depois |
 | **Intenção** | `como escolher fogão mesa de vidro` |
-| **URL planejada** | `/como-escolher-fogao-mesa-de-vidro/` |
+| **URL** | `/como-escolher-fogao-mesa-de-vidro/` |
 
 #### 1.5 Fogão mesa de vidro custo-benefício — ⬜
 
@@ -439,6 +439,7 @@ Inventário de páginas publicadas e planejadas (função no cluster). ROI = pot
 | `/como-escolher-fogao-5-bocas/` | 5 bocas | Satélite critérios | 🟩 | Alto | Manter |
 | `/fogao-5-bocas-custo-beneficio/` | 5 bocas | Satélite valor | 🟩 | Alto | Manter |
 | `/como-escolher-fogao-4-bocas/` | 4 bocas | Satélite critérios | 🟩 | Alto | Manter |
+| `/como-escolher-fogao-mesa-de-vidro/` | Mesa de vidro | Satélite critérios | 🟩 | Alto | Manter |
 | `/fogao-4-bocas-custo-beneficio/` | 4 bocas | Satélite valor | 🟩 | Alto | Manter |
 | `/comparativo-fogao-4-vs-5-bocas/` | 4 + 5 | Comparativo formato | 🟩 | Alto | Manter |
 | `/review-fogao-5-bocas-brastemp/` | 5 bocas | Review curta | 🟩 | Alto | Manter |
@@ -463,7 +464,6 @@ Inventário de páginas publicadas e planejadas (função no cluster). ROI = pot
 | Review CF04NAR | 4 bocas | Review SKU 🥇 | 🟩 | Muito alto | Publicado |
 | Review CFO4VAR | Mesa de vidro | Review SKU 🥇 | 🟩 | Muito alto | Publicado |
 | Review FE4IW | 4 bocas | Review SKU 🥈 | 🟩 | Alto | Publicado |
-| Como escolher mesa de vidro | Mesa de vidro | Satélite critérios | ⬜ | Alto | Sprint 1 |
 | Custo-benefício mesa de vidro | Mesa de vidro | Satélite valor | ⬜ | Alto | Sprint 1 |
 | Review BFO4VAE | Mesa de vidro | Review SKU 🥈 | ⬜ | Alto | Sprint 2 |
 | FE5IG vale a pena (longa) | 5 bocas | Análise longa | ⬜ | Muito alto | Sprint 2 |
@@ -497,6 +497,7 @@ Atualizar a cada conteúdo iniciado, publicado ou pausado.
 | 2026-08-04 | Review Consul CF04NAR | 🟩 | `/review-fogao-4-bocas-consul/` — H1/Title conforme `EDITORIAL_NAMING_CONVENTIONS.md` |
 | 2026-08-05 | Review Consul CFO4VAR | 🟩 | `/review-fogao-mesa-de-vidro-consul/` — H1/Title + L05A wiring |
 | 2026-08-06 | Review Electrolux FE4IW | 🟩 | `/review-fogao-4-bocas-electrolux/` — H1/Title + L06A wiring |
+| 2026-09-05 | Como escolher fogão mesa de vidro | 🟩 | `/como-escolher-fogao-mesa-de-vidro/` — satélite de critérios; L05A + L06A; sem ranking |
 
 ---
 

@@ -1,0 +1,547 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RelatedContent from '../components/RelatedContent.astro';
+import SmartRecommendations from '../components/SmartRecommendations.astro';
+import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
+import TechnicalFigure from '../components/TechnicalFigure.astro';
+
+const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
+const canonical = new URL('/como-escolher-fogao-mesa-de-vidro/', site).href;
+const headline = 'Como escolher fogão mesa de vidro em 2026';
+const pageTitle = 'Como escolher fogão mesa de vidro em 2026: critérios antes de comprar | Casa Prática Eletro';
+const description =
+	'Como escolher fogão mesa de vidro: tampo temperado, trempes, queimadores, forno e medidas. Critérios práticos antes de comparar os modelos no guia comercial.';
+const ogImage = new URL('images/library/L05A.webp', site).href;
+const faqId = `${canonical}#faq`;
+const publishedTime = '2026-09-05T21:00:00-03:00';
+
+const faqItems = [
+	{
+		question: 'Fogão com mesa de vidro é a mesma coisa que cooktop de vidro?',
+		answer:
+			'Não. Fogão de piso a gás com mesa de vidro tem queimadores, trempes e forno no mesmo aparelho. Cooktop de indução ou vitrocerâmico é outro produto: tampo liso, em geral sem forno acoplado. Se a ficha misturar os dois, os critérios deste guia deixam de valer.',
+	},
+	{
+		question: 'O que pesa mais na escolha: o vidro ou as trempes?',
+		answer:
+			'Na prática, o tampo de vidro temperado se parece de um modelo para outro. O que muda o uso diário é a mesa completa: material e formato das trempes, estabilidade da panela e espaço entre bocas. O tampo liso não corrige grade frouxa.',
+	},
+	{
+		question: 'Como saber se vale pagar a mais sem olhar só o preço?',
+		answer:
+			'O extra só faz sentido se aparecer na rotina: trempes mais estáveis, forno que você realmente usa ou um recurso que entra no dia a dia. Se a diferença for só visual do tampo, o critério ainda não fechou.',
+	},
+	{
+		question: 'Quando avançar para o guia comercial?',
+		answer:
+			'Quando o checklist da ficha estiver marcado e a dúvida já não for vidro versus inox, cooktop versus piso, nem 4 versus 5 bocas. Aí sim compare os modelos disponíveis no guia comercial — esta página não escolhe o modelo por você.',
+	},
+] as const;
+
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'WebPage',
+			'@id': canonical,
+			url: canonical,
+			name: pageTitle,
+			description,
+			inLanguage: 'pt-BR',
+		},
+		{
+			'@type': 'Article',
+			headline,
+			description,
+			image: [ogImage],
+			author: {
+				'@type': 'Organization',
+				name: 'Casa Prática Eletro',
+				url: site.href,
+			},
+			publisher: {
+				'@type': 'Organization',
+				name: 'Casa Prática Eletro',
+				url: site.href,
+			},
+			datePublished: publishedTime,
+			dateModified: publishedTime,
+			mainEntityOfPage: canonical,
+			articleSection: 'Guia prático',
+			inLanguage: 'pt-BR',
+		},
+		{
+			'@type': 'FAQPage',
+			'@id': faqId,
+			mainEntity: faqItems.map((item) => ({
+				'@type': 'Question',
+				name: item.question,
+				acceptedAnswer: {
+					'@type': 'Answer',
+					text: item.answer,
+				},
+			})),
+		},
+	],
+};
+---
+
+<BaseLayout
+	title={pageTitle}
+	description={description}
+	canonical={canonical}
+	pageType="guide"
+	openGraph={{
+		title: pageTitle,
+		description,
+		url: canonical,
+		type: 'article',
+		image: ogImage,
+		imageAlt: 'Comparação técnica entre mesa de vidro temperado e mesa de inox — critério de escolha do tampo',
+		publishedTime,
+		modifiedTime: publishedTime,
+	}}
+>
+	<script type="application/ld+json" slot="head" set:html={JSON.stringify(structuredData)} />
+	<article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+		<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Guia prático</p>
+		<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">
+			{headline}
+		</h1>
+		<p class="mt-4 text-lg leading-relaxed text-on-ink-body">
+			Use este guia quando a mesa de vidro já é o caminho — e você precisa de critérios para avaliar o aparelho, não de um
+			ranking de modelos.
+		</p>
+		<div class="mt-8">
+			<EditorialTrustRibbon />
+		</div>
+
+		<section class="mt-10" aria-labelledby="resposta-direta-heading">
+			<h2 id="resposta-direta-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				O que avaliar antes de escolher
+			</h2>
+			<p class="mt-4 text-base leading-relaxed text-on-ink-body">
+				A ordem abaixo evita decidir só pelo tampo. Se o acabamento ainda estiver em aberto, feche{' '}
+				<a href="/blog/fogao-mesa-de-vidro-ou-inox/" class="link-accent">vidro ou inox</a>
+				{' '}antes destes passos. Se o bloqueio for medo de quebra, leia{' '}
+				<a href="/blog/fogao-mesa-de-vidro-seguro/" class="link-accent">se a mesa de vidro é segura</a>
+				.
+			</p>
+			<div class="table-premium-shell mt-6">
+				<table class="table-premium min-w-[480px]">
+					<thead>
+						<tr>
+							<th scope="col">Ordem</th>
+							<th scope="col">Critério</th>
+							<th scope="col">Por que vem agora</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="bg-ink">
+							<th scope="row" class="font-semibold text-on-ink-body">1</th>
+							<td>Produto certo: fogão de piso a gás, não cooktop</td>
+							<td>Ficha, trempes e forno só fazem sentido no aparelho completo.</td>
+						</tr>
+						<tr class="bg-brand-900/25">
+							<th scope="row" class="font-semibold text-on-ink-body">2</th>
+							<td>Vão, profundidade e porta do forno</td>
+							<td>Modelo certo no anúncio não entra em nicho errado.</td>
+						</tr>
+						<tr class="bg-ink">
+							<th scope="row" class="font-semibold text-on-ink-body">3</th>
+							<td>Trempes, bocas e estabilidade</td>
+							<td>No vidro liso, a panela apoia na grade — não no tampo.</td>
+						</tr>
+						<tr class="bg-brand-900/25">
+							<th scope="row" class="font-semibold text-on-ink-body">4</th>
+							<td>Forno pela rotina real</td>
+							<td>Volume e esmalte pesam mais que timer que você não usa.</td>
+						</tr>
+						<tr class="bg-ink">
+							<th scope="row" class="font-semibold text-on-ink-body">5</th>
+							<td>Limpeza, gás e SKU exato</td>
+							<td>Fecha o dia a dia e evita comprar o irmão de inox.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<div class="mt-12 space-y-10 text-base leading-relaxed text-on-ink-body">
+			<section aria-labelledby="tipo-mesa-heading">
+				<h2 id="tipo-mesa-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Confirme o produto certo
+				</h2>
+				<p class="mt-4">
+					Este guia trata de <strong class="text-on-ink-body">fogão de piso a gás com tampo de vidro temperado</strong>:
+					queimadores visíveis, trempes e forno no mesmo corpo. Cooktop de indução ou vitrocerâmico também aparece como
+					“mesa de vidro”, mas é outro eletro — sem as bocas a gás e, em geral, sem forno acoplado.
+				</p>
+				<p class="mt-4">
+					Entre fogões a gás, o vidro em si costuma variar pouco na ficha: o texto típico é “vidro temperado”, em geral
+					preto e contínuo. O que muda de modelo para modelo é o conjunto — encaixe do tampo, trempes e como a gordura
+					encontra a borda. Espessura quase nunca vem publicada; não use milímetros de anúncio genérico como prova.
+				</p>
+				<TechnicalFigure
+					id="L05A"
+					class="mt-6"
+					caption="Antes de comparar modelos de vidro, confirme o material do tampo: superfície lisa e contínua versus inox com rebaixos. Se essa etapa ainda estiver aberta, o critério não é de modelo — é de acabamento."
+				/>
+				<p class="mt-4 text-on-ink-muted">
+					Na ficha, exija “vidro temperado” e instalação de piso. Se a foto mostrar cooktop liso sem trempes, você saiu
+					deste guia.
+				</p>
+			</section>
+
+			<section aria-labelledby="trempes-heading">
+				<h2 id="trempes-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					O que observar nas trempes
+				</h2>
+				<p class="mt-4">
+					No inox, rebaixos do tampo ajudam a localizar a panela. No vidro, a superfície é plana: <strong class="text-on-ink-body">a estabilidade depende sobretudo da trempe</strong>.
+					Ferro fundido costuma ter mais massa e mais contato com a base da panela; aço esmaltado ou aramada é mais leve —
+					comum em faixas de entrada. Isso é tendência de construção, não garantia de todo anúncio.
+				</p>
+				<TechnicalFigure id="L06A" class="mt-6" />
+				<p class="mt-4">
+					Na foto de cima do produto, imagine a panela que você mais usa. Veja se a base apoia em pontos firmes da grade
+					ou se fica em um anel estreito; se a trempe parece folgada no encaixe; e se duas panelas grandes caberiam sem as
+					grades se cruzarem. Panela que “anda” no fogo costuma ser grade leve, contato ruim ou espaço demais entre os
+					braços da trempe — o tampo liso não segura isso.
+				</p>
+				<p class="mt-4">
+					Panelas maiores e panela de pressão pedem mais apoio e, quando a ficha oferecer, grades individuais bem
+					dimensionadas ou grades duplas. Quem cozinha com uma ou duas panelas leves tolera melhor a trempe esmaltada.
+				</p>
+				<p class="mt-4 text-on-ink-muted">
+					Na ficha, anote o material (ferro fundido ou aço esmaltado) e se as grades são individuais ou duplas. Grades
+					duplas só justificam o extra se a rotina usa panelas grandes lado a lado — não porque o anúncio parece mais
+					completo.
+				</p>
+			</section>
+
+			<section aria-labelledby="queimadores-heading">
+				<h2 id="queimadores-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Queimadores: potência e distribuição
+				</h2>
+				<p class="mt-4">
+					Observe o mapa das bocas, não o slogan. Em muitos fogões de 4 bocas a disposição é um queimador rápido, dois
+					médios e um auxiliar — confirme na foto de cima, porque isso muda de modelo. O que importa na rotina é combinar
+					o que você usa ao mesmo tempo:
+				</p>
+				<ul class="mt-4 list-inside list-disc space-y-2">
+					<li><strong class="text-on-ink-body">Panela grande</strong> — cabe no queimador rápido sem invadir a boca ao lado?</li>
+					<li><strong class="text-on-ink-body">Panela média</strong> — as bocas centrais deixam duas panelas sem encostar?</li>
+					<li><strong class="text-on-ink-body">Panela pequena</strong> — o auxiliar segura fogo baixo (café, molho) sem apagar?</li>
+					<li><strong class="text-on-ink-body">Uso simultâneo</strong> — suas duas panelas maiores cabem na mesa ao mesmo tempo?</li>
+				</ul>
+				<p class="mt-4">
+					Potência em kW nem sempre aparece no anúncio brasileiro. Quando a ficha não traz número, compare pela disposição
+					e pelo que o fabricante chama de queimador rápido. Tripla chama faz sentido se você usa caçarola larga, wok ou
+					fundo que precisa de chama mais espalhada; se a rotina é panela comum, não é automaticamente melhor — é um
+					recurso a marcar só se você for usar.
+				</p>
+			</section>
+
+			<section aria-labelledby="forno-heading">
+				<h2 id="forno-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Como avaliar o forno
+				</h2>
+				<p class="mt-4">
+					O tampo de vidro não informa o forno. Na ficha, anote o volume em litros e se a cavidade é esmaltada. Quem assa
+					com alguma frequência precisa de espaço e de esmalte que aguente limpeza; quem quase não abre o forno pode
+					aceitar cavidade menor. Confirme o número no anúncio do modelo — não use o litro de um SKU como regra da
+					categoria.
+				</p>
+				<p class="mt-4">
+					Prateleira deslizante e vidro interno vedado, quando a ficha listar, ajudam a manutenção. Programas e nomes de
+					forno gourmet não são o critério desta página: se o forno for o motivo da compra, a decisão já não é sobre mesa
+					de vidro.
+				</p>
+				<p class="mt-4 text-on-ink-muted">
+					Como comparar: litros + “esmaltado” ou tecnologia de limpeza na ficha, e espaço para a porta abrir 90°.
+				</p>
+			</section>
+
+			<section aria-labelledby="dimensoes-heading">
+				<h2 id="dimensoes-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Quais dimensões e instalação conferir
+				</h2>
+				<p class="mt-4">
+					As medidas exatas saem da ficha do modelo que você está vendo, não desta página. Fogões de piso 4 bocas com mesa
+					de vidro costumam ficar numa faixa compacta, mas cada SKU muda. Use a tabela para medir em casa e depois cruze
+					com o anúncio.
+				</p>
+				<div class="table-premium-shell mt-6">
+					<table class="table-premium min-w-[420px]">
+						<thead>
+							<tr>
+								<th scope="col">Medir em casa</th>
+								<th scope="col">O que conferir na ficha e no vão</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">Largura</th>
+								<td>Vão livre, folga lateral e puxadores de armário vizinho.</td>
+							</tr>
+							<tr class="bg-brand-900/25">
+								<th scope="row" class="font-semibold text-on-ink-body">Profundidade</th>
+								<td>Rodapé, tomada, recuo da parede e profundidade útil do nicho.</td>
+							</tr>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">Altura</th>
+								<td>Quando o nicho, a coifa ou o móvel ao lado limitam o gabarito.</td>
+							</tr>
+							<tr class="bg-brand-900/25">
+								<th scope="row" class="font-semibold text-on-ink-body">Espaço de uso</th>
+								<td>Porta do forno aberta 90° e circulação — em corredor estreito isso inviabiliza o modelo.</td>
+							</tr>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">Tipo de gás</th>
+								<td>GLP ou rede; conversão, quando necessária, com profissional credenciado e regras do condomínio.</td>
+							</tr>
+							<tr class="bg-brand-900/25">
+								<th scope="row" class="font-semibold text-on-ink-body">Tensão</th>
+								<td>A versão do anúncio (incluindo bivolt, se a ficha indicar). Não presuma que todo modelo é igual.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p class="mt-4 text-on-ink-muted">
+					Se o tamanho (4 ou 5 bocas) ainda não fechou, use o{' '}
+					<a href="/comparativo-fogao-4-vs-5-bocas/" class="link-accent">comparativo 4 vs 5 bocas</a>
+					{' '}antes de olhar tampo. Formato de instalação (piso ou embutir) é outra etapa:{' '}
+					<a href="/blog/guia-fogao-embutir-ou-de-piso/" class="link-accent">embutir ou piso</a>.
+				</p>
+			</section>
+
+			<section aria-labelledby="aplicar-heading">
+				<h2 id="aplicar-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Como aplicar os critérios na ficha
+				</h2>
+				<p class="mt-4">
+					Abra um anúncio qualquer desta categoria e marque cada linha. Se um campo não aparecer, o veredito é
+					<strong class="text-on-ink-body"> precisa conferir</strong> — não complete com chute.
+				</p>
+				<div class="table-premium-shell mt-6">
+					<table class="table-premium min-w-[520px]">
+						<thead>
+							<tr>
+								<th scope="col">Verificação</th>
+								<th scope="col">Passou</th>
+								<th scope="col">Não passou / precisa conferir</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">1. Dimensões e espaço</th>
+								<td>A × L × P da ficha cabem no vão, com porta do forno abrindo.</td>
+								<td>Ficha sem medida, ou a fita métrica não fecha com o nicho.</td>
+							</tr>
+							<tr class="bg-brand-900/25">
+								<th scope="row" class="font-semibold text-on-ink-body">2. Gás e tensão</th>
+								<td>GLP ou rede bate com a casa; tensão da versão está no anúncio.</td>
+								<td>Anúncio omite gás/voltagem, ou a versão não é a da sua instalação.</td>
+							</tr>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">3. Trempes e panelas</th>
+								<td>Material e formato da grade aguentam as panelas que você usa.</td>
+								<td>Só “mesa de vidro” na ficha, sem tipo de trempe; foto não mostra apoio.</td>
+							</tr>
+							<tr class="bg-brand-900/25">
+								<th scope="row" class="font-semibold text-on-ink-body">4. Queimadores</th>
+								<td>O mapa das bocas cobre panela grande, média, pequena e uso simultâneo da sua rotina.</td>
+								<td>Não há foto de cima, nem indicação de rápido/auxiliar; tripla chama sem uso real.</td>
+							</tr>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">5. Forno</th>
+								<td>Litros e cavidade (esmaltada ou equivalente) batem com o quanto você assa.</td>
+								<td>Volume ausente, ou o extra é só programa gourmet que você não usa.</td>
+							</tr>
+							<tr class="bg-brand-900/25">
+								<th scope="row" class="font-semibold text-on-ink-body">6. Recursos da rotina</th>
+								<td>O que a ficha lista é o que você usa toda semana (acendimento, corta-gás, etc.).</td>
+								<td>Recurso só no título do anúncio, sem linha na ficha — ou você não usaria.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p class="mt-4 text-on-ink-muted">
+					Exemplo de como aplicar os critérios em uma ficha: a{' '}
+					<a href="/review-fogao-mesa-de-vidro-consul/" class="link-accent">review do Consul CFO4VAR</a>
+					{' '}reúne tampo, trempes, forno (~58 L) e dimensões (94,8 × 51,8 × 60,3 cm, A × L × P) para treinar a leitura.
+					Confirme sempre o anúncio do modelo — não é uma recomendação de compra nesta página.
+				</p>
+			</section>
+
+			<section aria-labelledby="limpeza-heading">
+				<h2 id="limpeza-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Limpeza e manutenção
+				</h2>
+				<p class="mt-4">
+					Para comparar modelos, olhe o acesso à mesa — não a promessa de “fácil de limpar”. Na ficha e na foto, verifique
+					se as trempes saem, se os manípulos são removíveis e se o desenho do tampo deixa recorte ou borda onde farelo e
+					gordura acumulam. Superfície lisa ajuda o pano do dia a dia; recorte mal resolvido anula essa vantagem.
+				</p>
+				<p class="mt-4 text-on-ink-muted">
+					Produtos e o que evitar no vidro seguem a orientação do fabricante do modelo. Na dúvida, o manual do SKU vale
+					mais do que regra genérica de internet.
+				</p>
+			</section>
+
+			<section aria-labelledby="recursos-heading">
+				<h2 id="recursos-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Recursos extras que realmente fazem diferença
+				</h2>
+				<p class="mt-4">
+					Marque na ficha só o que entra na sua semana. O restante é vitrine. Quando o anúncio listar:
+				</p>
+				<ul class="mt-4 list-inside list-disc space-y-2">
+					<li>
+						<strong class="text-on-ink-body">Acendimento automático</strong> — costuma importar no uso diário, se a ficha
+						do modelo confirmar (mesa e, quando houver, forno).
+					</li>
+					<li>
+						<strong class="text-on-ink-body">Corta-gás</strong> — recurso de segurança do aparelho, não do tampo; só conte
+						com ele se estiver na ficha.
+					</li>
+					<li>
+						<strong class="text-on-ink-body">Timer ou display</strong> — úteis se você usa; não substituem trempe estável
+						nem forno adequado.
+					</li>
+				</ul>
+				<p class="mt-4 text-on-ink-muted">
+					Não presuma bivolt, corta-gás ou acendimento em todo anúncio. A versão vendida é a que está na ficha daquele SKU.
+				</p>
+			</section>
+
+			<section aria-labelledby="seguranca-heading">
+				<h2 id="seguranca-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Segurança como critério de compra
+				</h2>
+				<p class="mt-4">
+					Na ficha, priorize corta-gás quando listado, trempes que mantenham a panela estável e o SKU claro no anúncio —
+					tampo trincado no transporte ou instalação fora de nível são motivo para recusar o aparelho, não para “testar”
+					depois. O aprofundamento sobre uso, impacto e mitos do vidro temperado está em{' '}
+					<a href="/blog/fogao-mesa-de-vidro-seguro/" class="link-accent">fogão mesa de vidro é seguro?</a>
+				</p>
+			</section>
+
+			<section aria-labelledby="custo-heading">
+				<h2 id="custo-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Como avaliar o extra do preço
+				</h2>
+				<p class="mt-4">
+					Custo-benefício, neste guia, não é escolher faixa de modelo. O que importa é verificar se o valor adicional
+					compra uma característica que faz diferença na rotina — por exemplo, melhor aproveitamento das trempes, forno
+					mais adequado ao que você assa, ou um recurso que você realmente usa. Se o extra aparecer só no visual do tampo,
+					o critério ainda não justificou o ticket.
+				</p>
+			</section>
+
+			<section aria-labelledby="perfis-heading">
+				<h2 id="perfis-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Quando cada critério ganha peso
+				</h2>
+				<div class="table-premium-shell mt-6">
+					<table class="table-premium min-w-[480px]">
+						<thead>
+							<tr>
+								<th scope="col">Situação</th>
+								<th scope="col">O que pesar mais na ficha</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">Cozinha compacta ou visual contínuo</th>
+								<td>Tampo liso e medidas do vão — o gabarito mata o modelo certo.</td>
+							</tr>
+							<tr class="bg-brand-900/25">
+								<th scope="row" class="font-semibold text-on-ink-body">Rotina doméstica comum</th>
+								<td>Trempes estáveis e forno de uso real; recursos extra só se você usa.</td>
+							</tr>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">Várias panelas ao mesmo tempo</th>
+								<td>Distribuição das bocas e, antes do tampo, se o tamanho é 4 ou 5 bocas.</td>
+							</tr>
+							<tr class="bg-brand-900/25">
+								<th scope="row" class="font-semibold text-on-ink-body">Uso pesado ou prioridade em robustez</th>
+								<td>Volte ao acabamento: o eixo pode ser inox, não um modelo de vidro “mais forte”.</td>
+							</tr>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">Orçamento apertado</th>
+								<td>Não abra mão de vão, SKU exato e trempes compatíveis com suas panelas.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<section aria-labelledby="erros-heading">
+				<h2 id="erros-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Checagem final: erros a evitar
+				</h2>
+				<ul class="mt-4 list-inside list-disc space-y-2">
+					<li>Fechar a compra sem medir o vão e a abertura da porta do forno.</li>
+					<li>
+						Confundir o código de vidro com o de inox da mesma marca (na Consul, por exemplo, CFO4VAR e CF04NAR não são o
+						mesmo produto).
+					</li>
+					<li>Aceitar anúncio sem código de modelo claro — o nome comercial da linha às vezes muda de loja para loja.</li>
+					<li>Comparar ficha de fogão de piso com a de cooktop de vidro.</li>
+					<li>Ir ao guia comercial ainda em dúvida de vidro versus inox.</li>
+				</ul>
+			</section>
+		</div>
+
+		<p class="mt-10 text-base leading-relaxed text-on-ink-body">
+			Agora que você sabe quais critérios observar, pode aplicar o checklist a um modelo e, se quiser comparar os modelos
+			disponíveis, avançar para o guia comercial — para{' '}
+			<a href="/melhores/melhor-fogao-mesa-de-vidro/" class="link-accent">comparar os modelos e ver as opções disponíveis</a>
+			.
+		</p>
+
+		<section class="mt-16 border-t border-white/10 pt-14" aria-labelledby="faq-heading" id="faq">
+			<h2 id="faq-heading" class="font-display text-2xl font-bold tracking-tight text-on-ink-body">
+				Perguntas frequentes
+			</h2>
+			<dl class="mt-8 space-y-10">
+				{
+					faqItems.map((item) => (
+						<div>
+							<dt class="font-display text-lg font-bold text-on-ink-body">{item.question}</dt>
+							<dd class="mt-3 text-base leading-relaxed text-on-ink-muted">{item.answer}</dd>
+						</div>
+					))
+				}
+			</dl>
+		</section>
+
+		<div class="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+			<a
+				href="/melhores/melhor-fogao-mesa-de-vidro/"
+				class="inline-flex min-h-[52px] flex-1 items-center justify-center gap-2 bg-cta px-8 text-xs font-extrabold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-w-[200px]"
+				aria-label="Comparar os modelos de fogão mesa de vidro e ver as opções disponíveis"
+			>
+				Comparar os modelos e ver as opções
+			</a>
+		</div>
+
+		<RelatedContent
+			class="mt-14"
+			currentPath="/como-escolher-fogao-mesa-de-vidro/"
+			eyebrow="Veja também"
+			title="Leituras relacionadas"
+			subtitle="Acabamento, segurança e o guia comercial — na ordem certa da decisão."
+			topics={['mesa-vidro', 'compra-segura']}
+		/>
+
+		<SmartRecommendations
+			class="mt-12"
+			currentPath="/como-escolher-fogao-mesa-de-vidro/"
+			heading="Próximos passos editoriais"
+			excludePaths={['/brastemp-bfs5ncr-vale-a-pena/']}
+		/>
+	</article>
+</BaseLayout>

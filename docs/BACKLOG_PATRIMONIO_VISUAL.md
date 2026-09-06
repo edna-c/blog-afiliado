@@ -129,9 +129,9 @@ Arte eventual de L01 (se já produzida / em validação) pode ser incorporada co
 
 | ID | Tema | Path | Wiring |
 |----|------|------|--------|
-| **L06A** | Ferro fundido × aramada esmaltada | `library/L06A.webp` | Custo-benefício 5b · reviews 5b · Brastemp vale a pena · review CFO4VAR |
+| **L06A** | Ferro fundido × aramada esmaltada | `library/L06A.webp` | Custo-benefício 5b · reviews 5b · Brastemp vale a pena · review CFO4VAR · `/como-escolher-fogao-mesa-de-vidro/` |
 | **L09A** | Forno simples × forno duplo | `library/L09A.webp` | Blog forno duplo |
-| **L05A** | Mesa vidro × inox | `library/L05A.webp` | Review Consul CFO4VAR |
+| **L05A** | Mesa vidro × inox | `library/L05A.webp` | Review Consul CFO4VAR · `/como-escolher-fogao-mesa-de-vidro/` |
 
 ### Staging (Produzido — sem wiring)
 

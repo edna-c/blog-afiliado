@@ -19,6 +19,7 @@ describe('resolvePageType', () => {
 		assert.equal(resolvePageType('/brastemp-bfs5ncr-vale-a-pena/'), 'review');
 		assert.equal(resolvePageType('/comparativo-fogao-4-vs-5-bocas/'), 'comparison');
 		assert.equal(resolvePageType('/como-escolher-fogao-5-bocas/'), 'guide');
+		assert.equal(resolvePageType('/como-escolher-fogao-mesa-de-vidro/'), 'guide');
 		assert.equal(resolvePageType('/fogao-5-bocas-custo-beneficio/'), 'guide');
 		assert.equal(resolvePageType('/fogao-atlas-e-bom/'), 'guide');
 		assert.equal(resolvePageType('/fogao-atlas-e-bom'), 'guide');

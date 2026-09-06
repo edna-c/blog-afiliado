@@ -7,6 +7,16 @@ Formato: mais recente no topo.
 
 ---
 
+## 2026-09-05
+
+### ID 14 — Como escolher fogão mesa de vidro
+
+- Nova URL `/como-escolher-fogao-mesa-de-vidro/`: satélite de critérios (não ranking) do cluster Mesa de Vidro.
+- Interlinks no pool editorial, mapa-base SEO e wiring L05A/L06A.
+- Money Page fortalecida: `/melhores/melhor-fogao-mesa-de-vidro/` (hub não alterado).
+
+---
+
 ## 2026-09-01
 
 ### Trava de canibalização — página de marca Atlas

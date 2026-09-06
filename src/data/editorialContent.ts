@@ -131,6 +131,19 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 		weight: 7,
 	},
 	{
+		href: '/como-escolher-fogao-mesa-de-vidro/',
+		title: 'Como escolher fogão mesa de vidro 2026 (critérios)',
+		description:
+			'Tampo temperado, trempes, queimadores, forno e medidas — critérios antes de abrir o guia comercial.',
+		kind: 'Guia',
+		flow: 2,
+		editorialLabel: 'Guia prático',
+		topics: ['mesa-vidro', 'instalacao', 'compra-segura', 'cozinha-moderna', 'manutencao'],
+		anchorText: 'guia de como escolher fogão mesa de vidro',
+		teaser: 'critérios de tampo, trempes e forno antes de comparar modelos',
+		weight: 7,
+	},
+	{
 		href: '/fogao-4-bocas-custo-beneficio/',
 		title: 'Fogão 4 bocas custo-benefício',
 		description: 'Onde vale economizar e onde não vale na mesma categoria.',

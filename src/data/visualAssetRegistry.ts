@@ -263,6 +263,7 @@ export const EDITORIAL_BODY_ASSETS: readonly VisualAsset[] = [
 			'/review-fogao-5-bocas-electrolux/',
 			'/review-fogao-4-bocas-consul/',
 			'/review-fogao-4-bocas-electrolux/',
+			'/como-escolher-fogao-mesa-de-vidro/',
 		],
 		notes: 'Ver src/data/technicalLibrary.ts',
 		governance: {
@@ -277,6 +278,7 @@ export const EDITORIAL_BODY_ASSETS: readonly VisualAsset[] = [
 				'/review-fogao-5-bocas-electrolux/',
 				'/review-fogao-4-bocas-consul/',
 				'/review-fogao-4-bocas-electrolux/',
+				'/como-escolher-fogao-mesa-de-vidro/',
 			],
 			plannedFor: ['/fogao-4-bocas-custo-beneficio/', '/'],
 			approver: 'humano',
