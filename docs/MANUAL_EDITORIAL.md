@@ -138,7 +138,7 @@ Se a resposta for “apenas aumenta o volume”, **cortar**, **resumir** ou **mo
 - Frases **curtas**.
 - Parágrafos **curtos** (em geral, 1–3 frases).
 - Linguagem **simples** e direta.
-- Termos técnicos: usar só quando necessários — e **explicar** em uma linha.
+- Termos técnicos: usar só quando necessários — e **explicar** em uma linha. A escolha da palavra (forma natural vs termo técnico) segue `MANUAL_VOZ_DECISAO_CASA_PRATICA.md`, seção **Linguagem natural antes da linguagem técnica**.
 - Listas quando melhorarem a leitura (comparação, checklist, benefícios, limitações).
 - Evitar blocos longos de texto contínuo.
 - Preferir **verbos ativos** e sujeitos claros.

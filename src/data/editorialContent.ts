@@ -121,13 +121,13 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 	{
 		href: '/como-escolher-fogao-5-bocas/',
 		title: 'Como escolher fogão 5 bocas 2026 (checklist)',
-		description: 'Medidas, gás e forno — checklist antes de abrir o ranking com ofertas.',
+		description: 'Espaço disponível, bocas, trempes, forno e gás — critérios antes de comparar os modelos.',
 		kind: 'Guia',
 		flow: 2,
 		editorialLabel: 'Guia prático',
 		topics: ['fogao-5-bocas', 'instalacao', 'compra-segura', 'manutencao'],
 		anchorText: 'guia de como escolher fogão 5 bocas',
-		teaser: 'checklist prático antes de comparar os 3 modelos',
+		teaser: 'critérios práticos antes de comparar os modelos',
 		weight: 7,
 	},
 	{

@@ -145,6 +145,8 @@ Termo que o leitor precisa para não errar a compra, **já ligado a uma consequ�
 
 Manter. É a autoridade do Casa Prática.
 
+Em texto novo, o nome da peça ainda pode permanecer — mas só se for a forma mais clara para o consumidor. A escolha da palavra segue a seção 3, **Linguagem natural antes da linguagem técnica**.
+
 #### B) Técnica sem tradução
 
 Termo ou frase correta que **não responde “o que muda na minha cozinha?”**.
@@ -186,7 +188,7 @@ Frases que existem para caber query, H2 ou célula de tabela.
 - a frase só fecha sentido para quem leu o mapa editorial;
 - o dado técnico não muda a rotina (milímetros de tampo que “quase nunca vêm publicados” — o guia acerta ao dizer para não usar isso como prova).
 
-Regra prática da amostra: **trempes, queimadores, forno, vão e código do modelo** merecem nome técnico. **Funil, cluster, medalha, SKU como jargão, eixo e gabarito** quase nunca.
+Regra prática da amostra: **trempes, forno e o modelo exato** merecem nome técnico quando ajudam a decidir. **Vão** permanece quando for abertura ou nicho; no espaço da cozinha, preferir “espaço disponível”. **Bocas** no lugar de “queimadores” quando o sentido for o mesmo. **Funil, cluster, medalha, SKU como jargão, eixo e gabarito** quase nunca. Detalhe normativo: seção 3 — Linguagem natural antes da linguagem técnica.
 
 ---
 
@@ -277,15 +279,15 @@ Não alterar as páginas nesta etapa. A coluna “como deveria ser dito” é no
 
 **TERMO/EXPRESSÃO:** nicho (em “nicho errado”)  
 **CONTEXTO:** tabela de ordem do guia: “Modelo certo no anúncio não entra em nicho errado.”  
-**POR QUE SOA INTERNO:** em SEO, nicho é tema; na cozinha, nicho é o vão do móvel. A frase joga nos dois sentidos e ainda está cifrada.  
-**COMO DEVERIA SER DITO AO LEITOR:** “O fogão do anúncio precisa caber no vão da sua cozinha — largura, profundidade e porta do forno.”
+**POR QUE SOA INTERNO:** em SEO, nicho é tema; na cozinha, nicho é a abertura do móvel. A frase joga nos dois sentidos e ainda está cifrada.  
+**COMO DEVERIA SER DITO AO LEITOR:** “O fogão do anúncio precisa caber no espaço disponível da sua cozinha — largura, profundidade e porta do forno.”
 
 ---
 
 **TERMO/EXPRESSÃO:** gabarito (“o gabarito mata o modelo certo”)  
 **CONTEXTO:** tabela “Quando cada critério ganha peso”, guia.  
 **POR QUE SOA INTERNO:** gabarito é jargão de projeto/móvel. “Mata” é figura de redação.  
-**COMO DEVERIA SER DITO AO LEITOR:** “Se não couber no vão, o modelo certo no papel vira modelo errado na sua casa.”
+**COMO DEVERIA SER DITO AO LEITOR:** “Se não couber no espaço disponível, o modelo certo no papel vira modelo errado na sua casa.”
 
 ---
 
@@ -344,10 +346,10 @@ Não alterar as páginas nesta etapa. A coluna “como deveria ser dito” é no
 11. medalha (fora da página de ranking)  
 12. observação editorial / curadoria editorial (como rótulo)  
 13. metodologia explícita (como chip)  
-14. gabarito (sem traduzir em medidas do vão)  
+14. gabarito (sem traduzir em medidas do espaço disponível)  
 15. eixo (no sentido de arquitetura de decisão)  
 16. ticket (no sentido de preço)  
-17. nicho (sem deixar claro que é o vão)  
+17. nicho (sem deixar claro se é abertura do móvel ou espaço da cozinha)  
 18. irmão de inox (sem o exemplo dos códigos)  
 19. Entrada (selo de faixa de produto)  
 20. leitura escaneável  
@@ -373,7 +375,7 @@ Valem em **qualquer** página nova ou revisão. Se um destes falhar, o texto ain
 | # | Princípio | Em uma frase |
 | --- | --- | --- |
 | 1 | Falar com a pessoa, não com a keyword | O H1 pode conter a query; o corpo conversa com quem está na cozinha. |
-| 2 + 3 | Técnica traduzida em consequência prática | O nome da peça permanece; a frase seguinte diz o que muda no uso. |
+| 2 + 3 | Técnica traduzida; linguagem natural primeiro | Forma simples quando for igualmente precisa. Nome técnico só se ajudar a decidir ou for o termo da ficha; a frase seguinte diz o que muda no uso. |
 | 5 | Não expor arquitetura interna | Cluster, hub, SKU, Lifestyle, guia comercial não entram na fala ao leitor. |
 | 6 | Evitar slogans e linguagem artificial | Sem urgência vazia, telegrama interno nem auto-descrição do método. |
 | 8 | CTA depende da maturidade da decisão | O CTA entra quando a decisão desta página estiver madura e o destino a completar. Quantidade é referência (seção 6), não cota. |
@@ -398,10 +400,59 @@ O H1 pode conter a query. O segundo parágrafo não deve repetir a query em negr
 ### Regra 2 — Técnica útil permanece; técnica muda de casa precisa de tradução
 `[Princípio obrigatório]`
 
-Manter o nome da peça (trempe, queimador, vidro temperado, corta-gás, volume do forno).  
+Manter o nome da peça quando ele acrescenta precisão ou é o termo da ficha (trempe, vidro temperado, corta-gás, volume do forno).  
+Quando “bocas” disser a mesma coisa que “queimadores”, preferir “bocas”.  
 Em seguida, obrigatório quando o termo não for óbvio: **o que isso muda na prática para mim?**
 
 Fórmula mínima: termo + gesto + para quem.
+
+A escolha da palavra — natural ou técnica — segue a seção abaixo. A regra 2 não autoriza jargão técnico quando existe forma mais simples e igualmente precisa.
+
+### Linguagem natural antes da linguagem técnica
+`[Princípio obrigatório — amplia a regra 2]`
+
+O Casa Prática deve priorizar a linguagem que uma pessoa comum usaria ao falar sobre sua própria compra.
+
+Quando existir uma expressão técnica correta, mas houver uma alternativa mais simples e igualmente precisa, usar a alternativa simples.
+
+**Exemplos**
+
+- Preferir “espaço disponível” em vez de “vão” quando o assunto for o espaço que a pessoa tem na cozinha.
+- Usar “vão” quando o contexto exigir precisão técnica, como ao tratar especificamente de uma abertura ou nicho de instalação.
+- Preferir “interior do forno” em vez de “cavidade” quando isso disser exatamente a mesma coisa.
+- Preferir “modelo” em vez de “versão” quando “versão” não acrescentar precisão.
+- Preferir “serve para” quando essa forma preservar exatamente o sentido de compatibilidade.
+- Preferir “voltagem” em linguagem dirigida ao consumidor, mantendo termos técnicos específicos quando forem necessários à precisão.
+- Preferir “fogão” em vez de “aparelho” quando “fogão” for mais claro.
+- Preferir “botijão (GLP)” ou “gás encanado” quando forem mais claros para o consumidor.
+- Preferir “bocas” em vez de “queimadores” quando os dois termos tiverem exatamente o mesmo sentido naquele contexto.
+- Preferir “medidas” em vez de “dimensões” quando não houver perda de precisão.
+
+Termos técnicos devem permanecer quando tiverem função real para a decisão ou quando forem os termos que o consumidor encontrará na ficha do produto, anúncio ou instalação.
+
+**Exemplos que podem permanecer**
+
+- vão livre, quando se tratar efetivamente da abertura;
+- nicho, em contexto de cozinha planejada;
+- trempes;
+- kW;
+- conversível.
+
+**Regra de decisão**
+
+Se o termo técnico não acrescentar informação que ajude o leitor a entender ou decidir, substitua-o pela forma mais natural.
+
+A simplificação **não** pode alterar o significado técnico.
+
+O objetivo não é eliminar termos técnicos. É impedir que a linguagem técnica domine um texto destinado ao consumidor.
+
+**Teste final**
+
+“Uma pessoa comum falaria assim ao explicar essa compra para outra pessoa?”
+
+Se a resposta for não, procure uma forma mais natural sem perder precisão.
+
+Esta regra vale para páginas novas, artigos, revisões e reescritas editoriais — não só para um URL.
 
 ### Regra 3 — Característica técnica liga-se a consequência de uso
 `[Princípio obrigatório]`
@@ -412,7 +463,7 @@ Quando for relevante, amarrar a:
 - facilidade ou dificuldade;
 - segurança;
 - limpeza;
-- espaço (vão, porta do forno, corredor);
+- espaço (espaço disponível, porta do forno, corredor; “vão” só na abertura ou nicho);
 - manutenção e reposição;
 - custo (compra e ao longo do tempo);
 - conforto;
@@ -550,7 +601,7 @@ Três dúvidas diferentes. Três tons. Não são etapas obrigatórias de uma seq
 
 - Medo → fato, mito, cuidado. Sem ranking na primeira tela.
 - Acabamento → comparação de rotina. Sem escolher marca.
-- Modelo → ficha, vão, código, trempes. Encaminhar para comparar opções **se** essa for a dúvida residual.
+- Modelo → ficha, espaço disponível, modelo exato, trempes. Encaminhar para comparar opções **se** essa for a dúvida residual.
 
 ### Regra 22 — Português claro cabe na tabela; telegrama não é “voz premium”
 `[Diretriz de apoio]`
@@ -573,7 +624,7 @@ A recomendação precisa de critério visível (rotina, espaço, limpeza, segura
 
 Não contradiz o princípio 9: clareza é sair capaz de decidir, inclusive com um “eu priorizaria X”. Não contradiz o princípio 10: a opinião cabe **dentro** da decisão dona da página (vale o vidro? é seguro? qual tampo?), não transforma o artigo de dúvida em ranking.
 
-**Total de regras de voz:** 22 (8 princípios obrigatórios, nas regras 1–3, 5–6, 8–10 e 13) + 1 diretriz nova (23). As demais das 22 são diretrizes de apoio.
+**Total de regras de voz:** 22 (8 princípios obrigatórios, nas regras 1–3, 5–6, 8–10 e 13, incluindo a seção **Linguagem natural antes da linguagem técnica**, que amplia a regra 2) + 1 diretriz nova (23). As demais das 22 são diretrizes de apoio.
 
 ---
 
@@ -593,7 +644,7 @@ Frases reais da amostra. Classificação:
 
 **PROBLEMA:** Telegrama. “Nicho” é ambíguo (vão × SEO). Quem ainda não mediu a cozinha não vê a ação.
 
-**DEPOIS:** “Antes de se apaixonar pelo modelo, meça o vão: largura, profundidade e se a porta do forno abre inteira. O fogão certo no anúncio pode ser o errado na sua cozinha.”
+**DEPOIS:** “Antes de se apaixonar pelo modelo, meça o espaço disponível: largura, profundidade e se a porta do forno abre inteira. O fogão certo no anúncio pode ser o errado na sua cozinha.”
 
 **EFEITO NA DECISÃO:** Responde “por que eu não posso escolher só pela foto?”  
 **VEREDITO:** **C** — substituir.
@@ -896,11 +947,12 @@ Isso já está no guia — em prosa boa. A fórmula só impede que a versão de 
 
 ### 5.3 Regras da fórmula
 
-1. **Não abrir com o benefício de marketing** (“superfície premium”). Abrir com a peça.  
-2. **Não terminar no dado de ficha** (“ferro fundido”). Terminar no uso (“mais contato com a base da panela”).  
-3. **Nomear o não-benefício.** O tampo de vidro não corrige trempe frouxa — frase ouro de “vale a pena?” e do guia.  
-4. **Se não houver consequência de rotina, a característica provavelmente não deveria estar na página** (ou é ruído de anúncio).  
-5. **Recurso extra segue a mesma fórmula.** Corta-gás: o que é → o que evita → só conte com ele se estiver na ficha daquele modelo → não substitui trempe estável.
+1. **Antes de nomear a peça:** existe forma mais simples e igualmente precisa? Se sim, usar essa forma (seção 3 — Linguagem natural antes da linguagem técnica).  
+2. **Não abrir com o benefício de marketing** (“superfície premium”). Abrir com a peça.  
+3. **Não terminar no dado de ficha** (“ferro fundido”). Terminar no uso (“mais contato com a base da panela”).  
+4. **Nomear o não-benefício.** O tampo de vidro não corrige trempe frouxa — frase ouro de “vale a pena?” e do guia.  
+5. **Se não houver consequência de rotina, a característica provavelmente não deveria estar na página** (ou é ruído de anúncio).  
+6. **Recurso extra segue a mesma fórmula.** Corta-gás: o que é → o que evita → só conte com ele se estiver na ficha daquele modelo → não substitui trempe estável.
 
 ### 5.4 O que a fórmula não é
 
@@ -1115,7 +1167,7 @@ Não são “degraus”. São URLs donas, cada uma com uma decisão. A opinião 
 | Vale a pena? | Conversação de perfil + direção quando o critério sustentar | rotina, limpeza, apartamento, trempes | medalha, cluster, SKU, ranking na abertura |
 | Vidro ou inox? | Comparação honesta (pode priorizar um lado com Y) | envelhece, perdoa, reposição, família grande | próximo passo comercial, hub |
 | É seguro? | Fato + cuidado | temperado, impacto, manual, instalação | ranking, medalha, ofertas na 1ª tela |
-| Como escolher? | Checklist de anúncio | vão, código do modelo, foto de cima, litros | eixo, gabarito sem tradução, guia comercial, Lifestyle |
+| Como escolher? | Checklist de anúncio | espaço disponível, modelo exato, foto de cima, litros | eixo, gabarito sem tradução, guia comercial, Lifestyle |
 | Qual comprar? | Curadoria e preço | melhor para X, ver preço, disponibilidade | “decida com calma” eterno — aqui a calma da dúvida de tipo já passou |
 | Qual modelo? | Análise | este forno, esta trempe, este limite | transformar em ranking de categoria |
 
@@ -1135,7 +1187,7 @@ Antes de publicar, o autor responde em voz alta. Se alguma resposta falhar, o te
 ### Voz
 
 5. O texto fala com **uma pessoa real** (você + cozinha), não com a keyword?  
-6. Há termo técnico **sem** “o que muda na prática”?  
+6. Há termo técnico **sem** “o que muda na prática”? Há termo técnico que uma pessoa comum substituiria por uma forma mais simples, sem perder precisão?  
 7. Há linguagem interna (cluster, hub, SKU, Lifestyle, guia comercial, pareamento, jornada, medalha, eixo, gabarito, ticket)?  
 8. Há frase que só existe como slogan, telegrama ou SEO?  
 9. O leitor entende o que muda na **vida dele** (limpeza, espaço, segurança, custo, esforço)?  
@@ -1205,7 +1257,7 @@ Não rolar até o FAQ. Não abrir o rodapé de recomendações internas.
 
 O Casa Prática não precisa falar menos de fogão. Precisa falar de fogão **do jeito de quem vai usar**.
 
-Técnica continua: vidro temperado, trempe, vão, código do modelo, corta-gás. O que não continua é o vocabulário de quem organiza o site — cluster, SKU, medalha, guia comercial — no lugar da consequência na cozinha.
+Técnica continua quando ajuda a decidir ou é o termo da ficha: vidro temperado, trempe, vão livre (abertura), corta-gás. O espaço da cozinha se diz espaço disponível. O que não continua é o vocabulário de quem organiza o site — cluster, SKU, medalha, guia comercial — no lugar da consequência na cozinha.
 
 Clareza não é recuar para “depende”. Quando o critério sustenta, dizer a direção. Quando não sustenta, dizer o limite. Em ambos os casos, o convite seguinte só existe se completar a decisão **desta** página ou a dúvida residual — nunca por pressão, nunca porque “a próxima etapa do funil exige”.
 
