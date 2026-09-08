@@ -407,6 +407,7 @@ Espelhar o **cluster Fogão 5 bocas**. Não reinventar o funil.
 6. FAQ objetivo  
 7. Rodar o checklist de publicação  
 8. Apresentar **ANÁLISE DE IMAGENS** (`docs/BIBLIOTECA_DE_PROMPTS.md` §11) — sem inserir até aprovação  
+9. Rodar a **PASSAGEM 2 de voz** (Camada de Naturalidade — `docs/BIBLIOTECA_DE_PROMPTS.md` §12) no texto visível ao leitor  
 
 **Não** partir de um artigo longo para “encurtar depois”.
 

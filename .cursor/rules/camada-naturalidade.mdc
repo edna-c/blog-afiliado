@@ -1,0 +1,62 @@
+---
+description: Segunda leitura obrigatória de voz — texto visível deve soar como pessoa experiente ajudando a decidir, não como IA editorial
+alwaysApply: true
+---
+
+# Camada de Naturalidade — Casa Prática Eletro
+
+Nenhum texto visível ao leitor (artigo, guia, comparativo, ranking, review, hub, satélite, chrome, CTA, FAQ) pode ser declarado **pronto** sem duas passagens: conteúdo e voz.
+
+Prompt canônico: `docs/BIBLIOTECA_DE_PROMPTS.md` §12.  
+Critério de voz: `docs/MANUAL_VOZ_DECISAO_CASA_PRATICA.md` e `docs/MANUAL_EDITORIAL.md`.
+
+Aplica-se ao **texto que o leitor vê**. Nomenclatura interna dos manuais (cluster, SKU, “Aprofundar”) permanece nos docs.
+
+## Regra central
+
+Não escrever como uma IA explicando estratégia editorial.
+
+Escrever como alguém que entende de fogões e está ajudando uma pessoa real a decidir o que faz sentido na cozinha dela.
+
+Se a frase cabe em relatório, apresentação, documento de SEO ou reunião de marketing — mas não numa conversa sobre comprar um fogão — reescrever de forma mais simples.
+
+## Duas passagens (obrigatórias)
+
+1. **Conteúdo** — função, intenção, tese, fatos, estrutura, links, coerência editorial.
+2. **Voz** — naturalidade, simplicidade, ritmo, palavras artificiais, jargão, frases feitas para SEO ou para organizar o raciocínio da IA.
+
+A página só está pronta quando passar pelas duas.
+
+## Teste de leitura natural
+
+Ler cada seção como se fosse dita em voz alta para quem está escolhendo um fogão:
+
+1. Eu realmente falaria assim?
+2. Uma pessoa comum entenderia sem traduzir?
+3. A expressão ajuda o leitor ou só organiza o raciocínio da IA?
+4. Estou dizendo algo concreto ou só dando nome sofisticado a uma ideia simples?
+5. A frase é uma recomendação para uma pessoa — ou uma explicação sobre o próprio conteúdo?
+
+Se indicar artificialidade, reescrever.
+
+## Simplificação
+
+Quando houver duas formas de dizer a mesma coisa, preferir a mais simples, sem perder precisão.
+
+Não trocar uma palavra só por outra “mais elegante”. Transmitir conhecimento sem parecer que está demonstrando conhecimento.
+
+## SEO
+
+Não forçar palavra-chave exata quando isso prejudicar a naturalidade.
+
+A intenção de busca se atende pelo conteúdo, pela estrutura e pelo vocabulário relacionado — não pela repetição mecânica da consulta.
+
+## Alertas (não são blacklist absoluta)
+
+Revisar expressões como: eixo de decisão; próximo passo comercial; fecha essa etapa / fecha a compra; protagonista da rotina; perfil de uso ideal; faixa consciente; teto baixo; mínimo consciente; opção de entrada entre os três; sem esse degrau; durabilidade percebida; efeito visual de amplitude; menor drama com pequenos riscos; recomendamos a leitura; comparativo central do cluster; para fechar; próximo passo; aprofundar; “qual o melhor…” só para inserir keyword; frases que descrevem a arquitetura, o funil ou a estratégia editorial.
+
+O critério é a **naturalidade no contexto**.
+
+## Preferir concreto
+
+“quem quer gastar menos”; “quem usa o fogão todos os dias”; “quem cozinha bastante”; “quem mora sozinho”; “quem cozinha para a família”; “se você precisa de mais espaço”; “se você prefere praticidade”; “se você quer um fogão mais fácil de manter”; “vale mais a pena quando…”; “faz mais sentido para quem…”; “nesse caso…”; “na prática…”; “se esse é o seu caso…”

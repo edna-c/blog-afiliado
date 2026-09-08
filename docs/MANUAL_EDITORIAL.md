@@ -91,6 +91,14 @@ Recomendamos com **critério**, não com empurrão.
 
 O leitor deve sentir: *“alguém pensou no meu uso real”* — não *“alguém quer que eu clique agora”*.
 
+### Camada de Naturalidade (obrigatória)
+
+Antes de considerar um texto concluído, fazer **duas passagens**: conteúdo (função, intenção, fatos, estrutura) e voz (naturalidade, simplicidade, ausência de jargão editorial/SEO).
+
+Não escrever como uma IA explicando estratégia. Escrever como alguém que entende de fogões e está ajudando uma pessoa real a decidir.
+
+Prompt: `docs/BIBLIOTECA_DE_PROMPTS.md` §12 · regra `.cursor/rules/camada-naturalidade.mdc` · detalhe de voz: `MANUAL_VOZ_DECISAO_CASA_PRATICA.md`.
+
 ---
 
 # 4. Filosofia Editorial
@@ -302,6 +310,7 @@ Este manual **NÃO** substitui:
 
 | Manual | Papel |
 |--------|--------|
+| `MANUAL_VOZ_DECISAO_CASA_PRATICA.md` | Voz de decisão, linguagem interna que não vaza, CTA por maturidade |
 | `MANUAL_PAGINA_DECISAO.md` | Conteúdo e fluxo das páginas comerciais de decisão |
 | `MANUAL_DIRECAO_VISUAL.md` | Composição, ritmo e aproveitamento visual |
 | `MANUAL_DESIGN_SYSTEM.md` | Tokens, containers, grids e identidade visual técnica |
@@ -311,12 +320,13 @@ Este manual **NÃO** substitui:
 **Hierarquia**
 
 ```text
-MANUAL_EDITORIAL.md          → quem somos e como falamos (este arquivo)
+MANUAL_EDITORIAL.md                    → quem somos e como falamos (este arquivo)
         ↓ especializa
-MANUAL_PAGINA_DECISAO.md     → o que a página de decisão contém e em que ordem
-MANUAL_DIRECAO_VISUAL.md     → como a leitura se organiza visualmente
-MANUAL_DESIGN_SYSTEM.md      → como o design system implementa a apresentação
-MANUAL_SEO.md                → como a página é descoberta
+MANUAL_VOZ_DECISAO_CASA_PRATICA.md     → voz de decisão + Camada de Naturalidade (passagem 2)
+MANUAL_PAGINA_DECISAO.md               → o que a página de decisão contém e em que ordem
+MANUAL_DIRECAO_VISUAL.md               → como a leitura se organiza visualmente
+MANUAL_DESIGN_SYSTEM.md                → como o design system implementa a apresentação
+MANUAL_SEO.md                          → como a página é descoberta
 ```
 
 Em conflito entre “como escrever a voz da marca” e um pedido pontual de tom agressivo ou clickbait, **este manual prevalece**.
@@ -336,6 +346,7 @@ Toda decisão editorial parte desta pergunta:
 Antes de publicar, confirme também:
 
 1. Isso soa como a Casa Prática Eletro?  
-2. A recomendação está justificada — sem exagero?
+2. A recomendação está justificada — sem exagero?  
+3. A **PASSAGEM 2 de voz** passou (`BIBLIOTECA_DE_PROMPTS.md` §12): eu falaria assim em voz alta para quem está escolhendo um fogão?
 
 Se alguma resposta for “não” (ou se o conteúdo só aumenta volume), revise antes de publicar.

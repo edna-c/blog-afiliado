@@ -109,13 +109,13 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 	{
 		href: '/como-escolher-fogao-4-bocas/',
 		title: 'Como escolher fogão 4 bocas 2026 (checklist)',
-		description: 'Medidas, gás, mesa e forno — checklist antes de abrir o ranking com ofertas.',
+		description: 'Espaço, bocas, trempes, forno e gás — critérios antes de comparar os modelos.',
 		kind: 'Guia',
 		flow: 2,
 		editorialLabel: 'Guia prático',
 		topics: ['fogao-4-bocas', 'instalacao', 'compra-segura', 'cozinha-pequena'],
 		anchorText: 'guia de como escolher fogão 4 bocas',
-		teaser: 'checklist prático antes de comparar os 3 modelos',
+		teaser: 'critérios práticos antes de comparar os modelos',
 		weight: 7,
 	},
 	{

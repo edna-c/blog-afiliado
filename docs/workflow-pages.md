@@ -187,6 +187,7 @@ Fluxo padrão para criar páginas de review novas (ex.: novos modelos de fogão)
 - [ ] JSON-LD válido (Article/Product/Breadcrumb/FAQ conforme o caso).
 - [ ] Interlinkagem para guias, blog e outras reviews.
 - [ ] **ANÁLISE DE IMAGENS** apresentada (oportunidades para aprovação — ou declaração de que não há ponto natural). Não inserir imagens nesta etapa.
+- [ ] **PASSAGEM 2 de voz** (Camada de Naturalidade — `docs/BIBLIOTECA_DE_PROMPTS.md` §12): texto lido em voz alta; sem jargão de funil, SEO ou estratégia editorial.
 - [ ] Imagens carregando bem (peso e nitidez ok) — só depois da aprovação e inserção.
-- [ ] Conteúdo lido em voz alta / revisão de português.
+- [ ] Conteúdo com revisão de português.
 

@@ -89,9 +89,12 @@ Ao finalizar deverá informar:
 - pendências existentes;
 - próximos passos sugeridos (opcional).
 
-Em **artigo novo, revisado, atualizado, guia, comparativo, ranking, review ou conteúdo de apoio**, o relatório **não está completo** sem a seção **ANÁLISE DE IMAGENS** (`docs/BIBLIOTECA_DE_PROMPTS.md` §11 e `.cursor/rules/analise-imagens-artigos.mdc`).
+Em **artigo novo, revisado, atualizado, guia, comparativo, ranking, review ou conteúdo de apoio**, o relatório **não está completo** sem:
 
-Essa análise **não autoriza** gerar, procurar ou inserir imagens. Só apresenta oportunidades (ou declara que não há ponto natural). Produção ou inserção só após aprovação explícita. Novo arquivo no repositório continua exigindo aprovação humana (`MANUAL_DESIGN_SYSTEM.md` §6).
+- a **PASSAGEM 2 de voz** (Camada de Naturalidade — `docs/BIBLIOTECA_DE_PROMPTS.md` §12 e `.cursor/rules/camada-naturalidade.mdc`): o texto visível passou pela leitura em voz alta e não restou linguagem artificial, corporativa ou de funil/SEO;
+- a seção **ANÁLISE DE IMAGENS** (`docs/BIBLIOTECA_DE_PROMPTS.md` §11 e `.cursor/rules/analise-imagens-artigos.mdc`).
+
+Essa análise de imagens **não autoriza** gerar, procurar ou inserir imagens. Só apresenta oportunidades (ou declara que não há ponto natural). Produção ou inserção só após aprovação explícita. Novo arquivo no repositório continua exigindo aprovação humana (`MANUAL_DESIGN_SYSTEM.md` §6).
 
 ---
 
@@ -110,5 +113,7 @@ Quando o **Motor III — Patrimônio Visual** estiver ativo (`docs/BIBLIOTECA_DE
 - ao concluir, atualizar `src/data/visualAssetRegistry.ts` e seguir o próximo gap.
 
 A **ANÁLISE DE IMAGENS** de artigos (`docs/BIBLIOTECA_DE_PROMPTS.md` §11) é gate editorial separado: avalia pontos de inserção no texto e pede aprovação **antes** de produzir ou ligar ativo. Não substitui o fluxo Motor III (SSOT → backlog) nem autoriza arquivo novo no repo.
+
+A **Camada de Naturalidade** (`docs/BIBLIOTECA_DE_PROMPTS.md` §12) é gate de voz: a passagem 2 é obrigatória no texto visível ao leitor. Não autoriza reescrever páginas publicadas só para “alinhar o tom”, salvo pedido explícito.
 
 Fora do Modo Execução: quando houver dúvida entre executar ou perguntar, **perguntar primeiro**. A previsibilidade é mais importante do que a velocidade.

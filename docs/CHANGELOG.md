@@ -7,6 +7,17 @@ Formato: mais recente no topo.
 
 ---
 
+## 2026-09-08
+
+### Camada de naturalidade — segunda passagem de voz
+
+- Nenhum texto visível ao leitor pode ser declarado pronto sem duas passagens: conteúdo e voz.
+- A voz deve soar como pessoa experiente ajudando a decidir — não como IA explicando estratégia editorial, SEO ou funil.
+- Expressões de alerta (não blacklist absoluta): critério = naturalidade no contexto. Preferir linguagem concreta de uso e rotina.
+- Prompt: `docs/BIBLIOTECA_DE_PROMPTS.md` §12 · regra `.cursor/rules/camada-naturalidade.mdc` · notas em `MANUAL_EDITORIAL.md`, `MANUAL_VOZ_DECISAO_CASA_PRATICA.md`, `MANUAL_INTERACAO_AGENTES.md`, `MANUAL_PAGINA_DECISAO.md` e `workflow-pages.md`.
+
+---
+
 ## 2026-09-07
 
 ### Análise obrigatória de imagens em artigos

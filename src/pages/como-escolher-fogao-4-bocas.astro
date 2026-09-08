@@ -3,21 +3,93 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import RelatedContent from '../components/RelatedContent.astro';
 import SmartRecommendations from '../components/SmartRecommendations.astro';
 import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
-import { produtos } from '../data/products';
-import { mlAffiliateAttrs, shopeeAffiliateAttrs } from '../utils/affiliateTracking';
+import TechnicalFigure from '../components/TechnicalFigure.astro';
 
 const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
 const canonical = new URL('/como-escolher-fogao-4-bocas/', site).href;
-const pageTitle = 'Como escolher fogão 4 bocas em 2026: checklist antes de comprar | Casa Prática Eletro';
+const headline = 'Como escolher fogão 4 bocas em 2026';
+const pageTitle = 'Como escolher fogão 4 bocas em 2026: critérios antes de comparar modelos | Casa Prática Eletro';
 const description =
-	'Como escolher fogão 4 bocas: medidas, gás, mesa e forno — checklist prático antes de abrir o ranking com ofertas.';
+	'Como escolher fogão 4 bocas: espaço, bocas, trempes, forno e gás. Critérios práticos para avaliar o fogão antes de comparar os modelos.';
 const ogImage = new URL('images/melhores/melhor-fogao-4-bocas/melhor-fogao-4-bocas-2026.webp', site).href;
+const faqId = `${canonical}#faq`;
+const modifiedTime = '2026-09-08T12:00:00-03:00';
+
+const faqItems = [
+	{
+		question: 'Este guia serve se ainda estou entre 4 e 5 bocas?',
+		answer:
+			'Não. Aqui você já se decidiu pelo 4 bocas e precisa conferir o modelo. Se o tamanho ainda estiver em aberto, compare 4 e 5 bocas antes — senão você mede um espaço e avalia um fogão do tamanho errado.',
+	},
+	{
+		question: 'O que conferir primeiro na ficha de um fogão 4 bocas?',
+		answer:
+			'Espaço, gás, disposição das quatro bocas, trempes e forno. No 4 bocas isso pesa mais porque o tampo é mais estreito. Se o anúncio omitir algum desses campos, marque a lacuna — não invente o dado.',
+	},
+	{
+		question: 'Quatro bocas cabem quatro panelas grandes ao mesmo tempo?',
+		answer:
+			'Em geral, não. O tampo é mais estreito que o de um 5 bocas. O teste útil é imaginar as panelas que você realmente usa juntas — sobretudo duas grandes lado a lado — observando a disposição das bocas.',
+	},
+	{
+		question: 'Quando comparar os modelos?',
+		answer:
+			'Quando o checklist da ficha estiver marcado: o fogão cabe no espaço, o gás serve para a casa, as panelas cabem nas quatro bocas e o forno atende à rotina. Aí sim compare as opções disponíveis.',
+	},
+] as const;
+
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'WebPage',
+			'@id': canonical,
+			url: canonical,
+			name: pageTitle,
+			description,
+			inLanguage: 'pt-BR',
+		},
+		{
+			'@type': 'Article',
+			headline,
+			description,
+			image: [ogImage],
+			author: {
+				'@type': 'Organization',
+				name: 'Casa Prática Eletro',
+				url: site.href,
+			},
+			publisher: {
+				'@type': 'Organization',
+				name: 'Casa Prática Eletro',
+				url: site.href,
+			},
+			dateModified: modifiedTime,
+			mainEntityOfPage: canonical,
+			articleSection: 'Guia prático',
+			inLanguage: 'pt-BR',
+		},
+		{
+			'@type': 'FAQPage',
+			'@id': faqId,
+			mainEntity: faqItems.map((item) => ({
+				'@type': 'Question',
+				name: item.question,
+				acceptedAnswer: {
+					'@type': 'Answer',
+					text: item.answer,
+				},
+			})),
+		},
+	],
+};
 ---
 
 <BaseLayout
 	title={pageTitle}
 	description={description}
 	canonical={canonical}
+	pageType="guide"
 	openGraph={{
 		title: pageTitle,
 		description,
@@ -25,122 +97,419 @@ const ogImage = new URL('images/melhores/melhor-fogao-4-bocas/melhor-fogao-4-boc
 		type: 'article',
 		image: ogImage,
 		imageAlt: 'Fogões 4 bocas — referência visual do guia prático de escolha',
+		modifiedTime,
 	}}
 >
+	<script type="application/ld+json" slot="head" set:html={JSON.stringify(structuredData)} />
 	<article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
 		<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Guia prático</p>
 		<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">
-			Como escolher fogão 4 bocas em 2026
+			{headline}
 		</h1>
 		<p class="mt-4 text-lg leading-relaxed text-on-ink-body">
-			Use este guia quando já estiver decidido por <strong class="text-on-ink-body">fogão 4 bocas</strong>, mas ainda travado
-			em medida, gás, mesa ou forno — antes de abrir o ranking e as ofertas.
+			Este guia é para quem já decidiu pelo fogão 4 bocas e precisa de critérios para escolher o modelo certo para a
+			cozinha e a rotina — não de um ranking de modelos.
 		</p>
 		<div class="mt-8">
 			<EditorialTrustRibbon />
 		</div>
-		<div class="mt-10 space-y-8 text-base leading-relaxed text-on-ink-body">
-			<section aria-labelledby="step1">
-				<h2 id="step1" class="font-display text-xl font-bold text-on-ink-body">1. Desenhe a cozinha em números</h2>
-				<p class="mt-3">
-					Largura do vão, profundidade útil, altura dos móveis ao lado e espaço para a porta do forno aberta por completo.
-					Em cozinha compacta ou integrada, esses centímetros decidem se o 4 bocas entra sem apertar circulação.
+
+		<section class="mt-10" aria-labelledby="resposta-direta-heading">
+			<h2 id="resposta-direta-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				O que avaliar antes de escolher
+			</h2>
+			<p class="mt-4 text-base leading-relaxed text-on-ink-body">
+				Se você ainda estiver entre 4 e 5 bocas, use o{' '}
+				<a href="/comparativo-fogao-4-vs-5-bocas/" class="link-accent">comparativo 4 vs 5 bocas</a>
+				{' '}antes de olhar os critérios abaixo.
+			</p>
+			<div class="table-premium-shell mt-6">
+				<table class="table-premium min-w-[480px]">
+					<thead>
+						<tr>
+							<th scope="col">Ordem</th>
+							<th scope="col">Critério</th>
+							<th scope="col">Por que importa</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="bg-ink">
+							<th scope="row" class="font-semibold text-on-ink-body">1</th>
+							<td>Espaço disponível, profundidade e porta do forno</td>
+							<td>Mesmo mais estreito, o fogão pode não caber se você ignorar a profundidade ou a porta do forno.</td>
+						</tr>
+						<tr class="bg-brand-900/25">
+							<th scope="row" class="font-semibold text-on-ink-body">2</th>
+							<td>As quatro bocas e as panelas juntas</td>
+							<td>Quatro bocas não significam quatro panelas grandes. Duas panelas grandes lado a lado já testam o modelo.</td>
+						</tr>
+						<tr class="bg-ink">
+							<th scope="row" class="font-semibold text-on-ink-body">3</th>
+							<td>Trempes e estabilidade</td>
+							<td>Com as bocas mais perto, panela grande e panela de pressão precisam de apoio firme — a imagem do produto ajuda a conferir isso melhor do que o título.</td>
+						</tr>
+						<tr class="bg-brand-900/25">
+							<th scope="row" class="font-semibold text-on-ink-body">4</th>
+							<td>Forno: o que você assa</td>
+							<td>Um fogão 4 bocas não tem necessariamente um forno pequeno. Confira o volume daquele modelo, não o tamanho do tampo.</td>
+						</tr>
+						<tr class="bg-ink">
+							<th scope="row" class="font-semibold text-on-ink-body">5</th>
+							<td>Gás, voltagem e código do modelo</td>
+							<td>Gás ou voltagem que não servem para a sua casa podem impedir o uso do fogão. O código evita comprar outro modelo da mesma linha.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<div class="mt-12 space-y-10 text-base leading-relaxed text-on-ink-body">
+			<section aria-labelledby="dimensoes-heading">
+				<h2 id="dimensoes-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Espaço e medidas
+				</h2>
+				<p class="mt-4">
+					Muita gente escolhe 4 bocas justamente porque a cozinha é compacta. Mesmo assim, as medidas mudam de um
+					modelo para outro. Um fogão 4 bocas costuma ter cerca de 50 a 55 cm de largura, 58 a 65 cm de profundidade e
+					cerca de 90 a 97 cm de altura. Essas medidas servem apenas como referência. Na hora de escolher o modelo,
+					confira sempre as medidas informadas pelo fabricante.
+				</p>
+				<div class="table-premium-shell mt-6">
+					<table class="table-premium min-w-[420px]">
+						<thead>
+							<tr>
+								<th scope="col">Medida</th>
+								<th scope="col">Referência</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">Largura</th>
+								<td>50–55 cm</td>
+							</tr>
+							<tr class="bg-brand-900/25">
+								<th scope="row" class="font-semibold text-on-ink-body">Profundidade</th>
+								<td>58–65 cm</td>
+							</tr>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">Altura</th>
+								<td>cerca de 90–97 cm</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p class="mt-4">
+					A largura é a diferença mais fácil de perceber em relação a um fogão maior. A profundidade e a abertura da porta do forno são os pontos que mais
+					costumam surpreender em apartamentos: o fogão “cabe” na fita, mas a porta aberta trava a passagem ou encosta
+					no móvel da frente. Meça o espaço disponível e compare largura, profundidade e altura com a ficha daquele
+					modelo. Não use as medidas de um fogão como referência para outro.
+				</p>
+				<div class="table-premium-shell mt-6">
+					<table class="table-premium min-w-[420px]">
+						<thead>
+							<tr>
+								<th scope="col">Medir em casa</th>
+								<th scope="col">O que conferir na ficha e no espaço</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">Largura</th>
+								<td>Vão livre, folga lateral e puxadores de armário vizinho.</td>
+							</tr>
+							<tr class="bg-brand-900/25">
+								<th scope="row" class="font-semibold text-on-ink-body">Profundidade</th>
+								<td>Rodapé, tomada, recuo da parede e profundidade útil do nicho.</td>
+							</tr>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">Altura</th>
+								<td>Quando o nicho, a coifa ou o móvel ao lado limitam o espaço.</td>
+							</tr>
+							<tr class="bg-brand-900/25">
+								<th scope="row" class="font-semibold text-on-ink-body">Espaço de uso</th>
+								<td>Porta do forno aberta 90° e espaço para circular e usar o fogão com conforto.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<section aria-labelledby="bocas-heading">
+				<h2 id="bocas-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					As quatro bocas e as panelas juntas
+				</h2>
+				<p class="mt-4">
+					Ter quatro bocas não significa usar quatro panelas grandes ao mesmo tempo. O espaço entre as bocas decide
+					a compra mais do que o número escrito no anúncio. Em muitos fogões 4 bocas a disposição é uma boca rápida,
+					duas médias e uma auxiliar — observe a disposição das bocas, porque isso muda de modelo.
+				</p>
+				<ul class="mt-4 list-inside list-disc space-y-2">
+					<li>Duas panelas grandes — cabem lado a lado sem uma tomar o espaço da outra?</li>
+					<li>Panela de pressão ou caçarola larga — apoia na boca sem invadir a boca ao lado?</li>
+					<li>Panela pequena — existe boca auxiliar para fogo baixo, ou você vai improvisar numa boca grande?</li>
+				</ul>
+				<p class="mt-4">
+					Imagine o almoço comum da casa, não o Natal. Se a rotina real é duas ou três panelas, o 4 bocas costuma
+					dar conta — desde que as panelas grandes realmente caibam. A potência da boca indica a força da chama, mas
+					não diz se as panelas vão caber bem juntas no tampo.
+				</p>
+				<p class="mt-4 text-on-ink-muted">
+					Boca extra potente ou tripla chama só vale se você realmente usa caçarola larga, wok ou panela de fundo
+					maior. Para uma ou duas panelas médias, isso não precisa decidir a compra.
 				</p>
 			</section>
-			<section aria-labelledby="step2">
-				<h2 id="step2" class="font-display text-xl font-bold text-on-ink-body">2. Gás e ventilação</h2>
-				<p class="mt-3">
-					Confirme GLP vs rede e regras do condomínio. Em dúvida, profissional credenciado vale mais que qualquer ranking.
+
+			<section aria-labelledby="trempes-heading">
+				<h2 id="trempes-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Trempes e estabilidade
+				</h2>
+				<p class="mt-4">
+					No 4 bocas as panelas ficam mais perto umas das outras. Quem segura a panela é a trempe, não o tampo. Ferro
+					fundido costuma ser mais pesado e ter mais contato com a base; grades de aço esmaltado ou aramadas costumam ser mais leves.
+				</p>
+				<TechnicalFigure id="L06A" class="mt-6" />
+				<p class="mt-4">
+					Olhe o tampo visto de cima e imagine a panela que você mais usa. Veja se a base apoia em pontos firmes da
+					grade, se a trempe parece folgada no encaixe e se duas panelas grandes caberiam sem uma empurrar a outra.
+					Se a panela desliza, pode haver pouco apoio, encaixe ruim ou espaço demais entre os braços da grade — e, com
+					as bocas mais próximas, isso pode incomodar mais no dia a dia.
+				</p>
+				<p class="mt-4 text-on-ink-muted">
+					Na ficha, anote o material — ferro fundido ou aço esmaltado — e veja se as grades são individuais ou duplas.
+					Grades duplas só fazem diferença se você costuma usar panelas grandes e pesadas lado a lado.
 				</p>
 			</section>
-			<section aria-labelledby="step3">
-				<h2 id="step3" class="font-display text-xl font-bold text-on-ink-body">3. Mesa e forno pela rotina</h2>
-				<p class="mt-3">
-					Inox prioriza robustez no dia a dia; vidro prioriza limpeza visual — feche o acabamento no{' '}
-					<a
-						href="/blog/fogao-mesa-de-vidro-ou-inox/"
-						class="link-accent"
-						aria-label="Comparativo fogão mesa de vidro ou inox"
-					>
-						comparativo vidro ou inox
-					</a>
-					. No forno, peça o que a rotina realmente usa (assados semanais vs uso ocasional) antes de pagar por recurso
-					premium.
+
+			<section aria-labelledby="forno-heading">
+				<h2 id="forno-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Como avaliar o forno
+				</h2>
+				<p class="mt-4">
+					Quatro bocas não significam forno pequeno. O volume varia de um modelo para outro. Na ficha, anote quantos
+					litros o forno tem e se o interior é esmaltado. Quem assa com frequência precisa de espaço e de um interior
+					mais fácil de limpar; quem quase não usa o forno pode aceitar menos capacidade.
+				</p>
+				<p class="mt-4 text-on-ink-muted">
+					Na hora de comparar, olhe o volume, o revestimento do interior e se a porta abre no espaço que você tem.
+					Nome de programa ou forno “gourmet” só deve pesar se você realmente for usar.
 				</p>
 			</section>
-			<section aria-labelledby="step4">
-				<h2 id="step4" class="font-display text-xl font-bold text-on-ink-body">4. Cruze com o ranking e os satélites</h2>
-				<p class="mt-3">
-					Depois do checklist, abra o{' '}
-					<a
-						href="/melhores/melhor-fogao-4-bocas/#guia-comercial-produtos"
-						class="link-accent"
-						aria-label="Ranking melhor fogão 4 bocas com ofertas"
-					>
-						ranking de fogão 4 bocas com ofertas
-					</a>
-					. Se o tamanho ainda estiver em aberto, use o{' '}
-					<a
-						href="/comparativo-fogao-4-vs-5-bocas/"
-						class="link-accent"
-						aria-label="Comparativo entre fogão 4 bocas e fogão 5 bocas"
-					>
-						comparativo 4 vs 5 bocas
-					</a>
-					. Se a dúvida for só preço, veja o{' '}
-					<a
-						href="/fogao-4-bocas-custo-beneficio/"
-						class="link-accent"
-						aria-label="Guia fogão 4 bocas custo-benefício"
-					>
-						custo-benefício 4 bocas
-					</a>
-					.
+
+			<section aria-labelledby="gas-heading">
+				<h2 id="gas-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Gás, voltagem e instalação
+				</h2>
+				<p class="mt-4">
+					Confirme se o modelo serve para o gás da sua casa — botijão (GLP) ou gás encanado. Em condomínio, pode haver
+					regra própria. Se precisar converter, siga o fabricante e chame um profissional credenciado. “Conversível” no
+					anúncio não é padrão de todos os 4 bocas.
 				</p>
+				<p class="mt-4">
+					A voltagem também muda. Olhe a que está no anúncio daquele modelo. Não presuma que todos os 4 bocas tenham a
+					mesma.
+				</p>
+				<p class="mt-4">
+					Em cozinha planejada ou nicho, use as medidas e as exigências de instalação da ficha daquele modelo. Folgas
+					mudam. Em dúvida na obra, siga a ficha e procure um profissional credenciado.
+				</p>
+				<p class="mt-4 text-on-ink-muted">
+					Se a dúvida for piso ou embutir, e não o espaço do 4 bocas, veja{' '}
+					<a href="/blog/guia-fogao-embutir-ou-de-piso/" class="link-accent">embutir ou piso</a>.
+				</p>
+			</section>
+
+			<section aria-labelledby="recursos-heading">
+				<h2 id="recursos-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Recursos que realmente fazem diferença
+				</h2>
+				<p class="mt-4">
+					Anote só o que você realmente usaria. Nem todo recurso destacado no anúncio vai fazer diferença na sua
+					rotina.
+				</p>
+				<ul class="mt-4 list-inside list-disc space-y-2">
+					<li>Acendimento automático — evita acender a chama na mão no uso diário.</li>
+					<li>Corta-gás — interrompe o gás se a chama apagar.</li>
+					<li>Timer ou display — só conta se você realmente controla o tempo por ali.</li>
+				</ul>
+				<p class="mt-4">
+					Não dê como certo um recurso só porque outro modelo da mesma linha tem. Confira a ficha do fogão que você
+					está comprando. Em 4 bocas, o acendimento automático pode fazer bastante diferença para quem cozinha todos os
+					dias — se estiver na ficha daquele modelo, não só no título.
+				</p>
+				<p class="mt-4 text-on-ink-muted">
+					Se o tampo ainda estiver em dúvida, decida vidro ou inox antes de comparar os modelos. O{' '}
+					<a href="/blog/fogao-mesa-de-vidro-ou-inox/" class="link-accent">comparativo vidro ou inox</a>
+					{' '}ajuda nessa escolha.
+				</p>
+			</section>
+
+			<section aria-labelledby="custo-heading">
+				<h2 id="custo-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Quando vale pagar mais
+				</h2>
+				<p class="mt-4">
+					Você já escolheu o tamanho. Pagar mais só faz sentido se o modelo trouxer algo que muda o uso. Eu
+					priorizaria trempes mais estáveis, um forno adequado ao que você costuma assar e o acendimento automático,
+					se você cozinha todos os dias.
+				</p>
+				<p class="mt-4">
+					Se a diferença estiver só no visual, não vale pagar mais. E se o que falta é espaço para mais panelas ao
+					mesmo tempo, um 4 bocas mais caro não resolve: o tamanho é que precisa ser outro.
+				</p>
+				<p class="mt-4 text-on-ink-muted">
+					Se a dúvida que restou for só o preço entre modelos, use o{' '}
+					<a href="/fogao-4-bocas-custo-beneficio/" class="link-accent">guia de fogão 4 bocas custo-benefício</a>.
+				</p>
+			</section>
+
+			<section aria-labelledby="aplicar-heading">
+				<h2 id="aplicar-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Como aplicar os critérios na ficha
+				</h2>
+				<p class="mt-4">
+					Abra um anúncio de fogão 4 bocas e confira cada item. Se um campo não aparecer, marque “precisa conferir” —
+					não complete com palpite.
+				</p>
+				<div class="table-premium-shell mt-6">
+					<table class="table-premium min-w-[520px]">
+						<thead>
+							<tr>
+								<th scope="col">Verificação</th>
+								<th scope="col">Está de acordo</th>
+								<th scope="col">Precisa conferir</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">1. Medidas e espaço</th>
+								<td>As medidas do modelo cabem no espaço disponível, e a porta do forno abre sem dificuldade.</td>
+								<td>A ficha não informa as medidas ou elas não cabem no espaço disponível.</td>
+							</tr>
+							<tr class="bg-brand-900/25">
+								<th scope="row" class="font-semibold text-on-ink-body">2. Gás e voltagem</th>
+								<td>O tipo de gás serve para a casa e a voltagem do modelo está no anúncio.</td>
+								<td>O anúncio omite gás ou voltagem, ou o modelo não combina com a instalação.</td>
+							</tr>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">3. Bocas e panelas</th>
+								<td>As panelas que você usa cabem juntas, olhando a disposição das bocas.</td>
+								<td>Não há foto de cima, ou o anúncio sugere quatro panelas grandes sem mostrar o espaço entre as bocas.</td>
+							</tr>
+							<tr class="bg-brand-900/25">
+								<th scope="row" class="font-semibold text-on-ink-body">4. Trempes</th>
+								<td>A panela maior que você usa apoia em pontos firmes da grade.</td>
+								<td>A ficha fala só no tampo, sem detalhe das trempes, e a foto não mostra o apoio.</td>
+							</tr>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">5. Forno</th>
+								<td>O volume informado atende ao que você costuma assar.</td>
+								<td>O volume não está informado, ou o modelo oferece recursos de forno que você não pretende usar.</td>
+							</tr>
+							<tr class="bg-brand-900/25">
+								<th scope="row" class="font-semibold text-on-ink-body">6. Recursos da rotina</th>
+								<td>Você usaria o recurso na sua rotina, e ele está na ficha — não só no título.</td>
+								<td>O recurso aparece só no título, sem confirmação na ficha, ou você não usaria.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<section aria-labelledby="perfis-heading">
+				<h2 id="perfis-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					O que olhar primeiro na ficha
+				</h2>
+				<div class="table-premium-shell mt-6">
+					<table class="table-premium min-w-[480px]">
+						<thead>
+							<tr>
+								<th scope="col">Situação</th>
+								<th scope="col">O que olhar primeiro na ficha</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">Cozinha compacta ou apartamento</th>
+								<td>Medidas do fogão contra o espaço disponível e a porta do forno aberta.</td>
+							</tr>
+							<tr class="bg-brand-900/25">
+								<th scope="row" class="font-semibold text-on-ink-body">Mora sozinho, a dois ou em família pequena</th>
+								<td>Disposição das bocas: duas panelas grandes e a boca auxiliar.</td>
+							</tr>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">Assa com frequência</th>
+								<td>Volume do forno em litros e se o interior é esmaltado.</td>
+							</tr>
+							<tr class="bg-brand-900/25">
+								<th scope="row" class="font-semibold text-on-ink-body">Rotina doméstica comum</th>
+								<td>Se as panelas ficam firmes e se o gás serve para a casa.</td>
+							</tr>
+							<tr class="bg-ink">
+								<th scope="row" class="font-semibold text-on-ink-body">Orçamento apertado</th>
+								<td>Primeiro o espaço e as trempes; visual e timer depois.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<section aria-labelledby="erros-heading">
+				<h2 id="erros-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Checagem final: erros a evitar
+				</h2>
+				<ul class="mt-4 list-inside list-disc space-y-2">
+					<li>Comprar sem medir o espaço disponível e a abertura da porta do forno.</li>
+					<li>Usar a medida de um modelo como se fosse padrão de todos os fogões 4 bocas.</li>
+					<li>Aceitar anúncio sem código de modelo claro — o nome comercial da linha às vezes muda de loja para loja.</li>
+					<li>Assumir que quatro bocas cabem quatro panelas grandes, sem olhar como elas ficam no tampo.</li>
+					<li>Comparar os modelos enquanto ainda houver dúvida entre 4 e 5 bocas, ou entre vidro e inox.</li>
+				</ul>
 			</section>
 		</div>
+
+		<p class="mt-10 text-base leading-relaxed text-on-ink-body">
+			Quando o checklist da ficha estiver marcado,{' '}
+			<a href="/melhores/melhor-fogao-4-bocas/" class="link-accent">compare os modelos e veja as opções disponíveis</a>.
+		</p>
+
+		<section class="mt-16 border-t border-white/10 pt-14" aria-labelledby="faq-heading" id="faq">
+			<h2 id="faq-heading" class="font-display text-2xl font-bold tracking-tight text-on-ink-body">
+				Perguntas frequentes
+			</h2>
+			<dl class="mt-8 space-y-10">
+				{
+					faqItems.map((item) => (
+						<div>
+							<dt class="font-display text-lg font-bold text-on-ink-body">{item.question}</dt>
+							<dd class="mt-3 text-base leading-relaxed text-on-ink-muted">{item.answer}</dd>
+						</div>
+					))
+				}
+			</dl>
+		</section>
+
 		<div class="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
 			<a
-				href={produtos.consulCF04NAR.ml}
+				href="/melhores/melhor-fogao-4-bocas/"
 				class="inline-flex min-h-[52px] flex-1 items-center justify-center gap-2 bg-cta px-8 text-xs font-extrabold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-w-[200px]"
-				target="_blank"
-				rel="nofollow sponsored noopener noreferrer"
-				aria-label="Ver preço do Consul CF04NAR na loja — abre em nova aba (link patrocinado)"
-				{...mlAffiliateAttrs('consulCF04NAR', 'page_end')}
+				aria-label="Comparar os modelos de fogão 4 bocas e ver as opções disponíveis"
 			>
-				<span aria-hidden="true">🔥</span>
-				Ver preço no Mercado Livre
-			</a>
-			<a
-				href={produtos.consulCF04NAR.shopee}
-				class="btn-secondary-premium flex-1 px-8 sm:min-w-[200px]"
-				target="_blank"
-				rel="nofollow sponsored noopener noreferrer"
-				aria-label="Ver oferta do Consul CF04NAR na Shopee — abre em nova aba (link patrocinado)"
-				{...shopeeAffiliateAttrs('consulCF04NAR', 'page_end')}
-			>
-				Ver oferta na Shopee
-			</a>
-			<a
-				href="/melhores/melhor-fogao-4-bocas/#guia-comercial-produtos"
-				class="btn-secondary-premium flex-1 px-8 sm:min-w-[200px]"
-				aria-label="Abrir ranking de fogão 4 bocas com preços e ofertas"
-			>
-				Ver ranking e ofertas
+				Comparar os modelos e ver as opções
 			</a>
 		</div>
+
 		<RelatedContent
 			class="mt-14"
 			currentPath="/como-escolher-fogao-4-bocas/"
 			eyebrow="Veja também"
 			title="Leituras relacionadas"
-			subtitle="Comparativos e leituras editoriais para alinhar tamanho, mesa e modelo antes de fechar."
+			subtitle="Tamanho, acabamento ou preço — só se a dúvida ainda estiver aberta."
 		/>
 
 		<SmartRecommendations
 			class="mt-12"
 			currentPath="/como-escolher-fogao-4-bocas/"
-			heading="Próximos passos editoriais"
+			heading="Continuar a leitura"
 		/>
 	</article>
 </BaseLayout>

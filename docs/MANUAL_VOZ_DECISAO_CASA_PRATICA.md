@@ -1,8 +1,10 @@
 # Manual de voz + decisão — Casa Prática Eletro
 
-**Status:** documentação de análise. Não altera páginas, URLs, títulos, componentes nem o funil publicado.  
+**Status:** documentação permanente de voz. Não altera páginas, URLs, títulos, componentes nem o funil publicado por si só.  
 **Base:** cinco páginas extraídas (home, “vale a pena?”, “é seguro?”, “vidro ou inox?”, “como escolher”).  
-**Uso:** escrever e revisar conteúdo futuro. Este arquivo descreve como o Casa Prática deve falar — não o que o site já deveria ter sido reescrito.
+**Uso:** escrever e revisar conteúdo futuro. Este arquivo descreve como o Casa Prática deve falar.
+
+**Gate operacional (passagem 2):** antes de declarar qualquer texto visível ao leitor como pronto, aplicar a **Camada de Naturalidade** — `docs/BIBLIOTECA_DE_PROMPTS.md` §12 e `.cursor/rules/camada-naturalidade.mdc`. A passagem 1 cobre função, intenção, fatos e estrutura; a passagem 2 cobre naturalidade, simplicidade e ausência de jargão editorial/SEO.
 
 ---
 
@@ -1208,9 +1210,10 @@ Antes de publicar, o autor responde em voz alta. Se alguma resposta falhar, o te
 18. Quando os critérios sustentam, a página recomenda **X por causa de Y** (regra 23) — sem propaganda e sem neutralidade excessiva?  
 19. O leitor termina **mais capaz de decidir**, não mais pressionado a clicar?  
 20. A página declara limites (o que o tampo não corrige, o que o extra de preço não compra)?  
-21. Teste dos 30 segundos (seção 9) passa?
+21. Teste dos 30 segundos (seção 9) passa?  
+22. **PASSAGEM 2 de voz** (`BIBLIOTECA_DE_PROMPTS.md` §12): o texto soa como alguém explicando a compra em voz alta — sem jargão de funil, SEO ou estratégia editorial?
 
-**Total de itens do checklist:** 21.
+**Total de itens do checklist:** 22.
 
 ---
 

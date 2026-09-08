@@ -9,7 +9,7 @@
 2. Quando um prompt se estabilizar na prática, **incorpore-o aqui** (não espalhar em chats soltos).
 3. Atualize este arquivo em vez de criar “biblioteca v2”.
 
-Documentação relacionada: `MANUAL_PAGINA_DECISAO.md`, `MANUAL_SEO.md`, `CHANGELOG.md`.
+Documentação relacionada: `MANUAL_EDITORIAL.md`, `MANUAL_VOZ_DECISAO_CASA_PRATICA.md`, `MANUAL_PAGINA_DECISAO.md`, `MANUAL_SEO.md`, `CHANGELOG.md`.
 
 ---
 
@@ -428,7 +428,137 @@ Preferir reuso de ativo já existente (Tipo B) se já cumprir a função.
 
 ---
 
-## 12. Espaço para novos prompts
+## 12. Prompt — camada de naturalidade (segunda passagem de voz)
+
+**Quando usar:** sempre, ao criar, revisar ou atualizar qualquer texto visível ao leitor (artigo, guia, comparativo, ranking, review, hub, satélite, chrome, CTA, FAQ).  
+**Regra de agente:** `.cursor/rules/camada-naturalidade.mdc`.  
+**Critério de voz:** `docs/MANUAL_VOZ_DECISAO_CASA_PRATICA.md` e `docs/MANUAL_EDITORIAL.md`.
+
+Aplica-se ao texto que o leitor vê. Nomenclatura interna dos manuais permanece nos docs.
+
+```text
+## CAMADA DE NATURALIDADE — CASA PRÁTICA
+
+A voz Casa Prática não deve apenas ser correta, clara e confiável.
+Ela precisa soar como uma pessoa experiente explicando uma decisão de compra
+para outra pessoa.
+
+Antes de considerar um texto concluído, faça uma segunda leitura exclusiva
+para detectar linguagem artificial, corporativa, excessivamente técnica,
+editorializada ou criada apenas para organizar o raciocínio do texto.
+
+### REGRA CENTRAL
+
+Não escreva como uma IA explicando uma estratégia editorial.
+
+Escreva como alguém que entende de fogões e está ajudando uma pessoa real
+a decidir o que faz mais sentido para a cozinha dela.
+
+Se uma expressão parece adequada para um relatório, apresentação corporativa,
+documento de SEO ou reunião de marketing, mas não para uma conversa natural
+sobre a compra de um fogão, prefira uma formulação mais simples.
+
+### EXPRESSÕES E PADRÕES QUE DEVEM ACENDER ALERTA
+
+Evitar ou revisar expressões como:
+
+- "eixo de decisão"
+- "próximo passo comercial"
+- "fecha essa etapa"
+- "fecha a compra"
+- "protagonista da rotina"
+- "perfil de uso ideal"
+- "faixa consciente"
+- "teto baixo"
+- "mínimo consciente"
+- "opção de entrada entre os três"
+- "sem esse degrau"
+- "durabilidade percebida"
+- "efeito visual de amplitude"
+- "menor drama com pequenos riscos"
+- "recomendamos a leitura"
+- "comparativo central do cluster"
+- "para fechar"
+- "próximo passo"
+- "aprofundar"
+- "qual o melhor..."
+  quando usado apenas para inserir palavra-chave
+- frases que descrevam a própria arquitetura do conteúdo,
+  o funil ou a estratégia editorial.
+
+Esses exemplos não são uma blacklist absoluta.
+O critério principal é a naturalidade da frase no contexto.
+
+### PREFERIR
+
+Em vez de linguagem abstrata ou estratégica, prefira linguagem concreta:
+
+"quem quer gastar menos"
+"quem usa o fogão todos os dias"
+"quem cozinha bastante"
+"quem mora sozinho"
+"quem cozinha para a família"
+"se você precisa de mais espaço"
+"se você prefere praticidade"
+"se você quer um fogão mais fácil de manter"
+"vale mais a pena quando..."
+"faz mais sentido para quem..."
+"nesse caso..."
+"na prática..."
+"se esse é o seu caso..."
+
+### TESTE DE LEITURA NATURAL
+
+Depois da revisão principal, leia cada seção imaginando que ela será dita
+em voz alta para uma pessoa que está escolhendo um fogão.
+
+Pergunte:
+
+1. Eu realmente falaria assim?
+2. Uma pessoa comum entenderia essa frase sem precisar traduzi-la?
+3. A expressão existe porque ajuda o leitor ou porque organiza o raciocínio
+   da IA?
+4. Estou dizendo algo concreto ou apenas dando um nome sofisticado para
+   uma ideia simples?
+5. A frase parece uma recomendação para uma pessoa ou uma explicação
+   sobre o próprio conteúdo?
+
+Se a resposta indicar artificialidade, reescreva.
+
+### REGRA DE SIMPLIFICAÇÃO
+
+Quando houver duas formas de dizer a mesma coisa, prefira a mais simples,
+desde que não perca precisão.
+
+Não trocar uma palavra apenas por outra palavra "mais elegante".
+
+A Casa Prática deve transmitir conhecimento sem parecer que está tentando
+demonstrar conhecimento.
+
+### REGRA PARA SEO
+
+Não force palavras-chave exatas quando isso prejudicar a naturalidade.
+
+A intenção de busca deve ser atendida pelo conteúdo, pela estrutura e pelo
+vocabulário relacionado — não pela repetição mecânica da consulta.
+
+### REGRA FINAL
+
+Antes de entregar uma página, faça obrigatoriamente duas passagens:
+
+PASSAGEM 1 — conteúdo:
+função, intenção, tese, fatos, estrutura, links e coerência editorial.
+
+PASSAGEM 2 — voz:
+naturalidade, simplicidade, ritmo, palavras artificiais, excesso de
+jargão, frases que parecem escritas para SEO ou para uma IA.
+
+Uma página só está pronta quando passar pelas duas.
+```
+
+---
+
+## 13. Espaço para novos prompts
 
 <!-- Adicionar prompts estáveis abaixo, com título numerado e data no CHANGELOG. -->
 
