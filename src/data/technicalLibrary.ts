@@ -79,6 +79,7 @@ export const TECHNICAL_LIBRARY = {
 		],
 		usedBy: [
 			'/fogao-5-bocas-custo-beneficio/',
+			'/fogao-4-bocas-custo-beneficio/',
 			'/brastemp-bfs5ncr-vale-a-pena/',
 			'/review-fogao-5-bocas-brastemp/',
 			'/review-fogao-5-bocas-consul/',

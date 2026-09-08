@@ -7,6 +7,16 @@ Formato: mais recente no topo.
 
 ---
 
+## 2026-09-07
+
+### Análise obrigatória de imagens em artigos
+
+- Nenhum artigo (novo, revisado, guia, comparativo, ranking, review ou conteúdo de apoio) pode ser declarado finalizado sem a seção **ANÁLISE DE IMAGENS**.
+- Avaliação de pontos de inserção ≠ obrigação de ter imagem. Relevância > quantidade. Sem gerar/inserir até aprovação.
+- Prompt: `docs/BIBLIOTECA_DE_PROMPTS.md` §11 · regra `.cursor/rules/analise-imagens-artigos.mdc` · notas em `MANUAL_INTERACAO_AGENTES.md`, `MANUAL_DIRECAO_VISUAL.md` e `workflow-pages.md`.
+
+---
+
 ## 2026-09-05
 
 ### ID 14 — Como escolher fogão mesa de vidro

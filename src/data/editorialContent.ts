@@ -156,18 +156,6 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 		weight: 7,
 	},
 	{
-		href: '/fogao-4-bocas-custo-beneficio/',
-		title: 'Fogão 4 bocas custo-benefício',
-		description: 'Onde vale economizar e onde não vale na mesma categoria.',
-		kind: 'Guia',
-		flow: 2,
-		editorialLabel: 'Compra inteligente',
-		topics: ['fogao-4-bocas', 'custo-beneficio', 'compra-segura', 'cozinha-pequena'],
-		anchorText: 'guia de fogão 4 bocas custo-benefício',
-		teaser: 'onde economizar (e onde não vale) na mesma categoria',
-		weight: 7,
-	},
-	{
 		href: '/fogao-5-bocas-custo-beneficio/',
 		title: 'Fogão 5 bocas custo-benefício',
 		description: 'Onde vale economizar e onde não vale na mesma categoria.',

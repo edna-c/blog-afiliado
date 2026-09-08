@@ -4,38 +4,41 @@ import RelatedContent from '../components/RelatedContent.astro';
 import SmartRecommendations from '../components/SmartRecommendations.astro';
 import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
 import AffiliateOfferBlock from '../components/AffiliateOfferBlock.astro';
+import ProductMedia from '../components/ProductMedia.astro';
+import TechnicalFigure from '../components/TechnicalFigure.astro';
 import { produtos } from '../data/products';
 import { mlAffiliateAttrs, shopeeAffiliateAttrs } from '../utils/affiliateTracking';
 
 const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
 const canonical = new URL('/fogao-4-bocas-custo-beneficio/', site).href;
 const pageTitle =
-	'Fogão 4 bocas custo-benefício 2026: Consul, Electrolux ou Atlas? | Casa Prática Eletro';
+	'Fogão 4 bocas custo-benefício 2026: Consul, Atlas ou Electrolux? | Casa Prática Eletro';
 const description =
-	'Qual fogão 4 bocas entrega mais pelo preço? Atlas Mônaco Plus, Consul CF04NAR e Electrolux FE4IW — perfil de cada um e oferta na loja.';
-const ogImage = new URL('images/melhores/melhor-fogao-4-bocas/melhor-fogao-4-bocas-2026.webp', site).href;
+	'Fogão 4 bocas custo-benefício: Consul CF04NAR para o uso diário, Atlas Mônaco Plus se você precisa gastar menos e Electrolux FE4IW se o forno for prioridade.';
+const ogImage = new URL('images/melhores/melhor-fogao-4-bocas/consul-cf04nar.webp', site).href;
 const faqId = `${canonical}#faq`;
+const consulPackshot = '/images/melhores/melhor-fogao-4-bocas/consul-cf04nar.webp';
 
 const faqItems = [
 	{
 		question: 'Qual fogão 4 bocas vale mais a pena pelo preço?',
 		answer:
-			'Depende da rotina, não só do menor ticket. Atlas Mônaco Plus é a entrada por preço e peças quando o teto é baixo. Consul CF04NAR costuma entregar melhor valor no meio da faixa — acendimento, mesa inox e forno no dia a dia, sem ir ao premium. Electrolux FE4IW só fecha o custo-benefício se PerfectCook/VaporBake (ou o visual da linha Efficient) forem requisito real; senão o ticket sobra.',
+			'Depende do que você espera do fogão. Para uso diário de casal ou família pequena, o Consul CF04NAR é o destaque desta comparação pelo conjunto de acendimento automático, mesa inox e forno para o cotidiano. O Atlas Mônaco Plus é uma alternativa para quem precisa gastar menos. Já o Electrolux FE4IW vale o investimento adicional quando os recursos de forno da linha Efficient são realmente importantes.',
 	},
 	{
 		question: 'Para quem cada opção faz sentido?',
 		answer:
-			'Atlas Mônaco Plus: casal ou primeiro imóvel com teto baixo, perfil de entrada que não tenta parecer premium. Consul CF04NAR: casal a família pequena com uso diário, quando dá para subir um degrau sem ir ao premium. Electrolux FE4IW: quem assa com frequência e trata PerfectCook/VaporBake como requisito. Se a rotina exige muitas panelas ao mesmo tempo, feche 4 ou 5 bocas antes do modelo.',
+			'O Atlas Mônaco Plus é indicado para quem quer gastar menos. O Consul CF04NAR atende melhor quem procura um fogão equilibrado para o uso diário e pode investir um pouco mais. Já o Electrolux FE4IW é mais interessante para quem assa com frequência e considera PerfectCook e VaporBake importantes na escolha. Se você costuma usar várias panelas ao mesmo tempo, vale decidir primeiro se quatro bocas são suficientes para sua rotina.',
 	},
 	{
-		question: 'Quando vale pagar mais por um modelo?',
+		question: 'Quando vale pagar mais pelo Consul ou pelo Electrolux?',
 		answer:
-			'Pagar o Consul em vez do Atlas faz sentido quando a rotina pede mais equilíbrio — acendimento, mesa inox e forno do dia a dia — sem ir ao premium. Pagar o Electrolux só vale se PerfectCook/VaporBake ou o visual da linha Efficient forem requisito real. Nesta página, não vale economizar em estabilidade das trempes, distância entre bocas, acendimento que você realmente usa, forno adequado ao que assa e instalação correta.',
+			'O Consul pode valer a diferença quando você procura um conjunto equilibrado para o uso diário, incluindo acendimento automático. Já o Electrolux faz sentido quando os recursos de forno da linha Efficient realmente fazem diferença para você.',
 	},
 	{
-		question: 'Qual opção tende a fazer mais sentido no uso cotidiano?',
+		question: 'Esta comparação inclui fogão 4 bocas com mesa de vidro?',
 		answer:
-			'Para uso diário sem forçar o mínimo, o Consul CF04NAR é o perfil de equilíbrio desta comparação: acendimento, mesa inox e forno adequados ao dia a dia, em casal ou família pequena. Atlas entra quando o teto manda ficar na entrada. Electrolux sobe o ticket para quem assa com frequência de verdade.',
+			'Não. Os três modelos desta página — Consul CF04NAR, Atlas Mônaco Plus e Electrolux FE4IW — são apresentados aqui como opções com mesa inox. Se você já decidiu pelo tampo de vidro, vale consultar o ranking específico de fogões com mesa de vidro.',
 	},
 ] as const;
 
@@ -76,90 +79,151 @@ const structuredData = {
 		url: canonical,
 		type: 'article',
 		image: ogImage,
-		imageAlt: 'Fogões 4 bocas — referência visual custo-benefício',
+		imageAlt: 'Fogão Consul CF04NAR 4 bocas inox — destaque de valor no uso típico',
 	}}
 >
 	<script type="application/ld+json" slot="head" set:html={JSON.stringify(structuredData)} />
 	<article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
 		<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Compra inteligente</p>
 		<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">
-			Fogão 4 bocas custo-benefício em 2026: Consul, Electrolux ou Atlas?
+			Fogão 4 bocas custo-benefício em 2026: o valor certo para a sua rotina
 		</h1>
 		<p class="mt-4 text-lg leading-relaxed text-on-ink-body">
-			<strong class="text-on-ink-body">Melhor fogão 4 bocas custo-benefício</strong> não é só o mais barato da vitrine — é o
-			que entrega acendimento, mesa e forno utilizáveis pelo preço da sua rotina.
+			Custo-benefício não significa escolher simplesmente o fogão mais barato. Uma boa compra é aquela que oferece o
+			que você realmente precisa no dia a dia, como acendimento automático, uma mesa inox adequada e um forno que dê
+			conta do que você costuma preparar, sem cobrar por recursos que não terão utilidade para você.
 		</p>
 		<div class="mt-8">
 			<EditorialTrustRibbon />
 		</div>
+
+		<p class="mt-8 text-sm leading-relaxed text-on-ink-muted">
+			Nesta comparação, analisamos três fogões 4 bocas com mesa inox: Consul CF04NAR, Atlas Mônaco Plus e Electrolux
+			FE4IW. Se você já decidiu pelo tampo de vidro, vale consultar o{' '}
+			<a href="/melhores/melhor-fogao-mesa-de-vidro/" class="link-accent">ranking de fogões com mesa de vidro</a>.
+		</p>
+
 		<section class="mt-10" aria-labelledby="decisao-rapida-heading">
 			<h2 id="decisao-rapida-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
-				Decisão rápida por perfil
+				Qual faz mais sentido para você?
 			</h2>
 			<div class="mt-6 grid gap-4 sm:grid-cols-3">
+				<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Se você quer gastar menos</h3>
+					<p class="mt-3 text-sm leading-relaxed text-on-ink-muted">
+						<strong class="text-on-ink-body">Atlas Mônaco Plus</strong> — é a escolha mais econômica desta comparação.
+					</p>
+				</div>
 				<div class="rounded-2xl border border-pop/25 bg-brand-900/35 p-5 ring-1 ring-pop/20">
-					<h3 class="font-display text-lg font-bold text-on-ink-body">Custo-benefício (destaque)</h3>
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Se procura um fogão equilibrado para o dia a dia</h3>
 					<p class="mt-3 text-sm leading-relaxed text-on-ink-muted">
-						Entrar em 4 bocas com teto baixo → <strong class="text-on-ink-body">Atlas Mônaco Plus</strong>, medalha de
-						custo-benefício do ranking.
+						<strong class="text-on-ink-body">Consul CF04NAR</strong> — é o destaque pelo conjunto que oferece para o uso
+						diário.
 					</p>
 				</div>
 				<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
-					<h3 class="font-display text-lg font-bold text-on-ink-body">Equilíbrio no dia a dia</h3>
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Se o forno é uma prioridade</h3>
 					<p class="mt-3 text-sm leading-relaxed text-on-ink-muted">
-						Uso diário sem forçar o mínimo → <strong class="text-on-ink-body">Consul CF04NAR</strong> (melhor geral do
-						ranking).
-					</p>
-				</div>
-				<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
-					<h3 class="font-display text-lg font-bold text-on-ink-body">Premium com propósito</h3>
-					<p class="mt-3 text-sm leading-relaxed text-on-ink-muted">
-						Forno e linha Efficient são requisito → <strong class="text-on-ink-body">Electrolux FE4IW</strong>. Se não
-						pesam, sobra ticket.
+						<strong class="text-on-ink-body">Electrolux FE4IW</strong> — vale considerar se PerfectCook e VaporBake são
+						importantes para você. Se esses recursos não fizerem diferença no seu dia a dia, pagar mais pode não
+						compensar.
 					</p>
 				</div>
 			</div>
 		</section>
 
 		<div class="mt-12">
-			<AffiliateOfferBlock
-				id="ofertas-custo-beneficio-4"
-				variant="featured"
-				productName="Atlas Mônaco Plus"
-				productId="atlasMonacoPlus"
-				heading="Oferta do destaque de custo-benefício (4 bocas)"
-				description="Medalha de custo-benefício do ranking 4 bocas. Confira preço e frete agora — depois continue lendo se quiser comparar Consul e Electrolux."
-				mercadoLivreUrl={produtos.atlasMonacoPlus.ml}
-				shopeeUrl={produtos.atlasMonacoPlus.shopee}
-			/>
+			<h2 class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Consul CF04NAR: destaque pelo conjunto
+			</h2>
+			<p class="mt-4 text-base leading-relaxed text-on-ink-body">
+				Para quem procura um fogão para usar todos os dias, sem partir para uma linha mais sofisticada, o Consul
+				CF04NAR é o destaque desta comparação. Ele reúne acendimento automático, mesa inox e um forno adequado para o
+				uso cotidiano, sem o investimento adicional nos recursos da linha Efficient.
+			</p>
+			<p class="mt-4 text-sm leading-relaxed text-on-ink-muted">
+				Confira preço e frete no Mercado Livre ou na Shopee.
+			</p>
+			<div class="mt-6 flex flex-col gap-6 sm:flex-row sm:items-start">
+				<ProductMedia
+					src={consulPackshot}
+					alt="Fogão Consul CF04NAR 4 bocas inox com acendimento automático"
+					aspect="square"
+					class="mx-auto sm:mx-0 sm:shrink-0"
+				/>
+				<div class="min-w-0 flex-1">
+					<AffiliateOfferBlock
+						id="ofertas-custo-beneficio-4"
+						variant="featured"
+						productName="Consul CF04NAR"
+						productId="consulCF04NAR"
+						heading="Oferta do destaque pelo conjunto"
+						description="Consul CF04NAR — confira preço e frete no Mercado Livre ou na Shopee."
+						mercadoLivreUrl={produtos.consulCF04NAR.ml}
+						shopeeUrl={produtos.consulCF04NAR.shopee}
+					/>
+				</div>
+			</div>
+			<p class="mt-4 text-sm leading-relaxed text-on-ink-muted">
+				Se você precisa gastar menos, o Atlas Mônaco Plus é uma alternativa mais econômica. As ofertas dos três modelos
+				também podem ser comparadas no{' '}
+				<a href="/melhores/melhor-fogao-4-bocas/#guia-comercial-produtos" class="link-accent">
+					ranking de fogões 4 bocas
+				</a>.
+			</p>
 		</div>
 
 		<div class="mt-12 space-y-10 text-base leading-relaxed text-on-ink-body">
 			<section aria-labelledby="economizar-heading">
 				<h2 id="economizar-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
-					Onde economizar sem arrependimento
+					Onde dá para economizar sem se arrepender
 				</h2>
 				<p class="mt-4">
-					Dá para economizar em recursos de forno que você não usa, em acabamento “de vitrine” quando a prioridade é
-					função, e em upgrades de linha quando a rotina cabe no modelo de entrada sólida.
+					Nem tudo o que aumenta o preço do fogão fará diferença para você. Se assa apenas de vez em quando, por
+					exemplo, pode não valer a pena pagar mais pelos recursos de forno da linha Efficient, como PerfectCook e
+					VaporBake.
+				</p>
+				<p class="mt-4">
+					O mesmo vale para escolher um modelo mais sofisticado apenas pelo acabamento ou pelo visual. Se a prioridade
+					é ter um fogão funcional para o dia a dia, o Consul CF04NAR pode atender bem sem esse gasto adicional.
+				</p>
+				<p class="mt-4">
+					E, se você precisa gastar menos, o Atlas Mônaco Plus pode ser uma escolha mais adequada do que pagar por
+					recursos que não serão importantes para você.
 				</p>
 			</section>
 
 			<section aria-labelledby="nao-economizar-heading">
 				<h2 id="nao-economizar-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
-					Onde não vale economizar na compra
+					Onde não vale economizar
 				</h2>
+				<p class="mt-4">
+					Alguns detalhes fazem diferença no uso diário e merecem atenção antes de olhar apenas para o preço:
+				</p>
 				<ul class="mt-4 list-inside list-disc space-y-2">
-					<li>estabilidade das trempes e distância entre bocas;</li>
-					<li>acendimento que a rotina realmente usa;</li>
-					<li>forno adequado ao que você assa de fato;</li>
-					<li>instalação correta: nível, mangueira e ventilação.</li>
+					<li>
+						<strong class="text-on-ink-body">Trempes e espaço entre as bocas:</strong> panelas maiores deixam mais
+						evidente quando as trempes não oferecem boa estabilidade ou quando falta espaço para cozinhar.
+					</li>
+					<li>
+						<strong class="text-on-ink-body">Acendimento:</strong> se você usa esse recurso todos os dias, ele também
+						deve entrar na sua avaliação. No Consul CF04NAR, o acendimento é automático.
+					</li>
+					<li>
+						<strong class="text-on-ink-body">Forno:</strong> escolha de acordo com o que costuma preparar. Não vale
+						pagar por recursos que ficarão sem uso, mas também não é uma boa economia comprar um forno que não atende ao
+						que você precisa.
+					</li>
+					<li>
+						<strong class="text-on-ink-body">Instalação:</strong> nível correto, mangueira adequada e ventilação são
+						importantes independentemente do modelo escolhido.
+					</li>
 				</ul>
 			</section>
 
 			<section aria-labelledby="perfil-uso-heading">
 				<h2 id="perfil-uso-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
-					Perfil de uso e rotina
+					Qual combina mais com a sua rotina?
 				</h2>
 				<div class="table-premium-shell mt-6">
 					<table class="table-premium min-w-[420px]">
@@ -171,29 +235,84 @@ const structuredData = {
 						</thead>
 						<tbody>
 							<tr class="bg-ink">
-								<th scope="row" class="font-semibold text-on-ink-body">Casal / primeiro imóvel</th>
-								<td>Atlas quando o teto manda; Consul quando dá para subir um degrau sem ir ao premium.</td>
+								<th scope="row" class="font-semibold text-on-ink-body">Casal ou primeiro imóvel</th>
+								<td>
+									Atlas Mônaco Plus se a prioridade for gastar menos; Consul CF04NAR se você puder investir um pouco
+									mais.
+								</td>
 							</tr>
 							<tr class="bg-brand-900/25">
-								<th scope="row" class="font-semibold text-on-ink-body">Família pequena / uso diário</th>
-								<td>Consul CF04NAR — equilíbrio de acendimento, mesa inox e forno no dia a dia.</td>
+								<th scope="row" class="font-semibold text-on-ink-body">Família pequena e uso diário</th>
+								<td>
+									Consul CF04NAR, pelo conjunto de acendimento automático, mesa inox e forno para o cotidiano.
+								</td>
 							</tr>
 							<tr class="bg-ink">
-								<th scope="row" class="font-semibold text-on-ink-body">Assa com frequência</th>
-								<td>Electrolux FE4IW só se PerfectCook/VaporBake forem requisito real.</td>
+								<th scope="row" class="font-semibold text-on-ink-body">Quem assa com frequência</th>
+								<td>
+									Electrolux FE4IW, principalmente se PerfectCook e VaporBake forem importantes na escolha.
+								</td>
 							</tr>
 							<tr class="bg-brand-900/25">
-								<th scope="row" class="font-semibold text-on-ink-body">Muitas panelas ao mesmo tempo</th>
-								<td>Antes do modelo, feche o tamanho no comparativo 4 vs 5 bocas.</td>
+								<th scope="row" class="font-semibold text-on-ink-body">
+									Quem costuma usar várias panelas ao mesmo tempo
+								</th>
+								<td>
+									Antes de escolher o modelo, veja se quatro bocas realmente atendem à sua rotina ou se vale considerar
+									um{' '}
+									<a href="/comparativo-fogao-4-vs-5-bocas/" class="link-accent">fogão 5 bocas</a>.
+								</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 			</section>
 
+			<section aria-labelledby="preco-aparece-heading">
+				<h2 id="preco-aparece-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Onde a diferença de preço aparece?
+				</h2>
+				<div class="mt-6 space-y-8">
+					<div>
+						<h3 class="font-display text-lg font-bold text-on-ink-body">Forno</h3>
+						<p class="mt-3">
+							Se você assa pouco, pode não valer a pena pagar mais por recursos específicos de forno. O Consul CF04NAR
+							atende ao uso cotidiano, enquanto o Atlas Mônaco Plus atende quem procura uma alternativa mais econômica.
+						</p>
+						<p class="mt-3">
+							Já o Electrolux FE4IW ganha importância quando PerfectCook e VaporBake fazem diferença na maneira como
+							você usa o forno. Se esses recursos não são importantes para você, o investimento adicional pode não
+							compensar.
+						</p>
+					</div>
+					<div>
+						<h3 class="font-display text-lg font-bold text-on-ink-body">Trempes e uso com panelas</h3>
+						<p class="mt-3">
+							A estabilidade das trempes pode parecer um detalhe na hora da compra, mas fica muito mais evidente durante
+							o uso. Quem costuma cozinhar com panelas maiores deve observar esse ponto antes de decidir apenas pelo
+							preço.
+						</p>
+						<TechnicalFigure id="L06A" class="mt-6" />
+					</div>
+					<div>
+						<h3 class="font-display text-lg font-bold text-on-ink-body">Limpeza</h3>
+						<p class="mt-3">
+							Os três modelos desta comparação têm mesa inox. Esse tipo de superfície exige limpeza regular para manter
+							a aparência, especialmente por causa de marcas de dedo e água.
+						</p>
+						<p class="mt-3">
+							Se você já decidiu que prefere vidro, a comparação muda. Nesse caso, vale consultar o{' '}
+							<a href="/melhores/melhor-fogao-mesa-de-vidro/" class="link-accent">
+								conteúdo específico sobre fogões com mesa de vidro
+							</a>.
+						</p>
+					</div>
+				</div>
+			</section>
+
 			<section aria-labelledby="comparacao-lateral-heading">
 				<h2 id="comparacao-lateral-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
-					Comparação lateral por perfil
+					Comparação: o que você ganha ao pagar mais?
 				</h2>
 				<div class="table-premium-shell mt-6">
 					<table class="table-premium min-w-[520px]">
@@ -207,85 +326,92 @@ const structuredData = {
 						</thead>
 						<tbody>
 							<tr class="bg-ink">
-								<th scope="row" class="font-semibold text-on-ink-body">Perfil principal</th>
-								<td>Entrada por preço e peças</td>
-								<td>Equilíbrio no uso típico</td>
-								<td>Premium de forno e linha</td>
+								<th scope="row" class="font-semibold text-on-ink-body">Proposta</th>
+								<td>Escolha mais econômica</td>
+								<td>Equilíbrio para o uso diário</td>
+								<td>Recursos adicionais de forno e linha Efficient</td>
 							</tr>
 							<tr class="bg-brand-900/25">
-								<th scope="row" class="font-semibold text-on-ink-body">Família ideal</th>
-								<td>Casal / primeiro imóvel</td>
-								<td>Casal a família pequena</td>
+								<th scope="row" class="font-semibold text-on-ink-body">Para quem</th>
+								<td>Quem quer gastar menos</td>
+								<td>Casais e famílias pequenas ou médias</td>
 								<td>Quem assa com frequência</td>
 							</tr>
 							<tr class="bg-ink">
 								<th scope="row" class="font-semibold text-on-ink-body">Forno</th>
-								<td>Básico que fecha a compra</td>
-								<td>Adequado ao dia a dia</td>
-								<td>PerfectCook / VaporBake pesam</td>
+								<td>Básico para a proposta do modelo</td>
+								<td>Adequado ao uso cotidiano</td>
+								<td>PerfectCook e VaporBake são diferenciais</td>
 							</tr>
 							<tr class="bg-brand-900/25">
-								<th scope="row" class="font-semibold text-on-ink-body">Objeção principal</th>
-								<td>Não tenta parecer premium</td>
-								<td>Inox pede limpeza de marcas</td>
-								<td>Ticket só vale se o forno for requisito</td>
+								<th scope="row" class="font-semibold text-on-ink-body">Quando pode não compensar</th>
+								<td>Quando a sua rotina pede mais recursos</td>
+								<td>Quando você precisa de recursos específicos da linha Efficient</td>
+								<td>Quando os recursos de forno não serão usados</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 			</section>
 
-			<section aria-labelledby="diferenciacao-heading">
-				<h2 id="diferenciacao-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
-					Barato, justo ou premium com propósito?
-				</h2>
-				<p class="mt-4">
-					O melhor custo-benefício não é sempre o Atlas. É o modelo que entrega o nível certo de mesa, acendimento e forno
-					para a sua rotina. Abaixo disso, falta fogão; muito acima, sobra ticket. O ranking nomeia as medalhas; esta página
-					ajuda a casar preço com uso.
-				</p>
-			</section>
-
 			<section aria-labelledby="objecoes-heading">
 				<h2 id="objecoes-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
-					Objeções comuns antes de fechar
+					Dúvidas que podem aparecer antes da compra
 				</h2>
 				<dl class="mt-6 space-y-6">
 					<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
-						<dt class="font-display text-lg font-bold text-on-ink-body">“Atlas é o único custo-benefício?”</dt>
+						<dt class="font-display text-lg font-bold text-on-ink-body">
+							“O mais barato não é sempre o melhor custo-benefício?”
+						</dt>
 						<dd class="mt-3 text-on-ink-muted">
-							É a medalha de entrada do ranking. Se a rotina pede mais equilíbrio sem ir ao premium, o{' '}
-							<a href="/review-fogao-4-bocas-consul/" class="link-accent">Consul CF04NAR</a>
-							{' '}costuma entregar melhor valor no meio da faixa.
+							Não necessariamente. O Atlas Mônaco Plus é a escolha mais econômica desta comparação e pode ser uma boa
+							opção para quem precisa gastar menos. Mas, se você procura um conjunto mais equilibrado para o uso diário
+							e pode investir um pouco mais, o Consul CF04NAR tende a fazer mais sentido.
 						</dd>
 					</div>
 					<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
-						<dt class="font-display text-lg font-bold text-on-ink-body">“Vale pagar o Electrolux pelo forno?”</dt>
+						<dt class="font-display text-lg font-bold text-on-ink-body">“Vale pagar mais pelo Electrolux?”</dt>
 						<dd class="mt-3 text-on-ink-muted">
-							Só se PerfectCook/VaporBake (ou o visual da linha) forem requisito real — aprofunde na{' '}
-							<a href="/review-fogao-4-bocas-electrolux/" class="link-accent">review do Electrolux FE4IW</a>
-							. Caso contrário, o premium vira excesso.
+							Depende de quanto você usa o forno. Se PerfectCook e VaporBake — ou outros recursos da linha Efficient —
+							são importantes para você, o investimento pode fazer sentido. Se esses recursos não terão utilidade na sua
+							rotina, o modelo mais caro pode não trazer uma vantagem proporcional. Aprofunde na{' '}
+							<a href="/review-fogao-4-bocas-electrolux/" class="link-accent">review do Electrolux FE4IW</a>.
 						</dd>
 					</div>
 					<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
-						<dt class="font-display text-lg font-bold text-on-ink-body">“Ainda em dúvida de tamanho?”</dt>
+						<dt class="font-display text-lg font-bold text-on-ink-body">
+							“Ainda não sei se quatro bocas são suficientes.”
+						</dt>
 						<dd class="mt-3 text-on-ink-muted">
-							Feche 4 vs 5 no{' '}
-							<a href="/comparativo-fogao-4-vs-5-bocas/" class="link-accent">comparativo de bocas</a>
-							{' '}antes de escolher modelo por preço.
+							Nesse caso, não escolha o modelo apenas pelo preço. Primeiro veja se quatro bocas atendem à quantidade de
+							panelas e ao espaço que você costuma usar. Se não forem suficientes, compare também os{' '}
+							<a href="/comparativo-fogao-4-vs-5-bocas/" class="link-accent">fogões 5 bocas</a>.
 						</dd>
 					</div>
 				</dl>
 			</section>
 
-			<p>
-				Feche o modelo no{' '}
-				<a href="/melhores/melhor-fogao-4-bocas/#guia-comercial-produtos" class="link-accent">
-					ranking de melhor fogão 4 bocas
-				</a>
-				{' '}com ofertas. Para medidas e checklist, use{' '}
-				<a href="/como-escolher-fogao-4-bocas/" class="link-accent">como escolher fogão 4 bocas</a>.
-			</p>
+			<section aria-labelledby="aprofundar-heading">
+				<h2 id="aprofundar-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Quer comparar antes de decidir?
+				</h2>
+				<ul class="mt-4 list-inside list-disc space-y-2">
+					<li>
+						Veja os três modelos e suas ofertas no{' '}
+						<a href="/melhores/melhor-fogao-4-bocas/#guia-comercial-produtos" class="link-accent">
+							ranking de fogões 4 bocas
+						</a>.
+					</li>
+					<li>
+						Confira medidas, gás e outros critérios no{' '}
+						<a href="/como-escolher-fogao-4-bocas/" class="link-accent">guia de como escolher fogão 4 bocas</a>.
+					</li>
+					<li>
+						Se a dúvida for especificamente sobre a marca, veja se o{' '}
+						<a href="/fogao-atlas-e-bom/" class="link-accent">fogão Atlas é bom</a>.
+					</li>
+				</ul>
+			</section>
 
 			<section class="mt-16 border-t border-white/10 pt-14" aria-labelledby="faq-heading" id="faq">
 				<h2 id="faq-heading" class="font-display text-2xl font-bold tracking-tight text-on-ink-body">
@@ -305,30 +431,30 @@ const structuredData = {
 		</div>
 		<div class="mt-12 flex flex-wrap gap-4">
 			<a
-				href={produtos.atlasMonacoPlus.ml}
+				href={produtos.consulCF04NAR.ml}
 				class="inline-flex min-h-[48px] items-center justify-center gap-2 bg-cta px-8 text-xs font-extrabold uppercase tracking-wider text-white transition hover:bg-cta-hover"
 				target="_blank"
 				rel="nofollow sponsored noopener noreferrer"
-				aria-label="Ver preço do Atlas Mônaco Plus no Mercado Livre — abre a loja em nova aba (link patrocinado)"
-				{...mlAffiliateAttrs('atlasMonacoPlus', 'page_end')}
+				aria-label="Ver preço do Consul CF04NAR no Mercado Livre — abre a loja em nova aba (link patrocinado)"
+				{...mlAffiliateAttrs('consulCF04NAR', 'page_end')}
 			>
 				<span aria-hidden="true">🔥</span>
-				Ver preço no Mercado Livre (Atlas)
+				Ver preço no Mercado Livre (Consul)
 			</a>
 			<a
-				href={produtos.atlasMonacoPlus.shopee}
+				href={produtos.consulCF04NAR.shopee}
 				class="btn-secondary-premium px-8"
 				target="_blank"
 				rel="nofollow sponsored noopener noreferrer"
-				aria-label="Ver oferta do Atlas Mônaco Plus na Shopee — abre a loja em nova aba (link patrocinado)"
-				{...shopeeAffiliateAttrs('atlasMonacoPlus', 'page_end')}
+				aria-label="Ver oferta do Consul CF04NAR na Shopee — abre a loja em nova aba (link patrocinado)"
+				{...shopeeAffiliateAttrs('consulCF04NAR', 'page_end')}
 			>
 				Ver oferta na Shopee
 			</a>
 			<a
 				href="/melhores/melhor-fogao-4-bocas/#guia-comercial-produtos"
 				class="btn-secondary-premium px-8"
-				aria-label="Abrir ranking completo de fogão 4 bocas com ofertas"
+				aria-label="Abrir ranking de fogão 4 bocas com ofertas"
 			>
 				Ver ranking completo
 			</a>
@@ -338,7 +464,7 @@ const structuredData = {
 			currentPath="/fogao-4-bocas-custo-beneficio/"
 			eyebrow="Veja também"
 			title="Leituras relacionadas"
-			subtitle="Ranking, checklist e comparativos para alinhar preço com o tamanho certo da cozinha."
+			subtitle="Ranking, checklist e comparativos para casar faixa de preço com o tamanho certo da cozinha."
 		/>
 
 		<SmartRecommendations

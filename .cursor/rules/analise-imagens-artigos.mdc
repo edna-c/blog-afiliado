@@ -1,0 +1,62 @@
+---
+description: Análise obrigatória de pontos de imagem antes de finalizar qualquer artigo — sem inserir até aprovação
+alwaysApply: true
+---
+
+# Análise de imagens — artigos Casa Prática Eletro
+
+Nenhum artigo (novo, revisado, atualizado, guia, comparativo, ranking, review ou conteúdo de apoio) pode ser declarado **finalizado** sem a seção **ANÁLISE DE IMAGENS**.
+
+Não significa que toda página precise de imagem. Significa que o agente **é obrigado a avaliar** pontos de inserção antes de concluir.
+
+Prompt canônico: `docs/BIBLIOTECA_DE_PROMPTS.md` §11.
+
+## Durante criação ou revisão
+
+1. Ler o conteúdo completo antes de finalizar.
+2. Identificar trechos em que uma imagem poderia: facilitar compreensão; mostrar um conceito; ajudar a comparar; demonstrar medidas, posições, componentes ou uso; quebrar bloco excessivamente textual **quando isso melhorar a experiência**.
+3. Não usar imagem só para preencher espaço.
+4. Não inserir imagem decorativa sem função editorial.
+5. Não alterar o texto só para justificar uma imagem.
+
+**Relevância > quantidade.** Não inventar oportunidades para cumprir cota.
+
+## Gate de aprovação
+
+**NÃO** gerar, procurar ou inserir imagens nesta etapa.
+
+Apresentar as oportunidades e **aguardar aprovação**. Só então definir ou produzir.
+
+Não fazer deploy nem commit por causa desta análise.  
+Não alterar páginas existentes só para adicionar imagens, salvo pedido explícito.
+
+Preferir reuso de ativo já existente (Tipo B da biblioteca) se já cumprir a função. Novo arquivo no repo exige aprovação humana (`MANUAL_DESIGN_SYSTEM.md` §6).
+
+## Relatório obrigatório — ANÁLISE DE IMAGENS
+
+Informar quantos pontos naturais foram encontrados. Para cada um:
+
+- seção/H2 onde a imagem entraria;
+- posição aproximada;
+- função da imagem;
+- tipo recomendado;
+- descrição visual necessária;
+- por que agrega informação ao usuário.
+
+Exemplo:
+
+```text
+Imagem 1
+Seção: Espaço e medidas
+Posição: após a explicação das medidas
+Função: mostrar visualmente largura, profundidade, altura e vão livre.
+Tipo: imagem explicativa/ilustrativa de fogão 5 bocas.
+Descrição: vista frontal e lateral do fogão, com indicação visual das principais medidas.
+Motivo: transforma uma explicação abstrata em uma referência visual.
+```
+
+## Se não houver oportunidade real
+
+Informar explicitamente:
+
+> Não foram identificados pontos naturais em que uma imagem agregaria informação suficiente para justificar sua inclusão.

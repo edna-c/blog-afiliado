@@ -406,6 +406,7 @@ Espelhar o **cluster Fogão 5 bocas**. Não reinventar o funil.
 5. Como avaliamos → Perfil → Antes de comprar → Aprofundar  
 6. FAQ objetivo  
 7. Rodar o checklist de publicação  
+8. Apresentar **ANÁLISE DE IMAGENS** (`docs/BIBLIOTECA_DE_PROMPTS.md` §11) — sem inserir até aprovação  
 
 **Não** partir de um artigo longo para “encurtar depois”.
 

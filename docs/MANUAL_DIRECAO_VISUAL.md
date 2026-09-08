@@ -236,6 +236,12 @@ O visitante deve reconhecer imediatamente a identidade visual da Casa Prática E
 
 Em toda auditoria ou brief de imagem, justificar **por que** aquela imagem melhora a experiência do usuário (compreensão, comparação, confiança ou decisão).
 
+### Gate obrigatório antes de finalizar o artigo
+
+Antes de declarar qualquer artigo (novo, revisado, atualizado, guia, comparativo, ranking, review ou conteúdo de apoio) como concluído, o agente deve apresentar a seção **ANÁLISE DE IMAGENS** — ver `docs/BIBLIOTECA_DE_PROMPTS.md` §11 e `.cursor/rules/analise-imagens-artigos.mdc`.
+
+Não significa que toda página precise de imagem. Significa que os pontos de inserção devem ser avaliados. Sem aprovação, não gerar, procurar nem inserir imagens. Relevância > quantidade.
+
 Nem toda página que apresenta produtos exige prioridade ALTA. Cruzar o **tipo** da página com a **função** da imagem.
 
 ### Prioridade ALTA

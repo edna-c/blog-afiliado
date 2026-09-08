@@ -186,6 +186,7 @@ Fluxo padrão para criar páginas de review novas (ex.: novos modelos de fogão)
 - [ ] Open Graph com imagem e alt corretos.
 - [ ] JSON-LD válido (Article/Product/Breadcrumb/FAQ conforme o caso).
 - [ ] Interlinkagem para guias, blog e outras reviews.
-- [ ] Imagens carregando bem (peso e nitidez ok).
+- [ ] **ANÁLISE DE IMAGENS** apresentada (oportunidades para aprovação — ou declaração de que não há ponto natural). Não inserir imagens nesta etapa.
+- [ ] Imagens carregando bem (peso e nitidez ok) — só depois da aprovação e inserção.
 - [ ] Conteúdo lido em voz alta / revisão de português.
 

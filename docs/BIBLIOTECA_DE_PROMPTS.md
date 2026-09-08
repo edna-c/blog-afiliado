@@ -347,7 +347,88 @@ Esta página tem como intenção primária a avaliação da marca Atlas e a deci
 
 ---
 
-## 11. Espaço para novos prompts
+## 11. Prompt — análise obrigatória de imagens em artigos
+
+**Quando usar:** sempre, ao criar, revisar ou atualizar artigo, guia, comparativo, ranking, review ou conteúdo de apoio.  
+**Regra de agente:** `.cursor/rules/analise-imagens-artigos.mdc`.  
+**Critério editorial:** `docs/MANUAL_DIRECAO_VISUAL.md` (auditoria de imagens).  
+**Produção de arquivo novo:** só após aprovação humana (`MANUAL_DESIGN_SYSTEM.md` §6).
+
+```text
+ATENÇÃO — REGRA OBRIGATÓRIA DE IMAGENS PARA NOVOS ARTIGOS
+
+Nenhum artigo da Casa Prática Eletro deve ser considerado finalizado sem uma avaliação explícita da necessidade de imagens.
+
+IMPORTANTE:
+Não significa que toda página obrigatoriamente precise ter imagem.
+Significa que o agente é OBRIGADO a avaliar os pontos de inserção de imagens antes de concluir o artigo.
+
+### REGRA
+
+Durante a criação ou revisão de qualquer artigo:
+
+1. Leia o conteúdo completo antes de finalizar.
+2. Identifique os trechos em que uma imagem poderia:
+   - facilitar a compreensão;
+   - mostrar visualmente um conceito explicado no texto;
+   - ajudar o usuário a comparar características;
+   - demonstrar medidas, posições, componentes ou uso;
+   - quebrar um bloco excessivamente textual quando isso melhorar a experiência.
+3. Não use imagens apenas para preencher espaço.
+4. Não insira imagens decorativas sem função editorial.
+5. Não altere o texto apenas para justificar uma imagem.
+
+### ANÁLISE OBRIGATÓRIA
+
+Antes de declarar o artigo concluído, produza uma seção:
+
+## ANÁLISE DE IMAGENS
+
+Informe:
+
+- Quantos pontos naturais para imagens foram encontrados.
+- Para cada ponto:
+  - seção/H2 onde a imagem entraria;
+  - posição aproximada;
+  - função da imagem;
+  - tipo de imagem recomendado;
+  - descrição visual necessária para a imagem;
+  - por que essa imagem agrega informação ao usuário.
+
+### REGRA DE APROVAÇÃO
+
+NÃO gere, procure ou insira imagens automaticamente nesta etapa.
+Primeiro apresente as oportunidades encontradas para aprovação.
+Somente depois da aprovação poderão ser definidas ou produzidas as imagens.
+
+### SE NÃO HOUVER OPORTUNIDADE REAL
+
+Informe explicitamente:
+"Não foram identificados pontos naturais em que uma imagem agregaria informação suficiente para justificar sua inclusão."
+
+Não invente oportunidades apenas para cumprir uma quantidade mínima.
+
+### REGRA DE FINALIZAÇÃO
+
+Um artigo NÃO pode ser declarado "finalizado" sem a seção "ANÁLISE DE IMAGENS".
+
+### PRINCÍPIO EDITORIAL
+
+Cada imagem deve ter função editorial clara e estar relacionada ao conteúdo imediatamente próximo.
+Priorize imagens que ajudem o leitor a entender algo que o texto sozinho explica com mais dificuldade.
+RELEVÂNCIA > QUANTIDADE.
+
+### FLUXO
+
+Não faça deploy nem commit por causa desta análise.
+Não altere páginas existentes apenas para adicionar imagens, a menos que isso seja solicitado explicitamente.
+Para novos artigos, a análise faz parte obrigatória do processo antes da aprovação final.
+Preferir reuso de ativo já existente (Tipo B) se já cumprir a função.
+```
+
+---
+
+## 12. Espaço para novos prompts
 
 <!-- Adicionar prompts estáveis abaixo, com título numerado e data no CHANGELOG. -->
 
