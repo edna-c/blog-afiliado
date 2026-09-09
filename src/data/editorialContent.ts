@@ -230,13 +230,13 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 		href: '/review-fogao-mesa-de-vidro-consul/',
 		title: 'Fogão Consul mesa de vidro CFO4VAR: vale a pena? Análise completa',
 		description:
-			'Melhor geral do ranking mesa de vidro: para quem o equilíbrio fecha, onde o vidro temperado pesa e quando Brastemp ou Atlas fazem mais sentido.',
+			'Consul CFO4VAR: mesa de vidro temperado e ferro fundido. Para quem vale a pena e quando Brastemp ou Atlas fazem mais sentido.',
 		kind: 'Review',
 		flow: 4,
 		editorialLabel: 'Review',
 		topics: ['mesa-vidro', 'fogao-4-bocas', 'custo-beneficio', 'cozinha-moderna', 'compra-segura'],
 		anchorText: 'review do Consul CFO4VAR',
-		teaser: 'melhor geral mesa de vidro — equilíbrio sem premium',
+		teaser: 'mesa de vidro Consul — para quem vale, sem ser o modelo mais caro',
 		weight: 8,
 	},
 	{
@@ -366,7 +366,7 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 		href: '/blog/fogao-5-bocas-reduz-espaco-cozinha/',
 		title: 'Fogão 5 bocas reduz o espaço da cozinha?',
 		description:
-			'Quando o 5 bocas realmente pesa no ambiente, o que muda no layout e como escolher sem perder circulação.',
+			'Quando o 5 bocas realmente pesa no ambiente, o que medir e como caber sem perder circulação.',
 		kind: 'Guia',
 		flow: 2,
 		editorialLabel: 'Guia · Espaço',

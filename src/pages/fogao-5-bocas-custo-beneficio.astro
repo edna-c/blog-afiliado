@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import RelatedContent from '../components/RelatedContent.astro';
-import EditorialLinks from '../components/EditorialLinks.astro';
 import SmartRecommendations from '../components/SmartRecommendations.astro';
 import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
 import TechnicalFigure from '../components/TechnicalFigure.astro';
@@ -9,13 +8,65 @@ import AffiliateOfferBlock from '../components/AffiliateOfferBlock.astro';
 import { produtos } from '../data/products';
 import { mlAffiliateAttrs, shopeeAffiliateAttrs } from '../utils/affiliateTracking';
 import { PRODUCT_IMAGE_REVIEW } from '../data/productImages';
+import { FOGAO_5_BOCAS_RANKING_HREF } from '../data/melhoresListing';
 
 const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
 const canonical = new URL('/fogao-5-bocas-custo-beneficio/', site).href;
-const pageTitle = 'Custo-benefício fogão 5 bocas 2026: qual vale mais a pena pelo preço? | Casa Prática Eletro';
+const pageTitle =
+	'Fogão 5 bocas custo-benefício 2026: Brastemp, Consul ou Electrolux? | Casa Prática Eletro';
 const description =
-	'Compare os melhores fogões 5 bocas por custo-benefício em 2026: Brastemp, Consul e Electrolux. Descubra qual modelo oferece mais pelo seu dinheiro.';
+	'Fogão 5 bocas custo-benefício: Brastemp BFS5NCR para o uso diário, Consul CFS5NAB se você precisa gastar menos e Electrolux FE5IG se o forno for prioridade.';
 const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).href;
+const faqId = `${canonical}#faq`;
+
+const faqItems = [
+	{
+		question: 'Qual fogão 5 bocas vale mais a pena pelo preço?',
+		answer:
+			'Depende do que você espera do fogão. Para uso diário de família pequena ou média, o Brastemp BFS5NCR é o destaque desta comparação: forno útil e conjunto mais completo sem ir para o modelo mais caro. O Consul CFS5NAB é a alternativa para quem precisa gastar menos. Já o Electrolux FE5IG vale o investimento adicional quando forno e acabamento realmente pesam na rotina.',
+	},
+	{
+		question: 'Para quem cada opção faz sentido?',
+		answer:
+			'O Consul CFS5NAB atende melhor quem quer um fogão 5 bocas gastando menos. O Brastemp BFS5NCR faz mais sentido para quem cozinha todos os dias e usa o forno com alguma frequência. O Electrolux FE5IG cabe quando você assa bastante e o visual da cozinha também entra na conta. Se a dúvida ainda for o tamanho, compare 4 e 5 bocas antes de escolher o modelo.',
+	},
+	{
+		question: 'Quando vale pagar mais pelo Electrolux?',
+		answer:
+			'Vale quando o forno e o acabamento realmente fazem diferença no seu dia a dia. Se você assa pouco e só precisa de cinco bocas para o cotidiano, o Brastemp ou o Consul tendem a fazer mais sentido.',
+	},
+	{
+		question: 'Esta comparação serve se ainda estou entre 4 e 5 bocas?',
+		answer:
+			'Não. Aqui a decisão já é entre fogões 5 bocas. Se você ainda não tem certeza de que precisa de cinco bocas, compare o tamanho primeiro — senão você escolhe o modelo e erra o tamanho.',
+	},
+] as const;
+
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'WebPage',
+			'@id': canonical,
+			url: canonical,
+			name: pageTitle,
+			description,
+			inLanguage: 'pt-BR',
+		},
+		{
+			'@type': 'FAQPage',
+			'@id': faqId,
+			mainEntity: faqItems.map((item) => ({
+				'@type': 'Question',
+				name: item.question,
+				acceptedAnswer: {
+					'@type': 'Answer',
+					text: item.answer,
+				},
+			})),
+		},
+	],
+};
 ---
 
 <BaseLayout
@@ -28,86 +79,140 @@ const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).
 		url: canonical,
 		type: 'article',
 		image: ogImage,
-		imageAlt: 'Fogão 5 bocas Brastemp BFS5NCR em inox — referência visual custo-benefício',
+		imageAlt: 'Fogão 5 bocas Brastemp BFS5NCR em inox com mesa de vidro — destaque de custo-benefício',
 	}}
 >
+	<script type="application/ld+json" slot="head" set:html={JSON.stringify(structuredData)} />
 	<article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
 		<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Compra inteligente</p>
 		<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">
-			Fogão 5 bocas custo-benefício em 2026: Brastemp, Consul ou Electrolux?
+			Fogão 5 bocas custo-benefício em 2026: o valor certo para a sua rotina
 		</h1>
 		<p class="mt-4 text-lg leading-relaxed text-on-ink-body">
-			<strong class="text-on-ink-body">Melhor fogão 5 bocas custo-benefício</strong> não é só o mais barato que aparece por aí — é o
-			que entrega segurança, forno utilizável e manutenção razoável pelo preço.
+			Custo-benefício não significa escolher o fogão 5 bocas mais barato. Uma boa compra é a que entrega o que você
+			realmente usa — cinco bocas no dia a dia, um forno que dê conta do que você assa e uma mesa que seja prática de
+			manter — sem cobrar por recursos que vão ficar parados.
 		</p>
 		<div class="mt-8">
 			<EditorialTrustRibbon />
 		</div>
+
+		<p class="mt-8 text-sm leading-relaxed text-on-ink-muted">
+			Nesta comparação, olhamos três fogões 5 bocas de piso: Consul CFS5NAB, Brastemp BFS5NCR e Electrolux FE5IG. Se
+			você ainda não decidiu se precisa de cinco bocas, comece pelo{' '}
+			<a href="/comparativo-fogao-4-vs-5-bocas/" class="link-accent">comparativo entre fogão 4 e 5 bocas</a>.
+		</p>
+
 		<section class="mt-10" aria-labelledby="decisao-rapida-heading">
 			<h2 id="decisao-rapida-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
-				Decisão rápida por perfil
+				Qual faz mais sentido para você?
 			</h2>
 			<div class="mt-6 grid gap-4 sm:grid-cols-3">
 				<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
-					<h3 class="font-display text-lg font-bold text-on-ink-body">Compra enxuta</h3>
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Se você quer gastar menos</h3>
 					<p class="mt-3 text-sm leading-relaxed text-on-ink-muted">
-						Prioridade é entrar em 5 bocas sem estourar → <strong class="text-on-ink-body">Consul CFS5NAB</strong> (entrada do ranking).
+						<strong class="text-on-ink-body">Consul CFS5NAB</strong> — é a escolha mais econômica desta comparação para
+						quem quer um fogão 5 bocas.
 					</p>
 				</div>
 				<div class="rounded-2xl border border-pop/25 bg-brand-900/35 p-5 ring-1 ring-pop/20">
-					<h3 class="font-display text-lg font-bold text-on-ink-body">Custo-benefício (destaque)</h3>
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Se procura um fogão equilibrado para o dia a dia</h3>
 					<p class="mt-3 text-sm leading-relaxed text-on-ink-muted">
-						Forno + uso diário sem pagar o topo → <strong class="text-on-ink-body">Brastemp BFS5NCR</strong>, medalha de custo-benefício do ranking.
+						<strong class="text-on-ink-body">Brastemp BFS5NCR</strong> — é o destaque pelo conjunto de forno e uso
+						diário, sem ir para o modelo mais caro.
 					</p>
 				</div>
 				<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
-					<h3 class="font-display text-lg font-bold text-on-ink-body">Premium com propósito</h3>
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Se o forno é uma prioridade</h3>
 					<p class="mt-3 text-sm leading-relaxed text-on-ink-muted">
-						Forno e acabamento realmente pesam → <strong class="text-on-ink-body">Electrolux FE5IG</strong>. Se não pesam, vira excesso.
+						<strong class="text-on-ink-body">Electrolux FE5IG</strong> — vale considerar se você assa com frequência e
+						o acabamento também pesa na escolha. Se isso não fizer diferença no seu dia a dia, pagar mais pode não
+						compensar.
 					</p>
 				</div>
 			</div>
 		</section>
 
 		<div class="mt-12">
-			<AffiliateOfferBlock
-				id="ofertas-custo-beneficio"
-				variant="featured"
-				productName="Brastemp BFS5NCR"
-				productId="brastempBFS5NCR"
-				heading="Oferta do destaque de custo-benefício"
-				description="Medalha de custo-benefício do ranking 5 bocas. Confira preço e frete agora — depois continue lendo se quiser comparar Consul e Electrolux."
-				mercadoLivreUrl={produtos.brastempBFS5NCR.ml}
-				shopeeUrl={produtos.brastempBFS5NCR.shopee}
-			/>
+			<h2 class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+				Brastemp BFS5NCR: destaque pelo conjunto
+			</h2>
+			<p class="mt-4 text-base leading-relaxed text-on-ink-body">
+				Para quem cozinha todos os dias e usa o forno ao longo da semana, o Brastemp BFS5NCR é o destaque desta
+				comparação. Ele entrega um 5 bocas mais completo do que a linha de entrada, com forno que realmente entra na
+				rotina, sem o salto de preço do Electrolux.
+			</p>
+			<div class="mt-6">
+				<AffiliateOfferBlock
+					id="ofertas-custo-beneficio"
+					variant="featured"
+					productName="Brastemp BFS5NCR"
+					productId="brastempBFS5NCR"
+					heading="Oferta do destaque pelo conjunto"
+					description="Brastemp BFS5NCR — confira preço e frete no Mercado Livre ou na Shopee."
+					mercadoLivreUrl={produtos.brastempBFS5NCR.ml}
+					shopeeUrl={produtos.brastempBFS5NCR.shopee}
+				/>
+			</div>
+			<p class="mt-4 text-sm leading-relaxed text-on-ink-muted">
+				Se você precisa gastar menos, o Consul CFS5NAB é a alternativa mais econômica. As ofertas dos três modelos
+				também podem ser comparadas no{' '}
+				<a href={FOGAO_5_BOCAS_RANKING_HREF} class="link-accent">ranking de fogões 5 bocas</a>.
+			</p>
 		</div>
 
 		<div class="mt-12 space-y-10 text-base leading-relaxed text-on-ink-body">
 			<section aria-labelledby="economizar-heading">
 				<h2 id="economizar-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
-					Onde economizar sem arrependimento
+					Onde dá para economizar sem se arrepender
 				</h2>
 				<p class="mt-4">
-					Dá para economizar em acabamento “premium” quando o foco é função, em extras que você não usa no forno e em recursos que
-					ficam bonitos no anúncio, mas não mudam sua rotina real.
+					Nem tudo o que aumenta o preço do fogão vai aparecer na sua cozinha. Se você assa só de vez em quando, pode
+					não valer a pena pagar o Electrolux FE5IG só pelo forno e pelo acabamento.
+				</p>
+				<p class="mt-4">
+					O mesmo vale para escolher um modelo mais sofisticado só pelo visual. Se a prioridade é ter cinco bocas
+					funcionando bem no almoço e no jantar, o Brastemp BFS5NCR costuma atender sem precisar pagar mais por isso.
+				</p>
+				<p class="mt-4">
+					E, se você precisa gastar menos, o Consul CFS5NAB pode ser a escolha certa — desde que a rotina seja
+					comum, sem usar o forno com frequência nem cozinhar com várias panelas grandes ao mesmo tempo.
 				</p>
 			</section>
 
 			<section aria-labelledby="nao-economizar-heading">
 				<h2 id="nao-economizar-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
-					Onde não vale economizar na compra
+					Onde não vale economizar
 				</h2>
+				<p class="mt-4">
+					Alguns detalhes fazem diferença no uso diário e merecem atenção antes de olhar só para o preço:
+				</p>
 				<ul class="mt-4 list-inside list-disc space-y-2">
-					<li>válvula de segurança e estabilidade da chama;</li>
-					<li>estrutura da grade e distância entre bocas;</li>
-					<li>forno que realmente atenda sua rotina;</li>
-					<li>instalação correta: nível, mangueira e ventilação.</li>
+					<li>
+						<strong class="text-on-ink-body">Trempes e espaço entre as bocas:</strong> quem compra 5 bocas em geral
+						cozinha com mais de uma panela ao mesmo tempo. Trempes instáveis ou bocas apertadas demais anulam essa
+						vantagem.
+					</li>
+					<li>
+						<strong class="text-on-ink-body">Forno:</strong> escolha de acordo com o que você realmente assa. Não vale
+						pagar por um forno que vai ficar fechado, mas também não é boa economia comprar um que não dá conta do
+						que você precisa.
+					</li>
+					<li>
+						<strong class="text-on-ink-body">Mesa:</strong> o Brastemp desta comparação tem mesa de vidro. O visual
+						entra no preço e pede mais cuidado com impacto e limpeza. Se isso não combina com a sua rotina, o ganho
+						pode não compensar.
+					</li>
+					<li>
+						<strong class="text-on-ink-body">Instalação:</strong> nível correto, mangueira adequada e ventilação
+						importam em qualquer um dos três.
+					</li>
 				</ul>
 			</section>
 
 			<section aria-labelledby="perfil-uso-heading">
 				<h2 id="perfil-uso-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
-					Perfil de uso, tipo de família e rotina
+					Encontre o produto certo para sua rotina
 				</h2>
 				<div class="table-premium-shell mt-6">
 					<table class="table-premium min-w-[420px]">
@@ -119,70 +224,76 @@ const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).
 						</thead>
 						<tbody>
 							<tr class="bg-ink">
-								<th scope="row" class="font-semibold text-on-ink-body">Casal / rotina leve</th>
-								<td>Modelo de entrada sólida, sem pagar por recursos que vão sobrar.</td>
+								<th scope="row" class="font-semibold text-on-ink-body">Casal ou rotina mais leve</th>
+								<td>
+									Consul CFS5NAB se a prioridade for gastar menos; Brastemp BFS5NCR se você usa o forno com alguma
+									frequência e puder investir um pouco mais.
+								</td>
 							</tr>
 							<tr class="bg-brand-900/25">
-								<th scope="row" class="font-semibold text-on-ink-body">Família pequena ou média</th>
-								<td>Equilíbrio entre forno, trempes confiáveis e preço sem exagero.</td>
+								<th scope="row" class="font-semibold text-on-ink-body">Família pequena ou média, uso diário</th>
+								<td>
+									Brastemp BFS5NCR, pelo equilíbrio entre as cinco bocas, o forno e o que você realmente usa na
+									semana.
+								</td>
 							</tr>
 							<tr class="bg-ink">
-								<th scope="row" class="font-semibold text-on-ink-body">Família maior / uso intenso</th>
-								<td>Vale subir de linha quando o forno, a robustez e o uso simultâneo realmente pesam.</td>
+								<th scope="row" class="font-semibold text-on-ink-body">Quem assa com frequência</th>
+								<td>
+									Electrolux FE5IG, principalmente se o forno e o acabamento pesam de verdade na escolha. Se não
+									pesam, o Brastemp costuma bastar.
+								</td>
 							</tr>
 							<tr class="bg-brand-900/25">
-								<th scope="row" class="font-semibold text-on-ink-body">Cozinha planejada / estética forte</th>
-								<td>Acabamento e presença visual entram mais no custo-benefício do que só o menor preço.</td>
+								<th scope="row" class="font-semibold text-on-ink-body">Cozinha compacta</th>
+								<td>
+									Cinco bocas pedem mais largura. Se o vão for justo, veja antes se o{' '}
+									<a href="/blog/fogao-5-bocas-reduz-espaco-cozinha/" class="link-accent">
+										fogão 5 bocas cabe na cozinha
+									</a>. Escolher o modelo não resolve um vão apertado.
+								</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 			</section>
 
-			<section aria-labelledby="limitacoes-heading">
-				<h2 id="limitacoes-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
-					Limitações reais de um “custo-benefício”
-				</h2>
-				<ul class="mt-4 list-inside list-disc space-y-2">
-					<li>modelo barato demais pode frustrar no forno;</li>
-					<li>trempes mais simples podem incomodar com panela grande;</li>
-					<li>acabamento básico envelhece visualmente mais rápido;</li>
-					<li>o que parece economia inicial pode virar arrependimento em uso intenso.</li>
-				</ul>
-			</section>
-
-			<section aria-labelledby="criterios-tecnicos-heading">
-				<h2 id="criterios-tecnicos-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
-					Forno, trempes, consumo e limpeza: onde o valor aparece
+			<section aria-labelledby="preco-aparece-heading">
+				<h2 id="preco-aparece-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Onde a diferença de preço aparece?
 				</h2>
 				<div class="mt-6 space-y-8">
 					<div>
 						<h3 class="font-display text-lg font-bold text-on-ink-body">Forno</h3>
 						<p class="mt-3">
-							Se você assa pouco, não faz sentido pagar caro por um forno que vai ficar ocioso. Se assa toda semana, um forno mais
-							confiável muda a experiência e entra diretamente no custo-benefício.
+							Se você assa pouco, o Consul CFS5NAB dá conta do cotidiano e evita pagar por um forno que quase não
+							abre. O Brastemp BFS5NCR faz mais sentido quando o forno entra na semana — lasanha, carne, bolo — sem
+							você precisar da linha mais cara.
+						</p>
+						<p class="mt-3">
+							O Electrolux FE5IG ganha espaço quando o forno é parte da rotina, não um extra. Se isso não for o seu
+							caso, a diferença de preço tende a sobrar.
 						</p>
 					</div>
 					<div>
 						<h3 class="font-display text-lg font-bold text-on-ink-body">Trempes e uso com panelas</h3>
 						<p class="mt-3">
-							Trempes são um divisor silencioso entre fogão “ok” e fogão agradável. Quando a rotina envolve panelas maiores ou mais
-							bocas ao mesmo tempo, estrutura melhor costuma compensar cada real a mais.
+							A estabilidade das trempes parece detalhe no anúncio e vira problema no almoço: panela grande, panela
+							de pressão, duas bocas ao mesmo tempo. Quem escolhe 5 bocas muitas vezes espera usar mais de uma panela
+							ao mesmo tempo — e aí não vale economizar só no preço.
 						</p>
 						<TechnicalFigure id="L06A" class="mt-6" />
 					</div>
 					<div>
-						<h3 class="font-display text-lg font-bold text-on-ink-body">Consumo</h3>
+						<h3 class="font-display text-lg font-bold text-on-ink-body">Limpeza e mesa</h3>
 						<p class="mt-3">
-							Custo-benefício não é só preço de compra. Consumo de gás depende do tempo de uso, do forno e do comportamento da casa.
-							Comprar um 5 bocas mais robusto para uma rotina mínima nem sempre é decisão inteligente.
+							O Brastemp BFS5NCR tem mesa de vidro: a superfície lisa ajuda na limpeza, mas marca mais se a gordura
+							ficar para depois e pede cuidado com impacto. Consul e Electrolux desta comparação têm mesa de inox, que
+							costuma lidar melhor com uma rotina corrida — mas também pede limpeza frequente para não ficar com
+							aparência de sujo.
 						</p>
-					</div>
-					<div>
-						<h3 class="font-display text-lg font-bold text-on-ink-body">Limpeza</h3>
 						<p class="mt-3">
-							Alguns modelos parecem equivalentes no anúncio, mas diferem muito em mesa, botões, grades e acesso à limpeza. Quando a
-							rotina é pesada, esse detalhe impacta a satisfação no longo prazo.
+							Nenhum dos três “se limpa sozinho”. O que muda é quanto visual e trabalho extra você aceita pagar.
 						</p>
 					</div>
 				</div>
@@ -190,7 +301,7 @@ const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).
 
 			<section aria-labelledby="comparacao-lateral-heading">
 				<h2 id="comparacao-lateral-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
-					Comparação lateral por perfil
+					Comparação: o que você ganha ao pagar mais?
 				</h2>
 				<div class="table-premium-shell mt-6">
 					<table class="table-premium min-w-[520px]">
@@ -198,112 +309,112 @@ const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).
 							<tr>
 								<th scope="col">Critério</th>
 								<th scope="col">Consul CFS5NAB</th>
-								<th scope="col">Electrolux FE5IG</th>
 								<th scope="col">Brastemp BFS5NCR</th>
+								<th scope="col">Electrolux FE5IG</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr class="bg-ink">
-								<th scope="row" class="font-semibold text-on-ink-body">Perfil principal</th>
-								<td>Entrada sólida e compra controlada</td>
-								<td>Acabamento + forno + rotina ativa</td>
-								<td>Equilíbrio premium para uso frequente</td>
+								<th scope="row" class="font-semibold text-on-ink-body">Proposta</th>
+								<td>Escolha mais econômica</td>
+								<td>Equilíbrio para o uso diário</td>
+								<td>Forno e acabamento da linha mais cara</td>
 							</tr>
 							<tr class="bg-brand-900/25">
-								<th scope="row" class="font-semibold text-on-ink-body">Família ideal</th>
-								<td>Pequena a média</td>
-								<td>Média</td>
-								<td>Média a maior</td>
+								<th scope="row" class="font-semibold text-on-ink-body">Para quem</th>
+								<td>Quem quer gastar menos</td>
+								<td>Famílias pequenas ou médias, uso frequente</td>
+								<td>Quem assa com frequência e se importa com o visual</td>
 							</tr>
 							<tr class="bg-ink">
 								<th scope="row" class="font-semibold text-on-ink-body">Forno</th>
-								<td>Adequado ao básico bem feito</td>
-								<td>Pesa mais na compra</td>
-								<td>Costuma ser um dos grandes argumentos</td>
+								<td>Adequado ao cotidiano comum</td>
+								<td>Um dos motivos de pagar um pouco mais</td>
+								<td>O motivo principal de pagar mais</td>
 							</tr>
 							<tr class="bg-brand-900/25">
-								<th scope="row" class="font-semibold text-on-ink-body">Objeção principal</th>
-								<td>Pode faltar refinamento e fôlego em uso pesado</td>
-								<td>Pode custar mais do que sua rotina precisa</td>
-								<td>Pode subir demais o ticket para quem quer só função</td>
+								<th scope="row" class="font-semibold text-on-ink-body">Quando pode não compensar</th>
+								<td>Quando a rotina pede forno e conjunto mais robusto</td>
+								<td>Quando você só quer o menor preço possível</td>
+								<td>Quando forno e acabamento não serão usados</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 			</section>
 
-			<section aria-labelledby="diferenciacao-heading">
-				<h2 id="diferenciacao-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
-					Diferenciação: barato, justo ou premium com propósito?
-				</h2>
-				<p class="mt-4">
-					O melhor custo-benefício não é sempre o mais barato. É o modelo que entrega o nível certo de forno, trempes, limpeza e
-					acabamento para a sua rotina. Quando você compra abaixo disso, falta fogão. Quando compra muito acima, sobra fogão.
-				</p>
-			</section>
-
 			<section aria-labelledby="objecoes-heading">
 				<h2 id="objecoes-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
-					Objeções comuns antes de fechar
+					Dúvidas que podem aparecer antes da compra
 				</h2>
 				<dl class="mt-6 space-y-6">
 					<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
-						<dt class="font-display text-lg font-bold text-on-ink-body">“Vale pagar mais por acabamento?”</dt>
+						<dt class="font-display text-lg font-bold text-on-ink-body">
+							“O mais barato não é sempre o melhor custo-benefício?”
+						</dt>
 						<dd class="mt-3 text-on-ink-muted">
-							Só vale se a estética da cozinha realmente fizer parte da decisão e se o restante do conjunto acompanhar o preço.
+							Não necessariamente. O Consul CFS5NAB é a escolha mais econômica desta comparação e pode ser uma boa
+							opção para quem precisa gastar menos. Mas, se você cozinha todos os dias e usa o forno, o Brastemp
+							BFS5NCR tende a valer mais a diferença.
 						</dd>
 					</div>
 					<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
-						<dt class="font-display text-lg font-bold text-on-ink-body">“Modelo mais barato sempre consome menos?”</dt>
+						<dt class="font-display text-lg font-bold text-on-ink-body">“Vale pagar mais pelo Electrolux?”</dt>
 						<dd class="mt-3 text-on-ink-muted">
-							Não. Consumo depende mais da intensidade de uso e do forno do que do rótulo “barato” ou “premium”.
+							O Electrolux FE5IG faz mais sentido para quem usa o forno com frequência e valoriza um acabamento mais
+							sofisticado. Se você assa pouco e não faz questão desses diferenciais, o Brastemp BFS5NCR pode entregar
+							um conjunto mais equilibrado pelo preço. Veja a{' '}
+							<a href="/review-fogao-5-bocas-electrolux/" class="link-accent">review do Electrolux FE5IG</a>.
 						</dd>
 					</div>
 					<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
-						<dt class="font-display text-lg font-bold text-on-ink-body">“Qual eu escolho se ainda estou em dúvida?”</dt>
+						<dt class="font-display text-lg font-bold text-on-ink-body">
+							“Ainda não sei se cinco bocas são necessárias.”
+						</dt>
 						<dd class="mt-3 text-on-ink-muted">
-							Se a dúvida é preço no meio da faixa, comece pelo Brastemp BFS5NCR (custo-benefício do ranking). Se o teto é mais baixo, Consul. Se forno e acabamento pesam de verdade, Electrolux.
+							Nesse caso, não escolha o modelo só pelo preço. Primeiro veja se você realmente usa várias panelas ao
+							mesmo tempo e se o vão comporta a largura de um 5 bocas. Sem isso, você gasta bem no modelo e erra o
+							tamanho.
 						</dd>
 					</div>
 				</dl>
 			</section>
 
-			<EditorialLinks
-				class="mt-10"
-				currentPath="/fogao-5-bocas-custo-beneficio/"
-				eyebrow="Reviews para cruzar a decisão"
-				heading="Leia os perfis por marca antes de fechar"
-				items={[
-					{
-						href: '/review-fogao-5-bocas-brastemp/',
-						label: 'review rápida do Brastemp BFS5NCR',
-						description: 'medalha de custo-benefício do ranking 5 bocas',
-						tag: 'Review',
-					},
-					{
-						href: '/review-fogao-5-bocas-consul/',
-						label: 'review rápida do Consul CFS5NAB',
-						description: 'entrada sólida quando o orçamento pede controle',
-						tag: 'Review',
-					},
-					{
-						href: '/brastemp-bfs5ncr-vale-a-pena/',
-						label: 'análise completa do Brastemp BFS5NCR',
-						description: 'forno, acabamento e uso diário com mais profundidade',
-						tag: 'Análise',
-					},
-				]}
-			/>
+			<section aria-labelledby="aprofundar-heading">
+				<h2 id="aprofundar-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
+					Quer comparar antes de decidir?
+				</h2>
+				<ul class="mt-4 list-inside list-disc space-y-2">
+					<li>
+						Veja os três modelos e suas ofertas no{' '}
+						<a href={FOGAO_5_BOCAS_RANKING_HREF} class="link-accent">ranking de fogões 5 bocas</a>.
+					</li>
+					<li>
+						Confira medidas, gás e outros critérios no{' '}
+						<a href="/como-escolher-fogao-5-bocas/" class="link-accent">guia de como escolher fogão 5 bocas</a>.
+					</li>
+					<li>
+						Se a dúvida for especificamente o Brastemp, veja se o{' '}
+						<a href="/brastemp-bfs5ncr-vale-a-pena/" class="link-accent">Brastemp BFS5NCR vale a pena</a>.
+					</li>
+				</ul>
+			</section>
 
-			<p>
-				Feche o modelo no{' '}
-				<a href="/#top-produtos" class="link-accent">ranking de melhor fogão 5 bocas</a>
-				{' '}com ofertas. Para medidas e checklist, use{' '}
-				<a href="/como-escolher-fogao-5-bocas/" class="link-accent">
-					como escolher fogão 5 bocas
-				</a>
-				.
-			</p>
+			<section class="mt-16 border-t border-white/10 pt-14" aria-labelledby="faq-heading" id="faq">
+				<h2 id="faq-heading" class="font-display text-2xl font-bold tracking-tight text-on-ink-body">
+					Perguntas frequentes
+				</h2>
+				<dl class="mt-8 space-y-10">
+					{
+						faqItems.map((item) => (
+							<div>
+								<dt class="font-display text-lg font-bold text-on-ink-body">{item.question}</dt>
+								<dd class="mt-3 text-base leading-relaxed text-on-ink-muted">{item.answer}</dd>
+							</div>
+						))
+					}
+				</dl>
+			</section>
 		</div>
 		<div class="mt-12 flex flex-wrap gap-4">
 			<a
@@ -328,7 +439,7 @@ const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).
 				Ver oferta na Shopee
 			</a>
 			<a
-				href="/#top-produtos"
+				href={FOGAO_5_BOCAS_RANKING_HREF}
 				class="btn-secondary-premium px-8"
 				aria-label="Abrir ranking completo de fogão 5 bocas com ofertas"
 			>
@@ -340,13 +451,13 @@ const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).
 			currentPath="/fogao-5-bocas-custo-beneficio/"
 			eyebrow="Veja também"
 			title="Leituras relacionadas"
-			subtitle="Reviews dos modelos citados e leituras editoriais para alinhar custo-benefício com o ambiente da cozinha."
+			subtitle="Reviews dos modelos citados e o ranking com as ofertas dos três."
 		/>
 
 		<SmartRecommendations
 			class="mt-12"
 			currentPath="/fogao-5-bocas-custo-beneficio/"
-			heading="Próximos passos editoriais"
+			heading="Continuar a leitura"
 		/>
 	</article>
 </BaseLayout>

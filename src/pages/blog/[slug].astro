@@ -55,7 +55,7 @@ const articleHeroes: Record<string, ArticleHeroEntry> = {
 		alt: 'Fogão a gás de cinco bocas em inox integrado à bancada de pedra escura, cozinha moderna com iluminação quente e vista noturna da cidade ao fundo.',
 		objectPosition: 'center',
 		caption:
-			'Com layout e iluminação equilibrados, um fogão 5 bocas pode integrar-se à cozinha sem parecer desproporcional.',
+			'Em uma cozinha compacta, um fogão 5 bocas pode funcionar bem quando as medidas do aparelho e do ambiente deixam espaço suficiente para circulação.',
 	},
 	'fogao-4-bocas-ainda-vale-a-pena': {
 		src: fogao4BocasArticleHero,
@@ -174,6 +174,7 @@ const commercialNext = commercialNextBySlug[post.id] ?? {
 
 /** Página-piloto: convite ao ranking fica só no fecho condicionado do artigo. */
 const isPilotMesaVidro = post.id === 'review-fogao-com-mesa-de-vidro';
+const isEspacoCincoBocas = post.id === 'fogao-5-bocas-reduz-espaco-cozinha';
 
 const inlinePairingItems: EditorialEntry[] = (editorialPairings[post.id] ?? [])
 	.map((href) => findEntry((e) => e.href === href))
@@ -353,6 +354,8 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 					eyebrow={isPilotMesaVidro ? 'Se ainda restou uma dúvida' : 'Leia também'}
 					heading={isPilotMesaVidro
 						? 'Comparar acabamentos ou esclarecer segurança'
+						: isEspacoCincoBocas
+							? 'Depois de conferir o espaço'
 						: post.data.category === 'Review' || post.data.category === 'Comparativo'
 							? 'Antes de comprar, leia também'
 							: 'Para fechar a decisão'}
@@ -369,9 +372,21 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 		{
 			!isPilotMesaVidro ? (
 				<p class="mt-10 rounded-xl border border-white/10 bg-brand-900/30 px-4 py-3 text-sm leading-relaxed text-on-ink-muted sm:px-5">
-					<strong class="text-on-ink-body">Se quiser comparar modelos:</strong> depois de ler, abra o{' '}
-					<a href={commercialNext.href} class="link-accent">{commercialNext.label}</a>
-					{' '}para cruzar critérios com as opções e o preço do dia.
+					{isEspacoCincoBocas ? (
+						<>
+							<strong class="text-on-ink-body">Se o espaço comporta 5 bocas:</strong> compare os modelos no{' '}
+							<a href={commercialNext.href} class="link-accent">
+								ranking do melhor fogão 5 bocas
+							</a>
+							.
+						</>
+					) : (
+						<>
+							<strong class="text-on-ink-body">Se quiser comparar modelos:</strong> depois de ler, abra o{' '}
+							<a href={commercialNext.href} class="link-accent">{commercialNext.label}</a>
+							{' '}para cruzar critérios com as opções e o preço do dia.
+						</>
+					)}
 				</p>
 			) : null
 		}
