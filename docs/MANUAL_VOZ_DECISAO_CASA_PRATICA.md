@@ -4,7 +4,7 @@
 **Base:** cinco páginas extraídas (home, “vale a pena?”, “é seguro?”, “vidro ou inox?”, “como escolher”).  
 **Uso:** escrever e revisar conteúdo futuro. Este arquivo descreve como o Casa Prática deve falar.
 
-**Gate operacional (passagem 2):** antes de declarar qualquer texto visível ao leitor como pronto, aplicar a **Camada de Naturalidade** — `docs/BIBLIOTECA_DE_PROMPTS.md` §12 e `.cursor/rules/camada-naturalidade.mdc`. A passagem 1 cobre função, intenção, fatos e estrutura; a passagem 2 cobre naturalidade, simplicidade e ausência de jargão editorial/SEO.
+**Gate operacional (passagem 2):** antes de declarar qualquer texto visível ao leitor como pronto, aplicar a **Camada de Naturalidade** — `docs/BIBLIOTECA_DE_PROMPTS.md` §12 e `.cursor/rules/camada-naturalidade.mdc`. A passagem 1 cobre função, intenção, fatos e estrutura; a passagem 2 cobre naturalidade, simplicidade e ausência de jargão editorial/SEO. Na revisão final de uma página já validada, aplicar também o **refinamento editorial fino** (mesma §12): acabamento, não reescrita — expressões pouco usuais, repetição sem função nova, identificação marca + código.
 
 ---
 

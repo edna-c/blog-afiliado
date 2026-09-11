@@ -440,22 +440,31 @@
 
 	/* Tabelas Markdown — ritmo visual (Direção Visual) sem novo componente */
 	.blog-prose.prose :where(table) {
-		display: block;
+		display: table;
 		width: 100%;
 		max-width: 100%;
 		margin-top: 1.35rem;
 		margin-bottom: 1.65rem;
-		overflow-x: auto;
 		border-collapse: collapse;
 		font-size: 0.95rem;
 		line-height: 1.5;
 	}
 
 	.blog-prose.prose :where(thead) {
+		display: table-header-group;
 		border-bottom: 1px solid rgba(255, 255, 255, 0.16);
 	}
 
+	.blog-prose.prose :where(tbody) {
+		display: table-row-group;
+	}
+
+	.blog-prose.prose :where(tr) {
+		display: table-row;
+	}
+
 	.blog-prose.prose :where(th) {
+		display: table-cell;
 		padding: 0.65rem 0.75rem;
 		text-align: left;
 		font-family: var(--font-display);
@@ -468,6 +477,7 @@
 	}
 
 	.blog-prose.prose :where(td) {
+		display: table-cell;
 		padding: 0.7rem 0.75rem;
 		vertical-align: top;
 		border-bottom: 1px solid rgba(255, 255, 255, 0.08);

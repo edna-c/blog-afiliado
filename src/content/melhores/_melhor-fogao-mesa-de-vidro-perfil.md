@@ -7,11 +7,11 @@ category: 'Guia de Compra'
 
 ## Qual fogão para cada perfil
 
-Regra para empate:
+Se ainda estiver em dúvida:
 
-- Cozinha todo dia + vidro sem complicar → **Consul CFO4VAR**
-- Quer upgrade sensível na mesa (grades duplas / presença premium) → **Brastemp BFO4VAE**
-- Entrada em vidro com menor investimento → **Atlas Atenas Glass (Top Glass)**
-- Usa muito o forno e paga por PerfectCook/VaporBake → critério forno (fora deste pódio; nenhum dos três medalhistas)
+- Cozinha todo dia e quer vidro sem complicar → **Consul CFO4VAR**
+- Quer grades duplas e um visual mais robusto na mesa → **Brastemp BFO4VAE**
+- Quer entrar em vidro gastando menos → **Atlas Atenas Glass (Top Glass)**
+- Assa com frequência e quer PerfectCook ou VaporBake → nenhum destes três; isso fica em outros modelos, fora deste ranking
 - Ainda em dúvida de tamanho → [comparativo 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas/)
 - Família grande / muitas panelas → [fogão 5 bocas](/#top-produtos)

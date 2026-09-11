@@ -97,6 +97,8 @@ Antes de considerar um texto concluído, fazer **duas passagens**: conteúdo (fu
 
 Não escrever como uma IA explicando estratégia. Escrever como alguém que entende de fogões e está ajudando uma pessoa real a decidir.
 
+Quando tese, estrutura, SEO e interlinkagem já estiverem validados e a passagem de voz já tiver sido feita, aplicar o **refinamento editorial fino**: acabamento de expressões pouco naturais, repetição sem função nova e identificação **marca + código** no texto visível. Não é reescrita nem nova revisão de conteúdo.
+
 Prompt: `docs/BIBLIOTECA_DE_PROMPTS.md` §12 · regra `.cursor/rules/camada-naturalidade.mdc` · detalhe de voz: `MANUAL_VOZ_DECISAO_CASA_PRATICA.md`.
 
 ---

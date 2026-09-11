@@ -60,3 +60,19 @@ O critério é a **naturalidade no contexto**.
 ## Preferir concreto
 
 “quem quer gastar menos”; “quem usa o fogão todos os dias”; “quem cozinha bastante”; “quem mora sozinho”; “quem cozinha para a família”; “se você precisa de mais espaço”; “se você prefere praticidade”; “se você quer um fogão mais fácil de manter”; “vale mais a pena quando…”; “faz mais sentido para quem…”; “nesse caso…”; “na prática…”; “se esse é o seu caso…”
+
+## Refinamento editorial fino (acabamento)
+
+Depois que função, tese, conteúdo, estrutura, SEO, interlinkagem e a primeira passada de voz já estiverem validados. **Não** é uma nova revisão de conteúdo nem reescrita.
+
+Princípio: se a expressão está correta no papel, mas não seria uma forma natural de falar com quem está escolhendo um fogão, merece revisão. Conhecimento técnico permanece; a forma deve ser simples.
+
+**Contenção:** se a frase já está natural, não alterar só para “melhorar”. Se a seção já cumpre a função, não reestruturar. Pergunta: isso realmente melhora a experiência do leitor? Se não → não alterar.
+
+**Identificação de produto (texto visível):** sempre que um código de modelo identificar um produto, usar **marca + código** (`Consul CFO4NAR`, `Electrolux FE4IW`). Não deixar o código isolado. Não inventar nem alterar códigos. Exceção: campo técnico de ficha já associado ao produto (ex.: “Referência comercial”).
+
+**Repetição:** a mesma informação pode reaparecer se a função for outra (abertura apresenta; seção aprofunda; comparação diferencia; objeção responde; veredito sintetiza; FAQ atende busca). Cortar só a ocorrência que não acrescenta nada.
+
+**Alertas extras (não são blacklist):** “devo pagar o…”; “o que está segurando a decisão”; “o caminho mais lógico”; “entrega de fato”; “ganha e perde”; “vale mais olhar”; “faz mais sentido” em repetição mecânica; “quem costuma aproveitar melhor”; “rotina na semana”; “pesa para quem…”. Preferir: comprar, escolher, gastar, custar, usar, precisar, servir, funcionar bem, ser uma opção melhor. Evitar “pagar” quando “comprar” ou “escolher” for mais natural.
+
+Ao aplicar esta camada, informar: expressões ajustadas; repetições cortadas vs. mantidas por função; padronização marca + código; preservação de SEO/interlinks; se houve alteração estrutural (não deveria).

@@ -554,6 +554,60 @@ naturalidade, simplicidade, ritmo, palavras artificiais, excesso de
 jargão, frases que parecem escritas para SEO ou para uma IA.
 
 Uma página só está pronta quando passar pelas duas.
+
+### CAMADA DE REFINAMENTO EDITORIAL FINO
+
+Usar depois que a função da página, a tese, o conteúdo, a estrutura, o SEO,
+a interlinkagem e a primeira passada de naturalidade já estiverem validados.
+
+Não é uma nova revisão de conteúdo. É acabamento: tornar o texto mais
+natural, claro e próximo de quem está escolhendo um produto.
+
+Princípio: se a expressão parece correta no papel, mas não seria uma forma
+natural de falar com alguém que está escolhendo um fogão, ela merece revisão.
+
+Não escrever como catálogo, anúncio, departamento comercial, manual
+corporativo, texto de keyword, análise excessivamente técnica ou linguagem
+de funil. O conhecimento técnico permanece; a forma deve ser simples.
+
+Naturalidade não é simplificação excessiva. Objetivo: conhecimento + clareza
++ naturalidade. Não transformar o texto em frases infantis ou genéricas.
+
+Alertas (avaliar no contexto; não são blacklist):
+"Devo pagar o…"; "o que está segurando a decisão"; "o caminho mais lógico";
+"entrega de fato"; "ganha e perde"; "vale mais olhar"; "faz mais sentido"
+quando vira fórmula repetida; "quem costuma aproveitar melhor";
+"rotina na semana"; "pesa para quem…".
+
+Preferir: comprar, escolher, gastar, custar, usar, precisar, servir,
+funcionar bem, ser uma opção melhor. Evitar "pagar" quando "comprar" ou
+"escolher" for mais natural. Não trocar palavra só para variar.
+
+Repetição: a mesma informação pode reaparecer se a função for outra
+(abertura apresenta; seção aprofunda; comparação diferencia; objeção
+responde; veredito sintetiza; FAQ atende busca). Cortar somente a ocorrência
+que não acrescenta informação. Não remover keyword natural, link interno
+útil, dado de decisão, FAQ, síntese ou trecho necessário à compreensão.
+
+Identificação no texto visível: marca + código (Consul CFO4NAR, Electrolux
+FE4IW). Não deixar código isolado quando ele identifica o produto. Não
+inventar códigos. Campo de ficha técnica já associado ao produto pode
+ficar só com o código.
+
+SEO: não manter frase artificial só porque tem keyword; não remover
+repetição com função de SEO. Em conflito, priorizar a formulação natural
+que preserve a intenção de busca.
+
+Interlinkagem: não remover link só porque o assunto já apareceu. Avaliar
+a função naquele ponto. Não inserir link só para aumentar quantidade.
+
+Contenção: se a frase já está natural, não alterar. Se a seção já cumpre
+a função, não reestruturar. "Isso realmente melhora a experiência do
+leitor?" Se não, não alterar.
+
+Ao entregar esta camada, informar expressões ajustadas, repetições
+cortadas vs. mantidas por função, padronização marca + código, preservação
+de SEO/interlinks e se houve alteração estrutural (não deveria haver).
 ```
 
 ---

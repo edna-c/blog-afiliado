@@ -7,6 +7,6 @@ category: 'Guia de Compra'
 
 ## Como escolhemos os melhores fogões mesa de vidro deste ranking
 
-Este ranking não nasce do brilho do vidro no anúncio. Comparamos o que pesa no uso real: resistência da mesa temperada, estabilidade das trempes, limpeza, forno utilizável, reputação no pós-venda e oferta afiliada disponível.
+Comparamos o que pesa no uso real: resistência da mesa de vidro temperado, estabilidade das trempes, limpeza, forno, reputação no pós-venda e disponibilidade nas lojas.
 
-Cada medalha atende um comprador diferente — sem empate forçado. Se o acabamento ainda estiver em aberto, o [comparativo vidro ou inox](/blog/fogao-mesa-de-vidro-ou-inox/) fecha essa etapa. Dúvida de segurança? [Fogão mesa de vidro é seguro?](/blog/fogao-mesa-de-vidro-seguro/).
+Cada medalha atende um tipo de comprador. Se você ainda está entre vidro e inox, veja o [comparativo vidro ou inox](/blog/fogao-mesa-de-vidro-ou-inox/). Se a dúvida é segurança, leia [Fogão mesa de vidro é seguro?](/blog/fogao-mesa-de-vidro-seguro/).

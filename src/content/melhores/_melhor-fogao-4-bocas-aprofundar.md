@@ -7,12 +7,12 @@ category: 'Guia de Compra'
 
 ## Aprofundar
 
-Só se a dúvida ainda travar a decisão:
+Se ainda ficou alguma dúvida:
 
-- Review do #1 do ranking → [Consul CF04NAR](/review-fogao-4-bocas-consul/)
-- Review do #2 (premium) → [Electrolux FE4IW](/review-fogao-4-bocas-electrolux/)
+- Review do Consul CFO4NAR → [Consul CFO4NAR](/review-fogao-4-bocas-consul/)
+- Review do Electrolux FE4IW → [Electrolux FE4IW](/review-fogao-4-bocas-electrolux/)
 - Medidas, gás, mesa e forno → [como escolher fogão 4 bocas](/como-escolher-fogao-4-bocas/)
-- Preço / onde economizar → [custo-benefício 4 bocas](/fogao-4-bocas-custo-beneficio/)
-- “4 bocas ainda faz sentido?” → [artigo](/blog/fogao-4-bocas-ainda-vale-a-pena/)
-- Tamanho 4 vs 5 → [comparativo](/comparativo-fogao-4-vs-5-bocas/)
+- Preço e onde economizar → [custo-benefício 4 bocas](/fogao-4-bocas-custo-beneficio/)
+- Ainda vale 4 bocas? → [fogão 4 bocas ainda vale a pena?](/blog/fogao-4-bocas-ainda-vale-a-pena/)
+- 4 ou 5 bocas → [comparativo fogão 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas/)
 - Já escolheu mesa de vidro → [ranking mesa de vidro](/melhores/melhor-fogao-mesa-de-vidro/)

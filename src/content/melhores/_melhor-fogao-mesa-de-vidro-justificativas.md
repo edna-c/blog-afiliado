@@ -11,13 +11,13 @@ category: 'Guia de Compra'
 
 ![Fogão Consul CFO4VAR 4 bocas com mesa de vidro temperado e grades de ferro fundido em cozinha moderna.](/images/melhores/melhor-fogao-mesa-de-vidro/consul-cfo4var-hero.webp)
 
-A medalha não é por “mais brilho no vidro”: é por **fechar a compra sem arrependimento** no uso típico com mesa de vidro.
+O Consul CFO4VAR fica em primeiro porque atende bem o dia a dia com mesa de vidro, sem chegar ao preço da Brastemp e sem partir para um modelo mais simples.
 
-- Vidro temperado + grades de ferro fundido — estabilidade no dia a dia sem cair para linha de entrada
-- Forno Cleartec (~58 L) com rotina de limpeza mais simples que o anúncio sugere
-- Ponto fraco real: vidro exige cuidado com impactos e abrasivos (limitações da categoria, não só deste SKU)
-- Precisa de mais bocas ao mesmo tempo? O upgrade certo é [melhor fogão 5 bocas](/#top-produtos), não outro 4 bocas de vidro
-- Review do SKU: [Fogão Consul mesa de vidro CFO4VAR](/review-fogao-mesa-de-vidro-consul/)
+- Vidro temperado + grades de ferro fundido — estabilidade no uso cotidiano
+- Forno Cleartec (~58 L), suficiente para os preparos mais comuns e fácil de limpar
+- Ponto fraco: o vidro pede cuidado com impactos e produtos abrasivos — isso vale para a categoria, não só para este modelo
+- Precisa de mais bocas ao mesmo tempo? Aí a escolha certa é um [fogão 5 bocas](/#top-produtos), não outro 4 bocas de vidro
+- Review do modelo: [Fogão Consul mesa de vidro CFO4VAR](/review-fogao-mesa-de-vidro-consul/)
 
 <!-- CTAs: produtos.consulCFO4VAR (src/data/products.ts) -->
 <p class="not-prose mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -31,12 +31,12 @@ A medalha não é por “mais brilho no vidro”: é por **fechar a compra sem a
 
 ![Fogão Brastemp BFO4VAE preto com mesa de vidro e grades duplas de ferro fundido em cozinha moderna.](/images/melhores/melhor-fogao-mesa-de-vidro/brastemp-bfo4vae-hero.webp)
 
-O 2º lugar existe para quem paga **robustez na mesa** (grades duplas + conjunto preto/vidro), não para quem só quer “mais funções no forno”.
+O Brastemp BFO4VAE é a opção mais sofisticada entre os três: tem grades duplas e conjunto preto com vidro. Não é o modelo para quem quer mais recursos no forno.
 
-- Grades duplas de ferro fundido e potência generosa nos queimadores rápidos
-- Acabamento premium coerente com a categoria vidro — presença visual e percepção de solidez
-- Ponto fraco real: forno sólido (~61 L), sem pacote tipo PerfectCook/VaporBake — quem prioriza assar tecnológico deve ver a regra de perfil abaixo (fora do pódio)
-- Se a meta é equilíbrio por menos, o ranking manda voltar ao Consul CFO4VAR
+- Grades duplas de ferro fundido e boa potência nos queimadores rápidos
+- Acabamento preto com vidro e grades duplas, que deixam a mesa mais robusta.
+- Ponto fraco: o forno (~61 L) é sólido, mas sem PerfectCook ou VaporBake — quem assa com frequência e quer esses recursos precisa olhar outro tipo de fogão, fora deste ranking
+- Se a prioridade é equilíbrio por um preço menor, o Consul CFO4VAR continua sendo a escolha mais adequada
 
 <!-- CTAs: produtos.brastempBFO4VAE (src/data/products.ts) -->
 <p class="not-prose mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -50,12 +50,12 @@ O 2º lugar existe para quem paga **robustez na mesa** (grades duplas + conjunto
 
 ![Fogão Atlas Atenas Glass (Top Glass) preto com mesa de vidro temperado em cozinha moderna.](/images/melhores/melhor-fogao-mesa-de-vidro/atlas-atenas-glass-hero.webp)
 
-O 3º lugar é a entrada consciente em vidro: **preço + estoque real**, sem tentar parecer Brastemp. Em anúncios, o mesmo modelo pode aparecer como Atenas Glass ou Top Glass.
+O Atlas Atenas Glass é a opção para quem quer uma mesa de vidro gastando menos. Em anúncios, o mesmo modelo pode aparecer como Atenas Glass ou Top Glass.
 
-- Perfil forte: primeiro imóvel / troca barata — mesa de vidro sem ticket das marcas premium
-- Não é “quase Consul”: trempes e forno ficam atrás de propósito (aço esmaltado, ~50 L)
-- Não indicado se o uso pede grades de ferro fundido ou forno mais generoso — aí o Atlas deixa de ser o melhor caminho
-- Se quer equilíbrio com ferro fundido e forno mais completo, volte ao Consul CFO4VAR
+- Serve bem quem quer o primeiro fogão de vidro ou uma troca mais barata
+- As trempes são de aço esmaltado e o forno tem cerca de 50 L
+- Não é o modelo certo se você precisa de grades de ferro fundido ou de um forno maior
+- Se você quer ferro fundido e um forno maior, o Consul CFO4VAR é uma opção mais completa.
 
 <!-- CTAs: produtos.atlasAtenasGlass (src/data/products.ts) -->
 <p class="not-prose mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">

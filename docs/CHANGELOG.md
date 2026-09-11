@@ -7,6 +7,16 @@ Formato: mais recente no topo.
 
 ---
 
+## 2026-09-09
+
+### Camada de refinamento editorial fino
+
+- Acabamento de voz **depois** das duas passagens (conteúdo + naturalidade), quando tese, estrutura, SEO e interlinkagem já estão validados.
+- Não é reescrita: só expressões pouco naturais, repetição sem função nova e identificação **marca + código** no texto visível.
+- Integração em `docs/BIBLIOTECA_DE_PROMPTS.md` §12, `.cursor/rules/camada-naturalidade.mdc`, `MANUAL_EDITORIAL.md` e `MANUAL_VOZ_DECISAO_CASA_PRATICA.md`.
+
+---
+
 ## 2026-09-08
 
 ### Camada de naturalidade — segunda passagem de voz

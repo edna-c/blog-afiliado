@@ -18,11 +18,11 @@ export async function getStaticPaths() {
 			props: {
 				title: 'Fogão Brastemp 5 bocas: review da linha e para quem serve | Casa Prática Eletro',
 				description:
-					'Review direto do fogão Brastemp 5 bocas: para quem o custo-benefício fecha, onde o forno pesa e quando o Consul basta. Modelo de referência: BFS5NCR.',
+					'Review direto do fogão Brastemp 5 bocas: para quem vale a pena, como é o forno e quando um Consul pode ser suficiente. Modelo de referência: BFS5NCR.',
 				model: 'Brastemp BFS5NCR',
 				headline: 'Fogão Brastemp 5 bocas: review da linha e para quem serve',
 				summary:
-					'Linha popular e fácil de achar: costuma equilibrar preço, forno útil e o básico bem resolvido. Confira no anúncio a versão exata — acabamento e acessórios mudam de um modelo para outro.',
+					'O Brastemp BFS5NCR é conhecido pelo forno grande, pelas cinco bocas e pelo acabamento em inox. Confira no anúncio a versão exata — acabamento e acessórios mudam de um modelo para outro.',
 				offerUrl: produtos.brastempBFS5NCR.ml,
 				offerShopeeUrl: produtos.brastempBFS5NCR.shopee,
 				productId: 'brastempBFS5NCR' as ProductId,
@@ -34,79 +34,79 @@ export async function getStaticPaths() {
 				},
 				idealFor: [
 					'famílias médias que cozinham com frequência',
-					'quem quer forno grande e uso mais robusto',
-					'cozinhas planejadas com pegada premium',
-					'quem valoriza acabamento sem abrir mão de função',
+					'quem quer forno grande e cozinha bastante',
+					'cozinhas planejadas com inox e mesa de vidro',
+					'quem quer acabamento em inox',
 				],
 				notIdealFor: [
-					'quem busca o menor preço da categoria',
-					'rotina muito leve com pouco uso de forno',
-					'cozinhas pequenas demais para um 5 bocas mais encorpado',
+					'quem busca o menor preço',
+					'quem cozinha pouco e quase não usa o forno',
+					'cozinhas pequenas demais para um fogão de 5 bocas',
 				],
 				familyProfile:
-					'Costuma encaixar melhor em casais que cozinham bastante, famílias médias e casas onde o forno não fica esquecido.',
+					'Costuma funcionar melhor para casais que cozinham bastante, famílias médias e casas que usam o forno com frequência.',
 				routineProfile:
-					'Faz mais sentido quando há uso recorrente de panelas grandes, refeições simultâneas e preparo de forno ao longo da semana.',
+					'É uma boa opção para quem usa panelas grandes, prepara mais de uma receita ao mesmo tempo e usa o forno durante a semana.',
 				realLimitations: [
-					'preço acima de linhas mais simples',
+					'Custa mais do que fogões mais baratos.',
 					'mesa de vidro pede cuidado contra impacto e limpeza mais frequente',
-					'pode ser exagerado para quem cozinha pouco e quer só função básica',
+					'pode ser mais do que o necessário para quem cozinha pouco e não precisa das cinco bocas nem do forno grande',
 				],
 				ovenAnalysis:
-					'O forno é um dos pontos que mais puxam o valor percebido do modelo. Para quem assa com frequência, a sensação costuma ser de conjunto mais sério que o das linhas de entrada.',
+					'O forno tem espaço interno que ajuda quem prepara assadeiras grandes ou usa o forno com frequência.',
 				gratesAnalysis:
-					'As trempes costumam conversar melhor com panelas maiores e rotina mais pesada. Ainda assim, vale olhar no anúncio a estabilidade e o desenho exato da versão anunciada.',
+					'As trempes apoiam panelas maiores. Ainda assim, vale conferir no anúncio a estabilidade e o desenho exato da versão anunciada.',
 				consumptionAnalysis:
-					'Não é um fogão pensado para quem usa uma boca de vez em quando. Em uso mais intenso, o consumo acompanha o porte do conjunto e a frequência de forno; confirme sempre a etiqueta vigente da versão publicada.',
+					'O consumo de gás depende da frequência e do tempo de uso das bocas e do forno. Confirme sempre a etiqueta de eficiência energética da versão anunciada.',
 				cleaningAnalysis:
-					'A proposta de limpeza é boa para a categoria, especialmente quando o conjunto traz botões removíveis e mesa mais lisa. Em troca, acabamento premium mostra gordura e dedo com mais facilidade se a limpeza ficar para depois.',
+					'A limpeza do dia a dia é simples, especialmente nas versões com botões removíveis e mesa de vidro. O inox pode deixar marcas de gordura e dedos mais visíveis.',
 				differentiators: [
-					'forno e sensação de robustez acima da média básica',
-					'visual que valoriza cozinha moderna',
-					'experiência mais equilibrada entre potência, acabamento e rotina familiar',
+					'forno grande, com espaço para assadeiras maiores',
+					'acabamento em inox e mesa de vidro',
+					'cinco bocas para cozinhar com várias panelas ao mesmo tempo',
 				],
 				comparisonRows: [
-					{ criterion: 'Preço', current: 'Faixa intermediária para premium', alternative: 'Linhas de entrada custam menos' },
-					{ criterion: 'Forno', current: 'Pesa a favor de quem usa de verdade', alternative: 'Modelos básicos entregam menos conforto' },
-					{ criterion: 'Acabamento', current: 'Visual mais refinado', alternative: 'Linhas econômicas simplificam mais' },
-					{ criterion: 'Melhor perfil', current: 'Família média / rotina intensa', alternative: 'Uso ocasional / compra enxuta' },
+					{ criterion: 'Preço', current: 'Custa mais', alternative: 'Custa menos' },
+					{ criterion: 'Forno', current: 'Mais espaço para assadeiras grandes', alternative: 'Menos espaço no forno' },
+					{ criterion: 'Acabamento', current: 'Inox e mesa de vidro', alternative: 'Acabamento mais simples' },
+					{ criterion: 'Indicado para', current: 'Família média / uso frequente', alternative: 'Uso ocasional / quem quer gastar menos' },
 				],
 				objections: [
 					{
-						question: 'Vale pagar mais que um modelo básico?',
+						question: 'Vale pagar mais por este modelo?',
 						answer:
-							'Vale quando você realmente usa forno, cozinha com frequência e se importa com acabamento. Se o foco é só economizar, o ganho pode não se pagar.',
+							'Vale quando você realmente usa forno, cozinha com frequência e quer inox e mesa de vidro. Se a prioridade é gastar menos, um fogão mais barato pode ser suficiente.',
 					},
 					{
 						question: 'É exagerado para casal?',
 						answer:
-							'Depende da rotina. Casal que cozinha bastante pode aproveitar bem; casal que quase não usa forno talvez fique melhor servido por algo mais simples.',
+							'Depende da rotina. Um casal que cozinha bastante pode aproveitar bem o modelo. Se o forno quase não é usado, um fogão com menos bocas pode ser suficiente.',
 					},
 					{
 						question: 'A mesa de vidro compensa?',
 						answer:
-							'Compensa no visual e na limpeza da superfície, mas exige mais cuidado contra impacto e uma limpeza mais constante para seguir bonita.',
+							'A mesa de vidro melhora o visual e facilita a limpeza da superfície, mas exige mais cuidado contra impacto e limpeza mais frequente para evitar marcas.',
 					},
 				],
 				faqItems: [
 					{
 						question: 'O Brastemp BFS5NCR vale a pena para família?',
 						answer:
-							'Sim, principalmente quando há uso frequente de forno e preparo simultâneo de mais panelas. É um perfil em que o conjunto costuma fazer mais sentido.',
+							'Sim, principalmente quando há uso frequente de forno e preparo simultâneo de mais panelas. As cinco bocas e o forno grande são mais úteis para quem cozinha com frequência e prepara várias receitas ao mesmo tempo.',
 					},
 					{
 						question: 'É melhor que um Consul mais barato?',
 						answer:
-							'Em acabamento, sensação de robustez e forno, costuma entregar mais. Em economia imediata, modelos Consul de entrada podem fazer mais sentido.',
+							'O BFS5NCR tem mais espaço de forno e acabamento em inox e vidro. Se a prioridade é pagar menos na compra, um Consul mais barato pode ser suficiente.',
 					},
 					{
 						question: 'Consome muito gás?',
 						answer:
-							'O consumo depende do tempo de forno e da intensidade real de uso. Por ser um 5 bocas mais robusto, ele faz mais sentido quando essa estrutura será aproveitada.',
+							'O consumo de gás depende da frequência e do tempo de uso das bocas e do forno. Como é um fogão de 5 bocas com forno grande, ele é mais indicado para quem usa as cinco bocas e o forno com frequência.',
 					},
 				],
 				verdict:
-					'Para quem quer um 5 bocas mais completo e usa a cozinha de verdade, o BFS5NCR continua sendo uma compra muito sólida. Para orçamento muito apertado, vale comparar com linhas mais simples antes de fechar.',
+					'Para quem cozinha com frequência e quer um fogão 5 bocas com forno grande, o BFS5NCR é uma boa opção. Para orçamento muito apertado, vale comparar o preço antes de decidir.'
 			},
 		},
 		{
@@ -114,11 +114,11 @@ export async function getStaticPaths() {
 			props: {
 				title: 'Fogão Consul 5 bocas CFS5NAB vale a pena? | Casa Prática Eletro',
 				description:
-					'Consul CFS5NAB (5 bocas): para quem é a escolha certa, onde fica curto e quando pagar mais pelo Brastemp ou Electrolux. Review direto.',
+					'Consul CFS5NAB: análise do forno, espaço entre as bocas e acabamento para quem quer um fogão 5 bocas funcional e de menor investimento.',
 				model: 'Consul CFS5NAB',
 				headline: 'Fogão Consul 5 bocas CFS5NAB vale a pena?',
 				summary:
-					'Perfil “primeiro fogão bom”: costuma agradar quem quer menos firula e mais função. Se você cozinha muito pesado, compare forno e distância entre bocas com um modelo de linha acima antes de decidir.',
+					'É um fogão 5 bocas voltado para quem cozinha no dia a dia e quer gastar menos na compra. Se você usa várias panelas grandes ou o forno com frequência, vale comparar esses pontos com outros modelos antes de decidir.',
 				offerUrl: produtos.consulCFS5NAB.ml,
 				offerShopeeUrl: produtos.consulCFS5NAB.shopee,
 				productId: 'consulCFS5NAB' as ProductId,
@@ -127,80 +127,80 @@ export async function getStaticPaths() {
 					label: 'Electrolux FE5IG',
 				},
 				idealFor: [
-					'casais e famílias pequenas a médias',
-					'quem quer entrar na categoria 5 bocas sem subir demais o orçamento',
-					'rotina comum com uso doméstico normal',
-					'quem prefere compra direta, sem frescura de acabamento premium',
+					'casais e famílias pequenas ou médias',
+					'quem quer cinco bocas sem gastar tanto',
+					'quem prepara as refeições do dia a dia',
+					'quem prefere uma compra mais funcional, sem priorizar acabamento sofisticado',
 				],
 				notIdealFor: [
-					'famílias grandes com uso intenso de forno',
-					'quem quer sensação premium de acabamento',
-					'rotina pesada com panelas grandes simultaneamente o tempo todo',
+					'famílias grandes que usam o forno com frequência',
+					'quem considera o acabamento sofisticado um critério importante de compra',
+					'quem usa panelas grandes em várias bocas ao mesmo tempo',
 				],
 				familyProfile:
-					'O Consul costuma fazer mais sentido para primeira compra boa, casa com rotina comum e famílias que querem 5 bocas sem dar um salto muito alto de preço.',
+					'Faz mais sentido para quem cozinha diariamente, quer cinco bocas para a rotina e prefere manter o investimento sob controle. Se você assa com frequência ou usa várias panelas grandes ao mesmo tempo, vale comparar o espaço do forno e a área da mesa com outros modelos.',
 				routineProfile:
-					'Funciona melhor em almoço e jantar do dia a dia, preparo doméstico normal e uso de forno sem tanta exigência de volume ou frequência.',
+					'Se você assa muito ou precisa de mais espaço no forno, compare com outro modelo antes de decidir.',
 				realLimitations: [
-					'quando a rotina fica pesada, linhas acima costumam parecer mais resolvidas',
-					'forno e sensação geral podem ficar mais modestos para quem assa muito',
-					'quem busca acabamento premium talvez sinta falta de refinamento',
+					'se você usa o forno com frequência ou várias panelas grandes ao mesmo tempo, compare com fogões que tenham forno maior e mais espaço entre as bocas',
+					'pode não atender tão bem quem prepara assadeiras grandes ou usa o forno com frequência',
+					'quem considera o acabamento um fator importante pode preferir modelos mais sofisticados',
 				],
 				ovenAnalysis:
-					'O forno costuma atender bem o cotidiano comum, mas não é o tipo de ponto que normalmente justifica a compra por si só. Se o forno é protagonista na sua rotina, compare com modelos acima antes de decidir.',
+					'O forno é suficiente para o preparo das refeições do dia a dia. Se você prepara assadeiras grandes ou usa o forno com frequência, compare o espaço interno com o de outros modelos antes de comprar.',
 				gratesAnalysis:
-					'As trempes cumprem bem a proposta de entrada sólida. Ainda assim, vale olhar com atenção se você usa panela grande e várias bocas simultaneamente, porque esse é um ponto onde linhas superiores costumam transmitir mais confiança.',
+					'As trempes atendem ao uso diário. Se você usa panela grande em várias bocas ao mesmo tempo, vale conferir no anúncio a estabilidade e o espaço entre as bocas.',
 				consumptionAnalysis:
-					'Como em todo 5 bocas, consumo depende mais da rotina do que do número de bocas sozinho. No perfil certo, o modelo tende a equilibrar custo inicial e uso razoável sem exigir investimento alto.',
+					'O consumo de gás sobe se você usa várias bocas ao mesmo tempo ou deixa o forno ligado por mais tempo. Ter cinco bocas, por si só, não diz quanto você vai gastar.',
 				cleaningAnalysis:
-					'A proposta mais direta ajuda quem quer menos complicação. A limpeza tende a ser simples o bastante para o dia a dia, especialmente para quem prioriza função antes de acabamento sofisticado.',
+					'A limpeza é simples no dia a dia.',
 				differentiators: [
-					'entrada sólida para quem quer 5 bocas sem exagero',
-					'compra mais racional para primeira cozinha ou upgrade controlado',
-					'menos promessa estética, mais foco em função básica bem entregue',
+					'cinco bocas para preparar as refeições do dia a dia',
+					'opção para quem quer gastar menos na compra',
+					'acabamento mais simples',
 				],
 				comparisonRows: [
-					{ criterion: 'Preço de entrada', current: 'Ponto forte da página', alternative: 'Linhas premium sobem mais' },
-					{ criterion: 'Acabamento', current: 'Mais funcional que aspiracional', alternative: 'Premium entrega mais presença visual' },
-					{ criterion: 'Forno', current: 'Adequado para rotina comum', alternative: 'Modelos acima costumam convencer mais' },
-					{ criterion: 'Melhor perfil', current: 'Família pequena/média com orçamento controlado', alternative: 'Uso pesado e cozinha gourmet pedem mais' },
+					{ criterion: 'Preço', current: 'Custa menos', alternative: 'Custa mais' },
+					{ criterion: 'Acabamento', current: 'Mais simples', alternative: 'Acabamento mais elaborado' },
+					{ criterion: 'Forno', current: 'Serve para o dia a dia', alternative: 'Mais espaço no forno para quem assa com frequência' },
+					{ criterion: 'Indicado para', current: 'Família pequena ou média que quer gastar menos', alternative: 'Quem usa várias panelas grandes e o forno com frequência' },
 				],
 				objections: [
 					{
 						question: 'Ele fica pequeno para família grande?',
 						answer:
-							'Pode ficar. Se a casa usa várias panelas grandes e forno com frequência, vale comparar com linhas mais robustas antes de comprar.',
+							'Pode ficar. Se a casa usa várias panelas grandes e forno com frequência, vale comparar com um fogão de forno maior e mais espaço entre as bocas antes de comprar.',
 					},
 					{
 						question: 'Vale a pena frente ao Electrolux?',
 						answer:
-							'Vale quando a prioridade é economizar na compra sem sair da categoria 5 bocas. O Electrolux costuma conversar melhor com acabamento e forno como critério principal.',
+							'Vale quando a prioridade é gastar menos e continuar com 5 bocas. Se o que mais pesa na decisão é espaço de forno e acabamento mais sofisticado, o Electrolux FE5IG pode fazer mais sentido.',
 					},
 					{
 						question: 'É uma boa compra para apartamento?',
 						answer:
-							'Pode ser, especialmente em apartamento com rotina comum e orçamento enxuto. Só continue atento a medidas, ventilação e folga ao redor do aparelho.',
+							'Pode ser uma boa escolha para apartamento, desde que você confira medidas, ventilação e folga ao redor do aparelho.',
 					},
 				],
 				faqItems: [
 					{
 						question: 'O Consul CFS5NAB é bom para uso diário?',
 						answer:
-							'Sim, especialmente para rotina doméstica comum, casal ou família pequena a média que quer 5 bocas sem investir em uma linha premium.',
+							'Sim, para casal ou família pequena a média que quer 5 bocas para o uso diário.',
 					},
 					{
-						question: 'Vale a pena como primeiro fogão 5 bocas?',
+						question: 'Vale a pena para quem está comprando um fogão 5 bocas?',
 						answer:
-							'Na maior parte dos casos, sim. O modelo conversa bem com quem quer subir de categoria sem pagar por recursos que talvez não vá usar.',
+							'Sim, para quem quer cinco bocas para o uso diário e não precisa de um forno maior.',
 					},
 					{
 						question: 'Quando não vale escolher esse Consul?',
 						answer:
-							'Quando o forno é muito importante, a rotina é pesada ou você quer acabamento e sensação de linha superior no uso diário.',
+							'Quando você assa com frequência, usa várias panelas grandes ao mesmo tempo ou considera espaço de forno e acabamento mais sofisticado critérios importantes.',
 					},
 				],
 				verdict:
-					'O CFS5NAB é uma boa porta de entrada para quem quer 5 bocas com racionalidade. Ele tende a acertar mais quando o foco é função e orçamento, não sofisticação nem uso pesado.',
+					'O CFS5NAB é uma boa escolha para quem quer cinco bocas, cozinha no dia a dia e prefere manter o investimento sob controle. A principal limitação está no espaço do forno para quem prepara assadeiras grandes ou usa o forno com frequência. Nesse caso, vale comparar com modelos de outras marcas antes de decidir.',
 			},
 		},
 		{
@@ -208,11 +208,11 @@ export async function getStaticPaths() {
 			props: {
 				title: 'Fogão Electrolux 5 bocas FE5IG vale a pena? | Casa Prática Eletro',
 				description:
-					'Veja se o Electrolux FE5IG compensa pelo forno e acabamento, para qual rotina ele faz sentido e quando alternativas mais baratas bastam.',
+					'Electrolux FE5IG: para quem vale investir mais em forno e acabamento, quando o custo maior faz sentido e quando um modelo mais simples atende melhor.',
 				model: 'Electrolux FE5IG',
 				headline: 'Fogão Electrolux 5 bocas FE5IG vale a pena?',
 				summary:
-					'Foco em acabamento e no dia a dia: faz sentido quando o visual importa e você usa forno de verdade. Confira na ficha do anúncio se vêm as funções que você quer.',
+					'É uma opção para quem cozinha com frequência, usa o forno de verdade e considera o acabamento um critério importante na escolha. Se esses pontos não pesam na sua rotina, um modelo mais simples pode atender melhor.',
 				offerUrl: produtos.electroluxFE5IG.ml,
 				productId: 'electroluxFE5IG' as ProductId,
 				peerReview: {
@@ -221,79 +221,79 @@ export async function getStaticPaths() {
 				},
 				idealFor: [
 					'famílias médias ou casas com rotina mais intensa',
-					'quem usa forno com frequência real',
-					'cozinhas modernas em que acabamento pesa na decisão',
-					'quem aceita pagar mais por sensação de linha superior',
+					'quem usa o forno com frequência',
+					'quem considera o acabamento um critério importante',
+					'quem aceita investir mais quando esses recursos fazem diferença no dia a dia',
 				],
 				notIdealFor: [
-					'quem quer só o menor preço possível',
-					'rotina simples com pouco uso de forno',
-					'quem não liga para acabamento ou recursos extras',
+					'quem quer gastar o mínimo possível',
+					'quem usa pouco o forno',
+					'quem não considera acabamento e recursos adicionais importantes na escolha',
 				],
 				familyProfile:
-					'Costuma encaixar melhor em famílias médias, casais que cozinham bastante e projetos de cozinha em que o fogão também precisa “conversar” com o ambiente.',
+					'Faz mais sentido para famílias médias, casais que cozinham bastante e casas em que o forno é usado com frequência. Se a rotina é mais simples e o preço pesa mais na decisão, vale comparar com modelos de menor investimento.',
 				routineProfile:
-					'O FE5IG ganha mais sentido quando há uso real de forno, preparo frequente e busca por uma experiência mais premium do que a das linhas de entrada.',
+					'O Electrolux FE5IG faz mais sentido quando o forno entra de verdade na rotina e o acabamento também pesa na escolha. Para uso ocasional, o investimento adicional pode não trazer vantagem suficiente.',
 				realLimitations: [
-					'investimento acima do que muita rotina simples precisa',
-					'alguns recursos só valem a pena se você realmente usa forno e acabamento premium',
-					'antes de fechar, vale conferir no anúncio a versão exata e os acessórios incluídos',
+					'o investimento pode não compensar para quem cozinha pouco ou usa pouco o forno',
+					'recursos e acabamento só justificam pagar mais quando realmente fazem diferença na rotina',
+					'é importante conferir no anúncio a versão exata e os acessórios incluídos',
 				],
 				ovenAnalysis:
-					'O forno é parte central da proposta do FE5IG. Se você realmente assa, aquece e usa o forno como parte da rotina, o modelo tende a se justificar melhor do que para quem quase nunca passa dessa etapa.',
+					'O forno é um dos pontos que mais justificam olhar para este modelo. Se você assa com frequência, prepara diferentes receitas ou usa o forno várias vezes durante a semana, compare o espaço interno e os recursos da versão anunciada.',
 				gratesAnalysis:
-					'Na leitura comercial, o modelo chama atenção por parecer mais completo. Ainda assim, para panelas muito grandes e uso simultâneo pesado, vale sempre confirmar a ergonomia da mesa e o espaço real entre queimadores na versão anunciada.',
+					'As trempes devem ser avaliadas pelo apoio às panelas e pelo espaço disponível na mesa. Se você costuma usar panelas grandes em várias bocas ao mesmo tempo, confira no anúncio as dimensões e o desenho da mesa da versão anunciada.',
 				consumptionAnalysis:
-					'Acabamento premium e forno mais protagonista não significam “gastar muito” sozinhos, mas sim que o retorno do investimento depende de rotina real. Quanto mais você usa forno e múltiplas bocas, mais sentido o FE5IG tende a fazer.',
+					'O consumo de gás depende principalmente do tempo de uso das bocas e do forno e da eficiência energética da versão anunciada. Ter mais recursos ou acabamento mais sofisticado não significa, por si só, maior consumo.',
 				cleaningAnalysis:
-					'A limpeza costuma ser percebida como parte do apelo de linha mais refinada. Superfícies mais bonitas ajudam na manutenção visual, mas também pedem cuidado para continuar com aparência premium no longo prazo.',
+					'A facilidade de limpeza depende dos materiais e do desenho da mesa. Se o acabamento é um critério importante para você, considere também a manutenção necessária para conservar a aparência do aparelho.',
 				differentiators: [
-					'combinação de acabamento forte com proposta de forno mais convincente',
-					'boa conversa com cozinha planejada ou moderna',
-					'perfil mais completo para quem não quer só “um 5 bocas qualquer”',
+					'forno como um dos principais critérios para quem usa essa função com frequência',
+					'acabamento mais sofisticado para cozinhas em que o visual também importa',
+					'proposta mais completa para quem aceita investir mais por esses critérios',
 				],
 				comparisonRows: [
-					{ criterion: 'Acabamento', current: 'Pesa bastante a favor', alternative: 'Linhas básicas simplificam mais' },
-					{ criterion: 'Forno', current: 'Parte importante da compra', alternative: 'Modelos enxutos entregam menos apelo aqui' },
-					{ criterion: 'Preço', current: 'Acima da entrada', alternative: 'Consul e linhas básicas aliviam o caixa' },
-					{ criterion: 'Melhor perfil', current: 'Uso frequente + estética + forno', alternative: 'Compra só por economia talvez não compense' },
+					{ criterion: 'Acabamento', current: 'Mais sofisticado', alternative: 'Mais simples' },
+					{ criterion: 'Forno', current: 'Importante para quem usa com frequência', alternative: 'Adequado para rotinas menos exigentes' },
+					{ criterion: 'Preço', current: 'Maior investimento', alternative: 'Menor investimento' },
+					{ criterion: 'Melhor perfil', current: 'Quem usa forno com frequência e valoriza acabamento', alternative: 'Quem prioriza economia e uso cotidiano' },
 				],
 				objections: [
 					{
 						question: 'Vale pagar mais que um Consul?',
 						answer:
-							'Vale quando forno, acabamento e experiência geral realmente entram no seu critério. Se o foco é apenas economizar, o ganho pode ser pequeno para o seu perfil.',
+							'Pode valer quando o forno, o acabamento e os recursos adicionais são importantes para a sua rotina. Se você quer apenas cinco bocas para o uso diário e o preço pesa mais, o Consul pode fazer mais sentido.',
 					},
 					{
 						question: 'É exagero para apartamento?',
 						answer:
-							'Não necessariamente. Em apartamento com cozinha planejada e uso frequente, pode encaixar muito bem. O exagero aparece quando o espaço ou a rotina não pedem esse nível de produto.',
+							'Não necessariamente. Pode fazer sentido em uma cozinha planejada com uso frequente. O principal é conferir as medidas, a ventilação e o espaço disponível para o aparelho.',
 					},
 					{
 						question: 'A diferença aparece no dia a dia?',
 						answer:
-							'Aparece mais para quem usa forno de verdade e se importa com acabamento. Em rotina muito simples, a percepção de ganho diminui bastante.',
+							'A diferença tende a ser mais relevante para quem usa o forno com frequência e considera o acabamento importante. Em uma rotina simples, o investimento adicional pode não trazer vantagem suficiente.',
 					},
 				],
 				faqItems: [
 					{
 						question: 'O Electrolux FE5IG vale a pena para quem usa muito forno?',
 						answer:
-							'Sim. Esse é justamente um dos cenários em que o modelo tende a justificar melhor o investimento frente a opções mais básicas.',
+							'Sim. O modelo faz mais sentido quando o forno é usado com frequência e tem peso real na decisão de compra.',
 					},
 					{
 						question: 'Compensa para família média?',
 						answer:
-							'Compensa quando a rotina é ativa, há uso frequente da cozinha e o acabamento também pesa na escolha do eletro.',
+							'Pode compensar quando a família cozinha com frequência, usa o forno regularmente e considera o acabamento importante.',
 					},
 					{
-						question: 'Quando não vale a pena escolher o FE5IG?',
+						question: 'Quando não vale a pena escolher o Electrolux FE5IG?',
 						answer:
-							'Quando a compra é guiada quase só por preço ou quando o forno e o acabamento premium não terão uso real no dia a dia.',
+							'Quando o preço é o principal critério, a rotina é simples ou o forno e o acabamento mais sofisticado não terão uso frequente.',
 					},
 				],
 				verdict:
-					'O FE5IG costuma ser a escolha mais interessante para quem quer subir um degrau em acabamento e forno, desde que a rotina realmente aproveite isso. Para compra estritamente econômica, há alternativas mais racionais.',
+					'O Electrolux FE5IG faz mais sentido para quem usa o forno com frequência, valoriza um acabamento mais sofisticado e aceita investir mais por esses critérios. Se a rotina é simples ou o preço é a principal prioridade, vale comparar com opções mais econômicas.',
 			},
 		},
 	];
@@ -437,21 +437,24 @@ const structuredData = {
 		<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl">
 			{headline}
 		</h1>
-		<p class="mt-2 text-sm text-on-ink-muted">
-			Modelo referência: <span class="text-on-ink-body">{model}</span>
-		</p>
+		{
+			marca === 'brastemp' ? (
+				<p class="mt-2 text-sm text-on-ink-muted">
+					Modelo referência: <span class="text-on-ink-body">{model}</span>
+				</p>
+			) : null
+		}
 		<p class="mt-6 text-lg leading-relaxed text-on-ink-body">
 			{summary}
 		</p>
 		<p class="mt-4 text-sm leading-relaxed text-on-ink-muted">
-			Este review integra o{' '}
+			Esta análise faz parte do nosso{' '}
 			<a href="/#top-produtos" class="link-accent-soft">
-				melhor fogão 5 bocas
+				guia de melhores fogões 5 bocas
 			</a>
 			{peerReview ? (
 				<>
-					{' '}
-					— para outro perfil na mesma categoria, vale comparar com o{' '}
+					. {marca === 'consul' ? 'Se estiver considerando outro modelo, veja também a análise do' : marca === 'electrolux' ? 'Se estiver considerando outra opção, veja também a análise do' : 'Para outro fogão 5 bocas, vale comparar com o'}{' '}
 					<a href={peerReview.href} class="link-accent-soft">
 						{peerReview.label}
 					</a>
@@ -497,32 +500,42 @@ const structuredData = {
 
 		<section class="mt-12" aria-labelledby="perfil-heading">
 			<h2 id="perfil-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
-				Perfil de uso: para quem ele encaixa melhor
+				{marca === 'consul' ? 'Para quem este Consul faz sentido' : marca === 'electrolux' ? 'Para quem ele é indicado' : 'Para quem ele encaixa melhor'}
 			</h2>
 			<div class="mt-6 grid gap-4 sm:grid-cols-2">
 				<div class="rounded-2xl border border-emerald-400/30 bg-emerald-950/20 p-5 ring-1 ring-emerald-400/15 sm:p-6">
-					<h3 class="text-sm font-bold uppercase tracking-wider text-emerald-300">Faz mais sentido para</h3>
+					<h3 class="text-sm font-bold uppercase tracking-wider text-emerald-300">Indicado para</h3>
 					<ul class="mt-4 list-inside list-disc space-y-2.5 text-sm leading-relaxed text-on-ink-body sm:text-base">
 						{idealFor.map((item) => <li>{item}</li>)}
 					</ul>
 				</div>
 				<div class="rounded-2xl border border-amber-300/25 bg-brand-900/45 p-5 ring-1 ring-white/10 sm:p-6">
-					<h3 class="text-sm font-bold uppercase tracking-wider text-amber-200">Pode não compensar tanto para</h3>
+					<h3 class="text-sm font-bold uppercase tracking-wider text-amber-200">Pode não ser a melhor escolha para</h3>
 					<ul class="mt-4 list-inside list-disc space-y-2.5 text-sm leading-relaxed text-on-ink-body sm:text-base">
 						{notIdealFor.map((item) => <li>{item}</li>)}
 					</ul>
 				</div>
 			</div>
-			<div class="mt-6 grid gap-4 sm:grid-cols-2">
-				<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
-					<h3 class="font-display text-lg font-bold text-on-ink-body">Tipo de família</h3>
-					<p class="mt-3 text-base leading-relaxed text-on-ink-body">{familyProfile}</p>
-				</div>
-				<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
-					<h3 class="font-display text-lg font-bold text-on-ink-body">Rotina ideal</h3>
-					<p class="mt-3 text-base leading-relaxed text-on-ink-body">{routineProfile}</p>
-				</div>
-			</div>
+			{
+				marca === 'consul' ? (
+					<p class="mt-6 text-base leading-relaxed text-on-ink-body">{familyProfile}</p>
+				) : (
+					<div class="mt-6 grid gap-4 sm:grid-cols-2">
+						<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
+							<h3 class="font-display text-lg font-bold text-on-ink-body">Tipo de família</h3>
+							<p class="mt-3 text-base leading-relaxed text-on-ink-body">{familyProfile}</p>
+						</div>
+						<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
+							{
+								marca !== 'brastemp' ? (
+									<h3 class="font-display text-lg font-bold text-on-ink-body">Rotina ideal</h3>
+								) : null
+							}
+							<p class:list={['text-base leading-relaxed text-on-ink-body', marca !== 'brastemp' && 'mt-3']}>{routineProfile}</p>
+						</div>
+					</div>
+				)
+			}
 		</section>
 
 		<div class="mt-12">
@@ -546,7 +559,7 @@ const structuredData = {
 				{differentiators.map((item) => <li>{item}</li>)}
 			</ul>
 			<p class="mt-5 text-base leading-relaxed text-on-ink-muted">
-				Se você ainda está comparando proposta de valor entre marcas, vale abrir também o{' '}
+				Se você ainda está comparando modelos de marcas diferentes, veja também o{' '}
 				<a
 					href="/fogao-5-bocas-custo-beneficio/"
 					class="link-accent"
@@ -554,7 +567,7 @@ const structuredData = {
 				>
 					guia de fogão 5 bocas custo-benefício
 				</a>{' '}
-				e o passo a passo em{' '}
+				e o passo a passo sobre{' '}
 				<a
 					href="/como-escolher-fogao-5-bocas/"
 					class="link-accent"
@@ -590,11 +603,11 @@ const structuredData = {
 					<TechnicalFigure id="L06A" class="mt-6" />
 				</div>
 				<div>
-					<h3 class="font-display text-lg font-bold text-on-ink-body">Consumo e custo de uso</h3>
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Consumo de gás</h3>
 					<p class="mt-3">{consumptionAnalysis}</p>
 				</div>
 				<div>
-					<h3 class="font-display text-lg font-bold text-on-ink-body">Limpeza e manutenção visual</h3>
+					<h3 class="font-display text-lg font-bold text-on-ink-body">Limpeza</h3>
 					<p class="mt-3">{cleaningAnalysis}</p>
 				</div>
 			</div>
@@ -602,7 +615,7 @@ const structuredData = {
 
 		<section class="mt-12" aria-labelledby="comparacao-heading">
 			<h2 id="comparacao-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
-				Comparação lateral: onde ele ganha e onde perde
+				{marca === 'brastemp' ? 'Comparação com modelos mais simples' : marca === 'consul' ? 'Comparação com outras faixas de preço' : 'Comparação com modelos mais simples'}
 			</h2>
 			<div class="table-premium-shell mt-6">
 				<table class="table-premium min-w-[420px]">
@@ -610,7 +623,7 @@ const structuredData = {
 						<tr>
 							<th scope="col">Critério</th>
 							<th scope="col">{model}</th>
-							<th scope="col">Alternativa típica</th>
+							<th scope="col">{marca === 'brastemp' ? 'Modelo mais simples' : marca === 'consul' ? 'Outra faixa de preço' : 'Alternativa mais simples'}</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -630,7 +643,7 @@ const structuredData = {
 
 		<section class="mt-12" aria-labelledby="objecoes-heading">
 			<h2 id="objecoes-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
-				Objeções comuns de compra
+				Dúvidas antes de comprar
 			</h2>
 			<dl class="mt-6 space-y-6">
 				{
@@ -693,7 +706,7 @@ const structuredData = {
 		</p>
 		<section class="mt-12 rounded-2xl border border-white/10 bg-brand-900/35 p-6 ring-1 ring-white/10" aria-labelledby="veredito-heading">
 			<h2 id="veredito-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
-				Veredito editorial
+				Conclusão
 			</h2>
 			<p class="mt-4 text-base leading-relaxed text-on-ink-body">{verdict}</p>
 			<div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">

@@ -7,10 +7,10 @@ category: 'Guia de Compra'
 
 ## Qual fogão para cada perfil
 
-Regra para empate:
+Se ainda estiver em dúvida:
 
-- Cozinha todo dia + orçamento médio → **Consul CF04NAR** ([review](/review-fogao-4-bocas-consul/))
-- Design e recursos de forno são requisito → **Electrolux Efficient FE4IW** ([review](/review-fogao-4-bocas-electrolux/))
-- Precisa gastar o mínimo agora → **Atlas Mônaco Plus**
+- Cozinha todo dia e quer inox sem complicar → **Consul CFO4NAR**
+- Assa com frequência e quer PerfectCook ou VaporBake → **Electrolux FE4IW**
+- Quer gastar menos → **Atlas Mônaco Plus**
 - Família grande / muitas panelas → [fogão 5 bocas](/#top-produtos)
 - Já decidiu por mesa de vidro → [ranking mesa de vidro](/melhores/melhor-fogao-mesa-de-vidro/)
