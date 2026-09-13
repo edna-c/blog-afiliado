@@ -71,7 +71,7 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 		href: '/melhores/melhor-fogao-4-bocas/',
 		title: 'Melhor fogão 4 bocas 2026 (ranking para comprar)',
 		description:
-			'Ranking dos 3 melhores fogões 4 bocas: Consul CF04NAR, Electrolux FE4IW e Atlas Mônaco Plus — para quem cada um serve e onde ver o preço.',
+			'Ranking dos 3 melhores fogões 4 bocas: Consul CFO4NAR, Electrolux FE4IW e Atlas Mônaco Plus — para quem cada um serve e onde ver o preço.',
 		kind: 'Guia',
 		flow: 2,
 		editorialLabel: 'Ranking',
@@ -202,14 +202,14 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 	},
 	{
 		href: '/review-fogao-4-bocas-consul/',
-		title: 'Fogão Consul 4 bocas CF04NAR vale a pena?',
+		title: 'Fogão Consul 4 bocas CFO4NAR vale a pena?',
 		description:
-			'Consul CF04NAR: fogão 4 bocas com mesa inox e acendimento automático. Para quem vale a pena e quando Atlas ou Electrolux fazem mais sentido.',
+			'Consul CFO4NAR: fogão 4 bocas com mesa inox e acendimento automático. Para quem vale a pena e quando Atlas ou Electrolux fazem mais sentido.',
 		kind: 'Review',
 		flow: 4,
 		editorialLabel: 'Review',
 		topics: ['fogao-4-bocas', 'custo-beneficio', 'cozinha-pequena', 'compra-segura'],
-		anchorText: 'review do Consul CF04NAR',
+		anchorText: 'review do Consul CFO4NAR',
 		teaser: 'mesa inox, acendimento automático e forno para o dia a dia',
 		weight: 8,
 	},

@@ -363,7 +363,7 @@ const melhorFogaoMesaDeVidro: CommercialGuideBlock = {
 				'Mesa de vidro temperado com limpeza mais ágil',
 				'Grades de ferro fundido para uso diário',
 				'Forno Cleartec com boa rotina de limpeza',
-				'Assistência ampla e SKU fácil de achar',
+				'Prateleira auto-deslizante no forno',
 			],
 			socialProof: '⭐ Destaque do ranking 2026',
 			reviewSlug: 'consul-cfo4var',
