@@ -1,6 +1,6 @@
 ---
 title: 'Melhor fogão 4 bocas em 2026: os 3 modelos para decidir agora'
-description: 'Consul CF04NAR, Electrolux FE4IW e Atlas Mônaco Plus — ranking 2026 com perfil de uso, prós/contras e preço na loja parceira.'
+description: 'Consul CFO4NAR, Electrolux FE4IW e Atlas Mônaco Plus — ranking 2026 com perfil de uso, prós/contras e preço na loja parceira.'
 pubDate: 2026-07-07
 updatedDate: 2026-08-17
 category: 'Guia de Compra'
@@ -8,15 +8,15 @@ type: 'ranking'
 topics: ['fogao-4-bocas', 'custo-beneficio', 'compra-segura', 'cozinha-pequena']
 headline: 'Melhor fogão 4 bocas em 2026: os 3 modelos para decidir agora'
 lead: 'Ranking atualizado com perfil de uso claro — escolha o seu e vá direto à oferta.'
-dek: 'Julho/2026. Consul, Electrolux e Atlas (mesa inox). Preço e estoque só na loja no momento do clique.'
+dek: 'Julho/2026. Consul, Electrolux e Atlas. Preço e estoque só na loja no momento do clique.'
 eyebrow: 'Atualizado jul/2026 · Ranking de compra'
-topPick: 'Consul CF04NAR'
+topPick: 'Consul CFO4NAR'
 coverImage: '/images/melhores/melhor-fogao-4-bocas/melhor-fogao-4-bocas-2026.webp'
 coverAlt: 'Melhores fogões 4 bocas em 2026 — comparativo visual para decisão de compra'
 tldr:
   title: 'Ranking em 20 segundos'
   items:
-    - '🥇 Melhor geral: Consul CF04NAR — acendimento automático e inox para o uso típico sem arrependimento.'
+    - '🥇 Melhor geral: Consul CFO4NAR — acendimento automático e inox para o uso típico sem arrependimento.'
     - '🥈 Melhor premium: Electrolux Efficient FE4IW — PerfectCook/VaporBake quando o forno é requisito.'
     - '🥉 Melhor custo-benefício: Atlas Mônaco Plus — entrar em 4 bocas com orçamento mais baixo.'
   footerText: 'Ver preço e botão da loja:'
@@ -33,15 +33,15 @@ ctas:
     variant: secondary
 faq:
   - question: 'Qual o melhor fogão 4 bocas em 2026?'
-    answer: 'Depende do perfil. Consul CF04NAR lidera para uso diário com acendimento automático e mesa inox. Electrolux Efficient FE4IW é o premium quando forno e visual pesam. Atlas Mônaco Plus é a entrada mais acessível. Confira o preço atual nos cards de oferta desta página.'
+    answer: 'Depende do perfil. Consul CFO4NAR lidera para uso diário com acendimento automático e mesa inox. Electrolux Efficient FE4IW é o premium quando forno e visual pesam. Atlas Mônaco Plus é a entrada mais acessível. Confira o preço atual nos cards de oferta desta página.'
   - question: 'Como escolher entre Consul, Electrolux e Atlas?'
     answer: 'Cozinha todo dia com orçamento médio: Consul. Design e recursos de forno (PerfectCook/VaporBake) são requisito: Electrolux. Precisa gastar o mínimo agora: Atlas.'
   - question: 'Um fogão 4 bocas atende uma família?'
     answer: 'Para casal e famílias de até cerca de quatro pessoas, com poucas panelas grandes ao mesmo tempo, costuma atender bem. Se a rotina exige várias bocas simultâneas com frequência, feche o tamanho no comparativo 4 vs 5 bocas antes do modelo.'
   - question: 'Este ranking é de mesa inox ou de vidro?'
-    answer: 'Este ranking prioriza mesa inox para uso diário e robustez. Se você já decidiu por mesa de vidro, use o ranking específico de melhores fogões com mesa de vidro.'
+    answer: 'Esta é a página dos melhores fogões 4 bocas. Os modelos selecionados agora têm mesa inox. Se você já decidiu por mesa de vidro, use o ranking específico de melhores fogões com mesa de vidro.'
   - question: 'O ranking muda quando o preço muda?'
-    answer: 'A ordem prioriza uso real (acendimento, mesa, forno, limpeza, reputação e disponibilidade), não a promoção do dia. O preço você valida na hora no Mercado Livre ou Shopee.'
+    answer: 'A ordem prioriza uso real (acendimento, estabilidade das trempes, forno e limpeza), além do perfil de uso de cada modelo. Ela não é definida pela promoção do dia. O preço você valida na hora no Mercado Livre ou Shopee.'
 ---
 
 Confira as ofertas abaixo e, em seguida, o porquê de cada medalha.

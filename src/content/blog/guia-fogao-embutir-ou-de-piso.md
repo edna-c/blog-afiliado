@@ -1,12 +1,12 @@
 ---
 title: 'Fogão de embutir ou de piso: qual escolher? Tabela rápida + custo'
-description: 'Embutir ou piso? Veja em 1 minuto qual encaixa: obra, custo de instalação, troca futura e cozinha planejada — sem escolher só pelo visual.'
+description: 'Veja quando escolher fogão de embutir ou de piso: obra, custo de instalação, troca futura e cozinha planejada.'
 pubDate: 2026-03-10
 updatedDate: 2026-07-26
 category: 'Guia'
 faq:
   - question: 'Fogão de embutir é melhor do que fogão de piso?'
-    answer: 'Não sempre. O embutir costuma ganhar em estética e integração com cozinha planejada, enquanto o de piso costuma ser mais simples de instalar, trocar e manter.'
+    answer: 'Não sempre. O embutir costuma combinar melhor com cozinha planejada. O de piso costuma ser mais simples de instalar, trocar e manter.'
   - question: 'Fogão de embutir custa mais caro para instalar?'
     answer: 'Na maioria dos casos, sim. Além do aparelho, podem entrar custo de nicho, pedra, marcenaria, adaptação de gás, ventilação e mão de obra.'
   - question: 'Apartamento pode ter fogão de embutir?'
@@ -16,38 +16,38 @@ faq:
   - question: 'Fogão de piso é mais seguro?'
     answer: 'A segurança depende mais da instalação correta, ventilação, nivelamento e uso conforme o manual do que do formato em si. O de piso costuma ser mais simples de instalar, o que reduz chance de erro.'
   - question: 'Qual é melhor para cozinha pequena: embutir ou piso?'
-    answer: 'Depende do projeto. Em cozinha planejada pequena, o embutir pode melhorar a integração visual. Em cozinha pronta ou compacta sem adaptação, o de piso costuma ser a escolha mais prática.'
+    answer: 'Depende do projeto. Em cozinha planejada pequena, o embutir pode acompanhar melhor a bancada. Em cozinha pronta ou compacta sem adaptação, o de piso costuma ser a escolha mais prática.'
 ---
 
-Escolher entre **fogão de embutir ou de piso** parece uma decisão de estilo. Na prática envolve instalação, ventilação, segurança, manutenção e custo total.
+Escolher entre **fogão de embutir ou de piso** não é só uma questão de gosto. A decisão envolve instalação, ventilação, manutenção e o custo total — não apenas o preço do aparelho.
 
-Se tamanho e rotina ainda estão em aberto, cruze com o [comparativo 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas/).
+Se você ainda está em dúvida entre 4 e 5 bocas, veja o [comparativo 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas/).
 
 ## Decisão em 1 minuto
 
 | Prioridade | Tendência |
 | --- | --- |
-| Cozinha planejada / reforma / visual integrado | Embutir |
+| Cozinha planejada / reforma | Embutir |
 | Cozinha pronta / aluguel / troca fácil | Piso |
 | Orçamento apertado / menos obra | Piso |
 | Aceita pagar mais por acabamento e projeto | Embutir |
 | Medidas e instalação já definidas com precisão | Embutir |
 
 <aside class="editorial-observation not-prose" aria-label="Observação editorial">
-<p>Segurança e ventilação pesam mais do que estética. Se houver dúvida, use profissional credenciado.</p>
+<p>Segurança e ventilação pesam mais do que o acabamento. Se houver qualquer dúvida sobre a instalação, consulte um profissional qualificado.</p>
 </aside>
 
 ## Comparativo rápido
 
 | Critério | Embutir | Piso |
 | --- | --- | --- |
-| Estética / integração | Mais limpa e planejada | Menos integrada em alguns projetos |
+| Integração com a cozinha | Segue a bancada e o projeto | Fica independente, com pés e folgas |
 | Instalação | Mais cara e dependente de nicho | Mais simples e previsível |
 | Troca futura | Mais sensível ao encaixe | Mais livre |
 | Manutenção / acesso | Pode ser mais trabalhosa | Acesso lateral/traseiro mais fácil |
-| Cozinha pronta / aluguel | Só com nicho adequado | Costuma ser o caminho mais racional |
+| Cozinha pronta / aluguel | Só com nicho adequado | Costuma ser a opção mais simples |
 
-**Em poucas palavras:** embutir compra também uma experiência visual alinhada à cozinha planejada; piso prioriza simplicidade, flexibilidade e menor risco de obra.
+**Em poucas palavras:** o embutir faz mais sentido em cozinha planejada, quando você aceita obra e um custo maior de instalação. O de piso prioriza simplicidade, troca mais fácil e menos adaptação.
 
 ![Fogão de embutir em inox integrado à marcenaria à esquerda e fogão de piso branco com pés aparentes à direita, na mesma cozinha moderna](/images/blog/guia-fogao-embutir-ou-de-piso/corpo-comparativo-embutir-vs-piso.webp)
 
@@ -66,15 +66,15 @@ Antes da instalação, confira:
 - nivelamento;
 - regras do condomínio (apartamento).
 
-O aparelho de chão tende a ser mais simples de puxar e limpar ao redor. No embutir, o acesso depende do nicho e das folgas da obra.
+O fogão de piso tende a ser mais simples de puxar e limpar ao redor. No embutir, o acesso depende do nicho e das folgas da obra.
 
-Se o acabamento também pesa, veja o [comparativo vidro ou inox](/blog/fogao-mesa-de-vidro-ou-inox/) e, se quiser aprofundar só o vidro, [fogão com mesa de vidro vale a pena?](/blog/review-fogao-com-mesa-de-vidro/).
+Se o acabamento é importante na decisão, veja o [comparativo vidro ou inox](/blog/fogao-mesa-de-vidro-ou-inox/) e, se a dúvida for só o vidro, [fogão com mesa de vidro vale a pena?](/blog/review-fogao-com-mesa-de-vidro/).
 
 <hr class="editorial-pause not-prose" role="presentation" />
 
 ## Apartamento e quando não embutir
 
-Em apartamento, embutir funciona bem quando a cozinha já nasce planejada para isso — com ventilação rigorosa e medidas corretas. Se o imóvel está pronto e você quer praticidade, o piso costuma ser mais simples.
+Em apartamento, o embutir funciona bem quando a cozinha já nasce planejada para isso — com ventilação adequada e medidas corretas. Se o imóvel está pronto e você quer praticidade, o piso costuma ser mais simples.
 
 **Em geral, não vale embutir quando:**
 
@@ -83,9 +83,9 @@ Em apartamento, embutir funciona bem quando a cozinha já nasce planejada para i
 - você quer evitar obra e retrabalho;
 - pretende trocar de modelo com liberdade;
 - o espaço é pequeno demais para ventilação confortável;
-- a decisão é só estética, sem olhar instalação.
+- a decisão considera só o acabamento, sem olhar a instalação.
 
-Cozinha pequena? Cruze também com [quando o fogão 4 bocas ainda vale a pena](/blog/fogao-4-bocas-ainda-vale-a-pena/).
+Cozinha pequena? Veja também [quando o fogão 4 bocas ainda vale a pena](/blog/fogao-4-bocas-ainda-vale-a-pena/).
 
 ## Antes de decidir — checklist
 
@@ -100,9 +100,9 @@ Cozinha pequena? Cruze também com [quando o fogão 4 bocas ainda vale a pena](/
 - comprar antes de medir;
 - ignorar o manual de instalação;
 - subestimar o custo da adaptação;
-- priorizar aparência e esquecer ventilação;
+- priorizar o acabamento e esquecer a ventilação;
 - não pensar na manutenção futura.
 
-## Próximo passo
+## Depois de escolher o formato
 
-Depois de definir o tipo de instalação, feche o modelo no [ranking do melhor fogão 5 bocas](/#top-produtos) — perfil de cada medalha e ofertas na mesma página.
+Depois de definir o tipo de instalação, compare os modelos no [ranking do melhor fogão 5 bocas](/#top-produtos) — ofertas na mesma página.

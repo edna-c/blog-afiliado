@@ -206,7 +206,7 @@ const melhorFogao4Bocas: CommercialGuideBlock = {
 	},
 	reviewPathPrefix: '/melhores/melhor-fogao-4-bocas/#analises-detalhadas',
 	heroRanking: [
-		{ toneClass: 'text-pop', text: '🥇 Melhor geral: Consul CF04NAR' },
+		{ toneClass: 'text-pop', text: '🥇 Melhor geral: Consul CFO4NAR' },
 		{ toneClass: 'text-cta', text: '🥈 Melhor premium: Electrolux Efficient FE4IW' },
 		{ toneClass: 'text-amber-300', text: '🥉 Melhor custo-benefício: Atlas Mônaco Plus' },
 	],
@@ -219,7 +219,7 @@ const melhorFogao4Bocas: CommercialGuideBlock = {
 	],
 	topProducts: [
 		{
-			name: 'Consul CF04NAR',
+			name: 'Consul CFO4NAR',
 			badge: '🥇 Melhor geral',
 			badgeTone: 'emerald',
 			basePrice: 'Confira na loja',
@@ -227,7 +227,7 @@ const melhorFogao4Bocas: CommercialGuideBlock = {
 				'Excelente equilíbrio entre preço e qualidade',
 				'Mesa em inox resistente ao uso diário',
 				'Acendimento automático nas bocas',
-				'Assistência técnica amplamente disponível',
+				'Forno Cleartec para os preparos do dia a dia',
 			],
 			socialProof: '⭐ Destaque do ranking 2026',
 			reviewSlug: 'consul-cf04nar',
@@ -237,7 +237,7 @@ const melhorFogao4Bocas: CommercialGuideBlock = {
 			mlCtaText: DEFAULT_MERCADO_LIVRE_CTA_TEXT,
 			shopeeCtaText: DEFAULT_SHOPEE_CTA_TEXT,
 			image: '/images/melhores/melhor-fogao-4-bocas/consul-cf04nar.webp',
-			imageAlt: 'Fogão Consul CF04NAR 4 bocas inox com acendimento automático',
+			imageAlt: 'Fogão Consul CFO4NAR 4 bocas inox com acendimento automático',
 			featured: true,
 		},
 		{
@@ -268,9 +268,9 @@ const melhorFogao4Bocas: CommercialGuideBlock = {
 			basePrice: 'Confira na loja',
 			benefits: [
 				'Excelente preço para a categoria',
-				'Baixo custo de manutenção',
-				'Peças fáceis de encontrar',
-				'Funcionamento simples e confiável',
+				'Indicado para quem quer gastar menos na troca',
+				'Mesa inox e uso simples',
+				'Funcionamento simples',
 			],
 			socialProof: '✔ Destaque em economia',
 			reviewSlug: 'atlas-monaco-plus',
@@ -287,7 +287,7 @@ const melhorFogao4Bocas: CommercialGuideBlock = {
 		{
 			badge: 'Melhor geral',
 			recommended: true,
-			model: 'Consul CF04NAR',
+			model: 'Consul CFO4NAR',
 			price: 'Confira na loja',
 			rating: '⭐⭐⭐⭐⭐',
 			bestFor: 'Uso geral',

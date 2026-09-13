@@ -9,20 +9,20 @@ category: 'Guia de Compra'
 
 ### 🥇 Por que o Consul CFO4NAR é o melhor geral
 
-![Fogão Consul CF04NAR 4 bocas inox com acendimento automático em cozinha moderna.](/images/melhores/melhor-fogao-4-bocas/consul-cf04nar-hero.webp)
+![Fogão Consul CFO4NAR 4 bocas inox com acendimento automático em cozinha moderna.](/images/melhores/melhor-fogao-4-bocas/consul-cf04nar-hero.webp)
 
 O Consul CFO4NAR fica em primeiro por atender bem o dia a dia em 4 bocas, com mesa inox e acendimento automático, oferecendo um bom equilíbrio entre recursos e preço.
 
 - Acendimento automático e mesa inox para o uso cotidiano
 - Forno Cleartec (~58 L), suficiente para os preparos mais comuns
 - Ponto fraco: marcas de dedo e água no inox pedem limpeza com frequência
-- Precisa de mais espaço para usar várias panelas ao mesmo tempo? Nesse caso, um [fogão 5 bocas](/#top-produtos) é mais adequado.
+- Precisa de mais espaço para usar várias panelas ao mesmo tempo? Nesse caso, veja o [comparativo fogão 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas/).
 - Review do modelo: [Fogão Consul 4 bocas CFO4NAR](/review-fogao-4-bocas-consul/)
 
 <!-- CTAs: produtos.consulCF04NAR (src/data/products.ts) -->
 <p class="not-prose mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
-<a href="https://meli.la/1mrHBpJ" class="inline-flex min-h-[52px] w-full items-center justify-center gap-1.5 rounded-[0.625rem] border-2 border-transparent bg-cta px-5 py-3.5 text-center text-[0.75rem] font-extrabold uppercase tracking-wide text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:text-[0.72rem]" target="_blank" rel="noopener noreferrer nofollow sponsored" aria-label="Ver preço do fogão Consul CF04NAR no Mercado Livre — abre em nova aba (link patrocinado)" data-product-id="consulCF04NAR" data-merchant="mercado_livre" data-cta-type="price_check" data-cta-position="justification"><span aria-hidden="true">👉</span> Ver preço no Mercado Livre</a>
-<a href="https://shopee.com.br/Fog%C3%A3o-de-Piso-4-Bocas-Consul-CFO4NAR-com-Acendimento-Autom%C3%A1tico-BIV-i.443109642.22897480606" class="btn-secondary-premium w-full px-5 py-3.5 text-[0.72rem] sm:text-[0.72rem]" target="_blank" rel="noopener noreferrer nofollow sponsored" aria-label="Ver preço do fogão Consul CF04NAR na Shopee — abre em nova aba (link patrocinado)" data-product-id="consulCF04NAR" data-merchant="shopee" data-cta-type="merchant_secondary" data-cta-position="justification"><span aria-hidden="true">👉</span> Ver preço na Shopee</a>
+<a href="https://meli.la/1mrHBpJ" class="inline-flex min-h-[52px] w-full items-center justify-center gap-1.5 rounded-[0.625rem] border-2 border-transparent bg-cta px-5 py-3.5 text-center text-[0.75rem] font-extrabold uppercase tracking-wide text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:text-[0.72rem]" target="_blank" rel="noopener noreferrer nofollow sponsored" aria-label="Ver preço do fogão Consul CFO4NAR no Mercado Livre — abre em nova aba (link patrocinado)" data-product-id="consulCF04NAR" data-merchant="mercado_livre" data-cta-type="price_check" data-cta-position="justification"><span aria-hidden="true">👉</span> Ver preço no Mercado Livre</a>
+<a href="https://shopee.com.br/Fog%C3%A3o-de-Piso-4-Bocas-Consul-CFO4NAR-com-Acendimento-Autom%C3%A1tico-BIV-i.443109642.22897480606" class="btn-secondary-premium w-full px-5 py-3.5 text-[0.72rem] sm:text-[0.72rem]" target="_blank" rel="noopener noreferrer nofollow sponsored" aria-label="Ver preço do fogão Consul CFO4NAR na Shopee — abre em nova aba (link patrocinado)" data-product-id="consulCF04NAR" data-merchant="shopee" data-cta-type="merchant_secondary" data-cta-position="justification"><span aria-hidden="true">👉</span> Ver preço na Shopee</a>
 </p>
 
 ---

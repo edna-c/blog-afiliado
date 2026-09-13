@@ -74,7 +74,7 @@ const articleHeroes: Record<string, ArticleHeroEntry> = {
 		alt: 'Fogão a gás de cinco bocas com forno duplo em acabamento cinza escuro, cooktop com tampa de vidro e dois compartimentos de forno com portas de vidro.',
 		objectPosition: 'center',
 		caption:
-			'Fogão com forno duplo — dois compartimentos de cocção integrados ao mesmo aparelho, com cooktop a gás na parte superior.',
+			'Por fora, ele segue o formato tradicional de um fogão, mas tem dois fornos no mesmo aparelho.',
 	},
 };
 
@@ -98,9 +98,9 @@ const articleHero = articleHeroes[post.id];
  */
 const editorialPairings: Record<string, string[]> = {
 	'fogao-mesa-de-vidro-ou-inox': [
-		'/blog/review-fogao-com-mesa-de-vidro/',
-		'/blog/fogao-mesa-de-vidro-seguro/',
 		'/melhores/melhor-fogao-mesa-de-vidro/',
+		'/comparativo-fogao-4-vs-5-bocas/',
+		'/blog/fogao-mesa-de-vidro-seguro/',
 	],
 	'review-fogao-com-mesa-de-vidro': [
 		'/blog/fogao-mesa-de-vidro-ou-inox/',
@@ -127,7 +127,6 @@ const editorialPairings: Record<string, string[]> = {
 		'/como-escolher-fogao-5-bocas/',
 	],
 	'melhor-fogao-com-forno-duplo': [
-		'/#top-produtos',
 		'/comparativo-fogao-4-vs-5-bocas/',
 		'/blog/fogao-5-bocas-reduz-espaco-cozinha/',
 	],
@@ -140,8 +139,8 @@ const commercialNextBySlug: Record<string, { href: string; label: string }> = {
 		label: 'ranking do melhor fogão 4 bocas com ofertas',
 	},
 	'fogao-mesa-de-vidro-ou-inox': {
-		href: '/melhores/melhor-fogao-mesa-de-vidro/#guia-comercial-produtos',
-		label: 'ranking mesa de vidro com ofertas',
+		href: '/melhores/melhor-fogao-mesa-de-vidro/',
+		label: 'ranking mesa de vidro',
 	},
 	'review-fogao-com-mesa-de-vidro': {
 		href: '/melhores/melhor-fogao-mesa-de-vidro/#guia-comercial-produtos',
@@ -174,6 +173,21 @@ const commercialNext = commercialNextBySlug[post.id] ?? {
 const isPilotMesaVidro = post.id === 'review-fogao-com-mesa-de-vidro';
 const isEspacoCincoBocas = post.id === 'fogao-5-bocas-reduz-espaco-cozinha';
 const isFourBurnerVale = post.id === 'fogao-4-bocas-ainda-vale-a-pena';
+const isEmbutirPiso = post.id === 'guia-fogao-embutir-ou-de-piso';
+const isFornoDuplo = post.id === 'melhor-fogao-com-forno-duplo';
+const isVidroOuInox = post.id === 'fogao-mesa-de-vidro-ou-inox';
+/** Satélites só de vidro + destinos já ligados no fecho — para o bloco não puxar o artigo de volta ao cluster de vidro. */
+const vidroOuInoxRelatedExclude = isVidroOuInox
+	? [
+			'/melhores/melhor-fogao-mesa-de-vidro/',
+			'/melhores/melhor-fogao-4-bocas/',
+			'/comparativo-fogao-4-vs-5-bocas/',
+			'/blog/fogao-mesa-de-vidro-seguro/',
+			'/blog/review-fogao-com-mesa-de-vidro/',
+			'/como-escolher-fogao-mesa-de-vidro/',
+			'/review-fogao-mesa-de-vidro-consul/',
+		]
+	: [];
 
 const inlinePairingItems: EditorialEntry[] = (editorialPairings[post.id] ?? [])
 	.map((href) => findEntry((e) => e.href === href))
@@ -353,9 +367,15 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 					eyebrow={isPilotMesaVidro ? 'Se ainda restou uma dúvida' : 'Leia também'}
 					heading={isPilotMesaVidro
 						? 'Comparar acabamentos ou esclarecer segurança'
+						: isVidroOuInox
+							? 'Se ainda restou outra decisão'
 						: isEspacoCincoBocas
 							? 'Depois de conferir o espaço'
-						: post.data.category === 'Review' || post.data.category === 'Comparativo'
+						: isEmbutirPiso
+							? 'Outras decisões úteis'
+						: isFornoDuplo
+							? 'Outras decisões úteis'
+							: post.data.category === 'Review' || post.data.category === 'Comparativo'
 							? 'Antes de comprar, leia também'
 							: 'Para fechar a decisão'}
 					items={inlinePairingItems.map((entry) => ({
@@ -369,7 +389,7 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 		}
 
 		{
-			!isPilotMesaVidro && !isFourBurnerVale ? (
+			!isPilotMesaVidro && !isFourBurnerVale && !isEmbutirPiso && !isFornoDuplo && !isVidroOuInox ? (
 				<p class="mt-10 rounded-xl border border-white/10 bg-brand-900/30 px-4 py-3 text-sm leading-relaxed text-on-ink-muted sm:px-5">
 					{isEspacoCincoBocas ? (
 						<>
@@ -409,11 +429,18 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 		<RelatedContent
 			class="mt-14"
 			currentPath={Astro.url.pathname}
-			excludePaths={[`/blog/${post.id}`, `/blog/${post.id}/`]}
+			excludePaths={[
+				`/blog/${post.id}`,
+				`/blog/${post.id}/`,
+				...(isFornoDuplo ? ['/#top-produtos'] : []),
+				...vidroOuInoxRelatedExclude,
+			]}
 			eyebrow="Veja também"
 			title="Leituras relacionadas"
 			subtitle={isPilotMesaVidro
 				? 'Outros textos sobre mesa de vidro, se ainda restou alguma dúvida.'
+				: isVidroOuInox
+					? 'Outras decisões de fogão, se ainda restou alguma dúvida além do tipo de tampo.'
 				: 'Mais textos sobre o mesmo tema.'}
 		/>
 
@@ -424,10 +451,14 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 				`/blog/${post.id}`,
 				`/blog/${post.id}/`,
 				...(isPilotMesaVidro ? ['/melhores/melhor-fogao-mesa-de-vidro/'] : []),
+				...(isFornoDuplo ? ['/#top-produtos'] : []),
+				...vidroOuInoxRelatedExclude,
 			]}
 			heading="Continuar a leitura"
 			subtitle={isPilotMesaVidro
 				? 'Se a mesa de vidro ainda levanta uma dúvida, estas leituras ajudam a fechar o recorte — sem pressa de escolher modelo.'
+				: isVidroOuInox
+					? 'Se a dúvida agora for tamanho, instalação ou um modelo, estas leituras ajudam.'
 				: undefined}
 		/>
 		<p class="mt-12 border-t border-white/10 pt-8 text-sm text-on-ink-muted">

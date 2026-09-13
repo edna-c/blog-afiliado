@@ -32,10 +32,9 @@ const homeProducts: CommercialProduct[] = [
 		badgeTone: 'emerald',
 		basePrice: 'Confira na loja',
 		benefits: [
-			'Forno e acabamento para quem cozinha de verdade',
-			'Mesa inox com presença mais premium',
+			'Forno e acabamento no uso diário',
+			'Mesa inox, mais fácil de manter limpa',
 			'Bom equilíbrio de bocas para várias panelas',
-			'Linha com reputação consolidada no pós-venda',
 		],
 		socialProof: '⭐ Destaque do ranking 2026',
 		reviewSlug: 'electrolux',
@@ -52,10 +51,8 @@ const homeProducts: CommercialProduct[] = [
 		badgeTone: 'pop',
 		basePrice: 'Confira na loja',
 		benefits: [
-			'Potência e forno sem pagar o topo do ranking',
-			'Equilíbrio forte para rotina familiar',
-			'Limpeza e manutenção no uso diário',
-			'Boa disponibilidade nas lojas afiliadas',
+			'Forno e desempenho para a rotina familiar',
+			'Bom equilíbrio entre preço e desempenho',
 		],
 		socialProof: '⭐ Melhor equilíbrio preço/desempenho',
 		reviewSlug: 'brastemp',
@@ -67,16 +64,14 @@ const homeProducts: CommercialProduct[] = [
 	},
 	{
 		name: 'Consul CFS5NAB',
-		badge: '🔥 Entrada / mais acessível',
+		badge: '🔥 Mais acessível',
 		badgeTone: 'amber',
 		basePrice: 'Confira na loja',
 		benefits: [
-			'Entra em 5 bocas com orçamento mais contido',
-			'Uso simples, sem firula desnecessária',
-			'Adequado para cozinha média e rotina básica',
-			'SKU fácil de achar e comparar preço',
+			'5 bocas com orçamento mais contido',
+			'Uso simples, com os recursos essenciais para o dia a dia',
 		],
-		socialProof: '✔ Entrada mais acessível do ranking',
+		socialProof: '✔ Mais acessível do ranking',
 		reviewSlug: 'consul',
 		productId: 'consulCFS5NAB',
 		mercadoLivreUrl: produtos.consulCFS5NAB.ml,
@@ -320,16 +315,11 @@ function productAnalysisLink(product: CommercialProduct): {
 						Lista dos melhores modelos — comparativo direto
 					</h2>
 					<p class="mt-3 text-sm text-on-ink-body">
-						Alguns links podem gerar comissão para o site, sem custo para você. Os preços podem variar, então vale conferir no momento da
-						compra. Se preferir um passo a passo, acesse o{' '}
+						Alguns links podem gerar comissão para o site, sem custo para você. Se ainda estiver em dúvida sobre medidas, forno ou bocas, o{' '}
 						<a href="/como-escolher-fogao-5-bocas/" class="link-accent">
 							guia de compra completo
-						</a>
-						.
-					</p>
-					<p class="mt-3 text-sm font-semibold text-on-ink-body">
-						Agora veja os modelos mais vendidos, <strong class="font-semibold text-on-ink-body">ofertas atualizadas hoje</strong> — estoque pode
-						variar; use os botões para <strong class="font-semibold text-on-ink-body">ver disponibilidade</strong> na loja.
+						</a>{' '}
+						ajuda antes de comparar os modelos.
 					</p>
 				</div>
 				<div class="mt-14 grid grid-cols-1 items-stretch gap-6 md:grid-cols-3 md:gap-6">
@@ -407,10 +397,6 @@ function productAnalysisLink(product: CommercialProduct): {
 									<h3 class="font-display text-xl font-bold leading-snug tracking-tight text-on-ink-body sm:text-[1.35rem]">
 										{p.name}
 									</h3>
-									<p class="mt-2.5 text-sm font-medium leading-snug text-on-ink-muted">
-										A partir de{' '}
-										<span class="home-product-price-value font-extrabold tracking-wide text-cta">{p.basePrice}</span>
-									</p>
 
 									<ul class="mt-3.5 space-y-2 text-sm leading-snug text-on-ink-list">
 										{p.benefits.map((b) => (
@@ -468,11 +454,6 @@ function productAnalysisLink(product: CommercialProduct): {
 											<span aria-hidden="true">👉</span>
 											{productAnalysisLink(p).label}
 										</a>
-										<ul class="space-y-1 border-t border-white/10 pt-3 text-[11px] leading-relaxed text-on-ink-muted sm:text-xs">
-											<li>✔ Ofertas atualizadas hoje</li>
-											<li>✔ Frete pode variar por região</li>
-											<li>✔ Estoque pode variar — ver disponibilidade na loja</li>
-										</ul>
 									</div>
 								</div>
 							</article>

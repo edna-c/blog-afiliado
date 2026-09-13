@@ -321,7 +321,7 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 	{
 		href: '/blog/fogao-mesa-de-vidro-ou-inox/',
 		title: 'Fogão mesa de vidro ou inox: qual escolher?',
-		description: 'Comparativo prático — limpeza, resistência, risco e perfil de uso antes de fechar o acabamento.',
+		description: 'Comparativo prático — limpeza, resistência e o dia a dia de cada tipo de tampo, antes de escolher o modelo.',
 		kind: 'Comparativo',
 		flow: 3,
 		editorialLabel: 'Comparativo · Acabamento',

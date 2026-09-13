@@ -9,8 +9,8 @@ category: 'Guia de Compra'
 
 Se ainda estiver em dúvida:
 
-- Cozinha todo dia e quer inox sem complicar → **Consul CFO4NAR**
+- Cozinha todo dia e quer um 4 bocas equilibrado → **Consul CFO4NAR**
 - Assa com frequência e quer PerfectCook ou VaporBake → **Electrolux FE4IW**
 - Quer gastar menos → **Atlas Mônaco Plus**
-- Família grande / muitas panelas → [fogão 5 bocas](/#top-produtos)
+- Família grande / muitas panelas → [comparativo fogão 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas/)
 - Já decidiu por mesa de vidro → [ranking mesa de vidro](/melhores/melhor-fogao-mesa-de-vidro/)
