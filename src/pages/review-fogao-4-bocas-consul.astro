@@ -405,14 +405,50 @@ const structuredData = {
 				Objeções comuns de compra
 			</h2>
 			<dl class="mt-6 space-y-6">
-				{
-					objections.map((item) => (
-						<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
-							<dt class="font-display text-lg font-bold text-on-ink-body">{item.question}</dt>
-							<dd class="mt-3 text-base leading-relaxed text-on-ink-muted">{item.answer}</dd>
-						</div>
-					))
-				}
+				<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
+					<dt class="font-display text-lg font-bold text-on-ink-body">{objections[0].question}</dt>
+					<dd class="mt-3 text-base leading-relaxed text-on-ink-muted">{objections[0].answer}</dd>
+				</div>
+			</dl>
+			<p class="mt-6 text-sm leading-relaxed text-on-ink-muted">
+				Se o que pesa é gastar menos, confira o Atlas Mônaco Plus — fogão 4 bocas.
+			</p>
+			<div class="mt-6">
+				<AffiliateOfferBlock
+					id="ofertas-alternativa-atlas-monaco"
+					productName="Atlas Mônaco Plus — fogão 4 bocas"
+					productId="atlasMonacoPlus"
+					heading="Conferir preço do Atlas Mônaco Plus — fogão 4 bocas"
+					description="Atlas Mônaco Plus — fogão 4 bocas. Confira preço e frete no Mercado Livre ou na Shopee."
+					mercadoLivreUrl={produtos.atlasMonacoPlus.ml}
+					shopeeUrl={produtos.atlasMonacoPlus.shopee}
+				/>
+			</div>
+			<dl class="mt-8 space-y-6">
+				<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
+					<dt class="font-display text-lg font-bold text-on-ink-body">{objections[1].question}</dt>
+					<dd class="mt-3 text-base leading-relaxed text-on-ink-muted">{objections[1].answer}</dd>
+				</div>
+			</dl>
+			<p class="mt-6 text-sm leading-relaxed text-on-ink-muted">
+				Se o que pesa é o forno com PerfectCook e VaporBake, confira o Electrolux FE4IW — fogão 4 bocas.
+			</p>
+			<div class="mt-6">
+				<AffiliateOfferBlock
+					id="ofertas-alternativa-electrolux-fe4iw"
+					productName="Electrolux FE4IW — fogão 4 bocas"
+					productId="electroluxFE4IW"
+					heading="Conferir preço do Electrolux FE4IW — fogão 4 bocas"
+					description="Electrolux FE4IW — fogão 4 bocas. Confira preço e frete no Mercado Livre ou na Shopee."
+					mercadoLivreUrl={produtos.electroluxFE4IW.ml}
+					shopeeUrl={produtos.electroluxFE4IW.shopee}
+				/>
+			</div>
+			<dl class="mt-8 space-y-6">
+				<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
+					<dt class="font-display text-lg font-bold text-on-ink-body">{objections[2].question}</dt>
+					<dd class="mt-3 text-base leading-relaxed text-on-ink-muted">{objections[2].answer}</dd>
+				</div>
 			</dl>
 		</section>
 

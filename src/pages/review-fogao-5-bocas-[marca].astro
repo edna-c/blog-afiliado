@@ -645,16 +645,52 @@ const structuredData = {
 			<h2 id="objecoes-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
 				Dúvidas antes de comprar
 			</h2>
-			<dl class="mt-6 space-y-6">
-				{
-					objections.map((item) => (
-						<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
-							<dt class="font-display text-lg font-bold text-on-ink-body">{item.question}</dt>
-							<dd class="mt-3 text-base leading-relaxed text-on-ink-muted">{item.answer}</dd>
+			{
+				marca === 'consul' ? (
+					<>
+						<dl class="mt-6 space-y-6">
+							<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
+								<dt class="font-display text-lg font-bold text-on-ink-body">{objections[0].question}</dt>
+								<dd class="mt-3 text-base leading-relaxed text-on-ink-muted">{objections[0].answer}</dd>
+							</div>
+						</dl>
+						<dl class="mt-6 space-y-6">
+							<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
+								<dt class="font-display text-lg font-bold text-on-ink-body">{objections[1].question}</dt>
+								<dd class="mt-3 text-base leading-relaxed text-on-ink-muted">{objections[1].answer}</dd>
+							</div>
+						</dl>
+						<p class="mt-6 text-sm leading-relaxed text-on-ink-muted">
+							Se o que pesa é forno e acabamento, confira o Electrolux FE5IG — fogão 5 bocas.
+						</p>
+						<div class="mt-6">
+							<AffiliateOfferBlock
+								id="ofertas-alternativa-electrolux-fe5ig"
+								productName="Electrolux FE5IG — fogão 5 bocas"
+								productId="electroluxFE5IG"
+								heading="Conferir preço do Electrolux FE5IG — fogão 5 bocas"
+								description="Electrolux FE5IG — fogão 5 bocas. Confira preço e frete no Mercado Livre."
+								mercadoLivreUrl={produtos.electroluxFE5IG.ml}
+							/>
 						</div>
-					))
-				}
-			</dl>
+						<dl class="mt-8 space-y-6">
+							<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
+								<dt class="font-display text-lg font-bold text-on-ink-body">{objections[2].question}</dt>
+								<dd class="mt-3 text-base leading-relaxed text-on-ink-muted">{objections[2].answer}</dd>
+							</div>
+						</dl>
+					</>
+				) : (
+					<dl class="mt-6 space-y-6">
+						{objections.map((item) => (
+							<div class="rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10">
+								<dt class="font-display text-lg font-bold text-on-ink-body">{item.question}</dt>
+								<dd class="mt-3 text-base leading-relaxed text-on-ink-muted">{item.answer}</dd>
+							</div>
+						))}
+					</dl>
+				)
+			}
 		</section>
 
 		<div class="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
