@@ -14,7 +14,7 @@ topics:
 coverImage: '/images/melhores/melhor-fogao-mesa-de-vidro/melhor-fogao-mesa-de-vidro-2026.webp'
 coverAlt: 'Fogão Consul com mesa de vidro preta em cozinha planejada — capa do ranking 2026'
 headline: 'Melhor fogão mesa de vidro em 2026: os 3 modelos para decidir agora'
-lead: 'Ranking para quem já decidiu por mesa de vidro — escolha o perfil e vá direto à oferta.'
+lead: 'Compare os fogões com mesa de vidro, escolha o modelo e vá direto à oferta.'
 dek: 'Julho/2026. Consul, Brastemp e Atlas. Preço e estoque só na loja no momento do clique.'
 eyebrow: 'Atualizado jul/2026 · Ranking de compra'
 topPick: 'Consul CFO4VAR'

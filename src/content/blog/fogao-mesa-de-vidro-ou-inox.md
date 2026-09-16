@@ -2,7 +2,7 @@
 title: 'Fogão com mesa de vidro ou inox: qual escolher? Comparativo 2026'
 description: 'Fogão com mesa de vidro ou inox? Compare limpeza, resistência, risco e o dia a dia de cada tipo de tampo — e só depois escolha o modelo.'
 pubDate: 2026-06-16
-updatedDate: 2026-09-13
+updatedDate: 2026-09-16
 category: 'Guia'
 faq:
   - question: 'Qual fogão é melhor: mesa de vidro ou inox?'
@@ -25,7 +25,7 @@ Na hora de trocar o fogão, uma dúvida aparece em quase toda pesquisa: **mesa d
 
 Os dois acabamentos ocupam as vitrines, aparecem em modelos de 4 e 5 bocas, e muitas vezes custam parecido dentro da mesma faixa de marca. O que muda de verdade é o tipo de tampo: o que você vê, limpa e encosta panela todos os dias.
 
-Aqui a decisão é uma: **qual tipo de tampo combina com a sua rotina**. O modelo vem depois.
+Aqui a decisão é uma: **qual tipo de tampo combina com a sua rotina**. Escolha vidro se o visual da cozinha pesa, o uso é do dia a dia e você aceita cuidar da borda. Escolha inox se a casa cozinha bastante, usa panela pesada ou não se importa de ver marca no tampo. O modelo vem depois.
 
 ## Resumo rápido
 
@@ -150,7 +150,7 @@ Se o tamanho ainda está em aberto, decida isso no [comparativo entre fogões 4 
 
 ## Depois do tipo de tampo
 
-Com o tipo de tampo definido, falta o tamanho se ainda estiver em aberto. O modelo vem depois.
+Com o tipo de tampo definido, compare os fogões daquele acabamento. Se o tamanho ainda estiver em aberto, resolva 4 ou 5 bocas antes do modelo.
 
 - **Mesa de vidro:** o [ranking de fogão mesa de vidro](/melhores/melhor-fogao-mesa-de-vidro/) reúne as opções dessa escolha.
 - **Mesa inox:** compare modelos com mesa inox depois que o tamanho estiver definido. O [ranking de fogão 4 bocas](/melhores/melhor-fogao-4-bocas/) é uma opção, só se 4 bocas já for a escolha. Tamanho ainda em aberto: o comparativo 4 ou 5 bocas, no parágrafo acima, vem antes do modelo.
