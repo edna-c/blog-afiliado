@@ -4,6 +4,7 @@ import RelatedContent from '../components/RelatedContent.astro';
 import SmartRecommendations from '../components/SmartRecommendations.astro';
 import EditorialTrustRibbon from '../components/EditorialTrustRibbon.astro';
 import { FOGAO_5_BOCAS_RANKING_HREF } from '../data/melhoresListing';
+import { findEntry, type EditorialEntry } from '../data/editorialContent';
 
 const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
 const canonical = new URL('/comparativo-fogao-4-vs-5-bocas/', site).href;
@@ -50,6 +51,25 @@ const faqItems = [
 ];
 
 const faqId = `${canonical}#faq`;
+
+/** Chrome local: os dois rankings comerciais + CB de cada tamanho. Sem SKU. */
+const sizeDecisionRelatedItems: EditorialEntry[] = (
+	[
+		'/melhores/melhor-fogao-4-bocas/',
+		FOGAO_5_BOCAS_RANKING_HREF,
+		'/fogao-4-bocas-custo-beneficio/',
+		'/fogao-5-bocas-custo-beneficio/',
+	] as const
+)
+	.map((href) => findEntry((e) => e.href === href))
+	.filter(Boolean) as EditorialEntry[];
+
+/** Evita duas reviews de 4 bocas no Smart (próximo passo). */
+const sizeDecisionSmartExclude = [
+	'/review-fogao-4-bocas-consul/',
+	'/review-fogao-4-bocas-electrolux/',
+];
+
 const structuredData = {
 	'@context': 'https://schema.org',
 	'@graph': [
@@ -390,6 +410,7 @@ const structuredData = {
 		<RelatedContent
 			class="mt-14"
 			currentPath="/comparativo-fogao-4-vs-5-bocas/"
+			items={sizeDecisionRelatedItems}
 			eyebrow="Veja também"
 			title="Leituras relacionadas"
 			subtitle="Depois do tamanho, compare os modelos ou veja se o fogão cabe no vão."
@@ -398,6 +419,7 @@ const structuredData = {
 		<SmartRecommendations
 			class="mt-12"
 			currentPath="/comparativo-fogao-4-vs-5-bocas/"
+			excludePaths={sizeDecisionSmartExclude}
 			heading="Continuar a leitura"
 		/>
 	</article>

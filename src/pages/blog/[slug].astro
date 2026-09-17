@@ -193,6 +193,20 @@ const inlinePairingItems: EditorialEntry[] = (editorialPairings[post.id] ?? [])
 	.map((href) => findEntry((e) => e.href === href))
 	.filter(Boolean) as EditorialEntry[];
 
+/** Curadoria explícita do RelatedContent — só neste slug. `items` substitui o pool automático. */
+const vidroOuInoxRelatedItems: EditorialEntry[] = isVidroOuInox
+	? (
+			[
+				'/melhores/melhor-fogao-mesa-de-vidro/',
+				'/melhores/melhor-fogao-4-bocas/',
+				'/review-fogao-mesa-de-vidro-consul/',
+				'/review-fogao-4-bocas-electrolux/',
+			] as const
+		)
+			.map((href) => findEntry((e) => e.href === href))
+			.filter(Boolean) as EditorialEntry[]
+	: [];
+
 const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
 
 const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
@@ -435,6 +449,7 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 				...(isFornoDuplo ? ['/#top-produtos'] : []),
 				...vidroOuInoxRelatedExclude,
 			]}
+			items={isVidroOuInox ? vidroOuInoxRelatedItems : undefined}
 			eyebrow="Veja também"
 			title="Leituras relacionadas"
 			subtitle={isPilotMesaVidro
