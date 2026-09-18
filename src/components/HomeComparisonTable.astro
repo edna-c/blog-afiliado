@@ -200,6 +200,7 @@ function rowAnalysisLink(row: ComparisonRow): {
 								<th scope="col">Modelo</th>
 								<th scope="col">Avaliação</th>
 								<th scope="col">Melhor para</th>
+								<th scope="col">Onde comprar</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -223,6 +224,32 @@ function rowAnalysisLink(row: ComparisonRow): {
 										</th>
 										<td class="font-semibold text-pop">{r.rating}</td>
 										<td class="text-on-ink-body">{r.bestFor}</td>
+										<td class="align-middle">
+											<div class="flex min-w-[8.5rem] flex-col gap-1.5">
+												<a
+													href={r.links.ml}
+													class="inline-flex min-h-[44px] w-full items-center justify-center rounded-lg bg-cta px-3 text-[0.7rem] font-bold tracking-wide text-white ring-1 ring-white/15 transition duration-300 ease-out hover:bg-cta-hover"
+													target="_blank"
+													rel="noopener noreferrer nofollow sponsored"
+													aria-label={`Ver oferta do fogão ${r.model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+													{...mlAffiliateAttrs(r.productId, 'comparison_table')}
+												>
+													Ver oferta
+												</a>
+												{'shopee' in r.links && r.links.shopee ? (
+													<a
+														href={r.links.shopee}
+														class="link-accent-soft inline-flex min-h-[44px] w-full items-center justify-center px-2 text-center text-[0.7rem] font-bold"
+														target="_blank"
+														rel="noopener noreferrer nofollow sponsored"
+														aria-label={`Ver oferta do fogão ${r.model} na Shopee — abre em nova aba (link patrocinado)`}
+														{...shopeeAffiliateAttrs(r.productId, 'comparison_table')}
+													>
+														Ver na Shopee
+													</a>
+												) : null}
+											</div>
+										</td>
 									</tr>
 								))
 							}
