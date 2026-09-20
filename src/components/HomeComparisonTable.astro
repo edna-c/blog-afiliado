@@ -5,7 +5,7 @@ import {
 	getExistingProductReviewUrl,
 	type CommercialGuideId,
 } from '../data/commercialGuideBlocks';
-import type { ComparisonRow } from '../types/commercial';
+import type { ComparisonColumnKey, ComparisonRow } from '../types/commercial';
 import { mlAffiliateAttrs, shopeeAffiliateAttrs } from '../utils/affiliateTracking';
 
 export type { ComparisonRow } from '../types/commercial';
@@ -55,6 +55,46 @@ const rows = guideBlock?.comparisonRows ?? homeRows;
 const sectionId = isGuideEmbed ? 'guia-comercial-comparativo' : 'compare-heading';
 /** Âncora de justificativas — fallback quando não há review do SKU. */
 const justificativaHref = guideBlock?.reviewPathPrefix;
+const productNoun = guideBlock?.productNoun ?? 'fogão';
+
+const DEFAULT_COMPARISON_COLUMNS: ComparisonColumnKey[] = ['price', 'rating', 'bestFor'];
+const comparisonColumns: ComparisonColumnKey[] = guideBlock?.comparisonColumns ?? DEFAULT_COMPARISON_COLUMNS;
+const tableMinClass = comparisonColumns.length > 3 ? 'min-w-[1200px]' : 'min-w-[720px]';
+
+const COMPARISON_COLUMN_LABEL: Record<ComparisonColumnKey, string> = {
+	price: 'Preço (ref.)',
+	rating: 'Avaliação',
+	bestFor: 'Melhor para',
+	burners: 'Bocas',
+	surface: 'Mesa',
+	grates: 'Grades',
+	flame: 'Chama',
+	ignition: 'Acendimento',
+	dimensions: 'Medidas',
+};
+
+function comparisonCell(row: ComparisonRow, key: ComparisonColumnKey): string {
+	switch (key) {
+		case 'price':
+			return row.price;
+		case 'rating':
+			return row.rating;
+		case 'bestFor':
+			return row.bestFor;
+		case 'burners':
+			return row.burners ?? '—';
+		case 'surface':
+			return row.surface ?? '—';
+		case 'grates':
+			return row.grates ?? '—';
+		case 'flame':
+			return row.flame ?? '—';
+		case 'ignition':
+			return row.ignition ?? '—';
+		case 'dimensions':
+			return row.dimensions ?? '—';
+	}
+}
 
 function rowAnalysisLink(row: ComparisonRow): {
 	href: string;
@@ -66,20 +106,20 @@ function rowAnalysisLink(row: ComparisonRow): {
 		return {
 			href: reviewUrl,
 			label: `Ver análise completa — ${row.model}`,
-			ariaLabel: `Ler análise completa do fogão ${row.model}`,
+			ariaLabel: `Ler análise completa do ${productNoun} ${row.model}`,
 		};
 	}
 	if (justificativaHref) {
 		return {
 			href: justificativaHref,
 			label: `Ver justificativa do ranking — ${row.model}`,
-			ariaLabel: `Ver justificativa do ranking para o fogão ${row.model} nesta página`,
+			ariaLabel: `Ver justificativa do ranking para o ${productNoun} ${row.model} nesta página`,
 		};
 	}
 	return {
 		href: `/review-fogao-5-bocas-${row.slug}/`,
 		label: `Ver análise completa — ${row.model}`,
-		ariaLabel: `Ler análise completa do fogão ${row.model}`,
+		ariaLabel: `Ler análise completa do ${productNoun} ${row.model}`,
 	};
 }
 ---
@@ -98,13 +138,13 @@ function rowAnalysisLink(row: ComparisonRow): {
 						))}
 					</div>
 					<div class="table-premium-shell mt-8">
-						<table class="table-premium min-w-[720px]">
+						<table class:list={['table-premium', tableMinClass]}>
 							<thead>
 								<tr>
 									<th scope="col">Modelo</th>
-									<th scope="col">Preço (ref.)</th>
-									<th scope="col">Avaliação</th>
-									<th scope="col">Melhor para</th>
+									{comparisonColumns.map((col) => (
+										<th scope="col">{COMPARISON_COLUMN_LABEL[col]}</th>
+									))}
 									<th scope="col">Ação</th>
 								</tr>
 							</thead>
@@ -126,9 +166,11 @@ function rowAnalysisLink(row: ComparisonRow): {
 											<p class="text-[10px] font-bold uppercase tracking-[0.25em] text-pop">{r.badge}</p>
 											<div class="font-display mt-2 text-base font-bold text-on-ink-body">{r.model}</div>
 										</th>
-										<td class="text-on-ink-body">{r.price}</td>
-										<td class="font-semibold text-pop">{r.rating}</td>
-										<td class="text-on-ink-body">{r.bestFor}</td>
+										{comparisonColumns.map((col) => (
+											<td class:list={[col === 'rating' ? 'font-semibold text-pop' : 'text-on-ink-body']}>
+												{comparisonCell(r, col)}
+											</td>
+										))}
 										<td class="align-top">
 											<div class="flex min-w-[12rem] flex-col gap-2">
 												<a
@@ -136,7 +178,7 @@ function rowAnalysisLink(row: ComparisonRow): {
 													class="inline-flex min-h-[48px] w-full items-center justify-center gap-1 rounded-lg border-2 border-transparent bg-cta px-4 text-xs font-bold uppercase tracking-wide text-white ring-1 ring-white/15 transition duration-300 ease-out hover:bg-cta-hover"
 													target="_blank"
 													rel="noopener noreferrer nofollow sponsored"
-													aria-label={`Ver preço do fogão ${r.model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+													aria-label={`Ver preço do ${productNoun} ${r.model} no Mercado Livre — abre em nova aba (link patrocinado)`}
 													{...mlAffiliateAttrs(r.productId, 'comparison_table')}
 												>
 													<span aria-hidden="true">👉</span>
@@ -148,7 +190,7 @@ function rowAnalysisLink(row: ComparisonRow): {
 														class="btn-secondary-premium w-full px-4"
 														target="_blank"
 														rel="noopener noreferrer nofollow sponsored"
-														aria-label={`Ver oferta do fogão ${r.model} na Shopee — abre em nova aba (link patrocinado)`}
+														aria-label={`Ver oferta do ${productNoun} ${r.model} na Shopee — abre em nova aba (link patrocinado)`}
 														{...shopeeAffiliateAttrs(r.productId, 'comparison_table')}
 													>
 														<span aria-hidden="true">👉</span>

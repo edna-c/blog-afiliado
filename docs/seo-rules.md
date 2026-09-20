@@ -131,6 +131,8 @@ Esta é a regra mais importante da arquitetura SEO do projeto.
 
 Cada keyword/intenção principal deve ter **uma URL dona clara**, com papel explícito no cluster. A meta não é "ter muitas páginas parecidas"; a meta é **concentrar sinal**, evitar canibalismo e deixar o Google entender qual URL deve ranquear para cada busca.
 
+**Keyword diferente não significa intenção diferente.** Volume alto não autoriza URL nova. SSOT: `docs/REGRA_CRIACAO_URLS.md`. Sequência: Keyword → intenção → SERP → patrimônio existente → produtos → decisão → URL.
+
 ### Mapa-base atual do projeto
 
 | Intenção principal | URL principal | Papel |
@@ -142,6 +144,7 @@ Cada keyword/intenção principal deve ter **uma URL dona clara**, com papel exp
 | `como escolher fogão 4 bocas` | `/como-escolher-fogao-4-bocas/` | Satélite / checklist pré-compra |
 | `fogão 4 bocas custo benefício` | `/fogao-4-bocas-custo-beneficio/` | Subintenção comercial por valor/preço |
 | `melhor fogão mesa de vidro` | `/melhores/melhor-fogao-mesa-de-vidro/` | Hub / ranking comercial mesa de vidro |
+| `fogão 4 bocas mesa de vidro` (e variações) | `/melhores/melhor-fogao-mesa-de-vidro/` | **Mesma URL dona** — não criar `/melhores/melhor-fogao-4-bocas-mesa-de-vidro/`. Ver `docs/REGRA_CRIACAO_URLS.md` |
 | `como escolher fogão mesa de vidro` | `/como-escolher-fogao-mesa-de-vidro/` | Satélite / critérios pré-compra (não ranking) |
 | `fogão 4 bocas vale a pena` | `/blog/fogao-4-bocas-ainda-vale-a-pena/` | Editorial / lifestyle / reflexão de compra |
 | `fogão embutir ou piso` | `/blog/guia-fogao-embutir-ou-de-piso/` | Guia de instalação e layout |
@@ -225,7 +228,7 @@ Evitar crescimento por "mais páginas aleatórias". Nesta fase, isso tende a dil
 
 ## Checklist para nova página
 
-1. Definir a **intenção principal** da página e confirmar que ela ainda não tem uma URL dona.
+1. Definir a **intenção principal** da página e confirmar que ela ainda não tem uma URL dona. Seguir `docs/REGRA_CRIACAO_URLS.md`: keyword diferente não basta.
 2. Definir `title` e `description` únicos e alinhados ao H1/conteúdo.
 3. Garantir que a nova URL tenha papel distinto no cluster (hub, comparativo, review, editorial, etc.).
 4. Se a página for estratégica para compartilhamento ou Google Discover: adicionar **`canonical`** + objeto **`openGraph`** (URL absoluta, imagem absoluta em formato adequado — ver páginas existentes).

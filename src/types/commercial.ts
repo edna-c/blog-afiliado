@@ -23,6 +23,18 @@ export interface CommercialProduct {
 	featured?: boolean;
 }
 
+/** Colunas extras da tabela comparativa — hubs de fogão continuam no conjunto padrão. */
+export type ComparisonColumnKey =
+	| 'price'
+	| 'rating'
+	| 'bestFor'
+	| 'burners'
+	| 'surface'
+	| 'grates'
+	| 'flame'
+	| 'ignition'
+	| 'dimensions';
+
 export interface ComparisonRow {
 	badge: string;
 	recommended?: boolean;
@@ -34,4 +46,10 @@ export interface ComparisonRow {
 	/** Chave SSOT em `produtos` — tracking `affiliate_click.product_id`. */
 	productId: ProductId;
 	links: ProdutoAfiliado;
+	burners?: string;
+	surface?: string;
+	grates?: string;
+	flame?: string;
+	ignition?: string;
+	dimensions?: string;
 }

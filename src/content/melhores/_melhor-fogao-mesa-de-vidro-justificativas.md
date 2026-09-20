@@ -11,13 +11,14 @@ category: 'Guia de Compra'
 
 ![Fogão Consul CFO4VAR 4 bocas com mesa de vidro temperado e grades de ferro fundido em cozinha moderna.](/images/melhores/melhor-fogao-mesa-de-vidro/consul-cfo4var-hero.webp)
 
-O Consul CFO4VAR fica em primeiro porque atende bem o dia a dia com mesa de vidro, sem chegar ao preço da Brastemp e sem partir para um modelo mais simples.
+O Consul CFO4VAR fica em primeiro porque atende bem o dia a dia em 4 bocas, com mesa de vidro, sem chegar ao preço da Brastemp e sem partir para um modelo mais simples.
 
 - Vidro temperado + grades de ferro fundido — estabilidade no uso cotidiano
 - Forno Cleartec (~58 L), suficiente para os preparos mais comuns e fácil de limpar
 - Ponto fraco: o vidro pede cuidado com impactos e produtos abrasivos — isso vale para a categoria, não só para este modelo
 - Precisa de mais bocas ao mesmo tempo? Aí a escolha certa é um [fogão 5 bocas](/#top-produtos), não outro 4 bocas de vidro
 - Review do modelo: [Fogão Consul mesa de vidro CFO4VAR](/review-fogao-mesa-de-vidro-consul/)
+- Prefere o Consul 4 bocas com mesa inox? Veja a [review do Consul CFO4NAR](/review-fogao-4-bocas-consul/)
 
 <!-- CTAs: produtos.consulCFO4VAR (src/data/products.ts) -->
 <p class="not-prose mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -29,13 +30,13 @@ O Consul CFO4VAR fica em primeiro porque atende bem o dia a dia com mesa de vidr
 
 ### 🥈 Por que o Brastemp BFO4VAE é o melhor premium
 
-![Fogão Brastemp BFO4VAE preto com mesa de vidro e grades duplas de ferro fundido em cozinha moderna.](/images/melhores/melhor-fogao-mesa-de-vidro/brastemp-bfo4vae-hero.webp)
+![Fogão Brastemp BFO4VAE 4 bocas preto com mesa de vidro e grades duplas de ferro fundido em cozinha moderna.](/images/melhores/melhor-fogao-mesa-de-vidro/brastemp-bfo4vae-hero.webp)
 
-O Brastemp BFO4VAE é a opção mais sofisticada entre os três: tem grades duplas e conjunto preto com vidro. Não é o modelo para quem quer mais recursos no forno.
+O Brastemp BFO4VAE é a opção mais sofisticada entre os modelos de 4 bocas: tem grades duplas e conjunto preto com vidro. Não é o modelo para quem quer mais recursos no forno.
 
 - Grades duplas de ferro fundido e boa potência nos queimadores rápidos
 - Acabamento preto com vidro e grades duplas, que deixam a mesa mais robusta.
-- Ponto fraco: o forno (~61 L) é sólido, mas sem PerfectCook ou VaporBake — quem assa com frequência e quer esses recursos precisa olhar outro tipo de fogão, fora deste ranking
+- Ponto fraco: o forno (~61 L) é sólido, mas sem PerfectCook ou VaporBake — quem assa com frequência e quer esses recursos pode olhar o [Electrolux FE4IW](/review-fogao-4-bocas-electrolux/), um fogão 4 bocas com mesa inox
 - Se a prioridade é equilíbrio por um preço menor, o Consul CFO4VAR continua sendo a escolha mais adequada
 
 <!-- CTAs: produtos.brastempBFO4VAE (src/data/products.ts) -->
@@ -48,9 +49,9 @@ O Brastemp BFO4VAE é a opção mais sofisticada entre os três: tem grades dupl
 
 ### 🥉 Por que o Atlas Atenas Glass (Top Glass) é o melhor custo-benefício
 
-![Fogão Atlas Atenas Glass (Top Glass) preto com mesa de vidro temperado em cozinha moderna.](/images/melhores/melhor-fogao-mesa-de-vidro/atlas-atenas-glass-hero.webp)
+![Fogão Atlas Atenas Glass (Top Glass) 4 bocas preto com mesa de vidro temperado em cozinha moderna.](/images/melhores/melhor-fogao-mesa-de-vidro/atlas-atenas-glass-hero.webp)
 
-O Atlas Atenas Glass é a opção para quem quer uma mesa de vidro gastando menos. Em anúncios, o mesmo modelo pode aparecer como Atenas Glass ou Top Glass.
+O Atlas Atenas Glass é a opção de 4 bocas para quem quer mesa de vidro gastando menos. Em anúncios, o mesmo modelo pode aparecer como Atenas Glass ou Top Glass.
 
 - Serve bem quem quer o primeiro fogão de vidro ou uma troca mais barata
 - As trempes são de aço esmaltado e o forno tem cerca de 50 L

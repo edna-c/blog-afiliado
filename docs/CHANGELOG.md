@@ -7,6 +7,17 @@ Formato: mais recente no topo.
 
 ---
 
+## 2026-09-20
+
+### Regra de criação de URLs por intenção
+
+- **Keyword diferente não significa página diferente.** Volume alto (Semrush, GSC ou outra fonte) não autoriza URL nova.
+- Sequência: Keyword → intenção → SERP → patrimônio existente → produtos → decisão → URL.
+- Exemplo: `fogão 4 bocas mesa de vidro` permanece em `/melhores/melhor-fogao-mesa-de-vidro/` — não criar URL combinada.
+- SSOT: `docs/REGRA_CRIACAO_URLS.md` · prompt `docs/BIBLIOTECA_DE_PROMPTS.md` §13 · regra `.cursor/rules/criacao-urls-por-intencao.mdc` · mapa-base em `docs/seo-rules.md`.
+
+---
+
 ## 2026-09-09
 
 ### Camada de refinamento editorial fino

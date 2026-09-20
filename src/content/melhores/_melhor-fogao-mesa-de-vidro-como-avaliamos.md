@@ -9,4 +9,10 @@ category: 'Guia de Compra'
 
 Comparamos o que pesa no uso real: resistência da mesa de vidro temperado, estabilidade das trempes, limpeza, forno, reputação no pós-venda e disponibilidade nas lojas.
 
-Cada medalha atende um tipo de comprador. Se você ainda está entre vidro e inox, veja o [comparativo vidro ou inox](/blog/fogao-mesa-de-vidro-ou-inox/). Se a dúvida é segurança, leia [Fogão mesa de vidro é seguro?](/blog/fogao-mesa-de-vidro-seguro/).
+Os três modelos são fogões 4 bocas com mesa de vidro — é o tamanho que mais aparece nas lojas com esse tampo. Cada medalha atende um tipo de comprador.
+
+Se você ainda está entre vidro e inox, veja o [comparativo vidro ou inox](/blog/fogao-mesa-de-vidro-ou-inox/).
+
+Se a dúvida é segurança, leia [Fogão mesa de vidro é seguro?](/blog/fogao-mesa-de-vidro-seguro/).
+
+Se você quer comparar preço entre fogões 4 bocas, inclusive opções com mesa inox, veja o [guia de fogão 4 bocas custo-benefício](/fogao-4-bocas-custo-beneficio/).

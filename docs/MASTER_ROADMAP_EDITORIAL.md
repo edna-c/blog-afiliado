@@ -9,6 +9,7 @@
 | Documento | Papel |
 |-----------|--------|
 | `docs/seo-rules.md` | Mapa-base de intenções (1 intenção = 1 URL dona) |
+| `docs/REGRA_CRIACAO_URLS.md` | Keyword diferente ≠ página diferente; gate antes de URL nova |
 | `docs/MANUAL_PAGINA_DECISAO.md` | Modelo de funil (cluster 5 bocas) |
 | `docs/EDITORIAL_NAMING_CONVENTIONS.md` | Convenções de H1 / Title SEO das reviews (curtas e longas) |
 | `docs/BIBLIOTECA_VISUAL.md` | SSOT do patrimônio visual |
@@ -37,7 +38,7 @@ Regras permanentes (alinham `seo-rules.md`, Prompt Mestre §8 e a auditoria de R
 5. **Biblioteca Técnica é patrimônio compartilhado** (Tipo B reutilizável; não “imagem para um artigo”).
 6. **Links internos devem fortalecer hubs** (e reviews do mesmo cluster — sem redundância hub+review na mesma seção).
 7. **Evitar conteúdo redundante** e canibalização.
-8. **Evitar produção baseada apenas em volume de busca.**
+8. **Evitar produção baseada apenas em volume de busca.** Keyword diferente não justifica URL nova (`docs/REGRA_CRIACAO_URLS.md`).
 9. **Priorizar retorno financeiro sustentável** (afiliado + funil fechado).
 10. **Nomenclatura de reviews** segue `docs/EDITORIAL_NAMING_CONVENTIONS.md` (H1 / Title SEO; slugs estáveis).
 

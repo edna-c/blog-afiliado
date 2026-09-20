@@ -7,7 +7,7 @@ category: 'Guia de Compra'
 
 ## Qual fogão para cada perfil
 
-Se ainda estiver em dúvida:
+Os três abaixo são de 4 bocas com mesa de vidro. Se ainda estiver em dúvida:
 
 - Cozinha todo dia e quer vidro sem complicar → **Consul CFO4VAR**
 - Quer grades duplas e um visual mais robusto na mesa → **Brastemp BFO4VAE**

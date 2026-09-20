@@ -1,0 +1,41 @@
+---
+description: Keyword diferente não justifica URL nova — fortalecer a página existente quando a intenção e a decisão de compra já estão cobertas
+alwaysApply: true
+---
+
+# Criação de URLs por intenção
+
+SSOT: `docs/REGRA_CRIACAO_URLS.md`. Prompt: `docs/BIBLIOTECA_DE_PROMPTS.md` §13.
+
+## Regra
+
+**Keyword diferente não significa intenção diferente.** Volume alto (Semrush, GSC ou outra fonte) **não** autoriza URL nova.
+
+Sequência obrigatória: **Keyword → intenção → SERP → patrimônio existente → produtos → decisão → URL.**  
+Proibido: **Keyword → volume alto → nova URL.**
+
+## Antes de propor ou criar URL
+
+1. A intenção é realmente diferente?
+2. A decisão de compra é diferente?
+3. A página existente já tem os produtos para resolver a busca?
+4. O conteúdo cabe na página existente?
+5. A nova URL teria produtos, critérios, comparação e conclusão diferentes?
+6. Há território comercial/editorial novo?
+
+Se a existente já resolve: **fortalecer essa URL**. Não criar outra.
+
+## Não criar quando a nova página teria
+
+Os mesmos produtos, SKUs, links comerciais, critérios, comparação, decisão ou só uma keyword diferente no título.
+
+## Exemplo do projeto
+
+`fogão 4 bocas mesa de vidro` **não** vira `/melhores/melhor-fogao-4-bocas-mesa-de-vidro/`.  
+URL dona: `/melhores/melhor-fogao-mesa-de-vidro/` (já tem 4 bocas, afiliados, comparação e decisão).
+
+## Teste
+
+Se os mesmos produtos e a mesma decisão na URL nova não dariam ao usuário motivo real para preferir uma página à outra: **não criar**.
+
+Ampliar cobertura semântica/comercial da página existente **é** crescimento de patrimônio.

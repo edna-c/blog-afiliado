@@ -11,7 +11,7 @@
 
 **Fonte técnica atual (detalhada):** `docs/seo-rules.md` — consolidar progressivamente o conteúdo aqui.
 
-Documentação relacionada: `MANUAL_PAGINA_DECISAO.md`, `PADROES_DE_COMPONENTES.md`, `CHANGELOG.md`.
+Documentação relacionada: `MANUAL_PAGINA_DECISAO.md`, `PADROES_DE_COMPONENTES.md`, `REGRA_CRIACAO_URLS.md`, `CHANGELOG.md`.
 
 ---
 
@@ -91,6 +91,18 @@ Garantir consistência de descoberta, indexação e rich results sem conflitar c
 - Não inventar rotas só para SEO
 - Não alterar arquitetura global em tarefa de “melhoria SEO”
 - Não duplicar o mesmo texto em várias URLs do cluster
+- Não criar URL nova só porque a keyword é diferente ou tem volume alto (`docs/REGRA_CRIACAO_URLS.md`)
+
+---
+
+## 10. Criação de URLs (intenção, não keyword)
+
+SSOT: `docs/REGRA_CRIACAO_URLS.md` · regra `.cursor/rules/criacao-urls-por-intencao.mdc`.
+
+Antes de propor página nova: confirmar se uma URL existente já resolve a mesma decisão de compra (produtos, critérios, comparação). Se sim, fortalecer a existente.
+
+Sequência: **Keyword → intenção → SERP → patrimônio existente → produtos → decisão → URL.**  
+Nunca: **Keyword → volume alto → nova URL.**
 
 ---
 

@@ -1,0 +1,55 @@
+---
+/**
+ * CTAs afiliados por productId — lê URLs só de `src/data/products.ts`.
+ * Usado nos blocos de justificativa dos hubs comerciais.
+ */
+import { produtos, type ProductId } from '../data/products';
+import {
+	mlAffiliateAttrs,
+	shopeeAffiliateAttrs,
+	type AffiliateCtaPosition,
+} from '../utils/affiliateTracking';
+
+interface Props {
+	productId: ProductId;
+	productName: string;
+	productNoun?: string;
+	ctaPosition?: AffiliateCtaPosition;
+}
+
+const {
+	productId,
+	productName,
+	productNoun = 'produto',
+	ctaPosition = 'justification',
+} = Astro.props;
+
+const links = produtos[productId];
+---
+
+<p class="not-prose mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+	<a
+		href={links.ml}
+		class="inline-flex min-h-[52px] w-full items-center justify-center gap-1.5 rounded-[0.625rem] border-2 border-transparent bg-cta px-5 py-3.5 text-center text-[0.75rem] font-extrabold uppercase tracking-wide text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:text-[0.72rem]"
+		target="_blank"
+		rel="noopener noreferrer nofollow sponsored"
+		aria-label={`Ver preço do ${productNoun} ${productName} no Mercado Livre — abre em nova aba (link patrocinado)`}
+		{...mlAffiliateAttrs(productId, ctaPosition)}
+	>
+		<span aria-hidden="true">👉</span> Ver preço no Mercado Livre
+	</a>
+	{
+		links.shopee ? (
+			<a
+				href={links.shopee}
+				class="btn-secondary-premium w-full px-5 py-3.5 text-[0.72rem] sm:text-[0.72rem]"
+				target="_blank"
+				rel="noopener noreferrer nofollow sponsored"
+				aria-label={`Ver preço do ${productNoun} ${productName} na Shopee — abre em nova aba (link patrocinado)`}
+				{...shopeeAffiliateAttrs(productId, ctaPosition)}
+			>
+				<span aria-hidden="true">👉</span> Ver preço na Shopee
+			</a>
+		) : null
+	}
+</p>

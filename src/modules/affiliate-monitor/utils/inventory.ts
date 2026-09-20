@@ -14,6 +14,12 @@ export const PRODUCT_DISPLAY_NAMES: Record<string, string> = {
 	consulCFO4VAR: 'Consul CFO4VAR',
 	brastempBFO4VAE: 'Brastemp BFO4VAE',
 	atlasAtenasGlass: 'Atlas Atenas Glass',
+	electroluxKE5GR: 'Electrolux KE5GR',
+	brastempBDS75AE: 'Brastemp BDS75AE',
+	itatiaiaEssencial5Bocas: 'Itatiaia Essencial 5 bocas',
+	electroluxKE4GR: 'Electrolux KE4GR',
+	fischerFitLine4Bocas: 'Fischer Fit Line 4 bocas',
+	muellerMCG4BK: 'Mueller MCG4BK',
 };
 
 export type InventoryOptions = {

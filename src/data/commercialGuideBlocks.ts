@@ -1,10 +1,11 @@
 import { produtos } from './products';
-import type { CommercialProduct, ComparisonRow } from '../types/commercial';
+import type { CommercialProduct, ComparisonColumnKey, ComparisonRow } from '../types/commercial';
 
 export type CommercialGuideId =
 	| 'melhor-fogao-5-bocas'
 	| 'melhor-fogao-4-bocas'
-	| 'melhor-fogao-mesa-de-vidro';
+	| 'melhor-fogao-mesa-de-vidro'
+	| 'melhor-cooktop-5-bocas';
 
 /** Fallback único para rótulo do CTA ML quando o produto não define `mlCtaText`. */
 export const DEFAULT_MERCADO_LIVRE_CTA_TEXT = 'VER PREÇO NO MERCADO LIVRE';
@@ -46,6 +47,10 @@ export type CommercialGuideBlock = {
 		string,
 		string,
 	];
+	/** Substantivo nos aria-labels de CTA (default: fogão). */
+	productNoun?: string;
+	/** Colunas da tabela; se omitido, usa preço / avaliação / melhor para. */
+	comparisonColumns?: ComparisonColumnKey[];
 };
 
 const melhorFogao5Bocas: CommercialGuideBlock = {
@@ -321,23 +326,23 @@ const melhorFogao4Bocas: CommercialGuideBlock = {
 const melhorFogaoMesaDeVidro: CommercialGuideBlock = {
 	topProductsCopy: {
 		eyebrow: 'Escolha rápida',
-		heading: 'Os 3 melhores fogões com mesa de vidro — comparativo direto',
+		heading: 'Os 3 melhores fogões 4 bocas com mesa de vidro — comparativo direto',
 		introParagraphs: [
 			'Alguns links podem gerar comissão para o site, sem custo para você. Os preços podem variar, então vale conferir no momento da compra.',
-			'Confira abaixo os modelos recomendados neste guia. As justificativas de cada medalha continuam mais adiante na página.',
+			'Confira abaixo os modelos de 4 bocas. As justificativas de cada medalha continuam mais adiante na página.',
 		],
 		ctaParagraph:
 			'Agora veja os modelos selecionados, <strong class="font-semibold text-on-ink-body">ofertas atualizadas hoje</strong> — estoque pode variar; use os botões para <strong class="font-semibold text-on-ink-body">ver disponibilidade</strong> na loja.',
 	},
 	comparisonCopy: {
-		heading: 'Tabela comparativa: melhores fogões mesa de vidro',
+		heading: 'Tabela comparativa: fogões 4 bocas com mesa de vidro',
 		introParagraphs: [
-			'Compare os três modelos do ranking sem sair desta página.',
+			'Compare os três modelos de 4 bocas sem sair desta página. A diferença está nas grades, no forno e no preço.',
 			'A tabela reúne preço de referência, nota e o perfil de cada medalha para acelerar a decisão.',
 			'Se o foco for só economia, a coluna “Melhor para” aponta rápido o custo-benefício.',
 		],
 		footerNote:
-			'Antes de fechar, confirme se a dúvida é acabamento (vidro) ou tamanho (4 vs 5 bocas) — são decisões diferentes.',
+			'Antes de comprar, confirme se a dúvida é acabamento (vidro) ou tamanho (4 vs 5 bocas) — são decisões diferentes.',
 		footerCta: 'Continue lendo para ver por que cada medalha existe e qual perfil combina com você.',
 	},
 	reviewPathPrefix: '/melhores/melhor-fogao-mesa-de-vidro/#analises-detalhadas',
@@ -360,7 +365,7 @@ const melhorFogaoMesaDeVidro: CommercialGuideBlock = {
 			badgeTone: 'emerald',
 			basePrice: 'Confira na loja',
 			benefits: [
-				'Mesa de vidro temperado com limpeza mais ágil',
+				'4 bocas com mesa de vidro temperado',
 				'Grades de ferro fundido para uso diário',
 				'Forno Cleartec com boa rotina de limpeza',
 				'Prateleira auto-deslizante no forno',
@@ -383,7 +388,7 @@ const melhorFogaoMesaDeVidro: CommercialGuideBlock = {
 			badgeTone: 'pop',
 			basePrice: 'Confira na loja',
 			benefits: [
-				'Grades duplas de ferro fundido — upgrade na mesa',
+				'4 bocas com mesa de vidro e grades duplas',
 				'Conjunto preto + vidro com presença premium',
 				'Forno esmaltado ~61 L para o dia a dia',
 				'Corta-gás e acendimento automático',
@@ -397,7 +402,7 @@ const melhorFogaoMesaDeVidro: CommercialGuideBlock = {
 			shopeeCtaText: DEFAULT_SHOPEE_CTA_TEXT,
 			imageVisualScale: 1,
 			image: '/images/melhores/melhor-fogao-mesa-de-vidro/brastemp-bfo4vae.webp',
-			imageAlt: 'Fogão Brastemp BFO4VAE preto com mesa de vidro e grades duplas',
+			imageAlt: 'Fogão Brastemp BFO4VAE 4 bocas preto com mesa de vidro e grades duplas',
 		},
 		{
 			name: 'Atlas Atenas Glass (Top Glass)',
@@ -405,7 +410,7 @@ const melhorFogaoMesaDeVidro: CommercialGuideBlock = {
 			badgeTone: 'amber',
 			basePrice: 'Confira na loja',
 			benefits: [
-				'Entrada acessível em mesa de vidro temperado',
+				'4 bocas com mesa de vidro, gastando menos',
 				'Acendimento automático e uso simples',
 				'Forno ~50 L para rotina básica',
 				'Boa disponibilidade comercial na faixa',
@@ -419,7 +424,7 @@ const melhorFogaoMesaDeVidro: CommercialGuideBlock = {
 			shopeeCtaText: DEFAULT_SHOPEE_CTA_TEXT,
 			imageVisualScale: 1,
 			image: '/images/melhores/melhor-fogao-mesa-de-vidro/atlas-atenas-glass.webp',
-			imageAlt: 'Fogão Atlas Atenas Glass (Top Glass) preto com mesa de vidro temperado',
+			imageAlt: 'Fogão Atlas Atenas Glass (Top Glass) 4 bocas preto com mesa de vidro temperado',
 		},
 	],
 	comparisonRows: [
@@ -457,10 +462,164 @@ const melhorFogaoMesaDeVidro: CommercialGuideBlock = {
 	],
 };
 
+const melhorCooktop5Bocas: CommercialGuideBlock = {
+	productNoun: 'cooktop',
+	comparisonColumns: ['burners', 'surface', 'grates', 'flame', 'ignition', 'dimensions', 'bestFor'],
+	topProductsCopy: {
+		eyebrow: 'Escolha rápida',
+		heading: 'Três cooktops 5 bocas para comparar',
+		introParagraphs: [
+			'Alguns links podem gerar comissão para o site, sem custo para você. Os preços mudam conforme loja, estoque e promoção — vale conferir na hora da compra.',
+			'Um tem grades de aço esmaltado, outro tem grades de ferro fundido, e o terceiro tem uma proposta mais simples.',
+		],
+		ctaParagraph:
+			'Os preços mudam. Vale <strong class="font-semibold text-on-ink-body">conferir na loja</strong> na hora de comprar.',
+	},
+	comparisonCopy: {
+		heading: 'Tabela comparativa: cooktop 5 bocas',
+		introParagraphs: [
+			'O que muda de verdade entre os três: o tipo de grade e o tipo de chama.',
+			'Os três têm cinco bocas. Não é aí que eles se diferenciam.',
+		],
+		footerCta: 'Cada um serve a um jeito de cozinhar.',
+	},
+	reviewPathPrefix: '/melhores/melhor-cooktop-5-bocas/#analises-detalhadas',
+	heroRanking: [
+		{ toneClass: 'text-pop', text: '🥇 Electrolux KE5GR — equilíbrio no uso do dia a dia' },
+		{ toneClass: 'text-cta', text: '🥈 Brastemp BDS75AE — grades de ferro fundido e controle de chama' },
+		{ toneClass: 'text-amber-300', text: '🥉 Itatiaia Essencial — cinco bocas gastando menos' },
+	],
+	moduleIds: [
+		'_melhor-cooktop-5-bocas-justificativas',
+		'_melhor-cooktop-5-bocas-como-avaliamos',
+		'_melhor-cooktop-5-bocas-perfil',
+		'_melhor-cooktop-5-bocas-antes',
+		'_melhor-cooktop-5-bocas-aprofundar',
+	],
+	topProducts: [
+		{
+			name: 'Electrolux KE5GR',
+			badge: '🥇 Melhor equilíbrio',
+			badgeTone: 'emerald',
+			basePrice: 'Confira na loja',
+			benefits: [
+				'Mesa de vidro temperado e acendimento superautomático',
+				'Dois queimadores rápidos e três semirrápidos (11.400 W no total)',
+				'Grades de aço esmaltado fosco com quatro apoios',
+				'Botões removíveis e queimadores selados',
+			],
+			socialProof: '⭐ Para quem cozinha no dia a dia',
+			reviewSlug: 'electrolux-ke5gr',
+			productId: 'electroluxKE5GR',
+			mercadoLivreUrl: produtos.electroluxKE5GR.ml,
+			shopeeUrl: produtos.electroluxKE5GR.shopee,
+			mlCtaText: DEFAULT_MERCADO_LIVRE_CTA_TEXT,
+			shopeeCtaText: DEFAULT_SHOPEE_CTA_TEXT,
+			image: '/images/melhores/melhor-cooktop-5-bocas/electrolux-ke5gr.webp',
+			imageAlt: 'Cooktop Electrolux KE5GR 5 bocas',
+			featured: true,
+		},
+		{
+			name: 'Brastemp BDS75AE',
+			badge: '🥈 Grades e chama',
+			badgeTone: 'pop',
+			basePrice: 'Confira na loja',
+			benefits: [
+				'Grades de ferro fundido para apoiar melhor a panela',
+				'Super Chama e Simmer — fogo mais alto e fogo baixo',
+				'Mesa de vidro e acendimento superautomático',
+				'Para quem cozinha com panela mais pesada',
+			],
+			socialProof: '⭐ Para quem quer mais controle da chama',
+			reviewSlug: 'brastemp-bds75ae',
+			productId: 'brastempBDS75AE',
+			mercadoLivreUrl: produtos.brastempBDS75AE.ml,
+			shopeeUrl: produtos.brastempBDS75AE.shopee,
+			mlCtaText: DEFAULT_MERCADO_LIVRE_CTA_TEXT,
+			shopeeCtaText: DEFAULT_SHOPEE_CTA_TEXT,
+			image: '/images/melhores/melhor-cooktop-5-bocas/brastemp-bds75ae.webp',
+			imageAlt: 'Cooktop Brastemp BDS75AE 5 bocas',
+		},
+		{
+			name: 'Itatiaia Essencial 5 bocas',
+			badge: '🥉 Melhor custo-benefício',
+			badgeTone: 'amber',
+			basePrice: 'Confira na loja',
+			benefits: [
+				'Cinco bocas com mesa de vidro temperado',
+				'Acendimento automático e trempes individuais esmaltadas',
+				'Dois queimadores rápidos e três semirrápidos (11,25 kW no total)',
+				'Proposta mais simples, sem grades de ferro fundido',
+			],
+			socialProof: '✔ Para quem quer cinco bocas sem gastar tanto',
+			reviewSlug: 'itatiaia-essencial',
+			productId: 'itatiaiaEssencial5Bocas',
+			mercadoLivreUrl: produtos.itatiaiaEssencial5Bocas.ml,
+			shopeeUrl: produtos.itatiaiaEssencial5Bocas.shopee,
+			mlCtaText: DEFAULT_MERCADO_LIVRE_CTA_TEXT,
+			shopeeCtaText: DEFAULT_SHOPEE_CTA_TEXT,
+			image: '/images/melhores/melhor-cooktop-5-bocas/itatiaia-essencial-3700000193.webp',
+			imageAlt: 'Cooktop Itatiaia Essencial 5 bocas',
+		},
+	],
+	comparisonRows: [
+		{
+			badge: 'Melhor equilíbrio',
+			recommended: true,
+			model: 'Electrolux KE5GR',
+			price: 'Confira na loja',
+			rating: '—',
+			bestFor: 'Uso do dia a dia',
+			slug: 'electrolux-ke5gr',
+			productId: 'electroluxKE5GR',
+			links: produtos.electroluxKE5GR,
+			burners: '5',
+			surface: 'Vidro temperado',
+			grates: 'Aço esmaltado fosco',
+			flame: '2 rápidos + 3 semirrápidos',
+			ignition: 'Superautomático',
+			dimensions: '75 × 45 cm (L × P)',
+		},
+		{
+			badge: 'Grades e chama',
+			model: 'Brastemp BDS75AE',
+			price: 'Confira na loja',
+			rating: '—',
+			bestFor: 'Grade firme e controle',
+			slug: 'brastemp-bds75ae',
+			productId: 'brastempBDS75AE',
+			links: produtos.brastempBDS75AE,
+			burners: '5',
+			surface: 'Vidro temperado',
+			grates: 'Ferro fundido',
+			flame: 'Super Chama e Simmer',
+			ignition: 'Superautomático',
+			dimensions: '73 × 46 cm (L × P)',
+		},
+		{
+			badge: 'Custo-benefício',
+			model: 'Itatiaia Essencial 5 bocas',
+			price: 'Confira na loja',
+			rating: '—',
+			bestFor: 'Gastar menos',
+			slug: 'itatiaia-essencial',
+			productId: 'itatiaiaEssencial5Bocas',
+			links: produtos.itatiaiaEssencial5Bocas,
+			burners: '5',
+			surface: 'Vidro temperado',
+			grates: 'Arame esmaltado',
+			flame: '2 rápidos + 3 semirrápidos',
+			ignition: 'Automático',
+			dimensions: '73 × 45 cm (L × P)',
+		},
+	],
+};
+
 export const commercialGuideBlocks: Record<CommercialGuideId, CommercialGuideBlock> = {
 	'melhor-fogao-5-bocas': melhorFogao5Bocas,
 	'melhor-fogao-4-bocas': melhorFogao4Bocas,
 	'melhor-fogao-mesa-de-vidro': melhorFogaoMesaDeVidro,
+	'melhor-cooktop-5-bocas': melhorCooktop5Bocas,
 };
 
 export function getCommercialGuideBlock(guideId: CommercialGuideId): CommercialGuideBlock {
@@ -498,6 +657,7 @@ const EXISTING_REVIEW_URL_BY_GUIDE_SLUG: Record<CommercialGuideId, Partial<Recor
 	'melhor-fogao-mesa-de-vidro': {
 		'consul-cfo4var': '/review-fogao-mesa-de-vidro-consul/',
 	},
+	'melhor-cooktop-5-bocas': {},
 };
 
 /** URL da review do SKU quando a página já existe; senão `null` (usar âncora de justificativa). */

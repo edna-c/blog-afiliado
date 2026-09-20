@@ -37,7 +37,8 @@ export type EditorialTopic =
 	| 'compra-segura'
 	| 'forno-grande'
 	| 'inox-premium'
-	| 'familia-grande';
+	| 'familia-grande'
+	| 'cooktop';
 
 export interface EditorialEntry {
 	href: string;
@@ -67,6 +68,19 @@ export function canonPath(path: string): string {
  * Mantém acordo com o conteúdo real existente no site.
  */
 export const EDITORIAL_POOL: EditorialEntry[] = [
+	{
+		href: '/melhores/melhor-cooktop-5-bocas/',
+		title: 'Melhor cooktop 5 bocas 2026 (ranking para comprar)',
+		description:
+			'Ranking dos 3 cooktops 5 bocas desta página: Electrolux KE5GR, Brastemp BDS75AE e Itatiaia Essencial — para quem cada um serve e onde ver o preço.',
+		kind: 'Guia',
+		flow: 2,
+		editorialLabel: 'Ranking',
+		topics: ['cooktop', 'compra-segura'],
+		anchorText: 'ranking de cooktop 5 bocas',
+		teaser: 'três cooktops 5 bocas para decidir agora',
+		weight: 8,
+	},
 	{
 		href: '/melhores/melhor-fogao-4-bocas/',
 		title: 'Melhor fogão 4 bocas 2026 (ranking para comprar)',
@@ -370,7 +384,7 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 		kind: 'Guia',
 		flow: 2,
 		editorialLabel: 'Guia · Espaço',
-		topics: ['fogao-5-bocas', 'cozinha-pequena', 'organizacao', 'instalacao'],
+		topics: ['fogao-5-bocas', 'cozinha-pequena', 'organizacao', 'instalacao', 'cooktop'],
 		anchorText: 'guia sobre fogão 5 bocas em cozinha pequena',
 		teaser: 'layout, circulação e quando o 5 bocas ainda cabe',
 		weight: 7,

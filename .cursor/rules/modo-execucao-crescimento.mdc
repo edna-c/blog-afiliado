@@ -35,7 +35,7 @@ Como aplicar (proporção vigente):
 
 Páginas prioritárias (A): impressões no GSC; consultas nas posições **5–30**; CTR abaixo do esperado; potencial de expansão editorial, intenção mais clara e links internos.
 
-Antes de propor página nova (B): confirmar que **não** há oportunidade de crescimento mais relevante em página existente.
+Antes de propor página nova (B): confirmar que **não** há oportunidade de crescimento mais relevante em página existente. Seguir `docs/REGRA_CRIACAO_URLS.md`: **keyword diferente não justifica URL nova**; volume alto não autoriza rota combinada quando a página existente já resolve a decisão (produtos, critérios, comparação).
 
 ### Otimização em etapas (posições 5–30)
 
@@ -88,7 +88,7 @@ Não paralisar o Modo Execução à espera de export quando ainda houver gaps in
    - impressões crescentes;
    - CTR abaixo do esperado;
    - oportunidades de links internos.
-3. Criar páginas novas **somente** se ampliarem a cobertura do mapa arquitetural / mapa-base SEO **e** não existir URL com a mesma intenção **e** as páginas prioritárias relevantes já estiverem fortalecidas (checklist acima).
+3. Criar páginas novas **somente** se ampliarem a cobertura do mapa arquitetural / mapa-base SEO **e** não existir URL com a mesma intenção **e** as páginas prioritárias relevantes já estiverem fortalecidas (checklist acima). Gate: `docs/REGRA_CRIACAO_URLS.md` (intenção e decisão diferentes — não só keyword diferente).
 4. **Atualizar conteúdos antigos** antes de criar conteúdos semelhantes.
 5. Refinamentos visuais **somente** com impacto comprovado em UX, SEO ou conversão.
 

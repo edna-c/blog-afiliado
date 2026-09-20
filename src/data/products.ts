@@ -84,6 +84,45 @@ export const produtos = {
 		shopee: 'https://shopee.com.br/Fog%C3%A3o-4-Bocas-Preto-com-Mesa-de-Vidro-Atlas-M%C3%B4naco-Top-Glass-Acendimento-Autom%C3%A1tico-Bivolt-i.1334945356.50162071184',
 		shopeeGeneratedByPanel: true,
 	},
+	/** Cooktop 5 bocas — ranking /melhores/melhor-cooktop-5-bocas */
+	electroluxKE5GR: {
+		ml: 'https://meli.la/2LCaLFw',
+		mlGeneratedByPanel: true,
+		shopee: 'https://s.shopee.com.br/5VVRFPiYzn',
+		shopeeGeneratedByPanel: true,
+	},
+	brastempBDS75AE: {
+		ml: 'https://meli.la/1s4vxJ8',
+		mlGeneratedByPanel: true,
+		shopee: 'https://s.shopee.com.br/AUu7CzBQzS',
+		shopeeGeneratedByPanel: true,
+	},
+	/** Itatiaia Essencial 5 bocas — código de fábrica 3700000193 */
+	itatiaiaEssencial5Bocas: {
+		ml: 'https://meli.la/1UsmgiR',
+		mlGeneratedByPanel: true,
+		shopee: 'https://s.shopee.com.br/2BEzKXFFmt',
+		shopeeGeneratedByPanel: true,
+	},
+	/** Cooktop 4 bocas — inventário para expansão futura (fora do ranking de 5 bocas) */
+	electroluxKE4GR: {
+		ml: 'https://meli.la/1XaSZcB',
+		mlGeneratedByPanel: true,
+		shopee: 'https://s.shopee.com.br/5LC13l6dbK',
+		shopeeGeneratedByPanel: true,
+	},
+	fischerFitLine4Bocas: {
+		ml: 'https://meli.la/31Tttd7',
+		mlGeneratedByPanel: true,
+		shopee: 'https://s.shopee.com.br/5q8HhAuqmE',
+		shopeeGeneratedByPanel: true,
+	},
+	muellerMCG4BK: {
+		ml: 'https://meli.la/1pyXcPQ',
+		mlGeneratedByPanel: true,
+		shopee: 'https://s.shopee.com.br/3LQwicU1hf',
+		shopeeGeneratedByPanel: true,
+	},
 } as const satisfies Record<string, ProdutoAfiliado>;
 
 /** Chave estável do inventário — usar como `product_id` no tracking comercial. */

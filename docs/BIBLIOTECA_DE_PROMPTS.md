@@ -9,7 +9,7 @@
 2. Quando um prompt se estabilizar na prática, **incorpore-o aqui** (não espalhar em chats soltos).
 3. Atualize este arquivo em vez de criar “biblioteca v2”.
 
-Documentação relacionada: `MANUAL_EDITORIAL.md`, `MANUAL_VOZ_DECISAO_CASA_PRATICA.md`, `MANUAL_PAGINA_DECISAO.md`, `MANUAL_SEO.md`, `CHANGELOG.md`.
+Documentação relacionada: `MANUAL_EDITORIAL.md`, `MANUAL_VOZ_DECISAO_CASA_PRATICA.md`, `MANUAL_PAGINA_DECISAO.md`, `MANUAL_SEO.md`, `REGRA_CRIACAO_URLS.md`, `CHANGELOG.md`.
 
 ---
 
@@ -82,9 +82,10 @@ Seguir docs/MANUAL_PAGINA_DECISAO.md e docs/PADROES_DE_COMPONENTES.md §2.
 ## 6. Prompt – SEO de página
 
 ```text
-Consulte docs/MANUAL_SEO.md (e docs/seo-rules.md enquanto a consolidação não terminar).
+Consulte docs/MANUAL_SEO.md, docs/seo-rules.md e docs/REGRA_CRIACAO_URLS.md.
 Revise metadados, headings, internal links e schema da página [URL/PATH].
 Não alterar arquitetura. Liste gaps e correções mínimas.
+Keyword diferente não justifica URL nova.
 ```
 
 ---
@@ -220,7 +221,7 @@ Não criar documentação desnecessária. Não abrir novas frentes. Não reinven
 Toda decisão deve aumentar tráfego, autoridade, conversão ou escalabilidade.
 ```
 
-Referência de mapa de intenções: `docs/seo-rules.md` (mapa-base). Página de Decisão: `docs/MANUAL_PAGINA_DECISAO.md`.
+Referência de mapa de intenções: `docs/seo-rules.md` (mapa-base). Criação de URLs: `docs/REGRA_CRIACAO_URLS.md`. Página de Decisão: `docs/MANUAL_PAGINA_DECISAO.md`.
 
 ---
 
@@ -612,7 +613,39 @@ de SEO/interlinks e se houve alteração estrutural (não deveria haver).
 
 ---
 
-## 13. Espaço para novos prompts
+## 13. Prompt — criação de URLs por intenção
+
+**Regra de agente:** `.cursor/rules/criacao-urls-por-intencao.mdc`.  
+**SSOT:** `docs/REGRA_CRIACAO_URLS.md`.
+
+Antes de sugerir ou criar URL a partir de keyword (Semrush, GSC ou outra fonte):
+
+```text
+Keyword diferente não significa intenção diferente. Volume alto não autoriza URL nova.
+
+Sequência obrigatória:
+Keyword → intenção → SERP → patrimônio existente → produtos → decisão → URL
+
+Não usar: Keyword → volume alto → nova URL.
+
+Antes de criar, responder:
+1. A intenção é realmente diferente?
+2. A decisão de compra é diferente?
+3. A página existente já tem os produtos para resolver essa busca?
+4. O conteúdo cabe na página existente?
+5. A nova URL teria produtos, critérios, comparação e conclusão diferentes?
+6. Há território comercial/editorial novo?
+
+Se a existente já resolve: fortalecer essa URL. Não criar outra.
+
+Teste: se os mesmos produtos e a mesma decisão na URL nova não dariam ao usuário motivo real para preferir uma página à outra, não criar.
+
+Exemplo do projeto: “fogão 4 bocas mesa de vidro” permanece em /melhores/melhor-fogao-mesa-de-vidro/ — não criar /melhores/melhor-fogao-4-bocas-mesa-de-vidro/.
+```
+
+---
+
+## 14. Espaço para novos prompts
 
 <!-- Adicionar prompts estáveis abaixo, com título numerado e data no CHANGELOG. -->
 

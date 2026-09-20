@@ -22,7 +22,9 @@ import {
 } from '../../data/commercialGuideBlocks';
 import { mlAffiliateAttrs } from '../../utils/affiliateTracking';
 import { readingTimeLabel } from '../../utils/readingTime';
-import { isRoutedMelhoresGuide } from '../../data/melhoresListing';
+import { isRoutedMelhoresGuide, FOGAO_5_BOCAS_RANKING_HREF } from '../../data/melhoresListing';
+import { findEntry } from '../../data/editorialContent';
+import Cooktop5BocasJustificativas from '../../components/Cooktop5BocasJustificativas.astro';
 
 const guideHeroPicture = picturePropsFrom(GUIDE_PAGE_HERO);
 
@@ -63,6 +65,7 @@ export async function getStaticPaths() {
 
 const { guide } = Astro.props;
 
+const isCooktopGuide = guide.id === 'melhor-cooktop-5-bocas';
 const showCommercialBlock = isCommercialGuideId(guide.id);
 const commercialGuideId: CommercialGuideId | null = showCommercialBlock
 	? (guide.id as CommercialGuideId)
@@ -71,6 +74,50 @@ const commercialBlock = commercialGuideId ? getCommercialGuideBlock(commercialGu
 /** Destaque do ranking — mesmo objeto dos cards (`topProducts` + `featured`). */
 const featuredHeroProduct = commercialBlock ? getFeaturedCommercialProduct(commercialBlock) : null;
 const featuredHeroMlCtaLabel = featuredHeroProduct ? getMercadoLivreCtaLabel(featuredHeroProduct) : null;
+
+const COOKTOP_FAMILY_EXCLUDE = [
+	`/melhores/${guide.id}`,
+	`/melhores/${guide.id}/`,
+	'/melhores/melhor-fogao-4-bocas/',
+	'/melhores/melhor-fogao-mesa-de-vidro/',
+	'/melhores/melhor-fogao-5-bocas/',
+	FOGAO_5_BOCAS_RANKING_HREF,
+	'/como-escolher-fogao-4-bocas/',
+	'/como-escolher-fogao-5-bocas/',
+	'/como-escolher-fogao-mesa-de-vidro/',
+	'/fogao-4-bocas-custo-beneficio/',
+	'/fogao-5-bocas-custo-beneficio/',
+	'/comparativo-fogao-4-vs-5-bocas/',
+	'/brastemp-bfs5ncr-vale-a-pena/',
+	'/review-fogao-4-bocas-consul/',
+	'/review-fogao-4-bocas-electrolux/',
+	'/review-fogao-mesa-de-vidro-consul/',
+	'/fogao-atlas-e-bom/',
+	'/review-fogao-5-bocas-brastemp/',
+	'/review-fogao-5-bocas-consul/',
+	'/review-fogao-5-bocas-electrolux/',
+	'/blog/fogao-mesa-de-vidro-ou-inox/',
+	'/blog/review-fogao-com-mesa-de-vidro/',
+	'/blog/fogao-mesa-de-vidro-seguro/',
+	'/blog/fogao-4-bocas-ainda-vale-a-pena/',
+	'/blog/melhor-fogao-com-forno-duplo/',
+];
+
+const cooktopRelated = [
+	findEntry((e) => e.href === '/blog/fogao-5-bocas-reduz-espaco-cozinha/'),
+	findEntry((e) => e.href === '/blog/guia-fogao-embutir-ou-de-piso/'),
+].filter((e): e is NonNullable<typeof e> => e != null);
+
+const recExcludePaths = isCooktopGuide
+	? COOKTOP_FAMILY_EXCLUDE
+	: [`/melhores/${guide.id}`, `/melhores/${guide.id}/`];
+const smartExcludePaths = isCooktopGuide
+	? [
+			...COOKTOP_FAMILY_EXCLUDE,
+			'/blog/fogao-5-bocas-reduz-espaco-cozinha/',
+			'/blog/guia-fogao-embutir-ou-de-piso/',
+		]
+	: recExcludePaths;
 
 type MdContent = Awaited<ReturnType<typeof render>>['Content'];
 let IntroContent: MdContent | null = null;
@@ -116,7 +163,9 @@ const coverAlt = guide.data.coverAlt ?? optimizedHero?.alt ?? guide.data.title;
 const cover = guide.data.coverImage;
 const ogImage = cover
 	? new URL(cover.replace(/^\//, ''), site).href
-	: new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).href;
+	: isCooktopGuide
+		? undefined
+		: new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).href;
 
 const hubLabel = 'Guias de Compra';
 const orgId = `${site.href}#organization`;
@@ -148,14 +197,14 @@ const graph: Record<string, unknown>[] = [
 		name: `${guide.data.title} | Casa Prática Eletro`,
 		description: guide.data.description,
 		mainEntity: { '@id': articleId },
-		primaryImageOfPage: { '@type': 'ImageObject', url: ogImage },
+		...(ogImage ? { primaryImageOfPage: { '@type': 'ImageObject', url: ogImage } } : {}),
 	},
 	{
 		'@type': 'Article',
 		'@id': articleId,
 		headline,
 		description: guide.data.description,
-		image: [ogImage],
+		...(ogImage ? { image: [ogImage] } : {}),
 		author: { '@id': orgId },
 		publisher: { '@id': orgId },
 		datePublished: guide.data.pubDate.toISOString(),
@@ -187,8 +236,7 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 		title: `${guide.data.title} | Casa Prática Eletro`,
 		description: guide.data.description,
 		url: canonical,
-		image: ogImage,
-		imageAlt: coverAlt,
+		...(ogImage ? { image: ogImage, imageAlt: coverAlt } : {}),
 		type: 'article',
 		publishedTime: guide.data.pubDate.toISOString(),
 		modifiedTime: (guide.data.updatedDate ?? guide.data.pubDate).toISOString(),
@@ -211,7 +259,7 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 			]}
 		/>
 		{
-			showCommercialBlock && commercialBlock && (optimizedHero || cover) ? (
+			showCommercialBlock && commercialBlock ? (
 				<header class="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen border-b border-white/10 px-4 pb-10 sm:px-6 lg:px-10 xl:px-14">
 					<div class="mx-auto flex max-w-7xl flex-col gap-8 lg:flex-row lg:items-stretch lg:gap-12">
 						<div class="min-w-0 flex-1 lg:flex lg:flex-col lg:justify-center lg:py-2">
@@ -270,6 +318,8 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 								) : null}
 							</p>
 						</div>
+						{
+							optimizedHero || cover ? (
 						<figure
 							class:list={[
 								'order-first w-full shrink-0 overflow-hidden rounded-2xl ring-1 ring-white/10 lg:order-none',
@@ -313,6 +363,8 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 								}
 							</div>
 						</figure>
+							) : null
+						}
 					</div>
 				</header>
 			) : (
@@ -454,7 +506,7 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 						{/* Justificativas + trecho editorial: mesma margem esquerda (shell 72rem). */}
 						<div class="ctx-module ctx-module--justificativas">
 							<div class="ctx-module__inner">
-								<ModuleJustificativas />
+								{isCooktopGuide ? <Cooktop5BocasJustificativas /> : <ModuleJustificativas />}
 							</div>
 						</div>
 						<div class="ctx-module ctx-module--prose-start">
@@ -543,16 +595,21 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 						<SmartRecommendations
 							class="mt-0"
 							currentPath={Astro.url.pathname}
-							excludePaths={[`/melhores/${guide.id}`, `/melhores/${guide.id}/`]}
-							heading="Próximos passos editoriais"
+							excludePaths={smartExcludePaths}
+							heading={isCooktopGuide ? 'Leituras que ajudam na escolha' : 'Próximos passos editoriais'}
 						/>
 						<RelatedContent
 							class="mt-[4.5rem]"
 							currentPath={Astro.url.pathname}
-							excludePaths={[`/melhores/${guide.id}`, `/melhores/${guide.id}/`]}
+							excludePaths={recExcludePaths}
+							items={isCooktopGuide ? cooktopRelated : undefined}
 							eyebrow="Veja também"
 							title="Leituras relacionadas"
-							subtitle="Continue no mesmo cluster — guias, comparativos e reviews conectados a este tema."
+							subtitle={
+								isCooktopGuide
+									? 'Ainda em dúvida entre cooktop na bancada e fogão com forno? Estes dois textos mostram a diferença.'
+									: 'Continue no mesmo cluster — guias, comparativos e reviews conectados a este tema.'
+							}
 						/>
 					</div>
 				</div>

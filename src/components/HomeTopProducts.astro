@@ -87,6 +87,7 @@ const products = guideBlock?.topProducts ?? homeProducts;
 const sectionId = isGuideEmbed ? 'guia-comercial-produtos' : 'top-produtos';
 /** Âncora de justificativas na própria página — fallback quando não há review do SKU. */
 const justificativaHref = guideBlock?.reviewPathPrefix;
+const productNoun = guideBlock?.productNoun ?? 'fogão';
 
 const badgeToneClass: Record<ProductBadgeTone, string> = {
 	emerald:
@@ -111,20 +112,20 @@ function productAnalysisLink(product: CommercialProduct): {
 		return {
 			href: reviewUrl,
 			label: 'Ver análise completa',
-			ariaLabel: `Ver análise completa do fogão ${product.name}`,
+			ariaLabel: `Ver análise completa do ${productNoun} ${product.name}`,
 		};
 	}
 	if (justificativaHref) {
 		return {
 			href: justificativaHref,
 			label: 'Ver justificativa do ranking',
-			ariaLabel: `Ver justificativa do ranking para o fogão ${product.name} nesta página`,
+			ariaLabel: `Ver justificativa do ranking para o ${productNoun} ${product.name} nesta página`,
 		};
 	}
 	return {
 		href: `/review-fogao-5-bocas-${product.reviewSlug}/`,
 		label: 'Ver análise completa',
-		ariaLabel: `Ver análise completa do fogão ${product.name}`,
+		ariaLabel: `Ver análise completa do ${productNoun} ${product.name}`,
 	};
 }
 ---
@@ -259,7 +260,7 @@ function productAnalysisLink(product: CommercialProduct): {
 												]}
 												target="_blank"
 												rel="noopener noreferrer nofollow sponsored"
-												aria-label={`Ver preço e disponibilidade do fogão ${p.name} no Mercado Livre — abre em nova aba (link patrocinado)`}
+												aria-label={`Ver preço e disponibilidade do ${productNoun} ${p.name} no Mercado Livre — abre em nova aba (link patrocinado)`}
 												{...mlAffiliateAttrs(p.productId, 'product_card')}
 											>
 												<span class="inline-flex items-center gap-1.5">
@@ -273,7 +274,7 @@ function productAnalysisLink(product: CommercialProduct): {
 													class="btn-secondary-premium w-full px-5 py-3.5 text-[0.72rem] sm:text-[0.72rem]"
 													target="_blank"
 													rel="noopener noreferrer nofollow sponsored"
-													aria-label={`Ver oferta do fogão ${p.name} na Shopee — abre em nova aba (link patrocinado)`}
+													aria-label={`Ver oferta do ${productNoun} ${p.name} na Shopee — abre em nova aba (link patrocinado)`}
 													{...shopeeAffiliateAttrs(p.productId, 'product_card')}
 												>
 													<span aria-hidden="true">👉</span>
@@ -424,7 +425,7 @@ function productAnalysisLink(product: CommercialProduct): {
 												]}
 												target="_blank"
 												rel="noopener noreferrer nofollow sponsored"
-												aria-label={`Ver preço e disponibilidade do fogão ${p.name} no Mercado Livre — abre em nova aba (link patrocinado)`}
+												aria-label={`Ver preço e disponibilidade do ${productNoun} ${p.name} no Mercado Livre — abre em nova aba (link patrocinado)`}
 												{...mlAffiliateAttrs(p.productId, 'product_card')}
 											>
 												<span class="inline-flex items-center gap-1.5">
@@ -438,7 +439,7 @@ function productAnalysisLink(product: CommercialProduct): {
 													class="btn-secondary-premium w-full px-5 py-3.5 text-[0.72rem] sm:text-[0.72rem]"
 													target="_blank"
 													rel="noopener noreferrer nofollow sponsored"
-													aria-label={`Ver oferta do fogão ${p.name} na Shopee — abre em nova aba (link patrocinado)`}
+													aria-label={`Ver oferta do ${productNoun} ${p.name} na Shopee — abre em nova aba (link patrocinado)`}
 													{...shopeeAffiliateAttrs(p.productId, 'product_card')}
 												>
 													<span aria-hidden="true">👉</span>
