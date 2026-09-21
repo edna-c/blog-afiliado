@@ -11,6 +11,7 @@ import { Picture } from 'astro:assets';
 import melhoresFogoes5BocasHero from '../../assets/images/heroes/melhores-fogoes-5-bocas-hero.webp';
 import melhorFogao4BocasHero from '../../assets/images/heroes/melhor-fogao-4-bocas-2026.webp';
 import melhorFogaoMesaDeVidroHero from '../../assets/images/heroes/melhor-fogao-mesa-de-vidro-2026.webp';
+import melhorCooktop4BocasHero from '../../assets/images/heroes/melhor-cooktop-4-bocas-hero.webp';
 import { PRODUCT_IMAGE_REVIEW } from '../../data/productImages';
 import { GUIDE_PAGE_HERO, picturePropsFrom } from '../../data/editorialImageSpecs';
 import {
@@ -25,6 +26,7 @@ import { readingTimeLabel } from '../../utils/readingTime';
 import { isRoutedMelhoresGuide, FOGAO_5_BOCAS_RANKING_HREF } from '../../data/melhoresListing';
 import { findEntry } from '../../data/editorialContent';
 import Cooktop5BocasJustificativas from '../../components/Cooktop5BocasJustificativas.astro';
+import Cooktop4BocasJustificativas from '../../components/Cooktop4BocasJustificativas.astro';
 
 const guideHeroPicture = picturePropsFrom(GUIDE_PAGE_HERO);
 
@@ -35,7 +37,8 @@ const optimizedHeroes: Record<
 		src:
 			| typeof melhoresFogoes5BocasHero
 			| typeof melhorFogao4BocasHero
-			| typeof melhorFogaoMesaDeVidroHero;
+			| typeof melhorFogaoMesaDeVidroHero
+			| typeof melhorCooktop4BocasHero;
 		alt: string;
 	}
 > = {
@@ -51,6 +54,10 @@ const optimizedHeroes: Record<
 		src: melhorFogaoMesaDeVidroHero,
 		alt: 'Fogão Consul com mesa de vidro preta em cozinha planejada — capa do ranking 2026',
 	},
+	'melhor-cooktop-4-bocas': {
+		src: melhorCooktop4BocasHero,
+		alt: 'Cooktop 4 bocas a gás com mesa de vidro preta instalado em bancada de cozinha',
+	},
 };
 
 export async function getStaticPaths() {
@@ -65,7 +72,8 @@ export async function getStaticPaths() {
 
 const { guide } = Astro.props;
 
-const isCooktopGuide = guide.id === 'melhor-cooktop-5-bocas';
+const COOKTOP_COMMERCIAL_IDS = new Set(['melhor-cooktop-5-bocas', 'melhor-cooktop-4-bocas']);
+const isCooktopGuide = COOKTOP_COMMERCIAL_IDS.has(guide.id);
 const showCommercialBlock = isCommercialGuideId(guide.id);
 const commercialGuideId: CommercialGuideId | null = showCommercialBlock
 	? (guide.id as CommercialGuideId)
@@ -78,6 +86,8 @@ const featuredHeroMlCtaLabel = featuredHeroProduct ? getMercadoLivreCtaLabel(fea
 const COOKTOP_FAMILY_EXCLUDE = [
 	`/melhores/${guide.id}`,
 	`/melhores/${guide.id}/`,
+	'/melhores/melhor-cooktop-4-bocas/',
+	'/melhores/melhor-cooktop-5-bocas/',
 	'/melhores/melhor-fogao-4-bocas/',
 	'/melhores/melhor-fogao-mesa-de-vidro/',
 	'/melhores/melhor-fogao-5-bocas/',
@@ -104,6 +114,12 @@ const COOKTOP_FAMILY_EXCLUDE = [
 ];
 
 const cooktopRelated = [
+	findEntry((e) =>
+		e.href ===
+		(guide.id === 'melhor-cooktop-4-bocas'
+			? '/melhores/melhor-cooktop-5-bocas/'
+			: '/melhores/melhor-cooktop-4-bocas/'),
+	),
 	findEntry((e) => e.href === '/blog/fogao-5-bocas-reduz-espaco-cozinha/'),
 	findEntry((e) => e.href === '/blog/guia-fogao-embutir-ou-de-piso/'),
 ].filter((e): e is NonNullable<typeof e> => e != null);
@@ -506,7 +522,13 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 						{/* Justificativas + trecho editorial: mesma margem esquerda (shell 72rem). */}
 						<div class="ctx-module ctx-module--justificativas">
 							<div class="ctx-module__inner">
-								{isCooktopGuide ? <Cooktop5BocasJustificativas /> : <ModuleJustificativas />}
+								{guide.id === 'melhor-cooktop-5-bocas' ? (
+									<Cooktop5BocasJustificativas />
+								) : guide.id === 'melhor-cooktop-4-bocas' ? (
+									<Cooktop4BocasJustificativas />
+								) : (
+									<ModuleJustificativas />
+								)}
 							</div>
 						</div>
 						<div class="ctx-module ctx-module--prose-start">
@@ -607,7 +629,7 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 							title="Leituras relacionadas"
 							subtitle={
 								isCooktopGuide
-									? 'Ainda em dúvida entre cooktop na bancada e fogão com forno? Estes dois textos mostram a diferença.'
+									? 'Se a dúvida é o número de bocas, a bancada ou um fogão com forno, estes textos fecham o próximo passo.'
 									: 'Continue no mesmo cluster — guias, comparativos e reviews conectados a este tema.'
 							}
 						/>

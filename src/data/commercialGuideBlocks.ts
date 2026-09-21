@@ -5,7 +5,8 @@ export type CommercialGuideId =
 	| 'melhor-fogao-5-bocas'
 	| 'melhor-fogao-4-bocas'
 	| 'melhor-fogao-mesa-de-vidro'
-	| 'melhor-cooktop-5-bocas';
+	| 'melhor-cooktop-5-bocas'
+	| 'melhor-cooktop-4-bocas';
 
 /** Fallback único para rótulo do CTA ML quando o produto não define `mlCtaText`. */
 export const DEFAULT_MERCADO_LIVRE_CTA_TEXT = 'VER PREÇO NO MERCADO LIVRE';
@@ -615,11 +616,165 @@ const melhorCooktop5Bocas: CommercialGuideBlock = {
 	],
 };
 
+const melhorCooktop4Bocas: CommercialGuideBlock = {
+	productNoun: 'cooktop',
+	comparisonColumns: ['burners', 'surface', 'grates', 'flame', 'ignition', 'dimensions', 'bestFor'],
+	topProductsCopy: {
+		eyebrow: 'Escolha rápida',
+		heading: 'Três cooktops 4 bocas para comparar',
+		introParagraphs: [
+			'Alguns links podem gerar comissão para o site, sem custo para você. Os preços mudam conforme loja, estoque e promoção — vale conferir na hora da compra.',
+			'Dois têm mesa de vidro. O terceiro tem mesa de alumínio e grades de ferro fundido. A largura também não é a mesma.',
+		],
+		ctaParagraph:
+			'Os preços mudam. Vale <strong class="font-semibold text-on-ink-body">conferir na loja</strong> na hora de comprar.',
+	},
+	comparisonCopy: {
+		heading: 'O que muda entre estes três cooktops 4 bocas',
+		introParagraphs: [
+			'O que muda de verdade: o tampo, a medida da mesa e o tipo de grade.',
+			'Os três têm quatro bocas e acendimento superautomático. Não é aí que eles se diferenciam.',
+		],
+		footerCta: 'Cada um serve a um jeito de bancada e de panela.',
+	},
+	reviewPathPrefix: '/melhores/melhor-cooktop-4-bocas/#analises-detalhadas',
+	heroRanking: [
+		{ toneClass: 'text-pop', text: '🥇 Electrolux KE4GR — equilíbrio no vidro, 8.400 W' },
+		{ toneClass: 'text-cta', text: '🥈 Fischer Fit Line 4 bocas — medida mais compacta (55 cm)' },
+		{ toneClass: 'text-amber-300', text: '🥉 Mueller MCG4BK — alumínio e grades de ferro fundido' },
+	],
+	moduleIds: [
+		'_melhor-cooktop-4-bocas-justificativas',
+		'_melhor-cooktop-4-bocas-como-avaliamos',
+		'_melhor-cooktop-4-bocas-perfil',
+		'_melhor-cooktop-4-bocas-antes',
+		'_melhor-cooktop-4-bocas-aprofundar',
+	],
+	topProducts: [
+		{
+			name: 'Electrolux KE4GR',
+			badge: '🥇 Equilíbrio no vidro',
+			badgeTone: 'emerald',
+			basePrice: 'Confira na loja',
+			benefits: [
+				'Mesa de vidro temperado e acendimento superautomático',
+				'1 queimador rápido e 3 semirrápidos (8.400 W no total)',
+				'Grades de aço esmaltado fosco com quatro apoios',
+				'Queimadores selados e botões removíveis',
+			],
+			socialProof: '⭐ Para quem quer mesa de vidro no dia a dia',
+			reviewSlug: 'electrolux-ke4gr',
+			productId: 'electroluxKE4GR',
+			mercadoLivreUrl: produtos.electroluxKE4GR.ml,
+			shopeeUrl: produtos.electroluxKE4GR.shopee,
+			mlCtaText: DEFAULT_MERCADO_LIVRE_CTA_TEXT,
+			shopeeCtaText: DEFAULT_SHOPEE_CTA_TEXT,
+			image: '/images/melhores/melhor-cooktop-4-bocas/electrolux-ke4gr.webp',
+			imageAlt: 'Cooktop Electrolux KE4GR 4 bocas com mesa de vidro',
+			featured: true,
+		},
+		{
+			name: 'Fischer Fit Line 4 bocas',
+			badge: '🥈 Medida mais compacta',
+			badgeTone: 'pop',
+			basePrice: 'Confira na loja',
+			benefits: [
+				'55 cm de largura — o mais estreito dos três',
+				'Mesa de vidro temperado e acendimento superautomático',
+				'Trempes Iron com quatro pontos de apoio',
+				'Nicho informado em 51 × 36 cm',
+			],
+			socialProof: '⭐ Para quem tem um nicho menor na bancada',
+			reviewSlug: 'fischer-fit-line',
+			productId: 'fischerFitLine4Bocas',
+			mercadoLivreUrl: produtos.fischerFitLine4Bocas.ml,
+			shopeeUrl: produtos.fischerFitLine4Bocas.shopee,
+			mlCtaText: DEFAULT_MERCADO_LIVRE_CTA_TEXT,
+			shopeeCtaText: DEFAULT_SHOPEE_CTA_TEXT,
+			image: '/images/melhores/melhor-cooktop-4-bocas/fischer-fit-line-4-bocas.webp',
+			imageAlt: 'Cooktop Fischer Fit Line 4 bocas com Trempe Iron',
+		},
+		{
+			name: 'Mueller MCG4BK',
+			badge: '🥉 Alumínio e ferro fundido',
+			badgeTone: 'amber',
+			basePrice: 'Confira na loja',
+			benefits: [
+				'Mesa de alumínio anodizado — não é vidro',
+				'Grades de ferro fundido com seis pontos de apoio',
+				'Ultra Chama 2.400 W e boca auxiliar 1.000 W',
+				'Acendimento superautomático e botões removíveis',
+			],
+			socialProof: '✔ Para quem prefere alumínio e grades de ferro fundido',
+			reviewSlug: 'mueller-mcg4bk',
+			productId: 'muellerMCG4BK',
+			mercadoLivreUrl: produtos.muellerMCG4BK.ml,
+			shopeeUrl: produtos.muellerMCG4BK.shopee,
+			mlCtaText: DEFAULT_MERCADO_LIVRE_CTA_TEXT,
+			shopeeCtaText: DEFAULT_SHOPEE_CTA_TEXT,
+			image: '/images/melhores/melhor-cooktop-4-bocas/mueller-mcg4bk.webp',
+			imageAlt: 'Cooktop Mueller MCG4BK 4 bocas com mesa de alumínio e grades de ferro fundido',
+		},
+	],
+	comparisonRows: [
+		{
+			badge: 'Mesa de vidro e boa potência',
+			recommended: true,
+			model: 'Electrolux KE4GR',
+			price: 'Confira na loja',
+			rating: '—',
+			bestFor: 'Vidro no dia a dia',
+			slug: 'electrolux-ke4gr',
+			productId: 'electroluxKE4GR',
+			links: produtos.electroluxKE4GR,
+			burners: '4',
+			surface: 'Vidro temperado',
+			grates: 'Aço esmaltado fosco',
+			flame: '1 rápido 3.000 W + 3 semirrápidos 1.800 W',
+			ignition: 'Superautomático',
+			dimensions: '60 × 45 cm (L × P)',
+		},
+		{
+			badge: 'Medida mais compacta',
+			model: 'Fischer Fit Line 4 bocas',
+			price: 'Confira na loja',
+			rating: '—',
+			bestFor: 'Bancada mais estreita',
+			slug: 'fischer-fit-line',
+			productId: 'fischerFitLine4Bocas',
+			links: produtos.fischerFitLine4Bocas,
+			burners: '4',
+			surface: 'Vidro temperado',
+			grates: 'Trempe Iron (aço e ferro)',
+			flame: '1 rápido 3.000 W + 3 semirrápidos 1.750 W',
+			ignition: 'Superautomático',
+			dimensions: '55 × 46 cm (L × P)',
+		},
+		{
+			badge: 'Alumínio e ferro',
+			model: 'Mueller MCG4BK',
+			price: 'Confira na loja',
+			rating: '—',
+			bestFor: 'Alumínio e ferro fundido',
+			slug: 'mueller-mcg4bk',
+			productId: 'muellerMCG4BK',
+			links: produtos.muellerMCG4BK,
+			burners: '4',
+			surface: 'Alumínio anodizado',
+			grates: 'Ferro fundido',
+			flame: 'Ultra Chama 2.400 W, semirrápido 1.700 W, auxiliar 1.000 W',
+			ignition: 'Superautomático',
+			dimensions: '58,5 × 44 cm (L × P)',
+		},
+	],
+};
+
 export const commercialGuideBlocks: Record<CommercialGuideId, CommercialGuideBlock> = {
 	'melhor-fogao-5-bocas': melhorFogao5Bocas,
 	'melhor-fogao-4-bocas': melhorFogao4Bocas,
 	'melhor-fogao-mesa-de-vidro': melhorFogaoMesaDeVidro,
 	'melhor-cooktop-5-bocas': melhorCooktop5Bocas,
+	'melhor-cooktop-4-bocas': melhorCooktop4Bocas,
 };
 
 export function getCommercialGuideBlock(guideId: CommercialGuideId): CommercialGuideBlock {
@@ -658,6 +813,7 @@ const EXISTING_REVIEW_URL_BY_GUIDE_SLUG: Record<CommercialGuideId, Partial<Recor
 		'consul-cfo4var': '/review-fogao-mesa-de-vidro-consul/',
 	},
 	'melhor-cooktop-5-bocas': {},
+	'melhor-cooktop-4-bocas': {},
 };
 
 /** URL da review do SKU quando a página já existe; senão `null` (usar âncora de justificativa). */

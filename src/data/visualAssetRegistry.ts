@@ -494,6 +494,15 @@ export const VISUAL_GAPS: VisualGap[] = [
 		category: 'comercial',
 		reusePotential: 'baixo',
 	},
+	{
+		id: 'gap-packshot-cooktop-4-bocas',
+		priority: 'ALTA',
+		url: '/melhores/melhor-cooktop-4-bocas/',
+		need: 'Comercial: 3 packshots oficiais nos cards (Electrolux KE4GR, Fischer Fit Line, Mueller MCG4BK). Hero sem foto, como o cooktop 5 bocas.',
+		status: 'open',
+		category: 'comercial',
+		reusePotential: 'baixo',
+	},
 ];
 
 const CATEGORY_ORDER: readonly VisualCategory[] = ['tecnico', 'editorial', 'comercial'];

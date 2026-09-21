@@ -104,7 +104,7 @@ export const produtos = {
 		shopee: 'https://s.shopee.com.br/2BEzKXFFmt',
 		shopeeGeneratedByPanel: true,
 	},
-	/** Cooktop 4 bocas — inventário para expansão futura (fora do ranking de 5 bocas) */
+	/** Cooktop 4 bocas — ranking /melhores/melhor-cooktop-4-bocas */
 	electroluxKE4GR: {
 		ml: 'https://meli.la/1XaSZcB',
 		mlGeneratedByPanel: true,

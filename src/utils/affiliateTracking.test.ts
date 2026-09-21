@@ -15,6 +15,8 @@ describe('resolvePageType', () => {
 		assert.equal(resolvePageType('/melhores/'), 'hub');
 		assert.equal(resolvePageType('/melhores/melhor-cooktop-5-bocas/'), 'ranking');
 		assert.equal(resolvePageType('/melhores/melhor-cooktop-5-bocas'), 'ranking');
+		assert.equal(resolvePageType('/melhores/melhor-cooktop-4-bocas/'), 'ranking');
+		assert.equal(resolvePageType('/melhores/melhor-cooktop-4-bocas'), 'ranking');
 		assert.equal(resolvePageType('/review-fogao-5-bocas-brastemp/'), 'review');
 		assert.equal(resolvePageType('/brastemp-bfs5ncr-vale-a-pena/'), 'review');
 		assert.equal(resolvePageType('/comparativo-fogao-4-vs-5-bocas/'), 'comparison');
@@ -46,6 +48,8 @@ describe('isProductId', () => {
 		assert.equal(isProductId('brastempBDS75AE'), true);
 		assert.equal(isProductId('itatiaiaEssencial5Bocas'), true);
 		assert.equal(isProductId('electroluxKE4GR'), true);
+		assert.equal(isProductId('fischerFitLine4Bocas'), true);
+		assert.equal(isProductId('muellerMCG4BK'), true);
 		assert.equal(isProductId('brastemp'), false);
 		assert.equal(isProductId(null), false);
 	});

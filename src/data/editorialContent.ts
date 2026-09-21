@@ -69,6 +69,19 @@ export function canonPath(path: string): string {
  */
 export const EDITORIAL_POOL: EditorialEntry[] = [
 	{
+		href: '/melhores/melhor-cooktop-4-bocas/',
+		title: 'Melhor cooktop 4 bocas 2026 (ranking para comprar)',
+		description:
+			'Três cooktops 4 bocas a gás: Electrolux KE4GR, Fischer Fit Line e Mueller MCG4BK — mesa, medida, grade e onde ver o preço.',
+		kind: 'Guia',
+		flow: 2,
+		editorialLabel: 'Ranking',
+		topics: ['cooktop', 'compra-segura'],
+		anchorText: 'ranking de cooktop 4 bocas',
+		teaser: 'três cooktops 4 bocas para decidir agora',
+		weight: 8,
+	},
+	{
 		href: '/melhores/melhor-cooktop-5-bocas/',
 		title: 'Melhor cooktop 5 bocas 2026 (ranking para comprar)',
 		description:
