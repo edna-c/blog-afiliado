@@ -16,6 +16,7 @@ import reduzEspacoArticleHero from '../../assets/images/blog/guias/fogao-5-bocas
 import fogao4BocasArticleHero from '../../assets/images/blog/guias/fogao-4-bocas-ainda-vale-a-pena-article-hero.webp';
 import vidroOuInoxArticleHero from '../../assets/images/blog/comparativos/fogao-mesa-de-vidro-ou-inox-article-hero.webp';
 import melhorFogaoFornoDuploArticleHero from '../../assets/images/blog/guias/melhor-fogao-com-forno-duplo-article-hero.png';
+import medidasCooktopArticleHero from '../../assets/images/blog/guias/medidas-de-cooktop-article-hero.webp';
 import { findEntry, type EditorialEntry } from '../../data/editorialContent';
 import { BLOG_ARTICLE_HERO, picturePropsFrom } from '../../data/editorialImageSpecs';
 
@@ -76,6 +77,13 @@ const articleHeroes: Record<string, ArticleHeroEntry> = {
 		caption:
 			'Por fora, ele segue o formato tradicional de um fogão, mas tem dois fornos no mesmo aparelho.',
 	},
+	'medidas-de-cooktop': {
+		src: medidasCooktopArticleHero,
+		alt: 'Cooktop de quatro bocas de vidro preto instalado em bancada de pedra clara, cozinha contemporânea com marcenaria de madeira e luz natural.',
+		objectPosition: 'center',
+		caption:
+			'Cooktop de quatro bocas embutido na bancada — a mesa de vidro fica apoiada sobre a pedra.',
+	},
 };
 
 export async function getStaticPaths() {
@@ -130,6 +138,10 @@ const editorialPairings: Record<string, string[]> = {
 		'/comparativo-fogao-4-vs-5-bocas/',
 		'/blog/fogao-5-bocas-reduz-espaco-cozinha/',
 	],
+	'medidas-de-cooktop': [
+		'/melhores/melhor-cooktop-4-bocas/',
+		'/melhores/melhor-cooktop-5-bocas/',
+	],
 };
 
 /** CTA comercial do rodapé: 1 hub por intenção. Ranking 5 bocas = home. */
@@ -176,6 +188,27 @@ const isFourBurnerVale = post.id === 'fogao-4-bocas-ainda-vale-a-pena';
 const isEmbutirPiso = post.id === 'guia-fogao-embutir-ou-de-piso';
 const isFornoDuplo = post.id === 'melhor-fogao-com-forno-duplo';
 const isVidroOuInox = post.id === 'fogao-mesa-de-vidro-ou-inox';
+const isMedidasCooktop = post.id === 'medidas-de-cooktop';
+const medidasCooktopRelatedExclude = isMedidasCooktop
+	? [
+			'/melhores/melhor-cooktop-4-bocas/',
+			'/melhores/melhor-cooktop-5-bocas/',
+			'/blog/guia-fogao-embutir-ou-de-piso/',
+			'/blog/fogao-5-bocas-reduz-espaco-cozinha/',
+			'/brastemp-bfs5ncr-vale-a-pena/',
+			'/#top-produtos',
+			'/melhores/melhor-fogao-4-bocas/',
+			'/melhores/melhor-fogao-mesa-de-vidro/',
+			'/melhores/melhor-fogao-5-bocas/',
+		]
+	: [];
+const medidasCooktopRelatedItems: EditorialEntry[] = isMedidasCooktop
+	? (
+			['/blog/fogao-5-bocas-reduz-espaco-cozinha/', '/blog/guia-fogao-embutir-ou-de-piso/'] as const
+		)
+			.map((href) => findEntry((e) => e.href === href))
+			.filter(Boolean) as EditorialEntry[]
+	: [];
 /** Satélites só de vidro + destinos já ligados no fecho — para o bloco não puxar o artigo de volta ao cluster de vidro. */
 const vidroOuInoxRelatedExclude = isVidroOuInox
 	? [
@@ -385,6 +418,8 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 							? 'Se ainda restou outra decisão'
 						: isEspacoCincoBocas
 							? 'Depois de conferir o espaço'
+						: isMedidasCooktop
+							? 'Depois de conferir as medidas'
 						: isEmbutirPiso
 							? 'Outras decisões úteis'
 						: isFornoDuplo
@@ -403,7 +438,7 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 		}
 
 		{
-			!isPilotMesaVidro && !isFourBurnerVale && !isEmbutirPiso && !isFornoDuplo && !isVidroOuInox ? (
+			!isPilotMesaVidro && !isFourBurnerVale && !isEmbutirPiso && !isFornoDuplo && !isVidroOuInox && !isMedidasCooktop ? (
 				<p class="mt-10 rounded-xl border border-white/10 bg-brand-900/30 px-4 py-3 text-sm leading-relaxed text-on-ink-muted sm:px-5">
 					{isEspacoCincoBocas ? (
 						<>
@@ -448,14 +483,17 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 				`/blog/${post.id}/`,
 				...(isFornoDuplo ? ['/#top-produtos'] : []),
 				...vidroOuInoxRelatedExclude,
+				...medidasCooktopRelatedExclude,
 			]}
-			items={isVidroOuInox ? vidroOuInoxRelatedItems : undefined}
+			items={isVidroOuInox ? vidroOuInoxRelatedItems : isMedidasCooktop ? medidasCooktopRelatedItems : undefined}
 			eyebrow="Veja também"
 			title="Leituras relacionadas"
 			subtitle={isPilotMesaVidro
 				? 'Outros textos sobre mesa de vidro, se ainda restou alguma dúvida.'
 				: isVidroOuInox
 					? 'Outras decisões de fogão, se ainda restou alguma dúvida além do tipo de tampo.'
+				: isMedidasCooktop
+					? 'Outros textos sobre espaço, instalação e escolha de cooktop.'
 				: 'Mais textos sobre o mesmo tema.'}
 		/>
 
@@ -468,12 +506,15 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 				...(isPilotMesaVidro ? ['/melhores/melhor-fogao-mesa-de-vidro/'] : []),
 				...(isFornoDuplo ? ['/#top-produtos'] : []),
 				...vidroOuInoxRelatedExclude,
+				...medidasCooktopRelatedExclude,
 			]}
 			heading="Continuar a leitura"
 			subtitle={isPilotMesaVidro
 				? 'Se a mesa de vidro ainda levanta uma dúvida, estas leituras ajudam a fechar o recorte — sem pressa de escolher modelo.'
 				: isVidroOuInox
 					? 'Se a dúvida agora for tamanho, instalação ou um modelo, estas leituras ajudam.'
+				: isMedidasCooktop
+					? 'Se a dúvida agora for o modelo ou o tipo de instalação, estas leituras ajudam.'
 				: undefined}
 		/>
 		<p class="mt-12 border-t border-white/10 pt-8 text-sm text-on-ink-muted">

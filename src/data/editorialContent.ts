@@ -390,6 +390,19 @@ export const EDITORIAL_POOL: EditorialEntry[] = [
 		weight: 7,
 	},
 	{
+		href: '/blog/medidas-de-cooktop/',
+		title: 'Medidas de cooktop: como medir o nicho antes de comprar',
+		description:
+			'A medida externa do cooktop não é a do nicho. Como medir a bancada e conferir o recorte do modelo.',
+		kind: 'Guia',
+		flow: 2,
+		editorialLabel: 'Guia · Medidas',
+		topics: ['cooktop', 'instalacao', 'cozinha-planejada'],
+		anchorText: 'guia de medidas de cooktop e nicho da bancada',
+		teaser: 'medida externa e recorte não são a mesma coisa',
+		weight: 7,
+	},
+	{
 		href: '/blog/fogao-5-bocas-reduz-espaco-cozinha/',
 		title: 'Fogão 5 bocas reduz o espaço da cozinha?',
 		description:

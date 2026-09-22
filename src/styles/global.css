@@ -506,6 +506,14 @@
 			inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 	}
 
+	.blog-prose.prose :where(.technical-figure img) {
+		max-height: none;
+		margin: 0;
+		border-radius: 0;
+		object-fit: contain;
+		box-shadow: none;
+	}
+
 	/* Legenda editorial imediatamente após a imagem (parágrafo só com ênfase) */
 	.blog-prose.prose :where(p:has(> img) + p > em:only-child) {
 		display: block;
