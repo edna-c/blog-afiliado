@@ -28,33 +28,31 @@ const isGuideEmbed = guideBlock != null;
 const homeProducts: CommercialProduct[] = [
 	{
 		name: 'Electrolux FE5IG',
-		badge: '🥇 Melhor geral',
+		badge: 'Electrolux FE5IG',
 		badgeTone: 'emerald',
 		basePrice: 'Confira na loja',
 		benefits: [
 			'Forno e acabamento no uso diário',
-			'Mesa inox, mais fácil de manter limpa',
+			'Mesa inox',
 			'Bom equilíbrio de bocas para várias panelas',
 		],
-		socialProof: '⭐ Destaque do ranking 2026',
+		socialProof: '',
 		reviewSlug: 'electrolux',
 		productId: 'electroluxFE5IG',
 		mercadoLivreUrl: produtos.electroluxFE5IG.ml,
 		mlCtaText: 'VER PREÇO NO MERCADO LIVRE',
 		image: electroluxCardImage,
 		imageAlt: 'Fogão a gás Electrolux FE5IG PerfectCook cinco bocas em inox com mesa em inox',
-		featured: true,
 	},
 	{
 		name: 'Brastemp BFS5NCR',
-		badge: '💰 Melhor custo-benefício',
+		badge: 'Brastemp BFS5NCR',
 		badgeTone: 'pop',
 		basePrice: 'Confira na loja',
 		benefits: [
 			'Forno e desempenho para a rotina familiar',
-			'Bom equilíbrio entre preço e desempenho',
 		],
-		socialProof: '⭐ Melhor equilíbrio preço/desempenho',
+		socialProof: '',
 		reviewSlug: 'brastemp',
 		productId: 'brastempBFS5NCR',
 		mercadoLivreUrl: produtos.brastempBFS5NCR.ml,
@@ -64,14 +62,13 @@ const homeProducts: CommercialProduct[] = [
 	},
 	{
 		name: 'Consul CFS5NAB',
-		badge: '🔥 Mais acessível',
+		badge: 'Consul CFS5NAB',
 		badgeTone: 'amber',
 		basePrice: 'Confira na loja',
 		benefits: [
-			'5 bocas com orçamento mais contido',
 			'Uso simples, com os recursos essenciais para o dia a dia',
 		],
-		socialProof: '✔ Mais acessível do ranking',
+		socialProof: '',
 		reviewSlug: 'consul',
 		productId: 'consulCFS5NAB',
 		mercadoLivreUrl: produtos.consulCFS5NAB.ml,
@@ -80,7 +77,7 @@ const homeProducts: CommercialProduct[] = [
 		shopeeCtaText: 'VER OFERTA NA SHOPEE',
 		image: consulCardImage,
 		imageVisualScale: 1.065,
-		imageAlt: 'Fogão a gás Consul CFS5NAB cinco bocas em inox com tampa de vidro',
+		imageAlt: 'Fogão a gás Consul CFS5NAB cinco bocas em inox',
 	},
 ];
 const products = guideBlock?.topProducts ?? homeProducts;
@@ -410,7 +407,9 @@ function productAnalysisLink(product: CommercialProduct): {
 										))}
 									</ul>
 
-									<p class="mt-3 text-sm font-semibold text-on-ink-body">{p.socialProof}</p>
+									{p.socialProof ? (
+										<p class="mt-3 text-sm font-semibold text-on-ink-body">{p.socialProof}</p>
+									) : null}
 
 									<div class="mt-auto flex flex-col gap-3 border-t border-white/[0.06] pt-5">
 										<div class="grid grid-cols-1 gap-2.5 sm:grid-cols-2 sm:gap-3">

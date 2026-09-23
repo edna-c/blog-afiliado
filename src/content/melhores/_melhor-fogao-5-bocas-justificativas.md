@@ -15,7 +15,6 @@ A medalha não é por “mais botões”: é por **forno + acabamento** que sust
 
 - Mesa inox e presença visual que aguentam cozinha planejada e rotina pesada
 - Forno com mais recursos úteis no dia a dia do que o anúncio de entrada sugere
-- Ponto fraco real: costuma sair acima do Brastemp — só vale se forno e acabamento forem requisito
 - Se o teto de gasto manda, o ranking aponta para Brastemp ou Consul, não para “quase Electrolux”
 
 <!-- CTAs: produtos.electroluxFE5IG (src/data/products.ts) — Shopee omitido (short link antigo caía em busca) -->
@@ -29,7 +28,7 @@ A medalha não é por “mais botões”: é por **forno + acabamento** que sust
 
 ![Fogão Brastemp BFS5NCR 5 bocas em inox em cozinha moderna.](/images/melhores/melhor-fogao-5-bocas/brastemp-bfs5ncr-hero.webp)
 
-O 2º lugar existe para quem quer **5 bocas de verdade no meio da faixa** — potência e forno sem pagar o topo.
+O 2º lugar existe para quem quer **5 bocas de verdade no meio da faixa** — potência e forno.
 
 - Equilíbrio sólido entre queimadores, forno e preço para família/rotina diária
 - Limpeza e manutenção previsíveis no uso doméstico comum
@@ -46,12 +45,12 @@ O 2º lugar existe para quem quer **5 bocas de verdade no meio da faixa** — po
 
 ### 🔥 Por que o Consul CFS5NAB é a melhor entrada
 
-![Fogão Consul CFS5NAB 5 bocas em inox com tampa de vidro em cozinha moderna.](/images/melhores/melhor-fogao-5-bocas/consul-cfs5nab-hero.webp)
+![Fogão Consul CFS5NAB 5 bocas em inox em cozinha moderna.](/images/melhores/melhor-fogao-5-bocas/consul-cfs5nab-hero.webp)
 
 O 3º lugar é a troca consciente: **entrar em 5 bocas** sem tentar parecer o Electrolux.
 
 - Perfil forte: primeiro 5 bocas / orçamento mais baixo — foco em uso simples e preço
-- Não é “quase Brastemp”: acabamento e pacote de forno ficam atrás de propósito
+- Não é “quase Brastemp”: acabamento fica atrás de propósito
 - Se a cozinha for pequena demais, volte ao [comparativo 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas/) antes de pagar
 
 <!-- CTAs: produtos.consulCFS5NAB (src/data/products.ts) -->

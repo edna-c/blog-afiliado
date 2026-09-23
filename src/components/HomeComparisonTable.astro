@@ -20,37 +20,58 @@ const isGuideEmbed = guideBlock != null;
 
 const homeRows: ComparisonRow[] = [
 	{
-		badge: 'Melhor geral',
-		recommended: true,
+		badge: '',
 		model: 'Electrolux FE5IG',
 		price: 'Confira na loja',
-		rating: '⭐⭐⭐⭐⭐',
-		bestFor: 'Forno + acabamento',
+		rating: '',
+		bestFor: 'Para quem quer mais recursos no forno e Tripla Chama',
 		slug: 'electrolux',
 		productId: 'electroluxFE5IG',
 		links: produtos.electroluxFE5IG,
 	},
 	{
-		badge: 'Custo-benefício',
+		badge: '',
 		model: 'Brastemp BFS5NCR',
 		price: 'Confira na loja',
-		rating: '⭐⭐⭐⭐⭐',
-		bestFor: 'Rotina familiar',
+		rating: '',
+		bestFor: 'Para quem quer 96 L, duas prateleiras e vidro interno removível',
 		slug: 'brastemp',
 		productId: 'brastempBFS5NCR',
 		links: produtos.brastempBFS5NCR,
 	},
 	{
-		badge: 'Mais acessível',
+		badge: '',
 		model: 'Consul CFS5NAB',
 		price: 'Confira na loja',
-		rating: '⭐⭐⭐⭐☆',
-		bestFor: 'Orçamento contido',
+		rating: '',
+		bestFor: 'Para quem quer 96 L, uma prateleira e vidro interno vedado',
 		slug: 'consul',
 		productId: 'consulCFS5NAB',
 		links: produtos.consulCFS5NAB,
 	},
 ];
+
+/** Diferenças confirmadas — só a tabela da Home. O ramo com guideId não lê isto. */
+const homeComparisonFacts = {
+	electroluxFE5IG: {
+		oven: '88,6 L',
+		shelves: '2',
+		doorGlass: 'removível',
+		resources: 'Vapor, cavidade selada e Tripla Chama',
+	},
+	brastempBFS5NCR: {
+		oven: '96 L',
+		shelves: '2',
+		doorGlass: 'removível',
+		resources: 'Forno convencional e 5 bocas',
+	},
+	consulCFS5NAB: {
+		oven: '96 L',
+		shelves: '1',
+		doorGlass: 'vedado',
+		resources: 'Forno convencional e 5 bocas',
+	},
+} as const;
 const rows = guideBlock?.comparisonRows ?? homeRows;
 const sectionId = isGuideEmbed ? 'guia-comercial-comparativo' : 'compare-heading';
 /** Âncora de justificativas — fallback quando não há review do SKU. */
@@ -233,38 +254,34 @@ function rowAnalysisLink(row: ComparisonRow): {
 					Tabela comparativa: melhores fogões 5 bocas
 				</h2>
 				<div class="mt-5 max-w-2xl space-y-4 text-sm leading-relaxed text-on-ink-body">
-					<p>Nota e para quem cada modelo faz mais sentido — lado a lado.</p>
+					<p>Forno, prateleiras e vidro interno da porta, lado a lado.</p>
 				</div>
 				<div class="table-premium-shell mt-8">
-					<table class="table-premium min-w-[720px]">
+					<table class="table-premium min-w-[960px]">
 						<thead>
 							<tr>
 								<th scope="col">Modelo</th>
-								<th scope="col">Avaliação</th>
+								<th scope="col">Forno</th>
+								<th scope="col">Prateleiras</th>
+								<th scope="col">Vidro interno</th>
+								<th scope="col">Recursos</th>
 								<th scope="col">Melhor para</th>
 								<th scope="col">Onde comprar</th>
 							</tr>
 						</thead>
 						<tbody>
 							{
-								rows.map((r, i) => (
-									<tr
-										class:list={[
-											r.recommended
-												? 'border-l-4 border-l-emerald-400 bg-emerald-950/40 ring-2 ring-inset ring-emerald-400/50 shadow-[inset_0_0_0_1px_rgba(52,211,153,0.15)]'
-												: i % 2 === 0
-													? 'bg-ink'
-													: 'bg-brand-900/30',
-										]}
-									>
+								rows.map((r, i) => {
+									const fact = homeComparisonFacts[r.productId as keyof typeof homeComparisonFacts];
+									return (
+									<tr class:list={[i % 2 === 0 ? 'bg-ink' : 'bg-brand-900/30']}>
 										<th scope="row" class="text-left align-top">
-											{r.recommended ? (
-												<p class="mb-2 text-xs font-bold tracking-wide text-pop">⭐ Recomendado</p>
-											) : null}
-											<p class="text-[10px] font-bold uppercase tracking-[0.25em] text-pop">{r.badge}</p>
-											<div class="font-display mt-2 text-base font-bold text-on-ink-body">{r.model}</div>
+											<div class="font-display text-base font-bold text-on-ink-body">{r.model}</div>
 										</th>
-										<td class="font-semibold text-pop">{r.rating}</td>
+										<td class="text-on-ink-body">{fact.oven}</td>
+										<td class="text-on-ink-body">{fact.shelves}</td>
+										<td class="text-on-ink-body">{fact.doorGlass}</td>
+										<td class="text-on-ink-body">{fact.resources}</td>
 										<td class="text-on-ink-body">{r.bestFor}</td>
 										<td class="align-middle">
 											<div class="flex min-w-[8.5rem] flex-col gap-1.5">
@@ -293,7 +310,8 @@ function rowAnalysisLink(row: ComparisonRow): {
 											</div>
 										</td>
 									</tr>
-								))
+									);
+								})
 							}
 						</tbody>
 					</table>

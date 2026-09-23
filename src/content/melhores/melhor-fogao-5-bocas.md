@@ -18,7 +18,7 @@ tldr:
   title: 'Ranking em 20 segundos'
   items:
     - '🥇 Melhor geral: Electrolux FE5IG — forno e acabamento para quem cozinha de verdade.'
-    - '💰 Melhor custo-benefício: Brastemp BFS5NCR — potência e forno sem pagar o topo.'
+    - '💰 Melhor custo-benefício: Brastemp BFS5NCR — potência e forno.'
     - '🔥 Entrada / mais acessível: Consul CFS5NAB — 5 bocas com orçamento mais contido.'
   footerText: 'Ver preço e botão da loja:'
   footerHref: '#guia-comercial-produtos'

@@ -116,7 +116,7 @@ const melhorFogao5Bocas: CommercialGuideBlock = {
 			badgeTone: 'pop',
 			basePrice: 'Confira na loja',
 			benefits: [
-				'Potência e forno sem pagar o topo do ranking',
+				'Potência e forno',
 				'Equilíbrio forte para rotina familiar',
 				'Limpeza e manutenção no uso diário',
 				'Boa disponibilidade nas lojas afiliadas',
@@ -150,7 +150,7 @@ const melhorFogao5Bocas: CommercialGuideBlock = {
 			mlCtaText: DEFAULT_MERCADO_LIVRE_CTA_TEXT,
 			shopeeCtaText: DEFAULT_SHOPEE_CTA_TEXT,
 			image: '/images/melhores/melhor-fogao-5-bocas/consul-cfs5nab.webp',
-			imageAlt: 'Fogão Consul CFS5NAB 5 bocas em inox com tampa de vidro',
+			imageAlt: 'Fogão Consul CFS5NAB 5 bocas em inox',
 		},
 	],
 	comparisonRows: [

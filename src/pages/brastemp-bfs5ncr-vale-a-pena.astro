@@ -6,7 +6,6 @@ import RelatedContent from '../components/RelatedContent.astro';
 import EditorialLinks from '../components/EditorialLinks.astro';
 import SmartRecommendations from '../components/SmartRecommendations.astro';
 import ProductMedia from '../components/ProductMedia.astro';
-import TechnicalFigure from '../components/TechnicalFigure.astro';
 import { produtos } from '../data/products';
 import { mlAffiliateAttrs, shopeeAffiliateAttrs } from '../utils/affiliateTracking';
 import { PRODUCT_IMAGE_REVIEW } from '../data/productImages';
@@ -49,22 +48,13 @@ const faqItems = [
 	{
 		question: 'É fácil de limpar?',
 		answer:
-			'Sim. A mesa de vidro, os botões removíveis e o vidro interno removível facilitam a limpeza do dia a dia.',
+			'Sim. Os botões removíveis e o vidro interno removível facilitam a limpeza do dia a dia.',
 	},
 	{
 		question: 'Vale para cozinha planejada?',
 		answer:
-			'O inox com mesa de vidro combina bem com uma cozinha planejada, desde que haja espaço para o fogão de 5 bocas.',
+			'O inox combina bem com uma cozinha planejada, desde que haja espaço para o fogão de 5 bocas.',
 	},
-] as const;
-
-const scoreRows = [
-	{ label: 'Potência das chamas', score: '9/10' },
-	{ label: 'Forno', score: '9/10' },
-	{ label: 'Facilidade de limpeza', score: '8,7/10' },
-	{ label: 'Acabamento', score: '9,2/10' },
-	{ label: 'Custo-benefício', score: '8,8/10' },
-	{ label: 'Uso diário', score: '9/10' },
 ] as const;
 
 const structuredData = {
@@ -158,7 +148,7 @@ const structuredData = {
 		description: metaDescription,
 		url: canonical,
 		image: ogImageUrl,
-		imageAlt: 'Fogão de piso Brastemp BFS5NCR cinco bocas em inox com mesa de vidro temperado',
+		imageAlt: 'Fogão de piso Brastemp BFS5NCR cinco bocas em inox',
 		type: 'article',
 		publishedTime,
 		modifiedTime,
@@ -180,8 +170,8 @@ const structuredData = {
 				Fogão Brastemp 5 bocas BFS5NCR: vale a pena? Análise completa
 			</h1>
 			<p class="mt-5 text-lg leading-relaxed text-on-ink-body">
-				O <strong class="text-on-ink-body">Brastemp BFS5NCR</strong> é um fogão de piso de 5 bocas, com inox, mesa de vidro
-				temperado, acendimento automático e forno de 96 litros. É uma opção para quem cozinha com frequência, usa panelas
+				O <strong class="text-on-ink-body">Brastemp BFS5NCR</strong> é um fogão de piso de 5 bocas, com mesa de inox,
+				acendimento automático e forno de 96 litros. É uma opção para quem cozinha com frequência, usa panelas
 				maiores e aproveita o forno. O principal ponto de atenção é o espaço disponível na cozinha.
 			</p>
 		</header>
@@ -201,8 +191,6 @@ const structuredData = {
 					<ul class="mt-4 list-inside list-disc space-y-2.5 text-sm leading-relaxed text-on-ink-body sm:text-base">
 						<li>cozinha com frequência e usa várias panelas ao mesmo tempo;</li>
 						<li>precisa de forno grande (96 litros);</li>
-						<li>usa panelas maiores e aproveita a Turbo Chama central;</li>
-						<li>quer mesa de vidro temperado com inox;</li>
 						<li>tem espaço para um fogão 5 bocas.</li>
 					</ul>
 				</div>
@@ -226,8 +214,8 @@ const structuredData = {
 		<section class="mt-10 rounded-2xl border border-white/10 bg-brand-900/35 p-5 ring-1 ring-white/10 sm:p-6" aria-labelledby="eeat-heading">
 			<h2 id="eeat-heading" class="sr-only">Transparência editorial</h2>
 			<p class="text-sm font-semibold leading-relaxed text-on-ink-body">
-				<span class="text-pop">Como analisamos:</span> avaliamos a ficha técnica, o forno, as bocas, a limpeza e o uso no
-				dia a dia. Conheça o propósito do site na página{' '}
+				<span class="text-pop">Como analisamos:</span> descrevemos características confirmadas deste modelo, como o
+				forno de 96 litros, a mesa de inox e o vidro interno removível. Conheça o propósito do site na página{' '}
 				<a href="/sobre/" class="link-accent">sobre a Casa Prática Eletro</a>
 				{' '}e leia a{' '}
 				<a href="/politica-de-afiliados/" class="link-accent">política de afiliados</a>.
@@ -237,60 +225,13 @@ const structuredData = {
 		<figure class="mt-10 overflow-hidden rounded-2xl ring-1 ring-white/[0.08]">
 			<ProductMedia
 				src={PRODUCT_IMAGE_REVIEW.brastemp}
-				alt="Fogão de piso Brastemp BFS5NCR cinco bocas em inox com mesa de vidro temperado preto e acabamento contemporâneo"
+				alt="Fogão de piso Brastemp BFS5NCR cinco bocas em inox"
 				aspect="wide"
 				flush
 				fit="cover"
 				fetchpriority="high"
 			/>
-			<figcaption class="border-t border-white/10 bg-brand-900/60 px-4 py-3 text-center text-xs text-on-ink-muted sm:text-sm">
-				Inox com mesa de vidro temperado preto — o vidro pede cuidado com impactos.
-			</figcaption>
 		</figure>
-
-		<section class="mt-12" aria-labelledby="resumo-notas-heading">
-			<h2 id="resumo-notas-heading" class="font-display text-xl font-bold tracking-tight text-on-ink-body sm:text-2xl">
-				Resumo rápido — notas do modelo
-			</h2>
-			<p class="mt-3 text-sm text-on-ink-muted sm:text-base">
-				Notas de 0 a 10 para facilitar a comparação entre os principais critérios do modelo.
-			</p>
-			<div class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
-				{
-					scoreRows.map((row) => (
-						<div class="rounded-xl border border-white/10 bg-brand-900/45 px-3 py-4 text-center ring-1 ring-white/5 sm:px-4 sm:py-5">
-							<p class="text-[11px] font-semibold uppercase leading-snug tracking-wide text-on-ink-muted sm:text-xs">
-								{row.label}
-							</p>
-							<p class="font-display mt-2 text-2xl font-extrabold tabular-nums text-pop sm:text-3xl">{row.score}</p>
-						</div>
-					))
-				}
-			</div>
-			<div class="table-premium-shell mt-8">
-				<table class="table-premium min-w-[320px]">
-					<caption class="sr-only">Resumo das notas por critério</caption>
-					<thead>
-						<tr>
-							<th scope="col">Critério</th>
-							<th scope="col">Nota</th>
-						</tr>
-					</thead>
-					<tbody>
-						{
-							scoreRows.map((row, i) => (
-								<tr class:list={[i % 2 === 0 ? 'bg-ink' : 'bg-brand-900/25']}>
-									<th scope="row" class="font-semibold text-on-ink-body">
-										{row.label}
-									</th>
-									<td class="tabular-nums text-pop">{row.score}</td>
-								</tr>
-							))
-						}
-					</tbody>
-				</table>
-			</div>
-		</section>
 
 		<div class="mt-12">
 			<AffiliateOfferBlock
@@ -326,11 +267,11 @@ const structuredData = {
 							</tr>
 							<tr class="bg-brand-900/25">
 								<th scope="row" class="font-semibold text-on-ink-body">Quantidade de bocas</th>
-								<td>5 (1 Turbo Chama central)</td>
+								<td>5</td>
 							</tr>
 							<tr class="bg-ink">
 								<th scope="row" class="font-semibold text-on-ink-body">Acabamento</th>
-								<td>Inox com mesa de vidro temperado</td>
+								<td>Mesa de inox</td>
 							</tr>
 							<tr class="bg-brand-900/25">
 								<th scope="row" class="font-semibold text-on-ink-body">Capacidade do forno</th>
@@ -338,7 +279,7 @@ const structuredData = {
 							</tr>
 							<tr class="bg-ink">
 								<th scope="row" class="font-semibold text-on-ink-body">Acendimento</th>
-								<td>Automático total</td>
+								<td>Automático</td>
 							</tr>
 							<tr class="bg-brand-900/25">
 								<th scope="row" class="font-semibold text-on-ink-body">Tipo de gás</th>
@@ -358,27 +299,7 @@ const structuredData = {
 					Design e acabamento
 				</h2>
 				<p class="mt-4">
-					O Brastemp BFS5NCR combina mesa de vidro temperado preto com corpo em inox.
-				</p>
-				<h3 class="mt-8 font-display text-lg font-bold text-on-ink-body">Mesa de vidro e limpeza</h3>
-				<p class="mt-3">
-					A mesa de vidro facilita a limpeza depois de frituras e respingos.
-				</p>
-				<h3 class="mt-8 font-display text-lg font-bold text-on-ink-body">Estabilidade das panelas</h3>
-				<p class="mt-3">
-					As grades oferecem bom apoio para panelas grandes e pesadas.
-				</p>
-				<TechnicalFigure id="L06A" class="mt-6" />
-			</section>
-
-			<section aria-labelledby="uso-heading">
-				<h2 id="uso-heading" class="font-display text-xl font-bold tracking-tight text-on-ink-body sm:text-2xl">
-					As cinco bocas e a Turbo Chama
-				</h2>
-				<h3 class="mt-6 font-display text-lg font-bold text-on-ink-body">A Turbo Chama realmente faz diferença?</h3>
-				<p class="mt-3">
-					Sim. A <strong class="text-on-ink-body">boca Turbo Chama central</strong> é útil para panelas grandes e preparos que
-					precisam de aquecimento rápido. As outras bocas permitem cozinhar com mais de uma panela ao mesmo tempo.
+					O Brastemp BFS5NCR tem mesa de inox.
 				</p>
 			</section>
 
@@ -394,9 +315,7 @@ const structuredData = {
 				<ul class="mt-4 list-inside list-disc space-y-2">
 					<li>bom espaço interno;</li>
 					<li>duas prateleiras;</li>
-					<li>boa distribuição de calor;</li>
 					<li>iluminação interna;</li>
-					<li>revestimento que facilita limpeza.</li>
 				</ul>
 			</section>
 
@@ -408,8 +327,6 @@ const structuredData = {
 				<ol class="mt-4 list-inside list-decimal space-y-2">
 					<li>botões removíveis;</li>
 					<li>vidro interno do forno removível;</li>
-					<li>mesa lisa mais simples de limpar;</li>
-					<li>pés altos que facilitam a faxina embaixo do fogão.</li>
 				</ol>
 
 				<EditorialLinks
@@ -429,7 +346,6 @@ const structuredData = {
 				<ul class="mt-4 list-inside list-disc space-y-2">
 					<li>o preço fica acima de fogões mais simples;</li>
 					<li>o tamanho pode apertar em cozinhas pequenas;</li>
-					<li>a mesa de vidro pede cuidado contra impactos;</li>
 					<li>quem cozinha pouco pode não aproveitar um forno de quase 100 litros.</li>
 				</ul>
 			</section>
@@ -445,11 +361,9 @@ const structuredData = {
 							<span>Vantagens</span>
 						</h3>
 						<ul class="mt-4 list-inside list-disc space-y-2 text-on-ink-body">
-							<li>inox com mesa de vidro temperado;</li>
+							<li>mesa de inox;</li>
 							<li>forno de 96 litros e duas prateleiras;</li>
-							<li>Turbo Chama central;</li>
 							<li>botões e vidro interno do forno removíveis;</li>
-							<li>apoio estável para panelas maiores.</li>
 						</ul>
 					</div>
 					<div class="rounded-2xl border border-white/10 bg-brand-900/40 p-5 ring-1 ring-white/10 sm:p-6">
@@ -459,7 +373,6 @@ const structuredData = {
 						</h3>
 						<ul class="mt-4 list-inside list-disc space-y-2 text-on-ink-body">
 							<li>custa mais que um fogão mais simples;</li>
-							<li>o vidro pede cuidado com impactos;</li>
 							<li>quem assa pouco não aproveita o forno de 96 litros.</li>
 						</ul>
 					</div>
@@ -489,8 +402,7 @@ const structuredData = {
 					Veredito final
 				</h2>
 				<p class="mt-4">
-					O Brastemp BFS5NCR vale a pena para quem usa as cinco bocas e o forno de 96 litros com frequência. A Turbo Chama é
-					útil para panelas maiores, enquanto a mesa de vidro e os componentes removíveis facilitam a limpeza. O principal
+					O Brastemp BFS5NCR vale a pena para quem usa as cinco bocas e o forno de 96 litros com frequência. O principal
 					ponto de atenção é o tamanho do fogão.
 				</p>
 				<div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
