@@ -307,7 +307,7 @@ Conteúdos futuros — **separados do plano imediato**. Só após conclusão dos
 |---|----------|---------|-----------------|-------|
 | B1 | Hub Melhor fogão com forno duplo | Forno duplo (novo) | Blog já dono da intenção educativa; exige reposicionar blog + SKUs | Canibalização com `/blog/melhor-fogao-com-forno-duplo/` |
 | B2 | Reviews SKU forno duplo | Forno duplo | Sem produtos em `products.ts` | Zero receita até catálogo |
-| B3 | Hub Melhor fogão de embutir | Embutir (novo) | Blog embutir×piso é dono; hub exige SKUs + intenção distinta | Canibalização + escopo instalação |
+| B3 | Hub Melhor fogão **4 bocas de embutir** | Embutir 4 bocas | Ver **Territórios promissórios** abaixo — gate = estoque afiliado | Canibalização com piso 4 bocas / cooktop / guia formato |
 | B4 | Cluster cooktop (melhor / como escolher) | Cooktop | Hoje só ponte editorial | Diluição da autoridade fogão de piso |
 | B5 | Fogão 6 bocas (hub + satélites) | 6 bocas | Cluster e afiliados zerados | Diluição do mapa 4/5 |
 | B6 | Fogão de indução | Indução | Fora do DNA atual (gás/piso) | Novo vertical técnico |
@@ -315,6 +315,17 @@ Conteúdos futuros — **separados do plano imediato**. Só após conclusão dos
 | B8 | Fogão elétrico vs gás | Transversal energético | Site ainda gás-centrado | Pouco encaixa no funil afiliado atual |
 | B9 | Instalação de fogão a gás (passo a passo) | Instalação | Baixo ROI afiliado | Risco jurídico/segurança |
 | B10 | Fogão para família grande / forno grande | 5 bocas / forno | Sobreposição com 5 bocas e forno duplo | Só após depth do cluster principal |
+
+### Territórios promissórios — catálogo em construção
+
+Regra: `.cursor/rules/territorio-catalogo-em-construcao.mdc`.  
+Demanda/SERP/diferenciação validadas ≠ autorização para URL. Estoque afiliado insuficiente ≠ descarte do território.
+
+| Território | Status | Estoque SSOT hoje | Gate para abrir página | Anti-canibalização |
+|------------|--------|-------------------|------------------------|--------------------|
+| **Fogão 4 bocas de embutir** | **PROMISSOR — CATÁLOGO EM CONSTRUÇÃO** | **0** SKUs embutir 4 bocas em `products.ts` | ≥3 SKUs embutir 4 bocas monetizáveis (prefer. ≥2 marcas; ML e/ou Shopee confirmados no painel) | Distinto de `/melhores/melhor-fogao-4-bocas/` (piso), cooktops e `/blog/guia-fogao-embutir-ou-de-piso/` (formato educativo) |
+
+**Próximo passo operacional (B3):** fortalecer inventário com candidatos reais de mercado (pesquisa ≠ cadastro). Só cadastrar em `products.ts` após oferta afiliada confirmada. **Não** criar hub/URL até o gate.
 
 ---
 
@@ -375,9 +386,10 @@ Biblioteca Técnica (Tipo B compartilhado)
 |--------|--------|--------|
 | Comparativo formato | ✅ | `/comparativo-fogao-4-vs-5-bocas/` |
 | Embutir × piso | ✅ | `/blog/guia-fogao-embutir-ou-de-piso/` |
+| Fogão 4 bocas de embutir (hub comercial) | 🟡 Pipeline | **PROMISSOR — CATÁLOGO EM CONSTRUÇÃO** · 0 SKUs · sem URL até gate de estoque |
 | Forno duplo | 🟡 | Blog educativo ✅ · hub comercial ❌ (backlog) |
 | Técnico (trempes, tripla chama, acendimento, medidas) | ❌ | Sprint 3 |
-| Novos verticais | ❌ Bloqueados | Cooktop hub · 6 bocas · indução · embutir hub — Backlog |
+| Novos verticais | ❌ Bloqueados / pipeline | Cooktop hub · 6 bocas · indução · embutir 4b (só após estoque) — Backlog |
 
 ---
 
@@ -499,6 +511,7 @@ Atualizar a cada conteúdo iniciado, publicado ou pausado.
 | 2026-08-05 | Review Consul CFO4VAR | 🟩 | `/review-fogao-mesa-de-vidro-consul/` — H1/Title + L05A wiring |
 | 2026-08-06 | Review Electrolux FE4IW | 🟩 | `/review-fogao-4-bocas-electrolux/` — H1/Title + L06A wiring |
 | 2026-09-05 | Como escolher fogão mesa de vidro | 🟩 | `/como-escolher-fogao-mesa-de-vidro/` — satélite de critérios; L05A + L06A; sem ranking |
+| 2026-09-23 | Território fogão 4 bocas de embutir | 🟡 Pipeline | Demanda/SERP/diferenciação validadas; auditoria SSOT = 0 SKUs; classificado **PROMISSOR — CATÁLOGO EM CONSTRUÇÃO**; página/URL bloqueadas até estoque afiliado |
 
 ---
 

@@ -1,0 +1,47 @@
+---
+/**
+ * Famílias já publicadas na Home. Não renderiza item sem link real.
+ */
+import { applianceFamilies } from '../data/applianceFamilies';
+
+const families = applianceFamilies.filter((family) => family.links.length > 0);
+---
+
+{
+	families.length ? (
+		<section class="border-b border-white/10 bg-brand-900/25 py-16 lg:py-20" aria-labelledby="home-familias-heading">
+			<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+				<div class="max-w-3xl">
+					<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">Por onde começar</p>
+					<h2
+						id="home-familias-heading"
+						class="font-display mt-3 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl"
+					>
+						Encontre sua próxima escolha
+					</h2>
+					<p class="mt-4 text-base leading-relaxed text-on-ink-body">
+						Explore nossas categorias e encontre guias que ajudam a comparar modelos, entender as diferenças e
+						descobrir o que vale a pena considerar antes de comprar.
+					</p>
+				</div>
+				<ul class="mt-10 grid list-none gap-6 lg:grid-cols-2">
+					{families.map((family) => (
+						<li class="rounded-2xl border border-white/10 bg-ink/70 p-6 ring-1 ring-white/5 sm:p-7">
+							<h3 class="font-display text-2xl font-bold tracking-tight text-on-ink-body">{family.name}</h3>
+							<p class="mt-3 text-sm leading-relaxed text-on-ink-muted sm:text-base">{family.description}</p>
+							<ul class="mt-5 space-y-2.5">
+								{family.links.map((link) => (
+									<li>
+										<a href={link.href} class="link-accent text-sm font-semibold sm:text-base">
+											{link.label}
+										</a>
+									</li>
+								))}
+							</ul>
+						</li>
+					))}
+				</ul>
+			</div>
+		</section>
+	) : null
+}

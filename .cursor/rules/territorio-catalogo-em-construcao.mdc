@@ -1,0 +1,56 @@
+---
+description: Território com demanda validada e catálogo ainda insuficiente — não descartar; pipeline + estoque antes da página
+alwaysApply: true
+---
+
+# Território promissor — catálogo em construção
+
+O catálogo/SSOT (`src/data/products.ts`) está em construção contínua.
+
+**Catálogo insuficiente no momento da análise não significa que o território deve ser descartado.**
+
+## Quando aplicar
+
+A oportunidade comercial já tem:
+
+- demanda validada;
+- intenção de busca comercial;
+- SERP coerente e específica;
+- diferenciação real em relação ao patrimônio existente;
+
+mas o inventário ainda **não** tem SKUs suficientes / monetizáveis.
+
+## Classificação obrigatória
+
+**TERRITÓRIO PROMISSOR — CATÁLOGO EM CONSTRUÇÃO**
+
+Não classificar como território inviável só porque o estoque de hoje é zero ou fraco.
+
+## Nessa situação
+
+1. **Não** criar a página ainda.
+2. **Não** criar URL prematuramente.
+3. Registrar o território na pipeline de crescimento (`docs/MASTER_ROADMAP_EDITORIAL.md`).
+4. Identificar produtos **reais de mercado** que poderiam formar um núcleo comercial adequado (pesquisa externa ≠ cadastro no SSOT).
+5. Pesquisar e fortalecer o estoque comercial (afiliados ML/Shopee confirmados no painel) **antes** da página.
+6. Reavaliar a abertura do território só quando houver produtos suficientes e monetizáveis.
+
+## Princípio
+
+O catálogo atual = **estoque disponível hoje**, não o limite futuro do patrimônio comercial.
+
+Separar sempre:
+
+| Situação | Decisão |
+|----------|---------|
+| Não temos produtos suficientes **agora** | Pipeline + fortalecer estoque; página bloqueada |
+| Esse território **não** tem potencial para o Casa Prática | Descarte definitivo |
+
+Somente a segunda justifica abandonar o território.
+
+## Não fazer
+
+- Fabricar patrimônio com produtos fracos ou inventar links.
+- Tratar pesquisa externa como produto do inventário.
+- Abrir hub/satélite comercial sem gate de afiliados (`monetizacao-paginas-decisao.mdc`).
+- Confundir “catálogo em construção” com “pode publicar incompleto”.

@@ -2,20 +2,17 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+import HomeCategoriesSection from '../components/HomeCategoriesSection.astro';
 import LogoStrip from '../components/LogoStrip.astro';
-import HomeTopProducts from '../components/HomeTopProducts.astro';
-import HomeComparisonTable from '../components/HomeComparisonTable.astro';
 import HomeMelhoresSection from '../components/HomeMelhoresSection.astro';
 import BlogGrid from '../components/BlogGrid.astro';
-import HomeFaqSection from '../components/HomeFaqSection.astro';
-import { PRODUCT_IMAGE_REVIEW } from '../data/productImages';
 
 const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
 const canonical = new URL(Astro.url.pathname, site).href;
-const pageTitle = 'Melhores fogões 5 bocas em 2026: ranking atualizado | Casa Prática Eletro';
+const pageTitle = 'Guias e reviews de eletrodomésticos | Casa Prática Eletro';
 const metaDescription =
-	'Ranking e recomendação dos melhores fogões 5 bocas em 2026: Electrolux FE5IG, Brastemp BFS5NCR e Consul CFS5NAB. Compare os modelos e decida a compra.';
-const ogImage = new URL(PRODUCT_IMAGE_REVIEW.brastemp.replace(/^\//, ''), site).href;
+	'A Casa Prática Eletro reúne guias, comparativos e reviews para ajudar você a comparar eletrodomésticos e escolher com mais segurança.';
+const ogImage = new URL('images/logo/logo-casa-pratica-eletro.webp', site).href;
 
 const allPosts = await getCollection('blog');
 const posts = allPosts
@@ -33,49 +30,20 @@ const posts = allPosts
 		url: canonical,
 		type: 'website',
 		image: ogImage,
-		imageAlt: 'Fogão 5 bocas em inox — referência visual Casa Prática Eletro',
+		imageAlt: 'Casa Prática Eletro',
 	}}
 >
 	<Hero />
-	<HomeTopProducts />
-	<HomeComparisonTable />
-	<section
-		class="border-b border-white/10 bg-brand-900/20 py-16 lg:py-20"
-		aria-labelledby="como-escolhemos-heading"
-	>
-		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-			<h2
-				id="como-escolhemos-heading"
-				class="font-display text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl"
-			>
-				Como escolhemos os fogões 5 bocas desta lista
-			</h2>
-			<div class="mt-8 max-w-3xl space-y-4 text-base leading-relaxed text-on-ink-body">
-				<p>
-					Comparamos os três modelos pelo que muda de um para o outro: tamanho do forno, número de prateleiras,
-					vidro interno da porta, recursos de forno e de chama informados pelo fabricante, e a mesa. Assim dá para
-					ver a diferença e escolher o que combina com o seu uso. O passo a passo geral está no{' '}
-					<a href="/como-escolher-fogao-5-bocas/" class="link-accent">guia de como escolher fogão 5 bocas</a>.
-				</p>
-				<p class="text-on-ink-muted">
-					Os preços podem variar conforme a loja e a oferta disponível. Se a dúvida ainda for entre 4 e 5 bocas, o{' '}
-					<a href="/comparativo-fogao-4-vs-5-bocas/" class="link-accent">comparativo fogão 4 vs 5 bocas</a>
-					{' '}ajuda a decidir 4 ou 5 bocas antes do modelo.
-				</p>
-				<p>
-					Para ver um modelo de perto, comece pela{' '}
-					<a href="/review-fogao-5-bocas-brastemp/" class="link-accent">review do Brastemp BFS5NCR</a>.
-				</p>
-			</div>
-		</div>
-	</section>
+	<HomeCategoriesSection />
+	<HomeMelhoresSection />
 	<LogoStrip />
 	<BlogGrid
 		variant="dark"
 		posts={posts}
-		title="Atualizações do blog"
-		subtitle="Textos para complementar a decisão — reviews e comparativos em linguagem direta."
+		eyebrow="Do blog"
+		title="Conteúdo para ajudar na sua escolha"
+		subtitle="Reviews, comparativos, medidas e outros conteúdos para você entender melhor os produtos e comprar com mais segurança."
+		viewAllLabel="Ver todos os artigos"
 		showViewAllLink={true}
 	/>
-	<HomeFaqSection />
 </BaseLayout>

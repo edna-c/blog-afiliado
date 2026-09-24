@@ -123,6 +123,26 @@ export const produtos = {
 		shopee: 'https://s.shopee.com.br/3LQwicU1hf',
 		shopeeGeneratedByPanel: true,
 	},
+	/** Fogão 4 bocas de embutir — núcleo comercial (Brastemp / Electrolux / Dako) */
+	brastempBYO4EBR: {
+		ml: 'https://meli.la/1iaWxzZ',
+		mlGeneratedByPanel: true,
+		shopee: 'https://s.shopee.com.br/3B7eSXUvrf',
+		shopeeGeneratedByPanel: true,
+	},
+	electroluxFE4BB: {
+		ml: 'https://meli.la/2JJhEbq',
+		mlGeneratedByPanel: true,
+		shopee: 'https://s.shopee.com.br/8KpkcLL7Qr',
+		shopeeGeneratedByPanel: true,
+	},
+	/** Dako Supreme embutir 4 bocas mesa de vidro (EAN 7897180510176) — não confundir com Supreme de piso */
+	dakoSupremeEmbutir4Bocas: {
+		ml: 'https://meli.la/2Rqts2M',
+		mlGeneratedByPanel: true,
+		shopee: 'https://s.shopee.com.br/6q0wpnzAwQ',
+		shopeeGeneratedByPanel: true,
+	},
 } as const satisfies Record<string, ProdutoAfiliado>;
 
 /** Chave estável do inventário — usar como `product_id` no tracking comercial. */
