@@ -5,7 +5,7 @@
 **Regra de agente:** `.cursor/rules/criacao-urls-por-intencao.mdc`  
 **Prompt:** `docs/BIBLIOTECA_DE_PROMPTS.md` §13
 
-Documentação relacionada: `docs/seo-rules.md` (mapa-base de intenções), `docs/MANUAL_SEO.md`, `docs/SEO_GUARDRAILS.md`, `docs/MASTER_ROADMAP_EDITORIAL.md`.
+Documentação relacionada: `docs/seo-rules.md` (mapa-base de intenções), `docs/MANUAL_SEO.md`, `docs/SEO_GUARDRAILS.md`, `docs/MASTER_ROADMAP_EDITORIAL.md`, `docs/MODELO_CONSTRUCAO_CATALOGO.md` (catálogo da decisão, não catálogo universal).
 
 ---
 
@@ -102,7 +102,9 @@ Mesmo nesses casos, verificar primeiro se uma página existente já atende à in
 
 Sempre seguir esta sequência:
 
-**Keyword → intenção → SERP → patrimônio existente → produtos → decisão → URL**
+**Oportunidade → intenção → SERP → patrimônio existente → a página merece existir? → produtos dessa decisão → validar → URL**
+
+Alinhado a `docs/MODELO_CONSTRUCAO_CATALOGO.md`. Os produtos entram **depois** da decisão de página, e somente os necessários para ela. Não cadastrar o universo da categoria antes.
 
 Nunca:
 

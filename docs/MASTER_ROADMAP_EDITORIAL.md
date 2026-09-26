@@ -10,6 +10,7 @@
 |-----------|--------|
 | `docs/seo-rules.md` | Mapa-base de intenções (1 intenção = 1 URL dona) |
 | `docs/REGRA_CRIACAO_URLS.md` | Keyword diferente ≠ página diferente; gate antes de URL nova |
+| `docs/MODELO_CONSTRUCAO_CATALOGO.md` | Catálogo por decisão comercial; eficácia comercial > volume |
 | `docs/MANUAL_PAGINA_DECISAO.md` | Modelo de funil (cluster 5 bocas) |
 | `docs/EDITORIAL_NAMING_CONVENTIONS.md` | Convenções de H1 / Title SEO das reviews (curtas e longas) |
 | `docs/BIBLIOTECA_VISUAL.md` | SSOT do patrimônio visual |
@@ -19,11 +20,15 @@
 
 ## Objetivo
 
-Crescer por **profundidade nos clusters que já monetizam**, não por volume de páginas novas.
+Construir **patrimônio digital capaz de gerar vendas por afiliado**. A unidade de crescimento é a **decisão comercial** (a página), não o SKU nem o volume de URLs. SSOT: `docs/MODELO_CONSTRUCAO_CATALOGO.md`.
+
+**Eficácia comercial > volume bruto de tráfego.** Tráfego, autoridade e número de páginas continuam relevantes; não são o KPI final isolado. Uma oportunidade de menor volume pode vir antes quando a intenção de compra, a SERP, os produtos, a monetização e a conversão forem mais claros.
+
+Crescer por **profundidade nas decisões que já monetizam**, não por volume de páginas novas nem por cadastro prévio do catálogo possível.
 
 A expansão editorial segue **clusters** já definidos (Fogão 5 bocas, Fogão 4 bocas, Mesa de vidro e eixos transversais), fortalecendo hubs existentes até o padrão do modelo oficial (hub + satélites + reviews + Biblioteca Técnica).
 
-Cada URL nova deve aumentar o **patrimônio digital** (tráfego, autoridade temática e receita afiliada) com **ROI editorial e financeiro** mensurável — nunca diluir sinal com conteúdo redundante ou verticais prematuros.
+Cada URL nova deve aumentar o patrimônio (decisão resolvida + receita afiliada mensurável) — nunca diluir sinal com conteúdo redundante, verticais prematuros ou SKUs cadastrados “para um dia”.
 
 ---
 
@@ -39,8 +44,10 @@ Regras permanentes (alinham `seo-rules.md`, Prompt Mestre §8 e a auditoria de R
 6. **Links internos devem fortalecer hubs** (e reviews do mesmo cluster — sem redundância hub+review na mesma seção).
 7. **Evitar conteúdo redundante** e canibalização.
 8. **Evitar produção baseada apenas em volume de busca.** Keyword diferente não justifica URL nova (`docs/REGRA_CRIACAO_URLS.md`).
-9. **Priorizar retorno financeiro sustentável** (afiliado + funil fechado).
+9. **Priorizar retorno financeiro sustentável** (afiliado + funil fechado). Eficácia comercial acima de volume bruto.
 10. **Nomenclatura de reviews** segue `docs/EDITORIAL_NAMING_CONVENTIONS.md` (H1 / Title SEO; slugs estáveis).
+11. **Catálogo por decisão, não catálogo universal.** Não construímos catálogo para depois procurar o que fazer com ele. Escolhemos uma decisão comercial que merece patrimônio e construímos o catálogo necessário para vencê-la. “Catálogo consolidado” = produtos daquela página validados e monetizados — não o inventário inteiro completo (`docs/MODELO_CONSTRUCAO_CATALOGO.md`).
+12. **Não bloquear página nova por consolidação global.** Dívida que não afeta a próxima decisão fica registrada; não exige que os 18 productIds, todas as fichas ou todas as categorias estejam centralizados antes.
 
 ---
 
@@ -318,14 +325,15 @@ Conteúdos futuros — **separados do plano imediato**. Só após conclusão dos
 
 ### Territórios promissórios — catálogo em construção
 
-Regra: `.cursor/rules/territorio-catalogo-em-construcao.mdc`.  
-Demanda/SERP/diferenciação validadas ≠ autorização para URL. Estoque afiliado insuficiente ≠ descarte do território.
+Regras: `.cursor/rules/territorio-catalogo-em-construcao.mdc` · `docs/MODELO_CONSTRUCAO_CATALOGO.md`.  
+Demanda/SERP/diferenciação validadas ≠ autorização para URL. Estoque afiliado insuficiente **para aquela decisão** ≠ descarte do território.  
+O gate é o conjunto de produtos da decisão (validados e monetizados), não um catálogo geral da categoria nem a consolidação dos 18 productIds atuais.
 
 | Território | Status | Estoque SSOT hoje | Gate para abrir página | Anti-canibalização |
 |------------|--------|-------------------|------------------------|--------------------|
-| **Fogão 4 bocas de embutir** | **PROMISSOR — CATÁLOGO EM CONSTRUÇÃO** | **0** SKUs embutir 4 bocas em `products.ts` | ≥3 SKUs embutir 4 bocas monetizáveis (prefer. ≥2 marcas; ML e/ou Shopee confirmados no painel) | Distinto de `/melhores/melhor-fogao-4-bocas/` (piso), cooktops e `/blog/guia-fogao-embutir-ou-de-piso/` (formato educativo) |
+| **Fogão 4 bocas de embutir** | **PROMISSOR — CATÁLOGO EM CONSTRUÇÃO** | **0** SKUs embutir 4 bocas em `products.ts` | Conjunto **dessa** decisão selecionado, validado e monetizado (oferta ML/Shopee no painel). Referência de núcleo: em geral ≥3 SKUs e ≥2 marcas — o número sai da seleção, não de um catálogo prévio da categoria | Distinto de `/melhores/melhor-fogao-4-bocas/` (piso), cooktops e `/blog/guia-fogao-embutir-ou-de-piso/` (formato educativo) |
 
-**Próximo passo operacional (B3):** fortalecer inventário com candidatos reais de mercado (pesquisa ≠ cadastro). Só cadastrar em `products.ts` após oferta afiliada confirmada. **Não** criar hub/URL até o gate.
+**Próximo passo operacional (B3):** quando essa decisão for a próxima oportunidade, selecionar só os produtos que a sustentam (pesquisa de mercado ≠ cadastro). Só cadastrar em `products.ts` após oferta afiliada confirmada. **Não** criar hub/URL até esse conjunto estar validado. Não cadastrar previamente todos os embutir do mercado.
 
 ---
 
@@ -512,6 +520,7 @@ Atualizar a cada conteúdo iniciado, publicado ou pausado.
 | 2026-08-06 | Review Electrolux FE4IW | 🟩 | `/review-fogao-4-bocas-electrolux/` — H1/Title + L06A wiring |
 | 2026-09-05 | Como escolher fogão mesa de vidro | 🟩 | `/como-escolher-fogao-mesa-de-vidro/` — satélite de critérios; L05A + L06A; sem ranking |
 | 2026-09-23 | Território fogão 4 bocas de embutir | 🟡 Pipeline | Demanda/SERP/diferenciação validadas; auditoria SSOT = 0 SKUs; classificado **PROMISSOR — CATÁLOGO EM CONSTRUÇÃO**; página/URL bloqueadas até estoque afiliado |
+| 2026-09-26 | Modelo de construção do catálogo | 🟩 Decisão | Catálogo por decisão comercial; eficácia comercial > volume; sem páginas, SKUs ou refactor. SSOT `docs/MODELO_CONSTRUCAO_CATALOGO.md` |
 
 ---
 
@@ -525,6 +534,7 @@ Atualizar a cada conteúdo iniciado, publicado ou pausado.
 6. Respeitar **trailing slash** em links internos e a política de **não renomear slugs publicados** (`.cursor/rules/urls-internas.mdc`).
 7. Interlinkagem: no máximo **3 links internos por seção**, com propósito claro (`.cursor/rules/interlinkagem-editorial.mdc`).
 8. CRO: um experimento por vez; este roadmap **não** autoriza mudanças de CRO no funil sob teste (`.cursor/rules/cro-um-experimento-por-vez.mdc`).
+9. **Catálogo por decisão comercial** (`docs/MODELO_CONSTRUCAO_CATALOGO.md`). Não cadastrar o universo de produtos antes da página. Não transformar os 18 productIds atuais em páginas por padrão. Não bloquear a próxima decisão por consolidação global do inventário.
 
 ---
 

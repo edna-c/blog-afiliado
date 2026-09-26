@@ -131,7 +131,7 @@ Esta é a regra mais importante da arquitetura SEO do projeto.
 
 Cada keyword/intenção principal deve ter **uma URL dona clara**, com papel explícito no cluster. A meta não é "ter muitas páginas parecidas"; a meta é **concentrar sinal**, evitar canibalismo e deixar o Google entender qual URL deve ranquear para cada busca.
 
-**Keyword diferente não significa intenção diferente.** Volume alto não autoriza URL nova. SSOT: `docs/REGRA_CRIACAO_URLS.md`. Sequência: Keyword → intenção → SERP → patrimônio existente → produtos → decisão → URL.
+**Keyword diferente não significa intenção diferente.** Volume alto não autoriza URL nova. SSOT: `docs/REGRA_CRIACAO_URLS.md` e `docs/MODELO_CONSTRUCAO_CATALOGO.md`. Sequência: oportunidade → intenção → SERP → patrimônio existente → a página merece existir? → produtos dessa decisão → validar → URL.
 
 ### Mapa-base atual do projeto
 

@@ -6,7 +6,9 @@ alwaysApply: false
 
 # Cards afiliados — padrão visual
 
-Aplicar em **todo** card de produto com link afiliado nos guias Melhores.
+Aplicar em **todo** card de produto com link afiliado nos guias Melhores que usam **`HomeTopProducts`** / `commercialGuideBlocks` (variante catálogo / full-bleed).
+
+**Outra variante:** página Melhores dedicada com Top 3 montado no `.astro` → `docs/MANUAL_DESIGN_SYSTEM.md` §7.4 · `.cursor/rules/cards-comparativo-pagina-dedicada.mdc`.
 
 ## Arquivo
 

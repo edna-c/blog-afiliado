@@ -11,8 +11,9 @@ SSOT: `docs/REGRA_CRIACAO_URLS.md`. Prompt: `docs/BIBLIOTECA_DE_PROMPTS.md` §13
 
 **Keyword diferente não significa intenção diferente.** Volume alto (Semrush, GSC ou outra fonte) **não** autoriza URL nova.
 
-Sequência obrigatória: **Keyword → intenção → SERP → patrimônio existente → produtos → decisão → URL.**  
-Proibido: **Keyword → volume alto → nova URL.**
+Sequência obrigatória: **Oportunidade → intenção → SERP → patrimônio existente → a página merece existir? → produtos dessa decisão → validar → URL.**  
+Proibido: **Keyword → volume alto → nova URL.**  
+Proibido: **catalogar a categoria inteira → depois decidir a página** (`docs/MODELO_CONSTRUCAO_CATALOGO.md`).
 
 ## Antes de propor ou criar URL
 

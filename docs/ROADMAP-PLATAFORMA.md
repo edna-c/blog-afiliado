@@ -28,7 +28,9 @@ Auditorias (relatório): `docs/AUDITORIA-SSOT-AFILIADOS.md`, `docs/AUDITORIA-COM
 **Status:** Fase 1 (Consolidação) **encerrada e aprovada** (2026-07-24).  
 Documentação arquitetural da Fase 1 **definitiva** — não criar novos documentos de arquitetura sem necessidade operacional concreta.
 
-**Prioridade absoluta até nova necessidade operacional:** produção de conteúdo · crescimento do catálogo · SEO · monitoramento operacional · evolução do negócio.
+**Prioridade absoluta até nova necessidade operacional:** produção de conteúdo · catálogo por decisão comercial (`docs/MODELO_CONSTRUCAO_CATALOGO.md`) · SEO · monitoramento operacional · evolução do negócio.
+
+O crescimento do catálogo **não** é cadastro prévio do universo de produtos. Produto entra em `products.ts` quando uma decisão comercial concreta precisa dele. A fonte única abaixo permanece.
 
 ---
 

@@ -1,0 +1,67 @@
+---
+description: Catálogo nasce da decisão comercial que merece patrimônio — não o contrário; eficácia comercial acima de volume
+alwaysApply: true
+---
+
+# Modelo de construção do catálogo
+
+SSOT: `docs/MODELO_CONSTRUCAO_CATALOGO.md`.
+
+Decisão permanente (2026-09-26). Futuras análises de oportunidade, catálogo e prioridade de página devem seguir esta regra.
+
+## Princípio
+
+Não construímos catálogo para depois procurar o que fazer com ele. Escolhemos uma decisão comercial que merece patrimônio e construímos o catálogo necessário para vencê-la.
+
+## Regra
+
+O projeto **não** cadastra previamente todo o catálogo possível de eletrodomésticos. A decisão comercial vem primeiro.
+
+O catálogo cresce **produto a produto, conforme cada decisão comercial escolhida para virar patrimônio**.
+
+```text
+Oportunidade → decisão de página → produtos daquela decisão
+  → validar → construir a página → deploy → medir → próxima oportunidade
+```
+
+Proibido como método de trabalho:
+
+```text
+catalogar todos os produtos → depois decidir quais páginas criar
+```
+
+## Objetivo
+
+Patrimônio digital capaz de **gerar vendas por afiliado**.
+
+**Eficácia comercial > volume bruto de tráfego.**
+
+Volume de busca, número de SKUs, número de páginas e número de keywords não são o KPI final. Menor volume pode ser prioritário com intenção de compra clara, SERP comercial, produtos adequados, monetização e conversão.
+
+## “Catálogo consolidado”
+
+Significa: o conjunto de produtos **daquela decisão** está validado, identificado, monetizado e pronto para sustentar a página.
+
+Não significa: o inventário inteiro do site está completo.
+
+## Inclusão de produto
+
+Só entra em `src/data/products.ts` com razão concreta dentro de uma decisão comercial (identidade, fatos, imagem, afiliado confirmado, coerência CTA ↔ destino).
+
+Não cadastrar “porque pode ser útil algum dia”, para inflar SKUs, para completar categoria, por volume de busca ou para montar catálogo genérico.
+
+Pesquisa de mercado ≠ cadastro. Gate de afiliado: `monetizacao-paginas-decisao.mdc`.
+
+## 18 productIds atuais
+
+Não transformar todos em páginas nem em fichas editoriais completas. Classificar: já usados em página comercial, usados em hub, candidatos a decisão futura, ainda não necessários.
+
+## Unidade de crescimento
+
+**Decisão comercial**, não SKU. A página é o patrimônio. O SKU é componente da decisão.
+
+## Não bloquear crescimento
+
+Inconsistência que não afeta a próxima decisão comercial vira dívida técnica. Não exigir consolidação global do inventário antes de uma página cuja decisão já tenha o próprio catálogo pronto.
+
+Território com demanda válida e produtos ainda insuficientes **para aquela decisão**: pipeline, sem URL (`territorio-catalogo-em-construcao.mdc`). Keyword diferente continua sem justificar URL (`criacao-urls-por-intencao.mdc`).

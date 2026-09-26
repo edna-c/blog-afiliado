@@ -128,7 +128,10 @@ Apresentação visual dos modelos.
 
 Nunca alterar sua função comercial.
 
-Referência de implementação: cards da home (`HomeTopProducts.astro`) com os SKUs de Fogão 5 bocas.
+Referência de implementação (hubs com `commercialGuideBlocks`): cards da home (`HomeTopProducts.astro`) com os SKUs de Fogão 5 bocas.
+
+**Variante — página Melhores dedicada (comparativo Top 3) — aprovada:**  
+`src/pages/melhores/melhor-fogao-4-bocas-de-embutir.astro` · DNA em `MANUAL_DESIGN_SYSTEM.md` §7.4 (bloco gelo arredondado, sem linha divisória).
 
 ---
 

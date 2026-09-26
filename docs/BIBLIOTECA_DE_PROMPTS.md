@@ -623,8 +623,8 @@ Antes de sugerir ou criar URL a partir de keyword (Semrush, GSC ou outra fonte):
 ```text
 Keyword diferente não significa intenção diferente. Volume alto não autoriza URL nova.
 
-Sequência obrigatória:
-Keyword → intenção → SERP → patrimônio existente → produtos → decisão → URL
+Sequência obrigatória (docs/MODELO_CONSTRUCAO_CATALOGO.md + docs/REGRA_CRIACAO_URLS.md):
+Oportunidade → intenção → SERP → patrimônio existente → a página merece existir? → produtos dessa decisão → validar → URL
 
 Não usar: Keyword → volume alto → nova URL.
 

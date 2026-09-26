@@ -228,7 +228,7 @@ Sem evidência nova:
 
 Não criar URL alternativa para uma intenção que já possui URL dona.
 
-**Keyword diferente não significa intenção diferente.** Volume alto não autoriza URL nova. SSOT: `docs/REGRA_CRIACAO_URLS.md`. Sequência: Keyword → intenção → SERP → patrimônio existente → produtos → decisão → URL.
+**Keyword diferente não significa intenção diferente.** Volume alto não autoriza URL nova. SSOT: `docs/REGRA_CRIACAO_URLS.md` e `docs/MODELO_CONSTRUCAO_CATALOGO.md`. Sequência: oportunidade → intenção → SERP → patrimônio existente → a página merece existir? → produtos dessa decisão → validar → URL.
 
 Não remover ou alterar 301 sem verificar:
 

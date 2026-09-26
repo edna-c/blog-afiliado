@@ -5,9 +5,11 @@ alwaysApply: true
 
 # Território promissor — catálogo em construção
 
-O catálogo/SSOT (`src/data/products.ts`) está em construção contínua.
+O catálogo (`src/data/products.ts`) cresce **por decisão comercial**, não como inventário prévio do mercado. SSOT: `docs/MODELO_CONSTRUCAO_CATALOGO.md`.
 
-**Catálogo insuficiente no momento da análise não significa que o território deve ser descartado.**
+**Catálogo insuficiente para aquela decisão, no momento da análise, não significa que o território deve ser descartado.**
+
+“Catálogo consolidado” aqui = produtos **dessa** decisão validados, identificados e monetizados. Não exige que o inventário inteiro do site esteja completo.
 
 ## Quando aplicar
 
@@ -18,7 +20,7 @@ A oportunidade comercial já tem:
 - SERP coerente e específica;
 - diferenciação real em relação ao patrimônio existente;
 
-mas o inventário ainda **não** tem SKUs suficientes / monetizáveis.
+mas o conjunto de produtos **dessa decisão** ainda **não** está suficiente / monetizável. Ausência no inventário de hoje não é o limite do território.
 
 ## Classificação obrigatória
 
@@ -31,13 +33,13 @@ Não classificar como território inviável só porque o estoque de hoje é zero
 1. **Não** criar a página ainda.
 2. **Não** criar URL prematuramente.
 3. Registrar o território na pipeline de crescimento (`docs/MASTER_ROADMAP_EDITORIAL.md`).
-4. Identificar produtos **reais de mercado** que poderiam formar um núcleo comercial adequado (pesquisa externa ≠ cadastro no SSOT).
-5. Pesquisar e fortalecer o estoque comercial (afiliados ML/Shopee confirmados no painel) **antes** da página.
-6. Reavaliar a abertura do território só quando houver produtos suficientes e monetizáveis.
+4. Identificar produtos **reais de mercado** que formariam o núcleo **dessa** decisão (pesquisa externa ≠ cadastro no SSOT). Não listar o universo da categoria.
+5. Quando a decisão for a próxima oportunidade: validar identidade, fatos e afiliados ML/Shopee confirmados no painel; só então cadastrar os produtos necessários.
+6. Reavaliar a abertura só quando o catálogo **daquela decisão** estiver suficiente e monetizável.
 
 ## Princípio
 
-O catálogo atual = **estoque disponível hoje**, não o limite futuro do patrimônio comercial.
+O inventário de hoje = estoque já ligado a decisões existentes ou candidatos. Não é o limite futuro do patrimônio, nem um catálogo a completar antes da próxima página.
 
 Separar sempre:
 

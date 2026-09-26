@@ -53,12 +53,18 @@ Centralizar quando e como reutilizar componentes Astro do projeto, evitando dupl
 
 ## 5. Blocos comerciais (guias afiliados)
 
-| Componente | Uso |
-|------------|-----|
-| `HomeTopProducts.astro` | Cards de produtos / ofertas |
+| Componente / padrão | Uso |
+|---------------------|-----|
+| `HomeTopProducts.astro` | Cards de produtos / ofertas (hubs via `commercialGuideBlocks`) |
 | `HomeComparisonTable.astro` | Tabela comparativa |
+| **Cards de comparativo (página dedicada)** | Top 3 lado a lado em página Melhores dedicada, sem `HomeTopProducts` |
 
 Dados: `src/data/commercialGuideBlocks.ts`, `src/data/products.ts`.
+
+**Referência visual do comparativo dedicado (aprovado):**  
+`src/pages/melhores/melhor-fogao-4-bocas-de-embutir.astro` (`#guia-comercial-produtos`)  
+DNA: grid 3 cols · bloco gelo `#b5b5b5` arredondado · sem linha divisória · packshot íntegro.  
+SSOT: `MANUAL_DESIGN_SYSTEM.md` §7.4 · regra `.cursor/rules/cards-comparativo-pagina-dedicada.mdc`.
 
 Em Páginas de Decisão, CTAs de compra devem permanecer nestes blocos + markdown de review — ver `MANUAL_PAGINA_DECISAO.md` (CTAs e afiliados).
 

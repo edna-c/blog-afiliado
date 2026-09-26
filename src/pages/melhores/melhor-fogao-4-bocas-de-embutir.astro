@@ -1,0 +1,683 @@
+---
+/**
+ * Página de decisão — melhor fogão 4 bocas de embutir.
+ * Texto editorial aprovado: não expandir, resumir ou acrescentar seções.
+ * CTAs e afiliados via SSOT `produtos` (electroluxFE4BB / brastempBYO4EBR / dakoSupremeEmbutir4Bocas).
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { Picture } from 'astro:assets';
+import embutirHero from '../../assets/images/heroes/melhor-fogao-4-bocas-de-embutir-hero.webp';
+import { GUIDE_PAGE_HERO, picturePropsFrom } from '../../data/editorialImageSpecs';
+import { produtos } from '../../data/products';
+import { mlAffiliateAttrs, shopeeAffiliateAttrs } from '../../utils/affiliateTracking';
+
+const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
+const pathname = '/melhores/melhor-fogao-4-bocas-de-embutir/';
+const canonical = new URL(pathname, site).href;
+
+const pageTitle = 'Melhor fogão 4 bocas de embutir em 2026: 3 modelos para decidir';
+const metaDescription =
+	'Compare Electrolux FE4BB, Brastemp BYO4EBR e Dako Supreme e escolha o melhor fogão 4 bocas de embutir para o seu nicho.';
+const coverPath = '/images/melhores/melhor-fogao-4-bocas-de-embutir/melhor-fogao-4-bocas-de-embutir-hero.webp';
+const coverAlt =
+	'Fogão 4 bocas de embutir com mesa de vidro preta instalado em nicho de cozinha planejada';
+const ogImage = new URL(coverPath.replace(/^\//, ''), site).href;
+const guideHeroPicture = picturePropsFrom(GUIDE_PAGE_HERO);
+
+const fe4bb = produtos.electroluxFE4BB;
+const byo4ebr = produtos.brastempBYO4EBR;
+const dako = produtos.dakoSupremeEmbutir4Bocas;
+
+const faqItems = [
+	{
+		question: 'Qual dos três tem o maior forno?',
+		answer:
+			'O Electrolux FE4BB, com 72,6 litros. O Brastemp BYO4EBR tem 61 litros e o Dako Supreme, 60 litros.',
+	},
+	{
+		question: 'Qual deles tem mesa de inox?',
+		answer: 'O Brastemp BYO4EBR. O Electrolux FE4BB e o Dako Supreme têm mesa de vidro.',
+	},
+	{
+		question: 'Os três têm duas prateleiras?',
+		answer: 'Sim. Os três modelos comparados têm duas prateleiras no forno.',
+	},
+	{
+		question: 'Preciso medir o nicho antes de comprar?',
+		answer:
+			'Sim. Os modelos têm dimensões de nicho diferentes, então a medida do espaço deve ser conferida antes da compra.',
+	},
+] as const;
+
+const orgId = `${site.href}#organization`;
+const webpageId = `${canonical}#webpage`;
+const breadcrumbId = `${canonical}#breadcrumb`;
+const faqId = `${canonical}#faq`;
+
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'Organization',
+			'@id': orgId,
+			name: 'Casa Prática Eletro',
+			url: site.href,
+		},
+		{
+			'@type': 'BreadcrumbList',
+			'@id': breadcrumbId,
+			itemListElement: [
+				{ '@type': 'ListItem', position: 1, name: 'Início', item: site.href },
+				{ '@type': 'ListItem', position: 2, name: 'Melhores', item: new URL('/melhores/', site).href },
+				{
+					'@type': 'ListItem',
+					position: 3,
+					name: 'Melhor fogão 4 bocas de embutir',
+					item: canonical,
+				},
+			],
+		},
+		{
+			'@type': 'WebPage',
+			'@id': webpageId,
+			url: canonical,
+			name: `${pageTitle} | Casa Prática Eletro`,
+			description: metaDescription,
+			inLanguage: 'pt-BR',
+			isPartOf: { '@id': orgId },
+			primaryImageOfPage: { '@type': 'ImageObject', url: ogImage },
+		},
+		{
+			'@type': 'FAQPage',
+			'@id': faqId,
+			mainEntity: faqItems.map((item) => ({
+				'@type': 'Question',
+				name: item.question,
+				acceptedAnswer: { '@type': 'Answer', text: item.answer },
+			})),
+		},
+	],
+};
+
+/** CTAs de compra — ambos com peso de botão (página local; não altera componentes globais). */
+const ctaMlClass = 'cta-affiliate cta-affiliate--ml';
+const ctaShopeeClass = 'cta-affiliate cta-affiliate--shopee';
+const ctaHeroMlClass = 'cta-affiliate cta-affiliate--ml';
+const ctaPairClass = 'cta-affiliate-pair';
+const ctaCardPairClass = 'mt-auto cta-affiliate-pair border-t border-white/[0.06] pt-4';
+const ctaHeroPairClass = 'cta-affiliate-pair mt-6 max-w-xl';
+---
+
+<BaseLayout
+	title={`${pageTitle} | Casa Prática Eletro`}
+	description={metaDescription}
+	canonical={canonical}
+	openGraph={{
+		title: `${pageTitle} | Casa Prática Eletro`,
+		description: metaDescription,
+		url: canonical,
+		type: 'article',
+		image: ogImage,
+		imageAlt: coverAlt,
+	}}
+>
+	<script type="application/ld+json" slot="head" set:html={JSON.stringify(structuredData)} />
+
+	<article class="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-12 lg:py-14">
+		<Breadcrumbs
+			class="mb-6 sm:mb-8"
+			items={[
+				{ name: 'Início', href: '/' },
+				{ name: 'Melhores', href: '/melhores/' },
+				{ name: 'Melhor fogão 4 bocas de embutir' },
+			]}
+		/>
+
+		<header class="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen border-b border-white/10 px-4 pb-9 sm:px-6 sm:pb-11 lg:px-10 xl:px-14">
+			<div class="mx-auto flex max-w-7xl flex-col gap-9 lg:flex-row lg:items-center lg:gap-14">
+				<div class="min-w-0 flex-1 lg:flex lg:flex-col lg:justify-center lg:py-1">
+					<h1 class="font-display text-[1.95rem] font-extrabold leading-[1.15] tracking-tight text-on-ink-body sm:text-4xl lg:text-[2.65rem] lg:leading-[1.12]">
+						Melhor fogão 4 bocas de embutir em 2026: 3 modelos para decidir
+					</h1>
+					<p class="mt-6 max-w-xl text-lg leading-relaxed text-on-ink-body sm:text-[1.125rem]">
+						Se você já decidiu que quer um <strong class="font-semibold text-on-ink-body">fogão 4 bocas de embutir</strong>, estes são os três modelos que colocamos lado a lado para facilitar a escolha:
+					</p>
+					<div class="mt-5 max-w-xl rounded-xl border border-white/15 bg-brand-900/70 p-4 ring-1 ring-white/10 sm:p-5">
+						<ul class="space-y-2.5 text-sm font-semibold leading-snug text-on-ink-body sm:text-[0.95rem]">
+							<li class="text-pop">🥇 Electrolux FE4BB — melhor conjunto de recursos</li>
+							<li class="text-cta">🥈 Brastemp BYO4EBR — alternativa com mesa em inox</li>
+							<li class="text-amber-300">🥉 Dako Supreme — mesa de vidro e conjunto mais direto</li>
+						</ul>
+					</div>
+					<p class="mt-5 max-w-xl text-sm leading-relaxed text-on-ink-muted">
+						A comparação considera características dos produtos. <strong class="font-semibold text-on-ink-body">Preço, frete e disponibilidade podem variar conforme a loja.</strong>
+					</p>
+					<div class={ctaHeroPairClass}>
+						<a
+							href={fe4bb.ml}
+							class={ctaHeroMlClass}
+							target="_blank"
+							rel="noopener noreferrer nofollow sponsored"
+							aria-label="Ver oferta do Electrolux FE4BB no Mercado Livre — abre em nova aba (link patrocinado)"
+							{...mlAffiliateAttrs('electroluxFE4BB', 'hero')}
+						>
+							<span class="min-w-0 text-balance">Ver oferta do Electrolux FE4BB</span>
+						</a>
+						{
+							fe4bb.shopee ? (
+								<a
+									href={fe4bb.shopee}
+									class={ctaShopeeClass}
+									target="_blank"
+									rel="noopener noreferrer nofollow sponsored"
+									aria-label="Ver oferta do Electrolux FE4BB na Shopee — abre em nova aba (link patrocinado)"
+									{...shopeeAffiliateAttrs('electroluxFE4BB', 'hero')}
+								>
+									<span class="min-w-0 text-balance">Ver na Shopee</span>
+								</a>
+							) : null
+						}
+					</div>
+				</div>
+				<figure class="order-first w-full shrink-0 overflow-hidden rounded-2xl shadow-[0_18px_48px_-28px_rgba(0,0,0,0.65)] ring-1 ring-white/10 lg:order-none lg:w-[min(48%,30rem)] xl:w-[min(46%,34rem)]">
+					<Picture
+						src={embutirHero}
+						alt={coverAlt}
+						formats={guideHeroPicture.formats}
+						widths={guideHeroPicture.widths}
+						sizes="(max-width: 1024px) 100vw, 544px"
+						width={embutirHero.width}
+						height={embutirHero.height}
+						quality={guideHeroPicture.quality}
+						loading="eager"
+						decoding="async"
+						priority
+						class="h-auto w-full"
+						pictureAttributes={{
+							class: 'block h-auto w-full [&>img]:h-auto [&>img]:w-full',
+						}}
+					/>
+				</figure>
+			</div>
+		</header>
+
+		<section
+			class="not-prose relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mt-10 w-screen max-w-[100vw] sm:mt-12"
+			aria-labelledby="produtos-heading"
+			id="guia-comercial-produtos"
+		>
+			<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+				<h2
+					id="produtos-heading"
+					class="font-display text-2xl font-bold tracking-tight text-on-ink-body sm:text-[1.75rem]"
+				>
+					3 fogões 4 bocas de embutir para comparar
+				</h2>
+
+				<div class="mt-8 grid grid-cols-1 items-stretch gap-6 md:grid-cols-3 md:gap-6">
+					<article
+						class="relative z-[1] flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-emerald-400/25 bg-ink/80 shadow-[0_10px_36px_-22px_rgba(0,0,0,0.58)] ring-1 ring-emerald-400/20 transition-[box-shadow,border-color,background-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-emerald-400/35 hover:bg-ink/[0.84] hover:shadow-[0_14px_40px_-24px_rgba(0,0,0,0.56)]"
+						aria-labelledby="fe4bb-heading"
+					>
+						<p
+							class="flex shrink-0 items-center justify-center bg-emerald-950/92 px-4 py-3 text-center text-[0.8125rem] font-semibold leading-snug tracking-[0.04em] text-emerald-50/95 sm:text-sm sm:tracking-[0.055em]"
+						>
+							🥇 Electrolux FE4BB
+						</p>
+						<div class="shrink-0 px-3 pb-3 pt-1 sm:px-3.5 sm:pb-3.5">
+							<div
+								class="relative mx-auto aspect-square w-full max-w-[min(100%,21.5rem)] overflow-hidden rounded-[0.875rem] bg-[#b5b5b5]"
+							>
+								<div class="absolute inset-3 flex items-center justify-center sm:inset-[0.8125rem]">
+									<img
+										src="/images/melhores/melhor-fogao-4-bocas-de-embutir/electrolux-fe4bb.webp"
+										alt="Fogão de embutir Electrolux FE4BB preto instalado em nicho de cozinha"
+										width="1254"
+										height="1254"
+										loading="lazy"
+										decoding="async"
+										class="max-h-full max-w-full object-contain object-center"
+									/>
+								</div>
+							</div>
+						</div>
+						<div class="flex min-h-0 flex-1 flex-col px-4 pb-5 pt-4 sm:px-5">
+							<h3 id="fe4bb-heading" class="font-display text-lg font-bold leading-snug text-on-ink-body sm:text-xl">
+								Melhor conjunto de recursos
+							</h3>
+							<p class="mt-2.5 text-sm leading-relaxed text-on-ink-body">
+								O Electrolux FE4BB reúne o conjunto mais amplo de recursos entre os três modelos deste comparativo.
+							</p>
+							<p class="mt-2.5 text-sm leading-relaxed text-on-ink-body">
+								São <strong class="font-semibold">72,6 litros de forno, duas prateleiras, mesa de vidro, Tripla Chama, cavidade selada e vidro interno removível</strong>. O modelo também conta com recursos como VaporBake e PerfectCook.
+							</p>
+							<dl class="mt-3 grid grid-cols-2 gap-x-3 gap-y-2 text-sm">
+								<div>
+									<dt class="font-semibold text-on-ink-muted">Forno</dt>
+									<dd class="text-on-ink-body">72,6 L</dd>
+								</div>
+								<div>
+									<dt class="font-semibold text-on-ink-muted">Prateleiras</dt>
+									<dd class="text-on-ink-body">2</dd>
+								</div>
+								<div>
+									<dt class="font-semibold text-on-ink-muted">Mesa</dt>
+									<dd class="text-on-ink-body">vidro</dd>
+								</div>
+								<div>
+									<dt class="font-semibold text-on-ink-muted">Queimador</dt>
+									<dd class="text-on-ink-body">Tripla Chama</dd>
+								</div>
+							</dl>
+							<div class={ctaCardPairClass}>
+								<a
+									href={fe4bb.ml}
+									class={ctaMlClass}
+									target="_blank"
+									rel="noopener noreferrer nofollow sponsored"
+									aria-label="Ver no Mercado Livre — Electrolux FE4BB — abre em nova aba (link patrocinado)"
+									{...mlAffiliateAttrs('electroluxFE4BB', 'product_card')}
+								>
+									Ver no Mercado Livre
+								</a>
+								{
+									fe4bb.shopee ? (
+										<a
+											href={fe4bb.shopee}
+											class={ctaShopeeClass}
+											target="_blank"
+											rel="noopener noreferrer nofollow sponsored"
+											aria-label="Ver na Shopee — Electrolux FE4BB — abre em nova aba (link patrocinado)"
+											{...shopeeAffiliateAttrs('electroluxFE4BB', 'product_card')}
+										>
+											Ver na Shopee
+										</a>
+									) : null
+								}
+							</div>
+						</div>
+					</article>
+
+					<article
+						class="flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-white/[0.09] bg-ink/80 shadow-[0_10px_36px_-22px_rgba(0,0,0,0.58)] ring-1 ring-white/[0.045] transition-[box-shadow,border-color,background-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-white/[0.11] hover:bg-ink/[0.84] hover:shadow-[0_14px_40px_-24px_rgba(0,0,0,0.56)]"
+						aria-labelledby="byo4ebr-heading"
+					>
+						<p
+							class="flex shrink-0 items-center justify-center bg-zinc-900/95 px-4 py-3 text-center text-[0.8125rem] font-semibold leading-snug tracking-[0.04em] text-pop/90 sm:text-sm sm:tracking-[0.055em]"
+						>
+							🥈 Brastemp BYO4EBR
+						</p>
+						<div class="shrink-0 px-3 pb-3 pt-1 sm:px-3.5 sm:pb-3.5">
+							<div
+								class="relative mx-auto aspect-square w-full max-w-[min(100%,21.5rem)] overflow-hidden rounded-[0.875rem] bg-[#b5b5b5]"
+							>
+								<div class="absolute inset-3 flex items-center justify-center sm:inset-[0.8125rem]">
+									<img
+										src="/images/melhores/melhor-fogao-4-bocas-de-embutir/brastemp-byo4ebr.webp"
+										alt="Fogão de embutir Brastemp BYO4EBR com mesa de inox e tampa de vidro"
+										width="1254"
+										height="1254"
+										loading="lazy"
+										decoding="async"
+										class="max-h-full max-w-full object-contain object-center"
+									/>
+								</div>
+							</div>
+						</div>
+						<div class="flex min-h-0 flex-1 flex-col px-4 pb-5 pt-4 sm:px-5">
+							<h3 id="byo4ebr-heading" class="font-display text-lg font-bold leading-snug text-on-ink-body sm:text-xl">
+								Alternativa com mesa em inox
+							</h3>
+							<p class="mt-2.5 text-sm leading-relaxed text-on-ink-body">
+								O Brastemp BYO4EBR segue uma proposta diferente: sua mesa é de <strong class="font-semibold">inox</strong>, e o modelo combina forno de <strong class="font-semibold">61 litros</strong>, duas prateleiras, Dupla Chama e grades individuais.
+							</p>
+							<p class="mt-2.5 text-sm leading-relaxed text-on-ink-body">
+								É a alternativa deste comparativo para quem prefere inox na mesa e quer um conjunto mais direto de recursos.
+							</p>
+							<dl class="mt-3 grid grid-cols-2 gap-x-3 gap-y-2 text-sm">
+								<div>
+									<dt class="font-semibold text-on-ink-muted">Forno</dt>
+									<dd class="text-on-ink-body">61 L</dd>
+								</div>
+								<div>
+									<dt class="font-semibold text-on-ink-muted">Prateleiras</dt>
+									<dd class="text-on-ink-body">2</dd>
+								</div>
+								<div>
+									<dt class="font-semibold text-on-ink-muted">Mesa</dt>
+									<dd class="text-on-ink-body">inox</dd>
+								</div>
+								<div>
+									<dt class="font-semibold text-on-ink-muted">Queimador</dt>
+									<dd class="text-on-ink-body">Dupla Chama</dd>
+								</div>
+							</dl>
+							<div class={ctaCardPairClass}>
+								<a
+									href={byo4ebr.ml}
+									class={ctaMlClass}
+									target="_blank"
+									rel="noopener noreferrer nofollow sponsored"
+									aria-label="Ver no Mercado Livre — Brastemp BYO4EBR — abre em nova aba (link patrocinado)"
+									{...mlAffiliateAttrs('brastempBYO4EBR', 'product_card')}
+								>
+									Ver no Mercado Livre
+								</a>
+								{
+									byo4ebr.shopee ? (
+										<a
+											href={byo4ebr.shopee}
+											class={ctaShopeeClass}
+											target="_blank"
+											rel="noopener noreferrer nofollow sponsored"
+											aria-label="Ver na Shopee — Brastemp BYO4EBR — abre em nova aba (link patrocinado)"
+											{...shopeeAffiliateAttrs('brastempBYO4EBR', 'product_card')}
+										>
+											Ver na Shopee
+										</a>
+									) : null
+								}
+							</div>
+						</div>
+					</article>
+
+					<article
+						class="flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-white/[0.09] bg-ink/80 shadow-[0_10px_36px_-22px_rgba(0,0,0,0.58)] ring-1 ring-white/[0.045] transition-[box-shadow,border-color,background-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-white/[0.11] hover:bg-ink/[0.84] hover:shadow-[0_14px_40px_-24px_rgba(0,0,0,0.56)]"
+						aria-labelledby="dako-heading"
+					>
+						<p
+							class="flex shrink-0 items-center justify-center bg-amber-700/88 px-4 py-3 text-center text-[0.8125rem] font-semibold leading-snug tracking-[0.04em] text-amber-50/95 sm:text-sm sm:tracking-[0.055em]"
+						>
+							🥉 Dako Supreme
+						</p>
+						<div class="shrink-0 px-3 pb-3 pt-1 sm:px-3.5 sm:pb-3.5">
+							<div
+								class="relative mx-auto aspect-square w-full max-w-[min(100%,21.5rem)] overflow-hidden rounded-[0.875rem] bg-[#b5b5b5]"
+							>
+								<div class="absolute inset-3 flex items-center justify-center sm:inset-[0.8125rem]">
+									<img
+										src="/images/melhores/melhor-fogao-4-bocas-de-embutir/dako-supreme-embutir.webp"
+										alt="Fogão de embutir Dako Supreme preto com mesa de vidro temperado"
+										width="1254"
+										height="1254"
+										loading="lazy"
+										decoding="async"
+										class="max-h-full max-w-full object-contain object-center"
+									/>
+								</div>
+							</div>
+						</div>
+						<div class="flex min-h-0 flex-1 flex-col px-4 pb-5 pt-4 sm:px-5">
+							<h3 id="dako-heading" class="font-display text-lg font-bold leading-snug text-on-ink-body sm:text-xl">
+								Mesa de vidro e conjunto mais direto
+							</h3>
+							<p class="mt-2.5 text-sm leading-relaxed text-on-ink-body">
+								O Dako Supreme combina <strong class="font-semibold">mesa de vidro temperado, forno de 60 litros e duas prateleiras</strong>.
+							</p>
+							<p class="mt-2.5 text-sm leading-relaxed text-on-ink-body">
+								Também oferece Mega Chama, acendimento automático, vidro interno removível e acabamento Limpa Fácil no forno.
+							</p>
+							<dl class="mt-3 grid grid-cols-2 gap-x-3 gap-y-2 text-sm">
+								<div>
+									<dt class="font-semibold text-on-ink-muted">Forno</dt>
+									<dd class="text-on-ink-body">60 L</dd>
+								</div>
+								<div>
+									<dt class="font-semibold text-on-ink-muted">Prateleiras</dt>
+									<dd class="text-on-ink-body">2</dd>
+								</div>
+								<div>
+									<dt class="font-semibold text-on-ink-muted">Mesa</dt>
+									<dd class="text-on-ink-body">vidro</dd>
+								</div>
+								<div>
+									<dt class="font-semibold text-on-ink-muted">Queimador</dt>
+									<dd class="text-on-ink-body">Mega Chama</dd>
+								</div>
+							</dl>
+							<div class={ctaCardPairClass}>
+								<a
+									href={dako.ml}
+									class={ctaMlClass}
+									target="_blank"
+									rel="noopener noreferrer nofollow sponsored"
+									aria-label="Ver no Mercado Livre — Dako Supreme — abre em nova aba (link patrocinado)"
+									{...mlAffiliateAttrs('dakoSupremeEmbutir4Bocas', 'product_card')}
+								>
+									Ver no Mercado Livre
+								</a>
+								{
+									dako.shopee ? (
+										<a
+											href={dako.shopee}
+											class={ctaShopeeClass}
+											target="_blank"
+											rel="noopener noreferrer nofollow sponsored"
+											aria-label="Ver na Shopee — Dako Supreme — abre em nova aba (link patrocinado)"
+											{...shopeeAffiliateAttrs('dakoSupremeEmbutir4Bocas', 'product_card')}
+										>
+											Ver na Shopee
+										</a>
+									) : null
+								}
+							</div>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section class="mt-14" aria-labelledby="comparativo-heading" id="guia-comercial-comparativo">
+			<h2 id="comparativo-heading" class="font-display text-2xl font-bold tracking-tight text-on-ink-body sm:text-[1.75rem]">
+				Compare os três antes de escolher
+			</h2>
+			<div class="table-premium-shell mt-6 overflow-x-auto [-webkit-overflow-scrolling:touch]">
+				<table class="table-premium min-w-[640px] text-[0.9375rem] leading-snug">
+					<thead>
+						<tr>
+							<th scope="col" class="!py-4">Característica</th>
+							<th scope="col" class="!py-4">Electrolux FE4BB</th>
+							<th scope="col" class="!py-4">Brastemp BYO4EBR</th>
+							<th scope="col" class="!py-4">Dako Supreme</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="bg-ink">
+							<th scope="row" class="text-left font-semibold text-on-ink-body">Bocas</th>
+							<td>4</td>
+							<td>4</td>
+							<td>4</td>
+						</tr>
+						<tr class="bg-brand-900/30">
+							<th scope="row" class="text-left font-semibold text-on-ink-body">Mesa</th>
+							<td>Vidro</td>
+							<td>Inox</td>
+							<td>Vidro</td>
+						</tr>
+						<tr class="bg-ink">
+							<th scope="row" class="text-left font-semibold text-on-ink-body">Forno</th>
+							<td>72,6 L</td>
+							<td>61 L</td>
+							<td>60 L</td>
+						</tr>
+						<tr class="bg-brand-900/30">
+							<th scope="row" class="text-left font-semibold text-on-ink-body">Prateleiras</th>
+							<td>2</td>
+							<td>2</td>
+							<td>2</td>
+						</tr>
+						<tr class="bg-ink">
+							<th scope="row" class="text-left font-semibold text-on-ink-body">Queimador de maior potência</th>
+							<td>Tripla Chama</td>
+							<td>Dupla Chama</td>
+							<td>Mega Chama</td>
+						</tr>
+						<tr class="bg-brand-900/30">
+							<th scope="row" class="text-left font-semibold text-on-ink-body">Vidro interno</th>
+							<td>Removível</td>
+							<td>Vedado</td>
+							<td>Removível</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class={`${ctaPairClass} mt-6 max-w-xl`}>
+				<a
+					href={fe4bb.ml}
+					class={ctaMlClass}
+					target="_blank"
+					rel="noopener noreferrer nofollow sponsored"
+					aria-label="Ver no Mercado Livre — Electrolux FE4BB — abre em nova aba (link patrocinado)"
+					{...mlAffiliateAttrs('electroluxFE4BB', 'comparison_table')}
+				>
+					Ver no Mercado Livre
+				</a>
+				{
+					fe4bb.shopee ? (
+						<a
+							href={fe4bb.shopee}
+							class={ctaShopeeClass}
+							target="_blank"
+							rel="noopener noreferrer nofollow sponsored"
+							aria-label="Ver na Shopee — Electrolux FE4BB — abre em nova aba (link patrocinado)"
+							{...shopeeAffiliateAttrs('electroluxFE4BB', 'comparison_table')}
+						>
+							Ver na Shopee
+						</a>
+					) : null
+				}
+			</div>
+		</section>
+
+		<section class="mt-14" aria-labelledby="ordem-heading">
+			<h2 id="ordem-heading" class="font-display text-2xl font-bold tracking-tight text-on-ink-body sm:text-[1.75rem]">
+				Por que esta é a ordem?
+			</h2>
+			<ol class="mt-6 space-y-3">
+				<li class="rounded-xl border border-white/[0.08] bg-brand-900/40 px-4 py-3.5 sm:px-5">
+					<p class="flex flex-wrap items-baseline gap-x-2 gap-y-0.5 font-display text-base leading-snug sm:text-lg">
+						<span class="shrink-0 text-[1.05em] font-extrabold tabular-nums tracking-tight text-emerald-400">1º</span>
+						<span class="text-on-ink-muted/70" aria-hidden="true">—</span>
+						<span class="font-extrabold text-on-ink-body">Electrolux FE4BB</span>
+					</p>
+					<p class="mt-1.5 text-sm leading-relaxed text-on-ink-muted sm:text-[0.9375rem]">
+						Fica à frente pelo conjunto mais amplo de recursos e pelo maior forno entre os três modelos comparados.
+					</p>
+				</li>
+				<li class="rounded-xl border border-white/[0.08] bg-brand-900/40 px-4 py-3.5 sm:px-5">
+					<p class="flex flex-wrap items-baseline gap-x-2 gap-y-0.5 font-display text-base leading-snug sm:text-lg">
+						<span class="shrink-0 text-[1.05em] font-extrabold tabular-nums tracking-tight text-pop">2º</span>
+						<span class="text-on-ink-muted/70" aria-hidden="true">—</span>
+						<span class="font-extrabold text-on-ink-body">Brastemp BYO4EBR</span>
+					</p>
+					<p class="mt-1.5 text-sm leading-relaxed text-on-ink-muted sm:text-[0.9375rem]">
+						Fica em segundo com uma proposta diferente, marcada pela mesa em inox, Dupla Chama e duas prateleiras.
+					</p>
+				</li>
+				<li class="rounded-xl border border-white/[0.08] bg-brand-900/40 px-4 py-3.5 sm:px-5">
+					<p class="flex flex-wrap items-baseline gap-x-2 gap-y-0.5 font-display text-base leading-snug sm:text-lg">
+						<span class="shrink-0 text-[1.05em] font-extrabold tabular-nums tracking-tight text-amber-300">3º</span>
+						<span class="text-on-ink-muted/70" aria-hidden="true">—</span>
+						<span class="font-extrabold text-on-ink-body">Dako Supreme</span>
+					</p>
+					<p class="mt-1.5 text-sm leading-relaxed text-on-ink-muted sm:text-[0.9375rem]">
+						Fica em terceiro com mesa de vidro, forno de 60 litros, duas prateleiras e recursos como Mega Chama e Limpa Fácil.
+					</p>
+				</li>
+			</ol>
+		</section>
+
+		<section
+			class="mt-14 rounded-2xl border border-amber-400/25 bg-amber-950/20 px-5 py-6 ring-1 ring-amber-400/15 sm:px-6 sm:py-7"
+			aria-labelledby="nicho-heading"
+			id="nicho"
+		>
+			<h2 id="nicho-heading" class="font-display text-2xl font-bold tracking-tight text-on-ink-body sm:text-[1.75rem]">
+				Antes de comprar, confira o nicho
+			</h2>
+			<p class="mt-4 text-base leading-relaxed text-on-ink-body">
+				Em um fogão de embutir, não basta conferir apenas o tamanho do aparelho. <strong class="font-semibold">O nicho preparado na cozinha precisa ser compatível com o modelo escolhido.</strong>
+			</p>
+			<p class="mt-3 text-base leading-relaxed text-on-ink-body">
+				Os três modelos têm medidas de nicho diferentes.
+			</p>
+			{/*
+				CTA “[Conferir as medidas dos três modelos]” omitido de propósito:
+				não existe URL publicada com as medidas de nicho destes três SKUs.
+				Não inventar link nem página só para preencher o botão.
+			*/}
+			<p class="mt-3 text-base leading-relaxed text-on-ink-body">
+				Se o móvel ainda está sendo planejado, faça essa conferência antes de comprar.
+			</p>
+		</section>
+
+		<section
+			class="mt-14 rounded-2xl border border-emerald-400/30 bg-emerald-950/25 px-5 py-7 shadow-[0_16px_40px_-28px_rgba(16,185,129,0.35)] ring-1 ring-emerald-400/20 sm:px-7 sm:py-8"
+			aria-labelledby="escolha-heading"
+			id="fechamento"
+		>
+			<h2 id="escolha-heading" class="font-display text-2xl font-bold tracking-tight text-on-ink-body sm:text-[1.75rem]">
+				Então, qual eu escolheria?
+			</h2>
+			<p class="mt-4 text-base leading-relaxed text-on-ink-body">
+				Entre os três modelos deste comparativo, <strong class="font-semibold">o Electrolux FE4BB é a escolha que fica à frente pelo conjunto de recursos e pela capacidade do forno</strong>.
+			</p>
+			<p class="mt-3 text-base leading-relaxed text-on-ink-body">
+				O Brastemp BYO4EBR passa a fazer mais sentido se sua prioridade for <strong class="font-semibold">mesa em inox</strong>.
+			</p>
+			<p class="mt-3 text-base leading-relaxed text-on-ink-body">
+				O Dako Supreme é a alternativa para quem procura <strong class="font-semibold">mesa de vidro e um conjunto mais direto</strong>.
+			</p>
+			<div class="mt-6 rounded-xl border border-emerald-400/25 bg-ink/50 px-4 py-4 sm:px-5">
+				<p class="font-display text-xl font-extrabold text-on-ink-body sm:text-2xl">Electrolux FE4BB</p>
+				<div class={`${ctaPairClass} mt-4`}>
+					<a
+						href={fe4bb.ml}
+						class={ctaMlClass}
+						target="_blank"
+						rel="noopener noreferrer nofollow sponsored"
+						aria-label="Ver no Mercado Livre — Electrolux FE4BB — abre em nova aba (link patrocinado)"
+						{...mlAffiliateAttrs('electroluxFE4BB', 'page_end')}
+					>
+						Ver no Mercado Livre
+					</a>
+					{
+						fe4bb.shopee ? (
+							<a
+								href={fe4bb.shopee}
+								class={ctaShopeeClass}
+								target="_blank"
+								rel="noopener noreferrer nofollow sponsored"
+								aria-label="Ver na Shopee — Electrolux FE4BB — abre em nova aba (link patrocinado)"
+								{...shopeeAffiliateAttrs('electroluxFE4BB', 'page_end')}
+							>
+								Ver na Shopee
+							</a>
+						) : null
+					}
+				</div>
+			</div>
+		</section>
+
+		<section class="mt-14 border-t border-white/10 pt-12" aria-labelledby="faq-heading" id="faq">
+			<h2 id="faq-heading" class="font-display text-2xl font-bold tracking-tight text-on-ink-body">
+				Dúvidas antes de comprar
+			</h2>
+			<dl class="blog-faq mt-6">
+				{
+					faqItems.map((item) => (
+						<div class="blog-faq-item">
+							<dt>{item.question}</dt>
+							<dd class="max-w-none text-base leading-[1.7] text-on-ink-muted">{item.answer}</dd>
+						</div>
+					))
+				}
+			</dl>
+		</section>
+
+		<p class="mt-12 border-t border-white/10 pt-8 text-base font-semibold leading-relaxed text-on-ink-body">
+			Escolha o modelo, confira o nicho e veja a oferta antes de comprar.
+		</p>
+	</article>
+</BaseLayout>

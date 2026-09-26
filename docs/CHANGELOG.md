@@ -7,6 +7,28 @@ Formato: mais recente no topo.
 
 ---
 
+## 2026-09-26
+
+### Padrão visual — cards de comparativo (página Melhores dedicada) ✅ aprovado
+
+- Top 3 lado a lado sem `HomeTopProducts`: `md:grid-cols-3`, card `rounded-2xl`.
+- Foto: bloco gelo `#b5b5b5` com padding, `rounded-[0.875rem]`, **sem** linha divisória (`border-b` / `ring`).
+- Packshot íntegro 1254² com fundo gelo uniforme (não crop agressivo; não branco de estúdio).
+- Referência: `/melhores/melhor-fogao-4-bocas-de-embutir/` (`#guia-comercial-produtos`).
+- SSOT: `docs/MANUAL_DESIGN_SYSTEM.md` §7.4 · `docs/PADROES_DE_COMPONENTES.md` · `.cursor/rules/cards-comparativo-pagina-dedicada.mdc`.
+
+### Modelo de construção do catálogo
+
+- Princípio: não construímos catálogo para depois procurar o que fazer com ele. Escolhemos uma decisão comercial que merece patrimônio e construímos o catálogo necessário para vencê-la.
+- O catálogo cresce **por decisão comercial**, não por cadastro prévio do universo de eletrodomésticos.
+- “Catálogo consolidado” = produtos **daquela página** validados e monetizados. Não exige inventário global completo.
+- Objetivo: patrimônio que gera venda por afiliado. **Eficácia comercial > volume bruto de tráfego.**
+- Os 18 productIds atuais não viram páginas automaticamente. Consolidação global não bloqueia a próxima decisão.
+- SSOT: `docs/MODELO_CONSTRUCAO_CATALOGO.md` · regra `.cursor/rules/modelo-construcao-catalogo.mdc`.
+- Sem páginas novas, SKUs novos, refactor de catálogo ou alteração de afiliados nesta decisão.
+
+---
+
 ## 2026-09-20
 
 ### Regra de criação de URLs por intenção

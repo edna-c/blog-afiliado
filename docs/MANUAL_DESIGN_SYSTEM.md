@@ -353,6 +353,41 @@ Sempre comunicar que ofertas, frete e estoque podem variar — conferir na loja.
 - Não omitir `nofollow sponsored` nos CTAs externos  
 - Não substituir o packshot editorial por lifestyle no card  
 
+### 7.4 Variante oficial — cards de comparativo (página dedicada)
+
+**Status:** aprovado (2026-09-26).  
+Usar quando a página Melhores **não** passa por `HomeTopProducts` / `commercialGuideBlocks` e monta o Top 3 direto no `.astro`.
+
+**Implementação de referência:**  
+`src/pages/melhores/melhor-fogao-4-bocas-de-embutir.astro` → `#guia-comercial-produtos`
+
+| Elemento | Padrão |
+|----------|--------|
+| Largura | Breakout full-bleed + `max-w-7xl` (não preso em `max-w-3xl` de prosa) |
+| Grid | `grid-cols-1` → `md:grid-cols-3` · `items-stretch` · `gap-6` |
+| Card | `rounded-2xl` · `border` + `ring-1` · `bg-ink/80` · sombra suave · hover leve |
+| Featured (🥇) | Borda/anel esmeralda; 🥈 / 🥉: `border-white/[0.09]` |
+| Badge | Medalha + marca/SKU · tons `emerald` / `pop` / `amber` · **sem** `border-b` / `ring` |
+| Foto | Padding interno (`px-3 pb-3`) + bloco gelo `#b5b5b5` |
+| Bloco da foto | `rounded-[0.875rem]` · **sem** `ring` / linha divisória · `max-w-[min(100%,21.5rem)]` · inset + `object-contain` |
+| Packshot | 1254² WebP · fundo gelo `#b5b5b5` uniforme · produto **íntegro** (sem crop agressivo) |
+| Corpo | Título do papel · 1–2 parágrafos · `dl` 2 cols · CTAs empilhados via `products.ts` |
+
+**Obrigatório**
+
+- Cantos do bloco gelo **visíveis e arredondados**.
+- Sem linha entre badge e foto.
+- Packshot com fundo gelo igual ao do bloco (não deixar branco de estúdio).
+
+**Não fazer**
+
+- `ring` / `border` no bloco da foto; `border-b` no badge.
+- Cinza full-bleed até a borda do card (cantos internos somem).
+- Flood-fill / crop que coma lateral ou base do produto.
+- Empilhar os 3 cards no desktop; inventar URL fora de `products.ts`.
+
+**Outra variante:** `HomeTopProducts` + `.guide-editorial--*` → `.cursor/rules/affiliate-product-cards.mdc`.
+
 ---
 
 ## 8. Checklist antes de mudança estrutural de design

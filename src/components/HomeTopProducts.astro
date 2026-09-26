@@ -260,14 +260,11 @@ function productAnalysisLink(product: CommercialProduct): {
 									) : null}
 
 									<div class="mt-auto flex flex-col gap-3 border-t border-white/[0.06] pt-5">
-										<div class="grid grid-cols-1 gap-2.5 sm:grid-cols-2 sm:gap-3">
+										<div class="cta-affiliate-pair">
 											<a
 												href={p.mercadoLivreUrl}
 												class:list={[
-													'inline-flex min-h-[52px] w-full items-center justify-center gap-1.5 rounded-[0.625rem] border-2 border-transparent px-5 py-3.5 text-center text-[0.75rem] font-extrabold uppercase tracking-wide text-white transition-[box-shadow,background-color,filter,border-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] sm:text-[0.72rem]',
-													p.featured
-														? 'border-emerald-400/25 bg-emerald-700 shadow-[0_1px_0_rgba(255,255,255,0.08)_inset,0_2px_8px_-2px_rgba(0,0,0,0.35),0_8px_24px_-8px_rgba(5,150,105,0.38)] ring-1 ring-emerald-300/25 hover:border-emerald-300/35 hover:bg-emerald-600 hover:shadow-[0_1px_0_rgba(255,255,255,0.1)_inset,0_4px_14px_-4px_rgba(0,0,0,0.38),0_12px_32px_-10px_rgba(5,150,105,0.42)] hover:brightness-[1.02] active:brightness-[0.98]'
-														: 'border-white/10 bg-cta shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_8px_-2px_rgba(0,0,0,0.35),0_6px_20px_-8px_rgba(34,197,94,0.32)] ring-1 ring-white/18 hover:border-white/18 hover:bg-cta-hover hover:shadow-[0_1px_0_rgba(255,255,255,0.14)_inset,0_4px_14px_-4px_rgba(0,0,0,0.36),0_10px_28px_-8px_rgba(34,197,94,0.38)] hover:brightness-[1.02] active:brightness-[0.99]',
+													'cta-affiliate cta-affiliate--ml',
 													!p.shopeeUrl && 'sm:col-span-2',
 												]}
 												target="_blank"
@@ -275,22 +272,20 @@ function productAnalysisLink(product: CommercialProduct): {
 												aria-label={`Ver preço e disponibilidade do ${productNoun} ${p.name} no Mercado Livre — abre em nova aba (link patrocinado)`}
 												{...mlAffiliateAttrs(p.productId, 'product_card')}
 											>
-												<span class="inline-flex items-center gap-1.5">
-													<span aria-hidden="true">{p.featured ? '🔥' : '👉'}</span>
-													<span>{getMercadoLivreCtaLabel(p)}</span>
-												</span>
+												<span aria-hidden="true">{p.featured ? '🔥' : '👉'}</span>
+												<span class="min-w-0 text-balance">{getMercadoLivreCtaLabel(p)}</span>
 											</a>
 											{p.shopeeUrl ? (
 												<a
 													href={p.shopeeUrl}
-													class="btn-secondary-premium w-full px-5 py-3.5 text-[0.72rem] sm:text-[0.72rem]"
+													class="cta-affiliate cta-affiliate--shopee"
 													target="_blank"
 													rel="noopener noreferrer nofollow sponsored"
 													aria-label={`Ver oferta do ${productNoun} ${p.name} na Shopee — abre em nova aba (link patrocinado)`}
 													{...shopeeAffiliateAttrs(p.productId, 'product_card')}
 												>
 													<span aria-hidden="true">👉</span>
-													{p.shopeeCtaText ?? 'Ver oferta na Shopee'}
+													<span class="min-w-0 text-balance">{p.shopeeCtaText ?? 'Ver oferta na Shopee'}</span>
 												</a>
 											) : null}
 										</div>
@@ -431,14 +426,11 @@ function productAnalysisLink(product: CommercialProduct): {
 									) : null}
 
 									<div class="mt-auto flex flex-col gap-3 border-t border-white/[0.06] pt-5">
-										<div class="grid grid-cols-1 gap-2.5 sm:grid-cols-2 sm:gap-3">
+										<div class="cta-affiliate-pair">
 											<a
 												href={p.mercadoLivreUrl}
 												class:list={[
-													'inline-flex min-h-[52px] w-full items-center justify-center gap-1.5 rounded-[0.625rem] border-2 border-transparent px-5 py-3.5 text-center text-[0.75rem] font-extrabold uppercase tracking-wide text-white transition-[box-shadow,background-color,filter,border-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] sm:text-[0.72rem]',
-													p.featured
-														? 'border-emerald-400/25 bg-emerald-700 shadow-[0_1px_0_rgba(255,255,255,0.08)_inset,0_2px_8px_-2px_rgba(0,0,0,0.35),0_8px_24px_-8px_rgba(5,150,105,0.38)] ring-1 ring-emerald-300/25 hover:border-emerald-300/35 hover:bg-emerald-600 hover:shadow-[0_1px_0_rgba(255,255,255,0.1)_inset,0_4px_14px_-4px_rgba(0,0,0,0.38),0_12px_32px_-10px_rgba(5,150,105,0.42)] hover:brightness-[1.02] active:brightness-[0.98]'
-														: 'border-white/10 bg-cta shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_2px_8px_-2px_rgba(0,0,0,0.35),0_6px_20px_-8px_rgba(34,197,94,0.32)] ring-1 ring-white/18 hover:border-white/18 hover:bg-cta-hover hover:shadow-[0_1px_0_rgba(255,255,255,0.14)_inset,0_4px_14px_-4px_rgba(0,0,0,0.36),0_10px_28px_-8px_rgba(34,197,94,0.38)] hover:brightness-[1.02] active:brightness-[0.99]',
+													'cta-affiliate cta-affiliate--ml',
 													!p.shopeeUrl && 'sm:col-span-2',
 												]}
 												target="_blank"
@@ -446,22 +438,20 @@ function productAnalysisLink(product: CommercialProduct): {
 												aria-label={`Ver preço e disponibilidade do ${productNoun} ${p.name} no Mercado Livre — abre em nova aba (link patrocinado)`}
 												{...mlAffiliateAttrs(p.productId, 'product_card')}
 											>
-												<span class="inline-flex items-center gap-1.5">
-													<span aria-hidden="true">{p.featured ? '🔥' : '👉'}</span>
-													<span>{getMercadoLivreCtaLabel(p)}</span>
-												</span>
+												<span aria-hidden="true">{p.featured ? '🔥' : '👉'}</span>
+												<span class="min-w-0 text-balance">{getMercadoLivreCtaLabel(p)}</span>
 											</a>
 											{p.shopeeUrl ? (
 												<a
 													href={p.shopeeUrl}
-													class="btn-secondary-premium w-full px-5 py-3.5 text-[0.72rem] sm:text-[0.72rem]"
+													class="cta-affiliate cta-affiliate--shopee"
 													target="_blank"
 													rel="noopener noreferrer nofollow sponsored"
 													aria-label={`Ver oferta do ${productNoun} ${p.name} na Shopee — abre em nova aba (link patrocinado)`}
 													{...shopeeAffiliateAttrs(p.productId, 'product_card')}
 												>
 													<span aria-hidden="true">👉</span>
-													{p.shopeeCtaText ?? 'Ver oferta na Shopee'}
+													<span class="min-w-0 text-balance">{p.shopeeCtaText ?? 'Ver oferta na Shopee'}</span>
 												</a>
 											) : null}
 										</div>

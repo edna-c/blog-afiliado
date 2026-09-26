@@ -55,36 +55,30 @@ const shopeeAttrs = shopeeAffiliateAttrs(productId, 'offer_block');
 			}
 		</div>
 	</div>
-	<div class="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+	<div class="mt-6 cta-affiliate-pair">
 		<a
 			href={mercadoLivreUrl}
-			class:list={[
-				'inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-lg border-2 border-transparent px-5 py-3.5 text-center text-[0.72rem] font-extrabold uppercase tracking-wide text-white transition duration-300 sm:text-[0.75rem]',
-				isFeatured
-					? 'bg-emerald-600 shadow-[0_4px_18px_-2px_rgba(5,150,105,0.55)] ring-1 ring-emerald-300/40 hover:bg-emerald-700 hover:brightness-110'
-					: 'bg-cta ring-1 ring-white/15 hover:bg-cta-hover',
-				!shopeeUrl && 'sm:col-span-2',
-			]}
+			class:list={['cta-affiliate cta-affiliate--ml', !shopeeUrl && 'sm:col-span-2']}
 			target="_blank"
 			rel="noopener noreferrer nofollow sponsored"
 			aria-label={`Ver preço e disponibilidade do ${productName} no Mercado Livre — abre em nova aba (link patrocinado)`}
 			{...mlAttrs}
 		>
 			<span aria-hidden="true">{isFeatured ? '🔥' : '👉'}</span>
-			<span>{isFeatured ? 'Ver melhor preço no Mercado Livre' : 'Ver preço no Mercado Livre'}</span>
+			<span class="min-w-0 text-balance">{isFeatured ? 'Ver melhor preço no Mercado Livre' : 'Ver preço no Mercado Livre'}</span>
 		</a>
 		{
 			shopeeUrl ? (
 				<a
 					href={shopeeUrl}
-					class="btn-secondary-premium w-full px-5 py-3.5 text-[0.72rem] sm:text-[0.75rem]"
+					class="cta-affiliate cta-affiliate--shopee"
 					target="_blank"
 					rel="noopener noreferrer nofollow sponsored"
 					aria-label={`Ver oferta do ${productName} na Shopee — abre em nova aba (link patrocinado)`}
 					{...shopeeAttrs}
 				>
 					<span aria-hidden="true">👉</span>
-					<span>Ver oferta na Shopee</span>
+					<span class="min-w-0 text-balance">Ver oferta na Shopee</span>
 				</a>
 			) : null
 		}

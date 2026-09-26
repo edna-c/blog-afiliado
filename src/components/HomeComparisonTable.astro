@@ -199,9 +199,8 @@ function rowAnalysisLink(row: ComparisonRow): {
 												<a
 													href={r.links.ml}
 													class:list={[
-														comparisonMlCtaShort
-															? 'inline-flex min-h-[44px] w-full items-center justify-center rounded-lg bg-cta px-3 text-[0.7rem] font-bold tracking-wide text-white ring-1 ring-white/15 transition duration-300 ease-out hover:bg-cta-hover'
-															: 'inline-flex min-h-[48px] w-full items-center justify-center gap-1 rounded-lg border-2 border-transparent bg-cta px-4 text-xs font-bold uppercase tracking-wide text-white ring-1 ring-white/15 transition duration-300 ease-out hover:bg-cta-hover',
+														'cta-affiliate cta-affiliate--ml',
+														comparisonMlCtaShort && 'cta-affiliate--compact',
 													]}
 													target="_blank"
 													rel="noopener noreferrer nofollow sponsored"
@@ -221,9 +220,8 @@ function rowAnalysisLink(row: ComparisonRow): {
 													<a
 														href={r.links.shopee}
 														class:list={[
-															comparisonMlCtaShort
-																? 'btn-secondary-premium w-full px-3 py-2.5 text-[0.7rem]'
-																: 'btn-secondary-premium w-full px-4',
+															'cta-affiliate cta-affiliate--shopee',
+															comparisonMlCtaShort && 'cta-affiliate--compact',
 														]}
 														target="_blank"
 														rel="noopener noreferrer nofollow sponsored"
@@ -309,7 +307,7 @@ function rowAnalysisLink(row: ComparisonRow): {
 											<div class="flex min-w-[8.5rem] flex-col gap-1.5">
 												<a
 													href={r.links.ml}
-													class="inline-flex min-h-[44px] w-full items-center justify-center rounded-lg bg-cta px-3 text-[0.7rem] font-bold tracking-wide text-white ring-1 ring-white/15 transition duration-300 ease-out hover:bg-cta-hover"
+													class="cta-affiliate cta-affiliate--ml cta-affiliate--compact"
 													target="_blank"
 													rel="noopener noreferrer nofollow sponsored"
 													aria-label={`Ver oferta do fogão ${r.model} no Mercado Livre — abre em nova aba (link patrocinado)`}
@@ -320,7 +318,7 @@ function rowAnalysisLink(row: ComparisonRow): {
 												{'shopee' in r.links && r.links.shopee ? (
 													<a
 														href={r.links.shopee}
-														class="link-accent-soft inline-flex min-h-[44px] w-full items-center justify-center px-2 text-center text-[0.7rem] font-bold"
+														class="cta-affiliate cta-affiliate--shopee cta-affiliate--compact"
 														target="_blank"
 														rel="noopener noreferrer nofollow sponsored"
 														aria-label={`Ver oferta do fogão ${r.model} na Shopee — abre em nova aba (link patrocinado)`}

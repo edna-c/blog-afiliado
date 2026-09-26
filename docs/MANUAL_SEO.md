@@ -97,12 +97,13 @@ Garantir consistência de descoberta, indexação e rich results sem conflitar c
 
 ## 10. Criação de URLs (intenção, não keyword)
 
-SSOT: `docs/REGRA_CRIACAO_URLS.md` · regra `.cursor/rules/criacao-urls-por-intencao.mdc`.
+SSOT: `docs/REGRA_CRIACAO_URLS.md` · `docs/MODELO_CONSTRUCAO_CATALOGO.md` · regra `.cursor/rules/criacao-urls-por-intencao.mdc`.
 
-Antes de propor página nova: confirmar se uma URL existente já resolve a mesma decisão de compra (produtos, critérios, comparação). Se sim, fortalecer a existente.
+Antes de propor página nova: confirmar se uma URL existente já resolve a mesma decisão de compra (produtos, critérios, comparação). Se sim, fortalecer a existente. Os produtos entram depois dessa decisão, e somente os necessários para ela.
 
-Sequência: **Keyword → intenção → SERP → patrimônio existente → produtos → decisão → URL.**  
-Nunca: **Keyword → volume alto → nova URL.**
+Sequência: **oportunidade → intenção → SERP → patrimônio existente → a página merece existir? → produtos dessa decisão → validar → URL.**  
+Nunca: **Keyword → volume alto → nova URL.**  
+Nunca: **catalogar a categoria inteira → depois decidir a página.**
 
 ---
 

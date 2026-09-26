@@ -1,0 +1,52 @@
+---
+description: Cards Top 3 de comparativo em página Melhores dedicada (padrão aprovado)
+globs: src/pages/melhores/**/*
+alwaysApply: false
+---
+
+# Cards de comparativo — página Melhores dedicada
+
+**Status:** padrão aprovado (2026-09-26).
+
+Aplicar ao montar o Top 3 em página Melhores **dedicada** que não usa `HomeTopProducts` / `commercialGuideBlocks`.
+
+**SSOT:** `docs/MANUAL_DESIGN_SYSTEM.md` §7.4  
+**Referência:** `src/pages/melhores/melhor-fogao-4-bocas-de-embutir.astro` → `#guia-comercial-produtos`
+
+## Layout
+
+- Full-bleed + `max-w-7xl` (não prender em `max-w-3xl`).
+- Grid: `grid-cols-1 md:grid-cols-3` · `items-stretch` · `gap-6`.
+- Card: `rounded-2xl` · `border` + `ring-1` · `bg-ink/80` · sombra + hover leves.
+- Badge: 🥇 emerald · 🥈 pop · 🥉 amber · **sem** `border-b` / `ring`.
+
+## Foto (obrigatório)
+
+```text
+padding (px-3 pb-3 / sm:px-3.5 sm:pb-3.5)
+  └─ bloco gelo
+       · rounded-[0.875rem]
+       · bg #b5b5b5
+       · max-w-[min(100%,21.5rem)]
+       · sem ring / border
+       · inset + object-contain
+```
+
+- Cantos do bloco gelo **visíveis e arredondados**.
+- Sem linha divisória entre badge e foto.
+- Packshot 1254² · fundo gelo `#b5b5b5` uniforme · produto **íntegro**.
+
+## Packshot
+
+- Não cortar lateral/base do produto.
+- Não deixar fundo branco de estúdio — igualar ao gelo `#b5b5b5`.
+- Fonte em `_src/{marca}-{sku}-card-user.png` · saída `{marca}-{sku}.webp`.
+
+## Conteúdo / CTAs
+
+Badge → título do papel → 1–2 parágrafos → `dl` 2 cols → CTAs empilhados.  
+Afiliados só via `products.ts` + tracking attrs.
+
+## Não misturar com
+
+`HomeTopProducts` + `.guide-editorial--*` → `.cursor/rules/affiliate-product-cards.mdc`.

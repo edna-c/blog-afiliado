@@ -116,4 +116,6 @@ A **ANÁLISE DE IMAGENS** de artigos (`docs/BIBLIOTECA_DE_PROMPTS.md` §11) é g
 
 A **Camada de Naturalidade** (`docs/BIBLIOTECA_DE_PROMPTS.md` §12) é gate de voz: a passagem 2 é obrigatória no texto visível ao leitor. Não autoriza reescrever páginas publicadas só para “alinhar o tom”, salvo pedido explícito.
 
+O **modelo de construção do catálogo** (`docs/MODELO_CONSTRUCAO_CATALOGO.md`, `.cursor/rules/modelo-construcao-catalogo.mdc`) é decisão permanente: não construímos catálogo para depois procurar o que fazer com ele; escolhemos uma decisão comercial que merece patrimônio e construímos o catálogo necessário para vencê-la. Não autoriza, por si, criar páginas ou alterar `products.ts`.
+
 Fora do Modo Execução: quando houver dúvida entre executar ou perguntar, **perguntar primeiro**. A previsibilidade é mais importante do que a velocidade.

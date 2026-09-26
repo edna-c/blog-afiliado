@@ -652,32 +652,45 @@ const structuredData = {
 			}
 		</section>
 
-		<div class="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
-			<a
-				href={offerUrl}
-				class="inline-flex min-h-[52px] flex-1 items-center justify-center gap-2 bg-cta px-6 text-xs font-extrabold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-w-[200px]"
-				target="_blank"
-				rel="noopener noreferrer nofollow sponsored"
-				aria-label={`Ver preço do fogão ${model} no Mercado Livre — abre em nova aba (link patrocinado)`}
-				{...mlAffiliateAttrs(productId, 'inline')}
-			>
-				<span aria-hidden="true">🔥</span>
-				Ver preço no Mercado Livre
-			</a>
-			{
-				offerShopeeUrl ? (
+		{
+			offerShopeeUrl ? (
+				<div class="cta-affiliate-pair mt-12 max-w-2xl">
+					<a
+						href={offerUrl}
+						class="cta-affiliate cta-affiliate--ml"
+						target="_blank"
+						rel="noopener noreferrer nofollow sponsored"
+						aria-label={`Ver preço do fogão ${model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+						{...mlAffiliateAttrs(productId, 'inline')}
+					>
+						<span aria-hidden="true">🔥</span>
+						<span class="min-w-0 text-balance">Ver preço no Mercado Livre</span>
+					</a>
 					<a
 						href={offerShopeeUrl}
-						class="btn-secondary-premium flex-1 sm:min-w-[200px]"
+						class="cta-affiliate cta-affiliate--shopee"
 						target="_blank"
 						rel="noopener noreferrer nofollow sponsored"
 						aria-label={`Ver oferta do fogão ${model} na Shopee — abre em nova aba (link patrocinado)`}
 						{...shopeeAffiliateAttrs(productId, 'inline')}
 					>
 						<span aria-hidden="true">👉</span>
-						Ver oferta na Shopee
+						<span class="min-w-0 text-balance">Ver oferta na Shopee</span>
 					</a>
-				) : (
+				</div>
+			) : (
+				<div class="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+					<a
+						href={offerUrl}
+						class="cta-affiliate cta-affiliate--ml"
+						target="_blank"
+						rel="noopener noreferrer nofollow sponsored"
+						aria-label={`Ver preço do fogão ${model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+						{...mlAffiliateAttrs(productId, 'inline')}
+					>
+						<span aria-hidden="true">🔥</span>
+						<span class="min-w-0 text-balance">Ver preço no Mercado Livre</span>
+					</a>
 					<a
 						href={FOGAO_5_BOCAS_GUIDE_HREF}
 						class="btn-secondary-premium flex-1 sm:min-w-[200px]"
@@ -685,9 +698,9 @@ const structuredData = {
 					>
 						Ver ranking e ofertas
 					</a>
-				)
-			}
-		</div>
+				</div>
+			)
+		}
 		<p class="mt-6 text-sm leading-relaxed text-on-ink-muted">
 			Transparência: indicação de loja parceira. No guia{' '}
 			<a
@@ -704,28 +717,28 @@ const structuredData = {
 				Conclusão
 			</h2>
 			<p class="mt-4 text-base leading-relaxed text-on-ink-body">{verdict}</p>
-			<div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+			<div class="cta-affiliate-pair mt-8 max-w-2xl">
 				<a
 					href={offerUrl}
-					class="inline-flex min-h-[52px] flex-1 items-center justify-center gap-2 rounded-lg bg-cta px-6 text-center text-xs font-extrabold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-w-[200px]"
+					class:list={['cta-affiliate cta-affiliate--ml', !offerShopeeUrl && 'sm:col-span-2']}
 					target="_blank"
 					rel="noopener noreferrer nofollow sponsored"
 					aria-label={`Ver preço atualizado do ${model} no Mercado Livre — abre em nova aba (link patrocinado)`}
 					{...mlAffiliateAttrs(productId, 'page_end')}
 				>
-					Ver preço no Mercado Livre
+					<span class="min-w-0 text-balance">Ver preço no Mercado Livre</span>
 				</a>
 				{
 					offerShopeeUrl ? (
 						<a
 							href={offerShopeeUrl}
-							class="btn-secondary-premium flex-1 sm:min-w-[200px]"
+							class="cta-affiliate cta-affiliate--shopee"
 							target="_blank"
 							rel="noopener noreferrer nofollow sponsored"
 							aria-label={`Ver oferta do ${model} na Shopee — abre em nova aba (link patrocinado)`}
 							{...shopeeAffiliateAttrs(productId, 'page_end')}
 						>
-							Ver oferta na Shopee
+							<span class="min-w-0 text-balance">Ver oferta na Shopee</span>
 						</a>
 					) : null
 				}

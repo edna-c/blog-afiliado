@@ -23,7 +23,11 @@ import {
 } from '../../data/commercialGuideBlocks';
 import { mlAffiliateAttrs } from '../../utils/affiliateTracking';
 import { readingTimeLabel } from '../../utils/readingTime';
-import { isRoutedMelhoresGuide, FOGAO_5_BOCAS_RANKING_HREF } from '../../data/melhoresListing';
+import {
+	isRoutedMelhoresGuide,
+	isDedicatedMelhoresPage,
+	FOGAO_5_BOCAS_RANKING_HREF,
+} from '../../data/melhoresListing';
 import { findEntry } from '../../data/editorialContent';
 import Cooktop5BocasJustificativas from '../../components/Cooktop5BocasJustificativas.astro';
 import Cooktop4BocasJustificativas from '../../components/Cooktop4BocasJustificativas.astro';
@@ -63,7 +67,7 @@ const optimizedHeroes: Record<
 export async function getStaticPaths() {
 	const guides = await getCollection('melhores');
 	return guides
-		.filter((guide) => isRoutedMelhoresGuide(guide.id))
+		.filter((guide) => isRoutedMelhoresGuide(guide.id) && !isDedicatedMelhoresPage(guide.id))
 		.map((guide) => ({
 			params: { slug: guide.id },
 			props: { guide },
@@ -309,7 +313,7 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 											featuredHeroProduct && featuredHeroMlCtaLabel ? (
 												<a
 													href={featuredHeroProduct.mercadoLivreUrl}
-													class="inline-flex min-h-[52px] w-full max-w-md self-start items-center justify-center rounded-lg bg-cta px-5 text-xs font-bold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-h-[52px]"
+													class="cta-affiliate cta-affiliate--ml max-w-md self-start"
 													target="_blank"
 													rel="noopener noreferrer nofollow sponsored"
 													aria-label={`Ver preço do ${featuredHeroProduct.name} no Mercado Livre — abre em nova aba (link patrocinado)`}
@@ -323,7 +327,7 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 								) : featuredHeroProduct && featuredHeroMlCtaLabel ? (
 									<a
 										href={featuredHeroProduct.mercadoLivreUrl}
-										class="mt-4 inline-flex min-h-[48px] w-full max-w-xl items-center justify-center bg-cta px-5 text-xs font-bold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-h-[52px]"
+										class="cta-affiliate cta-affiliate--ml mt-4 max-w-xl"
 										target="_blank"
 										rel="noopener noreferrer nofollow sponsored"
 										aria-label={`Ver preço atualizado do ${featuredHeroProduct.name} no Mercado Livre — abre em nova aba (link patrocinado)`}
