@@ -5,6 +5,7 @@ import {
 	getExistingProductReviewUrl,
 	type CommercialGuideId,
 } from '../data/commercialGuideBlocks';
+import { getFogao5BocasComparisonFact } from '../data/fogao5BocasComparisonFacts';
 import type { ComparisonColumnKey, ComparisonRow } from '../types/commercial';
 import { mlAffiliateAttrs, shopeeAffiliateAttrs } from '../utils/affiliateTracking';
 
@@ -41,42 +42,23 @@ const homeRows: ComparisonRow[] = [
 	},
 	{
 		badge: '',
-		model: 'Consul CFS5NAB',
+		model: 'Consul CFS5NAR',
 		price: 'Confira na loja',
 		rating: '',
 		bestFor: 'Para quem quer 96 L, uma prateleira e vidro interno vedado',
 		slug: 'consul',
-		productId: 'consulCFS5NAB',
-		links: produtos.consulCFS5NAB,
+		productId: 'consulCFS5NAR',
+		links: produtos.consulCFS5NAR,
 	},
 ];
 
-/** Diferenças confirmadas — só a tabela da Home. O ramo com guideId não lê isto. */
-const homeComparisonFacts = {
-	electroluxFE5IG: {
-		oven: '88,6 L',
-		shelves: '2',
-		doorGlass: 'removível',
-		resources: 'Vapor, cavidade selada e Tripla Chama',
-	},
-	brastempBFS5NCR: {
-		oven: '96 L',
-		shelves: '2',
-		doorGlass: 'removível',
-		resources: 'Forno convencional e 5 bocas',
-	},
-	consulCFS5NAB: {
-		oven: '96 L',
-		shelves: '1',
-		doorGlass: 'vedado',
-		resources: 'Forno convencional e 5 bocas',
-	},
-} as const;
 const rows = guideBlock?.comparisonRows ?? homeRows;
 const sectionId = isGuideEmbed ? 'guia-comercial-comparativo' : 'compare-heading';
 /** Âncora de justificativas — fallback quando não há review do SKU. */
 const justificativaHref = guideBlock?.reviewPathPrefix;
 const productNoun = guideBlock?.productNoun ?? 'fogão';
+const purchaseColumnLabel = guideBlock?.purchaseColumnLabel ?? 'Ação';
+const comparisonMlCtaShort = guideBlock?.comparisonMlCtaShort === true;
 
 const DEFAULT_COMPARISON_COLUMNS: ComparisonColumnKey[] = ['price', 'rating', 'bestFor'];
 const comparisonColumns: ComparisonColumnKey[] = guideBlock?.comparisonColumns ?? DEFAULT_COMPARISON_COLUMNS;
@@ -86,6 +68,10 @@ const COMPARISON_COLUMN_LABEL: Record<ComparisonColumnKey, string> = {
 	price: 'Preço (ref.)',
 	rating: 'Avaliação',
 	bestFor: 'Melhor para',
+	oven: 'Forno',
+	shelves: 'Prateleiras',
+	doorGlass: 'Vidro interno',
+	resources: 'Recursos',
 	burners: 'Bocas',
 	surface: 'Mesa',
 	grates: 'Grades',
@@ -95,6 +81,7 @@ const COMPARISON_COLUMN_LABEL: Record<ComparisonColumnKey, string> = {
 };
 
 function comparisonCell(row: ComparisonRow, key: ComparisonColumnKey): string {
+	const fact = getFogao5BocasComparisonFact(row.productId);
 	switch (key) {
 		case 'price':
 			return row.price;
@@ -102,6 +89,14 @@ function comparisonCell(row: ComparisonRow, key: ComparisonColumnKey): string {
 			return row.rating;
 		case 'bestFor':
 			return row.bestFor;
+		case 'oven':
+			return fact?.oven ?? '—';
+		case 'shelves':
+			return fact?.shelves ?? '—';
+		case 'doorGlass':
+			return fact?.doorGlass ?? '—';
+		case 'resources':
+			return fact?.resources ?? '—';
 		case 'burners':
 			return row.burners ?? '—';
 		case 'surface':
@@ -122,6 +117,13 @@ function rowAnalysisLink(row: ComparisonRow): {
 	label: string;
 	ariaLabel: string;
 } {
+	if (guideId === 'melhor-fogao-5-bocas' && justificativaHref) {
+		return {
+			href: justificativaHref,
+			label: `Por que ${row.model} neste ranking`,
+			ariaLabel: `Ver na página por que o ${productNoun} ${row.model} está nesta posição`,
+		};
+	}
 	const reviewUrl = getExistingProductReviewUrl(guideId, row.slug);
 	if (reviewUrl) {
 		return {
@@ -166,7 +168,7 @@ function rowAnalysisLink(row: ComparisonRow): {
 									{comparisonColumns.map((col) => (
 										<th scope="col">{COMPARISON_COLUMN_LABEL[col]}</th>
 									))}
-									<th scope="col">Ação</th>
+									<th scope="col">{purchaseColumnLabel}</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -193,29 +195,49 @@ function rowAnalysisLink(row: ComparisonRow): {
 											</td>
 										))}
 										<td class="align-top">
-											<div class="flex min-w-[12rem] flex-col gap-2">
+											<div class="flex min-w-[8.5rem] flex-col gap-1.5">
 												<a
 													href={r.links.ml}
-													class="inline-flex min-h-[48px] w-full items-center justify-center gap-1 rounded-lg border-2 border-transparent bg-cta px-4 text-xs font-bold uppercase tracking-wide text-white ring-1 ring-white/15 transition duration-300 ease-out hover:bg-cta-hover"
+													class:list={[
+														comparisonMlCtaShort
+															? 'inline-flex min-h-[44px] w-full items-center justify-center rounded-lg bg-cta px-3 text-[0.7rem] font-bold tracking-wide text-white ring-1 ring-white/15 transition duration-300 ease-out hover:bg-cta-hover'
+															: 'inline-flex min-h-[48px] w-full items-center justify-center gap-1 rounded-lg border-2 border-transparent bg-cta px-4 text-xs font-bold uppercase tracking-wide text-white ring-1 ring-white/15 transition duration-300 ease-out hover:bg-cta-hover',
+													]}
 													target="_blank"
 													rel="noopener noreferrer nofollow sponsored"
-													aria-label={`Ver preço do ${productNoun} ${r.model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+													aria-label={`Ver oferta do ${productNoun} ${r.model} no Mercado Livre — abre em nova aba (link patrocinado)`}
 													{...mlAffiliateAttrs(r.productId, 'comparison_table')}
 												>
-													<span aria-hidden="true">👉</span>
-													Ver preço no Mercado Livre — {r.model}
+													{comparisonMlCtaShort ? (
+														'Ver oferta'
+													) : (
+														<>
+															<span aria-hidden="true">👉</span>
+															Ver preço no Mercado Livre — {r.model}
+														</>
+													)}
 												</a>
 												{'shopee' in r.links && r.links.shopee ? (
 													<a
 														href={r.links.shopee}
-														class="btn-secondary-premium w-full px-4"
+														class:list={[
+															comparisonMlCtaShort
+																? 'btn-secondary-premium w-full px-3 py-2.5 text-[0.7rem]'
+																: 'btn-secondary-premium w-full px-4',
+														]}
 														target="_blank"
 														rel="noopener noreferrer nofollow sponsored"
 														aria-label={`Ver oferta do ${productNoun} ${r.model} na Shopee — abre em nova aba (link patrocinado)`}
 														{...shopeeAffiliateAttrs(r.productId, 'comparison_table')}
 													>
-														<span aria-hidden="true">👉</span>
-														Ver oferta na Shopee — {r.model}
+														{comparisonMlCtaShort ? (
+															'Ver oferta na Shopee'
+														) : (
+															<>
+																<span aria-hidden="true">👉</span>
+																Ver oferta na Shopee — {r.model}
+															</>
+														)}
 													</a>
 												) : null}
 											</div>
@@ -272,16 +294,16 @@ function rowAnalysisLink(row: ComparisonRow): {
 						<tbody>
 							{
 								rows.map((r, i) => {
-									const fact = homeComparisonFacts[r.productId as keyof typeof homeComparisonFacts];
+									const fact = getFogao5BocasComparisonFact(r.productId);
 									return (
 									<tr class:list={[i % 2 === 0 ? 'bg-ink' : 'bg-brand-900/30']}>
 										<th scope="row" class="text-left align-top">
 											<div class="font-display text-base font-bold text-on-ink-body">{r.model}</div>
 										</th>
-										<td class="text-on-ink-body">{fact.oven}</td>
-										<td class="text-on-ink-body">{fact.shelves}</td>
-										<td class="text-on-ink-body">{fact.doorGlass}</td>
-										<td class="text-on-ink-body">{fact.resources}</td>
+										<td class="text-on-ink-body">{fact?.oven ?? '—'}</td>
+										<td class="text-on-ink-body">{fact?.shelves ?? '—'}</td>
+										<td class="text-on-ink-body">{fact?.doorGlass ?? '—'}</td>
+										<td class="text-on-ink-body">{fact?.resources ?? '—'}</td>
 										<td class="text-on-ink-body">{r.bestFor}</td>
 										<td class="align-middle">
 											<div class="flex min-w-[8.5rem] flex-col gap-1.5">

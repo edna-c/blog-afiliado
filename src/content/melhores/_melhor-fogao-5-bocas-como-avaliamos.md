@@ -7,6 +7,12 @@ category: 'Guia de Compra'
 
 ## Como escolhemos os melhores fogões 5 bocas deste ranking
 
-Este ranking não nasce do menor preço do dia. Comparamos o conjunto que pesa no uso real: distância entre bocas e estabilidade para panela grande, forno utilizável de verdade, limpeza no dia a dia, reputação da marca e oferta afiliada disponível.
+Este ranking não nasce do menor preço do dia. Comparamos o que muda de um modelo para o outro e pesa no uso: **capacidade do forno**, **número de prateleiras**, **tipo de vidro interno da porta**, **recursos de forno e de chama** informados pelo fabricante, e a **mesa**.
 
-A ordem prioriza **perfil claro de comprador** — cada medalha atende um uso diferente, sem empate forçado. Se o tamanho ainda estiver em aberto, o [comparativo fogão 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas/) fecha essa decisão antes da escolha do modelo. Critérios passo a passo: [como escolher fogão 5 bocas](/como-escolher-fogao-5-bocas/).
+Na prática, a tabela acima mostra a evidência:
+
+- **Electrolux FE5IG** — 88,6 L, 2 prateleiras, vapor, cavidade selada e Tripla Chama → quem usa bastante o forno e quer mais recursos.
+- **Brastemp BFS5NCR** — 96 L, 2 prateleiras, vidro interno removível → equilíbrio para rotina familiar e limpeza da porta.
+- **Consul CFS5NAR** — 96 L, 1 prateleira, vidro interno vedado → entra em 5 bocas com o essencial, sem o mesmo degrau de recursos.
+
+A ordem prioriza **perfil claro de comprador** — cada medalha atende um uso diferente, sem empate forçado. Critérios passo a passo (orientação, não compra): [como escolher fogão 5 bocas](/como-escolher-fogao-5-bocas/).

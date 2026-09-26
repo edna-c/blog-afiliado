@@ -70,7 +70,7 @@ describe('affiliateLinkAttrs', () => {
 			'data-cta-position': 'product_card',
 		});
 		const attrs = affiliateLinkAttrs({
-			productId: 'consulCFS5NAB',
+			productId: 'consulCFS5NAR',
 			merchant: 'mercado_livre',
 			ctaType: 'price_check',
 			ctaPosition: 'comparison_table',

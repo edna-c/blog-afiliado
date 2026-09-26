@@ -54,7 +54,12 @@ const linkClass =
 				<ul class="mt-4 space-y-2.5">
 					{
 						quickLinks.map((item) => {
-							const active = isNavActive(pathname, item.href);
+							const active = isNavActive(
+								pathname,
+								item.href,
+								item.activePrefixes,
+								item.excludeActivePrefixes,
+							);
 							return (
 								<li>
 									<a

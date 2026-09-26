@@ -40,52 +40,57 @@ export type CommercialGuideBlock = {
 	reviewPathPrefix: string;
 	/** Box de ranking no Hero editorial (🥇 / 🥈 / 🥉). */
 	heroRanking: HeroRankingLine[];
+	/** H2 pós-ranking: pergunta/decisão explícita (ex.: “Qual o melhor…?”). */
+	heroDecisionHeading?: string;
+	/** Trust line logo após o ranking / antes da próxima ação. */
+	heroTrustLine?: string;
 	/** Fragmentos markdown pós-tabela (ids da collection `melhores`). */
-	moduleIds: readonly [
-		string,
-		string,
-		string,
-		string,
-		string,
-	];
+	moduleIds: readonly string[];
 	/** Substantivo nos aria-labels de CTA (default: fogão). */
 	productNoun?: string;
 	/** Colunas da tabela; se omitido, usa preço / avaliação / melhor para. */
 	comparisonColumns?: ComparisonColumnKey[];
+	/** Rótulo da coluna de compra na tabela (default: Ação). */
+	purchaseColumnLabel?: string;
+	/** Microcopy curta do CTA ML na tabela (default: Ver preço no Mercado Livre — {modelo}). */
+	comparisonMlCtaShort?: boolean;
 };
 
 const melhorFogao5Bocas: CommercialGuideBlock = {
 	topProductsCopy: {
-		eyebrow: 'Escolha rápida',
-		heading: 'Os 3 melhores fogões 5 bocas — comparativo direto',
+		eyebrow: 'Escolha',
+		heading: 'Os 3 melhores fogões 5 bocas',
 		introParagraphs: [
-			'Alguns links podem gerar comissão para o site, sem custo para você. Os preços podem variar, então vale conferir no momento da compra.',
-			'Confira abaixo os modelos recomendados neste guia. As justificativas de cada medalha continuam mais adiante na página.',
+			'Alguns links podem gerar comissão para o site, sem custo para você. Preço e estoque só na loja.',
 		],
-		ctaParagraph:
-			'Agora veja os modelos selecionados, <strong class="font-semibold text-on-ink-body">ofertas atualizadas hoje</strong> — estoque pode variar; use os botões para <strong class="font-semibold text-on-ink-body">ver disponibilidade</strong> na loja.',
+		ctaParagraph: '',
 	},
 	comparisonCopy: {
-		heading: 'Tabela comparativa: melhores fogões 5 bocas',
-		introParagraphs: [
-			'Compare os três modelos do ranking sem sair desta página.',
-			'A tabela reúne preço de referência, nota e o perfil de cada medalha para acelerar a decisão.',
-			'Se o foco for só economia, a coluna “Melhor para” aponta rápido o custo-benefício e a entrada.',
-		],
-		footerNote:
-			'Ainda em dúvida entre 4 e 5 bocas? Feche o tamanho antes do modelo — o comparativo 4 vs 5 bocas resolve essa etapa.',
-		footerCta: 'Continue lendo para ver por que cada medalha existe e qual perfil combina com você.',
+		heading: 'Qual a diferença entre os três?',
+		introParagraphs: [],
+		footerNote: 'Ainda em dúvida entre 4 e 5 bocas?',
 	},
 	reviewPathPrefix: '/melhores/melhor-fogao-5-bocas/#analises-detalhadas',
 	heroRanking: [
-		{ toneClass: 'text-pop', text: '🥇 Melhor geral: Electrolux FE5IG' },
-		{ toneClass: 'text-cta', text: '💰 Melhor custo-benefício: Brastemp BFS5NCR' },
-		{ toneClass: 'text-amber-300', text: '🔥 Entrada / mais acessível: Consul CFS5NAB' },
+		{
+			toneClass: 'text-pop',
+			text: '🥇 Melhor geral: Electrolux FE5IG — vapor, cavidade selada e Tripla Chama',
+		},
+		{
+			toneClass: 'text-cta',
+			text: '💰 Alternativa: Brastemp BFS5NCR — 96 L, 2 prateleiras e vidro interno removível',
+		},
+		{
+			toneClass: 'text-amber-300',
+			text: '🔥 Entrada: Consul CFS5NAR — 96 L, 1 prateleira e vidro interno vedado',
+		},
 	],
+	heroTrustLine: 'Preços, frete e estoque podem variar.',
+	comparisonColumns: ['oven', 'shelves', 'doorGlass', 'resources'],
+	purchaseColumnLabel: 'Onde comprar',
+	comparisonMlCtaShort: true,
 	moduleIds: [
 		'_melhor-fogao-5-bocas-justificativas',
-		'_melhor-fogao-5-bocas-como-avaliamos',
-		'_melhor-fogao-5-bocas-perfil',
 		'_melhor-fogao-5-bocas-antes',
 		'_melhor-fogao-5-bocas-aprofundar',
 	],
@@ -96,61 +101,60 @@ const melhorFogao5Bocas: CommercialGuideBlock = {
 			badgeTone: 'emerald',
 			basePrice: 'Confira na loja',
 			benefits: [
-				'Forno e acabamento para quem cozinha de verdade',
-				'Mesa inox com presença mais premium',
-				'Bom equilíbrio de bocas para várias panelas',
-				'Linha com reputação consolidada no pós-venda',
+				'Para quem: usa bastante o forno',
+				'Por que: vapor, cavidade selada e Tripla Chama',
+				'Diferença: 88,6 L, 2 prateleiras e mesa inox',
 			],
-			socialProof: '⭐ Destaque do ranking 2026',
+			socialProof: '',
 			reviewSlug: 'electrolux',
 			productId: 'electroluxFE5IG',
 			mercadoLivreUrl: produtos.electroluxFE5IG.ml,
-			mlCtaText: DEFAULT_MERCADO_LIVRE_CTA_TEXT,
-			image: '/images/melhores/melhor-fogao-5-bocas/electrolux-fe5ig.webp',
+			shopeeUrl: produtos.electroluxFE5IG.shopee,
+			mlCtaText: 'Ver preço do Electrolux FE5IG',
+			shopeeCtaText: DEFAULT_SHOPEE_CTA_TEXT,
+			image: '/images/melhores/melhor-fogao-5-bocas/electrolux-fe5ig-hero.webp',
 			imageAlt: 'Fogão Electrolux FE5IG 5 bocas em inox com mesa inox',
 			featured: true,
 		},
 		{
 			name: 'Brastemp BFS5NCR',
-			badge: '💰 Melhor custo-benefício',
+			badge: '💰 Custo-benefício',
 			badgeTone: 'pop',
 			basePrice: 'Confira na loja',
 			benefits: [
-				'Potência e forno',
-				'Equilíbrio forte para rotina familiar',
-				'Limpeza e manutenção no uso diário',
-				'Boa disponibilidade nas lojas afiliadas',
+				'Para quem: rotina familiar no meio da faixa',
+				'Por que: 96 L, 2 prateleiras e vidro removível',
+				'Diferença: sem o pacote de recursos do Electrolux',
 			],
-			socialProof: '⭐ Melhor equilíbrio preço/desempenho',
+			socialProof: '',
 			reviewSlug: 'brastemp',
 			productId: 'brastempBFS5NCR',
 			mercadoLivreUrl: produtos.brastempBFS5NCR.ml,
 			shopeeUrl: produtos.brastempBFS5NCR.shopee,
-			mlCtaText: DEFAULT_MERCADO_LIVRE_CTA_TEXT,
+			mlCtaText: 'Ver preço do Brastemp BFS5NCR',
 			shopeeCtaText: DEFAULT_SHOPEE_CTA_TEXT,
 			image: '/images/melhores/melhor-fogao-5-bocas/brastemp-bfs5ncr.webp',
 			imageAlt: 'Fogão Brastemp BFS5NCR 5 bocas em inox',
 		},
 		{
-			name: 'Consul CFS5NAB',
-			badge: '🔥 Entrada / mais acessível',
+			name: 'Consul CFS5NAR',
+			badge: '🔥 Entrada',
 			badgeTone: 'amber',
 			basePrice: 'Confira na loja',
 			benefits: [
-				'Entra em 5 bocas com orçamento mais contido',
-				'Uso simples, sem firula desnecessária',
-				'Adequado para cozinha média e rotina básica',
-				'SKU fácil de achar e comparar preço',
+				'Para quem: orçamento mais contido',
+				'Por que: 96 L, 1 prateleira e vidro vedado',
+				'Diferença: o essencial, sem o mesmo nível de recursos',
 			],
-			socialProof: '✔ Entrada mais acessível do ranking',
+			socialProof: '',
 			reviewSlug: 'consul',
-			productId: 'consulCFS5NAB',
-			mercadoLivreUrl: produtos.consulCFS5NAB.ml,
-			shopeeUrl: produtos.consulCFS5NAB.shopee,
-			mlCtaText: DEFAULT_MERCADO_LIVRE_CTA_TEXT,
+			productId: 'consulCFS5NAR',
+			mercadoLivreUrl: produtos.consulCFS5NAR.ml,
+			shopeeUrl: produtos.consulCFS5NAR.shopee,
+			mlCtaText: 'Ver preço do Consul CFS5NAR',
 			shopeeCtaText: DEFAULT_SHOPEE_CTA_TEXT,
 			image: '/images/melhores/melhor-fogao-5-bocas/consul-cfs5nab.webp',
-			imageAlt: 'Fogão Consul CFS5NAB 5 bocas em inox',
+			imageAlt: 'Fogão Consul CFS5NAR 5 bocas em inox',
 		},
 	],
 	comparisonRows: [
@@ -160,7 +164,7 @@ const melhorFogao5Bocas: CommercialGuideBlock = {
 			model: 'Electrolux FE5IG',
 			price: 'Confira na loja',
 			rating: '⭐⭐⭐⭐⭐',
-			bestFor: 'Forno + acabamento',
+			bestFor: 'Mais recursos no forno e Tripla Chama',
 			slug: 'electrolux',
 			productId: 'electroluxFE5IG',
 			links: produtos.electroluxFE5IG,
@@ -170,20 +174,20 @@ const melhorFogao5Bocas: CommercialGuideBlock = {
 			model: 'Brastemp BFS5NCR',
 			price: 'Confira na loja',
 			rating: '⭐⭐⭐⭐⭐',
-			bestFor: 'Rotina familiar',
+			bestFor: '96 L, duas prateleiras, vidro removível',
 			slug: 'brastemp',
 			productId: 'brastempBFS5NCR',
 			links: produtos.brastempBFS5NCR,
 		},
 		{
 			badge: 'Entrada',
-			model: 'Consul CFS5NAB',
+			model: 'Consul CFS5NAR',
 			price: 'Confira na loja',
 			rating: '⭐⭐⭐⭐☆',
-			bestFor: 'Orçamento contido',
+			bestFor: '96 L, uma prateleira, vidro vedado',
 			slug: 'consul',
-			productId: 'consulCFS5NAB',
-			links: produtos.consulCFS5NAB,
+			productId: 'consulCFS5NAR',
+			links: produtos.consulCFS5NAR,
 		},
 	],
 };

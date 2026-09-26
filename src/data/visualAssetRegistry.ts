@@ -90,7 +90,7 @@ export const PACKSHOT_ASSETS: readonly VisualAsset[] = [
 		id: 'review-consul-cfs5nab',
 		path: '/images/reviews/consul-cfs5nab-review-premium.webp',
 		role: 'packshot-review',
-		subject: 'Consul CFS5NAB',
+		subject: 'Consul CFS5NAR',
 		usedBy: ['/review-fogao-5-bocas-consul/'],
 	},
 	{
@@ -111,7 +111,7 @@ export const PACKSHOT_ASSETS: readonly VisualAsset[] = [
 		id: 'card-5b-consul',
 		path: 'src/assets/images/cards/optimized/consul-cfs5nab-card-premium.webp',
 		role: 'packshot-card',
-		subject: 'Consul CFS5NAB',
+		subject: 'Consul CFS5NAR',
 		usedBy: ['/'],
 	},
 	{
@@ -139,8 +139,8 @@ export const PACKSHOT_ASSETS: readonly VisualAsset[] = [
 		id: 'guide-5b-consul',
 		path: '/images/melhores/melhor-fogao-5-bocas/consul-cfs5nab.webp',
 		role: 'packshot-card',
-		subject: 'Consul CFS5NAB',
-		usedBy: [],
+		subject: 'Consul CFS5NAR',
+		usedBy: ['/melhores/melhor-fogao-5-bocas/'],
 	},
 	{
 		id: 'guide-4b-consul',

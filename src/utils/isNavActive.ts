@@ -14,9 +14,16 @@ export function isNavActive(
 	currentPathname: string,
 	href: string,
 	activePrefixes?: string[],
+	excludeActivePrefixes?: string[],
 ): boolean {
 	const path = normalizePath(currentPathname);
 	const target = normalizePath(href.split('#')[0]);
+
+	if (excludeActivePrefixes?.length) {
+		for (const prefix of excludeActivePrefixes) {
+			if (matchesPrefix(path, prefix)) return false;
+		}
+	}
 
 	if (activePrefixes?.length) {
 		for (const prefix of activePrefixes) {

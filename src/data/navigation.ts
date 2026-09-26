@@ -3,6 +3,8 @@ export type PrimaryNavItem = {
 	label: string;
 	ariaLabel: string;
 	activePrefixes?: string[];
+	/** Paths sob o prefixo ativo que NÃO devem marcar este item (ex.: ranking Melhores ≠ Guia). */
+	excludeActivePrefixes?: string[];
 };
 
 /** Menu principal — fonte única para Header e referência editorial. */
@@ -13,6 +15,7 @@ export const primaryNav: PrimaryNavItem[] = [
 		label: 'Guias de Compra',
 		ariaLabel: 'Guias de Compra — rankings, comparativos e reviews de eletrodomésticos',
 		activePrefixes: ['/melhores'],
+		excludeActivePrefixes: ['/melhores/melhor-fogao-5-bocas'],
 	},
 	{ href: '/blog/', label: 'Blog', ariaLabel: 'Blog — conteúdo informativo sobre eletrodomésticos' },
 	{ href: '/sobre/', label: 'Sobre', ariaLabel: 'Sobre o Casa Prática Eletro' },

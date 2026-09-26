@@ -6,7 +6,7 @@ import type { MarketplaceId, MonitorTarget } from '../types/index.ts';
 /** Nomes de exibição alinhados aos cards comerciais do site. */
 export const PRODUCT_DISPLAY_NAMES: Record<string, string> = {
 	brastempBFS5NCR: 'Brastemp BFS5NCR',
-	consulCFS5NAB: 'Consul CFS5NAB',
+	consulCFS5NAR: 'Consul CFS5NAR',
 	electroluxFE5IG: 'Electrolux FE5IG',
 	consulCF04NAR: 'Consul CF04NAR',
 	electroluxFE4IW: 'Electrolux Efficient FE4IW',

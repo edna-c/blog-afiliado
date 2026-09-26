@@ -7,9 +7,11 @@ category: 'Guia de Compra'
 
 ## Qual fogão para cada perfil
 
-Regra para empate:
+Se ainda estiver empatado depois dos cards:
 
-- Várias panelas + forno frequente → **Electrolux FE5IG** ([review](/review-fogao-5-bocas-electrolux/))
-- Família / orçamento no meio → **Brastemp BFS5NCR** ([review](/review-fogao-5-bocas-brastemp/))
-- Entrar em 5 bocas sem estourar → **Consul CFS5NAB** ([review](/review-fogao-5-bocas-consul/))
+- Várias panelas + forno frequente → **Electrolux FE5IG**
+- Família / orçamento no meio → **Brastemp BFS5NCR**
+- Entrar em 5 bocas sem estourar → **Consul CFS5NAR**
 - Cozinha compacta / poucas panelas ao mesmo tempo → [fogão 4 bocas](/melhores/melhor-fogao-4-bocas/)
+
+As reviews individuais existem se quiser ler com mais calma: [Electrolux](/review-fogao-5-bocas-electrolux/), [Brastemp](/review-fogao-5-bocas-brastemp/), [Consul](/review-fogao-5-bocas-consul/).

@@ -7,54 +7,22 @@ category: 'Guia de Compra'
 
 <span id="analises-detalhadas" class="sr-only">Análises detalhadas</span>
 
-### 🥇 Por que o Electrolux FE5IG é o melhor geral
+## Por que esta ordem
 
-![Fogão Electrolux FE5IG 5 bocas em inox com mesa inox em cozinha moderna.](/images/melhores/melhor-fogao-5-bocas/electrolux-fe5ig-hero.webp)
+### 🥇 Electrolux FE5IG
 
-A medalha não é por “mais botões”: é por **forno + acabamento** que sustentam uso intenso sem trocar o critério do ranking.
+Fica em 1º porque é o modelo mais completo para quem usa o forno com frequência e quer recursos além do funcionamento convencional.
 
-- Mesa inox e presença visual que aguentam cozinha planejada e rotina pesada
-- Forno com mais recursos úteis no dia a dia do que o anúncio de entrada sugere
-- Se o teto de gasto manda, o ranking aponta para Brastemp ou Consul, não para “quase Electrolux”
+<p class="not-prose mt-2 text-sm text-on-ink-muted"><a href="/review-fogao-5-bocas-electrolux/" class="link-accent-soft">análise do Electrolux FE5IG</a></p>
 
-<!-- CTAs: produtos.electroluxFE5IG (src/data/products.ts) — Shopee omitido (short link antigo caía em busca) -->
-<p class="not-prose mt-6 grid grid-cols-1 gap-3">
-<a href="https://meli.la/1BfryZq" class="inline-flex min-h-[52px] w-full items-center justify-center gap-1.5 rounded-[0.625rem] border-2 border-transparent bg-cta px-5 py-3.5 text-center text-[0.75rem] font-extrabold uppercase tracking-wide text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:text-[0.72rem]" target="_blank" rel="noopener noreferrer nofollow sponsored" aria-label="Ver preço do fogão Electrolux FE5IG no Mercado Livre — abre em nova aba (link patrocinado)" data-product-id="electroluxFE5IG" data-merchant="mercado_livre" data-cta-type="price_check" data-cta-position="justification"><span aria-hidden="true">👉</span> Ver preço no Mercado Livre</a>
-</p>
+### 💰 Brastemp BFS5NCR
 
----
+Fica em 2º para quem quer um forno maior e duas prateleiras, mas não precisa do pacote de recursos que levou o Electrolux ao 1º lugar.
 
-### 💰 Por que o Brastemp BFS5NCR é o melhor custo-benefício
+<p class="not-prose mt-2 text-sm text-on-ink-muted"><a href="/review-fogao-5-bocas-brastemp/" class="link-accent-soft">análise do Brastemp BFS5NCR</a></p>
 
-![Fogão Brastemp BFS5NCR 5 bocas em inox em cozinha moderna.](/images/melhores/melhor-fogao-5-bocas/brastemp-bfs5ncr-hero.webp)
+### 🔥 Consul CFS5NAR
 
-O 2º lugar existe para quem quer **5 bocas de verdade no meio da faixa** — potência e forno.
+Fica em 3º porque atende quem quer entrar em 5 bocas priorizando o essencial e mantendo o orçamento mais contido.
 
-- Equilíbrio sólido entre queimadores, forno e preço para família/rotina diária
-- Limpeza e manutenção previsíveis no uso doméstico comum
-- Ponto fraco real: não é o pacote premium do Electrolux — quem prioriza acabamento e recursos de forno deve subir de medalha
-- Análise longa do SKU: [review Brastemp BFS5NCR](/review-fogao-5-bocas-brastemp/)
-
-<!-- CTAs: produtos.brastempBFS5NCR (src/data/products.ts) -->
-<p class="not-prose mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
-<a href="https://meli.la/31TdeBV" class="inline-flex min-h-[52px] w-full items-center justify-center gap-1.5 rounded-[0.625rem] border-2 border-transparent bg-cta px-5 py-3.5 text-center text-[0.75rem] font-extrabold uppercase tracking-wide text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:text-[0.72rem]" target="_blank" rel="noopener noreferrer nofollow sponsored" aria-label="Ver preço do fogão Brastemp BFS5NCR no Mercado Livre — abre em nova aba (link patrocinado)" data-product-id="brastempBFS5NCR" data-merchant="mercado_livre" data-cta-type="price_check" data-cta-position="justification"><span aria-hidden="true">👉</span> Ver preço no Mercado Livre</a>
-<a href="https://s.shopee.com.br/2qQVdcWHwK" class="btn-secondary-premium w-full px-5 py-3.5 text-[0.72rem] sm:text-[0.72rem]" target="_blank" rel="noopener noreferrer nofollow sponsored" aria-label="Ver preço do fogão Brastemp BFS5NCR na Shopee — abre em nova aba (link patrocinado)" data-product-id="brastempBFS5NCR" data-merchant="shopee" data-cta-type="merchant_secondary" data-cta-position="justification"><span aria-hidden="true">👉</span> Ver preço na Shopee</a>
-</p>
-
----
-
-### 🔥 Por que o Consul CFS5NAB é a melhor entrada
-
-![Fogão Consul CFS5NAB 5 bocas em inox em cozinha moderna.](/images/melhores/melhor-fogao-5-bocas/consul-cfs5nab-hero.webp)
-
-O 3º lugar é a troca consciente: **entrar em 5 bocas** sem tentar parecer o Electrolux.
-
-- Perfil forte: primeiro 5 bocas / orçamento mais baixo — foco em uso simples e preço
-- Não é “quase Brastemp”: acabamento fica atrás de propósito
-- Se a cozinha for pequena demais, volte ao [comparativo 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas/) antes de pagar
-
-<!-- CTAs: produtos.consulCFS5NAB (src/data/products.ts) -->
-<p class="not-prose mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
-<a href="https://meli.la/1TeBv2U" class="inline-flex min-h-[52px] w-full items-center justify-center gap-1.5 rounded-[0.625rem] border-2 border-transparent bg-cta px-5 py-3.5 text-center text-[0.75rem] font-extrabold uppercase tracking-wide text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:text-[0.72rem]" target="_blank" rel="noopener noreferrer nofollow sponsored" aria-label="Ver preço do fogão Consul CFS5NAB no Mercado Livre — abre em nova aba (link patrocinado)" data-product-id="consulCFS5NAB" data-merchant="mercado_livre" data-cta-type="price_check" data-cta-position="justification"><span aria-hidden="true">👉</span> Ver preço no Mercado Livre</a>
-<a href="https://s.shopee.com.br/1gExh55W8A?lp=aff" class="btn-secondary-premium w-full px-5 py-3.5 text-[0.72rem] sm:text-[0.72rem]" target="_blank" rel="noopener noreferrer nofollow sponsored" aria-label="Ver preço do fogão Consul CFS5NAB na Shopee — abre em nova aba (link patrocinado)" data-product-id="consulCFS5NAB" data-merchant="shopee" data-cta-type="merchant_secondary" data-cta-position="justification"><span aria-hidden="true">👉</span> Ver preço na Shopee</a>
-</p>
+<p class="not-prose mt-2 text-sm text-on-ink-muted"><a href="/review-fogao-5-bocas-consul/" class="link-accent-soft">análise do Consul CFS5NAR</a></p>

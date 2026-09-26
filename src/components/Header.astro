@@ -81,7 +81,12 @@ const searchIndex = [
 		<nav class="menu" aria-label="Principal">
 			{
 				primaryNav.map((item) => {
-					const active = isNavActive(pathname, item.href, item.activePrefixes);
+					const active = isNavActive(
+						pathname,
+						item.href,
+						item.activePrefixes,
+						item.excludeActivePrefixes,
+					);
 					return (
 						<a
 							href={item.href}
@@ -174,7 +179,12 @@ const searchIndex = [
 		<nav class="header-drawer__inner menu menu--mobile" aria-label="Principal">
 			{
 				primaryNav.map((item) => {
-					const active = isNavActive(pathname, item.href, item.activePrefixes);
+					const active = isNavActive(
+						pathname,
+						item.href,
+						item.activePrefixes,
+						item.excludeActivePrefixes,
+					);
 					return (
 						<a
 							href={item.href}

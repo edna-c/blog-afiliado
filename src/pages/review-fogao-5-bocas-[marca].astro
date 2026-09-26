@@ -10,6 +10,7 @@ import AffiliateOfferBlock from '../components/AffiliateOfferBlock.astro';
 import { produtos, type ProductId } from '../data/products';
 import { mlAffiliateAttrs, shopeeAffiliateAttrs } from '../utils/affiliateTracking';
 import { PRODUCT_IMAGE_REVIEW, type ProductReviewSlug } from '../data/productImages';
+import { FOGAO_5_BOCAS_GUIDE_HREF } from '../data/melhoresListing';
 
 export async function getStaticPaths() {
 	return [
@@ -30,7 +31,7 @@ export async function getStaticPaths() {
 				longReviewLabel: 'análise completa do Brastemp BFS5NCR',
 				peerReview: {
 					href: '/review-fogao-5-bocas-consul/',
-					label: 'Consul CFS5NAB',
+					label: 'Consul CFS5NAR',
 				},
 				idealFor: [
 					'famílias médias que cozinham com frequência',
@@ -84,9 +85,9 @@ export async function getStaticPaths() {
 							'Sim, principalmente quando o forno entra na rotina e várias panelas vão ao fogo ao mesmo tempo. As cinco bocas ajudam nesse ritmo; se a casa cozinha pouco, o conjunto pode ser maior do que você precisa.',
 					},
 					{
-						question: 'O que muda no Brastemp BFS5NCR em relação ao Consul CFS5NAB?',
+						question: 'O que muda no Brastemp BFS5NCR em relação ao Consul CFS5NAR?',
 						answer:
-							'O Brastemp BFS5NCR tem forno de 96 litros, duas prateleiras, vidro interno removível e mesa de inox. O preço de cada um varia conforme a loja e a oferta disponível.',
+							'O Brastemp BFS5NCR tem forno de 96 litros, duas prateleiras, vidro interno removível e mesa de inox. O Consul CFS5NAR também tem 96 litros e mesa inox, com uma prateleira e vidro interno vedado. O preço de cada um varia conforme a loja e a oferta disponível.',
 					},
 					{
 						question: 'O Brastemp BFS5NCR serve se eu cozinho pouco?',
@@ -101,16 +102,16 @@ export async function getStaticPaths() {
 		{
 			params: { marca: 'consul' },
 			props: {
-				title: 'Fogão Consul 5 bocas CFS5NAB vale a pena? | Casa Prática Eletro',
+				title: 'Fogão Consul 5 bocas CFS5NAR vale a pena? | Casa Prática Eletro',
 				description:
-					'Consul CFS5NAB: análise do forno, espaço entre as bocas e acabamento de um fogão 5 bocas para o uso diário.',
-				model: 'Consul CFS5NAB',
-				headline: 'Fogão Consul 5 bocas CFS5NAB vale a pena?',
+					'Consul CFS5NAR: forno 96 L, 1 prateleira, vidro interno vedado e mesa inox — para quem serve no uso diário.',
+				model: 'Consul CFS5NAR',
+				headline: 'Fogão Consul 5 bocas CFS5NAR vale a pena?',
 				summary:
-					'É um fogão 5 bocas voltado para quem cozinha no dia a dia. O preço varia conforme a loja e a oferta disponível. Se você usa várias panelas grandes, vale comparar esse ponto com outros modelos antes de decidir.',
-				offerUrl: produtos.consulCFS5NAB.ml,
-				offerShopeeUrl: produtos.consulCFS5NAB.shopee,
-				productId: 'consulCFS5NAB' as ProductId,
+					'É o Consul 5 bocas inox do ranking de entrada: forno de 96 L, uma prateleira e vidro interno vedado. Serve bem quem cozinha no dia a dia e quer cinco bocas sem subir para o pacote do Electrolux ou do Brastemp. Se você usa várias panelas grandes ao mesmo tempo, compare o espaço entre as bocas antes de decidir.',
+				offerUrl: produtos.consulCFS5NAR.ml,
+				offerShopeeUrl: produtos.consulCFS5NAR.shopee,
+				productId: 'consulCFS5NAR' as ProductId,
 				peerReview: {
 					href: '/review-fogao-5-bocas-electrolux/',
 					label: 'Electrolux FE5IG',
@@ -119,36 +120,39 @@ export async function getStaticPaths() {
 					'casais e famílias pequenas ou médias',
 					'quem quer cinco bocas para a rotina',
 					'quem prepara as refeições do dia a dia',
-					'quem prefere uma compra mais funcional, sem priorizar acabamento sofisticado',
+					'quem quer entrar em 5 bocas com mesa inox e orçamento mais contido',
 				],
 				notIdealFor: [
-					'quem considera o acabamento sofisticado um critério importante de compra',
+					'quem quer duas prateleiras e vidro interno removível (aí o Brastemp BFS5NCR pesa mais)',
+					'quem usa o forno com vapor, cavidade selada e Tripla Chama (aí o Electrolux FE5IG faz mais sentido)',
 					'quem usa panelas grandes em várias bocas ao mesmo tempo',
 				],
 				familyProfile:
-					'Faz mais sentido para quem cozinha diariamente e quer cinco bocas para a rotina.',
+					'Faz mais sentido para quem cozinha diariamente e quer cinco bocas para a rotina, com forno de 96 L e uma prateleira.',
 				routineProfile:
 					'Quem prepara as refeições do dia a dia.',
 				realLimitations: [
+					'uma prateleira no forno — quem assa com frequência e quer duas prateleiras deve olhar o Brastemp BFS5NCR',
+					'vidro interno vedado, não removível — limpeza da porta é mais simples no Brastemp',
 					'se você usa várias panelas grandes ao mesmo tempo, compare com fogões que tenham mais espaço entre as bocas',
-					'quem considera o acabamento um fator importante pode preferir modelos mais sofisticados',
 				],
 				ovenAnalysis:
-					'O forno é suficiente para o preparo das refeições do dia a dia.',
+					'O Consul CFS5NAR tem forno de 96 L com uma prateleira e vidro interno vedado. É suficiente para os preparos do dia a dia; não traz o mesmo pacote de recursos do Electrolux FE5IG nem as duas prateleiras do Brastemp BFS5NCR.',
 				gratesAnalysis:
 					'As trempes atendem ao uso diário. Se você usa panela grande em várias bocas ao mesmo tempo, vale conferir no anúncio a estabilidade e o espaço entre as bocas.',
 				consumptionAnalysis:
 					'O consumo de gás sobe se você usa várias bocas ao mesmo tempo ou deixa o forno ligado por mais tempo. Ter cinco bocas, por si só, não diz quanto você vai gastar.',
 				cleaningAnalysis:
-					'A limpeza é simples no dia a dia.',
+					'A mesa é inox e a limpeza do dia a dia é direta. O vidro interno é vedado (não removível), então a porta não tem o mesmo degrau de praticidade do Brastemp BFS5NCR.',
 				differentiators: [
-					'cinco bocas para preparar as refeições do dia a dia',
-					'acabamento mais simples',
+					'cinco bocas com mesa inox para o uso diário',
+					'forno 96 L com uma prateleira e vidro interno vedado',
+					'proposta de entrada do ranking 5 bocas',
 				],
 				comparisonRows: [
 					{ criterion: 'Preço', current: 'Varia conforme a loja e a oferta', alternative: 'Varia conforme a loja e a oferta' },
-					{ criterion: 'Acabamento', current: 'Mais simples', alternative: 'Acabamento mais elaborado' },
-					{ criterion: 'Indicado para', current: 'Família pequena ou média no uso diário', alternative: 'Quem usa várias panelas grandes' },
+					{ criterion: 'Forno', current: '96 L, 1 prateleira, vidro vedado', alternative: 'Mais recursos ou 2 prateleiras' },
+					{ criterion: 'Indicado para', current: 'Entrada em 5 bocas no uso diário', alternative: 'Quem prioriza forno com mais recursos' },
 				],
 				objections: [
 					{
@@ -159,7 +163,7 @@ export async function getStaticPaths() {
 					{
 						question: 'Vale a pena frente ao Electrolux?',
 						answer:
-							'Vale para quem quer 5 bocas no uso diário. O preço varia conforme a loja e a oferta disponível. Se o que mais pesa na decisão é acabamento mais sofisticado, o Electrolux FE5IG pode fazer mais sentido.',
+							'Vale para quem quer 5 bocas no uso diário com forno de 96 L e mesa inox, sem pagar o pacote de vapor, cavidade selada e Tripla Chama do Electrolux FE5IG. Se esses recursos pesam na rotina, o Electrolux faz mais sentido.',
 					},
 					{
 						question: 'É uma boa compra para apartamento?',
@@ -169,23 +173,23 @@ export async function getStaticPaths() {
 				],
 				faqItems: [
 					{
-						question: 'O Consul CFS5NAB é bom para uso diário?',
+						question: 'O Consul CFS5NAR é bom para uso diário?',
 						answer:
-							'Sim, para casal ou família pequena a média que quer 5 bocas para o uso diário.',
+							'Sim, para casal ou família pequena a média que quer 5 bocas, forno de 96 L com uma prateleira e mesa inox no uso diário.',
 					},
 					{
 						question: 'Vale a pena para quem está comprando um fogão 5 bocas?',
 						answer:
-							'Sim, para quem quer cinco bocas para o uso diário.',
+							'Sim, quando a prioridade é entrar em 5 bocas com o essencial. Se você quer duas prateleiras e vidro interno removível, compare com o Brastemp BFS5NCR; se quer mais recursos de forno, compare com o Electrolux FE5IG.',
 					},
 					{
 						question: 'Quando não vale escolher esse Consul?',
 						answer:
-							'Quando você usa várias panelas grandes ao mesmo tempo ou considera o acabamento mais sofisticado um critério importante.',
+							'Quando você precisa de duas prateleiras e vidro interno removível, quando vapor/cavidade selada/Tripla Chama importam, ou quando usa várias panelas grandes ao mesmo tempo e o espaço entre as bocas não convence.',
 					},
 				],
 				verdict:
-					'O CFS5NAB é uma boa escolha para quem quer cinco bocas e cozinha no dia a dia. O preço varia conforme a loja e a oferta disponível.',
+					'O Consul CFS5NAR é uma boa escolha de entrada para quem quer cinco bocas, forno de 96 L, uma prateleira, vidro interno vedado e mesa inox no dia a dia. O preço varia conforme a loja e a oferta disponível.',
 			},
 		},
 		{
@@ -199,6 +203,7 @@ export async function getStaticPaths() {
 				summary:
 					'É uma opção para quem cozinha com frequência, usa o forno de verdade e considera o acabamento um critério importante na escolha. Se esses pontos não pesam na sua rotina, um modelo mais simples pode atender melhor.',
 				offerUrl: produtos.electroluxFE5IG.ml,
+				offerShopeeUrl: produtos.electroluxFE5IG.shopee,
 				productId: 'electroluxFE5IG' as ProductId,
 				peerReview: {
 					href: '/review-fogao-5-bocas-brastemp/',
@@ -402,7 +407,7 @@ const structuredData = {
 		</p>
 		<p class="mt-4 text-sm leading-relaxed text-on-ink-muted">
 			{marca === 'brastemp' ? 'Esta review faz parte do nosso' : 'Esta análise faz parte do nosso'}{' '}
-			<a href="/#top-produtos" class="link-accent-soft">
+			<a href={FOGAO_5_BOCAS_GUIDE_HREF} class="link-accent-soft">
 				guia de melhores fogões 5 bocas
 			</a>
 			{peerReview ? (
@@ -622,8 +627,9 @@ const structuredData = {
 								productName="Electrolux FE5IG — fogão 5 bocas"
 								productId="electroluxFE5IG"
 								heading="Conferir preço do Electrolux FE5IG — fogão 5 bocas"
-								description="Electrolux FE5IG — fogão 5 bocas. Confira preço e frete no Mercado Livre."
+								description="Electrolux FE5IG — fogão 5 bocas. Confira preço e frete nas lojas parceiras."
 								mercadoLivreUrl={produtos.electroluxFE5IG.ml}
+								shopeeUrl={produtos.electroluxFE5IG.shopee}
 							/>
 						</div>
 						<dl class="mt-8 space-y-6">
@@ -673,7 +679,7 @@ const structuredData = {
 					</a>
 				) : (
 					<a
-						href="/#top-produtos"
+						href={FOGAO_5_BOCAS_GUIDE_HREF}
 						class="btn-secondary-premium flex-1 sm:min-w-[200px]"
 						aria-label="Abrir ranking de fogão 5 bocas com ofertas"
 					>
@@ -685,7 +691,7 @@ const structuredData = {
 		<p class="mt-6 text-sm leading-relaxed text-on-ink-muted">
 			Transparência: indicação de loja parceira. No guia{' '}
 			<a
-				href="/#top-produtos"
+				href={FOGAO_5_BOCAS_GUIDE_HREF}
 				class="link-accent-soft"
 				aria-label="Abrir guia melhor fogão 5 bocas com ofertas"
 			>

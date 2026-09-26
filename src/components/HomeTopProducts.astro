@@ -40,6 +40,7 @@ const homeProducts: CommercialProduct[] = [
 		reviewSlug: 'electrolux',
 		productId: 'electroluxFE5IG',
 		mercadoLivreUrl: produtos.electroluxFE5IG.ml,
+		shopeeUrl: produtos.electroluxFE5IG.shopee,
 		mlCtaText: 'VER PREÇO NO MERCADO LIVRE',
 		image: electroluxCardImage,
 		imageAlt: 'Fogão a gás Electrolux FE5IG PerfectCook cinco bocas em inox com mesa em inox',
@@ -61,8 +62,8 @@ const homeProducts: CommercialProduct[] = [
 		imageAlt: 'Fogão a gás Brastemp BFS5NCR cinco bocas em inox',
 	},
 	{
-		name: 'Consul CFS5NAB',
-		badge: 'Consul CFS5NAB',
+		name: 'Consul CFS5NAR',
+		badge: 'Consul CFS5NAR',
 		badgeTone: 'amber',
 		basePrice: 'Confira na loja',
 		benefits: [
@@ -70,14 +71,13 @@ const homeProducts: CommercialProduct[] = [
 		],
 		socialProof: '',
 		reviewSlug: 'consul',
-		productId: 'consulCFS5NAB',
-		mercadoLivreUrl: produtos.consulCFS5NAB.ml,
-		shopeeUrl: produtos.consulCFS5NAB.shopee,
+		productId: 'consulCFS5NAR',
+		mercadoLivreUrl: produtos.consulCFS5NAR.ml,
+		shopeeUrl: produtos.consulCFS5NAR.shopee,
 		mlCtaText: 'VER PREÇO NO MERCADO LIVRE',
-		shopeeCtaText: 'VER OFERTA NA SHOPEE',
 		image: consulCardImage,
 		imageVisualScale: 1.065,
-		imageAlt: 'Fogão a gás Consul CFS5NAB cinco bocas em inox',
+		imageAlt: 'Fogão a gás Consul CFS5NAR cinco bocas em inox',
 	},
 ];
 const products = guideBlock?.topProducts ?? homeProducts;
@@ -103,7 +103,18 @@ function productAnalysisLink(product: CommercialProduct): {
 	href: string;
 	label: string;
 	ariaLabel: string;
+	/** No hub 5 bocas: link textual secundário (não compete com o CTA de compra). */
+	soft?: boolean;
 } {
+	const preferOnPageProof = guideId === 'melhor-fogao-5-bocas' && justificativaHref;
+	if (preferOnPageProof) {
+		return {
+			href: justificativaHref,
+			label: `Por que o ${product.name} está neste ranking`,
+			ariaLabel: `Ver na página por que o ${productNoun} ${product.name} está nesta posição`,
+			soft: true,
+		};
+	}
 	const reviewUrl = getExistingProductReviewUrl(guideId, product.reviewSlug);
 	if (reviewUrl) {
 		return {
@@ -147,7 +158,9 @@ function productAnalysisLink(product: CommercialProduct): {
 						{guideBlock!.topProductsCopy.introParagraphs.map((paragraph) => (
 							<p>{paragraph}</p>
 						))}
-						<p class="font-semibold" set:html={guideBlock!.topProductsCopy.ctaParagraph} />
+						{guideBlock!.topProductsCopy.ctaParagraph ? (
+							<p class="font-semibold" set:html={guideBlock!.topProductsCopy.ctaParagraph} />
+						) : null}
 					</div>
 					<div class="mt-10 grid grid-cols-1 items-stretch gap-6 md:grid-cols-3 md:gap-6">
 						{products.map((p) => (
@@ -242,7 +255,9 @@ function productAnalysisLink(product: CommercialProduct): {
 										))}
 									</ul>
 
-									<p class="guia-comercial-card-copy mt-3 font-semibold text-on-ink-body">{p.socialProof}</p>
+									{p.socialProof ? (
+										<p class="guia-comercial-card-copy mt-3 font-semibold text-on-ink-body">{p.socialProof}</p>
+									) : null}
 
 									<div class="mt-auto flex flex-col gap-3 border-t border-white/[0.06] pt-5">
 										<div class="grid grid-cols-1 gap-2.5 sm:grid-cols-2 sm:gap-3">
@@ -281,10 +296,14 @@ function productAnalysisLink(product: CommercialProduct): {
 										</div>
 										<a
 											href={productAnalysisLink(p).href}
-											class="btn-secondary-premium w-full !normal-case px-5 py-3.5 text-[0.8125rem] font-bold tracking-normal"
+											class:list={[
+												productAnalysisLink(p).soft
+													? 'link-accent-soft inline-flex min-h-[44px] w-full items-center justify-center px-2 text-center text-sm font-semibold !normal-case tracking-normal'
+													: 'btn-secondary-premium w-full !normal-case px-5 py-3.5 text-[0.8125rem] font-bold tracking-normal',
+											]}
 											aria-label={productAnalysisLink(p).ariaLabel}
 										>
-											<span aria-hidden="true">👉</span>
+											{productAnalysisLink(p).soft ? null : <span aria-hidden="true">👉</span>}
 											{productAnalysisLink(p).label}
 										</a>
 										<ul class="space-y-1 border-t border-white/10 pt-3 text-[11px] leading-relaxed text-on-ink-muted sm:text-xs">

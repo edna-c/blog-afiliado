@@ -30,21 +30,21 @@ export const produtos = {
 		shopee: 'https://s.shopee.com.br/2qQVdcWHwK',
 		shopeeGeneratedByPanel: true,
 	},
-	consulCFS5NAB: {
+	/**
+	 * Consul CFS5NAR (inox) — 3º do ranking 5 bocas + review `/review-fogao-5-bocas-consul/`.
+	 * ML `meli.la/1TeBv2U` confirmado como destino CFS5NAR.
+	 */
+	consulCFS5NAR: {
 		ml: 'https://meli.la/1TeBv2U',
 		mlGeneratedByPanel: true,
-		shopee: 'https://s.shopee.com.br/1gExh55W8A?lp=aff',
+		shopee: 'https://s.shopee.com.br/1Afzd5ZSC',
 		shopeeGeneratedByPanel: true,
 	},
 	electroluxFE5IG: {
 		ml: 'https://meli.la/1BfryZq',
 		mlGeneratedByPanel: true,
-		/**
-		 * Shopee omitido de propósito: o short link antigo (`4AyaNdARrV`)
-		 * redirecionava para busca genérica (`/search?keyword=electrolux+fe5ig`),
-		 * não para o SKU — cliques sem conversão e perda de confiança.
-		 * Reativar só com short link novo gerado no painel, apontando ao produto.
-		 */
+		shopee: 'https://s.shopee.com.br/60Rt89HrOg',
+		shopeeGeneratedByPanel: true,
 	},
 	consulCF04NAR: {
 		ml: 'https://meli.la/1mrHBpJ',

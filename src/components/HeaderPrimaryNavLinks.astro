@@ -20,7 +20,12 @@ const activeDecoration = underlined ? 'decoration-pop/70' : 'border-b border-pop
 
 {
 	primaryNav.map((item) => {
-		const active = isNavActive(pathname, item.href, item.activePrefixes);
+		const active = isNavActive(
+			pathname,
+			item.href,
+			item.activePrefixes,
+			item.excludeActivePrefixes,
+		);
 		return (
 			<a
 				href={item.href}
