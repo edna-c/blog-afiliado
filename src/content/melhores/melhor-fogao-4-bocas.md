@@ -13,31 +13,18 @@ eyebrow: 'Atualizado jul/2026 · Ranking de compra'
 topPick: 'Consul CFO4NAR'
 coverImage: '/images/melhores/melhor-fogao-4-bocas/melhor-fogao-4-bocas-2026.webp'
 coverAlt: 'Melhores fogões 4 bocas em 2026 — comparativo visual para decisão de compra'
-tldr:
-  title: 'Ranking em 20 segundos'
-  items:
-    - '🥇 Melhor geral: Consul CFO4NAR — acendimento automático e inox para o uso típico sem arrependimento.'
-    - '🥈 Melhor premium: Electrolux Efficient FE4IW — PerfectCook/VaporBake quando o forno é requisito.'
-    - '🥉 Melhor custo-benefício: Atlas Mônaco Plus — entrar em 4 bocas com orçamento mais baixo.'
-  footerText: 'Ver preço e botão da loja:'
-  footerHref: '#guia-comercial-produtos'
-  footerLabel: 'cards com ofertas nesta página'
 ctas:
   - href: '#guia-comercial-produtos'
     label: 'Ver preços e ofertas agora'
     ariaLabel: 'Ver fogões 4 bocas com preços e botões de compra nesta página'
     variant: primary
-  - href: '/comparativo-fogao-4-vs-5-bocas/'
-    label: 'Ainda em dúvida de tamanho? 4 vs 5'
-    ariaLabel: 'Abrir comparativo fogão 4 vs 5 bocas'
-    variant: secondary
 faq:
   - question: 'Qual o melhor fogão 4 bocas em 2026?'
     answer: 'Depende do perfil. Consul CFO4NAR lidera para uso diário com acendimento automático e mesa inox. Electrolux Efficient FE4IW é o premium quando forno e visual pesam. Atlas Mônaco Plus é a entrada mais acessível. Confira o preço atual nos cards de oferta desta página.'
   - question: 'Como escolher entre Consul, Electrolux e Atlas?'
     answer: 'Cozinha todo dia com orçamento médio: Consul. Design e recursos de forno (PerfectCook/VaporBake) são requisito: Electrolux. Precisa gastar o mínimo agora: Atlas.'
   - question: 'Um fogão 4 bocas atende uma família?'
-    answer: 'Para casal e famílias de até cerca de quatro pessoas, com poucas panelas grandes ao mesmo tempo, costuma atender bem. Se a rotina exige várias bocas simultâneas com frequência, feche o tamanho no comparativo 4 vs 5 bocas antes do modelo.'
+    answer: 'Para casal e famílias de até cerca de quatro pessoas, com poucas panelas grandes ao mesmo tempo, costuma atender bem. Se a rotina pede várias panelas ao mesmo tempo, confira se as quatro bocas e o espaço da bancada dão conta.'
   - question: 'Este ranking é de mesa inox ou de vidro?'
     answer: 'Esta é a página dos melhores fogões 4 bocas. Os modelos selecionados agora têm mesa inox. Se você já decidiu por mesa de vidro, use o ranking específico de melhores fogões com mesa de vidro.'
   - question: 'O ranking muda quando o preço muda?'

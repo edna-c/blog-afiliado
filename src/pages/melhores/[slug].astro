@@ -130,7 +130,11 @@ const cooktopRelated = [
 
 const recExcludePaths = isCooktopGuide
 	? COOKTOP_FAMILY_EXCLUDE
-	: [`/melhores/${guide.id}`, `/melhores/${guide.id}/`];
+	: [
+			`/melhores/${guide.id}`,
+			`/melhores/${guide.id}/`,
+			...(guide.id === 'melhor-fogao-4-bocas' ? ['/comparativo-fogao-4-vs-5-bocas/'] : []),
+		];
 const smartExcludePaths = isCooktopGuide
 	? [
 			...COOKTOP_FAMILY_EXCLUDE,
@@ -545,8 +549,57 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 						{(guide.body ?? '').trim() ? <IntroContent /> : null}
 						<HomeTopProducts guideId={commercialGuideId} />
 						<HomeComparisonTable guideId={commercialGuideId} />
-						{/* Justificativas (1º moduleId) + demais trechos em um único shell de prosa. */}
+						{/* Justificativas (1º moduleId) + demais trechos em um único shell de prosa.
+						    Teste 2 — melhor-fogao-4-bocas: sem blocos individuais pós-tabela (só prosa). */}
 						{(() => {
+							if (guide.id === 'melhor-fogao-4-bocas') {
+								const [ComoFragment, PerfilFragment, ...RestFragments] = ModuleFragments;
+								const ComoModule = ComoFragment;
+								const PerfilModule = PerfilFragment;
+								return (
+									<>
+										<div class="ctx-module ctx-module--prose-start">
+											<div class="ctx-module__inner">
+												<ComoModule />
+												<PerfilModule />
+											</div>
+										</div>
+										{ctas.length ? (
+											<div class="not-prose mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+												{ctas.map((cta) =>
+													cta.variant === 'secondary' ? (
+														<a
+															href={cta.href}
+															class="btn-secondary-premium flex-1 sm:min-w-[200px]"
+															aria-label={cta.ariaLabel ?? cta.label}
+														>
+															{cta.label}
+														</a>
+													) : (
+														<a
+															href={cta.href}
+															class="inline-flex min-h-[52px] flex-1 items-center justify-center bg-cta px-6 text-xs font-bold uppercase tracking-wider text-white ring-1 ring-white/15 transition hover:bg-cta-hover sm:min-w-[200px]"
+															aria-label={cta.ariaLabel ?? cta.label}
+														>
+															{cta.label}
+														</a>
+													),
+												)}
+											</div>
+										) : null}
+										{RestFragments.length > 0 ? (
+											<div class="ctx-module ctx-module--prose-start">
+												<div class="ctx-module__inner">
+													{RestFragments.map((Fragment) => {
+														const Module = Fragment;
+														return <Module />;
+													})}
+												</div>
+											</div>
+										) : null}
+									</>
+								);
+							}
 							const [JustificativasFragment, ...ProseFragments] = ModuleFragments;
 							const JustificativasModule = JustificativasFragment;
 							return (
@@ -583,7 +636,7 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 		</div>
 
 		{
-			ctas.length ? (
+			ctas.length && guide.id !== 'melhor-fogao-4-bocas' ? (
 				<div class="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
 					{ctas.map((cta) =>
 						cta.variant === 'secondary' ? (
@@ -650,14 +703,16 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 			showCommercialBlock && guide.id !== 'melhor-fogao-5-bocas' ? (
 				<div class="ctx-module ctx-module--relacionados">
 					<div class="ctx-module__inner">
-						<SmartRecommendations
-							class="mt-0"
-							currentPath={Astro.url.pathname}
-							excludePaths={smartExcludePaths}
-							heading={isCooktopGuide ? 'Leituras que ajudam na escolha' : 'Próximos passos editoriais'}
-						/>
+						{guide.id !== 'melhor-fogao-4-bocas' ? (
+							<SmartRecommendations
+								class="mt-0"
+								currentPath={Astro.url.pathname}
+								excludePaths={smartExcludePaths}
+								heading={isCooktopGuide ? 'Leituras que ajudam na escolha' : 'Próximos passos editoriais'}
+							/>
+						) : null}
 						<RelatedContent
-							class="mt-[4.5rem]"
+							class={guide.id === 'melhor-fogao-4-bocas' ? 'mt-0' : 'mt-[4.5rem]'}
 							currentPath={Astro.url.pathname}
 							excludePaths={recExcludePaths}
 							items={isCooktopGuide ? cooktopRelated : undefined}

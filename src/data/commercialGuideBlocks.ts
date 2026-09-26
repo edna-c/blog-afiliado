@@ -54,6 +54,8 @@ export type CommercialGuideBlock = {
 	purchaseColumnLabel?: string;
 	/** Microcopy curta do CTA ML na tabela (default: Ver preço no Mercado Livre — {modelo}). */
 	comparisonMlCtaShort?: boolean;
+	/** Omite CTAs ML/Shopee da tabela; links de análise e CTAs fora da tabela permanecem. */
+	hideComparisonAffiliateCtas?: boolean;
 };
 
 const melhorFogao5Bocas: CommercialGuideBlock = {
@@ -210,23 +212,20 @@ const melhorFogao4Bocas: CommercialGuideBlock = {
 			'A tabela reúne preço de referência, nota e o perfil de cada medalha para acelerar a decisão.',
 			'Se o foco for só economia, a coluna “Melhor para” aponta rápido o custo-benefício.',
 		],
-		footerNote:
-			'Ainda em dúvida entre 4 e 5 bocas? Feche o tamanho antes do modelo — o comparativo 4 vs 5 bocas resolve essa etapa.',
 		footerCta: 'Continue lendo para ver por que cada medalha existe e qual perfil combina com você.',
 	},
 	reviewPathPrefix: '/melhores/melhor-fogao-4-bocas/#analises-detalhadas',
 	heroRanking: [
-		{ toneClass: 'text-pop', text: '🥇 Melhor geral: Consul CFO4NAR' },
-		{ toneClass: 'text-cta', text: '🥈 Melhor premium: Electrolux Efficient FE4IW' },
-		{ toneClass: 'text-amber-300', text: '🥉 Melhor custo-benefício: Atlas Mônaco Plus' },
+		{ toneClass: 'text-pop', text: '🥇 Melhor geral: Consul CFO4NAR — acendimento automático e inox no dia a dia' },
+		{ toneClass: 'text-cta', text: '🥈 Melhor premium: Electrolux Efficient FE4IW — quando quer PerfectCook ou VaporBake' },
+		{ toneClass: 'text-amber-300', text: '🥉 Melhor custo-benefício: Atlas Mônaco Plus — quando quer gastar menos' },
 	],
 	moduleIds: [
-		'_melhor-fogao-4-bocas-justificativas',
 		'_melhor-fogao-4-bocas-como-avaliamos',
 		'_melhor-fogao-4-bocas-perfil',
 		'_melhor-fogao-4-bocas-antes',
-		'_melhor-fogao-4-bocas-aprofundar',
 	],
+	hideComparisonAffiliateCtas: true,
 	topProducts: [
 		{
 			name: 'Consul CFO4NAR',

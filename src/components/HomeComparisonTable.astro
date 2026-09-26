@@ -59,6 +59,7 @@ const justificativaHref = guideBlock?.reviewPathPrefix;
 const productNoun = guideBlock?.productNoun ?? 'fogão';
 const purchaseColumnLabel = guideBlock?.purchaseColumnLabel ?? 'Ação';
 const comparisonMlCtaShort = guideBlock?.comparisonMlCtaShort === true;
+const hideComparisonAffiliateCtas = guideBlock?.hideComparisonAffiliateCtas === true;
 
 const DEFAULT_COMPARISON_COLUMNS: ComparisonColumnKey[] = ['price', 'rating', 'bestFor'];
 const comparisonColumns: ComparisonColumnKey[] = guideBlock?.comparisonColumns ?? DEFAULT_COMPARISON_COLUMNS;
@@ -195,53 +196,58 @@ function rowAnalysisLink(row: ComparisonRow): {
 											</td>
 										))}
 										<td class="align-top">
-											<div class="flex min-w-[8.5rem] flex-col gap-1.5">
-												<a
-													href={r.links.ml}
-													class:list={[
-														'cta-affiliate cta-affiliate--ml',
-														comparisonMlCtaShort && 'cta-affiliate--compact',
-													]}
-													target="_blank"
-													rel="noopener noreferrer nofollow sponsored"
-													aria-label={`Ver oferta do ${productNoun} ${r.model} no Mercado Livre — abre em nova aba (link patrocinado)`}
-													{...mlAffiliateAttrs(r.productId, 'comparison_table')}
-												>
-													{comparisonMlCtaShort ? (
-														'Ver oferta'
-													) : (
-														<>
-															<span aria-hidden="true">👉</span>
-															Ver preço no Mercado Livre — {r.model}
-														</>
-													)}
-												</a>
-												{'shopee' in r.links && r.links.shopee ? (
+											{hideComparisonAffiliateCtas ? null : (
+												<div class="flex min-w-[8.5rem] flex-col gap-1.5">
 													<a
-														href={r.links.shopee}
+														href={r.links.ml}
 														class:list={[
-															'cta-affiliate cta-affiliate--shopee',
+															'cta-affiliate cta-affiliate--ml',
 															comparisonMlCtaShort && 'cta-affiliate--compact',
 														]}
 														target="_blank"
 														rel="noopener noreferrer nofollow sponsored"
-														aria-label={`Ver oferta do ${productNoun} ${r.model} na Shopee — abre em nova aba (link patrocinado)`}
-														{...shopeeAffiliateAttrs(r.productId, 'comparison_table')}
+														aria-label={`Ver oferta do ${productNoun} ${r.model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+														{...mlAffiliateAttrs(r.productId, 'comparison_table')}
 													>
 														{comparisonMlCtaShort ? (
-															'Ver oferta na Shopee'
+															'Ver oferta'
 														) : (
 															<>
 																<span aria-hidden="true">👉</span>
-																Ver oferta na Shopee — {r.model}
+																Ver preço no Mercado Livre — {r.model}
 															</>
 														)}
 													</a>
-												) : null}
-											</div>
+													{'shopee' in r.links && r.links.shopee ? (
+														<a
+															href={r.links.shopee}
+															class:list={[
+																'cta-affiliate cta-affiliate--shopee',
+																comparisonMlCtaShort && 'cta-affiliate--compact',
+															]}
+															target="_blank"
+															rel="noopener noreferrer nofollow sponsored"
+															aria-label={`Ver oferta do ${productNoun} ${r.model} na Shopee — abre em nova aba (link patrocinado)`}
+															{...shopeeAffiliateAttrs(r.productId, 'comparison_table')}
+														>
+															{comparisonMlCtaShort ? (
+																'Ver oferta na Shopee'
+															) : (
+																<>
+																	<span aria-hidden="true">👉</span>
+																	Ver oferta na Shopee — {r.model}
+																</>
+															)}
+														</a>
+													) : null}
+												</div>
+											)}
 											<a
 												href={rowAnalysisLink(r).href}
-												class="mt-3 inline-flex min-h-[44px] items-center text-xs font-bold text-pop underline decoration-pop/40 decoration-2 underline-offset-[5px] transition hover:text-accent-hover hover:decoration-pop"
+												class:list={[
+													'inline-flex min-h-[44px] items-center text-xs font-bold text-pop underline decoration-pop/40 decoration-2 underline-offset-[5px] transition hover:text-accent-hover hover:decoration-pop',
+													!hideComparisonAffiliateCtas && 'mt-3',
+												]}
 												aria-label={rowAnalysisLink(r).ariaLabel}
 											>
 												{rowAnalysisLink(r).label}
