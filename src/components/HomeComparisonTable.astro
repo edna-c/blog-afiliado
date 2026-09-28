@@ -60,6 +60,7 @@ const productNoun = guideBlock?.productNoun ?? 'fogão';
 const purchaseColumnLabel = guideBlock?.purchaseColumnLabel ?? 'Ação';
 const comparisonMlCtaShort = guideBlock?.comparisonMlCtaShort === true;
 const hideComparisonAffiliateCtas = guideBlock?.hideComparisonAffiliateCtas === true;
+const hideComparisonActionColumn = guideBlock?.hideComparisonActionColumn === true;
 
 const DEFAULT_COMPARISON_COLUMNS: ComparisonColumnKey[] = ['price', 'rating', 'bestFor'];
 const comparisonColumns: ComparisonColumnKey[] = guideBlock?.comparisonColumns ?? DEFAULT_COMPARISON_COLUMNS;
@@ -169,7 +170,9 @@ function rowAnalysisLink(row: ComparisonRow): {
 									{comparisonColumns.map((col) => (
 										<th scope="col">{COMPARISON_COLUMN_LABEL[col]}</th>
 									))}
-									<th scope="col">{purchaseColumnLabel}</th>
+									{hideComparisonActionColumn ? null : (
+										<th scope="col">{purchaseColumnLabel}</th>
+									)}
 								</tr>
 							</thead>
 							<tbody>
@@ -195,6 +198,7 @@ function rowAnalysisLink(row: ComparisonRow): {
 												{comparisonCell(r, col)}
 											</td>
 										))}
+										{hideComparisonActionColumn ? null : (
 										<td class="align-top">
 											{hideComparisonAffiliateCtas ? null : (
 												<div class="flex min-w-[8.5rem] flex-col gap-1.5">
@@ -253,6 +257,7 @@ function rowAnalysisLink(row: ComparisonRow): {
 												{rowAnalysisLink(r).label}
 											</a>
 										</td>
+										)}
 									</tr>
 								))}
 							</tbody>

@@ -16,6 +16,6 @@ coverAlt: 'Linha de fogões 5 bocas em cozinha planejada para comparação de co
 faq:
   - question: 'O ranking muda quando o preço muda?'
     answer: 'Não. A ordem prioriza diferenças de uso — forno, prateleiras, vidro interno e recursos —, não a promoção do dia. O preço você confere na hora na loja.'
-  - question: 'Ainda estou em dúvida entre 4 e 5 bocas. O que fazer?'
-    answer: 'Se o tamanho ainda estiver em aberto, o comparativo entre fogão 4 e 5 bocas ajuda. Se você já sabe que precisa de 5 bocas, fique neste ranking e escolha pelo perfil.'
+  - question: 'E se eu ainda estiver em dúvida sobre o espaço?'
+    answer: 'Confira as medidas e o vão para abrir a porta do forno antes de comprar. Se o fogão 5 bocas couber, siga neste ranking e escolha pelo perfil de uso.'
 ---

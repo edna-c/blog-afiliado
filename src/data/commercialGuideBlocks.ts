@@ -56,6 +56,8 @@ export type CommercialGuideBlock = {
 	comparisonMlCtaShort?: boolean;
 	/** Omite CTAs ML/Shopee da tabela; links de análise e CTAs fora da tabela permanecem. */
 	hideComparisonAffiliateCtas?: boolean;
+	/** Omite a coluna de compra/ação da tabela. Usar quando ela não tiver mais CTA nem link. */
+	hideComparisonActionColumn?: boolean;
 };
 
 const melhorFogao5Bocas: CommercialGuideBlock = {
@@ -70,7 +72,6 @@ const melhorFogao5Bocas: CommercialGuideBlock = {
 	comparisonCopy: {
 		heading: 'Qual a diferença entre os três?',
 		introParagraphs: [],
-		footerNote: 'Ainda em dúvida entre 4 e 5 bocas?',
 	},
 	reviewPathPrefix: '/melhores/melhor-fogao-5-bocas/#analises-detalhadas',
 	heroRanking: [
@@ -91,6 +92,8 @@ const melhorFogao5Bocas: CommercialGuideBlock = {
 	comparisonColumns: ['oven', 'shelves', 'doorGlass', 'resources'],
 	purchaseColumnLabel: 'Onde comprar',
 	comparisonMlCtaShort: true,
+	hideComparisonAffiliateCtas: true,
+	hideComparisonActionColumn: true,
 	moduleIds: [
 		'_melhor-fogao-5-bocas-justificativas',
 		'_melhor-fogao-5-bocas-antes',

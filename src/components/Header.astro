@@ -271,27 +271,79 @@ const searchIndex = [
 
 	let isScrolled = false;
 	let scrollTicking = false;
+	let compactDelta = 0;
 	const SCROLL_ENTER = 48;
 	const SCROLL_EXIT = 4;
 
+	const visualChildrenHeight = () => {
+		if (!header) return 0;
+		let visual = 0;
+		for (const child of header.children) {
+			if (child instanceof HTMLElement) visual += child.getBoundingClientRect().height;
+		}
+		return visual;
+	};
+
+	const withAnchorLocked = (fn: () => void) => {
+		const root = document.documentElement;
+		const prevAnchor = root.style.overflowAnchor;
+		root.style.overflowAnchor = 'none';
+		fn();
+		root.style.overflowAnchor = prevAnchor;
+	};
+
+	// Diferença entre o header expandido e o miolo compacto. A caixa externa não encolhe;
+	// este valor só define quando o miolo pode recolher sem abrir um vão acima do conteúdo.
+	const measureCompactDelta = () => {
+		if (!header) return 0;
+		let delta = 0;
+		withAnchorLocked(() => {
+			const was = header.classList.contains('is-scrolled');
+			header.classList.remove('is-scrolled');
+			header.style.minHeight = '';
+			const expanded = header.getBoundingClientRect().height;
+			header.classList.add('is-scrolled');
+			const visual = visualChildrenHeight();
+			delta = Math.max(0, expanded - visual);
+			if (was) {
+				header.style.minHeight = `${expanded}px`;
+				header.style.setProperty('--header-visual-height', `${visual}px`);
+			} else {
+				header.classList.remove('is-scrolled');
+				header.style.removeProperty('--header-visual-height');
+			}
+		});
+		return delta;
+	};
+
 	const applyScrolledState = (scrolled: boolean) => {
 		if (!header || scrolled === isScrolled) return;
-		const heightBefore = header.offsetHeight;
-		isScrolled = scrolled;
-		header.classList.toggle('is-scrolled', scrolled);
-		if (headerRail instanceof HTMLElement) {
-			headerRail.setAttribute('aria-hidden', String(scrolled));
-		}
-		// O modo compacto reduz a altura do header; sem compensação o documento “puxa” o scroll (sensação de enrosco).
-		const heightAfter = header.offsetHeight;
-		const delta = heightBefore - heightAfter;
-		if (delta !== 0) {
-			const root = document.documentElement;
-			const prevBehavior = root.style.scrollBehavior;
-			root.style.scrollBehavior = 'auto';
-			window.scrollBy(0, delta);
-			root.style.scrollBehavior = prevBehavior;
-		}
+		withAnchorLocked(() => {
+			isScrolled = scrolled;
+			if (scrolled) {
+				header.classList.remove('is-scrolled');
+				header.style.minHeight = '';
+				const expanded = header.getBoundingClientRect().height;
+				header.style.minHeight = `${expanded}px`;
+				header.classList.add('is-scrolled');
+				header.style.setProperty('--header-visual-height', `${visualChildrenHeight()}px`);
+			} else {
+				header.classList.remove('is-scrolled');
+				header.style.minHeight = '';
+				header.style.removeProperty('--header-visual-height');
+			}
+			if (headerRail instanceof HTMLElement) {
+				headerRail.setAttribute('aria-hidden', String(scrolled));
+			}
+		});
+	};
+
+	const scrollThresholds = () => {
+		const delta = Math.ceil(compactDelta);
+		return {
+			enterAt: Math.max(SCROLL_ENTER, delta),
+			exitAt: Math.max(SCROLL_EXIT, delta - 4),
+		};
 	};
 
 	const onScroll = () => {
@@ -299,13 +351,28 @@ const searchIndex = [
 		scrollTicking = true;
 		requestAnimationFrame(() => {
 			const y = window.scrollY;
-			const scrolled = isScrolled ? y > SCROLL_EXIT : y > SCROLL_ENTER;
+			const { enterAt, exitAt } = scrollThresholds();
+			const scrolled = isScrolled ? y > exitAt : y > enterAt;
 			applyScrolledState(scrolled);
 			scrollTicking = false;
 		});
 	};
+
+	compactDelta = measureCompactDelta();
 	onScroll();
 	window.addEventListener('scroll', onScroll, { passive: true });
+	window.addEventListener('resize', () => {
+		compactDelta = measureCompactDelta();
+		const { enterAt, exitAt } = scrollThresholds();
+		const y = window.scrollY;
+		const scrolled = isScrolled ? y > exitAt : y > enterAt;
+		if (scrolled === isScrolled && scrolled) {
+			isScrolled = false;
+			applyScrolledState(true);
+		} else {
+			applyScrolledState(scrolled);
+		}
+	});
 	desktopNavMq.addEventListener('change', (event) => {
 		if (event.matches) resetMobileUi();
 	});
@@ -390,6 +457,17 @@ const searchIndex = [
 			0 15px 35px rgba(0, 0, 0, 0.45);
 		/* Evita que o scroll anchoring do browser lute contra a compactação do header. */
 		overflow-anchor: none;
+		/* padding/max-width não podem transicionar: o reduced-motion global liga
+		   transition-duration em * e atrasaria a altura do miolo em um frame. */
+		transition-property: none !important;
+	}
+
+	.top-bar,
+	.header-main,
+	.top-copy,
+	.top-line,
+	.logo-area {
+		transition-property: none !important;
 	}
 
 	.editorial-header.is-home {
@@ -967,7 +1045,40 @@ const searchIndex = [
 
 	/* ===========================
 	   STICKY COMPACTO
+	   A caixa do header mantém a altura expandida (min-height via JS).
+	   O miolo recolhe; o fundo cobre só essa faixa, para o conteúdo
+	   que já está por baixo aparecer sem o restante da página saltar.
 	=========================== */
+
+	.editorial-header.is-scrolled {
+		background: transparent;
+		box-shadow: none;
+		/* O vão abaixo do miolo deixa o conteúdo receber clique.
+		   pointer-events é herdado — os controles reativam abaixo. */
+		pointer-events: none;
+	}
+
+	.editorial-header.is-scrolled .top-bar,
+	.editorial-header.is-scrolled .header-main,
+	.editorial-header.is-scrolled .bottom-line,
+	.editorial-header.is-scrolled .header-drawer {
+		pointer-events: auto;
+	}
+
+	.editorial-header.is-scrolled::before {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		right: 0;
+		left: 0;
+		height: var(--header-visual-height, 0px);
+		background: var(--bg);
+		box-shadow:
+			inset 0 -1px 0 #222,
+			0 15px 35px rgba(0, 0, 0, 0.45);
+		pointer-events: auto;
+	}
 
 	.editorial-header.is-scrolled .top-bar {
 		padding-top: 4px;
