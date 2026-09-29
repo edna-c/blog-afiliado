@@ -14,5 +14,3 @@ Os três modelos são fogões 4 bocas com mesa de vidro — é o tamanho que mai
 Se você ainda está entre vidro e inox, veja o [comparativo vidro ou inox](/blog/fogao-mesa-de-vidro-ou-inox/).
 
 Se a dúvida é segurança, leia [Fogão mesa de vidro é seguro?](/blog/fogao-mesa-de-vidro-seguro/).
-
-Se você quer comparar preço entre fogões 4 bocas, inclusive opções com mesa inox, veja o [guia de fogão 4 bocas custo-benefício](/fogao-4-bocas-custo-beneficio/).

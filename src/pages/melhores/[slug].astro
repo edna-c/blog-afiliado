@@ -134,6 +134,26 @@ const recExcludePaths = isCooktopGuide
 			`/melhores/${guide.id}`,
 			`/melhores/${guide.id}/`,
 			...(guide.id === 'melhor-fogao-4-bocas' ? ['/comparativo-fogao-4-vs-5-bocas/'] : []),
+			...(guide.id === 'melhor-fogao-mesa-de-vidro'
+				? [
+						'/comparativo-fogao-4-vs-5-bocas/',
+						'/melhores/melhor-fogao-4-bocas/',
+						'/melhores/melhor-fogao-5-bocas/',
+						'/#top-produtos',
+						'/review-fogao-4-bocas-consul/',
+						'/review-fogao-4-bocas-electrolux/',
+						'/fogao-4-bocas-custo-beneficio/',
+						'/brastemp-bfs5ncr-vale-a-pena/',
+						'/review-fogao-5-bocas-brastemp/',
+						'/review-fogao-5-bocas-consul/',
+						'/review-fogao-5-bocas-electrolux/',
+						'/como-escolher-fogao-5-bocas/',
+						'/fogao-5-bocas-custo-beneficio/',
+						'/blog/fogao-5-bocas-reduz-espaco-cozinha/',
+						'/blog/melhor-fogao-com-forno-duplo/',
+						'/melhores/melhor-cooktop-5-bocas/',
+					]
+				: []),
 		];
 const smartExcludePaths = isCooktopGuide
 	? [
@@ -618,9 +638,36 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 									{ProseFragments.length > 0 ? (
 										<div class="ctx-module ctx-module--prose-start">
 											<div class="ctx-module__inner">
-												{ProseFragments.map((Fragment) => {
+												{ProseFragments.map((Fragment, index) => {
 													const Module = Fragment;
-													return <Module />;
+													const decisionProduct =
+														guide.id === 'melhor-cooktop-4-bocas' &&
+														commercialBlock?.moduleIds[index + 1] ===
+															'_melhor-cooktop-4-bocas-perfil'
+															? commercialBlock.topProducts.find(
+																	(p) => p.productId === 'electroluxKE4GR',
+																)
+															: undefined;
+													return [
+														<Module />,
+														decisionProduct ? (
+															<p class="not-prose cta-affiliate-pair mt-6">
+																<a
+																	href={decisionProduct.mercadoLivreUrl}
+																	class="cta-affiliate cta-affiliate--ml sm:col-span-2"
+																	target="_blank"
+																	rel="noopener noreferrer nofollow sponsored"
+																	aria-label="Ver preço do cooktop Electrolux KE4GR no Mercado Livre — abre em nova aba (link patrocinado)"
+																	{...mlAffiliateAttrs('electroluxKE4GR', 'inline')}
+																>
+																	<span aria-hidden="true">👉</span>
+																	<span class="min-w-0 text-balance">
+																		Ver preço no Mercado Livre
+																	</span>
+																</a>
+															</p>
+														) : null,
+													];
 												})}
 											</div>
 										</div>

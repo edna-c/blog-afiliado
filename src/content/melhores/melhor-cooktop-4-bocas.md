@@ -24,10 +24,6 @@ ctas:
     label: 'Ver preços e ofertas agora'
     ariaLabel: 'Ver cooktops 4 bocas com preços e botões de compra nesta página'
     variant: primary
-  - href: '/melhores/melhor-cooktop-5-bocas/'
-    label: 'Precisa de 5 bocas?'
-    ariaLabel: 'Abrir o ranking de cooktop 5 bocas'
-    variant: secondary
 faq:
   - question: 'Qual cooktop 4 bocas escolher agora?'
     answer: 'Depende do tampo, da medida e do apoio da panela. Se cozinha todo dia e quer mesa de vidro, o Electrolux KE4GR costuma atender bem. Se o recorte da bancada é mais estreito, o Fischer Fit Line cabe em 55 cm. Se a prioridade é grade de ferro fundido e mesa de alumínio, o Mueller MCG4BK é a escolha.'

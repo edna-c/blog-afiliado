@@ -13,5 +13,3 @@ Os três abaixo são de 4 bocas com mesa de vidro. Se ainda estiver em dúvida:
 - Quer grades duplas e um visual mais robusto na mesa → **Brastemp BFO4VAE**
 - Quer entrar em vidro gastando menos → **Atlas Atenas Glass (Top Glass)**
 - Assa com frequência e quer PerfectCook ou VaporBake → nenhum destes três; isso fica em outros modelos, fora deste ranking
-- Ainda em dúvida de tamanho → [comparativo 4 vs 5 bocas](/comparativo-fogao-4-vs-5-bocas/)
-- Família grande / muitas panelas → [fogão 5 bocas](/#top-produtos)

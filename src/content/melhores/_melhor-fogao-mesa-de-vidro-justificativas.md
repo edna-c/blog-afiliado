@@ -16,9 +16,7 @@ O Consul CFO4VAR fica em primeiro porque atende bem o dia a dia em 4 bocas, com 
 - Vidro temperado + grades de ferro fundido — estabilidade no uso cotidiano
 - Forno Cleartec (~58 L), suficiente para os preparos mais comuns e fácil de limpar
 - Ponto fraco: o vidro pede cuidado com impactos e produtos abrasivos — isso vale para a categoria, não só para este modelo
-- Precisa de mais bocas ao mesmo tempo? Aí a escolha certa é um [fogão 5 bocas](/#top-produtos), não outro 4 bocas de vidro
 - Review do modelo: [Fogão Consul mesa de vidro CFO4VAR](/review-fogao-mesa-de-vidro-consul/)
-- Prefere o Consul 4 bocas com mesa inox? Veja a [review do Consul CFO4NAR](/review-fogao-4-bocas-consul/)
 
 <!-- CTAs: produtos.consulCFO4VAR (src/data/products.ts) -->
 <p class="not-prose mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -36,7 +34,7 @@ O Brastemp BFO4VAE é a opção mais sofisticada entre os modelos de 4 bocas: te
 
 - Grades duplas de ferro fundido e boa potência nos queimadores rápidos
 - Acabamento preto com vidro e grades duplas, que deixam a mesa mais robusta.
-- Ponto fraco: o forno (~61 L) é sólido, mas sem PerfectCook ou VaporBake — quem assa com frequência e quer esses recursos pode olhar o [Electrolux FE4IW](/review-fogao-4-bocas-electrolux/), um fogão 4 bocas com mesa inox
+- Ponto fraco: o forno (~61 L) é sólido, mas sem PerfectCook ou VaporBake. Quem assa com frequência e quer esses recursos não encontra isso nestes três modelos de mesa de vidro
 - Se a prioridade é equilíbrio por um preço menor, o Consul CFO4VAR continua sendo a escolha mais adequada
 
 <!-- CTAs: produtos.brastempBFO4VAE (src/data/products.ts) -->

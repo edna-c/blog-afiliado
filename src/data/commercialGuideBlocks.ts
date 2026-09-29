@@ -348,8 +348,6 @@ const melhorFogaoMesaDeVidro: CommercialGuideBlock = {
 			'A tabela reúne preço de referência, nota e o perfil de cada medalha para acelerar a decisão.',
 			'Se o foco for só economia, a coluna “Melhor para” aponta rápido o custo-benefício.',
 		],
-		footerNote:
-			'Antes de comprar, confirme se a dúvida é acabamento (vidro) ou tamanho (4 vs 5 bocas) — são decisões diferentes.',
 		footerCta: 'Continue lendo para ver por que cada medalha existe e qual perfil combina com você.',
 	},
 	reviewPathPrefix: '/melhores/melhor-fogao-mesa-de-vidro/#analises-detalhadas',
