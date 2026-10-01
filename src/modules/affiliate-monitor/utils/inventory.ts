@@ -20,6 +20,8 @@ export const PRODUCT_DISPLAY_NAMES: Record<string, string> = {
 	electroluxKE4GR: 'Electrolux KE4GR',
 	fischerFitLine4Bocas: 'Fischer Fit Line 4 bocas',
 	muellerMCG4BK: 'Mueller MCG4BK',
+	electroluxFE4DG: 'Electrolux FE4DG',
+	electroluxFE4DB: 'Electrolux FE4DB',
 };
 
 export type InventoryOptions = {

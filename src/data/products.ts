@@ -10,7 +10,8 @@
  * foi gerado/confirmado no programa de afiliados Shopee.
  */
 export type ProdutoAfiliado = {
-	ml: string;
+	/** Omitir quando não houver oferta afiliada no Mercado Livre. */
+	ml?: string;
 	/**
 	 * Link ML gerado pelo painel oficial de afiliados.
 	 * Sem este flag (e sem `/social/` na URL), a classificação
@@ -21,6 +22,11 @@ export type ProdutoAfiliado = {
 	shopee?: string;
 	/** Link Shopee gerado/confirmado no painel de afiliados. */
 	shopeeGeneratedByPanel?: boolean;
+	/**
+	 * AFFILIATE_PENDING — URL pública provisória, ainda sem link do painel.
+	 * Não marcar `mlGeneratedByPanel` / `shopeeGeneratedByPanel` enquanto isto for true.
+	 */
+	affiliatePending?: boolean;
 };
 
 export const produtos = {
@@ -141,6 +147,18 @@ export const produtos = {
 		ml: 'https://meli.la/2Rqts2M',
 		mlGeneratedByPanel: true,
 		shopee: 'https://s.shopee.com.br/6q0wpnzAwQ',
+		shopeeGeneratedByPanel: true,
+	},
+	/**
+	 * Fogão de piso 4 bocas com 2 fornos — /melhores/melhor-fogao-4-bocas-com-2-fornos/
+	 * Só Shopee confirmada no painel. FE4DP fica fora do inventário até haver oferta afiliada.
+	 */
+	electroluxFE4DG: {
+		shopee: 'https://s.shopee.com.br/9V1tBL3aqy',
+		shopeeGeneratedByPanel: true,
+	},
+	electroluxFE4DB: {
+		shopee: 'https://s.shopee.com.br/4fwdQWBVeL',
 		shopeeGeneratedByPanel: true,
 	},
 } as const satisfies Record<string, ProdutoAfiliado>;

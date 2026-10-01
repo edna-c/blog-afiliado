@@ -4,7 +4,7 @@
  * Usado nos blocos de justificativa dos hubs comerciais.
  * Visual: `.cta-affiliate` / `.cta-affiliate--ml` / `.cta-affiliate--shopee` (global.css).
  */
-import { produtos, type ProductId } from '../data/products';
+import { produtos, type ProductId, type ProdutoAfiliado } from '../data/products';
 import {
 	mlAffiliateAttrs,
 	shopeeAffiliateAttrs,
@@ -16,6 +16,9 @@ interface Props {
 	productName: string;
 	productNoun?: string;
 	ctaPosition?: AffiliateCtaPosition;
+	class?: string;
+	/** Padrão: mostra o ícone. Só desligar na página que pedir. */
+	showIcon?: boolean;
 }
 
 const {
@@ -23,36 +26,50 @@ const {
 	productName,
 	productNoun = 'produto',
 	ctaPosition = 'justification',
+	class: pairClass = 'not-prose cta-affiliate-pair mt-6',
+	showIcon = true,
 } = Astro.props;
 
-const links = produtos[productId];
+const links = produtos[productId] as ProdutoAfiliado;
+const pending = links.affiliatePending === true;
+const rel = pending
+	? 'noopener noreferrer nofollow'
+	: 'noopener noreferrer nofollow sponsored';
+const disclosure = pending ? 'abre em nova aba' : 'abre em nova aba (link patrocinado)';
+const mlUrl = links.ml;
+const shopeeUrl = links.shopee;
+const single = Boolean(mlUrl) !== Boolean(shopeeUrl);
 ---
 
-<p class="not-prose cta-affiliate-pair mt-6">
-	<a
-		href={links.ml}
-		class="cta-affiliate cta-affiliate--ml"
-		target="_blank"
-		rel="noopener noreferrer nofollow sponsored"
-		aria-label={`Ver preço do ${productNoun} ${productName} no Mercado Livre — abre em nova aba (link patrocinado)`}
-		{...mlAffiliateAttrs(productId, ctaPosition)}
-	>
-		<span aria-hidden="true">👉</span>
-		<span class="min-w-0 text-balance">Ver preço no Mercado Livre</span>
-	</a>
-	{
-		links.shopee ? (
-			<a
-				href={links.shopee}
-				class="cta-affiliate cta-affiliate--shopee"
-				target="_blank"
-				rel="noopener noreferrer nofollow sponsored"
-				aria-label={`Ver preço do ${productNoun} ${productName} na Shopee — abre em nova aba (link patrocinado)`}
-				{...shopeeAffiliateAttrs(productId, ctaPosition)}
-			>
-				<span aria-hidden="true">👉</span>
-				<span class="min-w-0 text-balance">Ver preço na Shopee</span>
-			</a>
-		) : null
-	}
-</p>
+{
+	mlUrl || shopeeUrl ? (
+		<p class={pairClass}>
+			{mlUrl ? (
+				<a
+					href={mlUrl}
+					class:list={['cta-affiliate cta-affiliate--ml', single && 'sm:col-span-2']}
+					target="_blank"
+					rel={rel}
+					aria-label={`Ver preço do ${productNoun} ${productName} no Mercado Livre — ${disclosure}`}
+					{...mlAffiliateAttrs(productId, ctaPosition)}
+				>
+					{showIcon ? <span aria-hidden="true">👉</span> : null}
+					<span class="min-w-0 text-balance">Ver preço no Mercado Livre</span>
+				</a>
+			) : null}
+			{shopeeUrl ? (
+				<a
+					href={shopeeUrl}
+					class:list={['cta-affiliate cta-affiliate--shopee', single && 'sm:col-span-2']}
+					target="_blank"
+					rel={rel}
+					aria-label={`Ver preço do ${productNoun} ${productName} na Shopee — ${disclosure}`}
+					{...shopeeAffiliateAttrs(productId, ctaPosition)}
+				>
+					{showIcon ? <span aria-hidden="true">👉</span> : null}
+					<span class="min-w-0 text-balance">Ver preço na Shopee</span>
+				</a>
+			) : null}
+		</p>
+	) : null
+}

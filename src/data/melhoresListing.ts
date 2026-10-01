@@ -14,7 +14,10 @@ export const FOGAO_5_BOCAS_RANKING_HREF = '/#top-produtos';
 export const MELHORES_CARD_ONLY_IDS = [] as const;
 
 /** Guias com página dedicada em `src/pages/melhores/<id>.astro` (fora do `[slug]`). */
-export const MELHORES_DEDICATED_PAGE_IDS = ['melhor-fogao-4-bocas-de-embutir'] as const;
+export const MELHORES_DEDICATED_PAGE_IDS = [
+	'melhor-fogao-4-bocas-de-embutir',
+	'melhor-fogao-4-bocas-com-2-fornos',
+] as const;
 
 export const MELHORES_HREF_OVERRIDES: Record<string, string> = {};
 

@@ -1,0 +1,432 @@
+---
+/**
+ * Página de decisão — fogão de piso, 4 bocas, dois fornos separados.
+ * Texto editorial aprovado. CTAs via SSOT: FE4DG e FE4DB só na Shopee.
+ * FE4DP permanece no texto, sem CTA, até haver oferta afiliada.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ProductOfferCtas from '../../components/ProductOfferCtas.astro';
+
+const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
+const pathname = '/melhores/melhor-fogao-4-bocas-com-2-fornos/';
+const canonical = new URL(pathname, site).href;
+
+const pageTitle = 'Melhor fogão 4 bocas com 2 fornos: qual comprar';
+const metaDescription =
+	'Electrolux FE4DG para forno maior e convecção. FE4DB para dois fornos gastando menos. FE4DP só se a oferta compensar diante do FE4DB.';
+
+const faqItems = [
+	{
+		question: '4 bocas com dois fornos é a mesma compra que 5 bocas com dois fornos?',
+		answer: 'Não. Muda o número de bocas e o espaço do fogão.',
+	},
+	{
+		question: 'Algum destes tem air fryer?',
+		answer: 'Não. Nenhum dos três tem air fryer nem grill separado.',
+	},
+	{
+		question: 'Qual é a principal diferença entre o Electrolux FE4DB e o Electrolux FE4DG?',
+		answer:
+			'O Electrolux FE4DG tem duas cavidades maiores e convecção. O Electrolux FE4DB mantém os dois fornos, mas sem convecção e com menor capacidade.',
+	},
+] as const;
+
+const orgId = `${site.href}#organization`;
+const webpageId = `${canonical}#webpage`;
+const breadcrumbId = `${canonical}#breadcrumb`;
+const faqId = `${canonical}#faq`;
+
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'Organization',
+			'@id': orgId,
+			name: 'Casa Prática Eletro',
+			url: site.href,
+		},
+		{
+			'@type': 'BreadcrumbList',
+			'@id': breadcrumbId,
+			itemListElement: [
+				{ '@type': 'ListItem', position: 1, name: 'Início', item: site.href },
+				{ '@type': 'ListItem', position: 2, name: 'Melhores', item: new URL('/melhores/', site).href },
+				{
+					'@type': 'ListItem',
+					position: 3,
+					name: 'Melhor fogão 4 bocas com 2 fornos',
+					item: canonical,
+				},
+			],
+		},
+		{
+			'@type': 'WebPage',
+			'@id': webpageId,
+			url: canonical,
+			name: `${pageTitle} | Casa Prática Eletro`,
+			description: metaDescription,
+			inLanguage: 'pt-BR',
+			isPartOf: { '@id': orgId },
+		},
+		{
+			'@type': 'FAQPage',
+			'@id': faqId,
+			mainEntity: faqItems.map((item) => ({
+				'@type': 'Question',
+				name: item.question,
+				acceptedAnswer: { '@type': 'Answer', text: item.answer },
+			})),
+		},
+	],
+};
+
+const coverPath = '/images/melhores/melhor-fogao-4-bocas-com-2-fornos/melhor-fogao-4-bocas-com-2-fornos-hero.webp';
+const coverAlt = 'Fogão de piso com dois fornos em cozinha com luz natural';
+const ogImage = new URL(coverPath.replace(/^\//, ''), site).href;
+
+const cardCtaClass = 'not-prose cta-affiliate-pair mt-auto border-t border-white/[0.06] pt-4';
+---
+
+<BaseLayout
+	title={`${pageTitle} | Casa Prática Eletro`}
+	description={metaDescription}
+	canonical={canonical}
+	openGraph={{
+		title: `${pageTitle} | Casa Prática Eletro`,
+		description: metaDescription,
+		url: canonical,
+		type: 'article',
+		image: ogImage,
+		imageAlt: coverAlt,
+	}}
+>
+	<script type="application/ld+json" slot="head" set:html={JSON.stringify(structuredData)} />
+
+	<div class="py-8 sm:py-12 lg:py-14">
+	<article class="mx-auto max-w-3xl px-4 sm:px-6">
+		<Breadcrumbs
+			class="mb-6 sm:mb-8"
+			items={[
+				{ name: 'Início', href: '/' },
+				{ name: 'Melhores', href: '/melhores/' },
+				{ name: 'Melhor fogão 4 bocas com 2 fornos' },
+			]}
+		/>
+
+		<header>
+			<h1 class="font-display text-[1.95rem] font-extrabold leading-[1.15] tracking-tight text-on-ink-body sm:text-4xl lg:text-[2.65rem] lg:leading-[1.12]">
+				Melhor fogão 4 bocas com 2 fornos: qual modelo comprar
+			</h1>
+			<div class="mt-6 max-w-xl space-y-3 text-lg leading-relaxed text-on-ink-body">
+				<p>Para um fogão de piso de 4 bocas com dois fornos separados, a escolha é esta.</p>
+				<p>Mais espaço nas duas cavidades e convecção: <strong class="font-semibold">Electrolux FE4DG</strong>.</p>
+				<p>Dois fornos, gastando menos, sem convecção: <strong class="font-semibold">Electrolux FE4DB</strong>.</p>
+				<p>
+					O <strong class="font-semibold">Electrolux FE4DP</strong> só muda essa conta se a oferta dele compensar em relação ao FE4DB. A diferença entre os dois é o preço do anúncio e a grade.
+				</p>
+			</div>
+		</header>
+	</article>
+
+		<section
+			class="not-prose mx-auto mt-10 w-full max-w-7xl px-4 sm:mt-12 sm:px-6 lg:px-8"
+			aria-labelledby="produtos-heading"
+			id="guia-comercial-produtos"
+		>
+				<h2
+					id="produtos-heading"
+					class="font-display text-2xl font-bold tracking-tight text-on-ink-body sm:text-[1.75rem]"
+				>
+					Qual deles faz sentido para você?
+				</h2>
+
+				<div class="mt-8 grid grid-cols-1 items-stretch gap-6 md:grid-cols-3 md:gap-6">
+					<article
+						class="relative z-[1] flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-emerald-400/25 bg-ink/80 shadow-[0_10px_36px_-22px_rgba(0,0,0,0.58)] ring-1 ring-emerald-400/20"
+						aria-labelledby="fe4dg-heading"
+					>
+						<p class="flex shrink-0 items-center justify-center bg-emerald-950/92 px-4 py-3 text-center text-[0.8125rem] font-semibold leading-snug tracking-[0.04em] text-emerald-50/95 sm:text-sm">
+							Electrolux FE4DG
+						</p>
+						<div class="shrink-0 px-3 pb-3 pt-1 sm:px-3.5 sm:pb-3.5">
+							<div
+								class="relative mx-auto aspect-square w-full max-w-[min(100%,21.5rem)] overflow-hidden rounded-[0.875rem] bg-[#b5b5b5]"
+							>
+								<div class="absolute inset-3 flex items-center justify-center sm:inset-[0.8125rem]">
+									<img
+										src="/images/melhores/melhor-fogao-4-bocas-com-2-fornos/electrolux-fe4dg.webp"
+										alt="Fogão Electrolux FE4DG de 4 bocas com dois fornos"
+										width="1254"
+										height="1254"
+										loading="lazy"
+										decoding="async"
+										class="max-h-full max-w-full object-contain object-center"
+									/>
+								</div>
+							</div>
+						</div>
+						<div class="flex min-h-0 flex-1 flex-col px-4 pb-5 pt-4 sm:px-5">
+							<h3 id="fe4dg-heading" class="font-display text-lg font-bold leading-snug text-on-ink-body sm:text-xl">
+								Para quem quer forno maior e convecção
+							</h3>
+							<p class="mt-2.5 text-sm leading-relaxed text-on-ink-body">
+								35,1 L em cima, 79,2 L embaixo, PerfectCook360 com convecção. Largura de 56,4 cm. Sem air fryer e sem grill.
+							</p>
+							<ProductOfferCtas
+								productId="electroluxFE4DG"
+								productName="Electrolux FE4DG"
+								productNoun="fogão"
+								ctaPosition="product_card"
+								class={cardCtaClass}
+								showIcon={false}
+							/>
+						</div>
+					</article>
+
+					<article
+						class="flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-white/[0.09] bg-ink/80 shadow-[0_10px_36px_-22px_rgba(0,0,0,0.58)] ring-1 ring-white/[0.045]"
+						aria-labelledby="fe4db-heading"
+					>
+						<p class="flex shrink-0 items-center justify-center bg-zinc-900/95 px-4 py-3 text-center text-[0.8125rem] font-semibold leading-snug tracking-[0.04em] text-on-ink-body sm:text-sm">
+							Electrolux FE4DB
+						</p>
+						<div class="shrink-0 px-3 pb-3 pt-1 sm:px-3.5 sm:pb-3.5">
+							<div
+								class="relative mx-auto aspect-square w-full max-w-[min(100%,21.5rem)] overflow-hidden rounded-[0.875rem] bg-[#b5b5b5]"
+							>
+								<div class="absolute inset-3 flex items-center justify-center sm:inset-[0.8125rem]">
+									<img
+										src="/images/melhores/melhor-fogao-4-bocas-com-2-fornos/electrolux-fe4db.webp"
+										alt="Fogão Electrolux FE4DB de 4 bocas com dois fornos"
+										width="1254"
+										height="1254"
+										loading="lazy"
+										decoding="async"
+										class="max-h-full max-w-full object-contain object-center"
+									/>
+								</div>
+							</div>
+						</div>
+						<div class="flex min-h-0 flex-1 flex-col px-4 pb-5 pt-4 sm:px-5">
+							<h3 id="fe4db-heading" class="font-display text-lg font-bold leading-snug text-on-ink-body sm:text-xl">
+								Para quem quer dois fornos e gastar menos
+							</h3>
+							<p class="mt-2.5 text-sm leading-relaxed text-on-ink-body">
+								32,1 L em cima, 72,6 L embaixo, sem convecção. Vapor, tripla chama, timer e grades de ferro fundido. Sem air fryer e sem grill.
+							</p>
+							<ProductOfferCtas
+								productId="electroluxFE4DB"
+								productName="Electrolux FE4DB"
+								productNoun="fogão"
+								ctaPosition="product_card"
+								class={cardCtaClass}
+								showIcon={false}
+							/>
+						</div>
+					</article>
+
+					<article
+						class="flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-white/[0.09] bg-ink/80 shadow-[0_10px_36px_-22px_rgba(0,0,0,0.58)] ring-1 ring-white/[0.045]"
+						aria-labelledby="fe4dp-heading"
+					>
+						<p class="flex shrink-0 items-center justify-center bg-zinc-900/95 px-4 py-3 text-center text-[0.8125rem] font-semibold leading-snug tracking-[0.04em] text-on-ink-body sm:text-sm">
+							Electrolux FE4DP
+						</p>
+						<div class="shrink-0 px-3 pb-3 pt-1 sm:px-3.5 sm:pb-3.5">
+							<div
+								class="relative mx-auto aspect-square w-full max-w-[min(100%,21.5rem)] overflow-hidden rounded-[0.875rem] bg-[#b5b5b5]"
+							>
+								<div class="absolute inset-3 flex items-center justify-center sm:inset-[0.8125rem]">
+									<img
+										src="/images/melhores/melhor-fogao-4-bocas-com-2-fornos/electrolux-fe4dp.webp"
+										alt="Fogão Electrolux FE4DP de 4 bocas com dois fornos"
+										width="1254"
+										height="1254"
+										loading="lazy"
+										decoding="async"
+										class="max-h-full max-w-full object-contain object-center"
+									/>
+								</div>
+							</div>
+						</div>
+						<div class="flex min-h-0 flex-1 flex-col px-4 pb-5 pt-4 sm:px-5">
+							<h3 id="fe4dp-heading" class="font-display text-lg font-bold leading-snug text-on-ink-body sm:text-xl">
+								Só se a oferta compensar diante do FE4DB
+							</h3>
+							<p class="mt-2.5 text-sm leading-relaxed text-on-ink-body">
+								Mesmos 32,1 L e 72,6 L, sem convecção. Grade de aço escovado e largura de 52,4 cm. Sem air fryer e sem grill.
+							</p>
+						</div>
+					</article>
+				</div>
+		</section>
+
+	<article class="mx-auto mt-14 max-w-3xl px-4 sm:px-6">
+		<section aria-labelledby="comparativo-heading" id="guia-comercial-comparativo">
+			<h2 id="comparativo-heading" class="font-display text-2xl font-bold tracking-tight text-on-ink-body sm:text-[1.75rem]">
+				O que muda de um para o outro
+			</h2>
+			<div class="table-premium-shell mt-6 overflow-x-auto [-webkit-overflow-scrolling:touch]">
+				<table class="table-premium min-w-[640px] text-[0.9375rem] leading-snug">
+					<thead>
+						<tr>
+							<th scope="col" class="!py-4"> </th>
+							<th scope="col" class="!py-4">Electrolux FE4DG</th>
+							<th scope="col" class="!py-4">Electrolux FE4DB</th>
+							<th scope="col" class="!py-4">Electrolux FE4DP</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="bg-ink">
+							<th scope="row" class="text-left font-semibold text-on-ink-body">Forno de cima</th>
+							<td>35,1 L</td>
+							<td>32,1 L</td>
+							<td>32,1 L</td>
+						</tr>
+						<tr class="bg-brand-900/30">
+							<th scope="row" class="text-left font-semibold text-on-ink-body">Forno de baixo</th>
+							<td>79,2 L</td>
+							<td>72,6 L</td>
+							<td>72,6 L</td>
+						</tr>
+						<tr class="bg-ink">
+							<th scope="row" class="text-left font-semibold text-on-ink-body">Convecção</th>
+							<td>Sim, PerfectCook360</td>
+							<td>Não</td>
+							<td>Não</td>
+						</tr>
+						<tr class="bg-brand-900/30">
+							<th scope="row" class="text-left font-semibold text-on-ink-body">Vapor</th>
+							<td>VaporBake e Regenerar a Vapor</td>
+							<td>Vapor</td>
+							<td>VaporBake, Regenerar a Vapor e PerfectCook</td>
+						</tr>
+						<tr class="bg-ink">
+							<th scope="row" class="text-left font-semibold text-on-ink-body">Boca mais forte</th>
+							<td>Multi Chama</td>
+							<td>Tripla Chama</td>
+							<td>Tripla Chama</td>
+						</tr>
+						<tr class="bg-brand-900/30">
+							<th scope="row" class="text-left font-semibold text-on-ink-body">Grades</th>
+							<td>Ferro fundido</td>
+							<td>Ferro fundido</td>
+							<td>Aço escovado</td>
+						</tr>
+						<tr class="bg-ink">
+							<th scope="row" class="text-left font-semibold text-on-ink-body">Largura</th>
+							<td>56,4 cm</td>
+							<td>Confira no anúncio</td>
+							<td>52,4 cm</td>
+						</tr>
+						<tr class="bg-brand-900/30">
+							<th scope="row" class="text-left font-semibold text-on-ink-body">Air fryer e grill</th>
+							<td>Não</td>
+							<td>Não</td>
+							<td>Não</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p class="mt-4 text-base leading-relaxed text-on-ink-body">
+				Na página do Electrolux FE4DP, um campo soma as duas cavidades e escreve 104,7 L. 32,1 + 72,6 = 104,7. O forno de baixo continua 72,6 L.
+			</p>
+		</section>
+
+		<section class="mt-14" aria-labelledby="frente-heading">
+			<h2 id="frente-heading" class="font-display text-2xl font-bold tracking-tight text-on-ink-body sm:text-[1.75rem]">
+				Por que o Electrolux FE4DG fica na frente
+			</h2>
+			<p class="mt-4 text-base leading-relaxed text-on-ink-body">
+				Ele é o único dos três com convecção e o único com as duas cavidades maiores. É essa combinação de maior capacidade e convecção que coloca o Electrolux FE4DG à frente entre os três modelos analisados.
+			</p>
+		</section>
+
+		<section class="mt-14" aria-labelledby="basta-heading">
+			<h2 id="basta-heading" class="font-display text-2xl font-bold tracking-tight text-on-ink-body sm:text-[1.75rem]">
+				Quando o Electrolux FE4DB basta
+			</h2>
+			<p class="mt-4 text-base leading-relaxed text-on-ink-body">
+				A busca era dois fornos separados. Ele tem. O que fica de fora, em relação ao FE4DG, é a convecção e os litros a mais.
+			</p>
+		</section>
+
+		<section class="mt-14" aria-labelledby="condicional-heading">
+			<h2 id="condicional-heading" class="font-display text-2xl font-bold tracking-tight text-on-ink-body sm:text-[1.75rem]">
+				Electrolux FE4DP e Electrolux FE4DB
+			</h2>
+			<p class="mt-4 text-base leading-relaxed text-on-ink-body">
+				O tamanho dos fornos é o mesmo e os dois são sem convecção. O Electrolux FE4DB tem grade de ferro fundido. O Electrolux FE4DP tem grade de aço escovado. A diferença de preço e de oferta é o principal fator para decidir entre os dois.
+			</p>
+		</section>
+
+		<section class="mt-14" aria-labelledby="antes-heading">
+			<h2 id="antes-heading" class="font-display text-2xl font-bold tracking-tight text-on-ink-body sm:text-[1.75rem]">
+				Antes de escolher
+			</h2>
+			<p class="mt-4 text-base leading-relaxed text-on-ink-body">
+				Dois fornos fazem diferença quando você assa duas receitas ao mesmo tempo, com tempo ou temperatura diferentes. Se a rotina é uma forma só por vez, um fogão de um forno só costuma resolver: o comparativo está no <a class="link-accent" href="/melhores/melhor-fogao-4-bocas/">melhor fogão 4 bocas</a>. Para não confundir dois fornos com grill no mesmo espaço, o critério está no <a class="link-accent" href="/blog/melhor-fogao-com-forno-duplo/">guia de fogão com forno duplo</a>.
+			</p>
+			<p class="mt-3 text-base leading-relaxed text-on-ink-body">
+				A cavidade de cima é a menor nos três. Assadeira alta e peça grande vão para o forno de baixo.
+			</p>
+			<p class="mt-3 text-base leading-relaxed text-on-ink-body">
+				Convecção circula o ar quente dentro do forno. Só o Electrolux FE4DG tem isso na ficha. Dois fornos, sozinhos, não trazem convecção.
+			</p>
+			<p class="mt-3 text-base leading-relaxed text-on-ink-body">
+				O Electrolux FE4DG tem 56,4 cm de largura. O Electrolux FE4DP tem 52,4 cm. No FE4DB, confira a largura no anúncio, com a porta aberta, antes de comprar. Os três são de piso.
+			</p>
+		</section>
+
+		<section
+			class="mt-14 rounded-2xl border border-emerald-400/30 bg-emerald-950/25 px-5 py-7 shadow-[0_16px_40px_-28px_rgba(16,185,129,0.35)] ring-1 ring-emerald-400/20 sm:px-7 sm:py-8"
+			aria-labelledby="escolha-heading"
+			id="fechamento"
+		>
+			<h2 id="escolha-heading" class="font-display text-2xl font-bold tracking-tight text-on-ink-body sm:text-[1.75rem]">
+				Qual escolher
+			</h2>
+			<p class="mt-4 text-base leading-relaxed text-on-ink-body">
+				<strong class="font-semibold">Forno maior e convecção:</strong> Electrolux FE4DG.
+			</p>
+			<ProductOfferCtas
+				productId="electroluxFE4DG"
+				productName="Electrolux FE4DG"
+				productNoun="fogão"
+				ctaPosition="page_end"
+				showIcon={false}
+			/>
+			<p class="mt-6 text-base leading-relaxed text-on-ink-body">
+				<strong class="font-semibold">Dois fornos, gastando menos:</strong> Electrolux FE4DB.
+			</p>
+			<ProductOfferCtas
+				productId="electroluxFE4DB"
+				productName="Electrolux FE4DB"
+				productNoun="fogão"
+				ctaPosition="page_end"
+				showIcon={false}
+			/>
+			<p class="mt-6 text-base leading-relaxed text-on-ink-body">
+				O Electrolux FE4DP só entra se a oferta compensar diante do Electrolux FE4DB.
+			</p>
+		</section>
+
+		<section class="mt-14 border-t border-white/10 pt-12" aria-labelledby="faq-heading" id="faq">
+			<h2 id="faq-heading" class="font-display text-2xl font-bold tracking-tight text-on-ink-body">
+				Dúvidas que ainda ficam
+			</h2>
+			<dl class="blog-faq mt-6">
+				{
+					faqItems.map((item) => (
+						<div class="blog-faq-item">
+							<dt>{item.question}</dt>
+							<dd class="max-w-none text-base leading-[1.7] text-on-ink-muted">{item.answer}</dd>
+						</div>
+					))
+				}
+			</dl>
+		</section>
+	</article>
+	</div>
+</BaseLayout>
