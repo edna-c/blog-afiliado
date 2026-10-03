@@ -80,7 +80,7 @@ export const produtos = {
 	brastempBFO4VAE: {
 		ml: 'https://meli.la/2oF53cc',
 		mlGeneratedByPanel: true,
-		shopee: 'https://shopee.com.br/Fog%C3%A3o-4-Bocas-Brastemp-BFO4VAE-Autom%C3%A1tico-i.1329429906.22597762187',
+		shopee: 'https://s.shopee.com.br/AAHecJs69f',
 		shopeeGeneratedByPanel: true,
 	},
 	/** Mesa de vidro — Atlas Atenas Glass / Top Glass (mesma linha; Top Glass é a nomenclatura comercial frequente) */
