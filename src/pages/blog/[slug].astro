@@ -97,6 +97,11 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await render(post);
 const articleHero = articleHeroes[post.id];
+/** Suporte pré-compra: sem hero, sem CTA de ranking e sem leituras automáticas. */
+const isNichoSuporte = post.id === 'fogao-cabe-no-meu-nicho';
+const pageHeading = isNichoSuporte
+	? (post.data.headline ?? 'O fogão cabe no meu nicho?')
+	: post.data.title;
 
 /**
  * Pareamento editorial por slug — reforça a intenção dona (sem cruzar hubs errados):
@@ -248,8 +253,17 @@ const faq = post.data.faq;
 
 const thumbMeta = getBlogThumbnailAsset(post.id);
 const ogSource = articleHero?.src ?? thumbMeta;
+const nichoDiagramaAlt =
+	'Abertura de um móvel de cozinha mostrando onde medir a largura, a altura e a profundidade do nicho para um fogão de embutir.';
 let ogImage: string;
-if (ogSource) {
+let ogImageAlt = articleHero?.alt ?? post.data.title;
+if (isNichoSuporte) {
+	ogImage = new URL(
+		'images/blog/fogao-cabe-no-meu-nicho/nicho-fogao-embutir-tres-medidas.webp',
+		site,
+	).href;
+	ogImageAlt = nichoDiagramaAlt;
+} else if (ogSource) {
 	const og = await getImage({ src: ogSource, width: 1200, format: 'webp' });
 	ogImage = og.src.startsWith('http') ? og.src : new URL(og.src.replace(/^\//, ''), site).href;
 } else if (post.data.coverImage) {
@@ -277,7 +291,7 @@ const graph: Record<string, unknown>[] = [
 		itemListElement: [
 			{ '@type': 'ListItem', position: 1, name: 'Início', item: site.href },
 			{ '@type': 'ListItem', position: 2, name: 'Blog', item: new URL('/blog/', site).href },
-			{ '@type': 'ListItem', position: 3, name: post.data.title, item: canonical },
+			{ '@type': 'ListItem', position: 3, name: pageHeading, item: canonical },
 		],
 	},
 	{
@@ -291,7 +305,7 @@ const graph: Record<string, unknown>[] = [
 	{
 		'@type': 'Article',
 		'@id': articleId,
-		headline: post.data.title,
+		headline: pageHeading,
 		description: post.data.description,
 		image: [ogImage],
 		author: { '@id': orgId },
@@ -326,7 +340,7 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 		description: post.data.description,
 		url: canonical,
 		image: ogImage,
-		imageAlt: articleHero?.alt ?? post.data.title,
+		imageAlt: ogImageAlt,
 		type: 'article',
 		publishedTime: post.data.pubDate.toISOString(),
 		modifiedTime: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
@@ -339,15 +353,19 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 			items={[
 				{ name: 'Início', href: '/' },
 				{ name: 'Blog', href: '/blog/' },
-				{ name: post.data.title },
+				{ name: pageHeading },
 			]}
 		/>
 		<header>
 			<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">
-				{post.data.category} · {fmt.format(post.data.pubDate)}
+				{
+					isNichoSuporte
+						? post.data.category
+						: `${post.data.category} · ${fmt.format(post.data.pubDate)}`
+				}
 			</p>
 			<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl lg:text-5xl">
-				{post.data.title}
+				{pageHeading}
 			</h1>
 			<p class="mt-4 text-lg leading-relaxed text-on-ink-body">{post.data.description}</p>
 		</header>
@@ -388,7 +406,7 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 						</figcaption>
 					) : null}
 				</figure>
-			) : (
+			) : isNichoSuporte ? null : (
 				<div
 					class="mt-10 overflow-hidden rounded-2xl shadow-[0_14px_40px_rgba(0,0,0,0.45)] ring-1 ring-white/10"
 					aria-hidden="true"
@@ -438,7 +456,7 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 		}
 
 		{
-			!isPilotMesaVidro && !isFourBurnerVale && !isEmbutirPiso && !isFornoDuplo && !isVidroOuInox && !isMedidasCooktop ? (
+			!isNichoSuporte && !isPilotMesaVidro && !isFourBurnerVale && !isEmbutirPiso && !isFornoDuplo && !isVidroOuInox && !isMedidasCooktop ? (
 				<p class="mt-10 rounded-xl border border-white/10 bg-brand-900/30 px-4 py-3 text-sm leading-relaxed text-on-ink-muted sm:px-5">
 					{isEspacoCincoBocas ? (
 						<>
@@ -475,48 +493,56 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 				</section>
 			) : null
 		}
-		<RelatedContent
-			class="mt-14"
-			currentPath={Astro.url.pathname}
-			excludePaths={[
-				`/blog/${post.id}`,
-				`/blog/${post.id}/`,
-				...(isFornoDuplo ? ['/#top-produtos'] : []),
-				...vidroOuInoxRelatedExclude,
-				...medidasCooktopRelatedExclude,
-			]}
-			items={isVidroOuInox ? vidroOuInoxRelatedItems : isMedidasCooktop ? medidasCooktopRelatedItems : undefined}
-			eyebrow="Veja também"
-			title="Leituras relacionadas"
-			subtitle={isPilotMesaVidro
-				? 'Outros textos sobre mesa de vidro, se ainda restou alguma dúvida.'
-				: isVidroOuInox
-					? 'Outras decisões de fogão, se ainda restou alguma dúvida além do tipo de tampo.'
-				: isMedidasCooktop
-					? 'Outros textos sobre espaço, instalação e escolha de cooktop.'
-				: 'Mais textos sobre o mesmo tema.'}
-		/>
+		{
+			isNichoSuporte ? null : (
+				<RelatedContent
+					class="mt-14"
+					currentPath={Astro.url.pathname}
+					excludePaths={[
+						`/blog/${post.id}`,
+						`/blog/${post.id}/`,
+						...(isFornoDuplo ? ['/#top-produtos'] : []),
+						...vidroOuInoxRelatedExclude,
+						...medidasCooktopRelatedExclude,
+					]}
+					items={isVidroOuInox ? vidroOuInoxRelatedItems : isMedidasCooktop ? medidasCooktopRelatedItems : undefined}
+					eyebrow="Veja também"
+					title="Leituras relacionadas"
+					subtitle={isPilotMesaVidro
+						? 'Outros textos sobre mesa de vidro, se ainda restou alguma dúvida.'
+						: isVidroOuInox
+							? 'Outras decisões de fogão, se ainda restou alguma dúvida além do tipo de tampo.'
+						: isMedidasCooktop
+							? 'Outros textos sobre espaço, instalação e escolha de cooktop.'
+						: 'Mais textos sobre o mesmo tema.'}
+				/>
+			)
+		}
 
-		<SmartRecommendations
-			class="mt-12"
-			currentPath={Astro.url.pathname}
-			excludePaths={[
-				`/blog/${post.id}`,
-				`/blog/${post.id}/`,
-				...(isPilotMesaVidro ? ['/melhores/melhor-fogao-mesa-de-vidro/'] : []),
-				...(isFornoDuplo ? ['/#top-produtos'] : []),
-				...vidroOuInoxRelatedExclude,
-				...medidasCooktopRelatedExclude,
-			]}
-			heading="Continuar a leitura"
-			subtitle={isPilotMesaVidro
-				? 'Se a mesa de vidro ainda levanta uma dúvida, estas leituras ajudam a fechar o recorte — sem pressa de escolher modelo.'
-				: isVidroOuInox
-					? 'Se a dúvida agora for tamanho, instalação ou um modelo, estas leituras ajudam.'
-				: isMedidasCooktop
-					? 'Se a dúvida agora for o modelo ou o tipo de instalação, estas leituras ajudam.'
-				: undefined}
-		/>
+		{
+			isNichoSuporte ? null : (
+				<SmartRecommendations
+					class="mt-12"
+					currentPath={Astro.url.pathname}
+					excludePaths={[
+						`/blog/${post.id}`,
+						`/blog/${post.id}/`,
+						...(isPilotMesaVidro ? ['/melhores/melhor-fogao-mesa-de-vidro/'] : []),
+						...(isFornoDuplo ? ['/#top-produtos'] : []),
+						...vidroOuInoxRelatedExclude,
+						...medidasCooktopRelatedExclude,
+					]}
+					heading="Continuar a leitura"
+					subtitle={isPilotMesaVidro
+						? 'Se a mesa de vidro ainda levanta uma dúvida, estas leituras ajudam a fechar o recorte — sem pressa de escolher modelo.'
+						: isVidroOuInox
+							? 'Se a dúvida agora for tamanho, instalação ou um modelo, estas leituras ajudam.'
+						: isMedidasCooktop
+							? 'Se a dúvida agora for o modelo ou o tipo de instalação, estas leituras ajudam.'
+						: undefined}
+				/>
+			)
+		}
 		<p class="mt-12 border-t border-white/10 pt-8 text-sm text-on-ink-muted">
 			<a href="/blog/" class="text-pop transition hover:text-accent-hover" aria-label="Voltar à listagem do blog">
 				← Voltar ao blog

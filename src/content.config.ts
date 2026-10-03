@@ -16,6 +16,8 @@ const blog = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
+		/** H1 editorial quando o title é a frase de SEO. O template só lê este campo em `/blog/fogao-cabe-no-meu-nicho/`. */
+		headline: z.string().optional(),
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
 		category: z.string(),
