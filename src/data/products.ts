@@ -80,7 +80,7 @@ export const produtos = {
 	brastempBFO4VAE: {
 		ml: 'https://meli.la/2oF53cc',
 		mlGeneratedByPanel: true,
-		shopee: 'https://s.shopee.com.br/AAHecJs69f',
+		shopee: 'https://shopee.com.br/product/1648122739/22494638688?exp_group=rollout&gads_t_sig=gqRjZGVrxHCFomtpsTE0MjUxOnRzc19zZGtfa2V5omt20QACpGFsZ2_SAAAAZKNkZWvAomN0xEAAAAAMaBRvcqdZwgRklGTWoHoxFGhRfNAexxPkhN1n8rcCO5qFEud_-aY2hsGdfUnqCpX0P0Z7lpJy6IP6_Ew8qmNpcGhlcnRleHTEmQAAAAylAk5q3MkWR943mJ7Lb_G9CfBjxchnr9dp7JZReJqI6klL9sZLPxupJpkwvSLefX-53JAb2RHuCl_pqA5nssdIEITlpHnhEaFKWNcT1zfy_y4C88Cp-yNKMt33EJKUiPGoLdyX2ViPpxzIgAs-CCY_Y5MtbB0NcP0CQT1oACAEHNLr7FM-kCSopm8JwndVeSR7UH1azg&mmp_pid=an_18331380408&uls_trackid=56pp8c5t00ku&utm_campaign=id_7atsbbneMhd&utm_content=----&utm_medium=affiliates&utm_source=an_18331380408&utm_term=fnb7v1umw4qn',
 		shopeeGeneratedByPanel: true,
 	},
 	/** Mesa de vidro — Atlas Atenas Glass / Top Glass (mesma linha; Top Glass é a nomenclatura comercial frequente) */
