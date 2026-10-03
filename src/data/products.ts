@@ -55,7 +55,7 @@ export const produtos = {
 	consulCF04NAR: {
 		ml: 'https://meli.la/1mrHBpJ',
 		mlGeneratedByPanel: true,
-		shopee: 'https://shopee.com.br/Fog%C3%A3o-de-Piso-4-Bocas-Consul-CFO4NAR-com-Acendimento-Autom%C3%A1tico-BIV-i.443109642.22897480606',
+		shopee: 'https://s.shopee.com.br/2VsDHST2Mb',
 		shopeeGeneratedByPanel: true,
 	},
 	electroluxFE4IW: {
@@ -74,7 +74,7 @@ export const produtos = {
 	consulCFO4VAR: {
 		ml: 'https://meli.la/1w6gKzF',
 		mlGeneratedByPanel: true,
-		shopee: 'https://shopee.com.br/product/1541325700/22294431199',
+		shopee: 'https://s.shopee.com.br/70KceCvFZD',
 		shopeeGeneratedByPanel: true,
 	},
 	brastempBFO4VAE: {
@@ -87,7 +87,7 @@ export const produtos = {
 	atlasAtenasGlass: {
 		ml: 'https://meli.la/1LpAT6R',
 		mlGeneratedByPanel: true,
-		shopee: 'https://shopee.com.br/Fog%C3%A3o-4-Bocas-Preto-com-Mesa-de-Vidro-Atlas-M%C3%B4naco-Top-Glass-Acendimento-Autom%C3%A1tico-Bivolt-i.1334945356.50162071184',
+		shopee: 'https://s.shopee.com.br/8pmGqWHdd1',
 		shopeeGeneratedByPanel: true,
 	},
 	/** Cooktop 5 bocas — ranking /melhores/melhor-cooktop-5-bocas */
@@ -118,13 +118,13 @@ export const produtos = {
 		shopeeGeneratedByPanel: true,
 	},
 	fischerFitLine4Bocas: {
-		ml: 'https://meli.la/31Tttd7',
+		ml: 'https://meli.la/1fN4emT',
 		mlGeneratedByPanel: true,
 		shopee: 'https://s.shopee.com.br/5q8HhAuqmE',
 		shopeeGeneratedByPanel: true,
 	},
 	muellerMCG4BK: {
-		ml: 'https://meli.la/1pyXcPQ',
+		ml: 'https://meli.la/1uBwhgp',
 		mlGeneratedByPanel: true,
 		shopee: 'https://s.shopee.com.br/3LQwicU1hf',
 		shopeeGeneratedByPanel: true,
