@@ -74,11 +74,11 @@ Convencionadas assim:
 - Canonical usa path com barra final (`/brastemp-bfs5ncr-vale-a-pena/`) antes de normalizar com `new URL`
 - Grafo mais rico: `Organization` (com `logo`), `WebSite`, `WebPage` (com `primaryImageOfPage`, `breadcrumb`, `isPartOf`), `BreadcrumbList`, `Article`, `FAQPage`
 
-#### Guia “melhor fogão 5 bocas” (rota dedicada) — `src/pages/melhor-fogao-5-bocas.astro`
+#### Ranking “melhor fogão 5 bocas” — `/melhores/melhor-fogao-5-bocas/`
 
-- Canonical: `/melhor-fogao-5-bocas` (sem barra final no path passado ao `URL`)
-- OG tipo `article` com imagem em `public`, `publishedTime` / `modifiedTime` fixos no frontmatter da página
-- JSON-LD: **`BreadcrumbList`** + **`Article`** (estrutura mais enxuta que o blog; sem `@id` interligando entidades como na rota dinâmica do blog)
+- URL dona: `/melhores/melhor-fogao-5-bocas/`, gerada por `src/pages/melhores/[slug].astro`.
+- Não existe `src/pages/melhor-fogao-5-bocas.astro`.
+- Canonical com barra final. A Home não é a dona dessa intenção e não tem a âncora `/#top-produtos`.
 
 #### Reviews curtas por marca — `src/pages/review-fogao-5-bocas-[marca].astro`
 
@@ -137,7 +137,10 @@ Cada keyword/intenção principal deve ter **uma URL dona clara**, com papel exp
 
 | Intenção principal | URL principal | Papel |
 |------|----------------|--------|
-| `melhor fogão 5 bocas` | `/` (home, âncora `/#top-produtos`) | Ranking comercial — **não** há artigo em `/melhores/melhor-fogao-5-bocas/` (card no hub aponta para a home; 301 no `vercel.json`) |
+| `melhor fogão 5 bocas` | `/melhores/melhor-fogao-5-bocas/` | Ranking comercial de fogão 5 bocas de piso. A Home não é a dona dessa intenção. |
+| `melhor fogão 4 bocas de embutir` | `/melhores/melhor-fogao-4-bocas-de-embutir/` | Ranking comercial de embutir. Distinto do ranking de 4 bocas de piso e do guia de formato. |
+| `melhor cooktop 4 bocas` | `/melhores/melhor-cooktop-4-bocas/` | Ranking comercial existente. Não há URL de “como escolher cooktop”. |
+| `melhor cooktop 5 bocas` | `/melhores/melhor-cooktop-5-bocas/` | Ranking comercial existente. Não há URL de “como escolher cooktop”. |
 | `como escolher fogão 5 bocas` | `/como-escolher-fogao-5-bocas/` | Satélite / checklist pré-compra |
 | `fogão 5 bocas custo benefício` | `/fogao-5-bocas-custo-beneficio/` | Subintenção comercial por valor/preço |
 | `melhor fogão 4 bocas` | `/melhores/melhor-fogao-4-bocas/` | Hub / ranking comercial 4 bocas |

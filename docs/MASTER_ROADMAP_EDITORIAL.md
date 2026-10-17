@@ -314,8 +314,8 @@ Conteúdos futuros — **separados do plano imediato**. Só após conclusão dos
 |---|----------|---------|-----------------|-------|
 | B1 | Hub Melhor fogão com forno duplo | Forno duplo (novo) | Blog já dono da intenção educativa; exige reposicionar blog + SKUs | Canibalização com `/blog/melhor-fogao-com-forno-duplo/` |
 | B2 | Reviews SKU forno duplo | Forno duplo | Sem produtos em `products.ts` | Zero receita até catálogo |
-| B3 | Hub Melhor fogão **4 bocas de embutir** | Embutir 4 bocas | Ver **Territórios promissórios** abaixo — gate = estoque afiliado | Canibalização com piso 4 bocas / cooktop / guia formato |
-| B4 | Cluster cooktop (melhor / como escolher) | Cooktop | Hoje só ponte editorial | Diluição da autoridade fogão de piso |
+| B3 | Hub Melhor fogão **4 bocas de embutir** | Embutir 4 bocas | Página existente: `/melhores/melhor-fogao-4-bocas-de-embutir/`. Não criar outra URL. | Canibalização com piso 4 bocas / cooktop / guia formato |
+| B4 | Cluster cooktop | Cooktop | Rankings existentes: `/melhores/melhor-cooktop-4-bocas/` e `/melhores/melhor-cooktop-5-bocas/`. Não há URL de “como escolher cooktop”. | Diluição se uma URL nova repetir a intenção desses rankings |
 | B5 | Fogão 6 bocas (hub + satélites) | 6 bocas | Cluster e afiliados zerados | Diluição do mapa 4/5 |
 | B6 | Fogão de indução | Indução | Fora do DNA atual (gás/piso) | Novo vertical técnico |
 | B7 | Hub Melhor fogão Electrolux (marca) | Marca | Disputa com hubs por bocas | Canibalização brand × categoria |
@@ -331,9 +331,9 @@ O gate é o conjunto de produtos da decisão (validados e monetizados), não um 
 
 | Território | Status | Estoque SSOT hoje | Gate para abrir página | Anti-canibalização |
 |------------|--------|-------------------|------------------------|--------------------|
-| **Fogão 4 bocas de embutir** | **PROMISSOR — CATÁLOGO EM CONSTRUÇÃO** | **0** SKUs embutir 4 bocas em `products.ts` | Conjunto **dessa** decisão selecionado, validado e monetizado (oferta ML/Shopee no painel). Referência de núcleo: em geral ≥3 SKUs e ≥2 marcas — o número sai da seleção, não de um catálogo prévio da categoria | Distinto de `/melhores/melhor-fogao-4-bocas/` (piso), cooktops e `/blog/guia-fogao-embutir-ou-de-piso/` (formato educativo) |
+| **Fogão 4 bocas de embutir** | **Página existente** | `/melhores/melhor-fogao-4-bocas-de-embutir/` — Electrolux FE4BB, Brastemp BYO4EBR e Dako Supreme em `products.ts` | Não criar segunda URL para a mesma intenção. | Distinto de `/melhores/melhor-fogao-4-bocas/` (piso), dos cooktops e de `/blog/guia-fogao-embutir-ou-de-piso/` (formato) |
 
-**Próximo passo operacional (B3):** quando essa decisão for a próxima oportunidade, selecionar só os produtos que a sustentam (pesquisa de mercado ≠ cadastro). Só cadastrar em `products.ts` após oferta afiliada confirmada. **Não** criar hub/URL até esse conjunto estar validado. Não cadastrar previamente todos os embutir do mercado.
+A classificação de 23/09/2026 permanece no registro de execução e não é reescrita. O passo “não criar a URL” descreve aquela data. A página já existe. Não cadastrar o restante do mercado de embutir para ampliar o ranking.
 
 ---
 
@@ -394,10 +394,10 @@ Biblioteca Técnica (Tipo B compartilhado)
 |--------|--------|--------|
 | Comparativo formato | ✅ | `/comparativo-fogao-4-vs-5-bocas/` |
 | Embutir × piso | ✅ | `/blog/guia-fogao-embutir-ou-de-piso/` |
-| Fogão 4 bocas de embutir (hub comercial) | 🟡 Pipeline | **PROMISSOR — CATÁLOGO EM CONSTRUÇÃO** · 0 SKUs · sem URL até gate de estoque |
+| Fogão 4 bocas de embutir (hub comercial) | ✅ Página existente | `/melhores/melhor-fogao-4-bocas-de-embutir/` |
 | Forno duplo | 🟡 | Blog educativo ✅ · hub comercial ❌ (backlog) |
 | Técnico (trempes, tripla chama, acendimento, medidas) | ❌ | Sprint 3 |
-| Novos verticais | ❌ Bloqueados / pipeline | Cooktop hub · 6 bocas · indução · embutir 4b (só após estoque) — Backlog |
+| Novos verticais | ❌ Bloqueados / pipeline | 6 bocas · indução. Cooktop 4 e 5 bocas e embutir 4 bocas já têm página; não abrir outra URL para a mesma intenção. |
 
 ---
 
@@ -436,7 +436,7 @@ Biblioteca Técnica (Tipo B compartilhado)
 | Fogão inox | Blog vidro×inox (polo) | Hubs inox | Não duplicar comparativo |
 | Limpar mesa de vidro | Hub vidro | Hub + blog seguro | Trust |
 | Brastemp vs Consul 5b | Longas + 3.1 | Hub 5b | Matriz brand |
-| Fogão ou cooktop | Tipo A existente | Hub 4b | Sem abrir cluster cooktop |
+| Fogão ou cooktop | Tipo A existente | Hub 4b | Os rankings de cooktop 4 e 5 bocas já existem. Esta linha não autoriza outra URL de cooktop. |
 
 ### Backlog
 
@@ -452,7 +452,10 @@ Inventário de páginas publicadas e planejadas (função no cluster). ROI = pot
 
 | Página | Cluster | Função | Status | ROI | Prioridade |
 |--------|---------|--------|--------|-----|------------|
-| `/` | Transversal comercial | Superfície / hero 5 bocas | 🟩 | Alto | Manter (CRO sob protocolo) |
+| `/` | Transversal | Vitrine de guias e artigos. Não é a dona de “melhor fogão 5 bocas”. | 🟩 | Alto | Manter. CRO-001 e CRO-002 encerrados administrativamente em 16/10/2026, resultado inconclusivo. |
+| `/melhores/melhor-fogao-4-bocas-de-embutir/` | Embutir 4 bocas | Hub comercial existente | 🟩 | — | Nenhuma prioridade nova nesta atualização |
+| `/melhores/melhor-cooktop-4-bocas/` | Cooktop | Hub comercial existente | 🟩 | — | Nenhuma prioridade nova nesta atualização |
+| `/melhores/melhor-cooktop-5-bocas/` | Cooktop | Hub comercial existente | 🟩 | — | Nenhuma prioridade nova nesta atualização |
 | `/melhores/` | Transversal | Índice de guias | 🟩 | Médio | Manter |
 | `/melhores/melhor-fogao-5-bocas/` | 5 bocas | Hub / money page | 🟩 | Muito alto | Fortalecer continuamente |
 | `/melhores/melhor-fogao-4-bocas/` | 4 bocas | Hub / money page | 🟩 | Muito alto | Fechar com reviews |
@@ -521,6 +524,7 @@ Atualizar a cada conteúdo iniciado, publicado ou pausado.
 | 2026-09-05 | Como escolher fogão mesa de vidro | 🟩 | `/como-escolher-fogao-mesa-de-vidro/` — satélite de critérios; L05A + L06A; sem ranking |
 | 2026-09-23 | Território fogão 4 bocas de embutir | 🟡 Pipeline | Demanda/SERP/diferenciação validadas; auditoria SSOT = 0 SKUs; classificado **PROMISSOR — CATÁLOGO EM CONSTRUÇÃO**; página/URL bloqueadas até estoque afiliado |
 | 2026-09-26 | Modelo de construção do catálogo | 🟩 Decisão | Catálogo por decisão comercial; eficácia comercial > volume; sem páginas, SKUs ou refactor. SSOT `docs/MODELO_CONSTRUCAO_CATALOGO.md` |
+| 2026-10-16 | Alinhamento documental do mapa | 🟩 Documentação | Registro do estado do código nesta data. Não reescreve a decisão de 23/09/2026. Ranking de 5 bocas de piso: `/melhores/melhor-fogao-5-bocas/`. Embutir 4 bocas e cooktops 4 e 5 bocas já têm rota no repositório. |
 
 ---
 

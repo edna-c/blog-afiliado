@@ -18,6 +18,7 @@ import vidroOuInoxArticleHero from '../../assets/images/blog/comparativos/fogao-
 import melhorFogaoFornoDuploArticleHero from '../../assets/images/blog/guias/melhor-fogao-com-forno-duplo-article-hero.png';
 import medidasCooktopArticleHero from '../../assets/images/blog/guias/medidas-de-cooktop-article-hero.webp';
 import { findEntry, type EditorialEntry } from '../../data/editorialContent';
+import { FOGAO_5_BOCAS_RANKING_HREF } from '../../data/melhoresListing';
 import { BLOG_ARTICLE_HERO, picturePropsFrom } from '../../data/editorialImageSpecs';
 
 const articleHeroPicture = picturePropsFrom(BLOG_ARTICLE_HERO);
@@ -127,7 +128,7 @@ const editorialPairings: Record<string, string[]> = {
 	'guia-fogao-embutir-ou-de-piso': [
 		'/blog/fogao-mesa-de-vidro-ou-inox/',
 		'/comparativo-fogao-4-vs-5-bocas/',
-		'/#top-produtos',
+		FOGAO_5_BOCAS_RANKING_HREF,
 	],
 	'fogao-4-bocas-ainda-vale-a-pena': [
 		'/melhores/melhor-fogao-4-bocas/',
@@ -135,7 +136,7 @@ const editorialPairings: Record<string, string[]> = {
 		'/comparativo-fogao-4-vs-5-bocas/',
 	],
 	'fogao-5-bocas-reduz-espaco-cozinha': [
-		'/#top-produtos',
+		FOGAO_5_BOCAS_RANKING_HREF,
 		'/comparativo-fogao-4-vs-5-bocas/',
 		'/como-escolher-fogao-5-bocas/',
 	],
@@ -168,11 +169,11 @@ const commercialNextBySlug: Record<string, { href: string; label: string }> = {
 		label: 'ranking mesa de vidro com ofertas',
 	},
 	'guia-fogao-embutir-ou-de-piso': {
-		href: '/#top-produtos',
+		href: FOGAO_5_BOCAS_RANKING_HREF,
 		label: 'ranking do melhor fogão 5 bocas com ofertas',
 	},
 	'fogao-5-bocas-reduz-espaco-cozinha': {
-		href: '/#top-produtos',
+		href: FOGAO_5_BOCAS_RANKING_HREF,
 		label: 'ranking do melhor fogão 5 bocas com ofertas',
 	},
 	'melhor-fogao-com-forno-duplo': {
@@ -182,7 +183,7 @@ const commercialNextBySlug: Record<string, { href: string; label: string }> = {
 };
 
 const commercialNext = commercialNextBySlug[post.id] ?? {
-	href: '/#top-produtos',
+	href: FOGAO_5_BOCAS_RANKING_HREF,
 	label: 'ranking do melhor fogão 5 bocas com ofertas',
 };
 
@@ -201,7 +202,7 @@ const medidasCooktopRelatedExclude = isMedidasCooktop
 			'/blog/guia-fogao-embutir-ou-de-piso/',
 			'/blog/fogao-5-bocas-reduz-espaco-cozinha/',
 			'/brastemp-bfs5ncr-vale-a-pena/',
-			'/#top-produtos',
+			FOGAO_5_BOCAS_RANKING_HREF,
 			'/melhores/melhor-fogao-4-bocas/',
 			'/melhores/melhor-fogao-mesa-de-vidro/',
 			'/melhores/melhor-fogao-5-bocas/',
@@ -501,7 +502,7 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 					excludePaths={[
 						`/blog/${post.id}`,
 						`/blog/${post.id}/`,
-						...(isFornoDuplo ? ['/#top-produtos'] : []),
+						...(isFornoDuplo ? [FOGAO_5_BOCAS_RANKING_HREF] : []),
 						...vidroOuInoxRelatedExclude,
 						...medidasCooktopRelatedExclude,
 					]}
@@ -528,7 +529,7 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 						`/blog/${post.id}`,
 						`/blog/${post.id}/`,
 						...(isPilotMesaVidro ? ['/melhores/melhor-fogao-mesa-de-vidro/'] : []),
-						...(isFornoDuplo ? ['/#top-produtos'] : []),
+						...(isFornoDuplo ? [FOGAO_5_BOCAS_RANKING_HREF] : []),
 						...vidroOuInoxRelatedExclude,
 						...medidasCooktopRelatedExclude,
 					]}

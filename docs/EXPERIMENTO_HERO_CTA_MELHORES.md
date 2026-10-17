@@ -1,8 +1,18 @@
 # Experimento — CTA afiliado no Hero (Melhores)
 
-**Status:** protocolo travado antes da medição · CRO congelado na janela  
+**Status original deste protocolo:** protocolo travado antes da medição · CRO congelado na janela  
 **Log:** [`CRO-001` em `docs/CRO_EXPERIMENT_LOG.md`](./CRO_EXPERIMENT_LOG.md)  
-**Escopo:** `/melhores/melhor-fogao-5-bocas/`, `/melhores/melhor-fogao-4-bocas/`, `/melhores/melhor-fogao-mesa-de-vidro/`
+**Escopo original:** `/melhores/melhor-fogao-5-bocas/`, `/melhores/melhor-fogao-4-bocas/`, `/melhores/melhor-fogao-mesa-de-vidro/`
+
+## Encerramento administrativo
+
+**Status atual:** Encerrado administrativamente — resultado inconclusivo.
+
+Formalizado em **16/10/2026**, na edição deste arquivo. Essa data é a da decisão documental. Não é data de deploy nem data de publicação. A verificação da Home publicada permanece em **16/10/2026** e não preenche os campos de medição abaixo.
+
+Não foi atribuído sucesso, neutralidade nem fracasso. Não usar este protocolo como justificativa automática para alterações futuras. A Sprint B não será executada.
+
+O escopo de três URLs e o volume de ≥ 300 sessões somadas nessas três URLs permanecem como foram escritos neste protocolo. O log, desde 17/08/2026, restringe a janela a duas URLs. Essa divergência fica registrada. Não há números de baseline nem de pós-teste para reconciliá-la.
 
 ## Hipótese
 

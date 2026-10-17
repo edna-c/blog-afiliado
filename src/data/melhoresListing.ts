@@ -3,13 +3,12 @@
  *
  * Ids em `MELHORES_CARD_ONLY_IDS` existem só como card (sem rota própria).
  * Ids em `MELHORES_DEDICATED_PAGE_IDS` têm rota Astro própria (não passam por `[slug].astro`).
- * O guia de fogão 5 bocas tem rota própria. `FOGAO_5_BOCAS_RANKING_HREF` permanece
- * apenas para páginas que ainda apontam a âncora antiga da Home; a vitrine e o card
- * do guia usam `/melhores/melhor-fogao-5-bocas/`.
+ * O guia de fogão 5 bocas tem rota própria. `FOGAO_5_BOCAS_RANKING_HREF`
+ * abre a vitrine comercial dessa página.
  */
 export const FOGAO_5_BOCAS_GUIDE_HREF = '/melhores/melhor-fogao-5-bocas/';
 
-export const FOGAO_5_BOCAS_RANKING_HREF = '/#top-produtos';
+export const FOGAO_5_BOCAS_RANKING_HREF = '/melhores/melhor-fogao-5-bocas/#guia-comercial-produtos';
 
 export const MELHORES_CARD_ONLY_IDS = [] as const;
 

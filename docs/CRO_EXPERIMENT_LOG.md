@@ -33,10 +33,49 @@ Parece lento; em afiliados, costuma ser mais consistente do que várias mudança
 
 ## Log
 
+A tabela abaixo é o registro histórico. As colunas Resultado e Decisão permanecem como foram escritas enquanto os testes estavam abertos. O status vigente está na seção [Encerramento administrativo](#encerramento-administrativo).
+
 | ID | Hipótese | Alteração | Resultado | Decisão |
 |----|----------|-----------|-----------|---------|
 | **CRO-001** | Aproximar o CTA do momento da decisão aumenta os cliques afiliados | CTA afiliado único no Hero dos hubs Melhores (5 bocas, 4 bocas, mesa de vidro), SSOT via `featuredHeroProduct` | **Parcialmente encerrado no 5 bocas** (17/ago/2026): a URL `/melhores/melhor-fogao-5-bocas/` não era a dona da intenção — ranking fica na home. Janela segue só em 4 bocas e mesa de vidro. | Aguardando janela nas 2 URLs restantes |
 | **CRO-002** | Oferta direta na tabela comparativa da Home aumenta a captura de intenção de compra sem reduzir de forma relevante os cliques dos cards | Coluna “Onde comprar” na tabela da Home (5 CTAs SSOT); microcopy do CTA do hero e rótulo do bloco comercial | **Em observação** (17/set/2026) | Aguardando janela na Home (`/`). Sem veredito. |
+
+---
+
+## Encerramento administrativo
+
+Formalizado em **16/10/2026**, na edição deste arquivo. Essa é a data da decisão documental. Não é data de deploy nem data de publicação.
+
+A verificação da Home publicada (`https://casapraticaeletro.com.br/`) também ocorreu em **16/10/2026**. Essa data permanece somente como evidência da página no ar. Não substitui esta formalização e não preenche a data de deploy.
+
+| ID | Status atual | Resultado |
+|----|----------------|-----------|
+| **CRO-001** | Encerrado administrativamente — resultado inconclusivo | Inconclusivo. Sem sucesso, neutralidade ou fracasso. |
+| **CRO-002** | Encerrado administrativamente — resultado inconclusivo | Inconclusivo. Sem sucesso, neutralidade ou fracasso. |
+
+Nenhum dos dois permanece em observação, aguardando janela ou ativo. O encerramento não autoriza alteração de página, CTA, card, tabela ou link de afiliado. Não cria experimento novo.
+
+### CRO-001
+
+Encerrado por mudança de estratégia e de contexto de avaliação. Não usar este experimento como justificativa automática para alterações futuras.
+
+A data de deploy continua sem registro. Os commits citados abaixo são datas de repositório, não de publicação.
+
+Inconsistências preservadas, sem resultado reconstruído:
+
+- O protocolo soma ≥ 300 sessões em três URLs. O detalhe deste log, desde 17/08/2026, restringe a janela a `/melhores/melhor-fogao-4-bocas/` e `/melhores/melhor-fogao-mesa-de-vidro/`. O volume do protocolo não foi reescrito.
+- O detalhe deste log registra que `/melhores/melhor-fogao-5-bocas/` saiu do teste porque a URL levava à Home, onde o ranking ficava. O commit `08ead6e`, de 24/09/2026, é só data de commit. Nele a Home deixa de montar os cards e a tabela. A Home verificada em 16/10/2026 não tinha esses blocos. A data em que isso foi ao ar não está confirmada.
+- Não há baseline, sessões, cliques nem CTR registrados.
+
+### CRO-002
+
+Encerrado por incompatibilidade entre o desenho original e a Home atual. Na verificação de 16/10/2026, os cards de produtos e a tabela comercial previstos no protocolo não estavam na Home publicada. Não restaurar esses componentes para tentar concluir o experimento.
+
+A data de deploy continua em branco. O registro de 17/09/2026 é a data em que o teste foi escrito neste log, não uma data de publicação. O commit `6d326d0`, de 17/09/2026, é a data em que o tratamento entrou no repositório. Também não é deploy.
+
+O protocolo não definiu janela mínima nem volume mínimo. Os KPIs `comparison_table` e `product_card` com `page_type = home` não estavam presentes na Home verificada em 16/10/2026. Não há série de cliques, pedidos ou comissão atribuída a este teste.
+
+A seção “Sprint B (só se CRO-001 = Sucesso)”, no final deste arquivo, permanece anotação histórica. Não será executada: o CRO-001 não recebeu veredito de sucesso.
 
 ---
 

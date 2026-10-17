@@ -69,6 +69,6 @@ Com o vão medido, dá para escolher o fogão pelo que realmente cabe nesse espa
 
 **Para 4 bocas:** [Melhor fogão 4 bocas de embutir](/melhores/melhor-fogao-4-bocas-de-embutir/)
 
-**Para 5 bocas:** [Melhor fogão 5 bocas de embutir](/melhores/melhor-fogao-5-bocas-de-embutir/)
+**Para 5 bocas:** compare a ficha do modelo com as medidas do nicho. Não há aqui um ranking de fogão 5 bocas de embutir.
 
 Depois de escolher um modelo, volte à ficha e confira as medidas daquele nicho antes de comprar.

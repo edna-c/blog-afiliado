@@ -105,4 +105,6 @@ Cozinha pequena? Veja também [quando o fogão 4 bocas ainda vale a pena](/blog/
 
 ## Depois de escolher o formato
 
-Depois de definir o tipo de instalação, compare os modelos no [ranking do melhor fogão 5 bocas](/#top-produtos) — ofertas na mesma página.
+Se você escolheu um fogão de piso, consulte o [ranking de fogões de 5 bocas de piso](/melhores/melhor-fogao-5-bocas/#guia-comercial-produtos) para comparar os modelos e as ofertas disponíveis. Esse ranking não inclui fogões de embutir.
+
+Se você escolheu um fogão de embutir, considere as medidas do nicho e os requisitos de instalação antes de comparar os modelos. O ranking de fogões de 5 bocas de piso não substitui uma seleção específica de modelos de embutir.

@@ -1,8 +1,14 @@
 # Plano pós–CRO-001 — conversão Melhores (não implementar agora)
 
-**Status:** preparado · **bloqueado** até encerramento / veredito do CRO-001  
+**Status original:** preparado · **bloqueado** até encerramento / veredito do CRO-001  
 **Escopo principal:** `/melhores/melhor-fogao-5-bocas/` (padrão aplicável aos demais hubs Melhores só com decisão explícita)  
 **Relacionados:** `docs/CRO_EXPERIMENT_LOG.md` · `docs/EXPERIMENTO_HERO_CTA_MELHORES.md` · `docs/MANUAL_PAGINA_DECISAO.md` · `docs/GUIA_EDITORIAL_AFILIADOS_ELETRODOMESTICOS_GOOGLE.md`
+
+## Encerramento administrativo do CRO-001
+
+**Status atual:** o CRO-001 está encerrado administrativamente, com resultado inconclusivo. Formalizado em **16/10/2026**, na edição deste arquivo. Essa data não é deploy nem publicação. A verificação da Home publicada permanece registrada em **16/10/2026** no log de CRO.
+
+A implementação deste plano **não está autorizada**. O plano permanece como referência histórica, sem execução automática. O encerramento não equivale a sucesso, neutralidade ou fracasso. As ramificações condicionadas a esses vereditos, mais abaixo, não se aplicam e não devem ser executadas.
 
 > Este arquivo **não autoriza** implementação. É o backlog de avaliação após o CRO-001.
 
