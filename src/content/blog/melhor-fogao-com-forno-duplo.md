@@ -145,8 +145,8 @@ Na hora de escolher, pense em três coisas:
 2. **Espaço** — se o fogão cabe onde você vai colocar, inclusive com as portas abertas e espaço extra para instalar.
 3. **Uso** — se vale a pena pagar a mais, ou se você usaria pouco o segundo forno.
 
-Se o forno duplo fizer sentido para o seu caso, confira o manual e a ficha do fogão que você está vendo. Se não fizer — você usa pouco o forno, a cozinha é apertada, o orçamento está curto — um fogão comum com grill bem escolhido tende a fazer mais sentido.
+Se o forno duplo fizer sentido para o seu caso, confira o manual e a ficha do fogão que você está vendo. Os modelos de 4 bocas com dois fornos estão no [ranking de fogão 4 bocas com 2 fornos](/melhores/melhor-fogao-4-bocas-com-2-fornos/). Se não fizer — você usa pouco o forno, a cozinha é apertada, o orçamento está curto — um fogão comum com grill bem escolhido tende a fazer mais sentido.
 
 Não existe modelo ideal para todo mundo. O melhor fogão com forno duplo para a sua casa é aquele que combina com a sua rotina, cabe no espaço disponível e realmente será usado — não o que a vitrine promete.
 
-Se, depois de ver como o forno duplo funciona, você concluir que um forno simples já resolve, aí sim vale ver o [ranking de fogões convencionais](/#top-produtos) e comparar os modelos disponíveis. Esse ranking não reúne fogões com forno duplo.
+Se, depois de ver como o forno duplo funciona, você concluir que um forno simples já resolve, veja o [ranking de fogão 4 bocas](/melhores/melhor-fogao-4-bocas/) ou o [ranking de fogão 5 bocas](/melhores/melhor-fogao-5-bocas/). Nenhum dos dois reúne fogões com forno duplo.
