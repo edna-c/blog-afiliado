@@ -1,5 +1,6 @@
 import { produtos } from './products';
 import type { CommercialProduct, ComparisonColumnKey, ComparisonRow } from '../types/commercial';
+import electroluxFe5igCardImage from '../assets/images/cards/optimized/electrolux-fe5ig-card-premium.webp';
 
 export type CommercialGuideId =
 	| 'melhor-fogao-5-bocas'
@@ -96,6 +97,8 @@ const melhorFogao5Bocas: CommercialGuideBlock = {
 	hideComparisonActionColumn: true,
 	moduleIds: [
 		'_melhor-fogao-5-bocas-justificativas',
+		'_melhor-fogao-5-bocas-como-avaliamos',
+		'_melhor-fogao-5-bocas-perfil',
 		'_melhor-fogao-5-bocas-antes',
 		'_melhor-fogao-5-bocas-aprofundar',
 	],
@@ -117,7 +120,7 @@ const melhorFogao5Bocas: CommercialGuideBlock = {
 			shopeeUrl: produtos.electroluxFE5IG.shopee,
 			mlCtaText: 'Ver preço do Electrolux FE5IG',
 			shopeeCtaText: DEFAULT_SHOPEE_CTA_TEXT,
-			image: '/images/melhores/melhor-fogao-5-bocas/electrolux-fe5ig-hero.webp',
+			image: electroluxFe5igCardImage,
 			imageAlt: 'Fogão Electrolux FE5IG 5 bocas em inox com mesa inox',
 			featured: true,
 		},

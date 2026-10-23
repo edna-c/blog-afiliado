@@ -11,12 +11,12 @@ category: 'Guia de Compra'
 
 ### 🥇 Electrolux FE5IG
 
-Fica em 1º porque é o modelo mais completo para quem usa o forno com frequência e quer recursos além do funcionamento convencional.
+Fica em 1º entre estes três porque reúne vapor, cavidade selada e Tripla Chama para quem usa o forno com frequência. O forno tem 88,6 L, menos que os 96 L dos outros dois: se você quase não usa o forno, esse lugar não acompanha a sua rotina.
 
 ### 💰 Brastemp BFS5NCR
 
-Fica em 2º para quem quer um forno maior e duas prateleiras, mas não precisa do pacote de recursos que levou o Electrolux ao 1º lugar.
+Fica em 2º para quem quer forno convencional de 96 L e duas prateleiras. Se a rotina depende de vapor, cavidade selada e Tripla Chama, a escolha é o Electrolux FE5IG.
 
 ### 🔥 Consul CFS5NAR
 
-Fica em 3º porque atende quem quer entrar em 5 bocas priorizando o essencial e mantendo o orçamento mais contido.
+Fica em 3º para quem quer forno de 96 L, uma prateleira e vidro interno vedado, que não sai para limpar. Duas prateleiras e vidro removível estão no Brastemp BFS5NCR.

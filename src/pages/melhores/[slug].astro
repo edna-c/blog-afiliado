@@ -292,30 +292,88 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 			guide.id === 'melhor-fogao-mesa-de-vidro' && 'guide-editorial--mesa-vidro',
 		]}
 	>
-		<Breadcrumbs
-			class="mb-8"
-			items={[
-				{ name: 'Início', href: '/' },
-				{ name: hubLabel, href: '/melhores/' },
-				{ name: breadcrumbCurrent },
-			]}
-		/>
+		{
+			isMelhoresDecisionPage ? null : (
+				<Breadcrumbs
+					class="mb-8"
+					items={[
+						{ name: 'Início', href: '/' },
+						{ name: hubLabel, href: '/melhores/' },
+						{ name: breadcrumbCurrent },
+					]}
+				/>
+			)
+		}
 		{
 			showCommercialBlock && commercialBlock ? (
-				<header class="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen border-b border-white/10 px-4 pb-10 sm:px-6 lg:px-10 xl:px-14">
-					<div class="mx-auto flex max-w-7xl flex-col gap-8 lg:flex-row lg:items-stretch lg:gap-12">
+				<header
+					class:list={[
+						isMelhoresDecisionPage ? 'pb-0' : 'border-b border-white/10',
+						isMelhoresDecisionPage
+							? 'relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen max-w-[100vw]'
+							: 'relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen px-4 pb-10 sm:px-6 lg:px-10 xl:px-14',
+					]}
+				>
+					<div
+						class:list={[
+							'mx-auto flex flex-col',
+							isMelhoresDecisionPage
+								? 'max-w-7xl px-4 sm:px-6 lg:px-8'
+								: 'max-w-7xl gap-8 lg:flex-row lg:items-stretch lg:gap-12',
+						]}
+					>
 						<div class="min-w-0 flex-1 lg:flex lg:flex-col lg:justify-center lg:py-2">
+							{
+								isMelhoresDecisionPage ? (
+									<Breadcrumbs
+										class="mb-8"
+										items={[
+											{ name: 'Início', href: '/' },
+											{ name: hubLabel, href: '/melhores/' },
+											{ name: breadcrumbCurrent },
+										]}
+									/>
+								) : null
+							}
 							<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop">{eyebrow}</p>
-							<h1 class="font-display mt-4 text-3xl font-extrabold tracking-tight text-on-ink-body sm:text-4xl lg:text-[2.5rem] lg:leading-tight xl:text-[2.75rem]">
+							<h1
+								class:list={[
+									'font-display mt-4 font-extrabold tracking-tight text-on-ink-body',
+									isMelhoresDecisionPage
+										? 'text-balance text-[1.65rem] leading-tight sm:text-[2rem] lg:text-[2.2rem] xl:text-[2.4rem]'
+										: 'text-3xl sm:text-4xl lg:text-[2.5rem] lg:leading-tight xl:text-[2.75rem]',
+								]}
+							>
 								{headline}
 							</h1>
-							<div class="mt-4 max-w-xl rounded-xl border border-white/15 bg-brand-900/70 p-3.5 ring-1 ring-white/10 sm:p-4">
-								<ul class="space-y-2 text-sm font-semibold leading-snug text-on-ink-body sm:text-[0.95rem]">
-									{commercialBlock.heroRanking.map((line) => (
-										<li class={line.toneClass}>{line.text}</li>
-									))}
-								</ul>
-							</div>
+							{isMelhoresDecisionPage ? (
+								<p class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-on-ink-muted">
+									<span>{fmt.format(guide.data.pubDate)}</span>
+									<span aria-hidden="true" class="text-on-ink-muted/50">
+										·
+									</span>
+									<span>{readingLabel}</span>
+									{guide.data.topPick ? (
+										<>
+											<span aria-hidden="true" class="text-on-ink-muted/50">
+												·
+											</span>
+											<span>
+												Destaque: <strong class="font-semibold text-on-ink-body">{guide.data.topPick}</strong>
+											</span>
+										</>
+									) : null}
+								</p>
+							) : null}
+							{isMelhoresDecisionPage ? null : (
+								<div class="mt-4 max-w-xl rounded-xl border border-white/15 bg-brand-900/70 p-3.5 ring-1 ring-white/10 sm:p-4">
+									<ul class="space-y-2 text-sm font-semibold leading-snug text-on-ink-body sm:text-[0.95rem]">
+										{commercialBlock.heroRanking.map((line) => (
+											<li class={line.toneClass}>{line.text}</li>
+										))}
+									</ul>
+								</div>
+							)}
 							{
 								commercialBlock.heroDecisionHeading ? (
 									<h2 class="mt-4 max-w-xl text-lg font-semibold leading-snug text-balance text-on-ink-body sm:text-xl">
@@ -324,31 +382,14 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 								) : null
 							}
 							{
-								commercialBlock.heroTrustLine ? (
+								!isMelhoresDecisionPage && commercialBlock.heroTrustLine ? (
 									<p class="mt-3 max-w-xl text-xs leading-relaxed text-on-ink-muted">
 										{commercialBlock.heroTrustLine}
 									</p>
 								) : null
 							}
 							{
-								guide.id === 'melhor-fogao-5-bocas' ? (
-									<div class="mt-4 flex max-w-xl flex-col gap-3">
-										{
-											featuredHeroProduct && featuredHeroMlCtaLabel ? (
-												<a
-													href={featuredHeroProduct.mercadoLivreUrl}
-													class="cta-affiliate cta-affiliate--ml max-w-md self-start"
-													target="_blank"
-													rel="noopener noreferrer nofollow sponsored"
-													aria-label={`Ver preço do ${featuredHeroProduct.name} no Mercado Livre — abre em nova aba (link patrocinado)`}
-													{...mlAffiliateAttrs(featuredHeroProduct.productId, 'hero')}
-												>
-													{featuredHeroMlCtaLabel}
-												</a>
-											) : null
-										}
-									</div>
-								) : featuredHeroProduct && featuredHeroMlCtaLabel ? (
+								isMelhoresDecisionPage ? null : featuredHeroProduct && featuredHeroMlCtaLabel ? (
 									<a
 										href={featuredHeroProduct.mercadoLivreUrl}
 										class="cta-affiliate cta-affiliate--ml mt-4 max-w-xl"
@@ -363,7 +404,12 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 							}
 							{
 								lead ? (
-									<p class="mt-4 max-w-3xl text-lg font-semibold leading-relaxed text-on-ink-body sm:text-xl">
+									<p
+										class:list={[
+											'mt-4 text-lg font-semibold leading-relaxed text-on-ink-body sm:text-xl',
+											isMelhoresDecisionPage ? 'max-w-none' : 'max-w-3xl',
+										]}
+									>
 										{lead}
 									</p>
 								) : guide.id !== 'melhor-fogao-5-bocas' ? (
@@ -373,6 +419,7 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 							{dek && guide.id !== 'melhor-fogao-5-bocas' ? (
 								<p class="mt-3 max-w-3xl text-sm leading-relaxed text-on-ink-muted sm:text-base">{dek}</p>
 							) : null}
+							{isMelhoresDecisionPage ? null : (
 							<p class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-on-ink-muted">
 								<span>{fmt.format(guide.data.pubDate)}</span>
 								<span aria-hidden="true" class="text-on-ink-muted/50">
@@ -390,9 +437,10 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 									</>
 								) : null}
 							</p>
+							)}
 						</div>
 						{
-							optimizedHero || cover ? (
+							!isMelhoresDecisionPage && (optimizedHero || cover) ? (
 						<figure
 							class:list={[
 								'order-first w-full shrink-0 overflow-hidden rounded-2xl ring-1 ring-white/10 lg:order-none',
@@ -525,6 +573,14 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 			)
 		}
 
+		{
+			isMelhoresDecisionPage && commercialGuideId ? (
+				<div class="mt-4">
+					<HomeTopProducts guideId={commercialGuideId} />
+				</div>
+			) : null
+		}
+
 		<div class="mt-8">
 			<EditorialTrustRibbon />
 		</div>
@@ -560,14 +616,14 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 			class:list={[
 				'blog-prose prose prose-invert prose-lg max-w-none prose-headings:font-display prose-a:text-pop prose-a:underline prose-a:decoration-pop/50 prose-a:decoration-2 prose-a:underline-offset-[0.2em] hover:prose-a:text-accent-hover hover:prose-a:decoration-pop',
 				'prose-p:leading-[1.72] prose-li:marker:text-pop/80 prose-strong:text-on-ink-body',
-				tldr ? 'mt-12' : 'mt-11 sm:mt-[3.25rem]',
+				tldr ? 'mt-12' : isMelhoresDecisionPage ? 'mt-8 sm:mt-10' : 'mt-11 sm:mt-[3.25rem]',
 			]}
 		>
 		{
 				showCommercialBlock && commercialGuideId && IntroContent && ModuleFragments.length > 0 ? (
 					<>
 						{(guide.body ?? '').trim() ? <IntroContent /> : null}
-						<HomeTopProducts guideId={commercialGuideId} />
+						{isMelhoresDecisionPage ? null : <HomeTopProducts guideId={commercialGuideId} />}
 						<HomeComparisonTable guideId={commercialGuideId} />
 						{/* Justificativas (1º moduleId) + demais trechos em um único shell de prosa.
 						    Teste 2 — melhor-fogao-4-bocas: sem blocos individuais pós-tabela (só prosa). */}

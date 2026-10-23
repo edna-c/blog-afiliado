@@ -7,6 +7,8 @@ category: 'Guia de Compra'
 
 ## Ainda com dúvida?
 
-A decisão comercial está nesta página. Se ainda faltar conferir o espaço:
+Se a dúvida for outra:
 
 - Medidas e instalação → [como escolher um fogão 5 bocas](/como-escolher-fogao-5-bocas/)
+- Ainda não fechou entre 4 e 5 bocas → [comparativo de fogão 4 e 5 bocas](/comparativo-fogao-4-vs-5-bocas/)
+- A dúvida é vidro ou inox → [fogão com mesa de vidro ou inox](/blog/fogao-mesa-de-vidro-ou-inox/)

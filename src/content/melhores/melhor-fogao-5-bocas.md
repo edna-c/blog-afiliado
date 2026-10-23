@@ -7,6 +7,7 @@ category: 'Guia de Compra'
 type: 'ranking'
 topics: ['fogao-5-bocas', 'compra-segura', 'custo-beneficio']
 headline: 'Melhor fogão 5 bocas em 2026: os 3 modelos para decidir agora'
+lead: 'Este ranking compara três fogões de piso, de 5 bocas, com mesa inox. A diferença principal está no forno. O Electrolux FE5IG traz vapor, cavidade selada e Tripla Chama, em 88,6 L, para quem usa o forno com frequência. O Brastemp BFS5NCR tem forno convencional de 96 L e duas prateleiras. O Consul CFS5NAR tem 96 L, uma prateleira e vidro interno vedado.'
 dek: 'Setembro/2026 · Preço e estoque só na loja no clique.'
 eyebrow: 'Atualizado set/2026 · Ranking de compra'
 topPick: 'Electrolux FE5IG'
