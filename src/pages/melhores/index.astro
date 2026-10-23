@@ -87,7 +87,7 @@ const itemListSchema = {
 			style="background-image: radial-gradient(circle at 18% 15%, rgba(223,255,31,0.35), transparent 45%), radial-gradient(circle at 82% 0%, rgba(255,255,255,0.12), transparent 40%);"
 		>
 		</div>
-		<div class="relative mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 sm:pb-20 lg:px-8 lg:pb-24">
+		<div class="relative mx-auto max-w-7xl px-4 pb-8 pt-10 sm:px-6 sm:pb-10 lg:px-8 lg:pb-12">
 			<Breadcrumbs items={[{ name: 'Início', href: '/' }, { name: 'Melhores' }]} />
 			<div class="mt-10">
 				<p class="text-xs font-bold uppercase tracking-[0.35em] text-pop sm:text-sm">
@@ -109,6 +109,7 @@ const itemListSchema = {
 
 	<BlogGrid
 		variant="dark"
+		compactTop
 		posts={guides}
 		basePath="/melhores"
 		hrefOverrides={MELHORES_HREF_OVERRIDES}

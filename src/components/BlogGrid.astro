@@ -27,6 +27,8 @@ interface Props {
 	ctaOverrides?: Record<string, { label: string; ariaLabel: string }>;
 	/** `dark` alinha à home premium; `light` mantém o bloco claro (ex.: legado). */
 	variant?: 'light' | 'dark';
+	/** Menos respiro no topo, quando a seção começa logo após o hero. */
+	compactTop?: boolean;
 }
 
 const {
@@ -42,6 +44,7 @@ const {
 	hrefOverrides,
 	ctaOverrides,
 	variant = 'light',
+	compactTop = false,
 } = Astro.props;
 
 const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -58,7 +61,9 @@ const defaultEyebrow = isDark ? 'Leitura complementar' : 'Artigos';
 	id="atualizacoes-blog"
 	class:list={[
 		isDark
-			? 'relative scroll-mt-24 border-y border-white/10 bg-gradient-to-b from-brand-950 via-ink to-[#06060a] py-20 sm:py-24 lg:py-28'
+			? compactTop
+				? 'relative scroll-mt-24 border-y border-white/10 bg-gradient-to-b from-brand-950 via-ink to-[#06060a] pb-16 pt-8 sm:pb-20 sm:pt-10 lg:pb-24 lg:pt-12'
+				: 'relative scroll-mt-24 border-y border-white/10 bg-gradient-to-b from-brand-950 via-ink to-[#06060a] py-20 sm:py-24 lg:py-28'
 			: 'bg-white py-20 lg:py-28',
 	]}
 	aria-labelledby="blog-grid-heading"
