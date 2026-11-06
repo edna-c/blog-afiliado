@@ -39,6 +39,7 @@ A tabela abaixo é o registro histórico. As colunas Resultado e Decisão perman
 |----|----------|-----------|-----------|---------|
 | **CRO-001** | Aproximar o CTA do momento da decisão aumenta os cliques afiliados | CTA afiliado único no Hero dos hubs Melhores (5 bocas, 4 bocas, mesa de vidro), SSOT via `featuredHeroProduct` | **Parcialmente encerrado no 5 bocas** (17/ago/2026): a URL `/melhores/melhor-fogao-5-bocas/` não era a dona da intenção — ranking fica na home. Janela segue só em 4 bocas e mesa de vidro. | Aguardando janela nas 2 URLs restantes |
 | **CRO-002** | Oferta direta na tabela comparativa da Home aumenta a captura de intenção de compra sem reduzir de forma relevante os cliques dos cards | Coluna “Onde comprar” na tabela da Home (5 CTAs SSOT); microcopy do CTA do hero e rótulo do bloco comercial | **Em observação** (17/set/2026) | Aguardando janela na Home (`/`). Sem veredito. |
+| **CRO-003** | Explicitar a vantagem própria de cada produto pode facilitar a comparação e a decisão | Somente os textos `benefits` dos três cards em `/melhores/melhor-fogao-5-bocas/` (`commercialGuideBlocks.ts`) | **Implementado, auditado e aprovado; aguardando publicação** (06/nov/2026) | Sucesso não declarado — depende de dados posteriores comparáveis |
 
 ---
 
@@ -120,6 +121,27 @@ A seção “Sprint B (só se CRO-001 = Sucesso)”, no final deste arquivo, per
 | Não contaminação | Não alterar CRO-001, as 2 URLs Melhores restantes, `products.ts`, SmartRecommendations, Header/Footer, URLs, canonical, schema, metadados nem links afiliados existentes. |
 | Data deploy | _preencher após ir a produção_ |
 | Veredito | **Em observação** — sem vencedor nem perdedor |
+
+---
+
+## CRO-003 — detalhe
+
+| Campo | Valor |
+|-------|--------|
+| Nome | CRO-003 — Clareza dos benefícios nos cards comerciais |
+| Data de registro | 06/nov/2026 |
+| Página | `/melhores/melhor-fogao-5-bocas/` |
+| Hipótese | Explicitar a vantagem própria de cada produto pode facilitar a comparação e a decisão. |
+| Elemento alterado | Somente os textos `benefits` dos três produtos no bloco `melhor-fogao-5-bocas` em `src/data/commercialGuideBlocks.ts`. |
+| Produtos | Electrolux FE5IG, Brastemp BFS5NCR e Consul CFS5NAR |
+| Elementos preservados | Ordem, SKUs, imagens, links afiliados, badges, CTAs, tabela comparativa, SEO (H1/title/description) e eventos/atributos GA4 |
+| Tracking | Evento existente `affiliate_click`. Sem evento novo. |
+| Métrica principal | `affiliate_click` filtrado pelo caminho da página `/melhores/melhor-fogao-5-bocas/` e posição `product_card` |
+| Limitação | Eventos não representam vendas; tráfego interno ainda não está completamente separado |
+| Situação | Implementado, auditado e aprovado; aguardando publicação |
+| Data deploy | _preencher após ir a produção_ |
+| Veredito / sucesso | **Não declarado.** Depende de dados posteriores comparáveis. Não declarar sucesso, neutralidade ou fracasso antes da janela pós-publicação. |
+| Não contaminação | Não alterar outros CTAs, ordem dos produtos, links, badges, tabela, SEO nem demais páginas durante a janela de observação deste experimento |
 
 ---
 
