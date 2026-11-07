@@ -202,6 +202,7 @@ function rowAnalysisLink(row: ComparisonRow): {
 										<td class="align-top">
 											{hideComparisonAffiliateCtas ? null : (
 												<div class="flex min-w-[8.5rem] flex-col gap-1.5">
+													{r.links.ml ? (
 													<a
 														href={r.links.ml}
 														class:list={[
@@ -222,6 +223,7 @@ function rowAnalysisLink(row: ComparisonRow): {
 															</>
 														)}
 													</a>
+													) : null}
 													{'shopee' in r.links && r.links.shopee ? (
 														<a
 															href={r.links.shopee}
@@ -316,6 +318,7 @@ function rowAnalysisLink(row: ComparisonRow): {
 										<td class="text-on-ink-body">{r.bestFor}</td>
 										<td class="align-middle">
 											<div class="flex min-w-[8.5rem] flex-col gap-1.5">
+												{r.links.ml ? (
 												<a
 													href={r.links.ml}
 													class="cta-affiliate cta-affiliate--ml cta-affiliate--compact"
@@ -326,6 +329,7 @@ function rowAnalysisLink(row: ComparisonRow): {
 												>
 													Ver oferta
 												</a>
+												) : null}
 												{'shopee' in r.links && r.links.shopee ? (
 													<a
 														href={r.links.shopee}

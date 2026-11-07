@@ -7,6 +7,7 @@ import {
 	normalizePathname,
 	resolvePageType,
 	shopeeAffiliateAttrs,
+	shouldEmitAffiliateClick,
 } from './affiliateTracking.ts';
 
 describe('resolvePageType', () => {
@@ -52,6 +53,87 @@ describe('isProductId', () => {
 		assert.equal(isProductId('muellerMCG4BK'), true);
 		assert.equal(isProductId('brastemp'), false);
 		assert.equal(isProductId(null), false);
+	});
+});
+
+describe('shouldEmitAffiliateClick', () => {
+	it('recusa product_id fora do inventário', () => {
+		assert.equal(
+			shouldEmitAffiliateClick(null, 'brastemp', 'mercado_livre', 'price_check', 'hero', 1_000),
+			null,
+		);
+		assert.equal(
+			shouldEmitAffiliateClick(null, '', 'shopee', 'merchant_secondary', 'product_card', 1_000),
+			null,
+		);
+	});
+
+	it('aceita o primeiro clique de um SKU do inventário', () => {
+		const next = shouldEmitAffiliateClick(
+			null,
+			'electroluxFE4DG',
+			'shopee',
+			'merchant_secondary',
+			'hero',
+			1_000,
+		);
+		assert.deepEqual(next, {
+			key: 'electroluxFE4DG|shopee|merchant_secondary|hero',
+			at: 1_000,
+		});
+	});
+
+	it('ignora o mesmo botão dentro de 1s e libera depois', () => {
+		const first = shouldEmitAffiliateClick(
+			null,
+			'electroluxFE4DG',
+			'shopee',
+			'merchant_secondary',
+			'comparison_table',
+			5_000,
+		);
+		assert.equal(
+			shouldEmitAffiliateClick(
+				first,
+				'electroluxFE4DG',
+				'shopee',
+				'merchant_secondary',
+				'comparison_table',
+				5_999,
+			),
+			null,
+		);
+		assert.equal(
+			shouldEmitAffiliateClick(
+				first,
+				'electroluxFE4DG',
+				'shopee',
+				'merchant_secondary',
+				'comparison_table',
+				6_000,
+			)?.at,
+			6_000,
+		);
+	});
+
+	it('não bloqueia outra loja no mesmo produto', () => {
+		const first = shouldEmitAffiliateClick(
+			null,
+			'electroluxFE5IG',
+			'mercado_livre',
+			'price_check',
+			'hero',
+			1_000,
+		);
+		const second = shouldEmitAffiliateClick(
+			first,
+			'electroluxFE5IG',
+			'shopee',
+			'merchant_secondary',
+			'hero',
+			1_100,
+		);
+		assert.equal(second?.at, 1_100);
 	});
 });
 

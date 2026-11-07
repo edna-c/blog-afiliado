@@ -100,37 +100,52 @@ const ogSiteName = openGraph?.siteName ?? 'Casa Prática Eletro';
 			gtag('config', 'G-P718Q3GL8M');
 		</script>
 		<!-- P0: affiliate_click — listener único por delegação; não altera navegação -->
-		<script is:inline>
-			(function () {
-				document.addEventListener(
-					'click',
-					function (event) {
-						var target = event.target;
-						if (!target || typeof target.closest !== 'function') return;
-						var anchor = target.closest(
-							'a[data-product-id][data-merchant][data-cta-type][data-cta-position]',
-						);
-						if (!anchor) return;
-						var productId = anchor.getAttribute('data-product-id');
-						var merchant = anchor.getAttribute('data-merchant');
-						var ctaType = anchor.getAttribute('data-cta-type');
-						var ctaPosition = anchor.getAttribute('data-cta-position');
-						var pageType =
-							(document.body && document.body.getAttribute('data-page-type')) ||
-							anchor.getAttribute('data-page-type');
-						if (!productId || !merchant || !ctaType || !ctaPosition || !pageType) return;
-						if (typeof gtag !== 'function') return;
-						gtag('event', 'affiliate_click', {
-							product_id: productId,
-							merchant: merchant,
-							cta_type: ctaType,
-							cta_position: ctaPosition,
-							page_type: pageType,
-						});
-					},
-					false,
-				);
-			})();
+		<script>
+			import {
+				shouldEmitAffiliateClick,
+				type AffiliateClickSnapshot,
+			} from '../utils/affiliateTracking';
+
+			let lastAffiliateClick: AffiliateClickSnapshot | null = null;
+
+			document.addEventListener(
+				'click',
+				(event) => {
+					const target = event.target;
+					if (!(target instanceof Element)) return;
+					const anchor = target.closest(
+						'a[data-product-id][data-merchant][data-cta-type][data-cta-position]',
+					);
+					if (!(anchor instanceof HTMLAnchorElement)) return;
+					const productId = anchor.getAttribute('data-product-id');
+					const merchant = anchor.getAttribute('data-merchant');
+					const ctaType = anchor.getAttribute('data-cta-type');
+					const ctaPosition = anchor.getAttribute('data-cta-position');
+					const pageType =
+						document.body?.getAttribute('data-page-type') ||
+						anchor.getAttribute('data-page-type');
+					if (!productId || !merchant || !ctaType || !ctaPosition || !pageType) return;
+					if (typeof window.gtag !== 'function') return;
+					const next = shouldEmitAffiliateClick(
+						lastAffiliateClick,
+						productId,
+						merchant,
+						ctaType,
+						ctaPosition,
+						Date.now(),
+					);
+					if (!next) return;
+					lastAffiliateClick = next;
+					window.gtag('event', 'affiliate_click', {
+						product_id: productId,
+						merchant,
+						cta_type: ctaType,
+						cta_position: ctaPosition,
+						page_type: pageType,
+					});
+				},
+				false,
+			);
 		</script>
 	</head>
 	<body class="flex min-h-screen flex-col bg-ink text-on-ink-body" data-page-type={pageType}>

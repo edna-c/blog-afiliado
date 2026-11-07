@@ -37,6 +37,35 @@ export function isProductId(value: string | null | undefined): value is ProductI
 	return !!value && PRODUCT_ID_SET.has(value);
 }
 
+/** Janela em que um segundo clique no mesmo botão não gera outro `affiliate_click`. */
+export const AFFILIATE_CLICK_DEBOUNCE_MS = 1000;
+
+export type AffiliateClickSnapshot = {
+	key: string;
+	at: number;
+};
+
+/**
+ * Decide se o clique vira evento.
+ * Recusa `product_id` fora de `produtos` e repetição do mesmo botão dentro de 1s.
+ * Outro produto, loja ou posição segue livre.
+ */
+export function shouldEmitAffiliateClick(
+	previous: AffiliateClickSnapshot | null,
+	productId: string,
+	merchant: string,
+	ctaType: string,
+	ctaPosition: string,
+	now: number,
+): AffiliateClickSnapshot | null {
+	if (!isProductId(productId)) return null;
+	const key = `${productId}|${merchant}|${ctaType}|${ctaPosition}`;
+	if (previous && previous.key === key && now - previous.at < AFFILIATE_CLICK_DEBOUNCE_MS) {
+		return null;
+	}
+	return { key, at: now };
+}
+
 /** Normaliza path com barra final para mapear page_type. */
 export function normalizePathname(pathname: string): string {
 	if (!pathname || pathname === '/') return '/';

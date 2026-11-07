@@ -2,6 +2,8 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+import HomeTopProducts from '../components/HomeTopProducts.astro';
+import HomeComparisonTable from '../components/HomeComparisonTable.astro';
 import HomeCategoriesSection from '../components/HomeCategoriesSection.astro';
 import LogoStrip from '../components/LogoStrip.astro';
 import HomeMelhoresSection from '../components/HomeMelhoresSection.astro';
@@ -34,6 +36,9 @@ const posts = allPosts
 	}}
 >
 	<Hero />
+	<!-- Saída comercial: cards Top 3 + tabela com CTAs ML/Shopee (SSOT products.ts) -->
+	<HomeTopProducts />
+	<HomeComparisonTable />
 	<HomeCategoriesSection />
 	<HomeMelhoresSection />
 	<LogoStrip />

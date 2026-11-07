@@ -18,10 +18,11 @@ import {
 	getCommercialGuideBlock,
 	getFeaturedCommercialProduct,
 	getMercadoLivreCtaLabel,
+	getShopeeCtaLabel,
 	isCommercialGuideId,
 	type CommercialGuideId,
 } from '../../data/commercialGuideBlocks';
-import { mlAffiliateAttrs } from '../../utils/affiliateTracking';
+import { mlAffiliateAttrs, shopeeAffiliateAttrs } from '../../utils/affiliateTracking';
 import { readingTimeLabel } from '../../utils/readingTime';
 import {
 	isRoutedMelhoresGuide,
@@ -167,7 +168,7 @@ type MdContent = Awaited<ReturnType<typeof render>>['Content'];
 let IntroContent: MdContent | null = null;
 /** Fragmentos pós-tabela (ordem = `commercialBlock.moduleIds`). */
 let ModuleFragments: MdContent[] = [];
-let Content: MdContent;
+let Content: MdContent | null = null;
 let corpoBody = '';
 
 if (showCommercialBlock && commercialBlock) {
@@ -389,17 +390,34 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 								) : null
 							}
 							{
-								isMelhoresDecisionPage ? null : featuredHeroProduct && featuredHeroMlCtaLabel ? (
-									<a
-										href={featuredHeroProduct.mercadoLivreUrl}
-										class="cta-affiliate cta-affiliate--ml mt-4 max-w-xl"
-										target="_blank"
-										rel="noopener noreferrer nofollow sponsored"
-										aria-label={`Ver preço atualizado do ${featuredHeroProduct.name} no Mercado Livre — abre em nova aba (link patrocinado)`}
-										{...mlAffiliateAttrs(featuredHeroProduct.productId, 'hero')}
-									>
-										{featuredHeroMlCtaLabel}
-									</a>
+								featuredHeroProduct && featuredHeroMlCtaLabel ? (
+									<p class="not-prose cta-affiliate-pair mt-4 max-w-xl">
+										<a
+											href={featuredHeroProduct.mercadoLivreUrl}
+											class:list={[
+												'cta-affiliate cta-affiliate--ml',
+												!featuredHeroProduct.shopeeUrl && 'sm:col-span-2',
+											]}
+											target="_blank"
+											rel="noopener noreferrer nofollow sponsored"
+											aria-label={`Ver preço atualizado do ${featuredHeroProduct.name} no Mercado Livre — abre em nova aba (link patrocinado)`}
+											{...mlAffiliateAttrs(featuredHeroProduct.productId, 'hero')}
+										>
+											{featuredHeroMlCtaLabel}
+										</a>
+										{featuredHeroProduct.shopeeUrl ? (
+											<a
+												href={featuredHeroProduct.shopeeUrl}
+												class="cta-affiliate cta-affiliate--shopee"
+												target="_blank"
+												rel="noopener noreferrer nofollow sponsored"
+												aria-label={`Ver oferta do ${featuredHeroProduct.name} na Shopee — abre em nova aba (link patrocinado)`}
+												{...shopeeAffiliateAttrs(featuredHeroProduct.productId, 'hero')}
+											>
+												{getShopeeCtaLabel(featuredHeroProduct)}
+											</a>
+										) : null}
+									</p>
 								) : null
 							}
 							{
@@ -710,7 +728,10 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 															<p class="not-prose cta-affiliate-pair mt-6">
 																<a
 																	href={decisionProduct.mercadoLivreUrl}
-																	class="cta-affiliate cta-affiliate--ml sm:col-span-2"
+																	class:list={[
+																		'cta-affiliate cta-affiliate--ml',
+																		!decisionProduct.shopeeUrl && 'sm:col-span-2',
+																	]}
 																	target="_blank"
 																	rel="noopener noreferrer nofollow sponsored"
 																	aria-label="Ver preço do cooktop Electrolux KE4GR no Mercado Livre — abre em nova aba (link patrocinado)"
@@ -721,6 +742,21 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 																		Ver preço no Mercado Livre
 																	</span>
 																</a>
+																{decisionProduct.shopeeUrl ? (
+																	<a
+																		href={decisionProduct.shopeeUrl}
+																		class="cta-affiliate cta-affiliate--shopee"
+																		target="_blank"
+																		rel="noopener noreferrer nofollow sponsored"
+																		aria-label="Ver preço do cooktop Electrolux KE4GR na Shopee — abre em nova aba (link patrocinado)"
+																		{...shopeeAffiliateAttrs('electroluxKE4GR', 'inline')}
+																	>
+																		<span aria-hidden="true">👉</span>
+																		<span class="min-w-0 text-balance">
+																			Ver preço na Shopee
+																		</span>
+																	</a>
+																) : null}
 															</p>
 														) : null,
 													];
@@ -732,9 +768,9 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 							);
 						})()}
 					</>
-				) : (
+				) : Content ? (
 					<Content />
-				)
+				) : null
 			}
 		</div>
 

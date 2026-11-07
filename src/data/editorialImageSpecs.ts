@@ -167,12 +167,17 @@ export const EDITORIAL_IMAGE_SPECS: Record<EditorialImageKind, EditorialImageSpe
 	productReviewWide: PRODUCT_REVIEW_WIDE,
 };
 
-/** Helper para spread em `<Picture />` */
-export function picturePropsFrom(spec: EditorialImageSpec) {
+/** Helper para spread em `<Picture />` — arrays mutáveis (props do Astro Picture). */
+export function picturePropsFrom(spec: EditorialImageSpec): {
+	formats: Array<(typeof PICTURE_FORMATS)[number]>;
+	widths: number[];
+	sizes: string;
+	quality: number;
+} {
 	return {
-		formats: PICTURE_FORMATS,
+		formats: [...PICTURE_FORMATS],
 		widths: [...spec.picture.widths],
 		sizes: spec.picture.sizes,
 		quality: spec.picture.quality,
-	} as const;
+	};
 }

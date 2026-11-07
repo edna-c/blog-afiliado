@@ -29,3 +29,5 @@ pnpm-debug.log*
 
 # Affiliate Health Monitor — artefatos gerados
 reports/affiliate-health/
+# Conciliação GA4 × comissão — pode conter valores de comissão
+reports/reconciliation-output.md

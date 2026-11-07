@@ -1,7 +1,8 @@
 ---
 /**
  * Página de decisão — fogão de piso, 4 bocas, dois fornos separados.
- * Texto editorial aprovado. CTAs via SSOT: FE4DG e FE4DB só na Shopee.
+ * Texto editorial aprovado. CTAs via SSOT: FE4DG e FE4DB leem `ml` e `shopee`.
+ * Hoje só a Shopee está confirmada; o botão do Mercado Livre aparece quando `ml` existir.
  * FE4DP permanece no texto, sem CTA, até haver oferta afiliada.
  */
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -126,6 +127,14 @@ const cardCtaClass = 'not-prose cta-affiliate-pair mt-auto border-t border-white
 					O <strong class="font-semibold">Electrolux FE4DP</strong> só muda essa conta se a oferta dele compensar em relação ao FE4DB. A diferença entre os dois é o preço do anúncio e a grade.
 				</p>
 			</div>
+			<ProductOfferCtas
+				productId="electroluxFE4DG"
+				productName="Electrolux FE4DG"
+				productNoun="fogão"
+				ctaPosition="hero"
+				class="not-prose cta-affiliate-pair mt-6 max-w-xl"
+				showIcon={false}
+			/>
 		</header>
 	</article>
 
@@ -325,6 +334,30 @@ const cardCtaClass = 'not-prose cta-affiliate-pair mt-auto border-t border-white
 							<td>Não</td>
 							<td>Não</td>
 							<td>Não</td>
+						</tr>
+						<tr class="bg-ink">
+							<th scope="row" class="text-left font-semibold text-on-ink-body">Onde comprar</th>
+							<td class="align-top">
+								<ProductOfferCtas
+									productId="electroluxFE4DG"
+									productName="Electrolux FE4DG"
+									productNoun="fogão"
+									ctaPosition="comparison_table"
+									class="not-prose cta-affiliate-pair"
+									showIcon={false}
+								/>
+							</td>
+							<td class="align-top">
+								<ProductOfferCtas
+									productId="electroluxFE4DB"
+									productName="Electrolux FE4DB"
+									productNoun="fogão"
+									ctaPosition="comparison_table"
+									class="not-prose cta-affiliate-pair"
+									showIcon={false}
+								/>
+							</td>
+							<td class="align-top text-on-ink-muted">—</td>
 						</tr>
 					</tbody>
 				</table>

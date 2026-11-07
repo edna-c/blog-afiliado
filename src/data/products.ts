@@ -151,7 +151,9 @@ export const produtos = {
 	},
 	/**
 	 * Fogão de piso 4 bocas com 2 fornos — /melhores/melhor-fogao-4-bocas-com-2-fornos/
-	 * Só Shopee confirmada no painel. FE4DP fica fora do inventário até haver oferta afiliada.
+	 * O tipo aceita `ml` e `shopee`. Só a Shopee está confirmada no painel;
+	 * `ml` fica omitido até existir link gerado lá. FE4DP fica fora do inventário
+	 * até haver oferta afiliada.
 	 */
 	electroluxFE4DG: {
 		shopee: 'https://s.shopee.com.br/9V1tBL3aqy',

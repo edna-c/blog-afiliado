@@ -93,8 +93,6 @@ const melhorFogao5Bocas: CommercialGuideBlock = {
 	comparisonColumns: ['oven', 'shelves', 'doorGlass', 'resources'],
 	purchaseColumnLabel: 'Onde comprar',
 	comparisonMlCtaShort: true,
-	hideComparisonAffiliateCtas: true,
-	hideComparisonActionColumn: true,
 	moduleIds: [
 		'_melhor-fogao-5-bocas-justificativas',
 		'_melhor-fogao-5-bocas-como-avaliamos',
@@ -231,7 +229,6 @@ const melhorFogao4Bocas: CommercialGuideBlock = {
 		'_melhor-fogao-4-bocas-perfil',
 		'_melhor-fogao-4-bocas-antes',
 	],
-	hideComparisonAffiliateCtas: true,
 	topProducts: [
 		{
 			name: 'Consul CFO4NAR',
@@ -800,6 +797,11 @@ export function getFeaturedCommercialProduct(block: CommercialGuideBlock): Comme
 /** Rótulo do CTA Mercado Livre — herda de `mlCtaText` do produto do bloco comercial. */
 export function getMercadoLivreCtaLabel(product: CommercialProduct): string {
 	return product.mlCtaText ?? DEFAULT_MERCADO_LIVRE_CTA_TEXT;
+}
+
+/** Rótulo do CTA Shopee — herda de `shopeeCtaText` do produto do bloco comercial. */
+export function getShopeeCtaLabel(product: CommercialProduct): string {
+	return product.shopeeCtaText ?? 'Ver oferta na Shopee';
 }
 
 /**
