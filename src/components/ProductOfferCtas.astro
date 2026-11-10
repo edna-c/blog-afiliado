@@ -39,6 +39,19 @@ const disclosure = pending ? 'abre em nova aba' : 'abre em nova aba (link patroc
 const mlUrl = links.ml;
 const shopeeUrl = links.shopee;
 const single = Boolean(mlUrl) !== Boolean(shopeeUrl);
+const freightCta = productNoun === 'cooktop';
+const mlLabel = freightCta
+	? '👉 Ver preço, frete grátis e entrega rápida no Mercado Livre'
+	: 'Ver preço no Mercado Livre';
+const shopeeLabel = freightCta
+	? '👉 Ver preço, frete grátis e entrega rápida na Shopee'
+	: 'Ver preço na Shopee';
+const mlAriaLabel = freightCta
+	? mlLabel
+	: `Ver preço do ${productNoun} ${productName} no Mercado Livre — ${disclosure}`;
+const shopeeAriaLabel = freightCta
+	? shopeeLabel
+	: `Ver preço do ${productNoun} ${productName} na Shopee — ${disclosure}`;
 ---
 
 {
@@ -50,11 +63,11 @@ const single = Boolean(mlUrl) !== Boolean(shopeeUrl);
 					class:list={['cta-affiliate cta-affiliate--ml', single && 'sm:col-span-2']}
 					target="_blank"
 					rel={rel}
-					aria-label={`Ver preço do ${productNoun} ${productName} no Mercado Livre — ${disclosure}`}
+					aria-label={mlAriaLabel}
 					{...mlAffiliateAttrs(productId, ctaPosition)}
 				>
-					{showIcon ? <span aria-hidden="true">👉</span> : null}
-					<span class="min-w-0 text-balance">Ver preço no Mercado Livre</span>
+					{showIcon && !freightCta ? <span aria-hidden="true">👉</span> : null}
+					<span class="min-w-0 text-balance">{mlLabel}</span>
 				</a>
 			) : null}
 			{shopeeUrl ? (
@@ -63,11 +76,11 @@ const single = Boolean(mlUrl) !== Boolean(shopeeUrl);
 					class:list={['cta-affiliate cta-affiliate--shopee', single && 'sm:col-span-2']}
 					target="_blank"
 					rel={rel}
-					aria-label={`Ver preço do ${productNoun} ${productName} na Shopee — ${disclosure}`}
+					aria-label={shopeeAriaLabel}
 					{...shopeeAffiliateAttrs(productId, ctaPosition)}
 				>
-					{showIcon ? <span aria-hidden="true">👉</span> : null}
-					<span class="min-w-0 text-balance">Ver preço na Shopee</span>
+					{showIcon && !freightCta ? <span aria-hidden="true">👉</span> : null}
+					<span class="min-w-0 text-balance">{shopeeLabel}</span>
 				</a>
 			) : null}
 		</p>

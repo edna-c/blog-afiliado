@@ -15,3 +15,5 @@ Escolha este se você assa com frequência e quer PerfectCook ou VaporBake.
 
 **Atlas Mônaco Plus**  
 Escolha este se a prioridade for gastar menos e um 4 bocas simples resolver a rotina.
+
+O modelo que faz sentido é o que combina com a rotina da sua cozinha. Na hora de ver o preço, confira o frete rápido e a garantia oficial da oferta.

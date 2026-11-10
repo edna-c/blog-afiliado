@@ -12,3 +12,5 @@ Se ainda estiver em dúvida:
 - Cozinha todo dia e quer mesa de vidro → **Electrolux KE4GR**
 - O recorte da bancada é mais estreito e 55 cm resolve melhor → **Fischer Fit Line 4 bocas**
 - Prefere alumínio, ferro fundido e uma boca menor para panela pequena → **Mueller MCG4BK**
+
+O cooktop que faz sentido é o que combina com a sua rotina. Na hora de ver o preço, confira se a oferta tem frete grátis e entrega rápida.
