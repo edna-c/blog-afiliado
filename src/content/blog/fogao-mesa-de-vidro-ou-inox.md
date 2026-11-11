@@ -63,13 +63,15 @@ A diferença está no **tipo de tampo** — a parte plana onde ficam as bocas. B
 
 Se você já está quase decidido pelo vidro e quer só entender esse tipo de tampo, veja [fogão com mesa de vidro vale a pena?](/blog/review-fogao-com-mesa-de-vidro/).
 
+Se você quer o vidro embutido na bancada, com quatro bocas, o [guia de melhor cooktop 4 bocas](/melhores/melhor-cooktop-4-bocas/) compara mesa de vidro e outra opção de tampo.
+
 ## Quais são as vantagens do fogão com mesa inox?
 
 - mais folga com panela pesada, movimento rápido e cozinha compartilhada;
 - combina com geladeira, coifa e micro-ondas em aço, sem pedir um visual específico;
 - nas linhas mais comuns, há **mais modelos** para comparar — tamanhos, forno e faixa de preço.
 
-O que o inox oferece de melhor não é o brilho da vitrine: é um tampo que acompanha uma rotina mais puxada sem tratar cada panela como risco.
+O que o inox oferece de melhor não é o brilho da vitrine: é um tampo que acompanha uma rotina mais puxada sem tratar cada panela como risco. Se essa for a sua rotina e você quiser cinco bocas, os modelos com mesa inox estão no [guia de melhor fogão 5 bocas](/melhores/melhor-fogao-5-bocas/).
 
 ## Fogão com mesa de vidro ou inox: qual é mais resistente?
 
@@ -153,3 +155,5 @@ Se ficou com inox, os modelos com mesa inox estão no [ranking de fogão 4 bocas
 ## Se ainda faltou tamanho ou instalação
 
 Se o tamanho ainda está em aberto, decida isso no [comparativo entre fogões 4 e 5 bocas](/comparativo-fogao-4-vs-5-bocas/). Se a dúvida é piso ou embutir, veja o [guia fogão de embutir ou de piso](/blog/guia-fogao-embutir-ou-de-piso/).
+
+Se a mesa de vidro for de cooktop e você precisar de cinco bocas, os modelos estão no [guia de melhor cooktop 5 bocas](/melhores/melhor-cooktop-5-bocas/).
