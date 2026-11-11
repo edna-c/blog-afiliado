@@ -2,14 +2,14 @@
 title: 'Melhor fogão 4 bocas em 2026: os 3 modelos para decidir agora'
 description: 'Consul CFO4NAR, Electrolux FE4IW e Atlas Mônaco Plus — ranking 2026 com perfil de uso, prós/contras e preço na loja parceira.'
 pubDate: 2026-07-07
-updatedDate: 2026-08-17
+updatedDate: 2026-11-11
 category: 'Guia de Compra'
 type: 'ranking'
 topics: ['fogao-4-bocas', 'custo-beneficio', 'compra-segura', 'cozinha-pequena']
 headline: 'Melhor fogão 4 bocas em 2026: os 3 modelos para decidir agora'
 lead: 'Ranking atualizado com perfil de uso claro — escolha o seu e vá direto à oferta.'
-dek: 'Agosto/2026. Consul, Electrolux e Atlas. Preço e estoque só na loja no momento do clique.'
-eyebrow: 'Atualizado ago/2026 · Ranking de compra'
+dek: 'Novembro/2026. Consul, Electrolux e Atlas. Preço e estoque só na loja no momento do clique.'
+eyebrow: 'Atualizado nov/2026 · Ranking de compra'
 topPick: 'Consul CFO4NAR'
 coverImage: '/images/melhores/melhor-fogao-4-bocas/melhor-fogao-4-bocas-2026.webp'
 coverAlt: 'Melhores fogões 4 bocas em 2026 — comparativo visual para decisão de compra'

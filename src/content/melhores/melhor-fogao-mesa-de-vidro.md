@@ -2,7 +2,7 @@
 title: 'Melhor fogão mesa de vidro 4 bocas em 2026: os 3 modelos para decidir agora'
 description: 'Consul CFO4VAR, Brastemp BFO4VAE e Atlas Atenas Glass — fogões 4 bocas com mesa de vidro. Perfil de uso, prós e preço na loja parceira.'
 pubDate: 2026-07-14
-updatedDate: 2026-09-20
+updatedDate: 2026-11-11
 category: 'Guia de Compra'
 type: ranking
 topics:
@@ -15,8 +15,8 @@ coverImage: '/images/melhores/melhor-fogao-mesa-de-vidro/melhor-fogao-mesa-de-vi
 coverAlt: 'Fogão Consul 4 bocas com mesa de vidro preta em cozinha planejada — capa do ranking 2026'
 headline: 'Melhor fogão mesa de vidro em 2026: os 3 modelos de 4 bocas para decidir agora'
 lead: 'Compare fogões 4 bocas com mesa de vidro, escolha o modelo e vá direto à oferta.'
-dek: 'Setembro/2026. Consul, Brastemp e Atlas. Preço e estoque só na loja no momento do clique.'
-eyebrow: 'Atualizado set/2026 · Ranking de compra'
+dek: 'Novembro/2026. Consul, Brastemp e Atlas. Preço e estoque só na loja no momento do clique.'
+eyebrow: 'Atualizado nov/2026 · Ranking de compra'
 topPick: 'Consul CFO4VAR'
 tldr:
   title: 'Ranking em 20 segundos'
