@@ -17,11 +17,11 @@ export async function getStaticPaths() {
 		{
 			params: { marca: 'brastemp' },
 			props: {
-				title: 'Review do fogão Brastemp BFS5NCR 5 bocas: para quem serve | Casa Prática Eletro',
+				title: 'Fogão Brastemp BFS5NCR 5 bocas vale a pena? Review e preço | Casa Prática Eletro',
 				description:
-					'Review do Brastemp BFS5NCR, fogão 5 bocas: para quem combina, o que diferencia e quando um modelo mais simples atende melhor.',
+					'Review do Brastemp BFS5NCR: para quem serve, o que diferencia e onde conferir preço, frete e entrega rápida nas lojas parceiras.',
 				model: 'Brastemp BFS5NCR',
-				headline: 'Review do fogão Brastemp 5 bocas BFS5NCR: para quem serve',
+				headline: 'Fogão Brastemp BFS5NCR 5 bocas vale a pena?',
 				summary:
 					'Se você está considerando o Brastemp BFS5NCR, esta review mostra rápido para quem esse fogão 5 bocas faz sentido, o que o diferencia e onde ele pode não encaixar.',
 				offerUrl: produtos.brastempBFS5NCR.ml,
@@ -102,11 +102,11 @@ export async function getStaticPaths() {
 		{
 			params: { marca: 'consul' },
 			props: {
-				title: 'Fogão Consul 5 bocas CFS5NAR vale a pena? | Casa Prática Eletro',
+				title: 'Fogão Consul CFS5NAR 5 bocas vale a pena? Review e preço | Casa Prática Eletro',
 				description:
-					'Consul CFS5NAR: forno 96 L, 1 prateleira, vidro interno vedado e mesa inox — para quem serve no uso diário.',
+					'Consul CFS5NAR: forno 96 L, 1 prateleira e mesa inox — para quem serve e onde ver preço, frete e entrega nas ofertas parceiras.',
 				model: 'Consul CFS5NAR',
-				headline: 'Fogão Consul 5 bocas CFS5NAR vale a pena?',
+				headline: 'Fogão Consul CFS5NAR 5 bocas vale a pena?',
 				summary:
 					'É o Consul 5 bocas inox do ranking de entrada: forno de 96 L, uma prateleira e vidro interno vedado. Serve bem quem cozinha no dia a dia e quer cinco bocas sem subir para o pacote do Electrolux ou do Brastemp. Se você usa várias panelas grandes ao mesmo tempo, compare o espaço entre as bocas antes de decidir.',
 				offerUrl: produtos.consulCFS5NAR.ml,
@@ -195,11 +195,11 @@ export async function getStaticPaths() {
 		{
 			params: { marca: 'electrolux' },
 			props: {
-				title: 'Fogão Electrolux 5 bocas FE5IG vale a pena? | Casa Prática Eletro',
+				title: 'Fogão Electrolux FE5IG 5 bocas vale a pena? Review e preço | Casa Prática Eletro',
 				description:
-					'Electrolux FE5IG: para quem o forno e o acabamento pesam na escolha, e quando um modelo mais simples atende melhor.',
+					'Electrolux FE5IG: quando forno e acabamento pesam na escolha e onde conferir preço, frete e entrega nas lojas parceiras.',
 				model: 'Electrolux FE5IG',
-				headline: 'Fogão Electrolux 5 bocas FE5IG vale a pena?',
+				headline: 'Fogão Electrolux FE5IG 5 bocas vale a pena?',
 				summary:
 					'É uma opção para quem cozinha com frequência, usa o forno de verdade e considera o acabamento um critério importante na escolha. Se esses pontos não pesam na sua rotina, um modelo mais simples pode atender melhor.',
 				offerUrl: produtos.electroluxFE5IG.ml,
@@ -432,6 +432,25 @@ const structuredData = {
 				photoEnhance={reviewSlug === 'electrolux'}
 			/>
 		</div>
+
+		<div class="mt-10">
+			<AffiliateOfferBlock
+				id="ofertas"
+				variant="featured"
+				productName={model}
+				productId={productId}
+				heading={`Ver preço do ${model} agora`}
+				description="Confira preço, frete grátis (se disponível na sua região) e prazo de entrega rápida nas lojas parceiras."
+				mercadoLivreUrl={offerUrl}
+				shopeeUrl={offerShopeeUrl}
+				mlCtaLabel="Ver preço, frete e entrega no Mercado Livre"
+				shopeeCtaLabel="Ver preço, frete e entrega na Shopee"
+				trustLines={[
+					'Preço, frete e estoque variam por região — confira na loja no momento da compra.',
+					'Alguns links geram comissão para o site, sem custo extra para você.',
+				]}
+			/>
+		</div>
 		{
 			longReviewHref ? (
 				<p class="mt-6 text-base leading-relaxed text-on-ink-muted">
@@ -495,19 +514,6 @@ const structuredData = {
 				)
 			}
 		</section>
-
-		<div class="mt-12">
-			<AffiliateOfferBlock
-				id="ofertas"
-				variant="featured"
-				productName={model}
-				productId={productId}
-				heading={`Conferir preço atualizado do ${model}`}
-				description="Consulte o frete grátis e prazos de entrega rápida para a sua região direto na loja oficial parceira — sem compromisso."
-				mercadoLivreUrl={offerUrl}
-				shopeeUrl={offerShopeeUrl}
-			/>
-		</div>
 
 		<section class="mt-12" aria-labelledby="diferenciacao-heading">
 			<h2 id="diferenciacao-heading" class="font-display text-xl font-bold text-on-ink-body sm:text-2xl">
@@ -627,9 +633,15 @@ const structuredData = {
 								productName="Electrolux FE5IG — fogão 5 bocas"
 								productId="electroluxFE5IG"
 								heading="Conferir preço do Electrolux FE5IG — fogão 5 bocas"
-								description="Electrolux FE5IG — fogão 5 bocas. Confira preço e frete nas lojas parceiras."
+								description="Confira preço, frete grátis (se disponível na sua região) e prazo de entrega rápida nas lojas parceiras."
 								mercadoLivreUrl={produtos.electroluxFE5IG.ml}
 								shopeeUrl={produtos.electroluxFE5IG.shopee}
+								mlCtaLabel="Ver preço, frete e entrega no Mercado Livre"
+								shopeeCtaLabel="Ver preço, frete e entrega na Shopee"
+								trustLines={[
+									'Preço, frete e estoque variam por região — confira na loja no momento da compra.',
+									'Alguns links geram comissão para o site, sem custo extra para você.',
+								]}
 							/>
 						</div>
 						<dl class="mt-8 space-y-6">
@@ -660,22 +672,22 @@ const structuredData = {
 						class="cta-affiliate cta-affiliate--ml"
 						target="_blank"
 						rel="noopener noreferrer nofollow sponsored"
-						aria-label={`Ver preço do fogão ${model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+						aria-label={`Ver preço, frete e entrega do fogão ${model} no Mercado Livre — abre em nova aba (link patrocinado)`}
 						{...mlAffiliateAttrs(productId, 'inline')}
 					>
 						<span aria-hidden="true">🔥</span>
-						<span class="min-w-0 text-balance">Ver preço no Mercado Livre</span>
+						<span class="min-w-0 text-balance">Ver preço, frete e entrega no Mercado Livre</span>
 					</a>
 					<a
 						href={offerShopeeUrl}
 						class="cta-affiliate cta-affiliate--shopee"
 						target="_blank"
 						rel="noopener noreferrer nofollow sponsored"
-						aria-label={`Ver oferta do fogão ${model} na Shopee — abre em nova aba (link patrocinado)`}
+						aria-label={`Ver preço, frete e entrega do fogão ${model} na Shopee — abre em nova aba (link patrocinado)`}
 						{...shopeeAffiliateAttrs(productId, 'inline')}
 					>
 						<span aria-hidden="true">👉</span>
-						<span class="min-w-0 text-balance">Ver oferta na Shopee</span>
+						<span class="min-w-0 text-balance">Ver preço, frete e entrega na Shopee</span>
 					</a>
 				</div>
 			) : (
@@ -685,11 +697,11 @@ const structuredData = {
 						class="cta-affiliate cta-affiliate--ml"
 						target="_blank"
 						rel="noopener noreferrer nofollow sponsored"
-						aria-label={`Ver preço do fogão ${model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+						aria-label={`Ver preço, frete e entrega do fogão ${model} no Mercado Livre — abre em nova aba (link patrocinado)`}
 						{...mlAffiliateAttrs(productId, 'inline')}
 					>
 						<span aria-hidden="true">🔥</span>
-						<span class="min-w-0 text-balance">Ver preço no Mercado Livre</span>
+						<span class="min-w-0 text-balance">Ver preço, frete e entrega no Mercado Livre</span>
 					</a>
 					<a
 						href={FOGAO_5_BOCAS_GUIDE_HREF}
@@ -723,10 +735,10 @@ const structuredData = {
 					class:list={['cta-affiliate cta-affiliate--ml', !offerShopeeUrl && 'sm:col-span-2']}
 					target="_blank"
 					rel="noopener noreferrer nofollow sponsored"
-					aria-label={`Ver preço atualizado do ${model} no Mercado Livre — abre em nova aba (link patrocinado)`}
+					aria-label={`Ver preço, frete e entrega do ${model} no Mercado Livre — abre em nova aba (link patrocinado)`}
 					{...mlAffiliateAttrs(productId, 'page_end')}
 				>
-					<span class="min-w-0 text-balance">Ver preço no Mercado Livre</span>
+					<span class="min-w-0 text-balance">Ver preço, frete e entrega no Mercado Livre</span>
 				</a>
 				{
 					offerShopeeUrl ? (
@@ -735,10 +747,10 @@ const structuredData = {
 							class="cta-affiliate cta-affiliate--shopee"
 							target="_blank"
 							rel="noopener noreferrer nofollow sponsored"
-							aria-label={`Ver oferta do ${model} na Shopee — abre em nova aba (link patrocinado)`}
+							aria-label={`Ver preço, frete e entrega do ${model} na Shopee — abre em nova aba (link patrocinado)`}
 							{...shopeeAffiliateAttrs(productId, 'page_end')}
 						>
-							<span class="min-w-0 text-balance">Ver oferta na Shopee</span>
+							<span class="min-w-0 text-balance">Ver preço, frete e entrega na Shopee</span>
 						</a>
 					) : null
 				}

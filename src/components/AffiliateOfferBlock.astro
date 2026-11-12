@@ -11,6 +11,12 @@ interface Props {
 	shopeeUrl?: string;
 	variant?: 'featured' | 'default';
 	id?: string;
+	/** Sobrescreve o rótulo do CTA Mercado Livre (default preservado). */
+	mlCtaLabel?: string;
+	/** Sobrescreve o rótulo do CTA Shopee (default preservado). */
+	shopeeCtaLabel?: string;
+	/** Substitui as duas primeiras linhas de confiança; a linha de política de afiliados permanece. */
+	trustLines?: string[];
 }
 
 const {
@@ -22,11 +28,21 @@ const {
 	shopeeUrl,
 	variant = 'default',
 	id,
+	mlCtaLabel,
+	shopeeCtaLabel,
+	trustLines,
 } = Astro.props;
 
 const isFeatured = variant === 'featured';
 const mlAttrs = mlAffiliateAttrs(productId, 'offer_block');
 const shopeeAttrs = shopeeAffiliateAttrs(productId, 'offer_block');
+const resolvedMlLabel =
+	mlCtaLabel ?? (isFeatured ? 'Ver melhor preço no Mercado Livre' : 'Ver preço no Mercado Livre');
+const resolvedShopeeLabel = shopeeCtaLabel ?? 'Ver oferta na Shopee';
+const resolvedTrustLines = trustLines ?? [
+	'Preço e estoque mudam com frequência — confira no momento da compra.',
+	'Alguns links geram comissão para o site, sem custo extra para você.',
+];
 ---
 
 <section
@@ -61,11 +77,11 @@ const shopeeAttrs = shopeeAffiliateAttrs(productId, 'offer_block');
 			class:list={['cta-affiliate cta-affiliate--ml', !shopeeUrl && 'sm:col-span-2']}
 			target="_blank"
 			rel="noopener noreferrer nofollow sponsored"
-			aria-label={`Ver preço e disponibilidade do ${productName} no Mercado Livre — abre em nova aba (link patrocinado)`}
+			aria-label={`${resolvedMlLabel} (${productName}) — abre em nova aba (link patrocinado)`}
 			{...mlAttrs}
 		>
 			<span aria-hidden="true">{isFeatured ? '🔥' : '👉'}</span>
-			<span class="min-w-0 text-balance">{isFeatured ? 'Ver melhor preço no Mercado Livre' : 'Ver preço no Mercado Livre'}</span>
+			<span class="min-w-0 text-balance">{resolvedMlLabel}</span>
 		</a>
 		{
 			shopeeUrl ? (
@@ -74,18 +90,19 @@ const shopeeAttrs = shopeeAffiliateAttrs(productId, 'offer_block');
 					class="cta-affiliate cta-affiliate--shopee"
 					target="_blank"
 					rel="noopener noreferrer nofollow sponsored"
-					aria-label={`Ver oferta do ${productName} na Shopee — abre em nova aba (link patrocinado)`}
+					aria-label={`${resolvedShopeeLabel} (${productName}) — abre em nova aba (link patrocinado)`}
 					{...shopeeAttrs}
 				>
 					<span aria-hidden="true">👉</span>
-					<span class="min-w-0 text-balance">Ver oferta na Shopee</span>
+					<span class="min-w-0 text-balance">{resolvedShopeeLabel}</span>
 				</a>
 			) : null
 		}
 	</div>
 	<ul class="mt-4 space-y-1 border-t border-white/10 pt-4 text-[11px] leading-relaxed text-on-ink-muted sm:text-xs">
-		<li>Preço e estoque mudam com frequência — confira no momento da compra.</li>
-		<li>Alguns links geram comissão para o site, sem custo extra para você.</li>
+		{resolvedTrustLines.map((line) => (
+			<li>{line}</li>
+		))}
 		<li>
 			Transparência: leia também a{' '}
 			<a href="/politica-de-afiliados/" class="link-accent">

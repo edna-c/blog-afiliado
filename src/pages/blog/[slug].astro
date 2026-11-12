@@ -457,13 +457,25 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 		}
 
 		{
-			!isNichoSuporte && !isPilotMesaVidro && !isFourBurnerVale && !isEmbutirPiso && !isFornoDuplo && !isVidroOuInox && !isMedidasCooktop ? (
+			!isNichoSuporte && !isPilotMesaVidro && !isFourBurnerVale && !isEmbutirPiso && !isFornoDuplo && !isVidroOuInox ? (
 				<p class="mt-10 rounded-xl border border-white/10 bg-brand-900/30 px-4 py-3 text-sm leading-relaxed text-on-ink-muted sm:px-5">
 					{isEspacoCincoBocas ? (
 						<>
 							<strong class="text-on-ink-body">Se o espaço comporta 5 bocas:</strong> compare os modelos no{' '}
 							<a href={commercialNext.href} class="link-accent">
 								ranking do melhor fogão 5 bocas
+							</a>
+							.
+						</>
+					) : isMedidasCooktop ? (
+						<>
+							<strong class="text-on-ink-body">Depois de medir o nicho:</strong> compare os modelos no{' '}
+							<a href="/melhores/melhor-cooktop-4-bocas/#guia-comercial-produtos" class="link-accent">
+								ranking de cooktop 4 bocas
+							</a>
+							{' '}ou no{' '}
+							<a href="/melhores/melhor-cooktop-5-bocas/#guia-comercial-produtos" class="link-accent">
+								ranking de cooktop 5 bocas
 							</a>
 							.
 						</>

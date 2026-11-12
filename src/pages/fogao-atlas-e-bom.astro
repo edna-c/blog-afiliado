@@ -12,10 +12,10 @@ const site = Astro.site ?? new URL('https://casapraticaeletro.com.br');
 const canonicalPath = '/fogao-atlas-e-bom/';
 const canonical = new URL(canonicalPath.replace(/^\//, ''), site).href;
 
-const headline = 'Fogão Atlas é bom? Análise da marca e dos modelos';
+const headline = 'Fogão Atlas é bom? Quando vale a pena (Mônaco Plus e Atenas Glass)';
 const pageTitle = `${headline} | Casa Prática Eletro`;
 const description =
-	'Fogão Atlas é bom para o seu perfil? Veja quando a marca faz sentido, os limites reais e como se diferenciam o Mônaco Plus e o Atenas Glass.';
+	'Fogão Atlas é bom? Veja quando a marca faz sentido, o que muda entre Mônaco Plus e Atenas Glass e confira preço, frete e entrega nas lojas parceiras.';
 
 const monacoImage = '/images/melhores/melhor-fogao-4-bocas/atlas-monaco-plus.webp';
 const atenasImage = '/images/melhores/melhor-fogao-mesa-de-vidro/atlas-atenas-glass.webp';
@@ -25,7 +25,16 @@ const ogImage = new URL(
 ).href;
 
 const publishedTime = '2026-09-01T20:00:00-03:00';
-const modifiedTime = publishedTime;
+const modifiedTime = '2026-11-11T21:56:00-03:00';
+
+const offerFreightDescription =
+	'Confira preço, frete e prazo de entrega na sua região no Mercado Livre e na Shopee.';
+const offerTrustLines = [
+	'Preço, frete e estoque variam por região — confira na loja no momento da compra.',
+	'Alguns links geram comissão para o site, sem custo extra para você.',
+];
+const mlFreightCta = 'Ver preço, frete e entrega no Mercado Livre';
+const shopeeFreightCta = 'Ver preço, frete e entrega na Shopee';
 
 const breadcrumbLabel = 'Fogão Atlas é bom?';
 
@@ -106,6 +115,22 @@ const structuredData = {
 		</p>
 		<div class="mt-8">
 			<EditorialTrustRibbon />
+		</div>
+
+		<div class="mt-10">
+			<AffiliateOfferBlock
+				id="oferta-atlas-destaque"
+				variant="featured"
+				productName="Atlas Mônaco Plus"
+				productId="atlasMonacoPlus"
+				heading="Ver preço do Atlas Mônaco Plus agora"
+				description={offerFreightDescription}
+				mercadoLivreUrl={produtos.atlasMonacoPlus.ml}
+				shopeeUrl={produtos.atlasMonacoPlus.shopee}
+				mlCtaLabel={mlFreightCta}
+				shopeeCtaLabel={shopeeFreightCta}
+				trustLines={offerTrustLines}
+			/>
 		</div>
 
 		<section class="mt-12 space-y-4 text-base leading-relaxed text-on-ink-body" aria-labelledby="atlas-e-bom-heading">
@@ -218,9 +243,12 @@ const structuredData = {
 				productName="Atlas Mônaco Plus"
 				productId="atlasMonacoPlus"
 				heading="Conferir preço do Atlas Mônaco Plus"
-				description="Preço e estoque mudam. Confira no Mercado Livre e na Shopee no momento da compra."
+				description={offerFreightDescription}
 				mercadoLivreUrl={produtos.atlasMonacoPlus.ml}
 				shopeeUrl={produtos.atlasMonacoPlus.shopee}
+				mlCtaLabel={mlFreightCta}
+				shopeeCtaLabel={shopeeFreightCta}
+				trustLines={offerTrustLines}
 			/>
 		</div>
 
@@ -253,8 +281,10 @@ const structuredData = {
 				productName="Atlas Atenas Glass"
 				productId="atlasAtenasGlass"
 				heading="Conferir preço do Atlas Atenas Glass"
-				description="Preço e estoque mudam. Confira no Mercado Livre no momento da compra."
+				description="Confira preço, frete e prazo de entrega na sua região no Mercado Livre."
 				mercadoLivreUrl={produtos.atlasAtenasGlass.ml}
+				mlCtaLabel={mlFreightCta}
+				trustLines={offerTrustLines}
 			/>
 		</div>
 

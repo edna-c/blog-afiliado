@@ -124,6 +124,8 @@ Esses números são específicos de cada modelo. Eles não representam um padrã
 
 Antes de cortar a bancada, confira a documentação do modelo escolhido.
 
+Se o nicho já bate com o que você precisa em quatro bocas, compare os modelos no [ranking de cooktop 4 bocas](/melhores/melhor-cooktop-4-bocas/#guia-comercial-produtos).
+
 ## E nos cooktops de 5 bocas?
 
 Nos cooktops de 5 bocas, a lógica é a mesma: **a mesa que fica apoiada sobre a bancada tem uma medida, e a caixa que entra no nicho tem outra.**
@@ -135,6 +137,8 @@ Nos cooktops de 5 bocas, a lógica é a mesma: **a mesa que fica apoiada sobre a
 - **Brastemp BDS75AE:** mesa de 73 × 46 cm; conferir o nicho na documentação de instalação do modelo.
 
 Não use só a medida da mesa para escolher o modelo nem para fazer o recorte da bancada.
+
+Se a rotina pede cinco bocas e as medidas fecham, os modelos estão no [ranking de cooktop 5 bocas](/melhores/melhor-cooktop-5-bocas/#guia-comercial-produtos).
 
 ## Já tenho o nicho pronto. Posso trocar o cooktop?
 
