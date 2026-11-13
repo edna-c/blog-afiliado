@@ -14,12 +14,12 @@ Origem dos itens: `docs/AUDITORIA-SSOT-AFILIADOS.md`, `docs/AUDITORIA-COMPONENTE
 | Campo | Conteúdo |
 |-------|----------|
 | **Descrição** | Links afiliados com `href` literal em fragments Markdown dos guias Melhores (`_melhor-fogao-4-bocas-justificativas.md`, `_melhor-fogao-mesa-de-vidro-justificativas.md`) — 12 ocorrências. |
-| **Situação atual** | URLs coincidem com `src/data/products.ts`, mas a fonte está duplicada (inventário + Markdown). |
-| **Motivo de permanecer pendente** | Conteúdo já publicado. Baixo risco imediato. Evitar impacto em rastreamento de afiliados. |
-| **Risco atual** | Baixo — divergência futura se o inventário for atualizado sem o Markdown. |
-| **Prioridade** | Baixa |
-| **Gatilho para revisão** | Infraestrutura apropriada (Product Catalog ou Article Builder no ROADMAP), ou manutenção repetitiva comprovada na rotação de ofertas. |
-| **Decisão tomada** | **Não alterar** até o gatilho. Correção só com aprovação humana explícita. |
+| **Situação atual** | **Resolvido (2026-11-12):** CTAs migrados para `Fogao4BocasJustificativas.astro` e `FogaoMesaDeVidroJustificativas.astro` via `ProductOfferCtas` (SSOT `products.ts`). Os `.md` ficaram como stub/âncora, no padrão dos cooktops. |
+| **Motivo de permanecer pendente** | — |
+| **Risco atual** | Residual: `_melhor-fogao-5-bocas-antes.md` ainda tem CTA hardcoded (fora deste item; não alterar sob CRO-003). |
+| **Prioridade** | — |
+| **Gatilho para revisão** | Rotação de ofertas no inventário; eventual migração do CTA em `_melhor-fogao-5-bocas-antes.md` após veredito CRO-003. |
+| **Decisão tomada** | **Encerrado para 4 bocas e mesa de vidro** com aprovação explícita de padronização SSOT. |
 
 ---
 

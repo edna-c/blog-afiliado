@@ -32,6 +32,8 @@ import {
 import { findEntry } from '../../data/editorialContent';
 import Cooktop5BocasJustificativas from '../../components/Cooktop5BocasJustificativas.astro';
 import Cooktop4BocasJustificativas from '../../components/Cooktop4BocasJustificativas.astro';
+import FogaoMesaDeVidroJustificativas from '../../components/FogaoMesaDeVidroJustificativas.astro';
+import Fogao4BocasJustificativas from '../../components/Fogao4BocasJustificativas.astro';
 
 const guideHeroPicture = picturePropsFrom(GUIDE_PAGE_HERO);
 
@@ -643,8 +645,7 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 						{(guide.body ?? '').trim() ? <IntroContent /> : null}
 						{isMelhoresDecisionPage ? null : <HomeTopProducts guideId={commercialGuideId} />}
 						<HomeComparisonTable guideId={commercialGuideId} />
-						{/* Justificativas (1º moduleId) + demais trechos em um único shell de prosa.
-						    Teste 2 — melhor-fogao-4-bocas: sem blocos individuais pós-tabela (só prosa). */}
+						{/* Justificativas (1º moduleId ou componente SSOT) + demais trechos em shell de prosa. */}
 						{(() => {
 							if (guide.id === 'melhor-fogao-4-bocas') {
 								const [ComoFragment, PerfilFragment, ...RestFragments] = ModuleFragments;
@@ -652,6 +653,11 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 								const PerfilModule = PerfilFragment;
 								return (
 									<>
+										<div class="ctx-module ctx-module--justificativas">
+											<div class="ctx-module__inner">
+												<Fogao4BocasJustificativas />
+											</div>
+										</div>
 										<div class="ctx-module ctx-module--prose-start">
 											<div class="ctx-module__inner">
 												<ComoModule />
@@ -704,6 +710,8 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 												<Cooktop5BocasJustificativas />
 											) : guide.id === 'melhor-cooktop-4-bocas' ? (
 												<Cooktop4BocasJustificativas />
+											) : guide.id === 'melhor-fogao-mesa-de-vidro' ? (
+												<FogaoMesaDeVidroJustificativas />
 											) : (
 												<JustificativasModule />
 											)}

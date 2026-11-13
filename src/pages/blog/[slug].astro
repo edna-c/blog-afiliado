@@ -457,7 +457,7 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 		}
 
 		{
-			!isNichoSuporte && !isPilotMesaVidro && !isFourBurnerVale && !isEmbutirPiso && !isFornoDuplo && !isVidroOuInox ? (
+			!isNichoSuporte && !isPilotMesaVidro && !isFourBurnerVale && !isFornoDuplo && !isVidroOuInox ? (
 				<p class="mt-10 rounded-xl border border-white/10 bg-brand-900/30 px-4 py-3 text-sm leading-relaxed text-on-ink-muted sm:px-5">
 					{isEspacoCincoBocas ? (
 						<>
@@ -476,6 +476,18 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 							{' '}ou no{' '}
 							<a href="/melhores/melhor-cooktop-5-bocas/#guia-comercial-produtos" class="link-accent">
 								ranking de cooktop 5 bocas
+							</a>
+							.
+						</>
+					) : isEmbutirPiso ? (
+						<>
+							<strong class="text-on-ink-body">Depois de escolher o formato:</strong> compare modelos de piso no{' '}
+							<a href={FOGAO_5_BOCAS_RANKING_HREF} class="link-accent">
+								ranking de fogão 5 bocas
+							</a>
+							{' '}ou modelos de embutir no{' '}
+							<a href="/melhores/melhor-fogao-4-bocas-de-embutir/" class="link-accent">
+								ranking de fogão 4 bocas de embutir
 							</a>
 							.
 						</>

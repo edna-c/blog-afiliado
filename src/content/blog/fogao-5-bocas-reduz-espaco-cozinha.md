@@ -100,4 +100,6 @@ Um fogão 5 bocas não reduz o espaço da cozinha por conta própria. A cozinha 
 
 Com as medidas certas e um fogão na proporção do ambiente, cinco bocas podem trazer praticidade sem deixar a cozinha menor.
 
+Se o vão comporta cinco bocas, compare os modelos no [ranking de fogão 5 bocas](/melhores/melhor-fogao-5-bocas/#guia-comercial-produtos).
+
 Se o espaço for curto demais, veja o [comparativo entre 4 e 5 bocas](/comparativo-fogao-4-vs-5-bocas/). Pode ser que um 4 bocas deixe mais folga do que insistir no 5.
